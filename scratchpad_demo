@@ -1,0 +1,287 @@
+# Advice PC Component Catalog Data Extraction
+
+## CPUs
+1. **CPU AMD AM4 ATHLON 3000G (NEXT)**
+   - Price: 1,370 THB
+   - Specs: 3.5GHz / 2Cores / 4Threads / AMD Radeon Vega 3 Graphics
+2. **CPU AMD AM4 RYZEN 3 3200G (NEXT)**
+   - Price: 1,930 THB
+   - Specs: 3.6GHz up to 4.0GHz / 4Cores / 4Threads / AMD Radeon Vega 8 Graphics
+3. **CPU AMD AM4 RYZEN 3 3200G**
+   - Price: 1,990 THB
+   - Specs: 3.6GHz up to 4.0GHz / 4Cores / 4Threads / AMD Radeon Vega 8 Graphics
+4. **CPU AMD AM4 RYZEN 5 3400G (NEXT)**
+   - Price: 2,230 THB
+   - Specs: 3.7GHz up to 4.2GHz / 4Cores / 8Threads / AMD Radeon RX Vega 11 Graphics
+5. **CPU AMD AM4 RYZEN 5 3400G**
+   - Price: 2,350 THB
+   - Specs: 3.7GHz up to 4.2GHz / 4Cores / 8Threads / AMD Radeon RX Vega 11 Graphics
+6. **CPU AMD AM4 RYZEN 5 5500 (NEXT)**
+   - Price: 2,960 THB
+   - Specs: 3.6GHz up to 4.2GHz / 6Cores / 12Threads / No Integrated Graphics
+7. **CPU AMD AM4 RYZEN 5 5500**
+   - Price: 3,190 THB
+   - Specs: 3.6GHz up to 4.2GHz / 6Cores / 12Threads / No Integrated Graphics
+8. **CPU AMD AM4 RYZEN 5 5500GT (NEXT)**
+   - Price: 4,290 THB
+   - Specs: 3.6GHz up to 4.4GHz / 6Cores / 12Threads / AMD Radeon Graphics
+9. **CPU AMD AM4 RYZEN 5 5500GT**
+   - Price: 4,490 THB
+   - Specs: 3.6GHz up to 4.4GHz / 6Cores / 12Threads / AMD Radeon Graphics
+10. **CPU AMD AM4 RYZEN 5 5600 (NEXT)**
+    - Price: 4,150 THB
+    - Specs: 3.5GHz up to 4.4GHz / 6Cores / 12Threads / No Integrated Graphics
+11. **CPU AMD AM4 RYZEN 5 5600**
+    - Price: 4,390 THB
+    - Specs: 3.5GHz up to 4.4GHz / 6Cores / 12Threads / No Integrated Graphics
+12. **CPU AMD AM4 RYZEN 5 5600GT (NEXT)**
+    - Price: 4,840 THB
+    - Specs: 3.6GHz up to 4.6GHz / 6Cores / 12Threads / AMD Radeon Graphics
+13. **CPU AMD AM4 RYZEN 5 5600G**
+    - Price: 4,990 THB
+    - Specs: 3.9GHz up to 4.4GHz / 6Cores / 12Threads / AMD Radeon Graphics
+14. **CPU AMD AM4 RYZEN 5 5600GT**
+    - Price: 5,090 THB
+    - Specs: 3.6GHz up to 4.6GHz / 6Cores / 12Threads / AMD Radeon Graphics
+
+
+## Mainboards
+1. **MAINBOARD LONGWELL H77 + CPU INTEL CORE I5 DDR3 (REV 1.2)**
+   - Price: 2,420 THB
+   - Specs: CPU Intel Core i5 / Socket 1155 / Intel H77 / 2xDDR3 / 1xPCIe2.0 / 3xSATA / 1xM.2 Slot / Micro ATX / 1xD-Sub / 1xHDMI / 1xLAN 1Gb
+2. **MAINBOARD (AM4) LONGWELL A520M-YH DDR4**
+   - Price: 1,330 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe 3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xD-Sub / 1xHDMI / 1xLAN 1Gb
+3. **MAINBOARD (AM4) ASROCK A520M-HVS DDR4**
+   - Price: 1,380 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xD-Sub / 1xHDMI / 1xLAN 1Gb
+4. **MAINBOARD (AM4) MSI A520M-A PRO DDR4**
+   - Price: 1,355 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xLAN 1Gb
+5. **MAINBOARD (AM4) GIGABYTE A520M-K V2 DDR4 (REV. 1.1)**
+   - Price: 1,360 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xD-Sub / 1xHDMI / 1xLAN 1Gb
+6. **MAINBOARD (AM4) GIGABYTE A520M-K V2 DDR4 (REV. 1.2)**
+   - Price: 1,380 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xD-Sub / 1xHDMI / 1xLAN 1Gb
+7. **MAINBOARD (AM4) ASUS PRIME A520M-K DDR4**
+   - Price: 1,450 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe 3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xD-Sub / 1xHDMI / 1xLAN 1Gb
+8. **MAINBOARD (AM4) ASROCK A520M AC DDR4**
+   - Price: 1,730 THB
+   - Specs: Socket AM4 / AMD A520 / 2xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xLAN 1Gb / WiFi 5
+9. **MAINBOARD (AM4) LONGWELL B450M-VDH DDR4**
+   - Price: 1,460 THB
+   - Specs: Socket AM4 / AMD B450 / 2xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slots / Micro ATX / 1xVGA / 1xDVI / 1xHDMI / 1xLAN 1Gb
+10. **MAINBOARD (AM4) ASROCK B450M PRO4 DDR4 R2.0**
+    - Price: 2,330 THB
+    - Specs: Socket AM4 / AMD B450 / 4xDDR4 / 1xPCIe3.0 / 4xSATA / 1xM.2 Slots / Micro ATX / 1xLAN 1Gb
+11. **MAINBOARD (AM4) GIGABYTE B550M H ARGB DDR4 (REV. 1.0)**
+    - Price: 2,170 THB
+    - Specs: Socket AM4 / AMD B550 / 2xDDR4 / 1xPCIe 4.0 / 4xSATA / 1xM.2 Slot / Micro ATX / 1xHDMI / 1xDisplayPort / 1xLAN 1Gb
+12. **MAINBOARD (AM4) ASROCK B550M HDV DDR4**
+    - Price: 2,230 THB
+    - Specs: Socket AM4 / AMD B550 / 2xDDR4 / 1xPCIe4.0 / 4xSATA / 1xM.2 Slots / Micro ATX / 1xLAN 1Gb
+13. **MAINBOARD (AM4) MSI B550M A PRO**
+    - Price: 2,230 THB
+    - Specs: AMD B550 / 2xDDR4 / 2xPCIe / 9xUSB / 4xSATA / 1xM.2 / Micro ATX / 1xDVI / 1xHDMI
+14. **MAINBOARD (AM4) ASUS PRIME B550M-K ARGB DDR4**
+    - Price: 2,560 THB
+    - Specs: Socket AM4 / AMD B550 / 2xDDR4 / 1xPCIe4.0 / 4xSATA / 2xM.2 Slots / Micro ATX / 1xHDMI / 1xDisplayPort / 1xLAN 1Gb
+
+
+## GPUs
+1. **VGA POWER COLOR RADEON RX 6500XT FIGHTER V3 - 4GB GDDR6**
+   - Price: 5,240 THB
+   - Specs: 4GB / GDDR6 / 64-bit / PCIe3.0 / 1xHDMI / 1xDp / 1xPower(6 Pin) / PSU Require 400w / VGA Length 192mm / 2xFanCooling
+2. **VGA ASUS RADEON RX 7600 DUAL O8G EVO - 8GB GDDR6**
+   - Price: 8,520 THB
+   - Specs: 8GB / GDDR6 / 128-bit / PCIe4.0 / 1xHDMI / 3xDp / 1xPower(8 Pin) / PSU Require 550w / VGA Length 229mm / 2xFanCooling
+3. **VGA POWER COLOR RADEON RX 9060XT REAPER FIGHTER - 16GB GDDR6**
+   - Price: 13,090 THB
+   - Specs: 16GB / GDDR6 / 128-bit / PCIe5.0 / 1xHDMI / 2xDp / 1xPower(8 pin) / PSU Require 500w / VGA Length 220mm / 2xFanCooling
+4. **VGA SAPPHIRE RADEON RX 9060XT PULSE GAMING OC - 16GB GDDR6**
+   - Price: 13,770 THB
+   - Specs: 16GB / GDDR6 / 128-bit / PCIe5.0 / 2xHDMI / 1xDp / 1xPower(8 pin) / PSU Require 450w / VGA Length 240mm / 2xFanCooling
+5. **VGA SAPPHIRE RADEON RX 9060XT PURE GAMING OC - 16GB GDDR6**
+   - Price: 13,870 THB
+   - Specs: 16GB / GDDR6 / 128-bit / PCIe5.0 / 2xHDMI / 1xDp / 1xPower(8 pin) / PSU Require 450w / VGA Length 240mm / 2xFanCooling
+6. **VGA ASUS RADEON RX 9060XT PRIME O16G - 16GB GDDR6**
+   - Price: 15,800 THB
+   - Specs: 16GB / GDDR6 / 128-bit / PCIe5.0 / 1xHDMI / 2xDp / 1xPower(8 pin) / PSU Require 550w / VGA Length 304mm / 3xFanCooling
+7. **VGA GIGABYTE RADEON RX 9060XT GAMING OC - 16GB GDDR6**
+   - Price: 15,770 THB
+   - Specs: 16GB / GDDR6 / 128-bit / PCIe5.0 / 1xHDMI / 2xDp / 1xPower(8 pin) / PSU Require 450w / VGA Length 281mm / 3xFanCooling
+8. **VGA ASROCK RADEON RX 9060XT STEEL LEGEND OC - 16GB GDDR6**
+   - Price: 16,460 THB
+   - Specs: 16GB / GDDR6 / 128-bit / PCIe5.0 / 1xHDMI / 2xDp / 1xPower(8 pin) / PSU Require 550w / VGA Length 298mm / 3xFanCooling
+9. **VGA SAPPHIRE RADEON RX 9070 GRE PULSE GAMING DUAL OC - 12GB GDDR6**
+   - Price: 19,740 THB
+   - Specs: 12GB / GDDR6 / 192-bit / PCIe5.0 / 2xHDMI / 2xDp / 2xPower(8 pin) / PSU Require 650w / VGA Length 280mm / 2xFanCooling
+10. **VGA GIGABYTE RADEON RX 9070 GAMING OC - 16GB GDDR6**
+    - Price: 21,620 THB
+    - Specs: 16GB / GDDR6 / 256-bit / PCIe5.0 / 1xHDMI / 3xDp / 2xPower(8 pin) / PSU Require 750w / VGA Length 288mm / 3xFanCooling
+11. **VGA XFX RADEON RX 9070XT SWIFT TRIPLE FAN WHITE - 16GB GDDR6**
+    - Price: 24,300 THB
+    - Specs: 16GB / GDDR6 / 256-bit / PCIe5.0 / 1xHDMI / 3xDp / 2xPower(8 pin) / PSU Require 800w / VGA Length 325mm / 3xFanCooling
+12. **VGA SAPPHIRE RADEON RX 9070XT PULSE GAMING - 16GB GDDR6**
+    - Price: 24,690 THB
+    - Specs: 16GB / GDDR6 / 256-bit / PCIe5.0 / 2xHDMI / 2xDp / 2xPower(8 pin) / PSU Require 750w / VGA Length 320mm / 3xFanCooling
+13. **VGA GIGABYTE RADEON RX 9070XT GAMING - 16GB GDDR6**
+    - Price: 24,700 THB
+    - Specs: 16GB / GDDR6 / 256-bit / PCIe5.0 / 2xHDMI / 2xDp / 3xPower(8 pin) / PSU Require 850w / VGA Length 288mm / 3xFanCooling
+14. **VGA GIGABYTE RADEON RX 9070XT GAMING OC - 16GB GDDR6**
+    - Price: 25,380 THB
+    - Specs: 16GB / GDDR6 / 256-bit / PCIe5.0 / 2xHDMI / 2xDp / 3xPower(8 pin) / PSU Require 850w / VGA Length 288mm / 3xFanCooling
+15. **VGA ASUS RADEON RX 9070XT PRIME O16G - 16GB GDDR6**
+    - Price: 25,400 THB
+    - Specs: 16GB / GDDR6 / 256-bit / PCIe5.0 / 1xHDMI / 3xDp / 3xPower(8 pin) / PSU Require 750w / VGA Length 312mm / 3xFanCooling
+16. **VGA LONGWELL GEFORCE GT 210 - 1GB DDR3**
+    - Price: 885 THB
+    - Specs: 1GB / GDDR3 / 64-bit / PCIe2.0 / 1xHDMI 1xD-Sub / 1xDVI / PSU Require 300w / VGA Length 160mm / 1xFanCooling
+
+
+## Memory (RAM)
+1. **RAM DDR2(800) 2GB BLACKBERRY 16 CHIP**
+   - Price: 390 THB
+   - Specs: DDR2 / Bus 800 / PC2 6400 / 2GB (2GBX1) / CL N/A / Intel / AMD
+2. **RAM DDR3(1333) 4GB BLACKBERRY 8 CHIP**
+   - Price: 360 THB
+   - Specs: DDR3 / Bus 1333 / PC3 10600 / 4GB (4GBX1) / CL 9 / Intel / AMD
+3. **RAM DDR3(1333) 4GB BLACKBERRY 16 CHIP**
+   - Price: 370 THB
+   - Specs: DDR3 / Bus 1333 / PC3 10600 / 4GB (4GBX1) / CL N/A / Intel / AMD
+4. **RAM DDR3(1333) 4GB HYNIX 16 CHIP**
+   - Price: 400 THB
+   - Specs: DDR3 / Bus 1333 / PC3 10600 / 4GB (4GBX1) / CL N/A / Intel / AMD
+5. **RAM DDR3(1333) 8GB BLACKBERRY 16 CHIP**
+   - Price: 735 THB
+   - Specs: DDR3 / Bus 1333 / PC3 10600 / 8GB (8GBX1) / CL N/A / Intel / AMD
+6. **RAM DDR3(1600) 4GB BLACKBERRY 16 CHIP**
+   - Price: 350 THB
+   - Specs: DDR3 / Bus 1600 / PC3 12800 / 4GB (4GBX1) / CL N/A / Intel / AMD
+7. **RAM DDR3(1600) 4GB HYNIX 16 CHIP**
+   - Price: 360 THB
+   - Specs: DDR3 / Bus 1600 / PC3 12800 / 4GB (4GBX1) / CL N/A / Intel / AMD
+8. **RAM DDR3(1600) 4GB BLACKBERRY 8 CHIP**
+   - Price: 360 THB
+   - Specs: DDR3 / Bus 1600 / PC3 12800 / 4GB (4GBX1) / CL 11 / Intel / AMD
+9. **RAM DDR3L(1600) 4GB BLACKBERRY 8 CHIP**
+   - Price: 360 THB
+   - Specs: DDR3L / Bus 1600 / PC3 12800 / 4GB (4GBX1) / CL N/A / Intel / AMD
+10. **RAM DDR3(1600) 4GB APACER (DL.04G2K.HAM)**
+    - Price: 480 THB
+    - Specs: DDR3 / Bus 1600 / PC3 12800 / 4GB (4GBX1) / CL 11 / Intel / AMD
+11. **RAM DDR3(1600) 8GB BLACKBERRY 16 CHIP**
+    - Price: 695 THB
+    - Specs: DDR3 / Bus 1600 / PC3 12800 / 8GB (8GBX1) / CL N/A / Intel / AMD
+12. **RAM DDR3(1600) 8GB HYNIX 16 CHIP**
+    - Price: 705 THB
+    - Specs: DDR3 / Bus 1600 / PC3 12800 / 8GB (8GBX1) / CL N/A / Intel / AMD
+
+
+## Hard Disk Drive (HDD)
+1. **500 GB HDD SEAGATE (7200RPM, 16MB, SATA-3, ST500DM002)**
+   - Price: 880 THB
+   - Specs: 500 GB / Cache 16 MB / Rotational Speed 7200 RPM
+2. **1 TB HDD WD BLUE (5400RPM, 64MB, SATA-3, WD10EARZ)**
+   - Price: 3,435 THB
+   - Specs: 1 TB / Cache 64 MB / Rotational Speed 5400 RPM
+3. **2 TB HDD TOSHIBA P300 RED (7200RPM, 256MB, SATA-3, HDWD320UZSVA)**
+   - Price: 3,930 THB
+   - Specs: 2 TB / Cache 256 MB / Rotational Speed 7200 RPM
+4. **2 TB HDD WD BLUE (7200RPM, 256MB, SATA-3, WD20EZBX)**
+   - Price: 4,125 THB
+   - Specs: 2 TB / Cache 256 MB / Rotational Speed 7200 RPM
+
+## Solid State Drive (SSD)
+1. **128 GB SSD SATA BLACKBERRY (BBR128GST1)**
+   - Price: 925 THB
+   - Specs: 128 GB / SATA / Read 540 MB/s / Write 490 MB/s
+2. **128 GB SSD SATA HIKSEMI CITY E100 (STD)**
+   - Price: 975 THB
+   - Specs: 128 GB / SATA / Read 550 MB/s / Write 430 MB/s
+3. **128 GB SSD SATA APACER AS350 (AP128GAS350-1)**
+   - Price: 1,070 THB
+   - Specs: 128 GB / SATA / Read 560 MB/s / Write 540 MB/s
+4. **128 GB SSD SATA APACER AS350X (AS350X128)**
+   - Price: 1,070 THB
+   - Specs: 128 GB / SATA / Read 560 MB/s / Write 540 MB/s
+5. **250 GB SSD M.2 PCIe 3.0 WD BLUE SN570**
+   - Price: 1,290 THB
+   - Specs: 250 GB / M.2 PCIe 3.0 x4 / Read 3300 MB/s / Write 1200 MB/s
+6. **500 GB SSD M.2 PCIe 3.0 KINGSTON NV2**
+   - Price: 1,450 THB
+   - Specs: 500 GB / M.2 PCIe 3.0 x4 / Read 3500 MB/s / Write 2100 MB/s
+7. **1 TB SSD M.2 PCIe 4.0 WD BLACK SN850X**
+   - Price: 3,790 THB
+   - Specs: 1 TB / M.2 PCIe 4.0 x4 / Read 7300 MB/s / Write 6300 MB/s
+8. **2 TB SSD M.2 PCIe 4.0 SAMSUNG 990 PRO**
+   - Price: 6,890 THB
+   - Specs: 2 TB / M.2 PCIe 4.0 x4 / Read 7450 MB/s / Write 6900 MB/s
+
+## Power Supply Unit (PSU)
+1. **POWER SUPPLY (80+ SILVER) 400W ITSONAS DARK FOREST 1U FLEX (DF-FX400) SFX**
+   - Price: 2,320 THB
+   - Specs: 400W / 80 PLUS SILVER / Full Modular / Length 160mm / 1xCPU / 1xPCIe (6+2 Pin)
+2. **POWER SUPPLY 450W DTECH PW053 SFX**
+   - Price: 500 THB
+   - Specs: 450W / Length 100mm / Non Modular
+3. **POWER SUPPLY 500W OKER SFX**
+   - Price: 340 THB
+   - Specs: 500W / Length 100mm / Non Modular
+4. **POWER SUPPLY 550W NUBWO NPS-030**
+   - Price: 437 THB
+   - Specs: 550 WATT / Length 140mm / Non Modular
+5. **POWER SUPPLY (80+ BRONZE) 650W CORSAIR CX650M**
+   - Price: 2,450 THB
+   - Specs: 650W / 80 PLUS BRONZE / Semi Modular / ATX
+6. **POWER SUPPLY (80+ GOLD) 750W THERMALTAKE TOUGHPOWER GF**
+   - Price: 3,590 THB
+   - Specs: 750W / 80 PLUS GOLD / Full Modular / ATX
+7. **POWER SUPPLY (80+ GOLD) 850W SEASONIC FOCUS GX-850**
+   - Price: 4,990 THB
+   - Specs: 850W / 80 PLUS GOLD / Full Modular / ATX
+8. **POWER SUPPLY (80+ GOLD) 1000W CORSAIR RM1000x**
+   - Price: 6,850 THB
+   - Specs: 1000W / 80 PLUS GOLD / Full Modular / ATX
+
+## Case
+1. **MINI-ITX CASE (NP) VIKINGS VALHALLA VK1**
+   - Price: 467 THB
+   - Specs: No Power / 3xUSB / Fan Support Side 1(0)/Top 0(0)/Rear 1(1)/Bottom 0(0) / Bay 5.25''x0/ 3.5''2.5''x1
+2. **MINI-ITX CASE (NP) VIKINGS VALHALLA VK2**
+   - Price: 467 THB
+   - Specs: No Power / 3xUSB / Fan Support Side 1(0)/Top 0(0)/Rear 1(1)/Bottom 0(0) / Bay 5.25''x0/ 3.5''2.5''x1
+3. **MINI-ITX CASE (NP) VIKINGS VALHALLA VK3**
+   - Price: 467 THB
+   - Specs: No Power / 3xUSB / Fan Support Side 1(0)/Top 0(0)/Rear 1(1)/Bottom 0(0) / Bay 5.25''x0/ 3.5''2.5''x1
+4. **MINI-ITX CASE (NP) VIKINGS VALHALLA VK4**
+   - Price: 467 THB
+   - Specs: No Power / 3xUSB / Fan Support Side 1(0)/Top 0(0)/Rear 1(1)/Bottom 0(0) / Bay 5.25''x0/ 3.5''2.5''x1
+5. **ATX CASE (NP) MONTECH AIR 100 ARGB BLACK**
+   - Price: 1,690 THB
+   - Specs: ATX, Micro-ATX, Mini-ITX / 4x 120mm ARGB Fans pre-installed / Tempered Glass Side Panel
+6. **ATX CASE (NP) NZXT H5 FLOW BLACK**
+   - Price: 2,990 THB
+   - Specs: ATX, Micro-ATX, Mini-ITX / High Airflow Front Panel / Tempered Glass Side Panel
+7. **ATX CASE (NP) CORSAIR 4000D AIRFLOW BLACK**
+   - Price: 3,190 THB
+   - Specs: ATX, Micro-ATX, Mini-ITX / High-Airflow Front Panel / Tempered Glass Side Panel
+8. **E-ATX CASE (NP) LIAN LI O11 DYNAMIC EVO BLACK**
+   - Price: 5,490 THB
+   - Specs: E-ATX, ATX, Micro-ATX, Mini-ITX / Dual-Chamber / Tempered Glass Front & Side Panels
+
+## CPU Cooler / Fan
+1. **FAN CASE 8CM DEEPCOOL X FAN 80MM**
+   - Price: 115 THB
+   - Specs: พัดลม Case 8 cm./ Connector 3 PinFan + 4-Pin Molex Adapter Cable
+2. **FAN CASE 12CM NUBWO NFT-315 ZIEMA AIR RGB**
+   - Price: 125 THB
+   - Specs: พัดลม Case 12 cm. / RGB
+3. **FAN CASE 12CM VIKINGS VF 023 CRYSTAL RGB (PACK3)**
+   - Price: 392 THB
+   - Specs: พัดลม Case 12 cm. / RGB
+4. **FAN CASE 12CM TSUNAMI 1250 ARGB WHITE**
+   - Price: 147 THB
+   - Specs: พัดลม Case 12 cm. / ARGB

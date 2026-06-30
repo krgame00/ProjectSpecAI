@@ -1,0 +1,219 @@
+const express = require('express');
+const router = express.Router();
+const { GoogleGenAI } = require('@google/genai');
+
+// Initialize Gemini Client
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านฮาร์ดแวร์คอมพิวเตอร์ของเว็บไซต์นี้เท่านั้น 
+หน้าที่ของคุณคือแนะนำสเปคคอมพิวเตอร์และตอบคำถามเกี่ยวกับอุปกรณ์คอมพิวเตอร์ 
+หากระบบส่ง [ข้อมูลอ้างอิงจากระบบหลังบ้าน] ไปให้ ให้อ้างอิงข้อมูลนี้ในการตอบลูกค้าอย่างเป็นธรรมชาติ
+คุณคุยกับลูกค้าในลักษณะตอบรับแบบมีประวัติสนทนาต่อเนื่องได้ (จดจำสิ่งที่คุณตอบไว้ในรอบที่แล้วได้)
+ห้ามตอบคำถามที่ไม่เกี่ยวข้องกับคอมพิวเตอร์หรือฮาร์ดแวร์โดยเด็ดขาด 
+ส่งข้อมูลกลับมาในรูปแบบ JSON ตามโครงสร้างต่อไปนี้:
+{
+  "reply": "คำตอบของคุณ (ภาษาไทย เป็นธรรมชาติ เป็นกันเอง มีความกระตือรือร้นในการช่วยเหลือ)",
+  "presets": [
+    { "id": "รหัสสเปค (เช่น anim, emu, budget)", "label": "ชื่อปุ่มแนะนำสเปค" }
+  ]
+}
+รหัสสเปค (Presets) ที่ระบบหน้าเว็บรองรับมีแค่ 3 ตัวเลือกดังนี้ (ถ้าไม่ต้องแนะนำ ให้ปล่อย presets เป็นอาร์เรย์ว่าง): 
+- 'anim' (สำหรับสายเรนเดอร์ 3D/Animation)
+- 'emu' (สำหรับสายเล่นเกมพร้อมเปิด Emulator เช่น Wuthering Waves)
+- 'budget' (สำหรับสายประหยัดงบ)`;
+
+// Input Safety Guardrails Patterns
+function checkInputGuardrails(input) {
+  const blockedPatterns = [
+    /ignore.*instruction/i,
+    /forget.*instruction/i,
+    /system.*prompt/i,
+    /you are now a/i,
+    /jailbreak/i,
+    /bypass.*safety/i
+  ];
+  
+  for (const pattern of blockedPatterns) {
+    if (pattern.test(input)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// POST /api/chatbot/message
+router.post('/message', async (req, res, next) => {
+  try {
+    const { message, history } = req.body;
+    if (!message) return res.status(400).json({ error: 'Message is required' });
+
+    // 1. Input Guardrail Verification
+    if (checkInputGuardrails(message)) {
+      return res.json({
+        reply: '⚠️ ระบบแชทบอตปฏิเสธการตอบกลับเนื่องจากตรวจพบความพยายามในการป้อนคำสั่งล้างค่าความปลอดภัยระบบ (Prompt Injection / Jailbreak Bypass) กรุณาถามคำถามเกี่ยวกับฮาร์ดแวร์คอมพิวเตอร์เท่านั้นครับ',
+        presets: []
+      });
+    }
+
+    // Check API Key
+    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY.includes('your_gemini')) {
+      return res.json({
+        reply: '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY ในไฟล์ `.env` ของระบบหลังบ้านครับ กรุณาใส่ API Key ให้เรียบร้อยแล้วรีสตาร์ทเซิร์ฟเวอร์ครับ',
+        presets: []
+      });
+    }
+
+    // 2. Context Injection for Order Queries
+    let orderContext = "";
+    const orderMatch = message.match(/ORD-\d{4}/i);
+    if (orderMatch) {
+      const orderId = orderMatch[0].toUpperCase();
+      try {
+        const db = require('../config/db');
+        let order = null;
+
+        if (db.isFallback()) {
+          const fs = require('fs').promises;
+          const path = require('path');
+          const ordersFilePath = path.join(__dirname, '../orders.json');
+          try {
+            const fileData = await fs.readFile(ordersFilePath, 'utf8');
+            const orders = JSON.parse(fileData);
+            order = orders.find(o => o.id === orderId);
+          } catch (err) {
+            // file doesn't exist
+          }
+          // Defaults
+          if (!order) {
+            if (orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
+            if (orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
+          }
+        } else {
+          const [rows] = await db.query('SELECT * FROM orders WHERE id = ?', [orderId]);
+          if (rows && rows.length > 0) {
+            const r = rows[0];
+            order = {
+              id: r.id,
+              customer_name: r.customer_name,
+              assembly_type: r.assembly_type,
+              total_price: parseFloat(r.total_price),
+              status: r.status
+            };
+          } else {
+            // Defaults
+            if (orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
+            if (orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
+          }
+        }
+
+        if (order) {
+          const statusTh = {
+            'assembling': 'กำลังประกอบเครื่องคอมพิวเตอร์',
+            'shipped': 'จัดส่งสินค้าเรียบร้อยแล้ว',
+            'completed': 'เสร็จสิ้นคำสั่งซื้อ',
+            'pending': 'รอยืนยันคำสั่งซื้อ'
+          }[order.status] || order.status;
+
+          const assemblyTh = {
+            'premium': 'ประกอบพรีเมียม (จัดสายสวยงาม)',
+            'standard': 'ประกอบมาตรฐาน',
+            'none': 'นำชิ้นส่วนไปประกอบเอง'
+          }[order.assembly_type] || order.assembly_type;
+
+          orderContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ลูกค้ากำลังถามถึงออเดอร์หมายเลข ${order.id} ชื่องผู้สั่งซื้อคือ: "${order.customer_name}", รูปแบบบริการประกอบ: "${assemblyTh}", ราคาสุทธิ: ฿${order.total_price.toLocaleString()} บาท, สถานะปัจจุบัน: "${statusTh}"]`;
+        } else {
+          orderContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ไม่พบออเดอร์หมายเลข ${orderId} ในระบบฐานข้อมูล ลูกค้าอาจจะพิมพ์รหัสผิด]`;
+        }
+      } catch (err) {
+        console.error('Failed to inject order context:', err);
+      }
+    }
+
+    // 2.5 Catalog Injection
+    let catalogContext = "";
+    try {
+      const db = require('../config/db');
+      let productsText = "";
+      if (db.isFallback()) {
+        const mockProducts = [
+          { name: "AMD Ryzen 5 5600G", price: 4590 },
+          { name: "Intel Core i5-12400F", price: 4690 },
+          { name: "Intel Core i3-12100F", price: 3150 },
+          { name: "AMD Ryzen 7 5700X", price: 6090 },
+          { name: "ASUS PRIME H610M-K D4", price: 2390 },
+          { name: "GIGABYTE B650M K", price: 4790 },
+          { name: "KINGSTON FURY BEAST 16GB (8x2) DDR4 3200", price: 1550 },
+          { name: "ZOTAC GAMING RTX 3060 TWIN EDGE", price: 10490 },
+          { name: "WD BLACK SN770 500GB", price: 1890 },
+          { name: "CORSAIR CV650 650W", price: 2190 }
+        ];
+        productsText = mockProducts.map(p => `- ${p.name} (฿${p.price})`).join('\n');
+      } else {
+        const [rows] = await db.query('SELECT brand, model, price FROM products LIMIT 50');
+        productsText = rows.map(p => `- ${p.brand} ${p.model} (฿${parseFloat(p.price).toLocaleString()})`).join('\n');
+      }
+      catalogContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: รายการสินค้าบางส่วนที่มีในร้านตอนนี้:\n${productsText}\nหากลูกค้าให้จัดสเปค กรุณาอ้างอิงสินค้าและราคาเหล่านี้เป็นหลัก]`;
+    } catch (err) {
+      console.error('Failed to inject catalog context:', err);
+    }
+
+    // 3. Short-Term Memory Integration (History Parser)
+    let contents = [];
+    if (Array.isArray(history) && history.length > 0) {
+      // Filter out initial bot messages or empty texts
+      const cleanHistory = history.filter(h => h.text && h.text.trim().length > 0);
+      
+      cleanHistory.forEach(h => {
+        // Map roles to match Gemini API specification: user or model
+        const role = h.role === 'user' ? 'user' : 'model';
+        // Strip HTML tags for clean context parsing
+        const cleanText = h.text.replace(/<[^>]*>/g, '').trim();
+        if (cleanText) {
+          contents.push({
+            role: role,
+            parts: [{ text: cleanText }]
+          });
+        }
+      });
+    }
+
+    // Append current turn message
+    contents.push({
+      role: 'user',
+      parts: [{ text: message + orderContext + catalogContext }]
+    });
+
+    // Alternate roles validation to prevent consecutive same roles in Gemini
+    let alternatingContents = [];
+    let lastRole = null;
+    contents.forEach(item => {
+      if (item.role !== lastRole) {
+        alternatingContents.push(item);
+        lastRole = item.role;
+      } else {
+        // If consecutive roles, append text to existing turn
+        alternatingContents[alternatingContents.length - 1].parts[0].text += '\n' + item.parts[0].text;
+      }
+    });
+
+    // Call Gemini API with alternating multi-turn conversation history
+    const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: alternatingContents,
+        config: {
+            systemInstruction: SYSTEM_INSTRUCTION,
+            responseMimeType: "application/json",
+            temperature: 0.7,
+        }
+    });
+
+    const responseText = response.text;
+    const jsonResponse = JSON.parse(responseText);
+
+    res.json(jsonResponse);
+  } catch (error) {
+    next(error);
+  }
+});
+
+module.exports = router;

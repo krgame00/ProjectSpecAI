@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart PC Builder | จัดสเปคคอมพิวเตอร์ด้วย AI</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: oklch(20% 0.01 250);
+            --surface: oklch(28% 0.01 250);
+            --surface-hover: oklch(35% 0.01 250);
+            --fg: oklch(98% 0.005 250);
+            --muted: oklch(65% 0.01 250);
+            --border: oklch(40% 0.01 250);
+            --accent: oklch(75% 0.15 200); /* Neon Cyan */
+            --accent-transparent: oklch(75% 0.15 200 / 0.15);
+            --danger: oklch(65% 0.15 20);
+            --danger-bg: oklch(65% 0.15 20 / 0.15);
+            --success: oklch(75% 0.15 150);
+            --success-bg: oklch(75% 0.15 150 / 0.15);
+            --warning: oklch(80% 0.15 80);
+            --warning-bg: oklch(80% 0.15 80 / 0.15);
+            
+            --font-display: 'Inter', system-ui, sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg); color: var(--fg); font-family: var(--font-body); line-height: 1.5; min-height: 100vh; }
+        
+        /* Layouts */
+        .top-nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: sticky; top: 0; z-index: 50; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .nav-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--fg); letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.5rem; }
+        .logo span { color: var(--accent); }
+        .admin-toggle-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; transition: 0.2s; font-size: 0.85rem; font-weight: 600;}
+        .admin-toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+        
+        .container { max-width: 1400px; margin: 2rem auto; padding: 0 2rem; padding-bottom: 100px; }
+        .grid-layout { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; }
+
+        /* General styles */
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.15rem; margin-bottom: 1rem; color: var(--fg); }
+        hr { border: 0; height: 1px; background: var(--border); margin: 1.5rem 0; }
+        
+        /* Sidebar */
+        .sidebar { display: flex; flex-direction: column; gap: 1rem; position: sticky; top: 6rem; }
+        .total-price-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+        .total-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .total-label { font-size: 0.95rem; color: var(--fg); font-weight: 600; }
+        .total-value { font-size: 1.5rem; font-family: var(--font-mono); font-weight: 700; color: var(--accent); text-shadow: 0 0 10px var(--accent-transparent); text-align: right; }
+        .checkout-btn { width: 100%; background: var(--accent); color: var(--bg); font-weight: bold; border: none; padding: 0.75rem; border-radius: 8px; margin-top: 1rem; cursor: pointer; font-size: 1rem; transition: opacity 0.2s;}
+        .checkout-btn:hover { opacity: 0.9; }
+        .checkout-btn:disabled { background: var(--surface-hover); color: var(--muted); cursor: not-allowed; border: 1px solid var(--border); }
+
+        .category-list { list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .category-item { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+        .category-item:last-child { border-bottom: none; }
+        .category-item:hover { background: var(--surface-hover); }
+        .category-item.active { background: var(--surface-hover); border-left: 4px solid var(--accent); padding-left: calc(1.25rem - 4px); }
+        .cat-header { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .cat-name { display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; }
+        .cat-status { color: var(--success); font-size: 0.9rem; }
+        .cat-selected-item { font-size: 0.85rem; color: var(--accent); margin-top: 0.5rem; }
+        .item-name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; line-height: 1.4; }
+        .sidebar-remove-btn { background: transparent; color: var(--danger); border: 1px solid var(--danger); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-top: 0.5rem; width: 100%; transition: all 0.2s; }
+        .sidebar-remove-btn:hover { background: var(--danger); color: var(--bg); }
+
+        /* Main Content */
+        .main-content { display: flex; flex-direction: column; gap: 1.5rem; }
+        .alert-box { padding: 1rem 1.25rem; border-radius: 8px; font-size: 0.95rem; display: flex; gap: 0.75rem; align-items: flex-start; }
+        .alert-success { background: var(--success-bg); color: var(--success); border: 1px solid var(--success); }
+        .alert-danger { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger); }
+        .alert-warning { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning); }
+        .alert-box ul { margin-left: 1.5rem; margin-top: 0.25rem; }
+
+        .category-title { background: var(--surface); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+        .tooltip-icon { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--border); color: var(--fg); font-size: 0.85rem; font-weight: bold; cursor: help; position: relative; }
+        .tooltip-icon:hover::after { content: attr(data-tooltip); position: absolute; bottom: 135%; right: 0; width: 250px; background: var(--bg); color: var(--fg); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.85rem; font-weight: normal; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 10; pointer-events: none; }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+        .product-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: 1rem; transition: all 0.2s; position: relative; cursor: pointer; }
+        .product-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); background: var(--surface-hover); }
+        .product-card.selected { border-color: var(--accent); background: var(--surface-hover); box-shadow: 0 0 15px var(--accent-transparent); }
+        .product-img { width: 100%; aspect-ratio: 1; background: var(--bg); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+        .product-img img { width: 100%; height: 100%; object-fit: contain; }
+        .product-name { font-size: 1rem; font-weight: 600; line-height: 1.4; flex: 1; color: var(--fg); }
+        .product-specs { font-size: 0.85rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .product-price { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700; color: var(--fg); }
+        .add-btn { background: transparent; border: 1px solid var(--border); color: var(--fg); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 400; cursor: pointer; transition: all 0.2s; }
+        .product-card:hover .add-btn { border-color: var(--accent); color: var(--accent); }
+        .product-card.selected .add-btn { background: var(--accent); color: var(--bg); border-color: var(--accent); font-size: 1.25rem; }
+
+        /* Chatbot */
+        .chat-fab { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; background: var(--accent); color: var(--bg); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 100; transition: transform 0.2s, box-shadow 0.2s; }
+        .chat-fab:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.7); }
+        .chatbot-wrapper { position: fixed; bottom: 2rem; right: 2rem; width: 380px; height: 550px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,0.6); z-index: 100; overflow: hidden; transform-origin: bottom right; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .chat-header { background: var(--bg); padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
+        .chat-header-left { display: flex; align-items: center; gap: 0.75rem; }
+        .status-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent); }
+        .chat-body { flex: 1; overflow-y: auto; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+        .chat-body::-webkit-scrollbar { width: 6px; }
+        .chat-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        .msg { max-width: 85%; padding: 0.85rem 1rem; border-radius: 12px; font-size: 0.95rem; line-height: 1.4; }
+        .msg.bot { background: var(--bg); align-self: flex-start; border: 1px solid var(--border); border-bottom-left-radius: 2px; }
+        .msg.user { background: var(--accent-transparent); color: var(--accent); border: 1px solid var(--accent); align-self: flex-end; border-bottom-right-radius: 2px; }
+        .quick-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .quick-btn { background: var(--surface); border: 1px solid var(--accent); color: var(--accent); padding: 0.4rem 0.75rem; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+        .quick-btn:hover { background: var(--accent); color: var(--bg); }
+        .chat-input { padding: 1rem; background: var(--bg); border-top: 1px solid var(--border); display: flex; gap: 0.75rem; }
+        .chat-input input { flex: 1; padding: 0.75rem 1rem; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); font-family: var(--font-body); outline: none; }
+        .chat-input input:focus { border-color: var(--accent); }
+        .send-btn { background: var(--accent); color: var(--bg); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; transition: opacity 0.2s; }
+        .send-btn:hover { opacity: 0.9; }
+        .typing-indicator { font-size: 0.85rem; color: var(--muted); padding-left: 0.5rem; font-style: italic; }
+
+        /* Checkout View */
+        .checkout-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: start; }
+        .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .checkout-item-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+        .checkout-item-row:last-child { border-bottom: none; }
+        .checkout-item-info { display: flex; align-items: center; gap: 1rem; }
+        .checkout-item-img { width: 50px; height: 50px; background: var(--bg); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .checkout-item-img img { width: 80%; height: 80%; object-fit: contain; }
+        .checkout-item-price { font-family: var(--font-mono); font-weight: 600; }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+        .radio-label { display: flex; align-items: center; gap: 1rem; background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: 0.2s; }
+        .radio-label:hover { border-color: var(--accent-transparent); }
+        .radio-label input { accent-color: var(--accent); transform: scale(1.2); }
+        .radio-label span { display: flex; justify-content: space-between; width: 100%; }
+        
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--muted); }
+        .form-control { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+        .form-control:focus { border-color: var(--accent); outline: none; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 1.05rem; }
+        .summary-total { display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-top: 1rem; font-family: var(--font-mono); }
+        
+        .btn-outline { background: transparent; border: 1px solid var(--muted); color: var(--fg); padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        .btn-outline:hover { background: var(--surface-hover); }
+
+        /* Admin View */
+        .admin-sidebar { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .admin-menu { list-style: none; }
+        .admin-menu li { padding: 1rem 1.5rem; cursor: pointer; border-bottom: 1px solid var(--border); transition: 0.2s; display: flex; align-items: center; gap: 0.75rem;}
+        .admin-menu li:hover { background: var(--surface-hover); }
+        .admin-menu li.active { background: var(--surface-hover); border-left: 4px solid var(--accent); color: var(--accent); font-weight: 600;}
+        
+        .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .data-table th, .data-table td { padding: 1rem; border-bottom: 1px solid var(--border); }
+        .data-table th { font-weight: 600; color: var(--muted); font-size: 0.9rem; }
+        .data-table tr:hover td { background: var(--surface-hover); }
+        
+        .badge { display: inline-block; padding: 0.35rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .badge-pending { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning); }
+        .badge-assembling { background: var(--accent-transparent); color: var(--accent); border: 1px solid var(--accent); }
+        .badge-shipped { background: var(--success-bg); color: var(--success); border: 1px solid var(--success); }
+        
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+        .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+        .stat-val { font-size: 2rem; font-weight: 700; color: var(--accent); margin-top: 0.5rem; font-family: var(--font-mono); }
+
+        /* Modal Auth */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 200; display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; width: 100%; max-width: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); overflow: hidden; }
+        .modal-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h3 { margin: 0; font-size: 1.25rem; }
+        .close-btn { background: transparent; border: none; color: var(--muted); font-size: 1.25rem; cursor: pointer; }
+        .close-btn:hover { color: var(--danger); }
+        .modal-body { padding: 1.5rem; }
+        
+        .auth-tabs { display: flex; gap: 1.5rem; margin-bottom: -1px; }
+        .auth-tab { background: transparent; border: none; color: var(--muted); font-size: 1.1rem; font-weight: 600; padding: 0.5rem 0; cursor: pointer; border-bottom: 2px solid transparent; transition: 0.2s; }
+        .auth-tab:hover { color: var(--fg); }
+        .auth-tab.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+        @media (max-width: 1100px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; top: auto; }
+            .chatbot-wrapper { position: relative; bottom: 0; right: 0; width: 100%; margin-top: 2rem; height: 500px; }
+            .checkout-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-content">
+                <div class="logo">Smart <span>PC Builder</span></div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div style="font-size: 0.95rem; color: var(--muted); display: none; @media(min-width: 768px){display: block;}">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
+                    
+                    <button v-if="userRole === 'admin'" class="admin-toggle-btn" @click="toggleAdmin">
+                        {{ currentView === 'admin' ? '← กลับหน้าร้าน' : '🛠 ระบบหลังบ้าน' }}
+                    </button>
+
+                    <div v-if="currentUser" style="display: flex; gap: 1rem; align-items: center;">
+                        <span style="font-size: 0.9rem; color: var(--accent);">👤 {{ currentUser.name }} ({{ userRole }})</span>
+                        <button class="btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" @click="logout">ออกจากระบบ</button>
+                    </div>
+                    <div v-else>
+                        <button class="btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" @click="showLoginModal = true">เข้าสู่ระบบ</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Builder View -->
+        <div class="container" v-if="currentView === 'builder'">
+            <div class="grid-layout">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="total-price-box">
+                        <div class="total-header">
+                            <span class="total-label">ยอดรวมทั้งสิ้น</span>
+                        </div>
+                        <div class="total-value">฿{{ totalPrice.toLocaleString() }}</div>
+                        <button class="checkout-btn" @click="handleCheckoutClick" :disabled="!hasAnyComponent">
+                            🛒 ดำเนินการสั่งซื้อ
+                        </button>
+                    </div>
+
+                    <ul class="category-list">
+                        <li v-for="cat in categories" :key="cat.id" 
+                            :class="['category-item', { active: activeCategory === cat.id }]"
+                            @click="activeCategory = cat.id">
+                            <div class="cat-header">
+                                <span class="cat-name">{{ cat.name }}</span>
+                                <span class="cat-status" v-if="build[cat.id]">✅</span>
+                            </div>
+                            <div class="cat-selected-item" v-if="build[cat.id]">
+                                <div class="item-name">{{ getItem(cat.id, build[cat.id]).name }}</div>
+                                <button class="sidebar-remove-btn" @click.stop="selectItem(cat.id, null)">✕ นำออก (Remove)</button>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Alerts & Disclaimer -->
+                    <div class="alert-box alert-warning">
+                        <div>⚠️</div>
+                        <div>
+                            <strong>คำเตือนเรื่องขนาด (Disclaimer):</strong> ระบบตรวจสอบเฉพาะความเข้ากันได้ทางเทคนิค (ซ็อกเก็ต, กำลังไฟ, ประเภท RAM) 
+                            โปรดตรวจสอบขนาดทางกายภาพ (Physical Dimensions) เช่น ความยาวของการ์ดจอกับเคสคอมพิวเตอร์ของคุณอีกครั้งก่อนตัดสินใจซื้อ
+                        </div>
+                    </div>
+
+                    <div v-if="compatibilityIssues.length === 0 && hasAnyComponent" class="alert-box alert-success">
+                        <div>✅</div>
+                        <div>อุปกรณ์ที่เลือกสามารถทำงานร่วมกันได้ตามหลักการทางไฟฟ้าและเทคนิค (Hardware Compatible)</div>
+                    </div>
+
+                    <div v-if="compatibilityIssues.length > 0" class="alert-box alert-danger">
+                        <div>❌</div>
+                        <div>
+                            <strong>พบข้อขัดแย้งของฮาร์ดแวร์:</strong>
+                            <ul>
+                                <li v-for="(issue, index) in compatibilityIssues" :key="index">{{ issue }}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Active Category Header -->
+                    <div class="category-title" v-if="activeCategoryInfo">
+                        <span>{{ activeCategoryInfo.name }}</span>
+                        <span class="tooltip-icon" :data-tooltip="activeCategoryInfo.tooltip">?</span>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div class="product-grid" v-if="activeCategory">
+                        <!-- Products -->
+                        <div class="product-card" v-for="item in catalog[activeCategory]" :key="item.id" 
+                             :class="{ selected: build[activeCategory] === item.id }"
+                             @click="selectItem(activeCategory, item.id)">
+                            <div class="product-img">
+                                <img :src="item.image" :alt="item.name">
+                            </div>
+                            <div class="product-name">{{ item.name }}</div>
+                            <div class="product-specs">
+                                <span v-if="item.socket">Socket: {{ item.socket }}</span>
+                                <span v-if="item.tdp">| TDP: {{ item.tdp }}W</span>
+                                <span v-if="item.ramType">| RAM: {{ item.ramType }}</span>
+                                <span v-if="item.type">| Type: {{ item.type }}</span>
+                                <span v-if="item.wattage">| {{ item.wattage }}W</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">฿{{ item.price.toLocaleString() }}</div>
+                                <button class="add-btn">
+                                    <span v-if="build[activeCategory] === item.id">✓</span>
+                                    <span v-else>+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <!-- Floating Chatbot -->
+            <div class="chatbot-wrapper" v-show="isChatOpen">
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <div class="status-dot"></div>
+                        SpecAI
+                    </div>
+                    <button class="close-btn" @click="isChatOpen = false">✕</button>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <div v-for="(msg, index) in chatHistory" :key="index" :class="['msg', msg.role]">
+                        <div v-html="msg.text"></div>
+                        <div v-if="msg.presets" class="quick-actions">
+                            <button v-for="p in msg.presets" :key="p.id" class="quick-btn" @click="applyPreset(p.id)">
+                                {{ p.label }}
+                            </button>
+                        </div>
+                    </div>
+                    <div v-if="isTyping" class="typing-indicator">AI กำลังวิเคราะห์...</div>
+                </div>
+                <div class="chat-input">
+                    <input 
+                        type="text" 
+                        v-model="userInput" 
+                        @keyup.enter="sendMessage" 
+                        placeholder="พิมพ์เป้าหมาย เช่น เน้นเล่นเกม Wuthering..."
+                    >
+                    <button class="send-btn" @click="sendMessage">➔</button>
+                </div>
+            </div>
+
+            <!-- Chatbot FAB -->
+            <button class="chat-fab" v-show="!isChatOpen" @click="isChatOpen = true" title="เปิดแชตบอต">
+                💬
+            </button>
+        </div>
+
+        <!-- Checkout View -->
+        <div class="container" v-else-if="currentView === 'checkout'">
+            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+                <button class="btn-outline" @click="currentView = 'builder'">← กลับไปหน้าจัดสเปค</button>
+                <h2 style="margin: 0;">สรุปรายการสั่งซื้อ</h2>
+            </div>
+            
+            <div class="checkout-grid">
+                <!-- Left: Items & Shipping -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="panel">
+                        <h3>รายการฮาร์ดแวร์ที่เลือก</h3>
+                        <div v-for="cat in categories" :key="'co-'+cat.id">
+                            <div v-if="build[cat.id]" class="checkout-item-row">
+                                <div class="checkout-item-info">
+                                    <div class="checkout-item-img">
+                                        <img :src="getItem(cat.id, build[cat.id]).image" alt="">
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.85rem; color: var(--muted);">{{ cat.name }}</div>
+                                        <div style="font-weight: 500;">{{ getItem(cat.id, build[cat.id]).name }}</div>
+                                    </div>
+                                </div>
+                                <div class="checkout-item-price">฿{{ getItem(cat.id, build[cat.id]).price.toLocaleString() }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <h3>ข้อมูลการจัดส่ง</h3>
+                        <div class="form-group">
+                            <label>ชื่อ-นามสกุล ผู้รับ</label>
+                            <input type="text" class="form-control" v-model="customer.name" placeholder="ระบุชื่อ-นามสกุล">
+                        </div>
+                        <div class="form-group">
+                            <label>ที่อยู่สำหรับจัดส่ง</label>
+                            <textarea class="form-control" v-model="customer.address" rows="3" placeholder="ระบุที่อยู่จัดส่งแบบครบถ้วน"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>เบอร์โทรศัพท์</label>
+                            <input type="text" class="form-control" v-model="customer.phone" placeholder="08X-XXX-XXXX">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Summary & Assembly Options -->
+                <div class="panel" style="position: sticky; top: 6rem;">
+                    <h3>บริการประกอบเครื่อง</h3>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" v-model="assemblyChoice" value="none">
+                            <span>นำชิ้นส่วนไปประกอบเอง <span>ฟรี</span></span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" v-model="assemblyChoice" value="standard">
+                            <span>ประกอบคอมพิวเตอร์มาตรฐาน <span>+฿500</span></span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" v-model="assemblyChoice" value="premium">
+                            <span>ประกอบพรีเมียม (จัดสายไฟสวยงาม) <span>+฿1,000</span></span>
+                        </label>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="summary-row">
+                        <span style="color: var(--muted)">มูลค่าสินค้า</span>
+                        <span>฿{{ totalPrice.toLocaleString() }}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span style="color: var(--muted)">ค่าบริการประกอบ</span>
+                        <span>฿{{ assemblyFee.toLocaleString() }}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span style="color: var(--muted)">ค่าจัดส่ง</span>
+                        <span>ฟรี</span>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>ยอดสุทธิ</span>
+                        <span>฿{{ grandTotal.toLocaleString() }}</span>
+                    </div>
+
+                    <button class="checkout-btn" style="margin-top: 2rem;" @click="placeOrder">ยืนยันคำสั่งซื้อ (Confirm Order)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard View -->
+        <div class="container" v-else-if="currentView === 'admin' && userRole === 'admin'">
+            <h2>ระบบจัดการหลังบ้าน (Admin Panel)</h2>
+            <div class="grid-layout">
+                <aside class="admin-sidebar">
+                    <ul class="admin-menu">
+                        <li :class="{active: adminTab === 'dashboard'}" @click="adminTab = 'dashboard'">📊 Dashboard ภาพรวม</li>
+                        <li :class="{active: adminTab === 'orders'}" @click="adminTab = 'orders'">📦 รายการสั่งซื้อ (Orders)</li>
+                        <li :class="{active: adminTab === 'inventory'}" @click="adminTab = 'inventory'">⚙️ คลังสินค้า (Inventory)</li>
+                    </ul>
+                </aside>
+
+                <main>
+                    <!-- Admin Dashboard Tab -->
+                    <div v-if="adminTab === 'dashboard'">
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div>ยอดขายทั้งหมด (Total Sales)</div>
+                                <div class="stat-val">฿{{ totalSales.toLocaleString() }}</div>
+                            </div>
+                            <div class="stat-card">
+                                <div>ออเดอร์ทั้งหมด (Total Orders)</div>
+                                <div class="stat-val">{{ orders.length }}</div>
+                            </div>
+                            <div class="stat-card">
+                                <div>รอประกอบ (Pending Assembly)</div>
+                                <div class="stat-val">{{ pendingAssemblies }}</div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <h3>กิจกรรมล่าสุด</h3>
+                            <p style="color: var(--muted)">ระบบจำลองภาพรวมข้อมูลจากคำสั่งซื้อที่เข้ามาในระบบ คุณสามารถดูและอัปเดตสถานะของออเดอร์ได้ที่แท็บ "รายการสั่งซื้อ"</p>
+                        </div>
+                    </div>
+
+                    <!-- Admin Orders Tab -->
+                    <div v-if="adminTab === 'orders'" class="panel" style="padding: 0; overflow-x: auto;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>หมายเลข (Order ID)</th>
+                                    <th>ลูกค้า (Customer)</th>
+                                    <th>รูปแบบประกอบ</th>
+                                    <th>ยอดสุทธิ (Total)</th>
+                                    <th>สถานะ (Status)</th>
+                                    <th>จัดการ (Action)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="order in orders" :key="order.id">
+                                    <td style="font-family: var(--font-mono);">{{ order.id }}</td>
+                                    <td>{{ order.customer }}</td>
+                                    <td>
+                                        <span v-if="order.assembly === 'none'">ประกอบเอง</span>
+                                        <span v-else-if="order.assembly === 'standard'" style="color: var(--accent);">มาตรฐาน</span>
+                                        <span v-else-if="order.assembly === 'premium'" style="color: var(--warning);">พรีเมียม</span>
+                                    </td>
+                                    <td style="font-family: var(--font-mono);">฿{{ order.total.toLocaleString() }}</td>
+                                    <td>
+                                        <span :class="['badge', 'badge-' + order.status]">
+                                            {{ getStatusLabel(order.status) }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto;" v-model="order.status">
+                                            <option value="pending">รอดำเนินการ</option>
+                                            <option value="assembling">กำลังประกอบ</option>
+                                            <option value="shipped">จัดส่งแล้ว</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr v-if="orders.length === 0">
+                                    <td colspan="6" style="text-align: center; color: var(--muted); padding: 2rem;">ยังไม่มีคำสั่งซื้อในระบบ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Admin Inventory Tab -->
+                    <div v-if="adminTab === 'inventory'" class="panel">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <h3>จัดการสินค้าในระบบ</h3>
+                            <select class="form-control" style="width: 200px;" v-model="inventoryCategory">
+                                <option v-for="cat in categories" :key="'inv-'+cat.id" :value="cat.id">{{ cat.name }}</option>
+                            </select>
+                        </div>
+                        <table class="data-table" v-if="catalog[inventoryCategory]">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>ชื่อสินค้า (Product Name)</th>
+                                    <th>ราคา (Price)</th>
+                                    <th>สเปคเบื้องต้น</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in catalog[inventoryCategory]" :key="'inv-item-'+item.id">
+                                    <td style="font-family: var(--font-mono); color: var(--muted);">{{ item.id }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>
+                                        <input type="number" class="form-control" style="padding: 0.25rem 0.5rem; width: 120px;" v-model.number="item.price">
+                                    </td>
+                                    <td style="font-size: 0.85rem; color: var(--muted);">
+                                        {{ item.socket || item.type || item.wattage ? (item.socket || item.type || item.wattage+'W') : '-' }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Auth Modal -->
+        <div class="modal-overlay" v-if="showLoginModal" @click.self="showLoginModal = false">
+            <div class="modal-content">
+                <div class="modal-header" style="padding-bottom: 0;">
+                    <div class="auth-tabs">
+                        <button :class="['auth-tab', { active: authTab === 'login' }]" @click="authTab = 'login'">เข้าสู่ระบบ</button>
+                        <button :class="['auth-tab', { active: authTab === 'register' }]" @click="authTab = 'register'">สมัครสมาชิก</button>
+                    </div>
+                    <button class="close-btn" style="margin-top: -1rem;" @click="showLoginModal = false">✕</button>
+                </div>
+                
+                <!-- Login Body -->
+                <div class="modal-body" v-if="authTab === 'login'">
+                    <div class="form-group">
+                        <label>ชื่อผู้ใช้งาน</label>
+                        <input type="text" class="form-control" v-model="loginForm.username" placeholder="กรอกชื่อผู้ใช้ (พิมพ์ admin เพื่อเป็นแอดมิน)" @keyup.enter="handleLoginSubmit">
+                    </div>
+                    <div class="form-group">
+                        <label>รหัสผ่าน</label>
+                        <input type="password" class="form-control" v-model="loginForm.password" placeholder="••••••••" @keyup.enter="handleLoginSubmit">
+                    </div>
+                    <button class="checkout-btn" style="margin-top: 1.5rem;" @click="handleLoginSubmit">เข้าสู่ระบบ</button>
+
+                    <div style="margin-top: 1.5rem; text-align: center; border-top: 1px dashed var(--border); padding-top: 1.5rem;">
+                        <span style="color: var(--muted); font-size: 0.85rem;">--- โหมดจำลอง (Quick Login) ---</span>
+                        <div style="display: flex; gap: 1rem; margin-top: 0.75rem;">
+                            <button class="checkout-btn" style="margin-top: 0; background: var(--surface-hover); color: var(--fg); border: 1px solid var(--border); font-size: 0.85rem; padding: 0.5rem;" @click="login('user')">User Demo</button>
+                            <button class="checkout-btn" style="margin-top: 0; font-size: 0.85rem; padding: 0.5rem;" @click="login('admin')">Admin Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Body -->
+                <div class="modal-body" v-if="authTab === 'register'">
+                    <div class="form-group">
+                        <label>ชื่อ-นามสกุล</label>
+                        <input type="text" class="form-control" v-model="registerForm.name" placeholder="ชื่อที่จะแสดงในระบบ">
+                    </div>
+                    <div class="form-group">
+                        <label>ชื่อผู้ใช้งาน (Username)</label>
+                        <input type="text" class="form-control" v-model="registerForm.username" placeholder="ตั้งชื่อผู้ใช้ของคุณ">
+                    </div>
+                    <div class="form-group">
+                        <label>รหัสผ่าน</label>
+                        <input type="password" class="form-control" v-model="registerForm.password" placeholder="ตั้งรหัสผ่าน">
+                    </div>
+                    <button class="checkout-btn" style="margin-top: 1.5rem;" @click="handleRegisterSubmit">สร้างบัญชี</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const { createApp, ref, computed, reactive } = Vue;
+
+        const catalogData = {
+            cpu: [
+                { id: 'c1', name: 'Intel Core i5-13400F (65W)', price: 6500, socket: 'LGA1700', tdp: 65, image: 'https://placehold.co/200x200/1e1e2e/00e5ff?text=i5' },
+                { id: 'c2', name: 'Intel Core i7-14700K (125W)', price: 15000, socket: 'LGA1700', tdp: 125, image: 'https://placehold.co/200x200/1e1e2e/00e5ff?text=i7' },
+                { id: 'c3', name: 'AMD Ryzen 5 7600 (65W)', price: 7500, socket: 'AM5', tdp: 65, image: 'https://placehold.co/200x200/1e1e2e/ff0055?text=R5' },
+                { id: 'c4', name: 'AMD Ryzen 9 7950X (170W)', price: 22000, socket: 'AM5', tdp: 170, image: 'https://placehold.co/200x200/1e1e2e/ff0055?text=R9' }
+            ],
+            mobo: [
+                { id: 'm1', name: 'ASUS TUF GAMING B760M-PLUS', price: 5500, socket: 'LGA1700', ramType: 'DDR5', image: 'https://placehold.co/200x200/1e1e2e/aaaaaa?text=ASUS' },
+                { id: 'm2', name: 'MSI PRO B650-P WIFI', price: 6000, socket: 'AM5', ramType: 'DDR5', image: 'https://placehold.co/200x200/1e1e2e/aaaaaa?text=MSI' },
+                { id: 'm3', name: 'GIGABYTE H610M S2H', price: 2800, socket: 'LGA1700', ramType: 'DDR4', image: 'https://placehold.co/200x200/1e1e2e/aaaaaa?text=Gigabyte' }
+            ],
+            ram: [
+                { id: 'r1', name: 'Corsair Vengeance 16GB (2x8) DDR5', price: 2500, type: 'DDR5', image: 'https://placehold.co/200x200/1e1e2e/ffe100?text=RAM' },
+                { id: 'r2', name: 'Kingston FURY 32GB (2x16) DDR5', price: 4500, type: 'DDR5', image: 'https://placehold.co/200x200/1e1e2e/ffe100?text=RAM' },
+                { id: 'r3', name: 'Klevv CRAS 16GB (2x8) DDR4', price: 1500, type: 'DDR4', image: 'https://placehold.co/200x200/1e1e2e/ffe100?text=RAM' }
+            ],
+            gpu: [
+                { id: 'g1', name: 'NVIDIA RTX 4060 8GB', price: 11000, tdp: 115, image: 'https://placehold.co/200x200/1e1e2e/00e5ff?text=4060' },
+                { id: 'g2', name: 'NVIDIA RTX 4070 SUPER 12GB', price: 24000, tdp: 220, image: 'https://placehold.co/200x200/1e1e2e/00e5ff?text=4070S' },
+                { id: 'g3', name: 'AMD Radeon RX 7800 XT 16GB', price: 19000, tdp: 263, image: 'https://placehold.co/200x200/1e1e2e/ff0055?text=7800XT' }
+            ],
+            storage: [
+                { id: 's1', name: 'WD Blue SN580 1TB NVMe', price: 2200, image: 'https://placehold.co/200x200/1e1e2e/0088ff?text=SSD' },
+                { id: 's2', name: 'Samsung 990 PRO 2TB NVMe', price: 6500, image: 'https://placehold.co/200x200/1e1e2e/0088ff?text=SSD' }
+            ],
+            psu: [
+                { id: 'p1', name: 'Corsair CX650M (650W)', price: 2300, wattage: 650, image: 'https://placehold.co/200x200/1e1e2e/ffffff?text=PSU' },
+                { id: 'p2', name: 'Seasonic Focus GX-850 (850W)', price: 4500, wattage: 850, image: 'https://placehold.co/200x200/1e1e2e/ffffff?text=PSU' }
+            ],
+            case: [
+                { id: 'case1', name: 'NZXT H510 Flow', price: 2800, image: 'https://placehold.co/200x200/1e1e2e/00ffaa?text=Case' },
+                { id: 'case2', name: 'Lian Li O11 Dynamic', price: 4500, image: 'https://placehold.co/200x200/1e1e2e/00ffaa?text=Case' },
+                { id: 'case3', name: 'Montech AIR 900 ARGB', price: 1800, image: 'https://placehold.co/200x200/1e1e2e/00ffaa?text=Case' }
+            ]
+        };
+
+        const presetsData = {
+            'anim': { cpu: 'c2', mobo: 'm1', ram: 'r2', gpu: 'g2', storage: 's2', psu: 'p2', case: 'case2' },
+            'emu': { cpu: 'c4', mobo: 'm2', ram: 'r2', gpu: 'g1', storage: 's1', psu: 'p2', case: 'case1' },
+            'budget': { cpu: 'c1', mobo: 'm3', ram: 'r3', gpu: 'g1', storage: 's1', psu: 'p1', case: 'case3' }
+        };
+
+        createApp({
+            setup() {
+                // Auth State
+                const currentUser = ref(null);
+                const userRole = ref('guest'); // 'guest', 'user', 'admin'
+                const showLoginModal = ref(false);
+                const authTab = ref('login'); // 'login', 'register'
+                const loginForm = reactive({ username: '', password: '' });
+                const registerForm = reactive({ name: '', username: '', password: '' });
+
+                // Application State
+                const currentView = ref('builder'); // 'builder', 'checkout', 'admin'
+                const adminTab = ref('dashboard'); // 'dashboard', 'orders', 'inventory'
+                const inventoryCategory = ref('cpu');
+                
+                // Storefront State
+                const categories = [
+                    { id: 'cpu', name: 'CPU', tooltip: 'สมองของระบบ ยิ่งคอร์เยอะ ยิ่งทำงานหลายอย่างพร้อมกันได้ดี' },
+                    { id: 'mobo', name: 'Motherboard', tooltip: 'แผงวงจรหลัก *ต้องเลือกซ็อกเก็ตให้ตรงกับแบรนด์ CPU*' },
+                    { id: 'ram', name: 'RAM', tooltip: 'หน่วยความจำชั่วคราว (DDR4 และ DDR5 ใส่ข้ามกันไม่ได้)' },
+                    { id: 'gpu', name: 'GPU (VGA)', tooltip: 'การ์ดจอ รับหน้าที่ประมวลผลกราฟิกและภาพ 3D' },
+                    { id: 'storage', name: 'Storage (SSD)', tooltip: 'พื้นที่เก็บข้อมูล เลือกใช้ NVMe SSD จะทำให้เปิดเครื่องไว' },
+                    { id: 'psu', name: 'Power Supply', tooltip: 'ตัวจ่ายไฟ ต้องมีกำลังไฟมากกว่าที่ชิ้นส่วนทั้งหมดใช้รวมกัน' },
+                    { id: 'case', name: 'Case', tooltip: 'เคสคอมพิวเตอร์ ควรตรวจสอบขนาดเมนบอร์ดและการ์ดจอที่รองรับ' }
+                ];
+                const catalog = reactive(catalogData);
+                const build = reactive({ cpu: null, mobo: null, ram: null, gpu: null, storage: null, psu: null, case: null });
+                const activeCategory = ref('cpu');
+                const activeCategoryInfo = computed(() => categories.find(c => c.id === activeCategory.value));
+
+                // Checkout State
+                const assemblyChoice = ref('none');
+                const customer = reactive({ name: '', address: '', phone: '' });
+
+                // Backend Mock State
+                const orders = reactive([
+                    { id: 'ORD-1001', customer: 'สกาย เกมเมอร์', assembly: 'premium', total: 49500, status: 'assembling', date: new Date().toISOString() },
+                    { id: 'ORD-1002', customer: 'สมชาย ไอที', assembly: 'none', total: 15300, status: 'shipped', date: new Date().toISOString() }
+                ]);
+
+                // Chatbot State
+                const chatHistory = reactive([
+                    { 
+                        role: 'bot', 
+                        text: 'สวัสดีครับ! ผมคือ <strong>SpecAI</strong> ผมช่วยคุณจัดสเปคคอมพิวเตอร์ให้ตรงกับการใช้งานที่สุดได้ครับ <br><br>💡 คุณสามารถพิมพ์บอกความต้องการ หรือเลือกจาก Use Case ด้านล่างได้เลยครับ:',
+                        presets: [
+                            { id: 'anim', label: '🎬 สเปคทำงานแอนิเมชัน' },
+                            { id: 'emu', label: '🎮 เล่น Wuthering Waves + อีมู' },
+                            { id: 'budget', label: '💰 สเปคประหยัดงบ (1080p)' }
+                        ]
+                    }
+                ]);
+                const userInput = ref('');
+                const isTyping = ref(false);
+                const isChatOpen = ref(false);
+
+                // Derived Computeds
+                const getItem = (catId, itemId) => catalog[catId].find(i => i.id === itemId);
+                const getPrice = (catId) => build[catId] ? getItem(catId, build[catId])?.price || 0 : 0;
+                const totalPrice = computed(() => categories.reduce((sum, cat) => sum + getPrice(cat.id), 0));
+                const hasAnyComponent = computed(() => Object.values(build).some(val => val !== null));
+                
+                const assemblyFee = computed(() => {
+                    if (assemblyChoice.value === 'standard') return 500;
+                    if (assemblyChoice.value === 'premium') return 1000;
+                    return 0;
+                });
+                const grandTotal = computed(() => totalPrice.value + assemblyFee.value);
+
+                const compatibilityIssues = computed(() => {
+                    const issues = [];
+                    const cCpu = build.cpu ? getItem('cpu', build.cpu) : null;
+                    const cMobo = build.mobo ? getItem('mobo', build.mobo) : null;
+                    const cRam = build.ram ? getItem('ram', build.ram) : null;
+                    const cGpu = build.gpu ? getItem('gpu', build.gpu) : null;
+                    const cPsu = build.psu ? getItem('psu', build.psu) : null;
+
+                    if (cCpu && cMobo && cCpu.socket !== cMobo.socket) issues.push(`ซ็อกเก็ตไม่ตรง: CPU เป็น ${cCpu.socket} แต่เมนบอร์ดรองรับเฉพาะ ${cMobo.socket}`);
+                    if (cMobo && cRam && cMobo.ramType !== cRam.type) issues.push(`ประเภท RAM ไม่ตรง: เมนบอร์ดรองรับ ${cMobo.ramType} แต่คุณเลือก ${cRam.type}`);
+                    if (cPsu) {
+                        let totalTdp = 50;
+                        if (cCpu) totalTdp += cCpu.tdp;
+                        if (cGpu) totalTdp += cGpu.tdp;
+                        const recommendedWattage = totalTdp * 1.3;
+                        if (cPsu.wattage < recommendedWattage) issues.push(`กำลังไฟอาจไม่พอ: ระบบต้องการไฟขั้นต่ำ ${Math.ceil(recommendedWattage)}W แต่ PSU ที่เลือกจ่ายได้ ${cPsu.wattage}W`);
+                    }
+                    return issues;
+                });
+
+                // Admin Computeds
+                const totalSales = computed(() => orders.reduce((sum, ord) => sum + ord.total, 0));
+                const pendingAssemblies = computed(() => orders.filter(o => o.status === 'pending' || o.status === 'assembling').length);
+                const getStatusLabel = (status) => {
+                    const map = { pending: 'รอดำเนินการ', assembling: 'กำลังประกอบ', shipped: 'จัดส่งแล้ว' };
+                    return map[status] || status;
+                };
+
+                // Methods
+                const handleLoginSubmit = () => {
+                    if(!loginForm.username) return alert('กรุณากรอกชื่อผู้ใช้งาน');
+                    // Mock Login Check
+                    if (loginForm.username.toLowerCase() === 'admin') {
+                        userRole.value = 'admin';
+                        currentUser.value = { name: 'Admin Manager' };
+                    } else {
+                        userRole.value = 'user';
+                        currentUser.value = { name: loginForm.username };
+                    }
+                    showLoginModal.value = false;
+                    loginForm.username = '';
+                    loginForm.password = '';
+                };
+
+                const handleRegisterSubmit = () => {
+                    if(!registerForm.name || !registerForm.username) return alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                    alert('สมัครสมาชิกสำเร็จ! กรุณาเข้าสู่ระบบ');
+                    authTab.value = 'login';
+                    loginForm.username = registerForm.username;
+                    registerForm.name = '';
+                    registerForm.username = '';
+                    registerForm.password = '';
+                };
+
+                const login = (role) => {
+                    userRole.value = role;
+                    const name = loginForm.username.trim() || (role === 'admin' ? 'Admin Manager' : 'General User');
+                    currentUser.value = { name: name };
+                    showLoginModal.value = false;
+                    loginForm.username = '';
+                    loginForm.password = '';
+                };
+
+                const logout = () => {
+                    userRole.value = 'guest';
+                    currentUser.value = null;
+                    currentView.value = 'builder';
+                };
+
+                const selectItem = (catId, itemId) => { build[catId] = itemId; };
+                
+                const toggleAdmin = () => { 
+                    if(userRole.value !== 'admin') return;
+                    currentView.value = currentView.value === 'admin' ? 'builder' : 'admin'; 
+                };
+
+                const handleCheckoutClick = () => {
+                    if (!hasAnyComponent.value) return;
+                    if (userRole.value === 'guest') {
+                        showLoginModal.value = true;
+                    } else {
+                        goToCheckout();
+                    }
+                };
+
+                const goToCheckout = () => { 
+                    if (hasAnyComponent.value) {
+                        currentView.value = 'checkout';
+                        // Auto-fill name if user is logged in
+                        if (currentUser.value && !customer.name) {
+                            customer.name = currentUser.value.name;
+                        }
+                    } 
+                };
+                
+                const placeOrder = () => {
+                    if (!customer.name.trim()) return alert('กรุณาระบุชื่อ-นามสกุลผู้รับ');
+                    
+                    const newOrder = {
+                        id: 'ORD-' + String(orders.length + 1001),
+                        customer: customer.name,
+                        assembly: assemblyChoice.value,
+                        total: grandTotal.value,
+                        status: 'pending',
+                        date: new Date().toISOString()
+                    };
+                    orders.unshift(newOrder); // Add to mock backend
+
+                    // Reset form and return
+                    Object.keys(build).forEach(k => build[k] = null);
+                    assemblyChoice.value = 'none';
+                    customer.name = ''; customer.address = ''; customer.phone = '';
+                    currentView.value = 'builder';
+
+                    chatHistory.push({
+                        role: 'bot',
+                        text: `🎉 <strong>รับคำสั่งซื้อสำเร็จ!</strong> <br>หมายเลขคำสั่งซื้อของคุณคือ <span style="color:var(--accent)">${newOrder.id}</span><br>หากต้องการสอบถามสถานะเพิ่มเติม สามารถพิมพ์ถามผมด้วยรหัสออเดอร์ได้เลยครับ`
+                    });
+                    scrollToBottom();
+                };
+
+                const scrollToBottom = () => {
+                    setTimeout(() => {
+                        const chatBody = document.getElementById('chatBody');
+                        if (chatBody) chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 50);
+                };
+
+                const sendMessage = () => {
+                    const text = userInput.value.trim();
+                    if (!text) return;
+                    chatHistory.push({ role: 'user', text });
+                    userInput.value = '';
+                    isTyping.value = true;
+                    scrollToBottom();
+                    setTimeout(() => {
+                        isTyping.value = false;
+                        processBotResponse(text);
+                        scrollToBottom();
+                    }, 1200);
+                };
+
+                const processBotResponse = (text) => {
+                    const lower = text.toLowerCase();
+                    let reply = ""; let matchedPresets = null;
+
+                    if (lower.includes('ord-')) {
+                        const orderIdMatch = lower.match(/ord-\d+/);
+                        if(orderIdMatch) {
+                            const ord = orders.find(o => o.id.toLowerCase() === orderIdMatch[0]);
+                            if(ord) reply = `สถานะคำสั่งซื้อ <strong>${ord.id}</strong> ขณะนี้: <span style="color:var(--accent)">${getStatusLabel(ord.status)}</span> ครับ`;
+                            else reply = "ขออภัยครับ ไม่พบหมายเลขคำสั่งซื้อดังกล่าวในระบบ";
+                        }
+                    } else if (lower.includes('wuthering') || lower.includes('อีมู') || lower.includes('emulator')) {
+                        reply = "สำหรับการเปิดเกมพร้อม Emulator แนะนำ CPU Ryzen 9 และ RTX 4060 ครับ";
+                        matchedPresets = [{ id: 'emu', label: 'ใช้งานสเปคนี้' }];
+                    } else if (lower.includes('แอนิเมชัน') || lower.includes('3d')) {
+                        reply = "งาน 3D แนะนำ RTX 4070 SUPER และ i7 สำหรับการทำงาน Multi-tasking ครับ";
+                        matchedPresets = [{ id: 'anim', label: 'ใช้งานสเปคนี้' }];
+                    } else if (lower.includes('งบ') || lower.includes('ถูก')) {
+                        reply = "เซ็ตประหยัด i5 + DDR4 + RTX 4060 ครับ คุ้มค่าที่สุดแล้ว";
+                        matchedPresets = [{ id: 'budget', label: 'ใช้งานสเปคนี้' }];
+                    } else {
+                        reply = "รับทราบครับ รบกวนแจ้งโปรแกรมหรือเกมที่เล่นเป็นหลัก หรือคลิกตัวอย่างด้านล่างได้เลยครับ";
+                        matchedPresets = [ { id: 'anim', label: 'สายเรนเดอร์ 3D' }, { id: 'emu', label: 'ฮาร์ดคอร์เกมเมอร์' } ];
+                    }
+                    chatHistory.push({ role: 'bot', text: reply, presets: matchedPresets });
+                };
+
+                const applyPreset = (presetId) => {
+                    const spec = presetsData[presetId];
+                    if (spec) {
+                        Object.keys(spec).forEach(key => build[key] = spec[key]);
+                        chatHistory.push({ role: 'bot', text: '✅ <strong>อัปเดตสเปคเรียบร้อย!</strong> ดูราคาและการแจ้งเตือนฝั่งซ้ายได้เลยครับ' });
+                        scrollToBottom();
+                    }
+                };
+
+                return {
+                    // Auth state
+                    currentUser, userRole, showLoginModal, authTab, loginForm, registerForm, 
+                    login, logout, handleLoginSubmit, handleRegisterSubmit,
+                    
+                    // Main state
+                    currentView, adminTab, inventoryCategory, categories, catalog, build,
+                    customer, assemblyChoice, assemblyFee, grandTotal, orders,
+                    totalSales, pendingAssemblies, getStatusLabel,
+                    getPrice, totalPrice, hasAnyComponent, compatibilityIssues,
+                    activeCategory, activeCategoryInfo,
+                    selectItem, getItem, toggleAdmin, handleCheckoutClick, goToCheckout, placeOrder,
+                    chatHistory, userInput, isTyping, isChatOpen, sendMessage, applyPreset
+                };
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

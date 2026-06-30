@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ORD-6391",
+    "customer_name": "Test User",
+    "customer_address": "123 Main St",
+    "customer_phone": "0812345678",
+    "assembly_type": "premium",
+    "total_price": 12000,
+    "status": "assembling",
+    "created_at": "2026-06-21T09:10:14.301Z",
+    "build_items": {
+      "cpu": "c1",
+      "mobo": "m1"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.advice.co.th/api/auth/getCookie",
+    "preview": "{\"status\":\"SUCCESS\",\"data\":\"1.2\"}"
+  },
+  {
+    "url": "https://www.advice.co.th/api/auth/get-refreshToken",
+    "preview": "{\"status\":\"SUCCESS\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoib25saW5lIiwiaXNfbWVtYmVyIjpmYWxzZSwiaWF0IjoxNzgyMjIwNTc4LCJleHAiOjE3ODI4MjUzNzh9.-vjEIFWUiE8LTbq71oDjAbAgc2B6QF-i1RIIyrWC208\"}"
+  },
+  {
+    "url": "https://www.advice.co.th/api/get-content/branch-compass-point",
+    "preview": "{\"status\":\"SUCCESS\",\"statusCode\":\"200\",\"data\":[{\"id\":1,\"geo_name\":\"กรุงเทพฯและปริมณฑล\",\"compass_point\":\"C\",\"sum_branch\":\"23\",\"order_by\":999,\"insert_date\":\"2025-11-12T16:41:59.000Z\"},{\"id\":13,\"geo_name\":\"ภาคใต้\",\"compass_point\":\"S\",\"sum_branch\":\"41\",\"order_by\":999,\"insert_date\":\"2025-11-12T16:41:59.000Z\"},{\"id\":12,\"geo_name\":\"ตะวันออก\",\"compass_point\":\"E\",\"sum_branch\":\"41\",\"order_by\":999,\"insert_date\":\"2025-11-12T16:41:59.000Z\"},{\"id\":11,\"geo_name\":\"ภาคกลาง\",\"compass_point\":\"M\",\"sum_branch\":\"51\","
+  },
+  {
+    "url": "https://www.advice.co.th/api/get-content/where-to-buy",
+    "preview": "{\"status\":\"SUCCESS\",\"statusCode\":\"200\",\"data\":[{\"code\":\"C\",\"name\":\"กรุงเทพฯและปริมณฑล\",\"url\":\"กรุงเทพฯและปริมณฑล\",\"qty\":22},{\"code\":\"N\",\"name\":\"ภาคเหนือ\",\"url\":\"ภาคเหนือ\",\"qty\":77},{\"code\":\"NE\",\"name\":\"ภาคอีสาน\",\"url\":\"ภาคอีสาน\",\"qty\":122},{\"code\":\"M\",\"name\":\"ภาคกลาง\",\"url\":\"ภาคกลาง\",\"qty\":51},{\"code\":\"E\",\"name\":\"ตะวันออก\",\"url\":\"ตะวันออก\",\"qty\":43},{\"code\":\"S\",\"name\":\"ภาคใต้\",\"url\":\"ภาคใต้\",\"qty\":42},{\"code\":\"L\",\"name\":\"สปป. ลาว\",\"url\":\"สปป-ลาว\",\"qty\":26}],\"message\":\"\",\"message_m\":\"\"}"
+  }
+]
