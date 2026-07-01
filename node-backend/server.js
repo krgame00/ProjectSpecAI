@@ -9,21 +9,23 @@ const db = require('./config/db');
 // Import Routes
 const hardwareRoutes = require('./routes/hardware');
 const chatbotRoutes = require('./routes/chatbot');
-const orderRoutes = require('./routes/orders');
-const articleRoutes = require('./routes/articles');
+const ordersRoutes = require('./routes/orders');
+const articlesRoutes = require('./routes/articles');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // API Routes
 app.use('/api/hardware', hardwareRoutes);
 app.use('/api/chatbot', chatbotRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/articles', articleRoutes);
+app.use('/api/orders', ordersRoutes);
+app.use('/api/articles', articlesRoutes);
+app.use('/api/auth', authRoutes);
 
 // Base Route
 app.get('/', (req, res) => {

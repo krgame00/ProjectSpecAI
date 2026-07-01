@@ -1,21 +1,20 @@
 <template>
   <div id="app">
     <!-- Top Navigation -->
-    <nav class="top-nav">
+    <nav class="top-nav" v-if="$route.path !== '/admin'">
       <div class="nav-content container">
         <div class="logo">Smart <span>PC Builder</span></div>
         <div class="nav-actions">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
           
-          <button :class="['btn', 'btn-outline', 'btn-sm', { active: currentView === 'builder' }]" @click="currentView = 'builder'">💻 จัดสเปค</button>
-          <button :class="['btn', 'btn-outline', 'btn-sm', { active: currentView === 'articles' }]" @click="currentView = 'articles'">📰 บทความ</button>
+          <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/' }]" @click="$router.push('/')">💻 จัดสเปค</button>
+          <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/articles' }]" @click="$router.push('/articles')">📰 บทความ</button>
 
-          <button v-if="userRole === 'admin'" :class="['btn', 'btn-outline', 'btn-sm', { active: currentView === 'admin' }]" @click="toggleAdmin">
-            {{ currentView === 'admin' ? '← กลับหน้าร้าน' : '🛠 ระบบหลังบ้าน' }}
-          </button>
+          <!-- Admin button removed from customer nav entirely to keep it clean -->
 
           <div v-if="currentUser" class="user-actions">
-            <span class="user-name">👤 {{ currentUser.name }}</span>
+            <span v-if="userRole !== 'admin'" class="user-name">👤 {{ currentUser.name }}</span>
+            <button v-if="userRole !== 'admin'" class="btn btn-outline-primary btn-sm" @click="$router.push('/profile')">ข้อมูลส่วนตัว</button>
             <button class="btn btn-outline-danger btn-sm" @click="logout">ออกจากระบบ</button>
           </div>
           <div v-else>
@@ -25,98 +24,46 @@
       </div>
     </nav>
 
-    <!-- Main Views Transition -->
-    <Transition name="page" mode="out-in">
-      <!-- Builder View -->
-      <div class="container" v-if="currentView === 'builder'">
-      <!-- Glassmorphic Loader (Frontend Pattern) -->
-      <div v-if="isLoading" class="loader-container glass-panel">
-        <div class="spinner"></div>
-        <div class="loader-text">
-          กำลังดึงข้อมูลสเปกฮาร์ดแวร์ล่าสุดจากฐานข้อมูล MySQL...
-        </div>
-      </div>
-      
-      <div v-else class="grid-layout">
-        <!-- Sidebar -->
-        <PriceSummary 
-          :categories="categories" 
-          :build="build" 
-          :catalog="catalog" 
-          :totalPrice="totalPrice" 
-          :activeCategory="activeCategory"
-          :compatibilityIssues="compatibilityIssues"
-          :hasAnyComponent="hasAnyComponent"
-          @set-active-category="activeCategory = $event"
-          @remove-item="selectItem($event, null)"
-          @checkout="handleCheckout"
-        />
-
-        <!-- Main Content -->
-        <main class="main-content">
-          <HardwareSelection 
-            v-if="activeCategory"
-            :activeCategory="activeCategory"
-            :activeCategoryInfo="activeCategoryInfo"
-            :products="catalog[activeCategory]"
-            :selectedItemId="build[activeCategory]"
-            :compatibilityIssues="compatibilityIssues"
-            :hasAnyComponent="hasAnyComponent"
-            @select-item="selectItem"
-          />
-        </main>
-      </div>
-
-      <!-- Floating Chatbot -->
-      <ChatbotWindow 
-        :isOpen="isChatOpen"
-        :history="chatHistory"
-        :isTyping="isTyping"
-        @toggle-chat="isChatOpen = $event"
-        @send-message="sendMessage"
-        @apply-preset="applyPreset"
-      />
-    </div>
-
-    <!-- Checkout View -->
-    <CheckoutView
-      v-else-if="currentView === 'checkout'"
+    <!-- Main Views Transition via Vue Router -->
+    <router-view
+      v-slot="{ Component }"
+      :isLoading="isLoading"
       :categories="categories"
+      :catalog="catalog"
       :build="build"
-      :catalog="catalog"
       :totalPrice="totalPrice"
-      :currentUser="currentUser"
-      @go-back="currentView = 'builder'"
-      @order-placed="onOrderPlaced"
-    />
-
-    <AdminDashboard
-      v-else-if="currentView === 'admin' && userRole === 'admin'"
+      :activeCategory="activeCategory"
+      :activeCategoryInfo="activeCategoryInfo"
+      :compatibilityIssues="compatibilityIssues"
+      :hasAnyComponent="hasAnyComponent"
       :orders="orders"
-      :categories="categories"
-      :catalog="catalog"
       :articles="articles"
+      :userRole="userRole"
+      :currentUser="currentUser"
+      :isChatOpen="isChatOpen"
+      :chatHistory="chatHistory"
+      :isTyping="isTyping"
+      :article="selectedArticle"
+      @set-active-category="activeCategory = $event"
+      @select-item="selectItem"
+      @remove-item="selectItem($event, null)"
+      @checkout="handleCheckout"
+      @order-placed="onOrderPlaced"
       @save-product="handleSaveProduct"
       @delete-product="handleDeleteProduct"
       @save-article="handleSaveArticle"
       @delete-article="handleDeleteArticle"
       @update-order-status="handleUpdateOrderStatus"
-    />
-
-    <!-- Articles View -->
-    <ArticlesView
-      v-else-if="currentView === 'articles'"
-      :articles="articles"
       @read-article="handleReadArticle"
-    />
-
-    <!-- Article Detail View -->
-    <ArticleDetailView
-      v-else-if="currentView === 'article-detail'"
-      :article="selectedArticle"
-      @go-back="currentView = 'articles'"
-    />
-    </Transition>
+      @go-back="$router.go(-1)"
+      @toggle-chat="isChatOpen = $event"
+      @send-message="sendMessage"
+      @apply-preset="applyPreset"
+    >
+      <Transition name="page" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </router-view>
 
     <!-- Auth Modal -->
     <Transition name="modal">
@@ -132,22 +79,14 @@
         
         <div class="modal-body" v-if="authTab === 'login'">
           <div class="form-group">
-            <label>ชื่อผู้ใช้งาน</label>
-            <input type="text" class="form-control" v-model="loginForm.username" placeholder="กรอกชื่อผู้ใช้ (พิมพ์ admin)" @keyup.enter="handleLoginSubmit">
+            <label>อีเมล</label>
+            <input type="email" class="form-control" v-model="loginForm.email" placeholder="กรอกอีเมล (เช่น admin@pc.com)" @keyup.enter="handleLoginSubmit">
           </div>
           <div class="form-group">
             <label>รหัสผ่าน</label>
             <input type="password" class="form-control" v-model="loginForm.password" placeholder="••••••••" @keyup.enter="handleLoginSubmit">
           </div>
           <button class="btn btn-primary btn-block mt-4" @click="handleLoginSubmit">เข้าสู่ระบบ</button>
-          
-          <div class="demo-login-section">
-            <span class="demo-login-title">--- โหมดจำลอง (Quick Login) ---</span>
-            <div class="demo-login-actions">
-              <button class="btn btn-outline btn-sm" @click="login('user')">User Demo</button>
-              <button class="btn btn-outline btn-sm" @click="login('admin')">Admin Demo</button>
-            </div>
-          </div>
         </div>
 
         <div class="modal-body" v-if="authTab === 'register'">
@@ -156,8 +95,8 @@
             <input type="text" class="form-control" v-model="registerForm.name" placeholder="ชื่อที่จะแสดงในระบบ">
           </div>
           <div class="form-group">
-            <label>ชื่อผู้ใช้งาน</label>
-            <input type="text" class="form-control" v-model="registerForm.username" placeholder="ตั้งชื่อผู้ใช้ของคุณ">
+            <label>อีเมล</label>
+            <input type="email" class="form-control" v-model="registerForm.email" placeholder="ตั้งอีเมลของคุณ">
           </div>
           <div class="form-group">
             <label>รหัสผ่าน</label>
@@ -173,13 +112,8 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue';
-import PriceSummary from './components/PriceSummary.vue';
-import HardwareSelection from './components/HardwareSelection.vue';
-import ChatbotWindow from './components/ChatbotWindow.vue';
-import CheckoutView from './components/CheckoutView.vue';
-import AdminDashboard from './components/AdminDashboard.vue';
-import ArticlesView from './components/ArticlesView.vue';
-import ArticleDetailView from './components/ArticleDetailView.vue';
+import { useRouter, useRoute } from 'vue-router';
+
 
 const API_BASE = 'http://localhost:3000/api';
 
@@ -188,14 +122,24 @@ const currentUser = ref(null);
 const userRole = ref('guest'); 
 const showLoginModal = ref(false);
 const authTab = ref('login');
-const loginForm = reactive({ username: '', password: '' });
-const registerForm = reactive({ name: '', username: '', password: '' });
-const currentView = ref('builder'); 
+const loginForm = reactive({ email: '', password: '' });
+const registerForm = reactive({ name: '', email: '', password: '' });
+const router = useRouter();
+const route = useRoute();
+
 const selectedArticle = ref(null);
 const isLoading = ref(true);
 
 // Fetch catalog from backend API on mount (Frontend Pattern: Dynamic loading)
 onMounted(async () => {
+  // Check auth session
+  const token = localStorage.getItem('token');
+  const user = localStorage.getItem('user');
+  if (token && user) {
+    currentUser.value = JSON.parse(user);
+    userRole.value = currentUser.value.role;
+  }
+
   try {
     const response = await fetch('http://localhost:3000/api/hardware/catalog');
     if (response.ok) {
@@ -480,40 +424,84 @@ const selectItem = (catId, itemId) => {
   build[catId] = itemId;
 };
 
-const handleLoginSubmit = () => {
-  if(!loginForm.username) return alert('กรุณากรอกชื่อผู้ใช้งาน');
-  login(loginForm.username.toLowerCase() === 'admin' ? 'admin' : 'user');
+const handleLoginSubmit = async () => {
+  if(!loginForm.email || !loginForm.password) return alert('กรุณากรอกอีเมลและรหัสผ่าน');
+  
+  try {
+    const res = await fetch(`${API_BASE}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(loginForm)
+    });
+    
+    const data = await res.json();
+    if (res.ok) {
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      currentUser.value = data.user;
+      userRole.value = data.user.role;
+      showLoginModal.value = false;
+      loginForm.email = ''; loginForm.password = '';
+      
+      // Redirect to admin dashboard if admin
+      if (data.user.role === 'admin') {
+        router.push('/admin');
+      }
+    } else {
+      alert(data.error || 'เข้าสู่ระบบล้มเหลว');
+    }
+  } catch (err) {
+    alert('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+  }
 };
 
-const handleRegisterSubmit = () => {
-  if(!registerForm.name || !registerForm.username) return alert('กรุณากรอกข้อมูลให้ครบถ้วน');
-  alert('สมัครสมาชิกสำเร็จ! กรุณาเข้าสู่ระบบ');
-  authTab.value = 'login';
-  loginForm.username = registerForm.username;
-  registerForm.name = ''; registerForm.username = ''; registerForm.password = '';
+const handleRegisterSubmit = async () => {
+  if(!registerForm.name || !registerForm.email || !registerForm.password) return alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+  
+  try {
+    const res = await fetch(`${API_BASE}/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(registerForm)
+    });
+    
+    const data = await res.json();
+    if (res.ok) {
+      alert('สมัครสมาชิกสำเร็จ! กำลังเข้าสู่ระบบ...');
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      currentUser.value = data.user;
+      userRole.value = data.user.role;
+      showLoginModal.value = false;
+      registerForm.name = ''; registerForm.email = ''; registerForm.password = '';
+    } else {
+      alert(data.error || 'สมัครสมาชิกล้มเหลว');
+    }
+  } catch (err) {
+    alert('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+  }
 };
 
-const login = (role) => {
-  userRole.value = role;
-  const name = loginForm.username.trim() || (role === 'admin' ? 'Admin Manager' : 'General User');
-  currentUser.value = { name };
-  showLoginModal.value = false;
-  loginForm.username = ''; loginForm.password = '';
-};
 
 const logout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
   userRole.value = 'guest';
   currentUser.value = null;
-  currentView.value = 'builder';
+  router.push('/');
 };
 
 const toggleAdmin = () => {
-  currentView.value = currentView.value === 'admin' ? 'builder' : 'admin';
+  if (route.path === '/admin') {
+    router.push('/');
+  } else {
+    router.push('/admin');
+  }
 };
 
 const handleReadArticle = (article) => {
   selectedArticle.value = article;
-  currentView.value = 'article-detail';
+  router.push(`/article/${article.id || 1}`);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
@@ -523,14 +511,14 @@ const handleCheckout = () => {
   if (userRole.value === 'guest') {
     showLoginModal.value = true;
   } else {
-    currentView.value = 'checkout';
+    router.push('/checkout');
   }
 };
 
 const onOrderPlaced = (newOrder) => {
   orders.unshift(newOrder);
   Object.keys(build).forEach(k => build[k] = null);
-  currentView.value = 'builder';
+  router.push('/');
   chatHistory.push({
     role: 'bot',
     text: `🎉 <strong>รับคำสั่งซื้อสำเร็จ!</strong> <br>หมายเลขคำสั่งซื้อของคุณคือ <span style="color:var(--accent)">${newOrder.id}</span><br>หากต้องการสอบถามสถานะเพิ่มเติม สามารถพิมพ์ถามผมด้วยรหัสออเดอร์ได้เลยครับ`

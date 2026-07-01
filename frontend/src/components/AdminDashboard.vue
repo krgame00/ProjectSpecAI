@@ -12,6 +12,8 @@
           <li :class="{active: adminTab === 'orders'}" @click="adminTab = 'orders'">📦 รายการสั่งซื้อ (Orders)</li>
           <li :class="{active: adminTab === 'inventory'}" @click="adminTab = 'inventory'">⚙️ คลังสินค้า (Inventory)</li>
           <li :class="{active: adminTab === 'articles'}" @click="adminTab = 'articles'">📰 จัดการบทความ (Articles)</li>
+          <li :class="{active: adminTab === 'users'}" @click="fetchUsers(); adminTab = 'users'">👥 จัดการสมาชิก (Users)</li>
+          <li :class="{active: adminTab === 'profile'}" @click="adminTab = 'profile'">👤 ข้อมูลโปรไฟล์แอดมิน</li>
         </ul>
       </aside>
 
@@ -32,6 +34,50 @@
               <div class="stat-val">{{ pendingAssemblies }}</div>
             </div>
           </div>
+        </div>
+
+        <!-- Users Tab -->
+        <div v-if="adminTab === 'users'" class="glass-panel" style="overflow-x: auto; padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>อีเมล</th>
+                <th>สถานะ (Role)</th>
+                <th>วันที่สมัคร</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in users" :key="user.id">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <span :class="['status-badge', user.role === 'admin' ? 'completed' : 'pending']">
+                    {{ user.role }}
+                  </span>
+                </td>
+                <td>{{ new Date(user.created_at).toLocaleDateString('th-TH') }}</td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <button class="btn btn-outline btn-sm" @click="toggleUserRole(user)" :disabled="user.id === currentUser.id">
+                      ปรับสิทธิ์
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm" @click="deleteUser(user.id)" :disabled="user.id === currentUser.id">
+                      ลบ
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Admin Profile Tab -->
+        <div v-if="adminTab === 'profile'">
+          <ProfileView />
         </div>
 
         <!-- Orders Tab -->
@@ -255,14 +301,76 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed, onMounted } from 'vue';
+import ProfileView from '../views/ProfileView.vue';
 
 const props = defineProps({
-  orders: Array, categories: Array, catalog: Object, articles: Array
+  orders: Array, categories: Array, catalog: Object, articles: Array, currentUser: Object
 });
 const emit = defineEmits(['save-product', 'delete-product', 'save-article', 'delete-article']);
 
 const adminTab = ref('dashboard');
+
+// Users State
+const users = ref([]);
+const fetchUsers = async () => {
+  try {
+    const res = await fetch('http://localhost:3000/api/auth/users', {
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+    });
+    if (res.ok) {
+      users.value = await res.json();
+    }
+  } catch (error) {
+    console.error('Failed to fetch users:', error);
+  }
+};
+
+const toggleUserRole = async (user) => {
+  if (!confirm(`คุณแน่ใจว่าต้องการเปลี่ยนสิทธิ์ของ ${user.name} หรือไม่?`)) return;
+  const newRole = user.role === 'admin' ? 'customer' : 'admin';
+  try {
+    const res = await fetch(`http://localhost:3000/api/auth/users/${user.id}/role`, {
+      method: 'PUT',
+      headers: { 
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ role: newRole })
+    });
+    if (res.ok) {
+      user.role = newRole;
+      alert('เปลี่ยนสิทธิ์สำเร็จ');
+    } else {
+      const data = await res.json();
+      alert(data.error || 'ไม่สามารถเปลี่ยนสิทธิ์ได้');
+    }
+  } catch (error) {
+    console.error('Toggle role error:', error);
+  }
+};
+
+const deleteUser = async (id) => {
+  if (!confirm('คุณแน่ใจว่าต้องการลบบัญชีนี้? การกระทำนี้ไม่สามารถยกเลิกได้!')) return;
+  try {
+    const res = await fetch(`http://localhost:3000/api/auth/users/${id}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+    });
+    if (res.ok) {
+      users.value = users.value.filter(u => u.id !== id);
+      alert('ลบบัญชีสำเร็จ');
+    } else {
+      const data = await res.json();
+      alert(data.error || 'ไม่สามารถลบบัญชีได้');
+    }
+  } catch (error) {
+    console.error('Delete user error:', error);
+  }
+};
+
+onMounted(() => { fetchUsers(); });
+
 const inventoryCategory = ref('cpu');
 
 const totalSales = computed(() => props.orders.reduce((sum, ord) => sum + ord.total, 0));
