@@ -38,6 +38,7 @@ CREATE TABLE `products` (
   `price` DECIMAL(10, 2) NOT NULL,
   `image_url` VARCHAR(255),
   `stock_quantity` INT DEFAULT 10,
+  `specifications` JSON DEFAULT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE CASCADE
 );

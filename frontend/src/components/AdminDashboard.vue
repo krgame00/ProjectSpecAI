@@ -6,7 +6,7 @@
     </div>
 
     <div class="admin-layout">
-      <aside class="admin-sidebar glass-panel">
+      <aside class="admin-sidebar">
         <ul class="admin-menu">
           <li :class="{active: adminTab === 'dashboard'}" @click="adminTab = 'dashboard'">📊 Dashboard ภาพรวม</li>
           <li :class="{active: adminTab === 'orders'}" @click="adminTab = 'orders'">📦 รายการสั่งซื้อ (Orders)</li>
@@ -15,29 +15,44 @@
           <li :class="{active: adminTab === 'users'}" @click="fetchUsers(); adminTab = 'users'">👥 จัดการสมาชิก (Users)</li>
           <li :class="{active: adminTab === 'profile'}" @click="adminTab = 'profile'">👤 ข้อมูลโปรไฟล์แอดมิน</li>
         </ul>
+        <div style="padding: 1rem; margin-top: auto; border-top: 1px solid var(--hairline-cool);">
+          <button class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" @click="$router.push('/')">
+            ⬅️ กลับหน้าร้านค้า
+          </button>
+        </div>
       </aside>
 
       <main class="admin-main">
         <!-- Dashboard Tab -->
         <div v-if="adminTab === 'dashboard'">
           <div class="stat-grid">
-            <div class="stat-card glass-panel">
-              <div class="stat-title">ยอดขายทั้งหมด</div>
+            <div class="stat-card">
+              <div class="stat-title">ยอดขายรวม (Gross Revenue)</div>
               <div class="stat-val">฿{{ totalSales.toLocaleString() }}</div>
+              <div class="stat-insight positive">↑ 12% เทียบกับเดือนที่แล้ว</div>
             </div>
-            <div class="stat-card glass-panel">
-              <div class="stat-title">ออเดอร์ทั้งหมด</div>
+            <div class="stat-card">
+              <div class="stat-title">คำสั่งซื้อทั้งหมด (Total Orders)</div>
               <div class="stat-val">{{ orders.length }}</div>
+              <div class="stat-insight">ยอดซื้อเฉลี่ย ฿{{ orders.length ? Math.floor(totalSales / orders.length).toLocaleString() : 0 }}/บิล</div>
             </div>
-            <div class="stat-card glass-panel">
-              <div class="stat-title">รอประกอบ</div>
-              <div class="stat-val">{{ pendingAssemblies }}</div>
+            <div class="stat-card">
+              <div class="stat-title">รอจัดประกอบ (Pending Assembly)</div>
+              <div class="stat-val" style="color: var(--warning);">{{ pendingAssemblies }}</div>
+              <div class="stat-insight alert">ต้องดำเนินการโดยด่วน</div>
+            </div>
+          </div>
+          
+          <div class="admin-card" style="margin-top: 2rem; padding: 2rem;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--ink);">สถิติยอดขาย 7 วันย้อนหลัง</h3>
+            <div style="height: 300px;">
+              <Bar :data="chartData" :options="chartOptions" v-if="chartData.labels" />
             </div>
           </div>
         </div>
 
         <!-- Users Tab -->
-        <div v-if="adminTab === 'users'" class="glass-panel" style="overflow-x: auto; padding: 0;">
+        <div v-if="adminTab === 'users'" class="admin-card">
           <table class="data-table">
             <thead>
               <tr>
@@ -81,7 +96,7 @@
         </div>
 
         <!-- Orders Tab -->
-        <div v-if="adminTab === 'orders'" class="glass-panel" style="overflow-x: auto; padding: 0;">
+        <div v-if="adminTab === 'orders'" class="admin-card">
           <table class="data-table">
             <thead>
               <tr>
@@ -124,7 +139,7 @@
         </div>
 
         <!-- Inventory Tab -->
-        <div v-if="adminTab === 'inventory'" class="glass-panel" style="padding: 2rem;">
+        <div v-if="adminTab === 'inventory'" class="admin-card" style="padding: 2rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <h3>จัดการสินค้าในระบบ</h3>
             <div style="display: flex; gap: 1rem;">
@@ -162,7 +177,7 @@
         </div>
 
         <!-- Articles Tab -->
-        <div v-if="adminTab === 'articles'" class="glass-panel" style="padding: 2rem;">
+        <div v-if="adminTab === 'articles'" class="admin-card" style="padding: 2rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <h3>จัดการบทความ</h3>
             <button class="btn btn-primary" @click="openArticleModal()">+ เพิ่มบทความ</button>
@@ -230,20 +245,33 @@
 
           <div class="form-group">
             <label>รูปภาพ (URL)</label>
-            <div style="display: flex; gap: 1rem;">
-              <input type="text" class="form-control" v-model="productForm.image" placeholder="/images/cpu.png" style="flex: 1;">
-              <div v-if="productForm.image" style="width: 42px; height: 42px; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); overflow: hidden; background: var(--bg);">
-                <img :src="productForm.image" style="width: 100%; height: 100%; object-fit: cover;" @error="$event.target.style.display='none'">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <input type="text" class="form-control" v-model="productForm.image" placeholder="ระบุ URL รูปภาพ (เช่น /images/cpu.png)" style="flex: 1;" @input="productImgError = false">
+              <div style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 1px dashed var(--hairline-strong); overflow: hidden; background: var(--canvas-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <template v-if="productForm.image">
+                  <div v-if="productImgError" style="font-size: 0.7rem; color: var(--danger); text-align: center; padding: 0.2rem;">
+                    ⚠️<br>โหลดไม่สำเร็จ
+                  </div>
+                  <img v-else :src="productForm.image" style="width: 100%; height: 100%; object-fit: cover;" @error="productImgError = true">
+                </template>
+                <div v-else style="font-size: 1.5rem; color: var(--ink-mute-2);">🖼️</div>
               </div>
             </div>
           </div>
 
           <div class="form-group" style="margin-top: 1.5rem;">
             <label style="display: flex; justify-content: space-between;">
-              <span>รายละเอียดสเปคเชิงลึก</span>
-              <span style="font-size: 0.75rem; color: var(--muted); font-weight: normal;">(บรรทัดละ 1 รายการ)</span>
+              <span>รายละเอียดสเปค (JSON)</span>
+              <span style="font-size: 0.75rem; color: var(--muted); font-weight: normal;">(เช่น Socket: AM4)</span>
             </label>
-            <textarea class="form-control" style="height: 180px; font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; background: rgba(0,0,0,0.2);" v-model="productForm.details" placeholder="Brand: AMD&#10;Series: 5000 Series&#10;Cores/Threads: 6/12&#10;..."></textarea>
+            <div style="background: var(--canvas-soft); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 1rem;">
+              <div v-for="(spec, index) in productForm.specList" :key="index" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <input type="text" class="form-control" v-model="spec.key" placeholder="Key" style="flex: 1; padding: 0.4rem; font-size: 0.85rem;">
+                <input type="text" class="form-control" v-model="spec.value" placeholder="Value" style="flex: 2; padding: 0.4rem; font-size: 0.85rem;">
+                <button class="btn btn-outline-danger" style="padding: 0.4rem 0.6rem;" @click="removeSpec(index)">✕</button>
+              </div>
+              <button class="btn btn-outline" style="width: 100%; margin-top: 0.5rem; font-size: 0.85rem; border-style: dashed;" @click="addSpec">+ เพิ่มข้อมูลสเปค</button>
+            </div>
           </div>
         </div>
         <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 1rem; background: rgba(0,0,0,0.2);">
@@ -277,10 +305,16 @@
             </div>
             <div class="form-group" style="margin: 0;">
               <label>ภาพปก (URL)</label>
-              <div style="display: flex; gap: 1rem;">
-                <input type="text" class="form-control" v-model="articleForm.image" placeholder="https://..." style="flex: 1;">
-                <div v-if="articleForm.image" style="width: 42px; height: 42px; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); overflow: hidden; background: var(--bg);">
-                  <img :src="articleForm.image" style="width: 100%; height: 100%; object-fit: cover;" @error="$event.target.style.display='none'">
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <input type="text" class="form-control" v-model="articleForm.image" placeholder="https://..." style="flex: 1;" @input="articleImgError = false">
+                <div style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 1px dashed var(--hairline-strong); overflow: hidden; background: var(--canvas-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <template v-if="articleForm.image">
+                    <div v-if="articleImgError" style="font-size: 0.7rem; color: var(--danger); text-align: center; padding: 0.2rem;">
+                      ⚠️<br>โหลดไม่สำเร็จ
+                    </div>
+                    <img v-else :src="articleForm.image" style="width: 100%; height: 100%; object-fit: cover;" @error="articleImgError = true">
+                  </template>
+                  <div v-else style="font-size: 1.5rem; color: var(--ink-mute-2);">🖼️</div>
                 </div>
               </div>
             </div>
@@ -288,10 +322,10 @@
 
           <div class="form-group" style="margin-top: 1.5rem;">
             <label>เนื้อหาบทความ</label>
-            <textarea class="form-control" style="height: 250px; line-height: 1.6; font-size: 0.95rem; background: rgba(0,0,0,0.2);" v-model="articleForm.content" placeholder="พิมพ์เนื้อหาที่นี่..."></textarea>
+            <textarea class="form-control" style="height: 250px; line-height: 1.6; font-size: 0.95rem; background: var(--canvas-soft);" v-model="articleForm.content" placeholder="พิมพ์เนื้อหาที่นี่..."></textarea>
           </div>
         </div>
-        <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 1rem; background: rgba(0,0,0,0.2);">
+        <div style="padding: 1.5rem; border-top: 1px solid var(--hairline); display: flex; justify-content: flex-end; gap: 1rem; background: var(--canvas-soft);">
           <button class="btn btn-outline" @click="showArticleModal = false">ยกเลิก</button>
           <button class="btn btn-primary" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveArticle">🚀 เผยแพร่บทความ</button>
         </div>
@@ -303,13 +337,40 @@
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue';
 import ProfileView from '../views/ProfileView.vue';
+import { Bar } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 const props = defineProps({
   orders: Array, categories: Array, catalog: Object, articles: Array, currentUser: Object
 });
-const emit = defineEmits(['save-product', 'delete-product', 'save-article', 'delete-article']);
+const emit = defineEmits(['save-product', 'delete-product', 'save-article', 'delete-article', 'update-order-status']);
 
 const adminTab = ref('dashboard');
+
+// Chart Data (Mock 7-day revenue)
+const chartData = ref({
+  labels: ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์', 'อาทิตย์'],
+  datasets: [{
+    label: 'ยอดขาย (บาท)',
+    backgroundColor: '#3ecf8e',
+    borderRadius: 4,
+    data: [15000, 24000, 18500, 32000, 45000, 60000, 46000]
+  }]
+});
+
+const chartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false }
+  },
+  scales: {
+    y: { beginAtZero: true, grid: { color: '#333' }, ticks: { color: '#9a9a9a' } },
+    x: { grid: { display: false }, ticks: { color: '#9a9a9a' } }
+  }
+};
 
 // Users State
 const users = ref([]);
@@ -384,31 +445,64 @@ const getStatusLabel = (status) => {
 // --- Product CRUD ---
 const showProductModal = ref(false);
 const editingProduct = ref(null);
-const productForm = reactive({ id: '', name: '', price: 0, image: '', details: '' });
+const productImgError = ref(false);
+const productForm = reactive({ id: '', name: '', price: 0, image: '', specList: [] });
 
 const openProductModal = (product = null) => {
+  productImgError.value = false;
   if (product) {
     editingProduct.value = product;
     productForm.id = product.id;
     productForm.name = product.name;
     productForm.price = product.price;
     productForm.image = product.image || '';
-    productForm.details = product.details || '';
+    
+    // Parse JSON object to array of {key, value} for UI
+    const specs = product.specifications || {};
+    productForm.specList = Object.entries(specs).map(([key, value]) => ({ key, value: String(value) }));
   } else {
     editingProduct.value = null;
-    productForm.id = `${inventoryCategory.value}-${Date.now().toString().slice(-4)}`;
+    productForm.id = `temp-${inventoryCategory.value}-${Date.now().toString().slice(-4)}`;
     productForm.name = '';
     productForm.price = 0;
     productForm.image = `/images/${inventoryCategory.value}.png`;
-    productForm.details = '';
+    
+    // Smart Spec Templates (Preload keys based on category)
+    const templates = {
+      cpu: ['Socket', 'Cores', 'Threads', 'Base Clock', 'Boost Clock', 'TDP'],
+      mobo: ['Socket', 'Form Factor', 'Chipset', 'Memory Type', 'Max Memory'],
+      ram: ['Type', 'Capacity', 'Speed', 'CAS Latency'],
+      gpu: ['GPU', 'VRAM', 'Base Clock', 'Boost Clock', 'Length', 'TDP'],
+      storage: ['Capacity', 'Interface', 'Form Factor', 'Read Speed', 'Write Speed'],
+      psu: ['Wattage', 'Form Factor', 'Efficiency', 'Modular'],
+      case: ['Form Factor', 'Max GPU Length', 'Max CPU Cooler Height', 'Type']
+    };
+    
+    const categoryKeys = templates[inventoryCategory.value] || ['Specification'];
+    productForm.specList = categoryKeys.map(key => ({ key, value: '' }));
   }
   showProductModal.value = true;
 };
 
+const addSpec = () => productForm.specList.push({ key: '', value: '' });
+const removeSpec = (index) => productForm.specList.splice(index, 1);
+
 const saveProduct = () => {
+  // Convert specList array back to JSON object
+  const specObj = {};
+  productForm.specList.forEach(item => {
+    if (item.key.trim()) specObj[item.key.trim()] = item.value;
+  });
+
   emit('save-product', {
     category: inventoryCategory.value,
-    product: { ...productForm }
+    product: {
+      id: productForm.id,
+      name: productForm.name,
+      price: productForm.price,
+      image: productForm.image,
+      specifications: specObj
+    }
   });
   showProductModal.value = false;
 };
@@ -424,9 +518,11 @@ const deleteProduct = (id) => {
 // --- Article CRUD ---
 const showArticleModal = ref(false);
 const editingArticle = ref(null);
+const articleImgError = ref(false);
 const articleForm = reactive({ id: 0, title: '', date: '', image: '', content: '' });
 
 const openArticleModal = (article = null) => {
+  articleImgError.value = false;
   if (article) {
     editingArticle.value = article;
     articleForm.id = article.id;
@@ -436,7 +532,7 @@ const openArticleModal = (article = null) => {
     articleForm.content = article.content || '';
   } else {
     editingArticle.value = null;
-    articleForm.id = Date.now();
+    articleForm.id = null;
     articleForm.title = '';
     articleForm.date = new Date().toISOString().split('T')[0];
     articleForm.image = 'https://placehold.co/600x400/1e1e2e/00e5ff?text=Article';
@@ -457,40 +553,90 @@ const deleteArticle = (id) => {
 </script>
 
 <style scoped>
-.admin-view { padding-top: 2rem; padding-bottom: 5rem; }
+.admin-view { 
+  padding-top: 2rem; 
+  padding-bottom: 5rem;
+  min-height: 100vh;
+  /* Night Mode Theme Overrides */
+  --canvas: var(--canvas-night);
+  --canvas-soft: var(--canvas-night-soft);
+  --ink: var(--on-dark);
+  --ink-mute: #a0a0a0;
+  --hairline: #333333;
+  --hairline-cool: #2a2a2a;
+  background-color: #111111;
+  color: var(--ink);
+}
 .admin-layout { display: grid; grid-template-columns: 250px 1fr; gap: var(--space-lg); align-items: start; }
 
-.admin-sidebar { border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem 0; }
-.admin-menu { list-style: none; }
+.admin-sidebar { 
+  background: var(--canvas); border-radius: var(--radius-lg); 
+  border: 1px solid var(--hairline); overflow: hidden; padding: 0.5rem 0 0 0; 
+  box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; min-height: 500px;
+}
+.admin-menu { list-style: none; margin: 0; padding: 0; }
 .admin-menu li { 
-  padding: 1rem 1.5rem; cursor: pointer; border-bottom: 1px solid var(--glass-border); 
+  padding: 1rem 1.5rem; cursor: pointer; border-bottom: 1px solid var(--hairline-cool); 
   transition: all var(--transition-fast); display: flex; align-items: center; gap: 0.75rem; 
-  font-size: var(--text-sm); font-weight: 500;
+  font-size: var(--text-sm); font-weight: 500; color: var(--ink-mute);
 }
 .admin-menu li:last-child { border-bottom: none; }
-.admin-menu li:hover { background: rgba(255,255,255,0.05); }
-.admin-menu li.active { background: rgba(255,255,255,0.05); border-left: 4px solid var(--accent); color: var(--accent); font-weight: 600;}
+.admin-menu li:hover { background: var(--canvas-soft); color: var(--ink); }
+.admin-menu li.active { background: var(--canvas-soft); border-left: 4px solid var(--primary); color: var(--primary-deep); font-weight: 600;}
+
+.admin-card {
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
 
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); }
-.stat-card { padding: 1.5rem; border-radius: var(--radius-lg); text-align: center; }
-.stat-title { color: var(--muted); font-size: var(--text-sm); }
-.stat-val { font-size: var(--text-3xl); font-weight: 700; color: var(--accent); margin-top: 0.5rem; font-family: var(--font-mono); text-shadow: var(--accent-glow); }
+.stat-card { 
+  padding: 1.5rem; border-radius: var(--radius-lg); text-align: left; 
+  background: var(--canvas); border: 1px solid var(--hairline); box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.stat-title { color: var(--ink-mute); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.stat-val { font-size: var(--text-3xl); font-weight: 700; color: var(--ink); font-family: var(--font-sans); }
+.stat-insight { font-size: 0.8rem; color: var(--ink-mute-2); font-weight: 500; }
+.stat-insight.positive { color: var(--primary-deep); }
+.stat-insight.alert { color: var(--warning); }
 
-.data-table { width: 100%; border-collapse: collapse; text-align: left; }
-.data-table th, .data-table td { padding: 1rem 1.5rem; border-bottom: 1px solid var(--glass-border); font-size: var(--text-sm); }
-.data-table th { font-weight: 600; color: var(--muted); background: rgba(0,0,0,0.2); }
-.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+.data-table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; }
+.data-table th, .data-table td { padding: 1.25rem 1.5rem; font-size: var(--text-sm); border-bottom: 1px solid var(--hairline-cool); }
+.data-table th { font-weight: 600; color: var(--ink-mute); background: var(--canvas-soft); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem;}
+.data-table tr:hover td { background: var(--canvas-soft); }
+.data-table td { color: var(--ink); }
 
-.badge { display: inline-block; padding: 0.35rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
-.badge-pending { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning); }
-.badge-assembling { background: var(--accent-transparent); color: var(--accent); border: 1px solid var(--accent); }
-.badge-shipped { background: var(--success-bg); color: var(--success); border: 1px solid var(--success); }
+.badge { display: inline-flex; align-items: center; padding: 0.35rem 0.75rem; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; }
+.status-badge.pending { background: var(--warning-alpha); color: var(--warning); border: 1px solid var(--warning-border); }
+.status-badge.assembling { background: var(--primary-alpha); color: var(--primary-deep); border: 1px solid var(--primary-border); }
+.status-badge.completed { background: var(--success-alpha); color: var(--success); border: 1px solid var(--success-border); }
 
 /* Modal specific overrides */
-.modal-overlay { z-index: 2000; }
-.modal-body { padding: 1.5rem; }
+.modal-overlay { 
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+  background: var(--overlay); backdrop-filter: blur(4px); 
+  display: flex; align-items: center; justify-content: center; 
+  z-index: 2000; 
+}
+.modal-content {
+  width: 100%; max-width: 700px;
+  background: var(--canvas-night);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border-bottom: 1px solid var(--hairline-cool); background: rgba(0,0,0,0.2); }
+.modal-body { padding: 2rem; max-height: 75vh; overflow-y: auto; }
+.close-btn { background: none; border: none; font-size: 1.25rem; color: var(--ink-mute); cursor: pointer; transition: color var(--transition-fast); }
+.close-btn:hover { color: var(--danger); }
 .form-group { margin-bottom: 1rem; }
-.form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--muted); }
+.form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--ink-mute); font-weight: 500;}
 
 @media (max-width: 820px) {
   .admin-layout { grid-template-columns: 1fr; }

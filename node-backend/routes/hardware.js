@@ -63,7 +63,8 @@ router.get('/catalog', async (req, res, next) => {
           id: product.id,
           name: `${product.brand} ${product.model}`,
           price: parseFloat(product.price),
-          image: product.image_url || `/images/${slug}.png`
+          image: product.image_url || `/images/${slug}.png`,
+          specifications: typeof product.specifications === 'string' ? JSON.parse(product.specifications || '{}') : (product.specifications || {})
         };
 
         // Add special specifications fields
@@ -127,13 +128,14 @@ router.get('/:id', async (req, res, next) => {
 // POST /api/hardware
 router.post('/', async (req, res, next) => {
   try {
-    const { name, price, image, category } = req.body;
+    const { name, price, image, category, specifications } = req.body;
     const dbId = Math.floor(Math.random() * 10000) + 5000; // Mock ID generation
     
     if (!db.isFallback()) {
-      // In a real MySQL setup, we'd insert into products and category tables
-      await db.query('INSERT INTO products (id, brand, model, price, image_url, category_id) VALUES (?, ?, ?, ?, ?, ?)', 
-        [dbId, name, '', price, image, 1]); // Simplified
+      const catIdMap = { cpu: 1, mobo: 2, ram: 3, gpu: 4, storage: 5, psu: 6, case: 7 };
+      const catId = catIdMap[category] || 1;
+      await db.query('INSERT INTO products (id, brand, model, price, image_url, category_id, specifications) VALUES (?, ?, ?, ?, ?, ?, ?)', 
+        [dbId, name, '', price, image, catId, JSON.stringify(specifications || {})]);
     }
     
     res.json({ success: true, id: mapDbIdToFrontendId(dbId, category), dbId });
@@ -146,11 +148,12 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const frontendId = req.params.id;
-    const { name, price, image } = req.body;
+    const { name, price, image, specifications } = req.body;
     const dbId = mapFrontendIdToDbId(frontendId);
     
     if (!db.isFallback()) {
-      await db.query('UPDATE products SET price = ?, image_url = ? WHERE id = ?', [price, image, dbId]);
+      await db.query('UPDATE products SET price = ?, image_url = ?, specifications = ? WHERE id = ?', 
+        [price, image, JSON.stringify(specifications || {}), dbId]);
     }
     
     res.json({ success: true });

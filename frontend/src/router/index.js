@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import LandingView from '../views/LandingView.vue'
 import BuilderView from '../views/BuilderView.vue'
 import AdminView from '../views/AdminView.vue'
 import CheckoutView from '../components/CheckoutView.vue'
@@ -9,6 +10,11 @@ import ProfileView from '../views/ProfileView.vue'
 const routes = [
   {
     path: '/',
+    name: 'landing',
+    component: LandingView
+  },
+  {
+    path: '/build',
     name: 'builder',
     component: BuilderView
   },

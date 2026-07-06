@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-04T19:05:00Z",
+  "title": "Design System: PCSpec",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Emerald Green", "canonical": "#3ecf8e", "tonalRamp": ["#f0fdf4", "#dcfce7", "#bbf7d0", "#86efac", "#4ade80", "#22c55e", "#16a34a", "#15803d"] },
+      "canvas": { "role": "neutral", "displayName": "Clean Canvas", "canonical": "#ffffff", "tonalRamp": ["#ffffff", "#fafafa", "#f5f5f5", "#e5e5e5", "#d4d4d4", "#a3a3a3", "#737373", "#525252"] },
+      "ink": { "role": "neutral", "displayName": "Ink Black", "canonical": "#171717", "tonalRamp": ["#737373", "#525252", "#404040", "#262626", "#171717", "#0a0a0a", "#000000", "#000000"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines and page titles only." },
+      "body": { "displayName": "Body", "purpose": "Standard descriptive text." }
+    },
+    "shadows": [
+      { "name": "ambient-low", "value": "0 1px 2px rgba(0,0,0,0.04)", "purpose": "Subtle structured container shadow." },
+      { "name": "modal-elevation", "value": "0 16px 48px rgba(0,0,0,0.12)", "purpose": "Deep shadow for floating z-axis overlays." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Used for main call to actions.",
+      "html": "<button class=\"ds-btn-primary\">ดำเนินการสั่งซื้อ</button>",
+      "css": ".ds-btn-primary { background: #3ecf8e; color: #171717; padding: 6px 12px; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border: 1px solid #3ecf8e; border-radius: 6px; cursor: pointer; transition: background 0.2s; } .ds-btn-primary:hover { background: #24b47e; border-color: #24b47e; }"
+    },
+    {
+      "name": "Hardware Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard container for PC parts.",
+      "html": "<div class=\"ds-card\"><h3>Intel Core i5-13400F</h3><p>฿6,500</p></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #dfdfdf; border-radius: 12px; padding: 24px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; } .ds-card h3 { margin: 0 0 8px 0; color: #171717; font-weight: 500; font-size: 16px; } .ds-card p { margin: 0; color: #707070; font-size: 14px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Clean white input with green focus ring.",
+      "html": "<input type=\"text\" class=\"ds-input\" placeholder=\"ค้นหาฮาร์ดแวร์...\" />",
+      "css": ".ds-input { background: #ffffff; border: 1px solid #dfdfdf; border-radius: 6px; padding: 8px 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; color: #171717; width: 100%; box-sizing: border-box; outline: none; transition: all 0.2s; } .ds-input:focus { border-color: #3ecf8e; box-shadow: 0 0 0 3px rgba(62,207,142,0.08); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Supabase Laboratory",
+    "overview": "This visual system embraces a developer-focused, highly clinical, and ultra-clean aesthetic inspired by modern technical dashboards like Supabase. It uses a pristine white canvas anchored by razor-thin hairline borders and restrained Emerald green accents. The aesthetic philosophy is rooted in technical clarity and expert confidence—where the interface disappears into the task of building a PC, rather than calling attention to itself through flashy decorations. We explicitly reject dark mode neon glows, thick colorful borders, and unnecessary glassmorphism.",
+    "keyCharacteristics": [
+      "Restrained color strategy: primarily white/gray canvas with a single Emerald accent.",
+      "\"Refined and Restrained\" interactive components.",
+      "Hairline borders (1px) for structure rather than heavy shadows or distinct backgrounds.",
+      "Layered with subtle, soft shadows strictly for elevation."
+    ],
+    "rules": [
+      { "name": "The Restrained Accent Rule", "body": "The primary Emerald accent is used on ≤10% of any given screen. Its rarity is the point. Do not use it as a large background fill except for primary call-to-action buttons.", "section": "colors" },
+      { "name": "The System Native Rule", "body": "System fonts carry the entire product UI. Do not introduce a secondary display font for \"flavor\"; the clinical feel relies on the uniformity and speed of native OS rendering.", "section": "typography" },
+      { "name": "The Border-First Rule", "body": "Rely on 1px hairline borders to separate content areas. Use shadows sparingly, only for interactive feedback (hover) or z-axis overlays (modals, dropdowns).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use var(--hairline) for all borders to maintain a crisp, clinical layout.",
+      "Do ensure text contrast by relying on var(--ink) for body copy and var(--ink-mute) only for non-critical metadata.",
+      "Do leverage the monospace font for technical specifications or hardware model numbers."
+    ],
+    "donts": [
+      "Don't use dark mode with purple gradients, neon accents, or glassmorphism. (This was the old \"Cyber Forge\" anti-pattern).",
+      "Don't use border-left greater than 1px as a colored stripe on cards.",
+      "Don't use gradient text anywhere in the interface.",
+      "Don't use heavy, dark shadows on cards; the page should feel light and layered, not thick."
+    ]
+  }
+}

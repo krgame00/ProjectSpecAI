@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <!-- Glassmorphic Loader -->
-    <div v-if="isLoading" class="loader-container glass-panel">
-      <div class="spinner"></div>
+    <!-- Loader -->
+    <div v-if="isLoading" class="loader-wrapper">
+      <div class="spinner spinner-primary"></div>
       <div class="loader-text">
         กำลังดึงข้อมูลสเปกฮาร์ดแวร์ล่าสุดจากฐานข้อมูล MySQL...
       </div>
@@ -12,14 +12,14 @@
       <!-- Sidebar -->
       <PriceSummary 
         :categories="categories" 
-        :build="build" 
-        :catalog="catalog" 
-        :totalPrice="totalPrice" 
+        :build="builderStore.build" 
+        :catalog="catalogStore.getCategorizedHardware" 
+        :totalPrice="builderStore.totalPrice" 
         :activeCategory="activeCategory"
-        :compatibilityIssues="compatibilityIssues"
-        :hasAnyComponent="hasAnyComponent"
-        @set-active-category="$emit('set-active-category', $event)"
-        @remove-item="$emit('remove-item', $event)"
+        :compatibilityIssues="builderStore.compatibilityIssues"
+        :hasAnyComponent="builderStore.hasAnyComponent"
+        @set-active-category="activeCategory = $event"
+        @remove-item="(catId) => builderStore.selectItem(catId, null)"
         @checkout="$emit('checkout')"
       />
 
@@ -29,11 +29,11 @@
           v-if="activeCategory"
           :activeCategory="activeCategory"
           :activeCategoryInfo="activeCategoryInfo"
-          :products="catalog[activeCategory]"
-          :selectedItemId="build[activeCategory]"
-          :compatibilityIssues="compatibilityIssues"
-          :hasAnyComponent="hasAnyComponent"
-          @select-item="(catId, itemId) => $emit('select-item', catId, itemId)"
+          :products="catalogStore.getCategorizedHardware[activeCategory] || []"
+          :selectedItemId="builderStore.build[activeCategory]"
+          :compatibilityIssues="builderStore.compatibilityIssues"
+          :hasAnyComponent="builderStore.hasAnyComponent"
+          @select-item="(catId, itemId) => builderStore.selectItem(catId, itemId)"
         />
       </main>
     </div>
@@ -45,38 +45,72 @@
       :isTyping="isTyping"
       @toggle-chat="$emit('toggle-chat', $event)"
       @send-message="$emit('send-message', $event)"
-      @apply-preset="$emit('apply-preset', $event)"
+      @apply-build="$emit('apply-build', $event)"
     />
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue';
 import PriceSummary from '../components/PriceSummary.vue';
 import HardwareSelection from '../components/HardwareSelection.vue';
 import ChatbotWindow from '../components/ChatbotWindow.vue';
+import { useBuilderStore } from '../stores/builder';
+import { useCatalogStore } from '../stores/catalog';
+
+const builderStore = useBuilderStore();
+const catalogStore = useCatalogStore();
+
+const isLoading = computed(() => catalogStore.isLoading);
 
 const props = defineProps({
-  isLoading: Boolean,
-  categories: Array,
-  build: Object,
-  catalog: Object,
-  totalPrice: Number,
-  activeCategory: String,
-  activeCategoryInfo: Object,
-  compatibilityIssues: Array,
-  hasAnyComponent: Boolean,
   isChatOpen: Boolean,
   chatHistory: Array,
   isTyping: Boolean
 });
 
 const emit = defineEmits([
-  'set-active-category',
-  'remove-item',
   'checkout',
-  'select-item',
   'toggle-chat',
   'send-message',
-  'apply-preset'
+  'apply-build'
 ]);
+
+const categories = [
+  { id: 'cpu', name: 'CPU', tooltip: 'สมองของระบบ ยิ่งคอร์เยอะ ยิ่งทำงานหลายอย่างพร้อมกันได้ดี' },
+  { id: 'mobo', name: 'Motherboard', tooltip: 'แผงวงจรหลัก *ต้องเลือกซ็อกเก็ตให้ตรงกับแบรนด์ CPU*' },
+  { id: 'ram', name: 'RAM', tooltip: 'หน่วยความจำชั่วคราว (DDR4 และ DDR5 ใส่ข้ามกันไม่ได้)' },
+  { id: 'gpu', name: 'GPU (VGA)', tooltip: 'การ์ดจอ รับหน้าที่ประมวลผลกราฟิกและภาพ 3D' },
+  { id: 'storage', name: 'Storage (SSD)', tooltip: 'พื้นที่เก็บข้อมูล เลือกใช้ NVMe SSD จะทำให้เปิดเครื่องไว' },
+  { id: 'psu', name: 'Power Supply', tooltip: 'ตัวจ่ายไฟ ต้องมีกำลังไฟมากกว่าที่ชิ้นส่วนทั้งหมดใช้รวมกัน' },
+  { id: 'case', name: 'Case', tooltip: 'เคสคอมพิวเตอร์ ควรตรวจสอบขนาดเมนบอร์ดและการ์ดจอที่รองรับ' }
+];
+
+const activeCategory = ref('cpu');
+const activeCategoryInfo = computed(() => categories.find(c => c.id === activeCategory.value));
 </script>
+
+<style scoped>
+.loader-wrapper {
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-top: 2rem;
+}
+
+.spinner-primary {
+  border-top-color: var(--primary);
+}
+
+.loader-text {
+  color: var(--ink-mute);
+  margin-top: 1rem;
+}
+</style>
