@@ -321,39 +321,84 @@ const onOrderPlaced = (newOrder) => {
   });
 };
 
-const sendMessage = (text) => {
-  chatHistory.push({ role: 'user', text });
+const sendMessage = (payload) => {
+  const text = typeof payload === 'string' ? payload : payload.text;
+  const image = typeof payload === 'object' ? payload.image : null;
+  
+  chatHistory.push({ role: 'user', text, image: image?.data ? `data:${image.mimeType};base64,${image.data}` : null });
   isTyping.value = true;
   setTimeout(() => {
     isTyping.value = false;
-    processBotResponse(text);
-  }, 1200);
+    processBotResponse(text, image);
+  }, 100);
 };
 
-const processBotResponse = async (text) => {
+const processBotResponse = async (text, image = null) => {
   try {
-    // Keep only the last 10 turns of history to prevent token bloat
-    const recentHistory = chatHistory.slice(-10);
-    // Exclude the very last message from history if it is the current user message
-    if (recentHistory.length > 0 && recentHistory[recentHistory.length - 1].text === text) {
-      recentHistory.pop();
+    let sessionId = localStorage.getItem('chatbot_session_id');
+    if (!sessionId) {
+      sessionId = crypto.randomUUID();
+      localStorage.setItem('chatbot_session_id', sessionId);
     }
 
-    const response = await fetch('http://localhost:3000/api/chatbot/message', {
+    const response = await fetch('http://localhost:3000/api/chatbot/stream', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
-        message: text,
-        history: recentHistory
+        text: text,
+        image: image,
+        sessionId: sessionId
       })
     });
     
     if (!response.ok) throw new Error('API request failed');
     
-    const data = await response.json();
-    chatHistory.push({ role: 'bot', text: data.reply, recommended_build: data.recommended_build });
+    const botMsgIndex = chatHistory.length;
+    chatHistory.push({ role: 'bot', text: '', recommended_build: null, sources: [] });
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder('utf-8');
+    let buffer = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop() || ''; 
+      
+      let currentEvent = 'message';
+      
+      for (const line of lines) {
+        if (line.startsWith('event: ')) {
+          currentEvent = line.substring(7).trim();
+        } else if (line.startsWith('data: ')) {
+          const dataStr = line.substring(6).trim();
+          if (dataStr) {
+             try {
+               const data = JSON.parse(dataStr);
+               if (currentEvent === 'session') {
+                 localStorage.setItem('chatbot_session_id', data.sessionId);
+               } else if (currentEvent === 'message' || currentEvent === 'text') {
+                 if (data.text) {
+                   chatHistory[botMsgIndex].text += data.text;
+                 }
+               } else if (currentEvent === 'build_data') {
+                 chatHistory[botMsgIndex].recommended_build = data.build_data;
+               } else if (currentEvent === 'sources') {
+                 chatHistory[botMsgIndex].sources = data.sources;
+               } else if (currentEvent === 'error') {
+                 console.error('SSE Error:', data.error);
+                 if (chatHistory[botMsgIndex].text === '') {
+                   chatHistory[botMsgIndex].text = `⚠️ เกิดข้อผิดพลาดจากเซิร์ฟเวอร์ AI: ${data.error}`;
+                 }
+               }
+             } catch (err) {}
+          }
+        }
+      }
+    }
   } catch (error) {
     console.error('Chatbot API Error:', error);
     chatHistory.push({ role: 'bot', text: 'ขออภัยครับ ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ระบบ AI ได้ในขณะนี้ กรุณาตรวจสอบว่ารันระบบหลังบ้าน (Node.js) แล้ว ⚠️', recommended_build: null });

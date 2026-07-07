@@ -32,11 +32,19 @@
       </div>
       
       <!-- Chat Body -->
-      <div class="chat-body" id="chatBody">
+      <div class="chat-body" ref="chatBodyRef">
         <div v-for="(msg, index) in history" :key="index" :class="['msg', msg.role]">
           <div class="msg-avatar" v-if="msg.role === 'bot'">🤖</div>
           <div class="msg-bubble">
+            <div v-if="msg.image" class="msg-image">
+               <img :src="msg.image" alt="Uploaded Image" />
+            </div>
             <div class="msg-content" v-html="renderMarkdown(msg.text)"></div>
+            <div v-if="msg.sources && msg.sources.length" class="sources-container">
+              <a v-for="(source, idx) in msg.sources" :key="idx" :href="source.uri" target="_blank" class="source-chip">
+                🌐 {{ source.title.length > 25 ? source.title.substring(0, 25) + '...' : source.title }}
+              </a>
+            </div>
             <div v-if="msg.recommended_build" class="quick-actions">
               <button class="apply-build-btn" @click="$emit('apply-build', msg.recommended_build)">
                 ✨ นำสเปคนี้ใส่ตะกร้า
@@ -55,17 +63,30 @@
       </div>
       
       <!-- Input -->
-      <div class="chat-input">
-        <div class="input-wrapper">
-          <input 
-            type="text" 
-            v-model="userInput" 
-            @keyup.enter="handleSend" 
-            placeholder="พิมพ์เป้าหมาย เช่น เน้นเล่นเกม..."
-          >
-          <button class="send-btn" @click="handleSend" :class="{ active: userInput.trim() }">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+      <div class="chat-input-container">
+        <div class="image-preview" v-if="selectedImagePreview">
+          <div class="image-preview-wrapper">
+             <img :src="selectedImagePreview" />
+             <button class="clear-image-btn" @click="clearImage">✕</button>
+          </div>
+        </div>
+        <div class="chat-input">
+          <div class="input-wrapper">
+            <button class="attach-btn" @click="fileInput.click()" title="แนบรูปภาพ">
+              📎
+            </button>
+            <input type="file" ref="fileInput" @change="handleFileChange" accept="image/*" style="display:none" />
+            
+            <input 
+              type="text" 
+              v-model="userInput" 
+              @keyup.enter="handleSend" 
+              placeholder="พิมพ์เป้าหมาย เช่น เน้นเล่นเกม..."
+            >
+            <button class="send-btn" @click="handleSend" :class="{ active: userInput.trim() || selectedImageBase64 }">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -73,7 +94,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch, nextTick } from 'vue';
 
 const props = defineProps({
   isOpen: Boolean,
@@ -83,12 +104,57 @@ const props = defineProps({
 
 const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build']);
 
+const chatBodyRef = ref(null);
+const scrollToBottom = () => {
+  nextTick(() => {
+    if (chatBodyRef.value) {
+      chatBodyRef.value.scrollTop = chatBodyRef.value.scrollHeight;
+    }
+  });
+};
+
+watch(() => props.history, () => {
+  scrollToBottom();
+}, { deep: true });
+
+watch(() => props.isTyping, () => {
+  scrollToBottom();
+});
+
 const userInput = ref('');
+const fileInput = ref(null);
+const selectedImageBase64 = ref(null);
+const selectedImagePreview = ref(null);
+const selectedImageMime = ref(null);
+
+const handleFileChange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    selectedImagePreview.value = e.target.result;
+    selectedImageMime.value = file.type;
+    selectedImageBase64.value = e.target.result.split(',')[1];
+  };
+  reader.readAsDataURL(file);
+};
+
+const clearImage = () => {
+  selectedImagePreview.value = null;
+  selectedImageBase64.value = null;
+  selectedImageMime.value = null;
+  if (fileInput.value) fileInput.value.value = '';
+};
 
 const handleSend = () => {
-  if (userInput.value.trim()) {
-    emit('send-message', userInput.value);
+  if (userInput.value.trim() || selectedImageBase64.value) {
+    let imageObj = null;
+    if (selectedImageBase64.value) {
+      imageObj = { data: selectedImageBase64.value, mimeType: selectedImageMime.value };
+    }
+    emit('send-message', { text: userInput.value, image: imageObj });
     userInput.value = '';
+    clearImage();
   }
 };
 
@@ -292,6 +358,32 @@ const renderMarkdown = (text) => {
   background: var(--primary); color: var(--on-primary); border-color: var(--primary);
 }
 .send-btn:hover { transform: scale(1.05); }
+
+/* New CSS for Image and Sources */
+.msg-image img { max-width: 100%; border-radius: 8px; margin-bottom: 8px; }
+.sources-container { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.source-chip {
+  font-size: 0.7rem; color: var(--primary); background: var(--primary-bg);
+  padding: 2px 8px; border-radius: 12px; text-decoration: none; border: 1px solid var(--primary-border);
+  transition: all 0.2s; white-space: nowrap;
+}
+.source-chip:hover { background: var(--primary); color: var(--on-primary); }
+
+.chat-input-container { background: var(--canvas); border-top: 1px solid var(--hairline); }
+.chat-input { padding: 1rem 1.25rem; }
+.image-preview { padding: 1rem 1.25rem 0; display: flex; }
+.image-preview-wrapper { position: relative; display: inline-block; }
+.image-preview-wrapper img { height: 60px; border-radius: 8px; border: 1px solid var(--hairline-strong); }
+.clear-image-btn {
+  position: absolute; top: -6px; right: -6px; background: var(--danger); color: white;
+  border: none; border-radius: 50%; width: 20px; height: 20px; font-size: 10px; cursor: pointer;
+}
+.attach-btn {
+  background: transparent; border: none; font-size: 1.2rem; cursor: pointer;
+  padding: 0 4px; color: var(--ink-mute); transition: color 0.2s;
+}
+.attach-btn:hover { color: var(--primary); }
+
 @keyframes msgSlideIn { 
   from { opacity: 0; transform: translateY(4px); } 
   to { opacity: 1; transform: translateY(0); } 
