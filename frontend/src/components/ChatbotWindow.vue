@@ -123,6 +123,15 @@ const renderMarkdown = (text) => {
   transform: translateY(-2px); 
   box-shadow: var(--shadow-xl);
 }
+.fab-glow {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: var(--primary); filter: blur(12px); opacity: 0.2;
+}
+.fab-pulse {
+  position: absolute; inset: -4px; border-radius: 50%;
+  border: 1px solid var(--primary); opacity: 0;
+  animation: fabPulse 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
 .fab-icon-wrap { position: relative; z-index: 2; font-size: 1.5rem; }
 .chatbot-wrapper { 
   position: fixed; 
@@ -217,8 +226,8 @@ const renderMarkdown = (text) => {
   color: var(--ink);
 }
 .msg.user .msg-bubble { 
-  background: var(--primary-bg);
-  border: 1px solid var(--primary-border);
+  background: var(--canvas-night-soft);
+  border: 1px solid var(--hairline-strong);
   border-top-right-radius: 4px;
   color: var(--ink);
 }
@@ -226,19 +235,19 @@ const renderMarkdown = (text) => {
   display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; 
 }
 .apply-build-btn {
-  padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 500;
+  padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 500;
   border-radius: var(--radius-full);
-  background: var(--primary); border: 1px solid var(--primary);
-  color: var(--on-primary); cursor: pointer;
-  transition: all var(--transition-fast);
+  background: transparent; border: 1px solid var(--primary-border);
+  color: var(--primary-deep); cursor: pointer;
+  transition: all var(--transition-normal);
   font-family: var(--font-sans); white-space: nowrap;
-  box-shadow: var(--shadow-sm);
   display: flex; align-items: center; justify-content: center; width: 100%;
 }
 .apply-build-btn:hover {
+  background: var(--primary-bg);
+  border-color: var(--primary);
+  color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  filter: brightness(1.1);
 }
 .typing-indicator { display: flex; gap: 0.6rem; align-items: flex-start; }
 .typing-bubble {
@@ -249,8 +258,8 @@ const renderMarkdown = (text) => {
 }
 .typing-dots { display: flex; gap: 4px; align-items: center; }
 .typing-dots span {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--ink-faint);
-  animation: typingDot 1.4s infinite;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--ink-mute);
+  animation: typingDot 1.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
 .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
@@ -288,13 +297,20 @@ const renderMarkdown = (text) => {
   to { opacity: 1; transform: translateY(0); } 
 }
 @keyframes typingDot {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30% { transform: translateY(-4px); opacity: 1; }
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.3; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+@keyframes fabPulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.4); opacity: 0; }
 }
 @media (max-width: 820px) {
   .chatbot-wrapper { 
     bottom: 0; right: 0; left: 0; width: 100%; height: 75vh;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+  .chat-input {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
 </style>
