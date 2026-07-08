@@ -19,6 +19,7 @@
     "dotenv": "^17.4.2",
     "duckduckgo-images-api": "^1.0.5",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
     "jsonwebtoken": "^9.0.3",
     "mysql2": "^3.22.5",
     "puppeteer": "^25.2.0"

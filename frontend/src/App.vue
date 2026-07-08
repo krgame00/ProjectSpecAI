@@ -3,7 +3,7 @@
     <!-- Top Navigation -->
     <nav class="top-nav" v-if="$route.path !== '/admin'">
       <div class="nav-content container">
-        <div class="logo" @click="$router.push('/')" style="cursor: pointer;">Smart <span>PC Builder</span></div>
+        <div class="logo" @click="$router.push('/')" style="cursor: pointer;">BuildWith<span>SpecAI</span></div>
         <div class="nav-actions">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
           
@@ -96,7 +96,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, computed } from 'vue';
+import { ref, reactive, onMounted, computed, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useAuthStore } from './stores/auth';
 import { useBuilderStore } from './stores/builder';
@@ -130,6 +130,9 @@ const categories = [
 
 onMounted(async () => {
   await catalogStore.fetchCatalog();
+  if (userRole.value === 'admin') {
+    await fetchAdminOrders();
+  }
   try {
     const res = await fetch(`${API_BASE}/articles`);
     if (res.ok) {
@@ -138,6 +141,12 @@ onMounted(async () => {
     }
   } catch (error) {
     console.error('Failed to load articles:', error);
+  }
+});
+
+watch(() => route.path, (newPath) => {
+  if (newPath === '/admin' && userRole.value === 'admin') {
+    fetchAdminOrders();
   }
 });
 
@@ -227,10 +236,20 @@ const handleUpdateOrderStatus = async (orderId, newStatus) => {
 
 const articles = reactive([]);
 
-const orders = reactive([
-  { id: 'ORD-1001', customer: 'สกาย เกมเมอร์', assembly: 'premium', total: 49500, status: 'assembling', date: new Date().toISOString() },
-  { id: 'ORD-1002', customer: 'สมชาย ไอที', assembly: 'none', total: 15300, status: 'shipped', date: new Date().toISOString() }
-]);
+const orders = ref([]);
+
+const fetchAdminOrders = async () => {
+  try {
+    const res = await fetch(`${API_BASE}/orders`, {
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+    });
+    if (res.ok) {
+      orders.value = await res.json();
+    }
+  } catch (error) {
+    console.error('Failed to fetch admin orders:', error);
+  }
+};
 
 // Chatbot State
 const isChatOpen = ref(false);
@@ -256,6 +275,7 @@ const handleLoginSubmit = async () => {
       loginForm.email = ''; loginForm.password = '';
       
       if (data.user.role === 'admin') {
+        fetchAdminOrders();
         router.push('/admin');
       }
     } else {

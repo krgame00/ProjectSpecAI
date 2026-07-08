@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const rateLimit = require('express-rate-limit');
 
 // Import Database Connection (Triggers connection check and handles fallback mode)
 const db = require('./config/db');
@@ -20,12 +21,30 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// --- Rate Limiting ---
+const globalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 200, // Limit each IP to 200 requests per window
+  message: { error: 'คำขอเข้าใช้งานระบบเยอะเกินไป กรุณารอสักครู่ (Too many requests)' },
+  standardHeaders: true, 
+  legacyHeaders: false,
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, 
+  max: 15, // Limit each IP to 15 login/register requests per window
+  message: { error: 'คุณพยายามเข้าสู่ระบบ/สมัครสมาชิกบ่อยเกินไป กรุณารอ 15 นาที' }
+});
+
+// Apply global limiter to all routes
+app.use(globalLimiter);
+
 // API Routes
 app.use('/api/hardware', hardwareRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/orders', ordersRoutes);
 app.use('/api/articles', articlesRoutes);
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authLimiter, authRoutes); // Apply stricter limit for Auth
 
 // Base Route
 app.get('/', (req, res) => {

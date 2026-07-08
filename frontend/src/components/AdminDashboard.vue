@@ -110,25 +110,35 @@
             </thead>
             <tbody>
               <tr v-for="order in orders" :key="order.id">
-                <td style="font-family: var(--font-mono); font-weight: 600;">{{ order.id }}</td>
-                <td>{{ order.customer }}</td>
-                <td>
-                  <span v-if="order.assembly === 'none'">ประกอบเอง</span>
-                  <span v-else-if="order.assembly === 'standard'" style="color: var(--accent);">มาตรฐาน</span>
-                  <span v-else-if="order.assembly === 'premium'" style="color: var(--warning);">พรีเมียม</span>
+                <td style="font-family: var(--font-mono); font-weight: 600;">
+                  {{ order.id }}
+                  <div style="font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; font-weight: normal;">
+                    {{ new Date(order.created_at || order.date).toLocaleDateString('th-TH') }}
+                  </div>
                 </td>
-                <td style="font-family: var(--font-mono); font-weight: 600;">฿{{ order.total.toLocaleString() }}</td>
+                <td>{{ order.customer_name || order.customer }}</td>
+                <td>
+                  <span v-if="order.assembly_type === 'none' || order.assembly === 'none'">ประกอบเอง</span>
+                  <span v-else-if="order.assembly_type === 'standard' || order.assembly === 'standard'" style="color: var(--accent);">มาตรฐาน</span>
+                  <span v-else-if="order.assembly_type === 'premium' || order.assembly === 'premium'" style="color: var(--warning);">พรีเมียม</span>
+                </td>
+                <td style="font-family: var(--font-mono); font-weight: 600;">฿{{ (order.total_price || order.total || 0).toLocaleString() }}</td>
                 <td>
                   <span :class="['badge', 'badge-' + order.status]">
                     {{ getStatusLabel(order.status) }}
                   </span>
                 </td>
                 <td>
-                  <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto; background: var(--bg);" :value="order.status" @change="$emit('update-order-status', order.id, $event.target.value)">
-                    <option value="pending">รอดำเนินการ</option>
-                    <option value="assembling">กำลังประกอบ</option>
-                    <option value="shipped">จัดส่งแล้ว</option>
-                  </select>
+                  <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto; background: var(--bg); height: 32px;" :value="order.status" @change="$emit('update-order-status', order.id, $event.target.value)">
+                      <option value="pending">รอดำเนินการ</option>
+                      <option value="assembling">กำลังประกอบ</option>
+                      <option value="shipped">จัดส่งแล้ว</option>
+                    </select>
+                    <button class="btn btn-outline btn-sm" style="height: 32px; display: flex; align-items: center; justify-content: center;" @click="openOrderModal(order)">
+                      📄 รายละเอียด
+                    </button>
+                  </div>
                 </td>
               </tr>
               <tr v-if="orders.length === 0">
@@ -210,6 +220,51 @@
           </table>
         </div>
       </main>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal-overlay" v-if="showOrderModal" @click.self="showOrderModal = false">
+      <div class="modal-content glass-panel" style="max-width: 600px; padding: 0;">
+        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+            <span>📄</span> 
+            รายละเอียดคำสั่งซื้อ {{ selectedOrder?.id }}
+          </h3>
+          <button class="close-btn" @click="showOrderModal = false">✕</button>
+        </div>
+        <div class="modal-body" style="max-height: 70vh; overflow-y: auto; padding: 1.5rem;">
+          <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-mute); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <div><strong>ลูกค้า:</strong> {{ selectedOrder?.customer_name || selectedOrder?.customer }}</div>
+            <div><strong>รูปแบบประกอบ:</strong> {{ selectedOrder?.assembly_type || selectedOrder?.assembly }}</div>
+            <div><strong>เบอร์โทร:</strong> {{ selectedOrder?.customer_phone || '-' }}</div>
+            <div><strong>ยอดสุทธิ:</strong> ฿{{ (selectedOrder?.total_price || selectedOrder?.total || 0).toLocaleString() }}</div>
+            <div style="grid-column: 1 / -1;"><strong>ที่อยู่:</strong> {{ selectedOrder?.customer_address || '-' }}</div>
+          </div>
+          
+          <h4 style="margin-bottom: 1rem; color: var(--ink); border-bottom: 1px solid var(--hairline-cool); padding-bottom: 0.5rem;">รายการสินค้าที่สั่งซื้อ</h4>
+          <div v-if="selectedOrder?.build_items && Object.keys(selectedOrder.build_items).length > 0" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div v-for="(itemId, category) in selectedOrder.build_items" :key="category" style="display: flex; align-items: center; gap: 1rem; background: var(--canvas-soft); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--hairline-cool);">
+              <div style="width: 40px; height: 40px; background: var(--canvas); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; padding: 0.25rem;">
+                <img v-if="getHardwareItem(category, itemId)?.image" :src="getHardwareItem(category, itemId).image" style="width: 100%; height: 100%; object-fit: contain;">
+                <span v-else>📦</span>
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 0.7rem; color: var(--ink-mute); text-transform: uppercase;">{{ category }}</div>
+                <div style="font-size: 0.9rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                  {{ getHardwareItem(category, itemId)?.name || 'ไม่พบข้อมูลสินค้า (ID: ' + itemId + ')' }}
+                </div>
+              </div>
+              <div style="font-weight: 600; font-family: var(--font-mono);">
+                ฿{{ (getHardwareItem(category, itemId)?.price || 0).toLocaleString() }}
+              </div>
+            </div>
+          </div>
+          <div v-else style="text-align: center; color: var(--muted); padding: 1rem;">ไม่มีข้อมูลรายการชิ้นส่วน</div>
+        </div>
+        <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; background: rgba(0,0,0,0.2);">
+          <button class="btn btn-outline" @click="showOrderModal = false">ปิด</button>
+        </div>
+      </div>
     </div>
 
     <!-- Product Modal -->
@@ -434,12 +489,27 @@ onMounted(() => { fetchUsers(); });
 
 const inventoryCategory = ref('cpu');
 
-const totalSales = computed(() => props.orders.reduce((sum, ord) => sum + ord.total, 0));
+const totalSales = computed(() => props.orders.reduce((sum, ord) => sum + (ord.total_price || ord.total || 0), 0));
 const pendingAssemblies = computed(() => props.orders.filter(o => o.status === 'pending' || o.status === 'assembling').length);
 
 const getStatusLabel = (status) => {
   const map = { pending: 'รอดำเนินการ', assembling: 'กำลังประกอบ', shipped: 'จัดส่งแล้ว' };
   return map[status] || status;
+};
+
+// --- Order Details Modal ---
+const showOrderModal = ref(false);
+const selectedOrder = ref(null);
+
+const openOrderModal = (order) => {
+  selectedOrder.value = order;
+  showOrderModal.value = true;
+};
+
+const getHardwareItem = (category, itemId) => {
+  if (!props.catalog || !props.catalog[category]) return null;
+  // Fallback to checking by string if DB uses ID mismatch (e.g. string vs int)
+  return props.catalog[category].find(item => item.id == itemId);
 };
 
 // --- Product CRUD ---
@@ -450,6 +520,20 @@ const productForm = reactive({ id: '', name: '', price: 0, image: '', specList: 
 
 const openProductModal = (product = null) => {
   productImgError.value = false;
+  
+  // Smart Spec Templates (Preload keys based on category)
+  const templates = {
+    cpu: ['Socket', 'Cores', 'Threads', 'Base Clock', 'Boost Clock', 'TDP'],
+    mobo: ['Socket', 'Form Factor', 'Chipset', 'Memory Type', 'Max Memory'],
+    ram: ['Type', 'Capacity', 'Speed', 'CAS Latency'],
+    gpu: ['GPU', 'VRAM', 'Base Clock', 'Boost Clock', 'Length', 'TDP'],
+    storage: ['Capacity', 'Interface', 'Form Factor', 'Read Speed', 'Write Speed'],
+    psu: ['Wattage', 'Form Factor', 'Efficiency', 'Modular'],
+    case: ['Form Factor', 'Max GPU Length', 'Max CPU Cooler Height', 'Type']
+  };
+  
+  const categoryKeys = templates[inventoryCategory.value] || ['Specification'];
+
   if (product) {
     editingProduct.value = product;
     productForm.id = product.id;
@@ -457,9 +541,21 @@ const openProductModal = (product = null) => {
     productForm.price = product.price;
     productForm.image = product.image || '';
     
-    // Parse JSON object to array of {key, value} for UI
+    // Parse JSON object to array of {key, value} for UI, ensuring preset keys are included
     const specs = product.specifications || {};
-    productForm.specList = Object.entries(specs).map(([key, value]) => ({ key, value: String(value) }));
+    const mergedSpecs = categoryKeys.map(key => ({
+      key, 
+      value: specs[key] !== undefined ? String(specs[key]) : ''
+    }));
+
+    // Add any existing keys that are not in the templates
+    Object.entries(specs).forEach(([key, value]) => {
+      if (!categoryKeys.includes(key)) {
+        mergedSpecs.push({ key, value: String(value) });
+      }
+    });
+    
+    productForm.specList = mergedSpecs;
   } else {
     editingProduct.value = null;
     productForm.id = `temp-${inventoryCategory.value}-${Date.now().toString().slice(-4)}`;
@@ -467,18 +563,6 @@ const openProductModal = (product = null) => {
     productForm.price = 0;
     productForm.image = `/images/${inventoryCategory.value}.png`;
     
-    // Smart Spec Templates (Preload keys based on category)
-    const templates = {
-      cpu: ['Socket', 'Cores', 'Threads', 'Base Clock', 'Boost Clock', 'TDP'],
-      mobo: ['Socket', 'Form Factor', 'Chipset', 'Memory Type', 'Max Memory'],
-      ram: ['Type', 'Capacity', 'Speed', 'CAS Latency'],
-      gpu: ['GPU', 'VRAM', 'Base Clock', 'Boost Clock', 'Length', 'TDP'],
-      storage: ['Capacity', 'Interface', 'Form Factor', 'Read Speed', 'Write Speed'],
-      psu: ['Wattage', 'Form Factor', 'Efficiency', 'Modular'],
-      case: ['Form Factor', 'Max GPU Length', 'Max CPU Cooler Height', 'Type']
-    };
-    
-    const categoryKeys = templates[inventoryCategory.value] || ['Specification'];
     productForm.specList = categoryKeys.map(key => ({ key, value: '' }));
   }
   showProductModal.value = true;

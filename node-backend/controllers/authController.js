@@ -13,6 +13,17 @@ const authController = {
         return res.status(400).json({ error: 'กรุณากรอกข้อมูลให้ครบถ้วน (name, email, password)' });
       }
 
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: 'รูปแบบอีเมลไม่ถูกต้อง' });
+      }
+
+      // Validate password length
+      if (password.length < 6) {
+        return res.status(400).json({ error: 'รหัสผ่านต้องมีความยาวอย่างน้อย 6 ตัวอักษร' });
+      }
+
       // Check if email already exists
       const existingUser = await userModel.findByEmail(email);
       if (existingUser) {

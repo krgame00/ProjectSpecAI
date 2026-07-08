@@ -8,26 +8,90 @@ const ordersFilePath = path.join(__dirname, '../orders.json');
 
 // Helper to parse frontend ID back to DB Product ID
 function mapFrontendIdToDbId(frontendId) {
-  const num = parseInt(frontendId.replace(/\D/g, ''), 10);
-  if (frontendId.startsWith('c')) return num;
-  if (frontendId.startsWith('m')) return num + 10;
-  if (frontendId.startsWith('r')) return num + 20;
-  if (frontendId.startsWith('g')) return num + 30;
-  if (frontendId.startsWith('s')) return num + 40;
-  if (frontendId.startsWith('p')) return num + 50;
-  if (frontendId.startsWith('case')) return num + 60;
+  if (typeof frontendId === 'number') return frontendId;
+  const strId = String(frontendId);
+  if (!isNaN(strId) && !isNaN(parseInt(strId, 10))) return parseInt(strId, 10);
+  
+  const num = parseInt(strId.replace(/\D/g, ''), 10);
+  if (strId.startsWith('c')) return num;
+  if (strId.startsWith('m')) return num + 10;
+  if (strId.startsWith('r')) return num + 20;
+  if (strId.startsWith('g')) return num + 30;
+  if (strId.startsWith('s')) return num + 40;
+  if (strId.startsWith('p')) return num + 50;
+  if (strId.startsWith('case')) return num + 60;
   return num;
 }
+
+// GET /api/orders
+// ดึงรายการสั่งซื้อทั้งหมด (สำหรับ Admin)
+router.get('/', async (req, res, next) => {
+  try {
+    if (db.isFallback()) {
+      let orders = [];
+      try {
+        const fileData = await fs.readFile(ordersFilePath, 'utf8');
+        orders = JSON.parse(fileData);
+      } catch (err) {}
+      return res.json(orders);
+    } else {
+      const [ordersRows] = await db.query('SELECT * FROM orders ORDER BY created_at DESC');
+      const [itemsRows] = await db.query('SELECT * FROM order_items');
+      
+      const orders = ordersRows.map(o => {
+        const items = itemsRows.filter(i => i.order_id === o.id);
+        const build_items = {};
+        items.forEach(item => {
+          build_items[item.category_slug] = item.product_id;
+        });
+        return {
+          id: o.id,
+          customer_name: o.customer_name,
+          customer_address: o.customer_address,
+          customer_phone: o.customer_phone,
+          assembly_type: o.assembly_type,
+          total_price: parseFloat(o.total_price),
+          status: o.status,
+          created_at: o.created_at,
+          build_items: build_items
+        };
+      });
+      return res.json(orders);
+    }
+  } catch (error) {
+    next(error);
+  }
+});
 
 // POST /api/orders
 // สร้างคำสั่งซื้อใหม่ (Checkout)
 router.post('/', async (req, res, next) => {
   try {
-    const { customer_name, customer_address, customer_phone, assembly_type, total_price, build_items } = req.body;
+    let { customer_name, customer_address, customer_phone, assembly_type, total_price, build_items } = req.body;
 
-    // 1. ตรวจสอบข้อมูล
-    if (!customer_name || !build_items || Object.keys(build_items).length === 0) {
-      return res.status(400).json({ error: 'Invalid order data' });
+    // 1. ตรวจสอบข้อมูล (Backend Validation)
+    if (!customer_name || typeof customer_name !== 'string' || customer_name.trim().length === 0) {
+      return res.status(400).json({ error: 'กรุณาระบุชื่อ-นามสกุลให้ถูกต้อง' });
+    }
+    customer_name = customer_name.trim();
+    customer_address = customer_address ? customer_address.trim() : '';
+
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!customer_phone || !phoneRegex.test(customer_phone)) {
+      return res.status(400).json({ error: 'เบอร์โทรศัพท์ต้องเป็นตัวเลข 10 หลักเท่านั้น' });
+    }
+
+    const validAssemblyTypes = ['none', 'standard', 'premium'];
+    if (!validAssemblyTypes.includes(assembly_type)) {
+      return res.status(400).json({ error: 'รูปแบบการประกอบเครื่องไม่ถูกต้อง' });
+    }
+
+    if (isNaN(total_price) || parseFloat(total_price) < 0) {
+      return res.status(400).json({ error: 'ราคาสุทธิไม่ถูกต้อง' });
+    }
+
+    if (!build_items || typeof build_items !== 'object' || Object.keys(build_items).length === 0) {
+      return res.status(400).json({ error: 'ไม่มีรายการสินค้าในตะกร้า' });
     }
 
     const newOrderId = `ORD-${Math.floor(Math.random() * 9000) + 1000}`;

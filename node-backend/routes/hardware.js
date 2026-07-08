@@ -16,15 +16,27 @@ function mapDbIdToFrontendId(dbId, categorySlug) {
 
 // Helper to parse frontend ID back to DB Product ID
 function mapFrontendIdToDbId(frontendId) {
-  const num = parseInt(frontendId.replace(/\D/g, ''), 10);
-  if (frontendId.startsWith('c')) return num;
-  if (frontendId.startsWith('m')) return num + 10;
-  if (frontendId.startsWith('r')) return num + 20;
-  if (frontendId.startsWith('g')) return num + 30;
-  if (frontendId.startsWith('s')) return num + 40;
-  if (frontendId.startsWith('p')) return num + 50;
-  if (frontendId.startsWith('case')) return num + 60;
+  // If it's already a pure number (from DB catalog), return as-is
+  if (/^\d+$/.test(String(frontendId))) return Number(frontendId);
+  
+  const num = parseInt(String(frontendId).replace(/\D/g, ''), 10);
+  if (String(frontendId).startsWith('c')) return num;
+  if (String(frontendId).startsWith('m')) return num + 10;
+  if (String(frontendId).startsWith('r')) return num + 20;
+  if (String(frontendId).startsWith('g')) return num + 30;
+  if (String(frontendId).startsWith('s')) return num + 40;
+  if (String(frontendId).startsWith('p')) return num + 50;
+  if (String(frontendId).startsWith('case')) return num + 60;
   return num;
+}
+
+// Helper to split a full product name into brand + model
+function splitName(fullName) {
+  if (!fullName) return { brand: '', model: '' };
+  const parts = fullName.trim().split(/\s+/);
+  const brand = parts[0] || '';
+  const model = parts.slice(1).join(' ') || '';
+  return { brand, model };
 }
 
 // GET /api/hardware/catalog
@@ -36,9 +48,9 @@ router.get('/catalog', async (req, res, next) => {
              c.socket as cpu_socket, c.tdp_watt as cpu_tdp,
              m.socket as mobo_socket, m.ram_type as mobo_ram_type,
              r.ram_type, r.capacity_gb,
-             g.tdp_watt as gpu_tdp,
+             g.tdp_watt as gpu_tdp, g.length_mm as gpu_length_mm,
              psu.wattage as psu_wattage,
-             case_spec.form_factor_support
+             case_spec.form_factor_support, case_spec.max_gpu_length_mm as case_max_gpu_length
       FROM products p
       JOIN categories cat ON p.category_id = cat.id
       LEFT JOIN spec_cpu c ON p.id = c.product_id AND cat.slug = 'cpu'
@@ -78,8 +90,11 @@ router.get('/catalog', async (req, res, next) => {
           formatted.type = product.ram_type;
         } else if (slug === 'gpu') {
           formatted.tdp = product.gpu_tdp;
+          if (product.gpu_length_mm) formatted.specifications['Length (mm)'] = product.gpu_length_mm;
         } else if (slug === 'psu') {
           formatted.wattage = product.psu_wattage;
+        } else if (slug === 'case') {
+          if (product.case_max_gpu_length) formatted.specifications['Max GPU Length (mm)'] = product.case_max_gpu_length;
         }
 
         catalog[slug].push(formatted);
@@ -129,16 +144,19 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const { name, price, image, category, specifications } = req.body;
-    const dbId = Math.floor(Math.random() * 10000) + 5000; // Mock ID generation
+    const { brand, model } = splitName(name);
     
     if (!db.isFallback()) {
       const catIdMap = { cpu: 1, mobo: 2, ram: 3, gpu: 4, storage: 5, psu: 6, case: 7 };
       const catId = catIdMap[category] || 1;
-      await db.query('INSERT INTO products (id, brand, model, price, image_url, category_id, specifications) VALUES (?, ?, ?, ?, ?, ?, ?)', 
-        [dbId, name, '', price, image, catId, JSON.stringify(specifications || {})]);
+      const [result] = await db.query('INSERT INTO products (brand, model, price, image_url, category_id, specifications) VALUES (?, ?, ?, ?, ?, ?)', 
+        [brand, model, price, image, catId, JSON.stringify(specifications || {})]);
+      const dbId = result.insertId;
+      res.json({ success: true, id: dbId, dbId });
+    } else {
+      const dbId = Math.floor(Math.random() * 10000) + 5000;
+      res.json({ success: true, id: dbId, dbId });
     }
-    
-    res.json({ success: true, id: mapDbIdToFrontendId(dbId, category), dbId });
   } catch (error) {
     next(error);
   }
@@ -150,10 +168,11 @@ router.put('/:id', async (req, res, next) => {
     const frontendId = req.params.id;
     const { name, price, image, specifications } = req.body;
     const dbId = mapFrontendIdToDbId(frontendId);
+    const { brand, model } = splitName(name);
     
     if (!db.isFallback()) {
-      await db.query('UPDATE products SET price = ?, image_url = ?, specifications = ? WHERE id = ?', 
-        [price, image, JSON.stringify(specifications || {}), dbId]);
+      await db.query('UPDATE products SET brand = ?, model = ?, price = ?, image_url = ?, specifications = ? WHERE id = ?', 
+        [brand, model, price, image, JSON.stringify(specifications || {}), dbId]);
     }
     
     res.json({ success: true });

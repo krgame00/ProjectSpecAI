@@ -6,7 +6,7 @@
     </div>
 
     <!-- Featured Article (Hero) -->
-    <div v-if="featuredArticle" class="hero-article" @click="$emit('read-article', featuredArticle)">
+    <div v-if="featuredArticle" class="hero-article" @click="$router.push(`/article/${featuredArticle.id}`)">
       <div class="hero-image">
         <img :src="featuredArticle.image_url || featuredArticle.image" :alt="featuredArticle.title" @error="$event.target.style.display='none'" />
         <div class="hero-badge">ล่าสุด</div>
@@ -21,7 +21,7 @@
 
     <!-- Grid Articles -->
     <div class="articles-grid" v-if="gridArticles.length > 0">
-      <div v-for="article in gridArticles" :key="article.id" class="article-card" @click="$emit('read-article', article)">
+      <div v-for="article in gridArticles" :key="article.id" class="article-card" @click="$router.push(`/article/${article.id}`)">
         <div class="article-image">
           <img :src="article.image_url || article.image" :alt="article.title" @error="$event.target.style.display='none'" />
         </div>

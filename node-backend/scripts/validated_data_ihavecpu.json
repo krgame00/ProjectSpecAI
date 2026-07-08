@@ -1,0 +1,527 @@
+[
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN THREADRIPPER PRO 7995WX 2.5GHz 384MB 96C 192T",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "sTRX5"
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 5 5600 3.5GHz 6C 12T",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4"
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 7 5800XT 3.8GHz 8C 16T",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4"
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 7 9800X3D 4.7GHz 8C 16T",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM5"
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 7 7800X3D 4.2 GHz 8C 16T",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM5"
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 5 5500",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4",
+      "tdp_watt": 65
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 7 9850X3D",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM5",
+      "tdp_watt": 120
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "INTEL",
+    "model": "CORE ULTRA 5 225F",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "LGA 1851",
+      "tdp_watt": 65
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "AMD",
+    "model": "RYZEN 5 7500F",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM5",
+      "tdp_watt": 65
+    }
+  },
+  {
+    "category_slug": "cpu",
+    "brand": "INTEL",
+    "model": "CORE ULTRA 5 225",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "LGA 1851",
+      "tdp_watt": 65
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "ASUS",
+    "model": "PRIME A620M-K-CSM",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM5",
+      "ram_type": "DDR5"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "ASUS",
+    "model": "PRIME A520M-K",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4",
+      "ram_type": "DDR4"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "ASROCK",
+    "model": "H610M-H2/M.2-D5",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "1700",
+      "ram_type": "DDR5"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "GIGABYTE",
+    "model": "H810M K (REV 1.0)",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "1851",
+      "ram_type": "DDR5"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "ASROCK",
+    "model": "A620AM-HVS",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM5",
+      "ram_type": "DDR5"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "GIGABYTE",
+    "model": "A520M K V2 (REV.1.1)",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4",
+      "ram_type": "DDR4"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "ASUS",
+    "model": "PRIME H610M-K",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "1700",
+      "ram_type": "DDR5"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "GIGABYTE",
+    "model": "A520M K V2 (REV.1.2)",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4",
+      "ram_type": "DDR4"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "GIGABYTE",
+    "model": "H610M K (REV.2.0)",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "1700",
+      "ram_type": "DDR4"
+    }
+  },
+  {
+    "category_slug": "mobo",
+    "brand": "MSI",
+    "model": "A520M-A-PRO",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "socket": "AM4",
+      "ram_type": "DDR4"
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "HIKSEMI",
+    "model": "ARMOR BLACK",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "HIKSEMI",
+    "model": "ARMOR BLACK",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 8
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "ADATA XPG",
+    "model": "LANCER BLADE RGB",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR5",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "HIKSEMI",
+    "model": "ARMOR WHITE",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "KINGBANK",
+    "model": "KJXS SILVER",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "KINGSTON",
+    "model": "FURY BEAST RGB BLACK KF432C16BB2AK2/16WP",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "HIKSEMI",
+    "model": "ARMOR BLACK HSC416U32D3",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "CORSAIR",
+    "model": "VENGEANCE RGB PRO SL WHITE CMH16GX4M2E3200C16W",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "ADATA",
+    "model": "AD5S48008G-S",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR5",
+      "capacity_gb": 8
+    }
+  },
+  {
+    "category_slug": "ram",
+    "brand": "LEXAR",
+    "model": "THOR DUAL LD4BU008G-R3200GDXG",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "ram_type": "DDR4",
+      "capacity_gb": 16
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "GIGABYTE",
+    "model": "GP-P750BS",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 750
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "CORSAIR",
+    "model": "CX650",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 650
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "AZZA",
+    "model": "PSAZ",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 550
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "AEROCOOL",
+    "model": "AERO 550",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 550
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "AEROCOOL",
+    "model": "UNITED POWER 600W",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 600
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "MSI",
+    "model": "MAG A600DN",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 600
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "ASUS",
+    "model": "TUF GAMING 650B",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 650
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "MSI",
+    "model": "MAG A850GN PCIE5",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 850
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "MSI",
+    "model": "MAG A650BNL",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 650
+    }
+  },
+  {
+    "category_slug": "psu",
+    "brand": "THERMALTAKE",
+    "model": "SMART BX1",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "wattage": 650
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "IHC 401TG",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "ATX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "GIGABYTE",
+    "model": "C102 GLASS ICE",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "PRISMA ARGB",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "ATX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "ZALMAN",
+    "model": "M4 SE",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "IHC R06 ARGB",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "IHC R30",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX, Mini-ITX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "IHC 102 WOOD",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX, Mini-ITX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "OCYPUS x iHAVECPU",
+    "model": "GAMMA C52 ARGB",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX, Mini-ITX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "CRYSTAL Z6 MINI",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX, Mini-ITX"
+    }
+  },
+  {
+    "category_slug": "case",
+    "brand": "iHAVECPU",
+    "model": "IHC 102 WOOD",
+    "price": 0,
+    "image_url": "https://www.ihavecpu.com/assets/images/logo_light.svg",
+    "specs": {
+      "form_factor_support": "Micro-ATX, Mini-ITX"
+    }
+  }
+]

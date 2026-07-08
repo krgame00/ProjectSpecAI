@@ -17,10 +17,11 @@
         :totalPrice="builderStore.totalPrice" 
         :activeCategory="activeCategory"
         :compatibilityIssues="builderStore.compatibilityIssues"
+        :compatibilityPasses="builderStore.compatibilityPasses"
         :hasAnyComponent="builderStore.hasAnyComponent"
         @set-active-category="activeCategory = $event"
         @remove-item="(catId) => builderStore.selectItem(catId, null)"
-        @checkout="$emit('checkout')"
+        @checkout="$router.push('/checkout')"
       />
 
       <!-- Main Content -->

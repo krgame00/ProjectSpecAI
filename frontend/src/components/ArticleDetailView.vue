@@ -3,7 +3,7 @@
     <!-- Hero Image Section with Navigation -->
     <div class="hero-header">
       <div class="back-nav container">
-        <button class="btn btn-outline btn-sm back-btn" @click="$emit('go-back')">
+        <button class="btn btn-outline btn-sm back-btn" @click="goBack">
           ← กลับไปหน้าบทความ
         </button>
       </div>
@@ -28,7 +28,7 @@
       <div class="article-content" v-html="article.content"></div>
       
       <div class="article-footer">
-        <button class="btn btn-primary" @click="$emit('go-back')">กลับไปอ่านบทความอื่น</button>
+        <button class="btn btn-primary" @click="goBack">กลับไปอ่านบทความอื่น</button>
       </div>
     </div>
   </div>
@@ -38,18 +38,30 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const props = defineProps({
-  article: {
-    type: Object,
-    required: true
+  articles: {
+    type: Array,
+    default: () => []
   }
 });
-const emit = defineEmits(['go-back']);
+
+const route = useRoute();
+const router = useRouter();
+
+const article = computed(() => {
+  if (!props.articles || props.articles.length === 0) return null;
+  return props.articles.find(a => a.id == route.params.id) || null;
+});
+
+const goBack = () => {
+  router.push('/articles');
+};
 
 const handleKeydown = (e) => {
-  if (e.key === 'Escape') emit('go-back');
+  if (e.key === 'Escape') goBack();
 };
 
 onMounted(() => window.addEventListener('keydown', handleKeydown));

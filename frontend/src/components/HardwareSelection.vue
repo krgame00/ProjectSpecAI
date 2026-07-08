@@ -43,11 +43,9 @@
         <div class="product-info">
           <div class="product-name">{{ item.name }}</div>
           <div class="product-specs">
-            <span class="spec-tag" v-if="item.socket">{{ item.socket }}</span>
-            <span class="spec-tag" v-if="item.tdp">{{ item.tdp }}W</span>
-            <span class="spec-tag" v-if="item.ramType">{{ item.ramType }}</span>
-            <span class="spec-tag" v-if="item.type">{{ item.type }}</span>
-            <span class="spec-tag" v-if="item.wattage">{{ item.wattage }}W</span>
+            <span class="spec-tag" v-for="(spec, idx) in getItemSpecsList(activeCategory, item)" :key="idx">
+              <span class="tag-label">{{ spec.label }}:</span> {{ spec.value }}
+            </span>
           </div>
         </div>
         
@@ -99,6 +97,41 @@ const getCategoryEmoji = (cat) => {
     gpu: '🎮', storage: '💿', psu: '⚡', case: '🖥️'
   };
   return map[cat] || '📦';
+};
+
+const getItemSpecsList = (catId, item) => {
+  if (!item) return [];
+  const specs = [];
+  
+  if (item.socket) specs.push({ label: 'Socket', value: item.socket });
+  if (catId === 'mobo' && item.ramType) specs.push({ label: 'DDR', value: item.ramType });
+  if (catId === 'ram' && item.type) specs.push({ label: 'ประเภท', value: item.type });
+  if (catId === 'psu' && item.wattage) specs.push({ label: 'กำลังไฟ', value: `${item.wattage}W` });
+  
+  const s = item.specifications || {};
+  if (catId === 'cpu') {
+    if (s['Cores/Threads']) specs.push({ label: 'คอร์/เธรด', value: s['Cores/Threads'] });
+    if (s['Base Clock']) specs.push({ label: 'ความเร็วพื้นฐาน', value: s['Base Clock'] });
+    if (s['Boost Clock']) specs.push({ label: 'ความเร็วบูสต์', value: s['Boost Clock'] });
+    if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
+  } else if (catId === 'mobo') {
+    if (s['Form Factor']) specs.push({ label: 'ฟอร์มแฟคเตอร์', value: s['Form Factor'] });
+  } else if (catId === 'ram') {
+    if (s['Capacity']) specs.push({ label: 'ความจุ', value: s['Capacity'] });
+  } else if (catId === 'gpu') {
+    if (s['VRAM']) specs.push({ label: 'VRAM', value: s['VRAM'] });
+    if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
+    if (s['Length (mm)']) specs.push({ label: 'ความยาว', value: `${s['Length (mm)']}mm` });
+  } else if (catId === 'storage') {
+    if (s['Type']) specs.push({ label: 'ประเภท', value: s['Type'] });
+    if (s['Capacity']) specs.push({ label: 'ความจุ', value: s['Capacity'] });
+  } else if (catId === 'psu') {
+    if (s['Efficiency Rating']) specs.push({ label: 'มาตรฐาน', value: s['Efficiency Rating'] });
+  } else if (catId === 'case') {
+    if (s['Form Factor Support']) specs.push({ label: 'รองรับบอร์ด', value: s['Form Factor Support'] });
+    if (s['Max GPU Length (mm)']) specs.push({ label: 'GPU ยาวสุด', value: `${s['Max GPU Length (mm)']}mm` });
+  }
+  return specs;
 };
 </script>
 
@@ -282,13 +315,18 @@ const getCategoryEmoji = (cat) => {
 }
 .spec-tag {
   font-size: 0.65rem;
-  color: var(--ink-mute);
+  color: var(--ink-secondary);
   background: var(--canvas-soft);
   padding: 0.15rem 0.45rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--hairline-cool);
   font-family: var(--font-sans);
   letter-spacing: 0.02em;
+}
+.tag-label {
+  color: var(--ink-mute);
+  font-weight: 500;
+  margin-right: 0.1rem;
 }
 .product-footer { 
   display: flex; 

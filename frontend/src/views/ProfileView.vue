@@ -16,7 +16,7 @@
           <p><strong>ชื่อผู้ใช้งาน:</strong> <span>{{ profile.name }}</span></p>
           <p><strong>อีเมล:</strong> <span>{{ profile.email }}</span></p>
           <p><strong>สถานะบัญชี:</strong> <span class="badge">{{ profile.role }}</span></p>
-          <p><strong>วันที่สมัคร:</strong> <span>{{ new Date(profile.created_at).toLocaleDateString('th-TH') }}</span></p>
+          <p><strong>วันที่สมัคร:</strong> <span>{{ profile.created_at ? new Date(profile.created_at).toLocaleDateString('th-TH') : '-' }}</span></p>
         </div>
         
         <div class="logout-wrapper">
@@ -60,9 +60,13 @@ onMounted(async () => {
     profile.value = data;
   } catch (err) {
     error.value = err.message;
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    setTimeout(() => router.push('/'), 2000);
+    console.error('Profile fetch error:', err);
+    // Only redirect if it's an auth error, not a random network error
+    if (err.message.includes('Session')) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      setTimeout(() => router.push('/'), 2000);
+    }
   } finally {
     loading.value = false;
   }
