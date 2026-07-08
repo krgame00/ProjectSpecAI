@@ -17,6 +17,9 @@ const authRoutes = require('./routes/authRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Trust reverse proxy (Railway, Vercel, etc.) for correct IP in rate limiting
+app.set('trust proxy', 1);
+
 // Middleware
 let corsOptions = { origin: '*' };
 if (process.env.CORS_ORIGIN && process.env.CORS_ORIGIN !== '*') {
