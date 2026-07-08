@@ -4777,16 +4777,27 @@ const initPool = () => {
     return null;
   }
 
-  pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    port: parseInt(process.env.DB_PORT || '3306'),
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'smart_pc_builder',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-  });
+  const dbConfig = process.env.DATABASE_URL 
+    ? { uri: process.env.DATABASE_URL }
+    : {
+        host: process.env.DB_HOST,
+        port: parseInt(process.env.DB_PORT || '3306'),
+        user: process.env.DB_USER || 'root',
+        password: process.env.DB_PASSWORD || '',
+        database: process.env.DB_NAME || 'smart_pc_builder'
+      };
+
+  if (process.env.DB_SSL === 'true') {
+    dbConfig.ssl = { rejectUnauthorized: true };
+  }
+
+  dbConfig.waitForConnections = true;
+  dbConfig.connectionLimit = 10;
+  dbConfig.queueLimit = 0;
+
+  pool = process.env.DATABASE_URL 
+    ? mysql.createPool(process.env.DATABASE_URL, dbConfig)
+    : mysql.createPool(dbConfig);
 
   // Attempt to ping database to check connection on start
   pool.getConnection()

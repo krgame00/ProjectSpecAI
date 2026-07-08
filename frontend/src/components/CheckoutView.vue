@@ -158,7 +158,8 @@ const handlePlaceOrder = async () => {
   
   isSubmitting.value = true;
   try {
-    const response = await fetch('http://localhost:3000/api/orders', {
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const response = await fetch(`${API_BASE}/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

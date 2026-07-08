@@ -109,7 +109,7 @@ const catalogStore = useCatalogStore();
 const currentUser = computed(() => authStore.user);
 const userRole = computed(() => authStore.user?.role || 'guest');
 
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 
 const showLoginModal = ref(false);
 const authTab = ref('login');
@@ -361,7 +361,7 @@ const processBotResponse = async (text, image = null) => {
       localStorage.setItem('chatbot_session_id', sessionId);
     }
 
-    const response = await fetch('http://localhost:3000/api/chatbot/stream', {
+    const response = await fetch(`${API_BASE}/chatbot/stream`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 

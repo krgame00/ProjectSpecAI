@@ -431,7 +431,8 @@ const chartOptions = {
 const users = ref([]);
 const fetchUsers = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/auth/users', {
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const res = await fetch(`${API_BASE}/auth/users`, {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     });
     if (res.ok) {
@@ -446,7 +447,8 @@ const toggleUserRole = async (user) => {
   if (!confirm(`คุณแน่ใจว่าต้องการเปลี่ยนสิทธิ์ของ ${user.name} หรือไม่?`)) return;
   const newRole = user.role === 'admin' ? 'customer' : 'admin';
   try {
-    const res = await fetch(`http://localhost:3000/api/auth/users/${user.id}/role`, {
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const res = await fetch(`${API_BASE}/auth/users/${user.id}/role`, {
       method: 'PUT',
       headers: { 
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -469,7 +471,8 @@ const toggleUserRole = async (user) => {
 const deleteUser = async (id) => {
   if (!confirm('คุณแน่ใจว่าต้องการลบบัญชีนี้? การกระทำนี้ไม่สามารถยกเลิกได้!')) return;
   try {
-    const res = await fetch(`http://localhost:3000/api/auth/users/${id}`, {
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const res = await fetch(`${API_BASE}/auth/users/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     });
