@@ -236,7 +236,7 @@ router.post('/message', async (req, res, next) => {
 
     // Call Gemini API with alternating multi-turn conversation history
     const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-3.1-flash-lite',
         contents: alternatingContents,
         config: {
             systemInstruction: SYSTEM_INSTRUCTION,
@@ -349,7 +349,7 @@ router.post('/stream', async (req, res, next) => {
     let jsonBuffer = '';
 
     const stream = await ai.models.generateContentStream({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.1-flash-lite',
       contents: contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
