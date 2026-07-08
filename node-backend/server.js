@@ -18,9 +18,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors({
-  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : '*'
-}));
+let corsOptions = { origin: '*' };
+if (process.env.CORS_ORIGIN && process.env.CORS_ORIGIN !== '*') {
+  corsOptions.origin = process.env.CORS_ORIGIN.split(',');
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // --- Rate Limiting ---
