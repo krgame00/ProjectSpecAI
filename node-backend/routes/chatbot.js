@@ -5,10 +5,7 @@ const crypto = require('crypto');
 
 // Initialize Gemini Client
 const ai = new GoogleGenAI({ 
-  apiKey: process.env.GEMINI_API_KEY,
-  httpOptions: {
-    baseUrl: 'http://127.0.0.1:8787' // ชี้ไปที่ Headroom Proxy
-  }
+  apiKey: process.env.GEMINI_API_KEY
 });
 
 const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านฮาร์ดแวร์คอมพิวเตอร์ของเว็บไซต์นี้เท่านั้น 
