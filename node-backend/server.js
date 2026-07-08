@@ -3,6 +3,10 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const rateLimit = require('express-rate-limit');
+const dns = require('dns');
+
+// Fix IPv6 fetch issues in Node 18+ (common in Docker/Railway when reaching Google APIs)
+dns.setDefaultResultOrder('ipv4first');
 
 // Import Database Connection (Triggers connection check and handles fallback mode)
 const db = require('./config/db');

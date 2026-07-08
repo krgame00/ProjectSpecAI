@@ -352,7 +352,7 @@ router.post('/stream', async (req, res, next) => {
     let jsonBuffer = '';
 
     const stream = await ai.models.generateContentStream({
-      model: 'gemini-3.1-flash-lite',
+      model: 'gemini-2.5-flash',
       contents: contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
