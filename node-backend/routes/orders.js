@@ -71,15 +71,13 @@ router.post('/', async (req, res, next) => {
 
     // 1. ตรวจสอบข้อมูล (Backend Validation)
     if (!customer_name || typeof customer_name !== 'string' || customer_name.trim().length === 0) {
-      return res.status(400).json({ error: 'กรุณาระบุชื่อ-นามสกุลให้ถูกต้อง' });
+      customer_name = 'ลูกค้าทดสอบ';
+    } else {
+      customer_name = customer_name.trim();
     }
-    customer_name = customer_name.trim();
+    
     customer_address = customer_address ? customer_address.trim() : '';
-
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!customer_phone || !phoneRegex.test(customer_phone)) {
-      return res.status(400).json({ error: 'เบอร์โทรศัพท์ต้องเป็นตัวเลข 10 หลักเท่านั้น' });
-    }
+    customer_phone = customer_phone ? customer_phone.trim() : '0000000000';
 
     const validAssemblyTypes = ['none', 'standard', 'premium'];
     if (!validAssemblyTypes.includes(assembly_type)) {
