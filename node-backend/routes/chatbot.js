@@ -4,9 +4,18 @@ const { GoogleGenAI } = require('@google/genai');
 const crypto = require('crypto');
 
 // Initialize Gemini Client
-const ai = new GoogleGenAI({ 
-  apiKey: process.env.GEMINI_API_KEY
-});
+let aiConfig = {};
+if (process.env.GCP_PROJECT) {
+  aiConfig = {
+    vertexai: {
+      project: process.env.GCP_PROJECT,
+      location: process.env.GCP_LOCATION || 'us-central1'
+    }
+  };
+} else if (process.env.GEMINI_API_KEY) {
+  aiConfig = { apiKey: process.env.GEMINI_API_KEY };
+}
+const ai = new GoogleGenAI(aiConfig);
 
 const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านฮาร์ดแวร์คอมพิวเตอร์ของเว็บไซต์นี้เท่านั้น 
 หน้าที่ของคุณคือแนะนำสเปคคอมพิวเตอร์และตอบคำถามเกี่ยวกับอุปกรณ์คอมพิวเตอร์ 
@@ -298,12 +307,12 @@ router.post('/stream', async (req, res, next) => {
       return res.end();
     }
 
-    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY.includes('your_gemini')) {
+    if (!aiConfig.apiKey && !aiConfig.vertexai) {
       res.setHeader('Content-Type', 'text/event-stream');
       res.setHeader('Cache-Control', 'no-cache, no-transform');
       res.setHeader('Connection', 'keep-alive');
       res.flushHeaders && res.flushHeaders();
-      const errText = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY ในไฟล์ `.env` ของระบบหลังบ้านครับ กรุณาใส่ API Key ให้เรียบร้อยแล้วรีสตาร์ทเซิร์ฟเวอร์ครับ';
+      const errText = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY หรือ GCP_PROJECT ในไฟล์ `.env` ครับ';
       res.write(`data: ${JSON.stringify({ text: errText })}\n\n`);
       res.write('event: done\ndata: {}\n\n');
       return res.end();
@@ -348,53 +357,85 @@ router.post('/stream', async (req, res, next) => {
     let isJsonMode = false;
     let jsonBuffer = '';
 
-    const stream = await ai.models.generateContentStream({
-      model: 'gemini-3.1-flash-lite',
-      contents: contents,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        tools: [{ googleSearch: {} }],
-        temperature: 0.7,
-      },
-    });
+    const modelsToTry = [
+      'gemini-3.1-flash-lite', 
+      'gemini-3.5-flash', 
+      'gemini-3-flash', 
+      'gemini-2.5-flash-lite', 
+      'gemini-2.5-flash'
+    ];
+    let success = false;
+    let lastError = null;
 
-    for await (const chunk of stream) {
-      let piece = chunk.text ?? '';
-      if (piece) {
-        fullResponse += piece;
-        
-        // Handle delimiter
-        if (!isJsonMode) {
-          if (fullResponse.includes('---JSON_START---')) {
-            isJsonMode = true;
-            const parts = fullResponse.split('---JSON_START---');
-            const beforeDelimiter = parts[0];
-            const afterDelimiter = parts.slice(1).join('---JSON_START---');
+    for (const modelName of modelsToTry) {
+      try {
+        const stream = await ai.models.generateContentStream({
+          model: modelName,
+          contents: contents,
+          config: {
+            systemInstruction: SYSTEM_INSTRUCTION,
+            tools: [{ googleSearch: {} }],
+            temperature: 0.7,
+          },
+        });
+
+        for await (const chunk of stream) {
+          let piece = chunk.text ?? '';
+          if (piece) {
+            fullResponse += piece;
             
-            // Send remaining text if we haven't already sent it all
-            // To be precise, we stream pieces as they come, so we might need to handle the split gracefully.
-            // Simplified: if piece contains delimiter, send everything before it as text.
-            const splitInPiece = piece.split('---JSON_START---');
-            if (splitInPiece[0]) {
-               res.write(`data: ${JSON.stringify({ text: splitInPiece[0] })}\n\n`);
+            // Handle delimiter
+            if (!isJsonMode) {
+              if (fullResponse.includes('---JSON_START---')) {
+                isJsonMode = true;
+                const parts = fullResponse.split('---JSON_START---');
+                const beforeDelimiter = parts[0];
+                const afterDelimiter = parts.slice(1).join('---JSON_START---');
+                
+                const splitInPiece = piece.split('---JSON_START---');
+                if (splitInPiece[0]) {
+                   res.write(`data: ${JSON.stringify({ text: splitInPiece[0] })}\n\n`);
+                }
+                if (afterDelimiter) {
+                   jsonBuffer += afterDelimiter;
+                }
+              } else {
+                res.write(`data: ${JSON.stringify({ text: piece })}\n\n`);
+              }
+            } else {
+              jsonBuffer += piece;
             }
-            if (afterDelimiter) {
-               jsonBuffer += afterDelimiter;
-            }
-          } else {
-            res.write(`data: ${JSON.stringify({ text: piece })}\n\n`);
           }
+
+          const cand = chunk.candidates?.[0];
+          const meta = cand?.groundingMetadata;
+          if (meta) {
+            const found = extractSources(meta);
+            if (found.length) sources = found;
+          }
+        }
+        
+        success = true;
+        break; // Successfully finished stream, exit loop
+      } catch (error) {
+        lastError = error;
+        const errMsg = error.message || '';
+        if (errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED')) {
+          console.warn(`[Fallback] Model ${modelName} hit rate limit, trying next...`);
+          // Clear any partial buffers just in case
+          fullResponse = '';
+          sources = [];
+          isJsonMode = false;
+          jsonBuffer = '';
+          continue;
         } else {
-          jsonBuffer += piece;
+          break; // Break on non-429 errors
         }
       }
+    }
 
-      const cand = chunk.candidates?.[0];
-      const meta = cand?.groundingMetadata;
-      if (meta) {
-        const found = extractSources(meta);
-        if (found.length) sources = found;
-      }
+    if (!success) {
+      throw lastError || new Error("All fallback models failed.");
     }
 
     // Save history (save fullResponse to maintain context)
