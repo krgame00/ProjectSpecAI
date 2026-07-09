@@ -130,10 +130,10 @@
                 </td>
                 <td>
                   <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto; background: var(--bg); height: 32px;" :value="order.status" @change="$emit('update-order-status', order.id, $event.target.value)">
-                      <option value="pending">รอดำเนินการ</option>
-                      <option value="assembling">กำลังประกอบ</option>
-                      <option value="shipped">จัดส่งแล้ว</option>
+                    <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto; background: var(--canvas); color: var(--ink); height: 32px;" :value="order.status" @change="$emit('update-order-status', order.id, $event.target.value)">
+                      <option value="pending" style="background: var(--canvas); color: var(--ink);">รอดำเนินการ</option>
+                      <option value="assembling" style="background: var(--canvas); color: var(--ink);">กำลังประกอบ</option>
+                      <option value="shipped" style="background: var(--canvas); color: var(--ink);">จัดส่งแล้ว</option>
                     </select>
                     <button class="btn btn-outline btn-sm" style="height: 32px; display: flex; align-items: center; justify-content: center;" @click="openOrderModal(order)">
                       📄 รายละเอียด
@@ -359,9 +359,13 @@
               <input type="date" class="form-control" v-model="articleForm.date">
             </div>
             <div class="form-group" style="margin: 0;">
-              <label>ภาพปก (URL)</label>
+              <label>ภาพปก (อัปโหลดรูปภาพ)</label>
               <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                <input type="text" class="form-control" v-model="articleForm.image" placeholder="https://..." style="flex: 1;" @input="articleImgError = false">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+                  <input type="file" accept="image/*" class="form-control" @change="uploadArticleImage" :disabled="isUploadingArticleImage" style="padding-top: 0.5rem;">
+                  <small v-if="isUploadingArticleImage" style="color: var(--primary);">กำลังอัปโหลด...</small>
+                  <input type="text" class="form-control" v-model="articleForm.image" placeholder="หรือวาง URL รูปภาพ" style="font-size: 0.8rem; padding: 0.4rem;" @input="articleImgError = false">
+                </div>
                 <div style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 1px dashed var(--hairline-strong); overflow: hidden; background: var(--canvas-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                   <template v-if="articleForm.image">
                     <div v-if="articleImgError" style="font-size: 0.7rem; color: var(--danger); text-align: center; padding: 0.2rem;">
@@ -396,6 +400,38 @@ import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
+
+const isUploadingArticleImage = ref(false);
+
+const uploadArticleImage = async (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  isUploadingArticleImage.value = true;
+  const formData = new FormData();
+  formData.append('image', file);
+
+  try {
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const response = await fetch(`${API_BASE}/upload`, {
+      method: 'POST',
+      body: formData
+    });
+    const data = await response.json();
+    if (data.success) {
+      const baseUrl = API_BASE.replace('/api', '');
+      articleForm.image = baseUrl + data.url;
+      articleImgError.value = false;
+    } else {
+      alert('อัปโหลดรูปล้มเหลว: ' + (data.error || 'Unknown error'));
+    }
+  } catch (error) {
+    console.error('Error uploading image:', error);
+    alert('เกิดข้อผิดพลาดในการเชื่อมต่อเพื่ออัปโหลดรูปภาพ');
+  } finally {
+    isUploadingArticleImage.value = false;
+  }
+};
 
 const props = defineProps({
   orders: Array, categories: Array, catalog: Object, articles: Array, currentUser: Object

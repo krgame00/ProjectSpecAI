@@ -17,6 +17,8 @@ const chatbotRoutes = require('./routes/chatbot');
 const ordersRoutes = require('./routes/orders');
 const articlesRoutes = require('./routes/articles');
 const authRoutes = require('./routes/authRoutes');
+const uploadRoutes = require('./routes/upload');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -55,7 +57,11 @@ app.use('/api/hardware', hardwareRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/orders', ordersRoutes);
 app.use('/api/articles', articlesRoutes);
+app.use('/api/upload', uploadRoutes);
 app.use('/api/auth', authLimiter, authRoutes); // Apply stricter limit for Auth
+
+// Serve static files from public/uploads
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 // Base Route
 app.get('/', (req, res) => {
