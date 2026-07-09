@@ -51,7 +51,12 @@
         
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-currency">฿</span>{{ item.price.toLocaleString() }}
+            <template v-if="item.price > 0">
+              <span class="price-currency">฿</span>{{ item.price.toLocaleString() }}
+            </template>
+            <template v-else>
+              <span style="font-size: 0.85rem; color: var(--danger); font-weight: 500;">เช็คราคาหน้าร้าน</span>
+            </template>
           </div>
           <button class="add-btn" :class="{ 'is-selected': selectedItemId === item.id }">
             <svg v-if="selectedItemId === item.id" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>

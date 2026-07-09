@@ -140,6 +140,10 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
+.main-content {
+  min-width: 0;
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;

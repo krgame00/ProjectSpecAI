@@ -305,7 +305,7 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -382,5 +382,6 @@
   .hero-3d-scene { height: auto; flex-direction: column; gap: 1rem; perspective: none; }
   .card-cpu, .card-gpu, .card-ram { position: relative; transform: none !important; animation: none; width: 100%; max-width: 300px; }
   .footer-content { flex-direction: column; gap: 1rem; text-align: center; }
+  .features-grid { grid-template-columns: 1fr; }
 }
 </style>

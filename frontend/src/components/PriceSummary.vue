@@ -57,7 +57,8 @@
             </div>
             <div class="cat-selected-item" v-if="build[cat.id]">
               <div class="item-name">{{ getItemName(cat.id, build[cat.id]) }}</div>
-              <div class="item-price">฿{{ getItemPrice(cat.id, build[cat.id]) }}</div>
+              <div class="item-price" v-if="getItemPrice(cat.id, build[cat.id]) !== '0'">฿{{ getItemPrice(cat.id, build[cat.id]) }}</div>
+              <div class="item-price" v-else style="color: var(--danger);">ติดต่อสอบถาม</div>
               
               <!-- Detailed Specs -->
               <div class="item-specs-mini">
@@ -161,6 +162,11 @@ const getItemSpecsList = (catId, itemId) => {
   gap: var(--space-md); 
   position: sticky; 
   top: 5.5rem; 
+}
+@media (max-width: 1024px) {
+  .sidebar {
+    position: static;
+  }
 }
 .total-price-box { 
   border-radius: var(--radius-lg); 
