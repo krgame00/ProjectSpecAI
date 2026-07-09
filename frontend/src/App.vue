@@ -5,7 +5,7 @@
       <div class="nav-content container">
         <div class="logo" @click="$router.push('/')" style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
           <img src="/images/logo.png" alt="ForgeLabs Logo" style="height: 32px; width: auto; border-radius: 4px;">
-          <span class="logo-text">Forge<span style="color: var(--primary);">Labs</span></span>
+          <div class="logo-text" style="display: flex; align-items: center;">Forge<span>Labs</span></div>
         </div>
         <div class="nav-actions">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
