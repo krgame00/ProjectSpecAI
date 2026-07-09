@@ -420,8 +420,11 @@ router.post('/stream', async (req, res, next) => {
       } catch (error) {
         lastError = error;
         const errMsg = error.message || '';
-        if (errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED')) {
-          console.warn(`[Fallback] Model ${modelName} hit rate limit, trying next...`);
+        const isRateLimit = errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED');
+        const isNotFound = errMsg.includes('404') || errMsg.includes('Not Found') || errMsg.includes('not found') || errMsg.includes('NOT_FOUND');
+        
+        if (isRateLimit || isNotFound) {
+          console.warn(`[Fallback] Model ${modelName} failed (${isNotFound ? '404' : '429'}), trying next...`);
           // Clear any partial buffers just in case
           fullResponse = '';
           sources = [];

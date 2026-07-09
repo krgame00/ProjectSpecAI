@@ -174,11 +174,17 @@ const handlePlaceOrder = async () => {
       })
     });
 
-    if (!response.ok) {
-      throw new Error('Failed to create order on server');
+    let data;
+    try {
+      data = await response.json();
+    } catch (e) {
+      throw new Error('ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้');
     }
 
-    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to create order on server');
+    }
+
     if (data.success) {
       alert(`🎉 ${data.message}\nรหัสคำสั่งซื้อ: ${data.order_id}`);
       builderStore.clearBuild();
@@ -188,7 +194,7 @@ const handlePlaceOrder = async () => {
     }
   } catch (error) {
     console.error('Error placing order:', error);
-    errorMessage.value = 'ไม่สามารถส่งคำสั่งซื้อไปยังเซิร์ฟเวอร์หลังบ้านได้ กรุณาตรวจสอบว่าเซิร์ฟเวอร์เปิดอยู่';
+    errorMessage.value = error.message || 'ไม่สามารถส่งคำสั่งซื้อไปยังเซิร์ฟเวอร์หลังบ้านได้ กรุณาตรวจสอบว่าเซิร์ฟเวอร์เปิดอยู่';
   } finally {
     isSubmitting.value = false;
   }
