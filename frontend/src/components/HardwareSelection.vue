@@ -115,10 +115,14 @@ const getItemSpecsList = (catId, item) => {
   
   const s = item.specifications || {};
   if (catId === 'cpu') {
-    if (s['Cores/Threads']) specs.push({ label: 'คอร์/เธรด', value: s['Cores/Threads'] });
-    if (s['Base Clock']) specs.push({ label: 'ความเร็วพื้นฐาน', value: s['Base Clock'] });
-    if (s['Boost Clock']) specs.push({ label: 'ความเร็วบูสต์', value: s['Boost Clock'] });
-    if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
+    if (s['Socket Type'] && !item.socket) specs.push({ label: 'Socket', value: s['Socket Type'] });
+    if (s['Cores']) specs.push({ label: 'Cores', value: s['Cores'].replace(/Cores?/i, '').trim() });
+    else if (s['Cores/Threads']) specs.push({ label: 'Cores/Threads', value: s['Cores/Threads'] });
+    
+    if (s['Threads']) specs.push({ label: 'Threads', value: s['Threads'].replace(/Threads?/i, '').trim() });
+    
+    if (s['TDP']) specs.push({ label: 'TDP', value: s['TDP'] });
+    else if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
   } else if (catId === 'mobo') {
     if (s['Form Factor']) specs.push({ label: 'ฟอร์มแฟคเตอร์', value: s['Form Factor'] });
   } else if (catId === 'ram') {
