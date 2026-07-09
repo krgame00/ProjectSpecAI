@@ -3,7 +3,10 @@
     <!-- Top Navigation -->
     <nav class="top-nav" v-if="$route.path !== '/admin'">
       <div class="nav-content container">
-        <div class="logo" @click="$router.push('/')" style="cursor: pointer;">Forge<span>Labs</span></div>
+        <div class="logo" @click="$router.push('/')" style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
+          <img src="/images/logo.png" alt="ForgeLabs Logo" style="height: 32px; width: auto; border-radius: 4px;">
+          Forge<span>Labs</span>
+        </div>
         <div class="nav-actions">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
           
