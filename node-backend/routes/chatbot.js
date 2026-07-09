@@ -422,9 +422,13 @@ router.post('/stream', async (req, res, next) => {
         const errMsg = error.message || '';
         const isRateLimit = errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED');
         const isNotFound = errMsg.includes('404') || errMsg.includes('Not Found') || errMsg.includes('not found') || errMsg.includes('NOT_FOUND');
+        const isUnavailable = errMsg.includes('503') || errMsg.includes('UNAVAILABLE') || errMsg.includes('overloaded');
         
-        if (isRateLimit || isNotFound) {
-          console.warn(`[Fallback] Model ${modelName} failed (${isNotFound ? '404' : '429'}), trying next...`);
+        if (isRateLimit || isNotFound || isUnavailable) {
+          console.warn(`[Fallback] Model ${modelName} failed, trying next...`);
+          if (fullResponse.length > 0) {
+            res.write('event: clear\ndata: {}\n\n');
+          }
           // Clear any partial buffers just in case
           fullResponse = '';
           sources = [];
@@ -467,6 +471,8 @@ router.post('/stream', async (req, res, next) => {
     let errMsg = error.message || 'Stream error';
     if (errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED')) {
        errMsg = "ขออภัยครับ ตอนนี้ระบบ AI ถูกใช้งานหนักเกินขีดจำกัด (Rate Limit) กรุณารอสัก 1 นาทีแล้วลองถามใหม่อีกครั้งครับ 🙏";
+    } else if (errMsg.includes('503') || errMsg.includes('UNAVAILABLE')) {
+       errMsg = "ขออภัยครับ ตอนนี้เซิร์ฟเวอร์ AI ฝั่ง Google ทำงานหนักเกินไป (503 Unavailable) กรุณารอสักครู่แล้วลองใหม่ครับ 🙏";
     }
     res.write(`event: error\ndata: ${JSON.stringify({ error: errMsg })}\n\n`);
     res.end();

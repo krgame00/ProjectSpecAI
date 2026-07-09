@@ -32,7 +32,7 @@ if (process.env.CORS_ORIGIN && process.env.CORS_ORIGIN !== '*') {
   corsOptions.origin = process.env.CORS_ORIGIN.split(',');
 }
 app.use(cors(corsOptions));
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
 
 // --- Rate Limiting ---
 const globalLimiter = rateLimit({

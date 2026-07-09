@@ -53,7 +53,7 @@
     <!-- Features Section -->
     <section id="features" class="features">
       <div class="section-header">
-        <h2 class="section-title">Why Use PCSpec?</h2>
+        <h2 class="section-title">Why Use ForgeLabs?</h2>
         <p class="section-subtitle">ฟีเจอร์ที่ออกแบบมาเพื่อให้การประกอบคอมพิวเตอร์เป็นเรื่องง่าย</p>
       </div>
       
@@ -61,7 +61,7 @@
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
           <h3>Smart Compatibility</h3>
-          <p>ระบบตรวจสอบความเข้ากันได้แบบเรียลไทม์ ซ็อกเก็ต CPU/Mobo, แรม DDR4/5 และคำนวณกำลังไฟ PSU อัตโนมัติ</p>
+          <p>ระบบตรวจสอบความเข้ากันได้แบบเรียลไทม์ ซ็อกเก็ต CPU/Mainboard, แรม DDR4/5 และคำนวณกำลังไฟ PSU อัตโนมัติ</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🤖</div>
@@ -79,8 +79,8 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
-        <div class="brand">PCSpec</div>
-        <div class="copyright">© 2026 PCSpec. All rights reserved.</div>
+        <div class="brand">ForgeLabs</div>
+        <div class="copyright">© 2026 ForgeLabs. All rights reserved.</div>
       </div>
     </footer>
   </div>

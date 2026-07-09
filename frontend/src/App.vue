@@ -3,7 +3,7 @@
     <!-- Top Navigation -->
     <nav class="top-nav" v-if="$route.path !== '/admin'">
       <div class="nav-content container">
-        <div class="logo" @click="$router.push('/')" style="cursor: pointer;">BuildWith<span>SpecAI</span></div>
+        <div class="logo" @click="$router.push('/')" style="cursor: pointer;">Forge<span>Labs</span></div>
         <div class="nav-actions">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
           
@@ -65,18 +65,18 @@
         <div class="modal-body" v-if="authTab === 'login'">
           <div class="form-group">
             <label>อีเมล</label>
-            <input type="email" class="form-control" v-model="loginForm.email" placeholder="กรอกอีเมล (เช่น admin@pc.com)" @keyup.enter="handleLoginSubmit">
+            <input type="email" class="form-control" v-model="loginForm.email" placeholder="กรอกอีเมล" @keyup.enter="handleLoginSubmit">
           </div>
           <div class="form-group">
             <label>รหัสผ่าน</label>
-            <input type="password" class="form-control" v-model="loginForm.password" placeholder="••••••••" @keyup.enter="handleLoginSubmit">
+            <input type="password" class="form-control" v-model="loginForm.password" placeholder="กรอกรหัสผ่าน" @keyup.enter="handleLoginSubmit">
           </div>
           <button class="btn btn-primary btn-block mt-4" @click="handleLoginSubmit">เข้าสู่ระบบ</button>
         </div>
 
         <div class="modal-body" v-if="authTab === 'register'">
           <div class="form-group">
-            <label>ชื่อ-นามสกุล</label>
+            <label>ชื่อ</label>
             <input type="text" class="form-control" v-model="registerForm.name" placeholder="ชื่อที่จะแสดงในระบบ">
           </div>
           <div class="form-group">
@@ -255,7 +255,7 @@ const fetchAdminOrders = async () => {
 const isChatOpen = ref(false);
 const isTyping = ref(false);
 const chatHistory = reactive([
-  { role: 'bot', text: 'สวัสดีครับ! ยินดีต้อนรับสู่ SpecAI คุณต้องการให้ผมแนะนำสเปคคอมพิวเตอร์แบบไหนครับ?' }
+  { role: 'bot', text: 'สวัสดีครับ! ยินดีต้อนรับสู่เว็บไซต์ ForgeLabs! ผมคือ SpecAI ผู้ช่วยส่วนตัวของคุณ ต้องการให้ผมจัดสเปคคอมพิวเตอร์แบบไหนครับ?' }
 ]);
 
 const handleLoginSubmit = async () => {
@@ -411,8 +411,14 @@ const processBotResponse = async (text, image = null) => {
                } else if (currentEvent === 'error') {
                  console.error('SSE Error:', data.error);
                  if (chatHistory[botMsgIndex].text === '') {
-                   chatHistory[botMsgIndex].text = `⚠️ เกิดข้อผิดพลาดจากเซิร์ฟเวอร์ AI: ${data.error}`;
+                   chatHistory[botMsgIndex].text = `⚠️ ${data.error}`;
+                 } else {
+                   chatHistory[botMsgIndex].text += `\n\n⚠️ ${data.error}`;
                  }
+               } else if (currentEvent === 'clear') {
+                 chatHistory[botMsgIndex].text = '';
+                 chatHistory[botMsgIndex].sources = [];
+                 chatHistory[botMsgIndex].recommended_build = null;
                }
              } catch (err) {}
           }
