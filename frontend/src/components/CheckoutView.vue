@@ -157,7 +157,7 @@ const handlePlaceOrder = async () => {
   
   isSubmitting.value = true;
   try {
-    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api/v1';
     const response = await fetch(`${API_BASE}/orders`, {
       method: 'POST',
       headers: {

@@ -2,7 +2,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/userModel');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_pcspec_key_123';
+if (!process.env.JWT_SECRET) {
+  throw new Error('JWT_SECRET environment variable is required');
+}
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const authController = {
   register: async (req, res) => {
@@ -108,8 +111,12 @@ const authController = {
 
   getAllUsers: async (req, res) => {
     try {
-      const users = await userModel.getAllUsers();
-      res.status(200).json(users);
+      const page = Math.max(1, parseInt(req.query.page) || 1);
+      const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 20));
+      const offset = (page - 1) * limit;
+      const users = await userModel.getAllUsers(limit, offset);
+      const total = await userModel.getUserCount();
+      res.status(200).json({ data: users, total, page, limit });
     } catch (error) {
       console.error('Get All Users Error:', error);
       res.status(500).json({ error: 'เกิดข้อผิดพลาดในการดึงข้อมูลสมาชิก' });

@@ -1,11 +1,15 @@
+require('dotenv').config();
 const mysql = require('mysql2/promise');
 
 async function createUsersTable() {
+  if (!process.env.DB_PASSWORD) {
+    throw new Error('DB_PASSWORD environment variable is required');
+  }
   const connection = await mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: parseInt(process.env.DB_PORT || '3306'),
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '1234',
+    password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME || 'smart_pc_builder'
   });
 

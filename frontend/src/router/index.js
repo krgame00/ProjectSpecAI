@@ -1,47 +1,40 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LandingView from '../views/LandingView.vue'
-import BuilderView from '../views/BuilderView.vue'
-import AdminView from '../views/AdminView.vue'
-import CheckoutView from '../components/CheckoutView.vue'
-import ArticlesView from '../components/ArticlesView.vue'
-import ArticleDetailView from '../components/ArticleDetailView.vue'
-import ProfileView from '../views/ProfileView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'landing',
-    component: LandingView
+    component: () => import('../views/LandingView.vue')
   },
   {
     path: '/build',
     name: 'builder',
-    component: BuilderView
+    component: () => import('../views/BuilderView.vue')
   },
   {
     path: '/admin',
     name: 'admin',
-    component: AdminView
+    component: () => import('../views/AdminView.vue')
   },
   {
     path: '/checkout',
     name: 'checkout',
-    component: CheckoutView
+    component: () => import('../components/CheckoutView.vue')
   },
   {
     path: '/articles',
     name: 'articles',
-    component: ArticlesView
+    component: () => import('../components/ArticlesView.vue')
   },
   {
     path: '/article/:id',
     name: 'article-detail',
-    component: ArticleDetailView
+    component: () => import('../components/ArticleDetailView.vue')
   },
   {
     path: '/profile',
     name: 'profile',
-    component: ProfileView
+    component: () => import('../views/ProfileView.vue')
   }
 ]
 

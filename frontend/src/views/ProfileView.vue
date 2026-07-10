@@ -36,7 +36,7 @@ const profile = ref({});
 const loading = ref(true);
 const error = ref('');
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api/v1';
 
 onMounted(async () => {
   const token = localStorage.getItem('token');
@@ -53,7 +53,11 @@ onMounted(async () => {
     });
 
     if (!response.ok) {
-      throw new Error('ไม่สามารถดึงข้อมูลโปรไฟล์ได้ (Session อาจหมดอายุ)');
+      if (response.status === 401) {
+        throw new Error('Session หมดอายุ กรุณาเข้าสู่ระบบใหม่');
+      } else {
+        throw new Error(`ไม่สามารถดึงข้อมูลโปรไฟล์ได้ (Error: ${response.status})`);
+      }
     }
 
     const data = await response.json();
@@ -65,7 +69,13 @@ onMounted(async () => {
     if (err.message.includes('Session')) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      setTimeout(() => router.push('/'), 2000);
+      setTimeout(() => {
+        if (router.currentRoute.value.path !== '/admin') {
+          router.push('/');
+        } else {
+          window.location.reload();
+        }
+      }, 2000);
     }
   } finally {
     loading.value = false;

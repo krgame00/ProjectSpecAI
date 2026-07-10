@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const rateLimit = require('express-rate-limit');
 const dns = require('dns');
+const logger = require('./utils/logger');
 
 // Fix IPv6 fetch issues in Node 18+ (common in Docker/Railway when reaching Google APIs)
 dns.setDefaultResultOrder('ipv4first');
@@ -27,12 +28,20 @@ const PORT = process.env.PORT || 3000;
 app.set('trust proxy', 1);
 
 // Middleware
-let corsOptions = { origin: '*' };
-if (process.env.CORS_ORIGIN && process.env.CORS_ORIGIN !== '*') {
-  corsOptions.origin = process.env.CORS_ORIGIN.split(',');
-}
+const allowedOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(',')
+  : ['http://localhost:5173', 'http://localhost:3000'];
+let corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
 app.use(cors(corsOptions));
-app.use(express.json({ limit: '50mb' }));
+app.use(express.json({ limit: '20mb' }));
 
 // --- Rate Limiting ---
 const globalLimiter = rateLimit({
@@ -52,13 +61,21 @@ const authLimiter = rateLimit({
 // Apply global limiter to all routes
 app.use(globalLimiter);
 
-// API Routes
-app.use('/api/hardware', hardwareRoutes);
-app.use('/api/chatbot', chatbotRoutes);
-app.use('/api/orders', ordersRoutes);
-app.use('/api/articles', articlesRoutes);
-app.use('/api/upload', uploadRoutes);
-app.use('/api/auth', authLimiter, authRoutes); // Apply stricter limit for Auth
+// API Routes (v1)
+app.use('/api/v1/hardware', hardwareRoutes);
+app.use('/api/v1/chatbot', chatbotRoutes);
+app.use('/api/v1/orders', ordersRoutes);
+app.use('/api/v1/articles', articlesRoutes);
+app.use('/api/v1/upload', uploadRoutes);
+app.use('/api/v1/auth', authLimiter, authRoutes);
+
+// Backward compatibility redirects from /api/ to /api/v1/
+app.use('/api/hardware', (req, res) => res.redirect(301, `/api/v1/hardware${req.url}`));
+app.use('/api/chatbot', (req, res) => res.redirect(301, `/api/v1/chatbot${req.url}`));
+app.use('/api/orders', (req, res) => res.redirect(301, `/api/v1/orders${req.url}`));
+app.use('/api/articles', (req, res) => res.redirect(301, `/api/v1/articles${req.url}`));
+app.use('/api/upload', (req, res) => res.redirect(301, `/api/v1/upload${req.url}`));
+app.use('/api/auth', (req, res) => res.redirect(301, `/api/v1/auth${req.url}`));
 
 // Serve static files from public/uploads
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
@@ -68,8 +85,8 @@ app.get('/', (req, res) => {
   res.send('Smart PC Builder API is running.');
 });
 
-// Health Check Endpoint (Node.js Pattern: Health check endpoints)
-app.get('/api/health', (req, res) => {
+// Health Check Endpoint
+app.get('/api/v1/health', (req, res) => {
   const dbStatus = db.isFallback() ? 'fallback_mock' : 'connected';
   res.json({
     status: 'ok',
@@ -79,9 +96,9 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Express Error Middleware (Node.js Pattern: Global Express error handler)
+// Express Error Middleware
 app.use((err, req, res, next) => {
-  console.error('Unhandled Route Error:', err);
+  logger.error('Unhandled Route Error:', err);
   const status = err.status || 500;
   res.status(status).json({
     error: err.message || 'Internal Server Error',
@@ -91,31 +108,30 @@ app.use((err, req, res, next) => {
 
 // Start Server
 const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on http://0.0.0.0:${PORT}`);
+  logger.info(`Server is running on http://0.0.0.0:${PORT}`);
 });
 
-// Global Exception Handler (Node.js Pattern: Global unhandled exception catching)
+// Global Exception Handler
 process.on('uncaughtException', (err) => {
-  console.error('CRITICAL: Uncaught Exception:', err);
-  // Graceful shutdown on fatal uncaught errors
+  logger.error('CRITICAL: Uncaught Exception:', err);
   gracefulShutdown('uncaughtException');
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-  console.error('WARNING: Unhandled Rejection at:', promise, 'reason:', reason);
+  logger.warn('Unhandled Rejection at:', reason);
 });
 
-// Graceful Shutdown (Node.js Pattern: Clean resource teardown)
+// Graceful Shutdown
 const gracefulShutdown = (signal) => {
-  console.log(`Received ${signal}. Shutting down gracefully...`);
+  logger.info(`Received ${signal}. Shutting down gracefully...`);
   server.close(async () => {
-    console.log('HTTP server closed.');
+    logger.info('HTTP server closed.');
     if (db.pool && !db.isFallback()) {
       try {
         await db.pool.end();
-        console.log('Database pool closed.');
+        logger.info('Database pool closed.');
       } catch (err) {
-        console.error('Error closing database pool:', err);
+        logger.error('Error closing database pool:', err);
       }
     }
     process.exit(signal === 'uncaughtException' ? 1 : 0);

@@ -390,6 +390,26 @@
         </div>
       </div>
     </div>
+    <!-- Confirm Modal -->
+    <div class="modal-overlay" v-if="confirmModal.show" @click.self="closeConfirm" style="z-index: 3000;">
+      <div class="modal-content glass-panel" style="max-width: 400px; padding: 2.5rem 2rem; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem; line-height: 1;">
+          <span v-if="confirmModal.type === 'danger'">⚠️</span>
+          <span v-else>❓</span>
+        </div>
+        <h3 style="margin-bottom: 0.75rem; color: var(--ink); font-size: 1.25rem;">ยืนยันการทำรายการ</h3>
+        <p style="color: var(--ink-mute); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.5;">{{ confirmModal.message }}</p>
+        
+        <div style="display: flex; justify-content: center; gap: 1rem;">
+          <button class="btn btn-outline" style="flex: 1; padding: 0.5rem 1rem;" @click="closeConfirm">ยกเลิก</button>
+          <button class="btn" style="flex: 1; padding: 0.5rem 1rem; font-weight: 600;" 
+            :class="confirmModal.type === 'danger' ? 'btn-danger' : 'btn-primary'" 
+            @click="executeConfirm">
+            ตกลง
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -398,8 +418,12 @@ import { ref, reactive, computed, onMounted } from 'vue';
 import ProfileView from '../views/ProfileView.vue';
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
+import { useAdminStore } from '../stores/admin';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
+
+const adminStore = useAdminStore();
+const users = computed(() => adminStore.users);
 
 const isUploadingArticleImage = ref(false);
 
@@ -412,14 +436,14 @@ const uploadArticleImage = async (event) => {
   formData.append('image', file);
 
   try {
-    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api/v1';
     const response = await fetch(`${API_BASE}/upload`, {
       method: 'POST',
       body: formData
     });
     const data = await response.json();
     if (data.success) {
-      const baseUrl = API_BASE.replace('/api', '');
+      const baseUrl = API_BASE.replace('/api/v1', '');
       articleForm.image = baseUrl + data.url;
       articleImgError.value = false;
     } else {
@@ -464,64 +488,22 @@ const chartOptions = {
 };
 
 // Users State
-const users = ref([]);
 const fetchUsers = async () => {
-  try {
-    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
-    const res = await fetch(`${API_BASE}/auth/users`, {
-      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
-    });
-    if (res.ok) {
-      users.value = await res.json();
-    }
-  } catch (error) {
-    console.error('Failed to fetch users:', error);
-  }
+  await adminStore.fetchUsers();
 };
 
-const toggleUserRole = async (user) => {
-  if (!confirm(`คุณแน่ใจว่าต้องการเปลี่ยนสิทธิ์ของ ${user.name} หรือไม่?`)) return;
-  const newRole = user.role === 'admin' ? 'customer' : 'admin';
-  try {
-    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
-    const res = await fetch(`${API_BASE}/auth/users/${user.id}/role`, {
-      method: 'PUT',
-      headers: { 
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ role: newRole })
-    });
-    if (res.ok) {
-      user.role = newRole;
-      alert('เปลี่ยนสิทธิ์สำเร็จ');
-    } else {
-      const data = await res.json();
-      alert(data.error || 'ไม่สามารถเปลี่ยนสิทธิ์ได้');
-    }
-  } catch (error) {
-    console.error('Toggle role error:', error);
-  }
+const toggleUserRole = (user) => {
+  showConfirm(`คุณแน่ใจว่าต้องการเปลี่ยนสิทธิ์ของ ${user.name} หรือไม่?`, async () => {
+    await adminStore.toggleUserRole(user);
+    alert('เปลี่ยนสิทธิ์สำเร็จ');
+  }, 'warning');
 };
 
-const deleteUser = async (id) => {
-  if (!confirm('คุณแน่ใจว่าต้องการลบบัญชีนี้? การกระทำนี้ไม่สามารถยกเลิกได้!')) return;
-  try {
-    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
-    const res = await fetch(`${API_BASE}/auth/users/${id}`, {
-      method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
-    });
-    if (res.ok) {
-      users.value = users.value.filter(u => u.id !== id);
-      alert('ลบบัญชีสำเร็จ');
-    } else {
-      const data = await res.json();
-      alert(data.error || 'ไม่สามารถลบบัญชีได้');
-    }
-  } catch (error) {
-    console.error('Delete user error:', error);
-  }
+const deleteUser = (id) => {
+  showConfirm('คุณแน่ใจว่าต้องการลบบัญชีนี้? การกระทำนี้ไม่สามารถยกเลิกได้!', async () => {
+    await adminStore.deleteUser(id);
+    alert('ลบบัญชีสำเร็จ');
+  }, 'danger');
 };
 
 onMounted(() => { fetchUsers(); });
@@ -631,11 +613,12 @@ const saveProduct = () => {
 };
 
 const deleteProduct = (id) => {
-  if (!confirm('ยืนยันการลบสินค้านี้?')) return;
-  emit('delete-product', {
-    category: inventoryCategory.value,
-    productId: id
-  });
+  showConfirm('ยืนยันการลบสินค้านี้?', () => {
+    emit('delete-product', {
+      category: inventoryCategory.value,
+      productId: id
+    });
+  }, 'danger');
 };
 
 // --- Article CRUD ---
@@ -670,8 +653,34 @@ const saveArticle = () => {
 };
 
 const deleteArticle = (id) => {
-  if (!confirm('ยืนยันการลบบทความนี้?')) return;
-  emit('delete-article', id);
+  showConfirm('ยืนยันการลบบทความนี้?', () => {
+    emit('delete-article', id);
+  }, 'danger');
+};
+
+// --- Custom Confirm Modal ---
+const confirmModal = reactive({
+  show: false,
+  message: '',
+  onConfirm: null,
+  type: 'danger'
+});
+
+const showConfirm = (message, onConfirmCallback, type = 'danger') => {
+  confirmModal.message = message;
+  confirmModal.onConfirm = onConfirmCallback;
+  confirmModal.type = type;
+  confirmModal.show = true;
+};
+
+const closeConfirm = () => {
+  confirmModal.show = false;
+  confirmModal.onConfirm = null;
+};
+
+const executeConfirm = () => {
+  if (confirmModal.onConfirm) confirmModal.onConfirm();
+  closeConfirm();
 };
 </script>
 
@@ -760,6 +769,9 @@ const deleteArticle = (id) => {
 .close-btn:hover { color: var(--danger); }
 .form-group { margin-bottom: 1rem; }
 .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--ink-mute); font-weight: 500;}
+
+.btn-danger { background: var(--error-bg, #441111); color: var(--error, #ff4444); border: 1px solid var(--error, #ff4444); }
+.btn-danger:hover { background: var(--error, #ff4444); color: #fff; }
 
 @media (max-width: 820px) {
   .admin-layout { grid-template-columns: 1fr; }

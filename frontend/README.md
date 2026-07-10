@@ -1,5 +1,45 @@
-# Vue 3 + Vite
+# PCSpec — Smart PC Builder (Frontend)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+ระบบจัดสเปคคอมพิวเตอร์อัจฉริยะพร้อม AI แนะนำ (Vue 3 + Vite)
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Setup
+
+```bash
+npm install
+# ตั้งค่า API endpoint ใน .env
+# VITE_API_BASE=http://localhost:3000/api/v1
+```
+
+## Dev
+
+```bash
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Test
+
+```bash
+npx vitest run
+```
+
+## Tech Stack
+
+- Vue 3.5 + Vue Router 4 + Pinia 3
+- Vite 8 + Chart.js
+- Vitest + @vue/test-utils
+
+## Structure
+
+```
+src/
+├── stores/     # Pinia stores (auth, builder, catalog, admin, chatbot, article)
+├── views/      # Page-level components
+├── components/ # Reusable components
+└── router/     # Vue Router config
+```

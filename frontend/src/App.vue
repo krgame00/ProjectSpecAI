@@ -9,14 +9,13 @@
         </div>
         <div class="nav-actions">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
-          
+
           <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/build' }]" @click="$router.push('/build')">💻 จัดสเปค</button>
           <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/articles' }]" @click="$router.push('/articles')">📰 บทความ</button>
 
-          <!-- Admin button removed from customer nav entirely to keep it clean -->
-
           <div v-if="currentUser" class="user-actions">
             <span v-if="userRole !== 'admin'" class="user-name">👤 {{ currentUser.name }}</span>
+            <button v-if="userRole === 'admin'" class="btn btn-primary btn-sm" @click="$router.push('/admin')">⚙️ หลังบ้านแอดมิน</button>
             <button v-if="userRole !== 'admin'" class="btn btn-outline-primary btn-sm" @click="$router.push('/profile')">ข้อมูลส่วนตัว</button>
             <button class="btn btn-outline-danger btn-sm" @click="logout">ออกจากระบบ</button>
           </div>
@@ -30,25 +29,25 @@
     <!-- Main Views Transition via Vue Router -->
     <router-view v-slot="{ Component }">
       <Transition name="page" mode="out-in">
-        <component 
-          :is="Component" 
-          :articles="articles"
+        <component
+          :is="Component"
           :catalog="catalogStore.getCategorizedHardware"
           :categories="categories"
           :userRole="userRole"
           :currentUser="currentUser"
-          :orders="orders"
-          @save-product="handleSaveProduct"
-          @delete-product="handleDeleteProduct"
-          @save-article="handleSaveArticle"
-          @delete-article="handleDeleteArticle"
-          @update-order-status="handleUpdateOrderStatus"
-          :isChatOpen="isChatOpen"
-          :chatHistory="chatHistory"
-          :isTyping="isTyping"
-          @toggle-chat="isChatOpen = !isChatOpen"
-          @send-message="sendMessage"
-          @apply-build="applyBuild"
+          :orders="adminStore.orders"
+          :articles="articleStore.articles"
+          @save-product="adminStore.saveProduct"
+          @delete-product="adminStore.deleteProduct"
+          @save-article="articleStore.saveArticle"
+          @delete-article="articleStore.deleteArticle"
+          @update-order-status="adminStore.updateOrderStatus"
+          :isChatOpen="chatbotStore.isOpen"
+          :chatHistory="chatbotStore.history"
+          :isTyping="chatbotStore.isTyping"
+          @toggle-chat="chatbotStore.toggle"
+          @send-message="chatbotStore.sendMessage"
+          @apply-build="chatbotStore.applyBuild"
         />
       </Transition>
     </router-view>
@@ -64,7 +63,7 @@
           </div>
           <button class="close-btn" @click="showLoginModal = false">✕</button>
         </div>
-        
+
         <div class="modal-body" v-if="authTab === 'login'">
           <div class="form-group">
             <label>อีเมล</label>
@@ -99,27 +98,32 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, computed, watch } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { ref, reactive, onMounted, computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { useAuthStore } from './stores/auth';
 import { useBuilderStore } from './stores/builder';
 import { useCatalogStore } from './stores/catalog';
+import { useAdminStore } from './stores/admin';
+import { useChatbotStore } from './stores/chatbot';
+import { useArticleStore } from './stores/article';
+
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api/v1';
 
 const authStore = useAuthStore();
 const builderStore = useBuilderStore();
 const catalogStore = useCatalogStore();
+const adminStore = useAdminStore();
+const chatbotStore = useChatbotStore();
+const articleStore = useArticleStore();
 
 const currentUser = computed(() => authStore.user);
 const userRole = computed(() => authStore.user?.role || 'guest');
-
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
 
 const showLoginModal = ref(false);
 const authTab = ref('login');
 const loginForm = reactive({ email: '', password: '' });
 const registerForm = reactive({ name: '', email: '', password: '' });
 const router = useRouter();
-const route = useRoute();
 
 const categories = [
   { id: 'cpu', name: 'CPU', tooltip: 'สมองของระบบ' },
@@ -133,152 +137,30 @@ const categories = [
 
 onMounted(async () => {
   await catalogStore.fetchCatalog();
+  await articleStore.fetchArticles();
   if (userRole.value === 'admin') {
-    await fetchAdminOrders();
-  }
-  try {
-    const res = await fetch(`${API_BASE}/articles`);
-    if (res.ok) {
-      const data = await res.json();
-      articles.push(...data);
-    }
-  } catch (error) {
-    console.error('Failed to load articles:', error);
+    await adminStore.fetchOrders();
   }
 });
-
-watch(() => route.path, (newPath) => {
-  if (newPath === '/admin' && userRole.value === 'admin') {
-    fetchAdminOrders();
-  }
-});
-
-// Parent CRUD Handlers (Vue Pattern: Mutate state in parent to resolve prop mutations)
-const handleSaveProduct = async ({ category, product }) => {
-  const isNew = !product.id || String(product.id).startsWith('temp');
-  const url = isNew ? `${API_BASE}/hardware` : `${API_BASE}/hardware/${product.id}`;
-  const method = isNew ? 'POST' : 'PUT';
-  
-  try {
-    const res = await fetch(url, {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...product, category })
-    });
-    if (res.ok) {
-      await catalogStore.fetchCatalog();
-    }
-  } catch (err) {
-    console.error('Failed to save product', err);
-  }
-};
-
-const handleDeleteProduct = async ({ category, productId }) => {
-  try {
-    const res = await fetch(`${API_BASE}/hardware/${productId}`, { method: 'DELETE' });
-    if (res.ok) {
-      await catalogStore.fetchCatalog();
-    }
-  } catch (err) {
-    console.error('Failed to delete product', err);
-  }
-};
-
-const handleSaveArticle = async (article) => {
-  const isNew = !article.id;
-  const url = isNew ? `${API_BASE}/articles` : `${API_BASE}/articles/${article.id}`;
-  const method = isNew ? 'POST' : 'PUT';
-  
-  try {
-    const res = await fetch(url, {
-      method,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(article)
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (isNew) {
-        articles.push(data.article || article);
-      } else {
-        const idx = articles.findIndex(a => a.id === article.id);
-        if (idx !== -1) articles[idx] = { ...articles[idx], ...article };
-      }
-    }
-  } catch (err) {
-    console.error('Failed to save article', err);
-  }
-};
-
-const handleDeleteArticle = async (articleId) => {
-  try {
-    const res = await fetch(`${API_BASE}/articles/${articleId}`, { method: 'DELETE' });
-    if (res.ok) {
-      const idx = articles.findIndex(a => a.id === articleId);
-      if (idx !== -1) articles.splice(idx, 1);
-    }
-  } catch (err) {
-    console.error('Failed to delete article', err);
-  }
-};
-
-const handleUpdateOrderStatus = async (orderId, newStatus) => {
-  try {
-    const res = await fetch(`${API_BASE}/orders/${orderId}/status`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: newStatus })
-    });
-    if (res.ok) {
-      const idx = orders.findIndex(o => o.id === orderId);
-      if (idx !== -1) orders[idx].status = newStatus;
-    }
-  } catch (err) {
-    console.error('Failed to update order status', err);
-  }
-};
-
-const articles = reactive([]);
-
-const orders = ref([]);
-
-const fetchAdminOrders = async () => {
-  try {
-    const res = await fetch(`${API_BASE}/orders`, {
-      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
-    });
-    if (res.ok) {
-      orders.value = await res.json();
-    }
-  } catch (error) {
-    console.error('Failed to fetch admin orders:', error);
-  }
-};
-
-// Chatbot State
-const isChatOpen = ref(false);
-const isTyping = ref(false);
-const chatHistory = reactive([
-  { role: 'bot', text: 'สวัสดีครับ! ยินดีต้อนรับสู่เว็บไซต์ ForgeLabs! ผมคือ SpecAI ผู้ช่วยส่วนตัวของคุณ ต้องการให้ผมจัดสเปคคอมพิวเตอร์แบบไหนครับ?' }
-]);
 
 const handleLoginSubmit = async () => {
-  if(!loginForm.email || !loginForm.password) return alert('กรุณากรอกอีเมลและรหัสผ่าน');
-  
+  if (!loginForm.email || !loginForm.password) return alert('กรุณากรอกอีเมลและรหัสผ่าน');
+
   try {
     const res = await fetch(`${API_BASE}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginForm)
     });
-    
+
     const data = await res.json();
     if (res.ok) {
       authStore.setUser(data.user, data.token);
       showLoginModal.value = false;
       loginForm.email = ''; loginForm.password = '';
-      
+
       if (data.user.role === 'admin') {
-        fetchAdminOrders();
+        await adminStore.fetchOrders();
         router.push('/admin');
       }
     } else {
@@ -290,15 +172,15 @@ const handleLoginSubmit = async () => {
 };
 
 const handleRegisterSubmit = async () => {
-  if(!registerForm.name || !registerForm.email || !registerForm.password) return alert('กรุณากรอกข้อมูลให้ครบถ้วน');
-  
+  if (!registerForm.name || !registerForm.email || !registerForm.password) return alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+
   try {
     const res = await fetch(`${API_BASE}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(registerForm)
     });
-    
+
     const data = await res.json();
     if (res.ok) {
       alert('สมัครสมาชิกสำเร็จ! กำลังเข้าสู่ระบบ...');
@@ -318,150 +200,14 @@ const logout = () => {
   router.push('/');
 };
 
-const handleReadArticle = (article) => {
-  selectedArticle.value = article;
-  router.push(`/article/${article.id || 1}`);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-// Start Checkout
 const handleCheckout = () => {
-  if (!hasAnyComponent.value) return;
+  if (!builderStore.hasAnyComponent) return;
   if (userRole.value === 'guest') {
     showLoginModal.value = true;
   } else {
     router.push('/checkout');
   }
 };
-
-const onOrderPlaced = (newOrder) => {
-  orders.unshift(newOrder);
-  Object.keys(build).forEach(k => build[k] = null);
-  router.push('/');
-  chatHistory.push({
-    role: 'bot',
-    text: `🎉 <strong>รับคำสั่งซื้อสำเร็จ!</strong> <br>หมายเลขคำสั่งซื้อของคุณคือ <span style="color:var(--accent)">${newOrder.id}</span><br>หากต้องการสอบถามสถานะเพิ่มเติม สามารถพิมพ์ถามผมด้วยรหัสออเดอร์ได้เลยครับ`
-  });
-};
-
-const sendMessage = (payload) => {
-  const text = typeof payload === 'string' ? payload : payload.text;
-  const image = typeof payload === 'object' ? payload.image : null;
-  
-  chatHistory.push({ role: 'user', text, image: image?.data ? `data:${image.mimeType};base64,${image.data}` : null });
-  isTyping.value = true;
-  setTimeout(() => {
-    isTyping.value = false;
-    processBotResponse(text, image);
-  }, 100);
-};
-
-const processBotResponse = async (text, image = null) => {
-  try {
-    let sessionId = localStorage.getItem('chatbot_session_id');
-    if (!sessionId) {
-      sessionId = crypto.randomUUID();
-      localStorage.setItem('chatbot_session_id', sessionId);
-    }
-
-    const response = await fetch(`${API_BASE}/chatbot/stream`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        text: text,
-        image: image,
-        sessionId: sessionId
-      })
-    });
-    
-    if (!response.ok) throw new Error('API request failed');
-    
-    const botMsgIndex = chatHistory.length;
-    chatHistory.push({ role: 'bot', text: '', recommended_build: null, sources: [] });
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder('utf-8');
-    let buffer = '';
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
-      buffer = lines.pop() || ''; 
-      
-      let currentEvent = 'message';
-      
-      for (const line of lines) {
-        if (line.startsWith('event: ')) {
-          currentEvent = line.substring(7).trim();
-        } else if (line.startsWith('data: ')) {
-          const dataStr = line.substring(6).trim();
-          if (dataStr) {
-             try {
-               const data = JSON.parse(dataStr);
-               if (currentEvent === 'session') {
-                 localStorage.setItem('chatbot_session_id', data.sessionId);
-               } else if (currentEvent === 'message' || currentEvent === 'text') {
-                 if (data.text) {
-                   chatHistory[botMsgIndex].text += data.text;
-                 }
-               } else if (currentEvent === 'build_data') {
-                 chatHistory[botMsgIndex].recommended_build = data.build_data;
-               } else if (currentEvent === 'sources') {
-                 chatHistory[botMsgIndex].sources = data.sources;
-               } else if (currentEvent === 'error') {
-                 console.error('SSE Error:', data.error);
-                 if (chatHistory[botMsgIndex].text === '') {
-                   chatHistory[botMsgIndex].text = `⚠️ ${data.error}`;
-                 } else {
-                   chatHistory[botMsgIndex].text += `\n\n⚠️ ${data.error}`;
-                 }
-               } else if (currentEvent === 'clear') {
-                 chatHistory[botMsgIndex].text = '';
-                 chatHistory[botMsgIndex].sources = [];
-                 chatHistory[botMsgIndex].recommended_build = null;
-               }
-             } catch (err) {}
-          }
-        }
-      }
-    }
-  } catch (error) {
-    console.error('Chatbot API Error:', error);
-    chatHistory.push({ role: 'bot', text: 'ขออภัยครับ ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ระบบ AI ได้ในขณะนี้ กรุณาตรวจสอบว่ารันระบบหลังบ้าน (Node.js) แล้ว ⚠️', recommended_build: null });
-  }
-};
-
-const applyBuild = (buildObject) => {
-  if (!buildObject) return;
-  
-  // Apply the parts to build state using builderStore
-  Object.keys(buildObject).forEach(catId => {
-    const itemId = buildObject[catId];
-    if (itemId) {
-      builderStore.setItem(catId, itemId);
-    }
-  });
-  
-  // Calculate total price for confirmation message
-  let calculatedTotal = 0;
-  const catalog = catalogStore.getCategorizedHardware;
-  Object.keys(buildObject).forEach(catId => {
-    const itemId = buildObject[catId];
-    if (itemId && catalog[catId]) {
-      const item = catalog[catId].find(i => i.id === itemId);
-      if (item) calculatedTotal += item.price;
-    }
-  });
-
-  chatHistory.push({ 
-    role: 'bot', 
-    text: `✅ <strong>จัดสเปคลงตะกร้าเรียบร้อยแล้วครับ!</strong> ราคารวมทั้งหมด ฿${calculatedTotal.toLocaleString()} บาท สามารถตรวจสอบรายละเอียดและปรับแก้เพิ่มเติมได้ที่หน้าจอหลักครับ`
-  });
-};
-// Removed hardcoded applyPreset function logic
 </script>
 
 <style scoped>

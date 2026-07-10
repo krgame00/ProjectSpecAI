@@ -15,7 +15,7 @@ export const useCatalogStore = defineStore('catalog', {
     async fetchCatalog() {
       this.isLoading = true
       try {
-        const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api';
+        const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000/api/v1';
         const res = await fetch(`${API_BASE}/hardware/catalog`)
         if (res.ok) {
           this.hardwareList = await res.json()

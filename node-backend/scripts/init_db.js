@@ -4,11 +4,14 @@ const path = require('path');
 
 async function run() {
   console.log('Connecting to MySQL...');
+  if (!process.env.DB_PASSWORD) {
+    throw new Error('DB_PASSWORD environment variable is required');
+  }
   const connection = await mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: parseInt(process.env.DB_PORT || '3306'),
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '1234'
+    password: process.env.DB_PASSWORD
   });
 
   console.log('Reading database-schema.sql...');
