@@ -28,19 +28,7 @@ const PORT = process.env.PORT || 3000;
 app.set('trust proxy', 1);
 
 // Middleware
-const allowedOrigins = process.env.CORS_ORIGIN
-  ? process.env.CORS_ORIGIN.split(',')
-  : ['http://localhost:5173', 'http://localhost:3000', 'https://project-spec-ai.vercel.app'];
-let corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json({ limit: '20mb' }));
 
 // --- Rate Limiting ---
