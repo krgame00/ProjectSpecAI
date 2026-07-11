@@ -139,21 +139,27 @@ const getItemSpecsList = (catId, itemId) => {
     if (s['TDP']) specs.push({ label: 'TDP', value: s['TDP'] });
     else if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
   } else if (catId === 'mobo') {
+    if (s['CPU Socket']) specs.push({ label: 'Socket', value: s['CPU Socket'] });
     if (s['Form Factor']) specs.push({ label: 'ฟอร์มแฟคเตอร์', value: s['Form Factor'] });
+    if (s['Max Memory']) specs.push({ label: 'Max RAM', value: s['Max Memory'] });
   } else if (catId === 'ram') {
-    if (s['Capacity']) specs.push({ label: 'ความจุ', value: s['Capacity'] });
+    if (s['Memory Type']) specs.push({ label: 'ประเภท', value: s['Memory Type'] });
+    if (s['Memory Capacity']) specs.push({ label: 'ความจุ', value: s['Memory Capacity'] });
+    if (s['Speed']) specs.push({ label: 'บัส', value: s['Speed'] });
   } else if (catId === 'gpu') {
-    if (s['VRAM']) specs.push({ label: 'VRAM', value: s['VRAM'] });
-    if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
-    if (s['Length (mm)']) specs.push({ label: 'ความยาว', value: `${s['Length (mm)']}mm` });
+    if (s['Memory Size']) specs.push({ label: 'VRAM', value: s['Memory Size'] });
+    if (s['Power Requirement']) specs.push({ label: 'ไฟที่แนะนำ', value: s['Power Requirement'] });
+    if (s['Dimension'] || s['Dimension W x D x H']) specs.push({ label: 'ขนาด', value: s['Dimension'] || s['Dimension W x D x H'] });
   } else if (catId === 'storage') {
-    if (s['Type']) specs.push({ label: 'ประเภท', value: s['Type'] });
+    if (s['Form Factor'] || s['Interface']) specs.push({ label: 'ประเภท', value: s['Form Factor'] || s['Interface'] });
     if (s['Capacity']) specs.push({ label: 'ความจุ', value: s['Capacity'] });
+    if (s['Read Speed']) specs.push({ label: 'อ่าน', value: s['Read Speed'] });
   } else if (catId === 'psu') {
-    if (s['Efficiency Rating']) specs.push({ label: 'มาตรฐาน', value: s['Efficiency Rating'] });
+    if (s['Continuous Power W']) specs.push({ label: 'กำลังไฟ', value: s['Continuous Power W'] });
+    if (s['Energy Efficient']) specs.push({ label: 'มาตรฐาน', value: s['Energy Efficient'] });
   } else if (catId === 'case') {
-    if (s['Form Factor Support']) specs.push({ label: 'รองรับบอร์ด', value: s['Form Factor Support'] });
-    if (s['Max GPU Length (mm)']) specs.push({ label: 'GPU ยาวสุด', value: `${s['Max GPU Length (mm)']}mm` });
+    if (s['Mainboard Support']) specs.push({ label: 'รองรับบอร์ด', value: s['Mainboard Support'] });
+    if (s['VGA Support']) specs.push({ label: 'GPU ยาวสุด', value: s['VGA Support'] });
   }
   return specs;
 };
