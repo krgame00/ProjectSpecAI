@@ -490,14 +490,14 @@ const getItemSpecsList = (catId, item) => {
 }
 .product-price { 
   font-family: var(--font-sans); 
-  font-size: var(--text-base); 
+  font-size: var(--text-lg); 
   font-weight: 600; 
   color: var(--ink);
 }
 .price-currency {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--ink-mute);
-  margin-right: 1px;
+  margin-right: 2px;
 }
 .add-btn { 
   background: var(--canvas-soft);
