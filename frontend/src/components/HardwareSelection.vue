@@ -16,10 +16,22 @@
       </div>
     </div>
 
-    <div class="product-grid">
+    <!-- Search Bar -->
+    <div class="search-bar-wrapper">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input 
+        type="text" 
+        v-model="searchQuery" 
+        class="search-input" 
+        :placeholder="`ค้นหา ${activeCategoryInfo.name}...`"
+      >
+      <button v-if="searchQuery" class="clear-search-btn" @click="searchQuery = ''" title="ล้างการค้นหา">✕</button>
+    </div>
+
+    <div class="product-grid" v-if="filteredProducts.length > 0">
       <div 
         class="product-card" 
-        v-for="item in products" 
+        v-for="item in filteredProducts" 
         :key="item.id" 
         :class="{ selected: selectedItemId === item.id }"
         @click="$emit('select-item', activeCategory, item.id)"
@@ -65,6 +77,12 @@
         </div>
       </div>
     </div>
+    
+    <div v-else class="empty-search">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--ink-mute); margin-bottom: 1rem;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <p>ไม่พบอุปกรณ์ที่ตรงกับ "{{ searchQuery }}"</p>
+      <button class="clear-btn" @click="searchQuery = ''">ล้างการค้นหา</button>
+    </div>
 
     <!-- Details Modal -->
     <div class="modal-overlay" v-if="showingDetails" @click.self="showingDetails = null">
@@ -82,14 +100,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
-defineProps({
+const props = defineProps({
   activeCategory: String, activeCategoryInfo: Object,
   products: Array, selectedItemId: [String, Number],
   compatibilityIssues: Array, hasAnyComponent: Boolean
 });
 defineEmits(['select-item']);
+
+const searchQuery = ref('');
+
+const filteredProducts = computed(() => {
+  if (!searchQuery.value) return props.products;
+  const q = searchQuery.value.toLowerCase();
+  return props.products.filter(p => p.name.toLowerCase().includes(q));
+});
 
 const showingDetails = ref(null);
 const openDetails = (item) => {
@@ -182,19 +208,67 @@ const getItemSpecsList = (catId, item) => {
   justify-content: center;
   font-size: 1.3rem;
 }
-.category-title-text {
-  font-size: var(--text-xl);
-  font-weight: 600;
-  color: var(--ink);
-  margin: 0;
+.category-emoji { font-size: 1.5rem; }
+.category-title-text { margin: 0; font-size: var(--text-xl); color: var(--ink); font-weight: 600; }
+.category-subtitle { margin: 0.25rem 0 0; color: var(--ink-mute); font-size: 0.85rem; }
+
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 0 1rem;
+  transition: all 0.2s ease;
 }
-.category-subtitle {
-  font-size: var(--text-xs);
+.search-bar-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.search-icon {
   color: var(--ink-mute);
-  margin: 0;
-  margin-top: 0.1rem;
+  margin-right: 0.75rem;
 }
-.tooltip-wrapper { position: relative; display: flex; align-items: center; }
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-size: 0.95rem;
+  padding: 1rem 0;
+  outline: none;
+}
+.search-input::placeholder { color: var(--ink-mute); }
+.clear-search-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-mute);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.clear-search-btn:hover { color: var(--ink); }
+
+.empty-search {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--canvas);
+  border: 1px dashed var(--hairline);
+  border-radius: var(--radius-lg);
+  color: var(--ink-secondary);
+}
+.empty-search .clear-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  cursor: pointer;
+}
+.empty-search .clear-btn:hover { background: var(--hairline); }
+
+.tooltip-wrapper { position: relative; display: inline-flex; align-items: center; }
 .tooltip-icon { 
   display: inline-flex; align-items: center; justify-content: center; 
   width: 28px; height: 28px; border-radius: var(--radius-sm); 
