@@ -16,16 +16,29 @@
       </div>
     </div>
 
-    <!-- Search Bar -->
-    <div class="search-bar-wrapper">
-      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <input 
-        type="text" 
-        v-model="searchQuery" 
-        class="search-input" 
-        :placeholder="`ค้นหา ${activeCategoryInfo.name}...`"
-      >
-      <button v-if="searchQuery" class="clear-search-btn" @click="searchQuery = ''" title="ล้างการค้นหา">✕</button>
+    <!-- Filters Bar -->
+    <div class="filters-bar">
+      <div class="search-bar-wrapper">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input 
+          type="text" 
+          v-model="searchQuery" 
+          class="search-input" 
+          :placeholder="`ค้นหา ${activeCategoryInfo.name}...`"
+        >
+        <button v-if="searchQuery" class="clear-search-btn" @click="searchQuery = ''" title="ล้างการค้นหา">✕</button>
+      </div>
+
+      <div class="sort-wrapper">
+        <select v-model="sortOrder" class="sort-select">
+          <option value="default">เรียงตามความนิยม</option>
+          <option value="price_asc">ราคา: ต่ำไปสูง</option>
+          <option value="price_desc">ราคา: สูงไปต่ำ</option>
+        </select>
+        <div class="sort-icon-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+      </div>
     </div>
 
     <div class="product-grid" v-if="filteredProducts.length > 0">
@@ -110,11 +123,23 @@ const props = defineProps({
 defineEmits(['select-item']);
 
 const searchQuery = ref('');
+const sortOrder = ref('default');
 
 const filteredProducts = computed(() => {
-  if (!searchQuery.value) return props.products;
-  const q = searchQuery.value.toLowerCase();
-  return props.products.filter(p => p.name.toLowerCase().includes(q));
+  let result = [...props.products];
+  
+  if (searchQuery.value) {
+    const q = searchQuery.value.toLowerCase();
+    result = result.filter(p => p.name.toLowerCase().includes(q));
+  }
+  
+  if (sortOrder.value === 'price_asc') {
+    result.sort((a, b) => a.price - b.price);
+  } else if (sortOrder.value === 'price_desc') {
+    result.sort((a, b) => b.price - a.price);
+  }
+  
+  return result;
 });
 
 const showingDetails = ref(null);
@@ -212,7 +237,13 @@ const getItemSpecsList = (catId, item) => {
 .category-title-text { margin: 0; font-size: var(--text-xl); color: var(--ink); font-weight: 600; }
 .category-subtitle { margin: 0.25rem 0 0; color: var(--ink-mute); font-size: 0.85rem; }
 
+.filters-bar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
 .search-bar-wrapper {
+  flex: 1;
   display: flex;
   align-items: center;
   background: var(--canvas-soft);
@@ -239,6 +270,38 @@ const getItemSpecsList = (catId, item) => {
   outline: none;
 }
 .search-input::placeholder { color: var(--ink-mute); }
+
+.sort-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sort-select {
+  appearance: none;
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  color: var(--ink);
+  font-size: 0.95rem;
+  padding: 1rem 2.5rem 1rem 1.25rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.sort-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.sort-icon-wrap {
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+  color: var(--ink-mute);
+  display: flex;
+  align-items: center;
+}
+
 .clear-search-btn {
   background: transparent;
   border: none;
