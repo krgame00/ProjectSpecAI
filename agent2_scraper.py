@@ -25,7 +25,7 @@ def scrape_ihavecpu(url):
         if '฿' in t or 'บาท' in t:
             try:
                 p = clean_price(t)
-                if p > 1000 and p < 200000: # Typical CPU price range to filter noise
+                if p > 1000 and p < 1000000: # Typical CPU price range to filter noise
                     price = p
                     break
             except:
@@ -135,15 +135,27 @@ def run_agent3_qc(data):
 
 def main():
     try:
-        with open('urls.txt', 'r', encoding='utf-8') as f:
+        with open('urls_large.txt', 'r', encoding='utf-8') as f:
             urls = [line.strip() for line in f if line.strip()]
     except FileNotFoundError:
-        print("urls.txt not found!")
+        print("urls_large.txt not found!")
         return
 
     all_data = []
-    
+    scraped_urls = set()
+    try:
+        with open('scraped_data.json', 'r', encoding='utf-8') as f:
+            all_data = json.load(f)
+            scraped_urls = {item['url'] for item in all_data}
+            print(f"Loaded {len(all_data)} previously scraped items.")
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
     for url in urls:
+        if url in scraped_urls:
+            print(f"Agent 2: Skipping already scraped URL: {url}")
+            continue
+            
         max_retries = 3 # Loop-budget
         success = False
         
@@ -160,7 +172,13 @@ def main():
                 
                 if run_agent3_qc(data):
                     all_data.append(data)
+                    scraped_urls.add(url)
                     success = True
+                    
+                    # Incremental Save
+                    with open('scraped_data.json', 'w', encoding='utf-8') as f:
+                        json.dump(all_data, f, ensure_ascii=False, indent=2)
+                        
                     break
                 else:
                     print("Retrying due to QC failure...")
@@ -170,9 +188,6 @@ def main():
         if not success:
             print(f"Agent 2 giving up on {url} after {max_retries} attempts. (Budget Exhausted)")
             
-    with open('scraped_data.json', 'w', encoding='utf-8') as f:
-        json.dump(all_data, f, ensure_ascii=False, indent=2)
-        
     print(f"Saved {len(all_data)} products to scraped_data.json")
 
 if __name__ == "__main__":

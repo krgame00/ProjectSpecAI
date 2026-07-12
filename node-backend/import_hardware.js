@@ -12,7 +12,8 @@ async function importHardware() {
   });
 
   try {
-    const rawData = fs.readFileSync('scraped_data.json', 'utf-8');
+    const dataPath = path.join(__dirname, '..', 'scraped_data.json');
+    const rawData = fs.readFileSync(dataPath, 'utf-8');
     const products = JSON.parse(rawData);
 
     for (const p of products) {
@@ -38,7 +39,8 @@ async function importHardware() {
       );
       console.log(`✅ Success! Inserted ID: ${result.insertId}`);
       if (p.url) {
-        fs.appendFileSync('scraped_urls.txt', p.url + '\n', 'utf-8');
+        const urlsPath = path.join(__dirname, '..', 'scraped_urls.txt');
+        fs.appendFileSync(urlsPath, p.url + '\n', 'utf-8');
       }
     }
   } catch (err) {

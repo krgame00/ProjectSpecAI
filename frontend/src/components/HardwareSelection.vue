@@ -7,7 +7,14 @@
         </div>
         <div>
           <h2 class="category-title-text">{{ activeCategoryInfo.name }}</h2>
-          <p class="category-subtitle">{{ products.length }} รายการ</p>
+          <p class="category-subtitle">
+            <template v-if="searchQuery">
+              พบ {{ filteredProducts.length }} ชิ้น จากทั้งหมด {{ products.length }} ชิ้น
+            </template>
+            <template v-else>
+              {{ products.length }} ชิ้น
+            </template>
+          </p>
         </div>
       </div>
       <div class="tooltip-wrapper">
