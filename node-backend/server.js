@@ -58,12 +58,12 @@ app.use('/api/v1/upload', uploadRoutes);
 app.use('/api/v1/auth', authLimiter, authRoutes);
 
 // Backward compatibility redirects from /api/ to /api/v1/
-app.use('/api/hardware', (req, res) => res.redirect(301, `/api/v1/hardware${req.url}`));
-app.use('/api/chatbot', (req, res) => res.redirect(301, `/api/v1/chatbot${req.url}`));
-app.use('/api/orders', (req, res) => res.redirect(301, `/api/v1/orders${req.url}`));
-app.use('/api/articles', (req, res) => res.redirect(301, `/api/v1/articles${req.url}`));
-app.use('/api/upload', (req, res) => res.redirect(301, `/api/v1/upload${req.url}`));
-app.use('/api/auth', (req, res) => res.redirect(301, `/api/v1/auth${req.url}`));
+app.use('/api/hardware', (req, res) => res.redirect(308, `/api/v1/hardware${req.url}`));
+app.use('/api/chatbot', (req, res) => res.redirect(308, `/api/v1/chatbot${req.url}`));
+app.use('/api/orders', (req, res) => res.redirect(308, `/api/v1/orders${req.url}`));
+app.use('/api/articles', (req, res) => res.redirect(308, `/api/v1/articles${req.url}`));
+app.use('/api/upload', (req, res) => res.redirect(308, `/api/v1/upload${req.url}`));
+app.use('/api/auth', (req, res) => res.redirect(308, `/api/v1/auth${req.url}`));
 
 // Serve static files from public/uploads
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
