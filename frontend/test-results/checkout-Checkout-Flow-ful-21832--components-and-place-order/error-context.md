@@ -34,7 +34,7 @@ Call log:
 - text: ชื่อ
 - textbox "ชื่อที่จะแสดงในระบบ": Checkout User
 - text: อีเมล
-- textbox "ตั้งอีเมลของคุณ": co_1783704795347@test.com
+- textbox "ตั้งอีเมลของคุณ": co_1783944902865@test.com
 - text: รหัสผ่าน
 - textbox "ตั้งรหัสผ่าน": checkout123
 - button "สร้างบัญชี"

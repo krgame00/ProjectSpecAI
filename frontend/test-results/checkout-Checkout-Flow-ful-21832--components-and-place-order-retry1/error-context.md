@@ -12,79 +12,1166 @@
 # Error details
 
 ```
-Error: expect(locator).toBeVisible() failed
-
-Locator: locator('.product-card').first()
-Expected: visible
-Timeout: 10000ms
-Error: element(s) not found
+Error: locator.click: Error: strict mode violation: locator('.category-item').filter({ hasText: 'RAM' }) resolved to 2 elements:
+    1) <li data-v-3580c684="" class="category-item active selected">…</li> aka getByRole('listitem').filter({ hasText: 'MotherboardGigabyte MAINBOARD' })
+    2) <li data-v-3580c684="" class="category-item">…</li> aka getByRole('listitem').filter({ hasText: 'RAM—' })
 
 Call log:
-  - Expect "toBeVisible" with timeout 10000ms
-  - waiting for locator('.product-card').first()
+  - waiting for locator('.category-item').filter({ hasText: 'RAM' })
 
 ```
 
+# Page snapshot
+
 ```yaml
-- navigation:
-  - img "ForgeLabs Logo"
-  - text: Forge Labs
-  - button "💻 จัดสเปค"
-  - button "📰 บทความ"
-  - text: 👤 Checkout User
-  - button "ข้อมูลส่วนตัว"
-  - button "ออกจากระบบ"
-- complementary:
-  - text: 💰 ยอดรวมทั้งสิ้น ฿34,990 อัปเดตตามเวลาจริง (Real-time)
-  - button "🛒 ดำเนินการสั่งซื้อ"
-  - img
-  - strong: "สถานะ: พบข้อขัดแย้งบางส่วน"
-  - list:
-    - listitem: "❌ ซ็อกเก็ตไม่ตรง: CPU เป็น sTRX5 แต่เมนบอร์ดรองรับเฉพาะ AM5"
-    - listitem: "❌ ประเภท RAM ไม่ตรง: เมนบอร์ดรองรับ DDR5 แต่คุณเลือก DDR4"
-    - listitem: "❌ CPU อาจไม่มีชิปกราฟิกในตัว: AMD RYZEN THREADRIPPER PRO 7995WX มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค"
-  - text: เลือกหมวดหมู่ฮาร์ดแวร์ 3/7
-  - list:
-    - listitem:
-      - text: CPU
-      - img
-      - text: "AMD RYZEN THREADRIPPER PRO 7995WX ฿34,990 Socket: sTRX5 Cores: 96 Threads: 192 TDP: 65W"
-      - button "นำออก":
-        - img
-        - text: นำออก
-    - listitem:
-      - text: Motherboard
-      - img
-      - text: "ASUS PRIME A620M-K-CSM ติดต่อสอบถาม Socket: AM5 DDR: DDR5"
-      - button "นำออก":
-        - img
-        - text: นำออก
-    - listitem:
-      - text: RAM
-      - img
-      - text: "HIKSEMI ARMOR BLACK ติดต่อสอบถาม ประเภท: DDR4"
-      - button "นำออก":
-        - img
-        - text: นำออก
-    - listitem: GPU (VGA) —
-    - listitem: Storage (SSD) —
-    - listitem: Power Supply —
-    - listitem: Case —
-- main:
-  - text: 💿
-  - heading "Storage (SSD)" [level=2]
-  - paragraph: 0 รายการ
-  - text: "?"
-- button "เปิดแชตบอต SpecAI":
-  - img
-- text: 🤖 SpecAI ออนไลน์ · พร้อมช่วยเหลือ
-- button:
-  - img
-- text: 🤖 สวัสดีครับ! ยินดีต้อนรับสู่เว็บไซต์ ForgeLabs! ผมคือ SpecAI ผู้ช่วยส่วนตัวของคุณ ต้องการให้ผมจัดสเปคคอมพิวเตอร์แบบไหนครับ?
-- button "📎"
-- textbox "พิมพ์เป้าหมาย เช่น เน้นเล่นเกม..."
-- button:
-  - img
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6] [cursor=pointer]:
+        - img "ForgeLabs Logo" [ref=e7]
+        - generic [ref=e8]:
+          - text: Forge
+          - generic [ref=e9]: Labs
+      - generic [ref=e10]:
+        - button "💻 จัดสเปค" [ref=e11] [cursor=pointer]
+        - button "📰 บทความ" [ref=e12] [cursor=pointer]
+        - generic [ref=e13]:
+          - generic [ref=e14]: 👤 Checkout User
+          - button "ข้อมูลส่วนตัว" [ref=e15] [cursor=pointer]
+          - button "ออกจากระบบ" [ref=e16] [cursor=pointer]
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - complementary [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]:
+            - generic [ref=e22]: 💰
+            - generic [ref=e23]: ยอดรวมทั้งสิ้น
+          - generic [ref=e24]: ฿5,380
+          - generic [ref=e25]: อัปเดตตามเวลาจริง (Real-time)
+          - button "🛒 ดำเนินการสั่งซื้อ" [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]: 🛒
+            - generic [ref=e28]: ดำเนินการสั่งซื้อ
+        - generic [ref=e29]:
+          - img [ref=e31]
+          - generic [ref=e33]:
+            - strong [ref=e34]: "สถานะ: พบข้อขัดแย้งบางส่วน"
+            - list [ref=e35]:
+              - listitem [ref=e36]:
+                - generic [ref=e37]: ❌
+                - generic [ref=e38]: "CPU อาจไม่มีชิปกราฟิกในตัว: AMD Ryzen 5 8400F มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค"
+              - listitem [ref=e39]:
+                - generic [ref=e40]: ✅
+                - generic [ref=e41]: Socket ตรงกัน
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: เลือกหมวดหมู่ฮาร์ดแวร์
+            - generic [ref=e45]: 2/7
+          - list [ref=e46]:
+            - listitem [ref=e47] [cursor=pointer]:
+              - generic [ref=e49]:
+                - generic [ref=e50]:
+                  - generic [ref=e51]: CPU
+                  - img [ref=e53]
+                - generic [ref=e55]:
+                  - generic [ref=e56]: AMD Ryzen 5 8400F
+                  - generic [ref=e57]: ฿3,990
+                  - generic [ref=e58]:
+                    - generic [ref=e59]:
+                      - generic [ref=e60]: "Socket:"
+                      - generic [ref=e61]: AM5
+                    - generic [ref=e62]:
+                      - generic [ref=e63]: "Cores:"
+                      - generic [ref=e64]: "6"
+                    - generic [ref=e65]:
+                      - generic [ref=e66]: "Threads:"
+                      - generic [ref=e67]: "12"
+                    - generic [ref=e68]:
+                      - generic [ref=e69]: "TDP:"
+                      - generic [ref=e70]: 65W
+                  - button "นำออก" [ref=e71]:
+                    - img [ref=e72]
+                    - text: นำออก
+            - listitem [ref=e74] [cursor=pointer]:
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - generic [ref=e78]: Motherboard
+                  - img [ref=e80]
+                - generic [ref=e82]:
+                  - generic [ref=e83]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)
+                  - generic [ref=e84]: ฿1,390
+                  - generic [ref=e85]:
+                    - generic [ref=e86]:
+                      - generic [ref=e87]: "Socket:"
+                      - generic [ref=e88]: AM4
+                    - generic [ref=e89]:
+                      - generic [ref=e90]: "ฟอร์มแฟคเตอร์:"
+                      - generic [ref=e91]: Micro-ATX
+                    - generic [ref=e92]:
+                      - generic [ref=e93]: "Max RAM:"
+                      - generic [ref=e94]: 64GB
+                  - button "นำออก" [ref=e95]:
+                    - img [ref=e96]
+                    - text: นำออก
+            - listitem [ref=e98] [cursor=pointer]:
+              - generic [ref=e101]:
+                - generic [ref=e102]: RAM
+                - generic [ref=e103]: —
+            - listitem [ref=e104] [cursor=pointer]:
+              - generic [ref=e107]:
+                - generic [ref=e108]: GPU (VGA)
+                - generic [ref=e109]: —
+            - listitem [ref=e110] [cursor=pointer]:
+              - generic [ref=e113]:
+                - generic [ref=e114]: Storage (SSD)
+                - generic [ref=e115]: —
+            - listitem [ref=e116] [cursor=pointer]:
+              - generic [ref=e119]:
+                - generic [ref=e120]: Power Supply
+                - generic [ref=e121]: —
+            - listitem [ref=e122] [cursor=pointer]:
+              - generic [ref=e125]:
+                - generic [ref=e126]: Case
+                - generic [ref=e127]: —
+      - main [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e133]: 🔧
+              - generic [ref=e134]:
+                - heading "Motherboard" [level=2] [ref=e135]
+                - paragraph [ref=e136]: 71 ชิ้น
+            - generic [ref=e138]: "?"
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - img [ref=e141]
+              - textbox "ค้นหา Motherboard..." [ref=e144]
+            - generic [ref=e145]:
+              - combobox [ref=e146] [cursor=pointer]:
+                - option "เรียงตามความนิยม" [selected]
+                - 'option "ราคา: ต่ำไปสูง"'
+                - 'option "ราคา: สูงไปต่ำ"'
+              - generic:
+                - img
+          - generic [ref=e147]:
+            - generic [ref=e148] [cursor=pointer]:
+              - generic "คลิกเพื่อยกเลิกการเลือก" [ref=e149]:
+                - img [ref=e150]
+              - button "ดูรายละเอียดสเปค" [ref=e152]:
+                - img [ref=e153]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)" [ref=e158]
+              - generic [ref=e159]:
+                - generic [ref=e160]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)
+                - generic [ref=e161]:
+                  - generic [ref=e162]: "Socket: AM4"
+                  - generic [ref=e163]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e164]: "Max RAM: 64GB"
+              - generic [ref=e165]:
+                - generic [ref=e166]: ฿1,390
+                - button [active] [ref=e167]:
+                  - img [ref=e168]
+            - generic [ref=e170] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e171]:
+                - img [ref=e172]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)" [ref=e177]
+              - generic [ref=e178]:
+                - generic [ref=e179]: MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)
+                - generic [ref=e180]:
+                  - generic [ref=e181]: "Socket: AM5"
+                  - generic [ref=e182]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e183]: "Max RAM: 128GB"
+              - generic [ref=e184]:
+                - generic [ref=e185]: ฿1,990
+                - button [ref=e186]:
+                  - img [ref=e187]
+            - generic [ref=e189] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e190]:
+                - img [ref=e191]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)" [ref=e196]
+              - generic [ref=e197]:
+                - generic [ref=e198]: MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)
+                - generic [ref=e199]:
+                  - generic [ref=e200]: "Socket: AM4"
+                  - generic [ref=e201]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e202]: "Max RAM: 64GB"
+              - generic [ref=e203]:
+                - generic [ref=e204]: ฿1,390
+                - button [ref=e205]:
+                  - img [ref=e206]
+            - generic [ref=e208] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e209]:
+                - img [ref=e210]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y)" [ref=e215]
+              - generic [ref=e216]:
+                - generic [ref=e217]: ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y)
+                - generic [ref=e218]:
+                  - generic [ref=e219]: "Socket: AM5"
+                  - generic [ref=e220]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e221]: "Max RAM: 96GB"
+              - generic [ref=e222]:
+                - generic [ref=e223]: ฿2,290
+                - button [ref=e224]:
+                  - img [ref=e225]
+            - generic [ref=e227] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e228]:
+                - img [ref=e229]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)" [ref=e234]
+              - generic [ref=e235]:
+                - generic [ref=e236]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)
+                - generic [ref=e237]:
+                  - generic [ref=e238]: "Socket: LGA 1700"
+                  - generic [ref=e239]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e240]: "Max RAM: 64GB"
+              - generic [ref=e241]:
+                - generic [ref=e242]: ฿2,290
+                - button [ref=e243]:
+                  - img [ref=e244]
+            - generic [ref=e246] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e247]:
+                - img [ref=e248]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)" [ref=e253]
+              - generic [ref=e254]:
+                - generic [ref=e255]: Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)
+                - generic [ref=e256]:
+                  - generic [ref=e257]: "Socket: AM5"
+                  - generic [ref=e258]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e259]: "Max RAM: 128GB"
+              - generic [ref=e260]:
+                - generic [ref=e261]: ฿1,990
+                - button [ref=e262]:
+                  - img [ref=e263]
+            - generic [ref=e265] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e266]:
+                - img [ref=e267]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)" [ref=e272]
+              - generic [ref=e273]:
+                - generic [ref=e274]: ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)
+                - generic [ref=e275]:
+                  - generic [ref=e276]: "Socket: AM4"
+                  - generic [ref=e277]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e278]: "Max RAM: 64GB"
+              - generic [ref=e279]:
+                - generic [ref=e280]: ฿1,390
+                - button [ref=e281]:
+                  - img [ref=e282]
+            - generic [ref=e284] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e285]:
+                - img [ref=e286]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D5 (3Y)" [ref=e291]
+              - generic [ref=e292]:
+                - generic [ref=e293]: ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D5 (3Y)
+                - generic [ref=e294]:
+                  - generic [ref=e295]: "Socket: LGA 1700"
+                  - generic [ref=e296]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e297]: "Max RAM: 96GB"
+              - generic [ref=e298]:
+                - generic [ref=e299]: ฿1,890
+                - button [ref=e300]:
+                  - img [ref=e301]
+            - generic [ref=e303] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e304]:
+                - img [ref=e305]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)" [ref=e310]
+              - generic [ref=e311]:
+                - generic [ref=e312]: Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)
+                - generic [ref=e313]:
+                  - generic [ref=e314]: "Socket: LGA 1851"
+                  - generic [ref=e315]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e316]: "Max RAM: 128GB"
+              - generic [ref=e317]:
+                - generic [ref=e318]: ฿2,290
+                - button [ref=e319]:
+                  - img [ref=e320]
+            - generic [ref=e322] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e323]:
+                - img [ref=e324]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)" [ref=e329]
+              - generic [ref=e330]:
+                - generic [ref=e331]: MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)
+                - generic [ref=e332]:
+                  - generic [ref=e333]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e334]: "Max RAM: 128 GB"
+              - generic [ref=e335]:
+                - generic [ref=e336]: ฿2,190
+                - button [ref=e337]:
+                  - img [ref=e338]
+            - generic [ref=e340] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e341]:
+                - img [ref=e342]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y)" [ref=e347]
+              - generic [ref=e348]:
+                - generic [ref=e349]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y)
+                - generic [ref=e350]:
+                  - generic [ref=e351]: "Socket: AM4"
+                  - generic [ref=e352]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e353]: "Max RAM: 64GB"
+              - generic [ref=e354]:
+                - generic [ref=e355]: ฿1,390
+                - button [ref=e356]:
+                  - img [ref=e357]
+            - generic [ref=e359] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e360]:
+                - img [ref=e361]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)" [ref=e366]
+              - generic [ref=e367]:
+                - generic [ref=e368]: ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)
+                - generic [ref=e369]:
+                  - generic [ref=e370]: "Socket: AM5"
+                  - generic [ref=e371]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e372]: "Max RAM: 128GB"
+              - generic [ref=e373]:
+                - generic [ref=e374]: ฿1,990
+                - button [ref=e375]:
+                  - img [ref=e376]
+            - generic [ref=e378] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e379]:
+                - img [ref=e380]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)" [ref=e385]
+              - generic [ref=e386]:
+                - generic [ref=e387]: MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)
+                - generic [ref=e388]:
+                  - generic [ref=e389]: "Socket: LGA 1700"
+                  - generic [ref=e390]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e391]: "Max RAM: 64GB"
+              - generic [ref=e392]:
+                - generic [ref=e393]: ฿1,590
+                - button [ref=e394]:
+                  - img [ref=e395]
+            - generic [ref=e397] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e398]:
+                - img [ref=e399]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)" [ref=e404]
+              - generic [ref=e405]:
+                - generic [ref=e406]: ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)
+                - generic [ref=e407]:
+                  - generic [ref=e408]: "Socket: AM4"
+                  - generic [ref=e409]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e410]: "Max RAM: 64GB"
+              - generic [ref=e411]:
+                - generic [ref=e412]: ฿1,490
+                - button [ref=e413]:
+                  - img [ref=e414]
+            - generic [ref=e416] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e417]:
+                - img [ref=e418]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)" [ref=e423]
+              - generic [ref=e424]:
+                - generic [ref=e425]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)
+                - generic [ref=e426]:
+                  - generic [ref=e427]: "Socket: LGA 1700"
+                  - generic [ref=e428]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e429]: "Max RAM: 64GB"
+              - generic [ref=e430]:
+                - generic [ref=e431]: ฿1,690
+                - button [ref=e432]:
+                  - img [ref=e433]
+            - generic [ref=e435] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e436]:
+                - img [ref=e437]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y)" [ref=e442]
+              - generic [ref=e443]:
+                - generic [ref=e444]: ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y)
+                - generic [ref=e445]:
+                  - generic [ref=e446]: "Socket: LGA 1700"
+                  - generic [ref=e447]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e448]: "Max RAM: 64GB"
+              - generic [ref=e449]:
+                - generic [ref=e450]: ฿2,090
+                - button [ref=e451]:
+                  - img [ref=e452]
+            - generic [ref=e454] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e455]:
+                - img [ref=e456]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K/CSM (3Y)" [ref=e461]
+              - generic [ref=e462]:
+                - generic [ref=e463]: ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K/CSM (3Y)
+                - generic [ref=e464]:
+                  - generic [ref=e465]: "Socket: AM4"
+                  - generic [ref=e466]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e467]: "Max RAM: 64GB"
+              - generic [ref=e468]:
+                - generic [ref=e469]: ฿1,490
+                - button [ref=e470]:
+                  - img [ref=e471]
+            - generic [ref=e473] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e474]:
+                - img [ref=e475]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)" [ref=e480]
+              - generic [ref=e481]:
+                - generic [ref=e482]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)
+                - generic [ref=e483]:
+                  - generic [ref=e484]: "Socket: AM4"
+                  - generic [ref=e485]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e486]: "Max RAM: 64GB"
+              - generic [ref=e487]:
+                - generic [ref=e488]: ฿1,690
+                - button [ref=e489]:
+                  - img [ref=e490]
+            - generic [ref=e492] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e493]:
+                - img [ref=e494]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)" [ref=e499]
+              - generic [ref=e500]:
+                - generic [ref=e501]: ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)
+                - generic [ref=e502]:
+                  - generic [ref=e503]: "Socket: LGA 1700"
+                  - generic [ref=e504]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e505]: "Max RAM: 96GB"
+              - generic [ref=e506]:
+                - generic [ref=e507]: ฿1,890
+                - button [ref=e508]:
+                  - img [ref=e509]
+            - generic [ref=e511] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e512]:
+                - img [ref=e513]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)" [ref=e518]
+              - generic [ref=e519]:
+                - generic [ref=e520]: ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)
+                - generic [ref=e521]:
+                  - generic [ref=e522]: "Socket: LGA 1700"
+                  - generic [ref=e523]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e524]: "Max RAM: 64GB"
+              - generic [ref=e525]:
+                - generic [ref=e526]: ฿1,790
+                - button [ref=e527]:
+                  - img [ref=e528]
+            - generic [ref=e530] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e531]:
+                - img [ref=e532]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)" [ref=e537]
+              - generic [ref=e538]:
+                - generic [ref=e539]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)
+                - generic [ref=e540]:
+                  - generic [ref=e541]: "Socket: LGA 1700"
+                  - generic [ref=e542]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e543]: "Max RAM: 128GB"
+              - generic [ref=e544]:
+                - generic [ref=e545]: ฿1,890
+                - button [ref=e546]:
+                  - img [ref=e547]
+            - generic [ref=e549] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e550]:
+                - img [ref=e551]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV" [ref=e556]
+              - generic [ref=e557]:
+                - generic [ref=e558]: ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV
+                - generic [ref=e559]:
+                  - generic [ref=e560]: "Socket: AM4"
+                  - generic [ref=e561]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e562]: "Max RAM: 64GB"
+              - generic [ref=e563]:
+                - generic [ref=e564]: ฿2,190
+                - button [ref=e565]:
+                  - img [ref=e566]
+            - generic [ref=e568] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e569]:
+                - img [ref=e570]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D4 (3Y)" [ref=e575]
+              - generic [ref=e576]:
+                - generic [ref=e577]: ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D4 (3Y)
+                - generic [ref=e578]:
+                  - generic [ref=e579]: "Socket: LGA 1700"
+                  - generic [ref=e580]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e581]: "Max RAM: 64GB"
+              - generic [ref=e582]:
+                - generic [ref=e583]: ฿1,690
+                - button [ref=e584]:
+                  - img [ref=e585]
+            - generic [ref=e587] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e588]:
+                - img [ref=e589]
+              - img "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)" [ref=e594]
+              - generic [ref=e595]:
+                - generic [ref=e596]: Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)
+                - generic [ref=e597]:
+                  - generic [ref=e598]: "Socket: LGA 1700"
+                  - generic [ref=e599]: "ฟอร์มแฟคเตอร์: M-ATX"
+                  - generic [ref=e600]: "Max RAM: 64GB"
+              - generic [ref=e601]:
+                - generic [ref=e602]: ฿1,550
+                - button [ref=e603]:
+                  - img [ref=e604]
+            - generic [ref=e606] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e607]:
+                - img [ref=e608]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)" [ref=e613]
+              - generic [ref=e614]:
+                - generic [ref=e615]: Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)
+                - generic [ref=e616]:
+                  - generic [ref=e617]: "Socket: LGA 1851"
+                  - generic [ref=e618]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e619]: "Max RAM: 128GB"
+              - generic [ref=e620]:
+                - generic [ref=e621]: ฿2,290
+                - button [ref=e622]:
+                  - img [ref=e623]
+            - generic [ref=e625] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e626]:
+                - img [ref=e627]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)" [ref=e632]
+              - generic [ref=e633]:
+                - generic [ref=e634]: MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)
+                - generic [ref=e635]:
+                  - generic [ref=e636]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e637]: "Max RAM: 128 GB"
+              - generic [ref=e638]:
+                - generic [ref=e639]: ฿2,190
+                - button [ref=e640]:
+                  - img [ref=e641]
+            - generic [ref=e643] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e644]:
+                - img [ref=e645]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y)" [ref=e650]
+              - generic [ref=e651]:
+                - generic [ref=e652]: ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y)
+                - generic [ref=e653]:
+                  - generic [ref=e654]: "Socket: LGA 1700"
+                  - generic [ref=e655]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e656]: "Max RAM: 64GB"
+              - generic [ref=e657]:
+                - generic [ref=e658]: ฿2,090
+                - button [ref=e659]:
+                  - img [ref=e660]
+            - generic [ref=e662] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e663]:
+                - img [ref=e664]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M GAMING X DDR5 (REV.1.0) (3Y)" [ref=e669]
+              - generic [ref=e670]:
+                - generic [ref=e671]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M GAMING X DDR5 (REV.1.0) (3Y)
+                - generic [ref=e672]:
+                  - generic [ref=e673]: "Socket: LGA 1700"
+                  - generic [ref=e674]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e675]: "Max RAM: 256GB"
+              - generic [ref=e676]:
+                - generic [ref=e677]: ฿3,490
+                - button [ref=e678]:
+                  - img [ref=e679]
+            - generic [ref=e681] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e682]:
+                - img [ref=e683]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR4 (REV.1.0) (3Y)" [ref=e688]
+              - generic [ref=e689]:
+                - generic [ref=e690]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR4 (REV.1.0) (3Y)
+                - generic [ref=e691]:
+                  - generic [ref=e692]: "Socket: LGA 1700"
+                  - generic [ref=e693]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e694]: "Max RAM: 128GB"
+              - generic [ref=e695]:
+                - generic [ref=e696]: ฿2,490
+                - button [ref=e697]:
+                  - img [ref=e698]
+            - generic [ref=e700] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e701]:
+                - img [ref=e702]
+              - img "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)" [ref=e707]
+              - generic [ref=e708]:
+                - generic [ref=e709]: Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)
+                - generic [ref=e710]:
+                  - generic [ref=e711]: "Socket: LGA 1700"
+                  - generic [ref=e712]: "ฟอร์มแฟคเตอร์: M-ATX"
+                  - generic [ref=e713]: "Max RAM: 64GB"
+              - generic [ref=e714]:
+                - generic [ref=e715]: ฿1,550
+                - button [ref=e716]:
+                  - img [ref=e717]
+            - generic [ref=e719] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e720]:
+                - img [ref=e721]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)" [ref=e726]
+              - generic [ref=e727]:
+                - generic [ref=e728]: MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)
+                - generic [ref=e729]:
+                  - generic [ref=e730]: "Socket: LGA 1700"
+                  - generic [ref=e731]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e732]: "Max RAM: 64GB"
+              - generic [ref=e733]:
+                - generic [ref=e734]: ฿1,590
+                - button [ref=e735]:
+                  - img [ref=e736]
+            - generic [ref=e738] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e739]:
+                - img [ref=e740]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS PRIME B860M-K-CSM (3Y)" [ref=e745]
+              - generic [ref=e746]:
+                - generic [ref=e747]: ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS PRIME B860M-K-CSM (3Y)
+                - generic [ref=e748]:
+                  - generic [ref=e749]: "Socket: LGA 1851"
+                  - generic [ref=e750]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e751]: "Max RAM: 128GB"
+              - generic [ref=e752]:
+                - generic [ref=e753]: ฿3,390
+                - button [ref=e754]:
+                  - img [ref=e755]
+            - generic [ref=e757] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e758]:
+                - img [ref=e759]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)" [ref=e764]
+              - generic [ref=e765]:
+                - generic [ref=e766]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)
+                - generic [ref=e767]:
+                  - generic [ref=e768]: "Socket: LGA 1700"
+                  - generic [ref=e769]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e770]: "Max RAM: 128GB"
+              - generic [ref=e771]:
+                - generic [ref=e772]: ฿1,890
+                - button [ref=e773]:
+                  - img [ref=e774]
+            - generic [ref=e776] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e777]:
+                - img [ref=e778]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.0) (3Y)" [ref=e783]
+              - generic [ref=e784]:
+                - generic [ref=e785]: Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.0) (3Y)
+                - generic [ref=e786]:
+                  - generic [ref=e787]: "Socket: LGA 1851"
+                  - generic [ref=e788]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e789]: "Max RAM: 256GB"
+              - generic [ref=e790]:
+                - generic [ref=e791]: ฿3,290
+                - button [ref=e792]:
+                  - img [ref=e793]
+            - generic [ref=e795] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e796]:
+                - img [ref=e797]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)" [ref=e802]
+              - generic [ref=e803]:
+                - generic [ref=e804]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)
+                - generic [ref=e805]:
+                  - generic [ref=e806]: "Socket: AM4"
+                  - generic [ref=e807]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e808]: "Max RAM: 64GB"
+              - generic [ref=e809]:
+                - generic [ref=e810]: ฿1,690
+                - button [ref=e811]:
+                  - img [ref=e812]
+            - generic [ref=e814] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e815]:
+                - img [ref=e816]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B850M-G (3Y)" [ref=e821]
+              - generic [ref=e822]:
+                - generic [ref=e823]: MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B850M-G (3Y)
+                - generic [ref=e824]:
+                  - generic [ref=e825]: "Socket: AM5"
+                  - generic [ref=e826]: "ฟอร์มแฟคเตอร์: M-ATX"
+                  - generic [ref=e827]: "Max RAM: 128GB"
+              - generic [ref=e828]:
+                - generic [ref=e829]: ฿3,190
+                - button [ref=e830]:
+                  - img [ref=e831]
+            - generic [ref=e833] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e834]:
+                - img [ref=e835]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-B WIFI6E (3Y)" [ref=e840]
+              - generic [ref=e841]:
+                - generic [ref=e842]: MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-B WIFI6E (3Y)
+                - generic [ref=e843]:
+                  - generic [ref=e844]: "Socket: LGA 1851"
+                  - generic [ref=e845]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e846]: "Max RAM: 128GB"
+              - generic [ref=e847]:
+                - generic [ref=e848]: ฿2,590
+                - button [ref=e849]:
+                  - img [ref=e850]
+            - generic [ref=e852] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e853]:
+                - img [ref=e854]
+              - img "ASUS MAINBOARD (เมนบอร์ด) (1700) ASUS PRIME B760M-A" [ref=e859]
+              - generic [ref=e860]:
+                - generic [ref=e861]: ASUS MAINBOARD (เมนบอร์ด) (1700) ASUS PRIME B760M-A
+                - generic [ref=e862]:
+                  - generic [ref=e863]: "Socket: LGA 1700"
+                  - generic [ref=e864]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e865]: "Max RAM: 128GB"
+              - generic [ref=e866]:
+                - generic [ref=e867]: ฿2,690
+                - button [ref=e868]:
+                  - img [ref=e869]
+            - generic [ref=e871] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e872]:
+                - img [ref=e873]
+              - img "ASRock MAINBOARD (เมนบอร์ด) (1700) ASROCK B760M PG LIGHTNING DDR4 (3Y)" [ref=e878]
+              - generic [ref=e879]:
+                - generic [ref=e880]: ASRock MAINBOARD (เมนบอร์ด) (1700) ASROCK B760M PG LIGHTNING DDR4 (3Y)
+                - generic [ref=e881]:
+                  - generic [ref=e882]: "Socket: LGA 1700"
+                  - generic [ref=e883]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e884]: "Max RAM: 128GB"
+              - generic [ref=e885]:
+                - generic [ref=e886]: ฿2,490
+                - button [ref=e887]:
+                  - img [ref=e888]
+            - generic [ref=e890] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e891]:
+                - img [ref=e892]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR4 (3Y)" [ref=e897]
+              - generic [ref=e898]:
+                - generic [ref=e899]: MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR4 (3Y)
+                - generic [ref=e900]:
+                  - generic [ref=e901]: "Socket: LGA 1700"
+                  - generic [ref=e902]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e903]: "Max RAM: 128GB"
+              - generic [ref=e904]:
+                - generic [ref=e905]: ฿2,390
+                - button [ref=e906]:
+                  - img [ref=e907]
+            - generic [ref=e909] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e910]:
+                - img [ref=e911]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y)" [ref=e916]
+              - generic [ref=e917]:
+                - generic [ref=e918]: ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y)
+                - generic [ref=e919]:
+                  - generic [ref=e920]: "Socket: AM5"
+                  - generic [ref=e921]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e922]: "Max RAM: 96GB"
+              - generic [ref=e923]:
+                - generic [ref=e924]: ฿2,290
+                - button [ref=e925]:
+                  - img [ref=e926]
+            - generic [ref=e928] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e929]:
+                - img [ref=e930]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE B550M H ARGB (REV. 1.0) (3Y)" [ref=e935]
+              - generic [ref=e936]:
+                - generic [ref=e937]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE B550M H ARGB (REV. 1.0) (3Y)
+                - generic [ref=e938]:
+                  - generic [ref=e939]: "Socket: AM4"
+                  - generic [ref=e940]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e941]: "Max RAM: 64GB"
+              - generic [ref=e942]:
+                - generic [ref=e943]: ฿2,390
+                - button [ref=e944]:
+                  - img [ref=e945]
+            - generic [ref=e947] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e948]:
+                - img [ref=e949]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)" [ref=e954]
+              - generic [ref=e955]:
+                - generic [ref=e956]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)
+                - generic [ref=e957]:
+                  - generic [ref=e958]: "Socket: AM4"
+                  - generic [ref=e959]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e960]: "Max RAM: 64GB"
+              - generic [ref=e961]:
+                - generic [ref=e962]: ฿1,390
+                - button [ref=e963]:
+                  - img [ref=e964]
+            - generic [ref=e966] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e967]:
+                - img [ref=e968]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)" [ref=e973]
+              - generic [ref=e974]:
+                - generic [ref=e975]: ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)
+                - generic [ref=e976]:
+                  - generic [ref=e977]: "Socket: AM5"
+                  - generic [ref=e978]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e979]: "Max RAM: 128GB"
+              - generic [ref=e980]:
+                - generic [ref=e981]: ฿1,990
+                - button [ref=e982]:
+                  - img [ref=e983]
+            - generic [ref=e985] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e986]:
+                - img [ref=e987]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.1) (3Y)" [ref=e992]
+              - generic [ref=e993]:
+                - generic [ref=e994]: Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.1) (3Y)
+                - generic [ref=e995]:
+                  - generic [ref=e996]: "Socket: LGA 1851"
+                  - generic [ref=e997]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e998]: "Max RAM: 256GB"
+              - generic [ref=e999]:
+                - generic [ref=e1000]: ฿3,290
+                - button [ref=e1001]:
+                  - img [ref=e1002]
+            - generic [ref=e1004] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1005]:
+                - img [ref=e1006]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK B650M PG LIGHTNING DDR5 (3Y)" [ref=e1011]
+              - generic [ref=e1012]:
+                - generic [ref=e1013]: ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK B650M PG LIGHTNING DDR5 (3Y)
+                - generic [ref=e1014]:
+                  - generic [ref=e1015]: "Socket: AM5"
+                  - generic [ref=e1016]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1017]: "Max RAM: 256GB"
+              - generic [ref=e1018]:
+                - generic [ref=e1019]: ฿2,990
+                - button [ref=e1020]:
+                  - img [ref=e1021]
+            - generic [ref=e1023] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1024]:
+                - img [ref=e1025]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)" [ref=e1030]
+              - generic [ref=e1031]:
+                - generic [ref=e1032]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)
+                - generic [ref=e1033]:
+                  - generic [ref=e1034]: "Socket: LGA 1700"
+                  - generic [ref=e1035]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1036]: "Max RAM: 64GB"
+              - generic [ref=e1037]:
+                - generic [ref=e1038]: ฿2,290
+                - button [ref=e1039]:
+                  - img [ref=e1040]
+            - generic [ref=e1042] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1043]:
+                - img [ref=e1044]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)" [ref=e1049]
+              - generic [ref=e1050]:
+                - generic [ref=e1051]: MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)
+                - generic [ref=e1052]:
+                  - generic [ref=e1053]: "Socket: AM5"
+                  - generic [ref=e1054]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1055]: "Max RAM: 128GB"
+              - generic [ref=e1056]:
+                - generic [ref=e1057]: ฿1,990
+                - button [ref=e1058]:
+                  - img [ref=e1059]
+            - generic [ref=e1061] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1062]:
+                - img [ref=e1063]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)" [ref=e1068]
+              - generic [ref=e1069]:
+                - generic [ref=e1070]: ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)
+                - generic [ref=e1071]:
+                  - generic [ref=e1072]: "Socket: AM4"
+                  - generic [ref=e1073]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1074]: "Max RAM: 64GB"
+              - generic [ref=e1075]:
+                - generic [ref=e1076]: ฿1,490
+                - button [ref=e1077]:
+                  - img [ref=e1078]
+            - generic [ref=e1080] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1081]:
+                - img [ref=e1082]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PRO RS DDR5 (3Y)" [ref=e1087]
+              - generic [ref=e1088]:
+                - generic [ref=e1089]: ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PRO RS DDR5 (3Y)
+                - generic [ref=e1090]:
+                  - generic [ref=e1091]: "Socket: LGA 1700"
+                  - generic [ref=e1092]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1093]: "Max RAM: 192GB"
+              - generic [ref=e1094]:
+                - generic [ref=e1095]: ฿3,490
+                - button [ref=e1096]:
+                  - img [ref=e1097]
+            - generic [ref=e1099] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1100]:
+                - img [ref=e1101]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME B650M A II (3Y)" [ref=e1106]
+              - generic [ref=e1107]:
+                - generic [ref=e1108]: ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME B650M A II (3Y)
+                - generic [ref=e1109]:
+                  - generic [ref=e1110]: "Socket: AM5"
+                  - generic [ref=e1111]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1112]: "Max RAM: 192GB"
+              - generic [ref=e1113]:
+                - generic [ref=e1114]: ฿2,990
+                - button [ref=e1115]:
+                  - img [ref=e1116]
+            - generic [ref=e1118] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1119]:
+                - img [ref=e1120]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE B650M D3HP" [ref=e1125]
+              - generic [ref=e1126]:
+                - generic [ref=e1127]: Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE B650M D3HP
+                - generic [ref=e1128]:
+                  - generic [ref=e1129]: "Socket: AM5"
+                  - generic [ref=e1130]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1131]: "Max RAM: 192GB"
+              - generic [ref=e1132]:
+                - generic [ref=e1133]: ฿2,990
+                - button [ref=e1134]:
+                  - img [ref=e1135]
+            - generic [ref=e1137] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1138]:
+                - img [ref=e1139]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M GAMING WIFI6 (REV 1.0) (3Y)" [ref=e1144]
+              - generic [ref=e1145]:
+                - generic [ref=e1146]: Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M GAMING WIFI6 (REV 1.0) (3Y)
+                - generic [ref=e1147]:
+                  - generic [ref=e1148]: "Socket: LGA 1851"
+                  - generic [ref=e1149]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1150]: "Max RAM: 128GB"
+              - generic [ref=e1151]:
+                - generic [ref=e1152]: ฿2,990
+                - button [ref=e1153]:
+                  - img [ref=e1154]
+            - generic [ref=e1156] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1157]:
+                - img [ref=e1158]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M PHANTOM GAMING 4 (3Y)" [ref=e1163]
+              - generic [ref=e1164]:
+                - generic [ref=e1165]: ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M PHANTOM GAMING 4 (3Y)
+                - generic [ref=e1166]:
+                  - generic [ref=e1167]: "Socket: AM4"
+                  - generic [ref=e1168]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1169]: "Max RAM: 128GB"
+              - generic [ref=e1170]:
+                - generic [ref=e1171]: ฿2,490
+                - button [ref=e1172]:
+                  - img [ref=e1173]
+            - generic [ref=e1175] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1176]:
+                - img [ref=e1177]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR5 (REV.1.0) (3Y)" [ref=e1182]
+              - generic [ref=e1183]:
+                - generic [ref=e1184]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR5 (REV.1.0) (3Y)
+                - generic [ref=e1185]:
+                  - generic [ref=e1186]: "Socket: LGA 1700"
+                  - generic [ref=e1187]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1188]: "Max RAM: 256GB"
+              - generic [ref=e1189]:
+                - generic [ref=e1190]: ฿2,690
+                - button [ref=e1191]:
+                  - img [ref=e1192]
+            - generic [ref=e1194] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1195]:
+                - img [ref=e1196]
+              - img "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL BATTLE-AX B760M-T WIFI V21A DDR4 (3Y)" [ref=e1201]
+              - generic [ref=e1202]:
+                - generic [ref=e1203]: Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL BATTLE-AX B760M-T WIFI V21A DDR4 (3Y)
+                - generic [ref=e1204]:
+                  - generic [ref=e1205]: "Socket: LGA 1700"
+                  - generic [ref=e1206]: "ฟอร์มแฟคเตอร์: M-ATX"
+                  - generic [ref=e1207]: "Max RAM: 64GB"
+              - generic [ref=e1208]:
+                - generic [ref=e1209]: ฿2,690
+                - button [ref=e1210]:
+                  - img [ref=e1211]
+            - generic [ref=e1213] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1214]:
+                - img [ref=e1215]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)" [ref=e1220]
+              - generic [ref=e1221]:
+                - generic [ref=e1222]: Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)
+                - generic [ref=e1223]:
+                  - generic [ref=e1224]: "Socket: LGA 1700"
+                  - generic [ref=e1225]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1226]: "Max RAM: 64GB"
+              - generic [ref=e1227]:
+                - generic [ref=e1228]: ฿1,690
+                - button [ref=e1229]:
+                  - img [ref=e1230]
+            - generic [ref=e1232] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1233]:
+                - img [ref=e1234]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)" [ref=e1239]
+              - generic [ref=e1240]:
+                - generic [ref=e1241]: ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)
+                - generic [ref=e1242]:
+                  - generic [ref=e1243]: "Socket: LGA 1700"
+                  - generic [ref=e1244]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1245]: "Max RAM: 96GB"
+              - generic [ref=e1246]:
+                - generic [ref=e1247]: ฿1,890
+                - button [ref=e1248]:
+                  - img [ref=e1249]
+            - generic [ref=e1251] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1252]:
+                - img [ref=e1253]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI B650M GAMING WIFI (3Y)" [ref=e1258]
+              - generic [ref=e1259]:
+                - generic [ref=e1260]: MSI MAINBOARD (เมนบอร์ด)(AM5) MSI B650M GAMING WIFI (3Y)
+                - generic [ref=e1261]:
+                  - generic [ref=e1262]: "Socket: AM5"
+                  - generic [ref=e1263]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1264]: "Max RAM: 128GB"
+              - generic [ref=e1265]:
+                - generic [ref=e1266]: ฿3,190
+                - button [ref=e1267]:
+                  - img [ref=e1268]
+            - generic [ref=e1270] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1271]:
+                - img [ref=e1272]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-C EX (3Y)" [ref=e1277]
+              - generic [ref=e1278]:
+                - generic [ref=e1279]: MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-C EX (3Y)
+                - generic [ref=e1280]:
+                  - generic [ref=e1281]: "Socket: LGA 1851"
+                  - generic [ref=e1282]: "ฟอร์มแฟคเตอร์: M-ATX"
+                  - generic [ref=e1283]: "Max RAM: 128GB"
+              - generic [ref=e1284]:
+                - generic [ref=e1285]: ฿2,290
+                - button [ref=e1286]:
+                  - img [ref=e1287]
+            - generic [ref=e1289] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1290]:
+                - img [ref=e1291]
+              - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR5 (3Y)" [ref=e1296]
+              - generic [ref=e1297]:
+                - generic [ref=e1298]: MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR5 (3Y)
+                - generic [ref=e1299]:
+                  - generic [ref=e1300]: "Socket: LGA 1700"
+                  - generic [ref=e1301]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1302]: "Max RAM: 192GB"
+              - generic [ref=e1303]:
+                - generic [ref=e1304]: ฿2,390
+                - button [ref=e1305]:
+                  - img [ref=e1306]
+            - generic [ref=e1308] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1309]:
+                - img [ref=e1310]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PG LIGHTNING DDR5" [ref=e1315]
+              - generic [ref=e1316]:
+                - generic [ref=e1317]: ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PG LIGHTNING DDR5
+                - generic [ref=e1318]:
+                  - generic [ref=e1319]: "Socket: LGA 1700"
+                  - generic [ref=e1320]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1321]: "Max RAM: 192GB"
+              - generic [ref=e1322]:
+                - generic [ref=e1323]: ฿2,590
+                - button [ref=e1324]:
+                  - img [ref=e1325]
+            - generic [ref=e1327] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1328]:
+                - img [ref=e1329]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)" [ref=e1334]
+              - generic [ref=e1335]:
+                - generic [ref=e1336]: ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)
+                - generic [ref=e1337]:
+                  - generic [ref=e1338]: "Socket: LGA 1700"
+                  - generic [ref=e1339]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1340]: "Max RAM: 64GB"
+              - generic [ref=e1341]:
+                - generic [ref=e1342]: ฿1,790
+                - button [ref=e1343]:
+                  - img [ref=e1344]
+            - generic [ref=e1346] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1347]:
+                - img [ref=e1348]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)" [ref=e1353]
+              - generic [ref=e1354]:
+                - generic [ref=e1355]: MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)
+                - generic [ref=e1356]:
+                  - generic [ref=e1357]: "Socket: AM4"
+                  - generic [ref=e1358]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1359]: "Max RAM: 64GB"
+              - generic [ref=e1360]:
+                - generic [ref=e1361]: ฿1,390
+                - button [ref=e1362]:
+                  - img [ref=e1363]
+            - generic [ref=e1365] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1366]:
+                - img [ref=e1367]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-WIFI-CSM (3Y)" [ref=e1372]
+              - generic [ref=e1373]:
+                - generic [ref=e1374]: ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-WIFI-CSM (3Y)
+                - generic [ref=e1375]:
+                  - generic [ref=e1376]: "Socket: LGA 1851"
+                  - generic [ref=e1377]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1378]: "Max RAM: 128GB"
+              - generic [ref=e1379]:
+                - generic [ref=e1380]: ฿2,890
+                - button [ref=e1381]:
+                  - img [ref=e1382]
+            - generic [ref=e1384] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1385]:
+                - img [ref=e1386]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV" [ref=e1391]
+              - generic [ref=e1392]:
+                - generic [ref=e1393]: ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV
+                - generic [ref=e1394]:
+                  - generic [ref=e1395]: "Socket: AM4"
+                  - generic [ref=e1396]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1397]: "Max RAM: 64GB"
+              - generic [ref=e1398]:
+                - generic [ref=e1399]: ฿2,190
+                - button [ref=e1400]:
+                  - img [ref=e1401]
+            - generic [ref=e1403] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1404]:
+                - img [ref=e1405]
+              - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)" [ref=e1410]
+              - generic [ref=e1411]:
+                - generic [ref=e1412]: ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)
+                - generic [ref=e1413]:
+                  - generic [ref=e1414]: "Socket: AM4"
+                  - generic [ref=e1415]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1416]: "Max RAM: 64GB"
+              - generic [ref=e1417]:
+                - generic [ref=e1418]: ฿1,390
+                - button [ref=e1419]:
+                  - img [ref=e1420]
+            - generic [ref=e1422] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1423]:
+                - img [ref=e1424]
+              - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B650M-B" [ref=e1429]
+              - generic [ref=e1430]:
+                - generic [ref=e1431]: MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B650M-B
+                - generic [ref=e1432]:
+                  - generic [ref=e1433]: "Socket: AM5"
+                  - generic [ref=e1434]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1435]: "Max RAM: 128GB"
+              - generic [ref=e1436]:
+                - generic [ref=e1437]: ฿2,490
+                - button [ref=e1438]:
+                  - img [ref=e1439]
+            - generic [ref=e1441] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1442]:
+                - img [ref=e1443]
+              - img "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-CSM (3Y)" [ref=e1448]
+              - generic [ref=e1449]:
+                - generic [ref=e1450]: ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-CSM (3Y)
+                - generic [ref=e1451]:
+                  - generic [ref=e1452]: "Socket: LGA 1851"
+                  - generic [ref=e1453]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1454]: "Max RAM: 128GB"
+              - generic [ref=e1455]:
+                - generic [ref=e1456]: ฿2,490
+                - button [ref=e1457]:
+                  - img [ref=e1458]
+            - generic [ref=e1460] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1461]:
+                - img [ref=e1462]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)" [ref=e1467]
+              - generic [ref=e1468]:
+                - generic [ref=e1469]: Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)
+                - generic [ref=e1470]:
+                  - generic [ref=e1471]: "Socket: AM5"
+                  - generic [ref=e1472]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1473]: "Max RAM: 128GB"
+              - generic [ref=e1474]:
+                - generic [ref=e1475]: ฿1,990
+                - button [ref=e1476]:
+                  - img [ref=e1477]
+            - generic [ref=e1479] [cursor=pointer]:
+              - button "ดูรายละเอียดสเปค" [ref=e1480]:
+                - img [ref=e1481]
+              - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y)" [ref=e1486]
+              - generic [ref=e1487]:
+                - generic [ref=e1488]: Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y)
+                - generic [ref=e1489]:
+                  - generic [ref=e1490]: "Socket: AM4"
+                  - generic [ref=e1491]: "ฟอร์มแฟคเตอร์: Micro-ATX"
+                  - generic [ref=e1492]: "Max RAM: 64GB"
+              - generic [ref=e1493]:
+                - generic [ref=e1494]: ฿1,390
+                - button [ref=e1495]:
+                  - img [ref=e1496]
+    - generic:
+      - button "เปิดแชตบอต SpecAI" [ref=e1498] [cursor=pointer]:
+        - img [ref=e1501]
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: 🤖
+            - generic:
+              - generic: SpecAI
+              - generic: ออนไลน์ · พร้อมช่วยเหลือ
+          - button:
+            - img
+        - generic:
+          - generic:
+            - generic: 🤖
+            - generic:
+              - generic: สวัสดีครับ! ยินดีต้อนรับสู่เว็บไซต์ ForgeLabs! ผมคือ SpecAI ผู้ช่วยส่วนตัวของคุณ ต้องการให้ผมจัดสเปคคอมพิวเตอร์แบบไหนครับ?
+        - generic:
+          - generic:
+            - generic:
+              - button "📎"
+              - textbox "พิมพ์เป้าหมาย เช่น เน้นเล่นเกม..."
+              - button:
+                - img
 ```
 
 # Test source
@@ -147,14 +1234,14 @@ Call log:
   55 |     await page.locator('.product-card .add-btn').first().click();
   56 | 
   57 |     // Select RAM
-  58 |     await page.locator('.category-item', { hasText: 'RAM' }).click();
+> 58 |     await page.locator('.category-item', { hasText: 'RAM' }).click();
+     |                                                              ^ Error: locator.click: Error: strict mode violation: locator('.category-item').filter({ hasText: 'RAM' }) resolved to 2 elements:
   59 |     await expect(page.locator('.product-card').first()).toBeVisible({ timeout: 10000 });
   60 |     await page.locator('.product-card .add-btn').first().click();
   61 | 
   62 |     // Select Storage
   63 |     await page.locator('.category-item', { hasText: 'Storage' }).click();
-> 64 |     await expect(page.locator('.product-card').first()).toBeVisible({ timeout: 10000 });
-     |                                                         ^ Error: expect(locator).toBeVisible() failed
+  64 |     await expect(page.locator('.product-card').first()).toBeVisible({ timeout: 10000 });
   65 |     await page.locator('.product-card .add-btn').first().click();
   66 | 
   67 |     // Navigate to checkout

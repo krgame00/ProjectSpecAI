@@ -33,26 +33,26 @@ Call log:
   - button "📰 บทความ"
   - button "เข้าสู่ระบบ"
 - complementary:
-  - text: 💰 ยอดรวมทั้งสิ้น ฿34,990 อัปเดตตามเวลาจริง (Real-time)
+  - text: 💰 ยอดรวมทั้งสิ้น ฿5,380 อัปเดตตามเวลาจริง (Real-time)
   - button "🛒 ดำเนินการสั่งซื้อ"
   - img
   - strong: "สถานะ: พบข้อขัดแย้งบางส่วน"
   - list:
-    - listitem: "❌ ซ็อกเก็ตไม่ตรง: CPU เป็น sTRX5 แต่เมนบอร์ดรองรับเฉพาะ AM5"
-    - listitem: "❌ CPU อาจไม่มีชิปกราฟิกในตัว: AMD RYZEN THREADRIPPER PRO 7995WX มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค"
+    - listitem: "❌ CPU อาจไม่มีชิปกราฟิกในตัว: AMD Ryzen 5 8400F มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค"
+    - listitem: ✅ Socket ตรงกัน
   - text: เลือกหมวดหมู่ฮาร์ดแวร์ 2/7
   - list:
     - listitem:
       - text: CPU
       - img
-      - text: "AMD RYZEN THREADRIPPER PRO 7995WX ฿34,990 Socket: sTRX5 Cores: 96 Threads: 192 TDP: 65W"
+      - text: "AMD Ryzen 5 8400F ฿3,990 Socket: AM5 Cores: 6 Threads: 12 TDP: 65W"
       - button "นำออก":
         - img
         - text: นำออก
     - listitem:
       - text: Motherboard
       - img
-      - text: "ASUS PRIME A620M-K-CSM ติดต่อสอบถาม Socket: AM5 DDR: DDR5"
+      - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y) ฿1,390 Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB"
       - button "นำออก":
         - img
         - text: นำออก
@@ -64,67 +64,440 @@ Call log:
 - main:
   - text: 🔧
   - heading "Motherboard" [level=2]
-  - paragraph: 10 รายการ
+  - paragraph: 71 ชิ้น
   - text: "?"
+  - img
+  - textbox "ค้นหา Motherboard..."
+  - combobox:
+    - option "เรียงตามความนิยม" [selected]
+    - 'option "ราคา: ต่ำไปสูง"'
+    - 'option "ราคา: สูงไปต่ำ"'
+  - img
   - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "ASUS PRIME A620M-K-CSM"
-  - text: "ASUS PRIME A620M-K-CSM Socket: AM5 DDR: DDR5 เช็คราคาหน้าร้าน"
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "ASUS PRIME A520M-K"
-  - text: "ASUS PRIME A520M-K Socket: AM4 DDR: DDR4 เช็คราคาหน้าร้าน"
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,990"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "ASROCK H610M-H2/M.2-D5"
-  - text: "ASROCK H610M-H2/M.2-D5 Socket: 1700 DDR: DDR5 เช็คราคาหน้าร้าน"
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "GIGABYTE H810M K (REV 1.0)"
-  - text: "GIGABYTE H810M K (REV 1.0) Socket: 1851 DDR: DDR5 เช็คราคาหน้าร้าน"
+  - img "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 96GB ฿2,290"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "ASROCK A620AM-HVS"
-  - text: "ASROCK A620AM-HVS Socket: AM5 DDR: DDR5 เช็คราคาหน้าร้าน"
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,290"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "GIGABYTE A520M K V2 (REV.1.1)"
-  - text: "GIGABYTE A520M K V2 (REV.1.1) Socket: AM4 DDR: DDR4 เช็คราคาหน้าร้าน"
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,990"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "ASUS PRIME H610M-K"
-  - text: "ASUS PRIME H610M-K Socket: 1700 DDR: DDR5 เช็คราคาหน้าร้าน"
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "GIGABYTE A520M K V2 (REV.1.2)"
-  - text: "GIGABYTE A520M K V2 (REV.1.2) Socket: AM4 DDR: DDR4 เช็คราคาหน้าร้าน"
+  - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D5 (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D5 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 96GB ฿1,890"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "GIGABYTE H610M K (REV.2.0)"
-  - text: "GIGABYTE H610M K (REV.2.0) Socket: 1700 DDR: DDR4 เช็คราคาหน้าร้าน"
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,290"
   - button:
     - img
   - button "ดูรายละเอียดสเปค":
     - img
-  - img "MSI A520M-A-PRO"
-  - text: "MSI A520M-A-PRO Socket: AM4 DDR: DDR4 เช็คราคาหน้าร้าน"
+  - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y) ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128 GB ฿2,190"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,590"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,090"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K/CSM (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K/CSM (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 96GB ฿1,890"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,790"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,890"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,190"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D4 (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)"
+  - text: "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: M-ATX Max RAM: 64GB ฿1,550"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,290"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y) ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128 GB ฿2,190"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-E D4-CSM DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,090"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M GAMING X DDR5 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M GAMING X DDR5 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 256GB ฿3,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR4 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR4 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)"
+  - text: "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: M-ATX Max RAM: 64GB ฿1,550"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,590"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS PRIME B860M-K-CSM (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS PRIME B860M-K-CSM (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿3,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,890"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.0) (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 256GB ฿3,290"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B850M-G (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B850M-G (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: M-ATX Max RAM: 128GB ฿3,190"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-B WIFI6E (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-B WIFI6E (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,590"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด) (1700) ASUS PRIME B760M-A"
+  - text: "ASUS MAINBOARD (เมนบอร์ด) (1700) ASUS PRIME B760M-A Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด) (1700) ASROCK B760M PG LIGHTNING DDR4 (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด) (1700) ASROCK B760M PG LIGHTNING DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR4 (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME A620M-K-CSM (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 96GB ฿2,290"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE B550M H ARGB (REV. 1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE B550M H ARGB (REV. 1.0) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.1) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE B860M D3HP (REV.1.1) (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 256GB ฿3,290"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK B650M PG LIGHTNING DDR5 (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM5) ASROCK B650M PG LIGHTNING DDR5 (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 256GB ฿2,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,290"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PRO RS DDR5 (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PRO RS DDR5 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 192GB ฿3,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME B650M A II (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(AM5) ASUS PRIME B650M A II (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 192GB ฿2,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE B650M D3HP"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE B650M D3HP Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 192GB ฿2,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M GAMING WIFI6 (REV 1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M GAMING WIFI6 (REV 1.0) (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M PHANTOM GAMING 4 (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M PHANTOM GAMING 4 (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR5 (REV.1.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M D3HP DDR5 (REV.1.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 256GB ฿2,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL BATTLE-AX B760M-T WIFI V21A DDR4 (3Y)"
+  - text: "Colorful MAINBOARD (เมนบอร์ด)(1700) COLORFUL BATTLE-AX B760M-T WIFI V21A DDR4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: M-ATX Max RAM: 64GB ฿2,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,690"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 96GB ฿1,890"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI B650M GAMING WIFI (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI B650M GAMING WIFI (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿3,190"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-C EX (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-C EX (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: M-ATX Max RAM: 128GB ฿2,290"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR5 (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR5 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 192GB ฿2,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PG LIGHTNING DDR5"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(1700) ASROCK B760M PG LIGHTNING DDR5 Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 192GB ฿2,590"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y) Socket: LGA 1700 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,790"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-WIFI-CSM (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-WIFI-CSM (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,890"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿2,190"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)"
+  - text: "ASRock MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B650M-B"
+  - text: "MSI MAINBOARD (เมนบอร์ด)(AM5) MSI PRO B650M-B Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-CSM (3Y)"
+  - text: "ASUS MAINBOARD (เมนบอร์ด)(1851) ASUS H810M-A-CSM (3Y) Socket: LGA 1851 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿2,490"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y) Socket: AM5 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 128GB ฿1,990"
+  - button:
+    - img
+  - button "ดูรายละเอียดสเปค":
+    - img
+  - img "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y)"
+  - text: "Gigabyte MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.1) (3Y) Socket: AM4 ฟอร์มแฟคเตอร์: Micro-ATX Max RAM: 64GB ฿1,390"
   - button:
     - img
 - button "เปิดแชตบอต SpecAI":
