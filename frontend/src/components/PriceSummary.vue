@@ -9,10 +9,16 @@
       </div>
       <div class="total-value">฿{{ totalPrice.toLocaleString() }}</div>
       <div class="total-subtext">อัปเดตตามเวลาจริง (Real-time)</div>
-      <button class="btn btn-primary checkout-btn" @click="$emit('checkout')" :disabled="!hasAnyComponent">
-        <span class="btn-icon">🛒</span>
-        <span>ดำเนินการสั่งซื้อ</span>
-      </button>
+      <div class="action-buttons">
+        <button class="btn btn-primary checkout-btn" @click="$emit('checkout')" :disabled="!hasAnyComponent">
+          <span class="btn-icon">🛒</span>
+          <span>ดำเนินการสั่งซื้อ</span>
+        </button>
+        <button class="btn btn-secondary print-btn" @click="printSpec" :disabled="!hasAnyComponent">
+          <span class="btn-icon">🖨️</span>
+          <span>พิมพ์ / บันทึก PDF</span>
+        </button>
+      </div>
     </div>
 
     <!-- Compatibility Alerts -->
@@ -163,6 +169,10 @@ const getItemSpecsList = (catId, itemId) => {
   }
   return specs;
 };
+
+const printSpec = () => {
+  window.print();
+};
 </script>
 
 <style scoped>
@@ -213,12 +223,30 @@ const getItemSpecsList = (catId, itemId) => {
   text-align: right;
   margin-top: 0.25rem;
 }
-.checkout-btn { 
-  width: 100%; 
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-top: 1.25rem;
+}
+.checkout-btn, .print-btn { 
+  width: 100%; 
   padding: 0.85rem 1.5rem;
   font-size: var(--text-base);
   border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.print-btn {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--hairline-cool);
+}
+.print-btn:hover {
+  background: var(--canvas-soft);
+  border-color: var(--ink-mute);
 }
 .btn-icon { font-size: 1.15rem; }
 .alert-box { 

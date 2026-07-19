@@ -48,6 +48,13 @@
       @send-message="$emit('send-message', $event)"
       @apply-build="$emit('apply-build', $event)"
     />
+
+    <!-- Print Template (Hidden by default, shown on @media print) -->
+    <PrintTemplate 
+      :build="builderStore.build" 
+      :catalog="catalogStore.getCategorizedHardware" 
+      :totalPrice="builderStore.totalPrice" 
+    />
   </div>
 </template>
 
@@ -56,6 +63,7 @@ import { ref, computed } from 'vue';
 import PriceSummary from '../components/PriceSummary.vue';
 import HardwareSelection from '../components/HardwareSelection.vue';
 import ChatbotWindow from '../components/ChatbotWindow.vue';
+import PrintTemplate from '../components/PrintTemplate.vue';
 import { useBuilderStore } from '../stores/builder';
 import { useCatalogStore } from '../stores/catalog';
 

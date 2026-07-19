@@ -407,3 +407,23 @@ img { max-width: 100%; height: auto; display: block; }
   .logo { font-size: var(--text-lg); }
   .btn-sm { font-size: var(--text-xs); padding: 4px 8px; }
 }
+
+/* ---------- Print Styles ---------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  body {
+    background: white !important;
+  }
+  .top-nav, .chatbot-container, .loader-wrapper, .grid-layout, .floating-btn {
+    display: none !important;
+  }
+  
+  /* Force background colors and colors to show up in Chrome/Safari Print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

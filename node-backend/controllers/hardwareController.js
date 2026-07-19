@@ -57,7 +57,12 @@ const hardwareController = {
             formatted.tdp = product.gpu_tdp;
             if (product.gpu_length_mm) formatted.specifications['Length (mm)'] = product.gpu_length_mm;
           } else if (slug === 'psu') {
-            formatted.wattage = product.psu_wattage;
+            let w = product.psu_wattage;
+            if (!w) {
+              const match = formatted.name.match(/(\d{3,4})W/i);
+              w = match ? parseInt(match[1]) : 0;
+            }
+            formatted.wattage = w;
           } else if (slug === 'case') {
             if (product.case_max_gpu_length) formatted.specifications['Max GPU Length (mm)'] = product.case_max_gpu_length;
           }
