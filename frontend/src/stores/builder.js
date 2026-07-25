@@ -1,6 +1,42 @@
 import { defineStore } from 'pinia'
 import { useCatalogStore } from './catalog'
 
+// Helper: Exhaustive iGPU Check
+export const hasIGPU = (cpu) => {
+  if (!cpu || !cpu.name) return true;
+  const name = cpu.name.toUpperCase();
+
+  // Intel 'F' series has NO iGPU
+  if (name.includes('INTEL') || name.includes('CORE') || name.includes('ULTRA')) {
+    if (/\b\w+F\b/.test(name) || name.endsWith('F')) return false;
+    return true;
+  }
+
+  // AMD CPUs
+  if (name.includes('AMD') || name.includes('RYZEN') || name.includes('THREADRIPPER')) {
+    if (/\b\d{4}F\b/.test(name) || name.endsWith('F') || name.includes('THREADRIPPER')) return false;
+    if (/\b(7\d{3}|9\d{3})\b/.test(name)) return true;
+    if (/\b8\d{3}G\b/.test(name) || name.endsWith('G') || name.endsWith('GT')) return true;
+    if (/\b(1\d{3}|2\d{3}|3\d{3}|4\d{3}|5\d{3})\b/.test(name)) {
+      return name.includes('G') || name.includes('GT');
+    }
+    return true;
+  }
+  return true;
+};
+
+// Helper: Standard System TDP Calculation
+export const calcTotalTdp = (cCpu, cGpu, cMobo, cRam, cStorage) => {
+  let totalTdp = 0;
+  if (cCpu) totalTdp += (Number(cCpu.tdp) || 65);
+  if (cGpu) totalTdp += (Number(cGpu.tdp) || 150);
+  if (cMobo) totalTdp += 35;
+  if (cRam) totalTdp += 10;
+  if (cStorage) totalTdp += 5;
+  if (!cMobo && !cRam && !cStorage && (cCpu || cGpu)) totalTdp += 50;
+  return totalTdp;
+};
+
 export const useBuilderStore = defineStore('builder', {
   state: () => ({
     build: { cpu: null, mobo: null, ram: null, gpu: null, storage: null, psu: null, case: null }
@@ -35,40 +71,25 @@ export const useBuilderStore = defineStore('builder', {
       const cCase = state.build.case ? getItem('case', state.build.case) : null
 
       // 1. Basic Compatibility
-      if (cCpu && cMobo && cCpu.socket !== cMobo.socket) {
-        issues.push(`ซ็อกเก็ตไม่ตรง: CPU เป็น ${cCpu.socket || 'ไม่ระบุ'} แต่เมนบอร์ดรองรับเฉพาะ ${cMobo.socket || 'ไม่ระบุ'}`)
+      if (cCpu && cMobo && cCpu.socket && cMobo.socket && cCpu.socket !== cMobo.socket) {
+        issues.push(`ซ็อกเก็ตไม่ตรง: CPU เป็น ${cCpu.socket} แต่เมนบอร์ดรองรับเฉพาะ ${cMobo.socket}`)
       }
-      if (cMobo && cRam && cMobo.ramType !== cRam.type) {
-        issues.push(`ประเภท RAM ไม่ตรง: เมนบอร์ดรองรับ ${cMobo.ramType || 'ไม่ระบุ'} แต่คุณเลือก ${cRam.type || 'ไม่ระบุ'}`)
+      if (cMobo && cRam && cMobo.ramType && cRam.type && cMobo.ramType !== cRam.type) {
+        issues.push(`ประเภท RAM ไม่ตรง: เมนบอร์ดรองรับ ${cMobo.ramType} แต่คุณเลือก ${cRam.type}`)
       }
 
       // 2. PSU Wattage Check
       if (cPsu) {
-        let totalTdp = 50
-        if (cCpu) totalTdp += (cCpu.tdp || 65)
-        if (cGpu) totalTdp += (cGpu.tdp || 150)
-        const recommendedWattage = totalTdp * 1.3
+        const totalTdp = calcTotalTdp(cCpu, cGpu, cMobo, cRam, cStorage)
+        const recommendedWattage = Math.ceil(totalTdp * 1.3)
         if (cPsu.wattage < recommendedWattage) {
-          issues.push(`กำลังไฟอาจไม่พอ: ระบบต้องการไฟขั้นต่ำ ${Math.ceil(recommendedWattage)}W แต่ PSU ที่เลือกจ่ายได้ ${cPsu.wattage || 0}W`)
+          issues.push(`กำลังไฟอาจไม่พอ: ระบบต้องการไฟขั้นต่ำ ${recommendedWattage}W แต่ PSU ที่เลือกจ่ายได้ ${cPsu.wattage || 0}W`)
         }
       }
 
-      // 3. No iGPU Warning (Intel 'F' series or specific AMDs without graphics)
-      if (cCpu && !cGpu) {
-        const cpuName = cCpu.name.toUpperCase();
-        if (cpuName.includes('INTEL') && (cpuName.endsWith('F') || /\b\d{4,5}[KF]*F\b/.test(cpuName))) {
-          issues.push(`CPU ไม่มีชิปกราฟิกในตัว: ${cCpu.name} จำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) เพื่อให้เครื่องเปิดติดและแสดงผลภาพได้`);
-        } else if (cpuName.includes('AMD') && cpuName.includes('RYZEN')) {
-          const isAMDF = cpuName.endsWith('F') || /\b7500F\b/.test(cpuName);
-          const isAMDG = cpuName.endsWith('G') || /\b\d{4}G\b/.test(cpuName);
-          const isAM5Modern = /\b(7\d{3}|8\d{3}|9\d{3})\b/.test(cpuName);
-
-          if (isAMDF) {
-            issues.push(`CPU ไม่มีชิปกราฟิกในตัว: ${cCpu.name} จำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) เพื่อให้เครื่องเปิดติดและแสดงผลภาพได้`);
-          } else if (!isAMDG && !isAM5Modern) {
-            issues.push(`CPU อาจไม่มีชิปกราฟิกในตัว: ${cCpu.name} มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค`);
-          }
-        }
+      // 3. iGPU vs Discrete GPU Check
+      if (cCpu && !hasIGPU(cCpu) && !cGpu) {
+        issues.push(`CPU ไม่มีชิปกราฟิกในตัว: ${cCpu.name} จำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) เพื่อให้เครื่องเปิดติดและแสดงผลภาพได้`);
       }
 
       // 4. Bottleneck Check (Price-based heuristic)
@@ -87,7 +108,7 @@ export const useBuilderStore = defineStore('builder', {
         
         const isMoboATX = mForm.includes('ATX') && !mForm.includes('MICRO') && !mForm.includes('MATX') && !mForm.includes('ITX');
         const isCaseSmall = cSupport.includes('ITX') || cSupport.includes('MATX') || cSupport.includes('MICRO');
-        const isCaseATXSupport = cSupport.match(/(?<!MINI[\s-]*(?:ITX)?)(?<!MICRO[\s-]*(?:ATX)?)(?<!M)(ATX)/); // Strict ATX check
+        const isCaseATXSupport = cSupport.match(/(?<!MINI[\s-]*(?:ITX)?)(?<!MICRO[\s-]*(?:ATX)?)(?<!M)(ATX)/);
         
         if (isMoboATX && isCaseSmall && !isCaseATXSupport) {
           issues.push(`ขนาดไม่รองรับ: เมนบอร์ดไซส์ ATX จะมีขนาดใหญ่เกินไป และไม่สามารถใส่ในเคสขนาดเล็กที่คุณเลือกได้`);
@@ -107,7 +128,7 @@ export const useBuilderStore = defineStore('builder', {
         }
       }
 
-      // 7. Missing Critical Parts (Warn only when user has started picking a few things to avoid annoying them immediately)
+      // 7. Missing Critical Parts Warnings
       const pickedCount = Object.values(state.build).filter(v => v !== null).length;
       if (pickedCount >= 4) {
         if (!cStorage) issues.push(`ยังไม่มีที่เก็บข้อมูล: เครื่องของคุณจำเป็นต้องมี Storage (SSD/HDD) สำหรับติดตั้ง Windows และใช้เก็บข้อมูลครับ`);
@@ -140,7 +161,15 @@ export const useBuilderStore = defineStore('builder', {
       if (cMobo && cRam && cMobo.ramType === cRam.type) {
         passes.push(`รองรับแรม ${cMobo.ramType || ''} ตรงกัน`);
       }
-      // 3. Form Factor Match
+      // 3. GPU / iGPU Pass
+      if (cCpu && (hasIGPU(cCpu) || cGpu)) {
+        if (cGpu) {
+          passes.push(`มี GPU แยก (${cGpu.name}) แสดงผลภาพได้อย่างสมบูรณ์`);
+        } else {
+          passes.push(`CPU (${cCpu.name}) มีชิปกราฟิกในตัว แสดงผลภาพได้โดยไม่ต้องใช้การ์ดจอแยก`);
+        }
+      }
+      // 4. Form Factor Match
       if (cMobo && cCase) {
         const mForm = (cMobo.specifications?.['Form Factor'] || cMobo.name || '').toUpperCase();
         const cSupport = (cCase.specifications?.['Form Factor Support'] || cCase.specifications?.['Form Factor'] || cCase.name || '').toUpperCase();
@@ -157,17 +186,15 @@ export const useBuilderStore = defineStore('builder', {
           passes.push(`${mName} สามารถใส่ในเคสได้`);
         }
       }
-      // 4. PSU Wattage Sufficient
+      // 5. PSU Wattage Sufficient
       if (cPsu) {
-        let totalTdp = 50;
-        if (cCpu) totalTdp += (cCpu.tdp || 65);
-        if (cGpu) totalTdp += (cGpu.tdp || 150);
-        const recommendedWattage = totalTdp * 1.3;
+        const totalTdp = calcTotalTdp(cCpu, cGpu, cMobo, cRam, cStorage);
+        const recommendedWattage = Math.ceil(totalTdp * 1.3);
         if (cPsu.wattage >= recommendedWattage) {
           passes.push(`PSU ${cPsu.wattage}W เพียงพอ (โหลดรวมประมาณ ${Math.ceil(totalTdp)}W)`);
         }
       }
-      // 5. GPU Length vs Case
+      // 6. GPU Length vs Case
       if (cGpu && cCase) {
         const gLenRaw = cGpu.specifications?.['Length'] || cGpu.specifications?.['Length (mm)'];
         const cLenRaw = cCase.specifications?.['Max GPU Length'] || cCase.specifications?.['Max GPU Length (mm)'];
@@ -178,6 +205,13 @@ export const useBuilderStore = defineStore('builder', {
             passes.push(`GPU ยาว ${gLen}mm ใส่เคสได้ (เคสรองรับสูงสุด ${cLen}mm)`);
           }
         }
+      }
+      // 7. Storage & Case Selected Passes
+      if (cStorage) {
+        passes.push(`มี Storage (SSD/HDD) สำหรับติดตั้ง OS และเก็บข้อมูล`);
+      }
+      if (cCase) {
+        passes.push(`มีเคสคอมพิวเตอร์สำหรับประกอบชิ้นส่วนครบถ้วน`);
       }
 
       return passes

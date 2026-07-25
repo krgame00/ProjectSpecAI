@@ -58,19 +58,19 @@
       </div>
       
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Smart Compatibility</h3>
+        <div class="feature-card hairline-grid">
+          <div class="feature-tag font-mono">01 // COMPATIBILITY</div>
+          <h3>Smart Compatibility Engine</h3>
           <p>ระบบตรวจสอบความเข้ากันได้แบบเรียลไทม์ ซ็อกเก็ต CPU/Mainboard, แรม DDR4/5 และคำนวณกำลังไฟ PSU อัตโนมัติ</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤖</div>
+        <div class="feature-card hairline-grid">
+          <div class="feature-tag font-mono">02 // SPECAI ENGINE</div>
           <h3>SpecAI Assistant</h3>
           <p>แชตบอตผู้ช่วยส่วนตัว เพียงแค่บอกงบประมาณและสายงาน AI จะจัดเซ็ตที่คุ้มค่าที่สุดให้คุณในพริบตา</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📦</div>
-          <h3>Live Catalog</h3>
+        <div class="feature-card hairline-grid">
+          <div class="feature-tag font-mono">03 // LIVE CATALOG</div>
+          <h3>Live Hardware Catalog</h3>
           <p>ข้อมูลสินค้า ราคา และรูปภาพกว่า 270+ รายการ อัปเดตล่าสุดจากฐานข้อมูลโดยตรง</p>
         </div>
       </div>
@@ -323,23 +323,18 @@
   border-color: var(--primary);
 }
 
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: var(--canvas);
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--hairline);
+.feature-tag {
+  color: var(--primary);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .feature-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: var(--ink);
 }
 

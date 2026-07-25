@@ -20,7 +20,7 @@
         :compatibilityPasses="builderStore.compatibilityPasses"
         :hasAnyComponent="builderStore.hasAnyComponent"
         @set-active-category="activeCategory = $event"
-        @remove-item="(catId) => builderStore.selectItem(catId, null)"
+        @remove-item="(catId) => builderStore.setItem(catId, null)"
         @checkout="$router.push('/checkout')"
       />
 
@@ -59,7 +59,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import PriceSummary from '../components/PriceSummary.vue';
 import HardwareSelection from '../components/HardwareSelection.vue';
 import ChatbotWindow from '../components/ChatbotWindow.vue';
@@ -71,6 +71,12 @@ const builderStore = useBuilderStore();
 const catalogStore = useCatalogStore();
 
 const isLoading = computed(() => catalogStore.isLoading);
+
+onMounted(async () => {
+  if (!catalogStore.hardwareList || Object.keys(catalogStore.hardwareList).length === 0) {
+    await catalogStore.fetchCatalog();
+  }
+});
 
 const props = defineProps({
   isChatOpen: Boolean,

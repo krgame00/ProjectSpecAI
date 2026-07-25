@@ -22,7 +22,7 @@ const uploadRoutes = require('./routes/upload');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Trust reverse proxy (Railway, Vercel, etc.) for correct IP in rate limiting
 app.set('trust proxy', 1);

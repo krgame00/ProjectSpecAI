@@ -12,25 +12,5 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
-  webServer: [
-    {
-      command: 'npm start',
-      cwd: '../node-backend',
-      port: 3000,
-      timeout: 30000,
-      reuseExistingServer: true,
-      env: {
-        NODE_ENV: 'development',
-        JWT_SECRET: 'pcspec_test_secret_2026',
-        DB_HOST: '',
-      },
-    },
-    {
-      command: 'npx vite --port 5173',
-      cwd: '.',
-      port: 5173,
-      timeout: 30000,
-      reuseExistingServer: true,
-    },
-  ],
+  // webServer disabled — start backend & frontend manually before running E2E
 });

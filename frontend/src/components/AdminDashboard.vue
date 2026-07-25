@@ -96,16 +96,16 @@
         </div>
 
         <!-- Orders Tab -->
-        <div v-if="adminTab === 'orders'" class="admin-card">
-          <table class="data-table">
+        <div v-if="adminTab === 'orders'" class="admin-card hairline-grid">
+          <table class="data-table hairline-grid">
             <thead>
-              <tr>
+              <tr class="font-mono">
                 <th>หมายเลข (ID)</th>
-                <th>ลูกค้า (Customer)</th>
-                <th>รูปแบบประกอบ</th>
-                <th>ยอดสุทธิ (Total)</th>
-                <th>สถานะ (Status)</th>
-                <th>จัดการ (Action)</th>
+                <th>ลูกค้า (CUSTOMER)</th>
+                <th>รูปแบบประกอบ (ASSEMBLY)</th>
+                <th>ยอดสุทธิ (TOTAL)</th>
+                <th>สถานะ (STATUS)</th>
+                <th>จัดการ (ACTION)</th>
               </tr>
             </thead>
             <tbody>

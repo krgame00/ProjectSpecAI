@@ -1,23 +1,36 @@
 <template>
   <aside class="sidebar">
     <!-- Total Price Box -->
-    <div class="total-price-box">
+    <div class="total-price-box hairline-grid">
       <div class="price-box-glow"></div>
       <div class="total-header">
-        <div class="total-icon">💰</div>
-        <span class="total-label">ยอดรวมทั้งสิ้น</span>
+        <span class="badge-emerald">01 // TELEMETRY & BUILD</span>
+        <span class="status-dot"></span>
       </div>
-      <div class="total-value">฿{{ totalPrice.toLocaleString() }}</div>
-      <div class="total-subtext">อัปเดตตามเวลาจริง (Real-time)</div>
+      <div class="total-value font-mono text-emerald">฿{{ totalPrice.toLocaleString() }}</div>
+      <div class="total-subtext font-mono">อัปเดตราคาแบบ Real-time</div>
+
       <div class="action-buttons">
         <button class="btn btn-primary checkout-btn" @click="$emit('checkout')" :disabled="!hasAnyComponent">
-          <span class="btn-icon">🛒</span>
-          <span>ดำเนินการสั่งซื้อ</span>
+          <span>🛒 สั่งซื้อสินค้า</span>
         </button>
         <button class="btn btn-secondary print-btn" @click="printSpec" :disabled="!hasAnyComponent">
-          <span class="btn-icon">🖨️</span>
-          <span>พิมพ์ / บันทึก PDF</span>
+          <span>🖨️ พิมพ์ / PDF</span>
         </button>
+      </div>
+
+      <!-- Real-time PSU Wattage Meter Gauge (Moved Down) -->
+      <div v-if="hasAnyComponent" class="wattage-meter-wrap font-mono">
+        <div class="meter-header">
+          <span>ESTIMATED POWER</span>
+          <span>{{ estimatedWattage }}W / {{ recommendedWattage }}W</span>
+        </div>
+        <div class="meter-bar-bg">
+          <div class="meter-bar-fill" :style="{ width: Math.min((estimatedWattage / recommendedWattage) * 100, 100) + '%' }"></div>
+        </div>
+        <div class="meter-footer text-emerald">
+          ⚡ {{ recommendedWattage }}W PSU RECOMMENDED
+        </div>
       </div>
     </div>
 
@@ -98,6 +111,40 @@ import { computed } from 'vue';
 
 const selectedCount = computed(() => {
   return Object.values(props.build).filter(v => v !== null).length;
+});
+
+const estimatedWattage = computed(() => {
+  let total = 0;
+  if (!props.catalog) return 0;
+  // CPU
+  const cpu = props.catalog.cpu?.find(i => i.id === props.build.cpu);
+  if (cpu) {
+    if (cpu.tdp) total += Number(cpu.tdp);
+    else if (cpu.specifications?.TDP) total += parseInt(cpu.specifications.TDP) || 65;
+    else total += 65;
+  }
+  // GPU
+  const gpu = props.catalog.gpu?.find(i => i.id === props.build.gpu);
+  if (gpu) {
+    if (gpu.tdp) total += Number(gpu.tdp);
+    else if (gpu.specifications?.TDP) total += parseInt(gpu.specifications.TDP) || 150;
+    else total += 150;
+  }
+  // System Components (Motherboard, RAM, Storage, Fans)
+  if (props.build.mobo) total += 35;
+  if (props.build.ram) total += 10;
+  if (props.build.storage) total += 5;
+  if (!props.build.mobo && !props.build.ram && !props.build.storage && (cpu || gpu)) total += 50;
+
+  return Math.round(total);
+});
+
+const recommendedWattage = computed(() => {
+  if (!props.catalog) return 650;
+  const psu = props.catalog.psu?.find(i => i.id === props.build.psu);
+  if (psu && psu.wattage) return Number(psu.wattage);
+  const est = estimatedWattage.value;
+  return est > 0 ? Math.ceil((est * 1.3) / 50) * 50 : 650;
 });
 
 const combinedReport = computed(() => {
@@ -476,9 +523,47 @@ const printSpec = () => {
   gap: 0.35rem;
   font-family: var(--font-sans);
 }
-.sidebar-remove-btn:hover { 
-  background: var(--danger-soft); 
-  color: var(--danger);
+.sidebar-remove-btn:hover {
+  background: rgba(255, 34, 1, 0.15);
   border-color: var(--danger-border);
+  color: var(--danger);
+}
+
+/* Wattage Meter Gauge */
+.wattage-meter-wrap {
+  margin: 1rem 0;
+  padding: 0.85rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed var(--hairline-cool);
+  border-radius: var(--radius-sm);
+}
+
+.meter-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+  margin-bottom: 0.5rem;
+}
+
+.meter-bar-bg {
+  height: 6px;
+  background: #222222;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.meter-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #4ade80);
+  border-radius: 3px;
+  transition: width 0.4s var(--ease-out);
+}
+
+.meter-footer {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
 }
 </style>

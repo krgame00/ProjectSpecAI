@@ -408,6 +408,41 @@ img { max-width: 100%; height: auto; display: block; }
   .btn-sm { font-size: var(--text-xs); padding: 4px 8px; }
 }
 
+/* ---------- Gridgeist System Utilities ---------- */
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+.hairline-grid {
+  border: 1px solid var(--hairline-cool) !important;
+}
+
+.badge-emerald {
+  background: var(--primary-bg);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.text-emerald {
+  color: var(--primary) !important;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+  display: inline-block;
+}
+
 /* ---------- Print Styles ---------- */
 @media print {
   @page {

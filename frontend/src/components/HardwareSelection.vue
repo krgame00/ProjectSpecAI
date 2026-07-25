@@ -50,7 +50,7 @@
 
     <div class="product-grid" v-if="filteredProducts.length > 0">
       <div 
-        class="product-card" 
+        class="product-card hairline-grid" 
         v-for="item in filteredProducts" 
         :key="item.id" 
         :class="{ selected: selectedItemId === item.id }"
@@ -82,7 +82,7 @@
         </div>
         
         <div class="product-footer">
-          <div class="product-price">
+          <div class="product-price font-mono">
             <template v-if="item.price > 0">
               <span class="price-currency">฿</span>{{ item.price.toLocaleString() }}
             </template>

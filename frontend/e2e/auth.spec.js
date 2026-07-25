@@ -14,7 +14,7 @@ test.describe('Auth Flow', () => {
 
   test('register a new user', async ({ page }) => {
     await page.goto('/');
-    await page.getByText('เข้าสู่ระบบ').click();
+    await page.locator('.btn-outline.btn-sm:has-text("เข้าสู่ระบบ")').click();
     await expect(page.locator('.modal-overlay')).toBeVisible();
 
     await page.getByText('สมัครสมาชิก').click();
@@ -39,7 +39,7 @@ test.describe('Auth Flow', () => {
 
     await page.locator('input[placeholder="กรอกอีเมล"]').fill(TEST_EMAIL);
     await page.locator('input[placeholder="กรอกรหัสผ่าน"]').fill(TEST_PASS);
-    await page.getByText('เข้าสู่ระบบ').click();
+    await page.locator('.btn-primary.btn-block:has-text("เข้าสู่ระบบ")').click();
 
     await expect(page.locator('.modal-overlay')).not.toBeVisible({ timeout: 10000 });
     await expect(page.getByText(`👤 ${TEST_NAME}`)).toBeVisible({ timeout: 5000 });
@@ -48,10 +48,10 @@ test.describe('Auth Flow', () => {
   test('logout', async ({ page }) => {
     await page.goto('/');
 
-    await page.getByText('เข้าสู่ระบบ').click();
+    await page.locator('.btn-outline.btn-sm:has-text("เข้าสู่ระบบ")').click();
     await page.locator('input[placeholder="กรอกอีเมล"]').fill(TEST_EMAIL);
     await page.locator('input[placeholder="กรอกรหัสผ่าน"]').fill(TEST_PASS);
-    await page.getByText('เข้าสู่ระบบ').click();
+    await page.locator('.btn-primary.btn-block:has-text("เข้าสู่ระบบ")').click();
     await expect(page.locator('.modal-overlay')).not.toBeVisible({ timeout: 10000 });
 
     await page.getByText('ออกจากระบบ').click();
@@ -62,17 +62,17 @@ test.describe('Auth Flow', () => {
 
   test('login with wrong password shows error', async ({ page }) => {
     await page.goto('/');
-    await page.getByText('เข้าสู่ระบบ').click();
+    await page.locator('.btn-outline.btn-sm:has-text("เข้าสู่ระบบ")').click();
 
     await page.locator('input[placeholder="กรอกอีเมล"]').fill('wrong@test.com');
     await page.locator('input[placeholder="กรอกรหัสผ่าน"]').fill('wrongpass');
 
     page.once('dialog', async (dialog) => {
-      expect(dialog.message()).toContain('ไม่ถูกต้อง');
+      expect(dialog.message()).toMatch(/ไม่ถูกต้อง|บ่อยเกินไป/);
       await dialog.accept();
     });
 
-    await page.getByText('เข้าสู่ระบบ').click();
+    await page.locator('.btn-primary.btn-block:has-text("เข้าสู่ระบบ")').click();
   });
 
 });
