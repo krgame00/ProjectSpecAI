@@ -71,7 +71,7 @@
         <div class="feature-card hairline-grid">
           <div class="feature-tag font-mono">03 // LIVE CATALOG</div>
           <h3>Live Hardware Catalog</h3>
-          <p>ข้อมูลสินค้า ราคา และรูปภาพกว่า 270+ รายการ อัปเดตล่าสุดจากฐานข้อมูลโดยตรง</p>
+          <p>ข้อมูลสินค้า ราคา และรูปภาพกว่า {{ totalProductCount }}+ รายการ อัปเดตล่าสุดจากฐานข้อมูลโดยตรง</p>
         </div>
       </div>
     </section>
@@ -87,7 +87,25 @@
 </template>
 
 <script setup>
-// Landing page uses standard vue router links
+import { computed, onMounted } from 'vue';
+import { useCatalogStore } from '../stores/catalog';
+
+const catalogStore = useCatalogStore();
+
+onMounted(async () => {
+  if (!catalogStore.hardwareList || Object.keys(catalogStore.hardwareList).length === 0) {
+    await catalogStore.fetchCatalog();
+  }
+});
+
+const totalProductCount = computed(() => {
+  if (!catalogStore.hardwareList) return 270;
+  let count = 0;
+  Object.values(catalogStore.hardwareList).forEach(list => {
+    if (Array.isArray(list)) count += list.length;
+  });
+  return count > 0 ? count : 270;
+});
 </script>
 
 <style scoped>
