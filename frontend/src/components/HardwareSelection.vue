@@ -76,7 +76,8 @@
           <div class="product-name">{{ item.name }}</div>
           <div class="product-specs">
             <span class="spec-tag" v-for="(spec, idx) in getItemSpecsList(activeCategory, item)" :key="idx" :title="`${spec.label}: ${spec.value}`">
-              <span class="tag-label">{{ spec.label }}:</span> {{ spec.value }}
+              <span class="tag-label">{{ spec.label }}:</span>
+              <span class="spec-value">{{ spec.value }}</span>
             </span>
           </div>
         </div>
@@ -165,44 +166,48 @@ const getCategoryEmoji = (cat) => {
 const getItemSpecsList = (catId, item) => {
   if (!item) return [];
   const specs = [];
-  
-  if (item.socket) specs.push({ label: 'Socket', value: item.socket });
-  if (catId === 'mobo' && item.ramType) specs.push({ label: 'DDR', value: item.ramType });
-  if (catId === 'ram' && item.type) specs.push({ label: 'ประเภท', value: item.type });
-  if (catId === 'psu' && item.wattage) specs.push({ label: 'กำลังไฟ', value: `${item.wattage}W` });
-  
   const s = item.specifications || {};
+
   if (catId === 'cpu') {
-    if (s['Socket Type'] && !item.socket) specs.push({ label: 'Socket', value: s['Socket Type'] });
+    const socket = item.socket || s['Socket Type'] || s['CPU Socket'];
+    if (socket) specs.push({ label: 'Socket', value: socket });
     if (s['Cores']) specs.push({ label: 'Cores', value: s['Cores'].replace(/Cores?/i, '').trim() });
     else if (s['Cores/Threads']) specs.push({ label: 'Cores/Threads', value: s['Cores/Threads'] });
-    
     if (s['Threads']) specs.push({ label: 'Threads', value: s['Threads'].replace(/Threads?/i, '').trim() });
-    
-    if (s['TDP']) specs.push({ label: 'TDP', value: s['TDP'] });
-    else if (item.tdp) specs.push({ label: 'TDP', value: `${item.tdp}W` });
+    if (item.tdp || s['TDP']) specs.push({ label: 'TDP', value: item.tdp ? `${item.tdp}W` : s['TDP'] });
   } else if (catId === 'mobo') {
-    if (s['CPU Socket']) specs.push({ label: 'Socket', value: s['CPU Socket'] });
-    if (s['Form Factor']) specs.push({ label: 'ฟอร์มแฟคเตอร์', value: s['Form Factor'] });
+    const socket = item.socket || s['CPU Socket'] || s['Socket Type'];
+    if (socket) specs.push({ label: 'Socket', value: socket });
+    const ram = item.ramType || s['Memory Type'];
+    if (ram) specs.push({ label: 'RAM', value: ram });
+    if (s['Form Factor']) specs.push({ label: 'Form', value: s['Form Factor'] });
     if (s['Max Memory']) specs.push({ label: 'Max RAM', value: s['Max Memory'] });
   } else if (catId === 'ram') {
-    if (s['Memory Type']) specs.push({ label: 'ประเภท', value: s['Memory Type'] });
-    if (s['Memory Capacity']) specs.push({ label: 'ความจุ', value: s['Memory Capacity'] });
-    if (s['Speed']) specs.push({ label: 'บัส', value: s['Speed'] });
+    const type = item.type || s['Memory Type'];
+    if (type) specs.push({ label: 'Type', value: type });
+    if (s['Memory Capacity'] || s['Capacity']) specs.push({ label: 'Capacity', value: s['Memory Capacity'] || s['Capacity'] });
+    if (s['Speed'] || s['Memory Speed']) specs.push({ label: 'Speed', value: s['Speed'] || s['Memory Speed'] });
   } else if (catId === 'gpu') {
-    if (s['Memory Size']) specs.push({ label: 'VRAM', value: s['Memory Size'] });
-    if (s['Power Requirement']) specs.push({ label: 'ไฟที่แนะนำ', value: s['Power Requirement'] });
-    if (s['Dimension'] || s['Dimension W x D x H']) specs.push({ label: 'ขนาด', value: s['Dimension'] || s['Dimension W x D x H'] });
+    if (s['Memory Size'] || s['VRAM']) specs.push({ label: 'VRAM', value: s['Memory Size'] || s['VRAM'] });
+    if (s['Power Requirement'] || item.tdp) specs.push({ label: 'Rec. PSU', value: s['Power Requirement'] || `${item.tdp}W` });
+    if (item.specifications?.['Length (mm)'] || s['Dimension']) {
+      const len = item.specifications?.['Length (mm)'] || s['Dimension'];
+      specs.push({ label: 'Size', value: typeof len === 'number' ? `${len} mm` : len });
+    }
   } else if (catId === 'storage') {
-    if (s['Form Factor'] || s['Interface']) specs.push({ label: 'ประเภท', value: s['Form Factor'] || s['Interface'] });
-    if (s['Capacity']) specs.push({ label: 'ความจุ', value: s['Capacity'] });
-    if (s['Read Speed']) specs.push({ label: 'อ่าน', value: s['Read Speed'] });
+    if (s['Form Factor'] || s['Interface'] || s['Type']) specs.push({ label: 'Type', value: s['Form Factor'] || s['Interface'] || s['Type'] });
+    if (s['Capacity']) specs.push({ label: 'Capacity', value: s['Capacity'] });
+    if (s['Read Speed']) specs.push({ label: 'Read', value: s['Read Speed'] });
   } else if (catId === 'psu') {
-    if (s['Continuous Power W']) specs.push({ label: 'กำลังไฟ', value: s['Continuous Power W'] });
-    if (s['Energy Efficient']) specs.push({ label: 'มาตรฐาน', value: s['Energy Efficient'] });
+    const w = item.wattage || s['Continuous Power W'] || s['Wattage'];
+    if (w) specs.push({ label: 'Power', value: typeof w === 'number' ? `${w}W` : w });
+    if (s['Energy Efficient'] || s['80 Plus']) specs.push({ label: 'Efficiency', value: s['Energy Efficient'] || s['80 Plus'] });
   } else if (catId === 'case') {
-    if (s['Mainboard Support']) specs.push({ label: 'รองรับบอร์ด', value: s['Mainboard Support'] });
-    if (s['VGA Support']) specs.push({ label: 'GPU ยาวสุด', value: s['VGA Support'] });
+    if (s['Mainboard Support'] || s['Form Factor Support']) specs.push({ label: 'Board', value: s['Mainboard Support'] || s['Form Factor Support'] });
+    if (s['Max GPU Length (mm)'] || s['VGA Support']) {
+      const g = s['Max GPU Length (mm)'] || s['VGA Support'];
+      specs.push({ label: 'Max GPU', value: typeof g === 'number' ? `${g} mm` : g });
+    }
   }
   return specs;
 };
@@ -456,6 +461,7 @@ const getItemSpecsList = (catId, item) => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  justify-content: space-between;
 }
 .product-name { 
   font-size: var(--text-sm); 
@@ -466,33 +472,45 @@ const getItemSpecsList = (catId, item) => {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 2.8em;
 }
 .product-specs { 
   display: flex; 
   flex-direction: column; 
   gap: 0.25rem; 
   width: 100%;
+  margin-top: auto;
 }
 .spec-tag {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--ink-secondary);
   background: var(--canvas-soft);
-  padding: 0.15rem 0.45rem;
+  padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--hairline-cool);
   font-family: var(--font-sans);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
 .tag-label {
   color: var(--ink-mute);
   font-weight: 500;
-  margin-right: 0.1rem;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+.spec-value {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.68rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
 }
 .product-footer { 
   display: flex; 
