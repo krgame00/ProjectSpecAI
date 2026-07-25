@@ -2,6 +2,11 @@ import { defineStore } from 'pinia'
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai-production.up.railway.app/api/v1' : 'http://localhost:3000/api/v1')
 
+function authHeaders() {
+  const token = localStorage.getItem('token')
+  return token ? { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' } : { 'Content-Type': 'application/json' }
+}
+
 export const useArticleStore = defineStore('article', {
   state: () => ({
     articles: []
@@ -25,7 +30,7 @@ export const useArticleStore = defineStore('article', {
       try {
         const res = await fetch(url, {
           method,
-          headers: { 'Content-Type': 'application/json' },
+          headers: authHeaders(),
           body: JSON.stringify(article)
         })
         if (res.ok) {
@@ -43,7 +48,10 @@ export const useArticleStore = defineStore('article', {
     },
     async deleteArticle(articleId) {
       try {
-        const res = await fetch(`${API_BASE}/articles/${articleId}`, { method: 'DELETE' })
+        const res = await fetch(`${API_BASE}/articles/${articleId}`, {
+          method: 'DELETE',
+          headers: authHeaders()
+        })
         if (res.ok) {
           this.articles = this.articles.filter(a => a.id !== articleId)
         }

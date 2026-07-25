@@ -56,12 +56,17 @@ export const useBuilderStore = defineStore('builder', {
       // 3. No iGPU Warning (Intel 'F' series or specific AMDs without graphics)
       if (cCpu && !cGpu) {
         const cpuName = cCpu.name.toUpperCase();
-        if (cpuName.includes('INTEL') && cpuName.endsWith('F')) {
+        if (cpuName.includes('INTEL') && (cpuName.endsWith('F') || /\b\d{4,5}[KF]*F\b/.test(cpuName))) {
           issues.push(`CPU ไม่มีชิปกราฟิกในตัว: ${cCpu.name} จำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) เพื่อให้เครื่องเปิดติดและแสดงผลภาพได้`);
-        } else if (cpuName.includes('AMD') && !cpuName.endsWith('G') && cpuName.includes('RYZEN')) {
-          // AMD Ryzen desktop CPUs mostly don't have iGPU unless they end with G (or Ryzen 7000 series). Let's do a generic warning for non-G series older than 7000.
-          if (!cpuName.includes('7000') && !cpuName.includes('8000') && !cpuName.includes('9000')) {
-             issues.push(`CPU อาจไม่มีชิปกราฟิกในตัว: ${cCpu.name} มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค`);
+        } else if (cpuName.includes('AMD') && cpuName.includes('RYZEN')) {
+          const isAMDF = cpuName.endsWith('F') || /\b7500F\b/.test(cpuName);
+          const isAMDG = cpuName.endsWith('G') || /\b\d{4}G\b/.test(cpuName);
+          const isAM5Modern = /\b(7\d{3}|8\d{3}|9\d{3})\b/.test(cpuName);
+
+          if (isAMDF) {
+            issues.push(`CPU ไม่มีชิปกราฟิกในตัว: ${cCpu.name} จำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) เพื่อให้เครื่องเปิดติดและแสดงผลภาพได้`);
+          } else if (!isAMDG && !isAM5Modern) {
+            issues.push(`CPU อาจไม่มีชิปกราฟิกในตัว: ${cCpu.name} มักจำเป็นต้องใช้ร่วมกับการ์ดจอ (GPU) กรุณาตรวจสอบอีกครั้ง หรือเพิ่มการ์ดจอลงในสเปค`);
           }
         }
       }

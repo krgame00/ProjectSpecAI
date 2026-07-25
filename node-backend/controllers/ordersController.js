@@ -26,7 +26,13 @@ const ordersController = {
       const [countResult] = await db.query('SELECT COUNT(*) as total FROM orders');
       const total = countResult[0].total;
       const [ordersRows] = await db.query('SELECT * FROM orders ORDER BY created_at DESC LIMIT ? OFFSET ?', [limit, offset]);
-      const [itemsRows] = await db.query('SELECT * FROM order_items');
+      
+      if (ordersRows.length === 0) {
+        return res.json({ data: [], total, page, limit });
+      }
+
+      const orderIds = ordersRows.map(o => o.id);
+      const [itemsRows] = await db.query('SELECT * FROM order_items WHERE order_id IN (?)', [orderIds]);
 
       const orders = ordersRows.map(o => {
         const items = itemsRows.filter(i => i.order_id === o.id);

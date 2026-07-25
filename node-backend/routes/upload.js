@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const { authMiddleware, adminMiddleware } = require('../middleware/authMiddleware');
 
 // Ensure upload directory exists
 const uploadDir = path.join(__dirname, '../public/uploads');
@@ -38,16 +39,13 @@ const upload = multer({
 });
 
 // POST /api/upload
-router.post('/', upload.single('image'), (req, res) => {
+router.post('/', authMiddleware, adminMiddleware, upload.single('image'), (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No image file provided.' });
     }
     
     // Construct public URL
-    const API_BASE = process.env.API_BASE_URL || `http://${req.hostname}:3000`;
-    // If the request came through a proxy (e.g. Railway) or frontend is calling from localhost
-    // Actually, returning a relative path is safer, but returning full URL makes it easier for frontend
     const imageUrl = `/uploads/${req.file.filename}`;
     
     res.json({

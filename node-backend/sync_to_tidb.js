@@ -17,33 +17,51 @@ async function sync() {
     ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: true }
   });
 
-  try {
-    console.log("Fetching local products...");
-    const [localProducts] = await localDb.query('SELECT * FROM products');
-    
-    console.log(`Found ${localProducts.length} products locally. Syncing to TiDB...`);
-    
-    // Using TRUNCATE to reset TiDB products table before inserting
-    await tidb.query('SET FOREIGN_KEY_CHECKS = 0');
-    await tidb.query('TRUNCATE TABLE products');
-    
-    // Insert all local products to TiDB
-    for (let i = 0; i < localProducts.length; i += 50) {
-      const chunk = localProducts.slice(i, i + 50);
-      const values = [];
-      const queryParams = [];
-      for (const p of chunk) {
-        values.push('(?, ?, ?, ?, ?, ?, ?, ?, ?)');
-        queryParams.push(p.id, p.category_id, p.brand, p.model, p.price, p.image_url, p.stock_quantity, p.created_at, JSON.stringify(p.specifications));
-      }
-      
-      const query = `INSERT INTO products (id, category_id, brand, model, price, image_url, stock_quantity, created_at, specifications) VALUES ${values.join(',')}`;
-      await tidb.query(query, queryParams);
-      console.log(`Inserted chunk ${i} to ${i + chunk.length}`);
-    }
-    await tidb.query('SET FOREIGN_KEY_CHECKS = 1');
+  const tables = [
+    'products', 'spec_cpu', 'spec_motherboard', 'spec_ram', 
+    'spec_gpu', 'spec_psu', 'spec_storage', 'spec_case'
+  ];
 
-    console.log("Sync complete!");
+  try {
+    await tidb.query('SET FOREIGN_KEY_CHECKS = 0');
+    
+    for (const table of tables) {
+      console.log(`Syncing table: ${table}`);
+      const [rows] = await localDb.query(`SELECT * FROM ${table}`);
+      
+      await tidb.query(`TRUNCATE TABLE ${table}`);
+      
+      if (rows.length === 0) continue;
+
+      const columns = Object.keys(rows[0]);
+      
+      for (let i = 0; i < rows.length; i += 50) {
+        const chunk = rows.slice(i, i + 50);
+        const values = [];
+        const queryParams = [];
+        
+        for (const row of chunk) {
+          const rowValues = [];
+          for (const col of columns) {
+            let val = row[col];
+            // If the value is an object (like JSON), stringify it
+            if (val !== null && typeof val === 'object' && !(val instanceof Date)) {
+              val = JSON.stringify(val);
+            }
+            rowValues.push('?');
+            queryParams.push(val);
+          }
+          values.push(`(${rowValues.join(', ')})`);
+        }
+        
+        const query = `INSERT INTO ${table} (${columns.join(', ')}) VALUES ${values.join(',')}`;
+        await tidb.query(query, queryParams);
+      }
+      console.log(`Synced ${rows.length} rows for ${table}.`);
+    }
+
+    await tidb.query('SET FOREIGN_KEY_CHECKS = 1');
+    console.log("All tables synced successfully!");
   } catch (err) {
     console.error("Error syncing:", err);
   } finally {

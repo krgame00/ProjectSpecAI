@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require('fs').promises;
 const path = require('path');
 const db = require('../config/db');
+const { authMiddleware, adminMiddleware } = require('../middleware/authMiddleware');
 
 const articlesFilePath = path.join(__dirname, '../articles.json');
 
@@ -23,7 +24,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', authMiddleware, adminMiddleware, async (req, res, next) => {
   try {
     const { title, content, image, date } = req.body;
     const newId = Math.floor(Math.random() * 10000);
@@ -46,7 +47,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', authMiddleware, adminMiddleware, async (req, res, next) => {
   try {
     const id = req.params.id;
     const { title, content, image, date } = req.body;
@@ -70,7 +71,7 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', authMiddleware, adminMiddleware, async (req, res, next) => {
   try {
     const id = req.params.id;
     if (db.isFallback()) {

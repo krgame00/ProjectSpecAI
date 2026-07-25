@@ -437,8 +437,10 @@ const uploadArticleImage = async (event) => {
 
   try {
     const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai-production.up.railway.app/api/v1' : 'http://localhost:3000/api/v1');
+    const token = localStorage.getItem('token');
     const response = await fetch(`${API_BASE}/upload`, {
       method: 'POST',
+      headers: token ? { 'Authorization': `Bearer ${token}` } : {},
       body: formData
     });
     const data = await response.json();
