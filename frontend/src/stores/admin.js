@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { useCatalogStore } from './catalog'
+import { useToastStore } from './toast'
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai-production.up.railway.app/api/v1' : 'http://localhost:3000/api/v1')
 
@@ -26,6 +27,7 @@ export const useAdminStore = defineStore('admin', {
       }
     },
     async updateOrderStatus(orderId, status) {
+      const toast = useToastStore()
       try {
         const res = await fetch(`${API_BASE}/orders/${orderId}/status`, {
           method: 'PUT',
@@ -35,12 +37,17 @@ export const useAdminStore = defineStore('admin', {
         if (res.ok) {
           const idx = this.orders.findIndex(o => o.id === orderId)
           if (idx !== -1) this.orders[idx].status = status
+          toast.success(`อัปเดตสถานะออเดอร์ ${orderId} เป็น ${status} สำเร็จ`)
+        } else {
+          toast.error('อัปเดตสถานะออเดอร์ไม่สำเร็จ')
         }
       } catch (err) {
         console.error('Failed to update order status:', err)
+        toast.error('เกิดข้อผิดพลาดในการอัปเดตสถานะออเดอร์')
       }
     },
     async saveProduct(payload) {
+      const toast = useToastStore()
       try {
         const { category, data } = payload
         const method = data.id ? 'PUT' : 'POST'
@@ -57,15 +64,18 @@ export const useAdminStore = defineStore('admin', {
         if (res.ok) {
           const catalogStore = useCatalogStore()
           await catalogStore.fetchCatalog()
+          toast.success(data.id ? 'บันทึกการแก้ไขสินค้าสำเร็จ' : 'เพิ่มสินค้าใหม่สำเร็จ')
         } else {
           const err = await res.json()
-          alert(`Error saving product: ${err.message || 'Unknown error'}`)
+          toast.error(`บันทึกสินค้าไม่สำเร็จ: ${err.error || err.message || 'Unknown error'}`)
         }
       } catch (err) {
         console.error('Save product error:', err)
+        toast.error('เกิดข้อผิดพลาดในการบันทึกสินค้า')
       }
     },
     async deleteProduct(payload) {
+      const toast = useToastStore()
       try {
         const { productId } = payload
         const res = await fetch(`${API_BASE}/hardware/${productId}`, {
@@ -75,12 +85,14 @@ export const useAdminStore = defineStore('admin', {
         if (res.ok) {
           const catalogStore = useCatalogStore()
           await catalogStore.fetchCatalog()
+          toast.success('ลบสินค้าออกจากระบบสำเร็จ')
         } else {
           const err = await res.json()
-          alert(`Error deleting product: ${err.message || 'Unknown error'}`)
+          toast.error(`ลบสินค้าไม่สำเร็จ: ${err.error || err.message || 'Unknown error'}`)
         }
       } catch (err) {
         console.error('Delete product error:', err)
+        toast.error('เกิดข้อผิดพลาดในการลบสินค้า')
       }
     },
     async fetchUsers() {

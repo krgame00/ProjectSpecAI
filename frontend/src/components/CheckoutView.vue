@@ -119,6 +119,7 @@
 import { ref, reactive, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBuilderStore } from '../stores/builder';
+import { useToastStore } from '../stores/toast';
 
 const props = defineProps({
   categories: Array, catalog: Object, currentUser: Object
@@ -127,6 +128,7 @@ const emit = defineEmits(['order-placed']);
 
 const router = useRouter();
 const builderStore = useBuilderStore();
+const toast = useToastStore();
 
 const customer = reactive({ name: '', address: '', phone: '' });
 const assemblyChoice = ref('none');
@@ -185,7 +187,7 @@ const handlePlaceOrder = async () => {
     }
 
     if (data.success) {
-      alert(`🎉 ${data.message}\nรหัสคำสั่งซื้อ: ${data.order_id}`);
+      toast.success(`🎉 ${data.message}\nรหัสคำสั่งซื้อ: ${data.order_id}`, 6000);
       builderStore.clearBuild();
       router.push('/build');
     } else {

@@ -419,10 +419,12 @@ import ProfileView from '../views/ProfileView.vue';
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 import { useAdminStore } from '../stores/admin';
+import { useToastStore } from '../stores/toast';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 const adminStore = useAdminStore();
+const toast = useToastStore();
 const users = computed(() => adminStore.users);
 
 const isUploadingArticleImage = ref(false);
@@ -448,12 +450,13 @@ const uploadArticleImage = async (event) => {
       const baseUrl = API_BASE.replace('/api/v1', '');
       articleForm.image = baseUrl + data.url;
       articleImgError.value = false;
+      toast.success('อัปโหลดรูปภาพสำเร็จ');
     } else {
-      alert('อัปโหลดรูปล้มเหลว: ' + (data.error || 'Unknown error'));
+      toast.error('อัปโหลดรูปล้มเหลว: ' + (data.error || 'Unknown error'));
     }
   } catch (error) {
     console.error('Error uploading image:', error);
-    alert('เกิดข้อผิดพลาดในการเชื่อมต่อเพื่ออัปโหลดรูปภาพ');
+    toast.error('เกิดข้อผิดพลาดในการเชื่อมต่อเพื่ออัปโหลดรูปภาพ');
   } finally {
     isUploadingArticleImage.value = false;
   }
@@ -497,14 +500,14 @@ const fetchUsers = async () => {
 const toggleUserRole = (user) => {
   showConfirm(`คุณแน่ใจว่าต้องการเปลี่ยนสิทธิ์ของ ${user.name} หรือไม่?`, async () => {
     await adminStore.toggleUserRole(user);
-    alert('เปลี่ยนสิทธิ์สำเร็จ');
+    toast.success('เปลี่ยนสิทธิ์ผู้ใช้งานสำเร็จ');
   }, 'warning');
 };
 
 const deleteUser = (id) => {
   showConfirm('คุณแน่ใจว่าต้องการลบบัญชีนี้? การกระทำนี้ไม่สามารถยกเลิกได้!', async () => {
     await adminStore.deleteUser(id);
-    alert('ลบบัญชีสำเร็จ');
+    toast.success('ลบบัญชีผู้ใช้งานสำเร็จ');
   }, 'danger');
 };
 

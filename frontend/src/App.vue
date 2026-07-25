@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- Toast Notification Container -->
+    <ToastNotification />
+
     <!-- Top Navigation -->
     <nav class="top-nav" v-if="$route.path !== '/admin'">
       <div class="nav-content container">
@@ -106,6 +109,8 @@ import { useCatalogStore } from './stores/catalog';
 import { useAdminStore } from './stores/admin';
 import { useChatbotStore } from './stores/chatbot';
 import { useArticleStore } from './stores/article';
+import { useToastStore } from './stores/toast';
+import ToastNotification from './components/ToastNotification.vue';
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai-production.up.railway.app/api/v1' : 'http://localhost:3000/api/v1');
 
@@ -115,6 +120,7 @@ const catalogStore = useCatalogStore();
 const adminStore = useAdminStore();
 const chatbotStore = useChatbotStore();
 const articleStore = useArticleStore();
+const toast = useToastStore();
 
 const currentUser = computed(() => authStore.user);
 const userRole = computed(() => authStore.user?.role || 'guest');
@@ -144,7 +150,7 @@ onMounted(async () => {
 });
 
 const handleLoginSubmit = async () => {
-  if (!loginForm.email || !loginForm.password) return alert('กรุณากรอกอีเมลและรหัสผ่าน');
+  if (!loginForm.email || !loginForm.password) return toast.warning('กรุณากรอกอีเมลและรหัสผ่าน');
 
   try {
     const res = await fetch(`${API_BASE}/auth/login`, {
@@ -158,21 +164,22 @@ const handleLoginSubmit = async () => {
       authStore.setUser(data.user, data.token);
       showLoginModal.value = false;
       loginForm.email = ''; loginForm.password = '';
+      toast.success(`ยินดีต้อนรับคุณ ${data.user.name}`);
 
       if (data.user.role === 'admin') {
         await adminStore.fetchOrders();
         router.push('/admin');
       }
     } else {
-      alert(data.error || 'เข้าสู่ระบบล้มเหลว');
+      toast.error(data.error || 'เข้าสู่ระบบล้มเหลว');
     }
   } catch (err) {
-    alert('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+    toast.error('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
   }
 };
 
 const handleRegisterSubmit = async () => {
-  if (!registerForm.name || !registerForm.email || !registerForm.password) return alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+  if (!registerForm.name || !registerForm.email || !registerForm.password) return toast.warning('กรุณากรอกข้อมูลให้ครบถ้วน');
 
   try {
     const res = await fetch(`${API_BASE}/auth/register`, {
@@ -183,15 +190,15 @@ const handleRegisterSubmit = async () => {
 
     const data = await res.json();
     if (res.ok) {
-      alert('สมัครสมาชิกสำเร็จ! กำลังเข้าสู่ระบบ...');
+      toast.success('สมัครสมาชิกสำเร็จ! กำลังเข้าสู่ระบบ...');
       authStore.setUser(data.user, data.token);
       showLoginModal.value = false;
       registerForm.name = ''; registerForm.email = ''; registerForm.password = '';
     } else {
-      alert(data.error || 'สมัครสมาชิกล้มเหลว');
+      toast.error(data.error || 'สมัครสมาชิกล้มเหลว');
     }
   } catch (err) {
-    alert('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+    toast.error('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
   }
 };
 
