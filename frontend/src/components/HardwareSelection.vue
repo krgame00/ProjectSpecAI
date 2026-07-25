@@ -75,7 +75,7 @@
         <div class="product-info">
           <div class="product-name">{{ item.name }}</div>
           <div class="product-specs">
-            <span class="spec-tag" v-for="(spec, idx) in getItemSpecsList(activeCategory, item)" :key="idx">
+            <span class="spec-tag" v-for="(spec, idx) in getItemSpecsList(activeCategory, item)" :key="idx" :title="`${spec.label}: ${spec.value}`">
               <span class="tag-label">{{ spec.label }}:</span> {{ spec.value }}
             </span>
           </div>
@@ -469,11 +469,12 @@ const getItemSpecsList = (catId, item) => {
 }
 .product-specs { 
   display: flex; 
-  flex-wrap: wrap; 
-  gap: 0.3rem; 
+  flex-direction: column; 
+  gap: 0.25rem; 
+  width: 100%;
 }
 .spec-tag {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: var(--ink-secondary);
   background: var(--canvas-soft);
   padding: 0.15rem 0.45rem;
@@ -481,6 +482,12 @@ const getItemSpecsList = (catId, item) => {
   border: 1px solid var(--hairline-cool);
   font-family: var(--font-sans);
   letter-spacing: 0.02em;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
 }
 .tag-label {
   color: var(--ink-mute);
