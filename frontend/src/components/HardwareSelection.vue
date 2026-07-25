@@ -553,8 +553,32 @@ const getItemSpecsList = (catId, item) => {
   color: var(--ink);
   border-color: var(--hairline-strong);
 }
+.modal-overlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background: rgba(0, 0, 0, 0.75); 
+  backdrop-filter: blur(4px);
+  z-index: 9999; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 1rem;
+}
+.modal-content { 
+  border-radius: var(--radius-lg); 
+  width: 90%; 
+  max-width: 520px; 
+  overflow: hidden; 
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-xl);
+  animation: popIn 0.2s ease-out;
+}
 @keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
+  from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 </style>
