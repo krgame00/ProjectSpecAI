@@ -87,16 +87,27 @@ function hasValidHistoryShape(history) {
     return false;
   }
 
-  return history.every((turn) => {
+  for (let index = 0; index < history.length; index += 1) {
+    if (!Object.prototype.hasOwnProperty.call(history, index)) {
+      return false;
+    }
+
+    const turn = history[index];
     if (turn === null || typeof turn !== 'object' || Array.isArray(turn)) {
       return false;
     }
 
     const prototype = Object.getPrototypeOf(turn);
-    return (prototype === Object.prototype || prototype === null)
-      && ALLOWED_HISTORY_ROLES.has(turn.role)
-      && typeof turn.text === 'string';
-  });
+    if (
+      (prototype !== Object.prototype && prototype !== null)
+      || !ALLOWED_HISTORY_ROLES.has(turn.role)
+      || typeof turn.text !== 'string'
+    ) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 function validateChatbotPayload(req, res, next) {
@@ -118,8 +129,9 @@ function validateChatbotPayload(req, res, next) {
   if (
     body.history !== undefined
     && (
-      !hasValidHistoryShape(body.history)
+      !Array.isArray(body.history)
       || body.history.length > MAX_HISTORY_TURNS
+      || !hasValidHistoryShape(body.history)
       || body.history.some(
         (turn) => turn.text.length > MAX_HISTORY_TURN_TEXT_LENGTH
       )
@@ -155,8 +167,13 @@ function validateChatbotPayload(req, res, next) {
   next();
 }
 
-function createChatbotRateLimiter({ limit, windowMs, now = Date.now }) {
-  const buckets = new Map();
+function createChatbotRateLimiter({
+  limit,
+  windowMs,
+  now = Date.now,
+  createBuckets = () => new Map()
+}) {
+  const buckets = createBuckets();
   let nextSweepAt = null;
 
   return (req, res, next) => {
