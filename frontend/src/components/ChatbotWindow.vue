@@ -62,10 +62,10 @@
         </div>
       </div>
       <div v-else class="guest-chat-access" data-test="guest-chat-access">
-        <h2>เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธเน€เธเธทเนเธญเนเธเนเธเธฒเธ SpecAI</h2>
-        <p>เธเธฃเธธเธ“เธฒเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธเธเนเธญเธ เน€เธเธทเนเธญเนเธเนเธเธฒเธเธเธนเนเธเนเธงเธข SpecAI</p>
+        <h2>เข้าสู่ระบบเพื่อใช้งาน SpecAI</h2>
+        <p>กรุณาเข้าสู่ระบบก่อน เพื่อใช้งานผู้ช่วย SpecAI</p>
         <button type="button" data-test="chat-login" @click="$emit('request-login')">
-          เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ
+          เข้าสู่ระบบ
         </button>
       </div>
       
@@ -157,6 +157,13 @@ const clearImage = () => {
   selectedImageMime.value = null;
   if (fileInput.value) fileInput.value.value = '';
 };
+
+watch(() => props.isAuthenticated, (isAuthenticated) => {
+  if (!isAuthenticated) {
+    userInput.value = '';
+    clearImage();
+  }
+});
 
 const handleSend = () => {
   if (userInput.value.trim() || selectedImageBase64.value) {
