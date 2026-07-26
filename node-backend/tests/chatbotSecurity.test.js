@@ -1,0 +1,292 @@
+const {
+  validateChatbotPayload,
+  createChatbotRateLimiter,
+  chatbotRateLimiter
+} = require('../middleware/chatbotSecurity');
+
+function responseDouble() {
+  return {
+    statusCode: 200,
+    body: null,
+    headers: {},
+    status(code) { this.statusCode = code; return this; },
+    json(body) { this.body = body; return this; },
+    set(name, value) { this.headers[name] = String(value); return this; }
+  };
+}
+
+function pngBase64(bytes = 32) {
+  const buffer = Buffer.alloc(bytes);
+  Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]).copy(buffer);
+  return buffer.toString('base64');
+}
+
+describe('validateChatbotPayload', () => {
+  test('rejects text longer than 4,000 characters without calling next', () => {
+    const req = { body: { text: 'x'.repeat(4001) } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects unsupported image MIME types', () => {
+    const req = {
+      body: { image: { mimeType: 'image/gif', data: pngBase64() } }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects malformed base64 image data', () => {
+    const req = {
+      body: {
+        image: { mimeType: 'image/png', data: 'not-base64%%%' }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects a JPEG declaration containing PNG bytes', () => {
+    const req = {
+      body: {
+        image: { mimeType: 'image/jpeg', data: pngBase64() }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects a PNG declaration without the PNG signature', () => {
+    const jpeg = Buffer.from([0xff, 0xd8, 0xff, 0x00]).toString('base64');
+    const req = {
+      body: {
+        image: { mimeType: 'image/png', data: jpeg }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('accepts PNG image data with a matching signature', () => {
+    const req = {
+      body: {
+        image: { mimeType: 'image/png', data: pngBase64() }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
+  });
+
+  test('rejects a decoded PNG larger than 8 MiB', () => {
+    const req = {
+      body: {
+        image: {
+          mimeType: 'image/png',
+          data: pngBase64((8 * 1024 * 1024) + 1)
+        }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects WebP data without RIFF and WEBP markers', () => {
+    const req = {
+      body: {
+        image: { mimeType: 'image/webp', data: pngBase64() }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects non-string text', () => {
+    const req = { body: { text: { prompt: 'hello' } } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects a blank request without an image', () => {
+    const req = {};
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('accepts the message field as the text alias', () => {
+    const req = { body: { message: 'Help me choose a GPU' } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
+  });
+});
+
+describe('createChatbotRateLimiter', () => {
+  test('allows requests 1 through 40 and rejects request 41 for one user', () => {
+    const limiter = createChatbotRateLimiter({
+      limit: 40,
+      windowMs: 900000,
+      now: () => 1000
+    });
+    const req = { user: { id: 7 } };
+
+    for (let requestNumber = 1; requestNumber <= 40; requestNumber += 1) {
+      const res = responseDouble();
+      const next = jest.fn();
+
+      limiter(req, res, next);
+
+      expect(next).toHaveBeenCalledTimes(1);
+      expect(res.statusCode).toBe(200);
+    }
+
+    const blockedResponse = responseDouble();
+    const blockedNext = jest.fn();
+    limiter(req, blockedResponse, blockedNext);
+
+    expect(blockedResponse.statusCode).toBe(429);
+    expect(blockedResponse.body).toEqual({
+      error: 'Chatbot rate limit exceeded'
+    });
+    expect(blockedResponse.headers['RateLimit-Limit']).toBe('40');
+    expect(blockedNext).not.toHaveBeenCalled();
+  });
+
+  test('keeps quota buckets independent for different user IDs', () => {
+    const limiter = createChatbotRateLimiter({
+      limit: 1,
+      windowMs: 60000,
+      now: () => 5000
+    });
+
+    const firstUserNext = jest.fn();
+    limiter({ user: { id: 101 } }, responseDouble(), firstUserNext);
+    expect(firstUserNext).toHaveBeenCalledTimes(1);
+
+    const blockedResponse = responseDouble();
+    limiter({ user: { id: 101 } }, blockedResponse, jest.fn());
+    expect(blockedResponse.statusCode).toBe(429);
+
+    const secondUserResponse = responseDouble();
+    const secondUserNext = jest.fn();
+    limiter({ user: { id: 202 } }, secondUserResponse, secondUserNext);
+
+    expect(secondUserNext).toHaveBeenCalledTimes(1);
+    expect(secondUserResponse.statusCode).toBe(200);
+  });
+
+  test('sets quota headers and resets the bucket at the window boundary', () => {
+    let currentTime = 1000;
+    const limiter = createChatbotRateLimiter({
+      limit: 2,
+      windowMs: 3000,
+      now: () => currentTime
+    });
+    const req = { user: { id: 'reset-user' } };
+
+    const firstResponse = responseDouble();
+    limiter(req, firstResponse, jest.fn());
+    expect(firstResponse.headers).toEqual({
+      'RateLimit-Limit': '2',
+      'RateLimit-Remaining': '1',
+      'RateLimit-Reset': '3'
+    });
+
+    const secondResponse = responseDouble();
+    limiter(req, secondResponse, jest.fn());
+    expect(secondResponse.headers['RateLimit-Remaining']).toBe('0');
+
+    currentTime = 3999;
+    const beforeResetResponse = responseDouble();
+    limiter(req, beforeResetResponse, jest.fn());
+    expect(beforeResetResponse.statusCode).toBe(429);
+    expect(beforeResetResponse.headers['RateLimit-Reset']).toBe('1');
+
+    currentTime = 4000;
+    const resetResponse = responseDouble();
+    const resetNext = jest.fn();
+    limiter(req, resetResponse, resetNext);
+
+    expect(resetNext).toHaveBeenCalledTimes(1);
+    expect(resetResponse.headers).toEqual({
+      'RateLimit-Limit': '2',
+      'RateLimit-Remaining': '1',
+      'RateLimit-Reset': '3'
+    });
+  });
+});
+
+describe('chatbotRateLimiter', () => {
+  test('uses the production quota of 40 requests per 900,000 ms', () => {
+    const req = { user: { id: 'singleton-40-per-15-minutes' } };
+    let firstResponse;
+
+    for (let requestNumber = 1; requestNumber <= 40; requestNumber += 1) {
+      const res = responseDouble();
+      const next = jest.fn();
+      chatbotRateLimiter(req, res, next);
+      firstResponse ||= res;
+      expect(next).toHaveBeenCalledTimes(1);
+    }
+
+    expect(firstResponse.headers['RateLimit-Limit']).toBe('40');
+    expect(firstResponse.headers['RateLimit-Reset']).toBe('900');
+
+    const blockedResponse = responseDouble();
+    chatbotRateLimiter(req, blockedResponse, jest.fn());
+    expect(blockedResponse.statusCode).toBe(429);
+  });
+});
