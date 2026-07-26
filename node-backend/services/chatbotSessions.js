@@ -51,7 +51,7 @@ function createChatbotSessionStore({ ttlMs, now, randomUUID: generateId }) {
     resolve(ownerId, sessionId) {
       removeExpired();
 
-      if (sessionId === undefined || sessionId === null || sessionId === '') {
+      if (sessionId === undefined || sessionId === null) {
         return create(ownerId);
       }
 

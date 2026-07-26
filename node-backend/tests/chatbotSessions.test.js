@@ -49,7 +49,7 @@ describe('chatbot session store', () => {
 
   test('expired session cannot be resolved', () => {
     const { id } = store.resolve('user-1');
-    currentTime += 101;
+    currentTime += 100;
 
     expect(() => store.resolve('user-1', id)).toThrow(
       expect.objectContaining({ code: 'SESSION_NOT_FOUND' }),
@@ -62,6 +62,12 @@ describe('chatbot session store', () => {
     );
 
     expect(store.resolve('user-1').id).toBe('session-1');
+  });
+
+  test('empty client-supplied ID is rejected rather than created', () => {
+    expect(() => store.resolve('user-1', '')).toThrow(
+      expect.objectContaining({ code: 'SESSION_NOT_FOUND' }),
+    );
   });
 
   test('owner clears their session, after which it is not found', () => {
