@@ -2,18 +2,6 @@ const {
   createChatbotSessionStore,
 } = require('../services/chatbotSessions');
 
-class ObservableMap extends Map {
-  constructor() {
-    super();
-    this.fullScans = 0;
-  }
-
-  [Symbol.iterator]() {
-    this.fullScans += 1;
-    return super[Symbol.iterator]();
-  }
-}
-
 describe('chatbot session store', () => {
   let currentTime;
   let nextId;
@@ -101,12 +89,12 @@ describe('chatbot session store', () => {
   });
 
   test('ordinary requests do not perform a full session scan', () => {
-    const sessions = new ObservableMap();
+    const onSweep = jest.fn();
     const observedStore = createChatbotSessionStore({
       ttlMs: 100,
       now: () => currentTime,
       randomUUID: () => `observed-${++nextId}`,
-      sessions,
+      onSweep,
     });
     const { id } = observedStore.resolve('user-1');
 
@@ -115,17 +103,16 @@ describe('chatbot session store', () => {
     currentTime += 10;
     observedStore.resolve('user-1', id);
 
-    expect(sessions.has(id)).toBe(true);
-    expect(sessions.fullScans).toBe(0);
+    expect(onSweep).not.toHaveBeenCalled();
   });
 
   test('scheduled sweep removes unrelated expired sessions', () => {
-    const sessions = new ObservableMap();
+    const onSweep = jest.fn();
     const observedStore = createChatbotSessionStore({
       ttlMs: 100,
       now: () => currentTime,
       randomUUID: () => `observed-${++nextId}`,
-      sessions,
+      onSweep,
     });
     const stale = observedStore.resolve('user-1');
     const active = observedStore.resolve('user-1');
@@ -135,19 +122,22 @@ describe('chatbot session store', () => {
     currentTime += 10;
     observedStore.resolve('user-1', active.id);
 
-    expect(sessions.has(stale.id)).toBe(false);
-    expect(sessions.has(active.id)).toBe(true);
-    expect(sessions.fullScans).toBe(1);
+    expect(onSweep).toHaveBeenCalledTimes(1);
+    expect(onSweep).toHaveBeenCalledWith({ scanned: 2, deleted: 1 });
+    expect(() => observedStore.resolve('user-1', stale.id)).toThrow(
+      expect.objectContaining({ code: 'SESSION_NOT_FOUND' }),
+    );
+    expect(observedStore.resolve('user-1', active.id).id).toBe(active.id);
   });
 
   test('requested expired session rejects before its scheduled sweep', () => {
-    const sessions = new ObservableMap();
+    const onSweep = jest.fn();
     const observedStore = createChatbotSessionStore({
       ttlMs: 100,
       cleanupIntervalMs: 1_000,
       now: () => currentTime,
       randomUUID: () => `observed-${++nextId}`,
-      sessions,
+      onSweep,
     });
     const { id } = observedStore.resolve('user-1');
     currentTime += 100;
@@ -155,7 +145,6 @@ describe('chatbot session store', () => {
     expect(() => observedStore.resolve('user-1', id)).toThrow(
       expect.objectContaining({ code: 'SESSION_NOT_FOUND' }),
     );
-    expect(sessions.has(id)).toBe(false);
-    expect(sessions.fullScans).toBe(0);
+    expect(onSweep).not.toHaveBeenCalled();
   });
 });

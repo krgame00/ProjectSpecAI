@@ -13,8 +13,9 @@ function createChatbotSessionStore({
   now,
   randomUUID: generateId,
   cleanupIntervalMs = ttlMs,
-  sessions = new Map(),
+  onSweep,
 }) {
+  const sessions = new Map();
   let nextSweepAt = now() + cleanupIntervalMs;
 
   function isExpired(session, currentTime) {
@@ -26,13 +27,21 @@ function createChatbotSessionStore({
       return;
     }
 
+    let scanned = 0;
+    let deleted = 0;
+
     for (const [id, session] of sessions) {
+      scanned += 1;
       if (isExpired(session, currentTime)) {
         sessions.delete(id);
+        deleted += 1;
       }
     }
 
     nextSweepAt = currentTime + cleanupIntervalMs;
+    if (onSweep) {
+      onSweep({ scanned, deleted });
+    }
   }
 
   function getOwnedSession(ownerId, sessionId, currentTime) {
