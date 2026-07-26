@@ -7,12 +7,46 @@ const ALLOWED_IMAGE_MIME_TYPES = new Set([
   'image/webp'
 ]);
 
-function isValidBase64(value) {
+function base64Value(charCode) {
+  if (charCode >= 65 && charCode <= 90) return charCode - 65;
+  if (charCode >= 97 && charCode <= 122) return charCode - 71;
+  if (charCode >= 48 && charCode <= 57) return charCode + 4;
+  if (charCode === 43) return 62;
+  if (charCode === 47) return 63;
+  return -1;
+}
+
+function getDecodedBase64Length(value) {
   if (typeof value !== 'string' || value.length === 0 || value.length % 4 !== 0) {
-    return false;
+    return null;
   }
 
-  return Buffer.from(value, 'base64').toString('base64') === value;
+  let padding = 0;
+  if (value.endsWith('=')) padding += 1;
+  if (value.endsWith('==')) padding += 1;
+  const dataLength = value.length - padding;
+
+  for (let index = 0; index < dataLength; index += 1) {
+    if (base64Value(value.charCodeAt(index)) === -1) {
+      return null;
+    }
+  }
+
+  for (let index = dataLength; index < value.length; index += 1) {
+    if (value.charCodeAt(index) !== 61) {
+      return null;
+    }
+  }
+
+  if (padding === 2 && (base64Value(value.charCodeAt(dataLength - 1)) & 15) !== 0) {
+    return null;
+  }
+
+  if (padding === 1 && (base64Value(value.charCodeAt(dataLength - 1)) & 3) !== 0) {
+    return null;
+  }
+
+  return (value.length / 4 * 3) - padding;
 }
 
 function hasMatchingMagicBytes(buffer, mimeType) {
@@ -25,9 +59,14 @@ function hasMatchingMagicBytes(buffer, mimeType) {
 
   if (mimeType === 'image/png') {
     return buffer.length >= 8
-      && buffer.subarray(0, 8).equals(
-        Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])
-      );
+      && buffer[0] === 0x89
+      && buffer[1] === 0x50
+      && buffer[2] === 0x4e
+      && buffer[3] === 0x47
+      && buffer[4] === 0x0d
+      && buffer[5] === 0x0a
+      && buffer[6] === 0x1a
+      && buffer[7] === 0x0a;
   }
 
   if (mimeType === 'image/webp') {
@@ -59,16 +98,18 @@ function validateChatbotPayload(req, res, next) {
     return res.status(400).json({ error: 'Unsupported image MIME type' });
   }
 
-  if (body.image && !isValidBase64(body.image.data)) {
-    return res.status(400).json({ error: 'Malformed base64 image data' });
-  }
-
   if (body.image) {
-    const decodedImage = Buffer.from(body.image.data, 'base64');
+    const decodedLength = getDecodedBase64Length(body.image.data);
 
-    if (decodedImage.length > MAX_IMAGE_BYTES) {
+    if (decodedLength === null) {
+      return res.status(400).json({ error: 'Malformed base64 image data' });
+    }
+
+    if (decodedLength > MAX_IMAGE_BYTES) {
       return res.status(400).json({ error: 'Image exceeds 8 MiB' });
     }
+
+    const decodedImage = Buffer.from(body.image.data, 'base64');
 
     if (!hasMatchingMagicBytes(decodedImage, body.image.mimeType)) {
       return res.status(400).json({ error: 'Image bytes do not match declared MIME type' });

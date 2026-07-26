@@ -33,6 +33,17 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
+  test('accepts text with exactly 4,000 characters', () => {
+    const req = { body: { text: 'x'.repeat(4000) } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
+  });
+
   test('rejects unsupported image MIME types', () => {
     const req = {
       body: { image: { mimeType: 'image/gif', data: pngBase64() } }
@@ -74,6 +85,23 @@ describe('validateChatbotPayload', () => {
 
     expect(res.statusCode).toBe(400);
     expect(next).not.toHaveBeenCalled();
+  });
+
+  test('accepts JPEG image data with a matching signature', () => {
+    const jpeg = Buffer.alloc(32);
+    Buffer.from([0xff, 0xd8, 0xff]).copy(jpeg);
+    const req = {
+      body: {
+        image: { mimeType: 'image/jpeg', data: jpeg.toString('base64') }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
   });
 
   test('rejects a PNG declaration without the PNG signature', () => {
@@ -125,6 +153,46 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
+  test('accepts a decoded PNG with exactly 8 MiB', () => {
+    const req = {
+      body: {
+        image: {
+          mimeType: 'image/png',
+          data: pngBase64(8 * 1024 * 1024)
+        }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
+  });
+
+  test('rejects an oversized encoded image before decoding base64', () => {
+    const oversizedBase64 = 'A'.repeat(11184812);
+    const req = {
+      body: {
+        image: { mimeType: 'image/png', data: oversizedBase64 }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+    const bufferFromSpy = jest.spyOn(Buffer, 'from');
+
+    try {
+      validateChatbotPayload(req, res, next);
+
+      expect(res.statusCode).toBe(400);
+      expect(next).not.toHaveBeenCalled();
+      expect(bufferFromSpy).not.toHaveBeenCalled();
+    } finally {
+      bufferFromSpy.mockRestore();
+    }
+  });
+
   test('rejects WebP data without RIFF and WEBP markers', () => {
     const req = {
       body: {
@@ -138,6 +206,24 @@ describe('validateChatbotPayload', () => {
 
     expect(res.statusCode).toBe(400);
     expect(next).not.toHaveBeenCalled();
+  });
+
+  test('accepts WebP data with RIFF and WEBP markers', () => {
+    const webp = Buffer.alloc(32);
+    webp.write('RIFF', 0, 'ascii');
+    webp.write('WEBP', 8, 'ascii');
+    const req = {
+      body: {
+        image: { mimeType: 'image/webp', data: webp.toString('base64') }
+      }
+    };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
   });
 
   test('rejects non-string text', () => {
