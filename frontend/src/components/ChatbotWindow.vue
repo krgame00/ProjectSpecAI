@@ -138,12 +138,32 @@ const fileInput = ref(null);
 const selectedImageBase64 = ref(null);
 const selectedImagePreview = ref(null);
 const selectedImageMime = ref(null);
+let activeImageReader = null;
+let imageReadGeneration = 0;
+
+const cancelActiveImageRead = () => {
+  imageReadGeneration += 1;
+  const reader = activeImageReader;
+  activeImageReader = null;
+  if (typeof reader?.abort === 'function') {
+    reader.abort();
+  }
+};
 
 const handleFileChange = (e) => {
   const file = e.target.files[0];
   if (!file) return;
+  cancelActiveImageRead();
+  const generation = imageReadGeneration;
   const reader = new FileReader();
+  activeImageReader = reader;
   reader.onload = (e) => {
+    if (
+      generation !== imageReadGeneration ||
+      reader !== activeImageReader ||
+      !props.isAuthenticated
+    ) return;
+    activeImageReader = null;
     selectedImagePreview.value = e.target.result;
     selectedImageMime.value = file.type;
     selectedImageBase64.value = e.target.result.split(',')[1];
@@ -152,6 +172,7 @@ const handleFileChange = (e) => {
 };
 
 const clearImage = () => {
+  cancelActiveImageRead();
   selectedImagePreview.value = null;
   selectedImageBase64.value = null;
   selectedImageMime.value = null;
