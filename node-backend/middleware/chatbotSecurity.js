@@ -1,11 +1,15 @@
 const MAX_TEXT_LENGTH = 4000;
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
+const MAX_HISTORY_TURNS = 20;
+const MAX_HISTORY_TURN_TEXT_LENGTH = 4000;
+const MAX_HISTORY_TEXT_LENGTH = 16000;
 
 const ALLOWED_IMAGE_MIME_TYPES = new Set([
   'image/jpeg',
   'image/png',
   'image/webp'
 ]);
+const ALLOWED_HISTORY_ROLES = new Set(['user', 'bot', 'model', 'assistant']);
 
 function base64Value(charCode) {
   if (charCode >= 65 && charCode <= 90) return charCode - 65;
@@ -78,6 +82,23 @@ function hasMatchingMagicBytes(buffer, mimeType) {
   return true;
 }
 
+function hasValidHistoryShape(history) {
+  if (!Array.isArray(history)) {
+    return false;
+  }
+
+  return history.every((turn) => {
+    if (turn === null || typeof turn !== 'object' || Array.isArray(turn)) {
+      return false;
+    }
+
+    const prototype = Object.getPrototypeOf(turn);
+    return (prototype === Object.prototype || prototype === null)
+      && ALLOWED_HISTORY_ROLES.has(turn.role)
+      && typeof turn.text === 'string';
+  });
+}
+
 function validateChatbotPayload(req, res, next) {
   const body = req.body || {};
   const text = body.text !== undefined ? body.text : body.message;
@@ -92,6 +113,21 @@ function validateChatbotPayload(req, res, next) {
 
   if (!body.image && (typeof text !== 'string' || text.trim() === '')) {
     return res.status(400).json({ error: 'Message or image is required' });
+  }
+
+  if (
+    body.history !== undefined
+    && (
+      !hasValidHistoryShape(body.history)
+      || body.history.length > MAX_HISTORY_TURNS
+      || body.history.some(
+        (turn) => turn.text.length > MAX_HISTORY_TURN_TEXT_LENGTH
+      )
+      || body.history.reduce((total, turn) => total + turn.text.length, 0)
+        > MAX_HISTORY_TEXT_LENGTH
+    )
+  ) {
+    return res.status(400).json({ error: 'Invalid chatbot history' });
   }
 
   if (body.image && !ALLOWED_IMAGE_MIME_TYPES.has(body.image.mimeType)) {
@@ -121,10 +157,23 @@ function validateChatbotPayload(req, res, next) {
 
 function createChatbotRateLimiter({ limit, windowMs, now = Date.now }) {
   const buckets = new Map();
+  let nextSweepAt = null;
 
   return (req, res, next) => {
     const userId = String(req.user.id);
     const currentTime = now();
+
+    if (nextSweepAt === null) {
+      nextSweepAt = currentTime + windowMs;
+    } else if (currentTime >= nextSweepAt) {
+      for (const [bucketUserId, bucket] of buckets) {
+        if (currentTime >= bucket.resetAt) {
+          buckets.delete(bucketUserId);
+        }
+      }
+      nextSweepAt = currentTime + windowMs;
+    }
+
     let bucket = buckets.get(userId);
 
     if (!bucket || currentTime >= bucket.resetAt) {
@@ -155,6 +204,11 @@ const chatbotRateLimiter = createChatbotRateLimiter({
 });
 
 module.exports = {
+  MAX_TEXT_LENGTH,
+  MAX_IMAGE_BYTES,
+  MAX_HISTORY_TURNS,
+  MAX_HISTORY_TURN_TEXT_LENGTH,
+  MAX_HISTORY_TEXT_LENGTH,
   validateChatbotPayload,
   createChatbotRateLimiter,
   chatbotRateLimiter

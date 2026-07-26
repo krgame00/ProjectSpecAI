@@ -258,6 +258,88 @@ describe('validateChatbotPayload', () => {
     expect(next).toHaveBeenCalledTimes(1);
     expect(res.statusCode).toBe(200);
   });
+
+  test.each([
+    ['a non-array history', {}],
+    ['a non-object turn', ['hello']],
+    ['an array turn', [[]]],
+    ['an unsupported role', [{ role: 'system', text: 'hello' }]],
+    ['non-string turn text', [{ role: 'user', text: 42 }]]
+  ])('rejects %s with a stable validation response', (description, history) => {
+    const req = { body: { message: 'hello', history } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toEqual({ error: 'Invalid chatbot history' });
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects history with more than 20 turns', () => {
+    const history = Array.from(
+      { length: 21 },
+      (_, index) => ({ role: index % 2 === 0 ? 'user' : 'assistant', text: 'x' })
+    );
+    const req = { body: { message: 'hello', history } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toEqual({ error: 'Invalid chatbot history' });
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects a history turn with more than 4,000 text characters', () => {
+    const history = [{ role: 'user', text: 'x'.repeat(4001) }];
+    const req = { body: { message: 'hello', history } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toEqual({ error: 'Invalid chatbot history' });
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('rejects history with more than 16,000 aggregate text characters', () => {
+    const history = [
+      { role: 'user', text: 'a'.repeat(4000) },
+      { role: 'assistant', text: 'b'.repeat(4000) },
+      { role: 'user', text: 'c'.repeat(4000) },
+      { role: 'bot', text: 'd'.repeat(4000) },
+      { role: 'model', text: 'e' }
+    ];
+    const req = { body: { message: 'hello', history } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toEqual({ error: 'Invalid chatbot history' });
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  test('accepts 20 valid turns at the per-turn and aggregate boundaries', () => {
+    const roles = ['user', 'bot', 'model', 'assistant'];
+    const history = Array.from({ length: 20 }, (_, index) => ({
+      role: roles[index % roles.length],
+      text: index < 4 ? String(index).repeat(4000) : ''
+    }));
+    const req = { body: { message: 'hello', history } };
+    const res = responseDouble();
+    const next = jest.fn();
+
+    validateChatbotPayload(req, res, next);
+
+    expect(next).toHaveBeenCalledTimes(1);
+    expect(res.statusCode).toBe(200);
+  });
 });
 
 describe('createChatbotRateLimiter', () => {
@@ -352,6 +434,53 @@ describe('createChatbotRateLimiter', () => {
       'RateLimit-Remaining': '1',
       'RateLimit-Reset': '3'
     });
+  });
+
+  test('sweeps expired buckets on a throttle without changing active counts', () => {
+    let currentTime = 0;
+    const limiter = createChatbotRateLimiter({
+      limit: 2,
+      windowMs: 100,
+      now: () => currentTime
+    });
+    const call = (userId) => {
+      const res = responseDouble();
+      let nextCalls = 0;
+      limiter({ user: { id: userId } }, res, () => { nextCalls += 1; });
+      return { res, nextCalls };
+    };
+
+    call('stale-user');
+    currentTime = 50;
+    call('active-user');
+
+    const iteratorSpy = jest.spyOn(Map.prototype, Symbol.iterator);
+    const deleteSpy = jest.spyOn(Map.prototype, 'delete');
+
+    try {
+      currentTime = 75;
+      call('before-sweep-1');
+      currentTime = 99;
+      call('before-sweep-2');
+      const scansBeforeDeadline = iteratorSpy.mock.calls.length;
+
+      currentTime = 100;
+      call('sweep-trigger');
+      const scansAfterDeadline = iteratorSpy.mock.calls.length;
+      const deletedKeys = deleteSpy.mock.calls.map(([key]) => key);
+
+      expect(scansBeforeDeadline).toBe(0);
+      expect(scansAfterDeadline).toBe(1);
+      expect(deletedKeys).toContain('stale-user');
+
+      const activeSecond = call('active-user');
+      const activeBlocked = call('active-user');
+      expect(activeSecond.nextCalls).toBe(1);
+      expect(activeBlocked.res.statusCode).toBe(429);
+    } finally {
+      iteratorSpy.mockRestore();
+      deleteSpy.mockRestore();
+    }
   });
 });
 
