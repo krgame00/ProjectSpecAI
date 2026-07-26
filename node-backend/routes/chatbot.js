@@ -293,6 +293,9 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     const history = session.history;
 
     if (text && checkInputGuardrails(text)) {
+      if (sessionId == null) {
+        chatbotSessions.clear(req.user.id, sid);
+      }
       res.setHeader('Content-Type', 'text/event-stream');
       res.setHeader('Cache-Control', 'no-cache, no-transform');
       res.setHeader('Connection', 'keep-alive');
@@ -304,6 +307,9 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     }
 
     if (!aiConfig.apiKey && !aiConfig.vertexai) {
+      if (sessionId == null) {
+        chatbotSessions.clear(req.user.id, sid);
+      }
       res.setHeader('Content-Type', 'text/event-stream');
       res.setHeader('Cache-Control', 'no-cache, no-transform');
       res.setHeader('Connection', 'keep-alive');
