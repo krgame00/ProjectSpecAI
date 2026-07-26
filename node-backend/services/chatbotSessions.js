@@ -8,30 +8,49 @@ function sessionNotFound() {
   return error;
 }
 
-function createChatbotSessionStore({ ttlMs, now, randomUUID: generateId }) {
-  const sessions = new Map();
+function createChatbotSessionStore({
+  ttlMs,
+  now,
+  randomUUID: generateId,
+  cleanupIntervalMs = ttlMs,
+  sessions = new Map(),
+}) {
+  let nextSweepAt = now() + cleanupIntervalMs;
 
-  function removeExpired() {
-    const currentTime = now();
+  function isExpired(session, currentTime) {
+    return currentTime - session.lastAccessedAt >= ttlMs;
+  }
+
+  function removeExpiredWhenDue(currentTime) {
+    if (currentTime < nextSweepAt) {
+      return;
+    }
 
     for (const [id, session] of sessions) {
-      if (currentTime - session.lastAccessedAt >= ttlMs) {
+      if (isExpired(session, currentTime)) {
         sessions.delete(id);
       }
     }
+
+    nextSweepAt = currentTime + cleanupIntervalMs;
   }
 
-  function getOwnedSession(ownerId, sessionId) {
+  function getOwnedSession(ownerId, sessionId, currentTime) {
     const session = sessions.get(sessionId);
 
-    if (!session || session.ownerId !== String(ownerId)) {
+    if (!session || isExpired(session, currentTime)) {
+      sessions.delete(sessionId);
+      throw sessionNotFound();
+    }
+
+    if (session.ownerId !== String(ownerId)) {
       throw sessionNotFound();
     }
 
     return session;
   }
 
-  function create(ownerId) {
+  function create(ownerId, currentTime) {
     let id;
     do {
       id = generateId();
@@ -40,7 +59,7 @@ function createChatbotSessionStore({ ttlMs, now, randomUUID: generateId }) {
     const session = {
       ownerId: String(ownerId),
       history: [],
-      lastAccessedAt: now(),
+      lastAccessedAt: currentTime,
     };
     sessions.set(id, session);
 
@@ -49,20 +68,22 @@ function createChatbotSessionStore({ ttlMs, now, randomUUID: generateId }) {
 
   return {
     resolve(ownerId, sessionId) {
-      removeExpired();
+      const currentTime = now();
+      removeExpiredWhenDue(currentTime);
 
       if (sessionId === undefined || sessionId === null) {
-        return create(ownerId);
+        return create(ownerId, currentTime);
       }
 
-      const session = getOwnedSession(ownerId, sessionId);
-      session.lastAccessedAt = now();
+      const session = getOwnedSession(ownerId, sessionId, currentTime);
+      session.lastAccessedAt = currentTime;
       return { id: sessionId, history: session.history };
     },
 
     clear(ownerId, sessionId) {
-      removeExpired();
-      getOwnedSession(ownerId, sessionId);
+      const currentTime = now();
+      removeExpiredWhenDue(currentTime);
+      getOwnedSession(ownerId, sessionId, currentTime);
       sessions.delete(sessionId);
     },
   };

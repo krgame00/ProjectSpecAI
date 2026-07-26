@@ -2,6 +2,18 @@ const {
   createChatbotSessionStore,
 } = require('../services/chatbotSessions');
 
+class ObservableMap extends Map {
+  constructor() {
+    super();
+    this.fullScans = 0;
+  }
+
+  [Symbol.iterator]() {
+    this.fullScans += 1;
+    return super[Symbol.iterator]();
+  }
+}
+
 describe('chatbot session store', () => {
   let currentTime;
   let nextId;
@@ -86,5 +98,64 @@ describe('chatbot session store', () => {
     currentTime += 90;
 
     expect(store.resolve('user-1', id).id).toBe(id);
+  });
+
+  test('ordinary requests do not perform a full session scan', () => {
+    const sessions = new ObservableMap();
+    const observedStore = createChatbotSessionStore({
+      ttlMs: 100,
+      now: () => currentTime,
+      randomUUID: () => `observed-${++nextId}`,
+      sessions,
+    });
+    const { id } = observedStore.resolve('user-1');
+
+    currentTime += 10;
+    observedStore.resolve('user-1', id);
+    currentTime += 10;
+    observedStore.resolve('user-1', id);
+
+    expect(sessions.has(id)).toBe(true);
+    expect(sessions.fullScans).toBe(0);
+  });
+
+  test('scheduled sweep removes unrelated expired sessions', () => {
+    const sessions = new ObservableMap();
+    const observedStore = createChatbotSessionStore({
+      ttlMs: 100,
+      now: () => currentTime,
+      randomUUID: () => `observed-${++nextId}`,
+      sessions,
+    });
+    const stale = observedStore.resolve('user-1');
+    const active = observedStore.resolve('user-1');
+
+    currentTime += 90;
+    observedStore.resolve('user-1', active.id);
+    currentTime += 10;
+    observedStore.resolve('user-1', active.id);
+
+    expect(sessions.has(stale.id)).toBe(false);
+    expect(sessions.has(active.id)).toBe(true);
+    expect(sessions.fullScans).toBe(1);
+  });
+
+  test('requested expired session rejects before its scheduled sweep', () => {
+    const sessions = new ObservableMap();
+    const observedStore = createChatbotSessionStore({
+      ttlMs: 100,
+      cleanupIntervalMs: 1_000,
+      now: () => currentTime,
+      randomUUID: () => `observed-${++nextId}`,
+      sessions,
+    });
+    const { id } = observedStore.resolve('user-1');
+    currentTime += 100;
+
+    expect(() => observedStore.resolve('user-1', id)).toThrow(
+      expect.objectContaining({ code: 'SESSION_NOT_FOUND' }),
+    );
+    expect(sessions.has(id)).toBe(false);
+    expect(sessions.fullScans).toBe(0);
   });
 });
