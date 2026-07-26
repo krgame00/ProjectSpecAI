@@ -62,6 +62,7 @@ describe('ChatbotWindow safe rendering', () => {
     const wrapper = mount(ChatbotWindow, {
       props: {
         isOpen: true,
+        isAuthenticated: true,
         isTyping: false,
         history: [{
           role: 'bot',
@@ -100,6 +101,7 @@ describe('ChatbotWindow safe rendering', () => {
     const wrapper = mount(ChatbotWindow, {
       props: {
         isOpen: true,
+        isAuthenticated: true,
         isTyping: false,
         history: [confirmation]
       }

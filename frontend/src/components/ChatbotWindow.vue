@@ -32,7 +32,7 @@
       </div>
       
       <!-- Chat Body -->
-      <div class="chat-body" ref="chatBodyRef">
+      <div v-if="isAuthenticated" class="chat-body" ref="chatBodyRef">
         <div v-for="(msg, index) in history" :key="index" :class="['msg', msg.role]">
           <div class="msg-avatar" v-if="msg.role === 'bot'">🤖</div>
           <div class="msg-bubble">
@@ -61,9 +61,16 @@
           </div>
         </div>
       </div>
+      <div v-else class="guest-chat-access" data-test="guest-chat-access">
+        <h2>เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธเน€เธเธทเนเธญเนเธเนเธเธฒเธ SpecAI</h2>
+        <p>เธเธฃเธธเธ“เธฒเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธเธเนเธญเธ เน€เธเธทเนเธญเนเธเนเธเธฒเธเธเธนเนเธเนเธงเธข SpecAI</p>
+        <button type="button" data-test="chat-login" @click="$emit('request-login')">
+          เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ
+        </button>
+      </div>
       
       <!-- Input -->
-      <div class="chat-input-container">
+      <div v-if="isAuthenticated" class="chat-input-container">
         <div class="image-preview" v-if="selectedImagePreview">
           <div class="image-preview-wrapper">
              <img :src="selectedImagePreview" />
@@ -99,11 +106,15 @@ import { renderSafeMarkdown, sanitizeSources } from '../utils/chatSecurity';
 
 const props = defineProps({
   isOpen: Boolean,
+  isAuthenticated: {
+    type: Boolean,
+    default: false
+  },
   history: Array,
   isTyping: Boolean
 });
 
-const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build']);
+const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build', 'request-login']);
 
 const chatBodyRef = ref(null);
 const scrollToBottom = () => {
@@ -259,6 +270,44 @@ const handleSend = () => {
 .chat-body { 
   flex: 1; overflow-y: auto; padding: 1.25rem; 
   display: flex; flex-direction: column; gap: 1rem; 
+}
+.guest-chat-access {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 2rem;
+  text-align: center;
+}
+.guest-chat-access h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--text-xl);
+  line-height: 1.35;
+}
+.guest-chat-access p {
+  margin: 0;
+  color: var(--ink-mute);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.guest-chat-access button {
+  margin-top: 0.35rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.guest-chat-access button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 .msg { 
   display: flex; gap: 0.6rem; align-items: flex-start;
