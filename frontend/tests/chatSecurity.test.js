@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { createPinia, setActivePinia } from 'pinia'
 import ChatbotWindow from '../src/components/ChatbotWindow.vue'
+import { useCatalogStore } from '../src/stores/catalog'
+import { useChatbotStore } from '../src/stores/chatbot'
 import {
   renderSafeMarkdown,
   sanitizeSources,
@@ -83,5 +86,28 @@ describe('ChatbotWindow safe rendering', () => {
     expect(links[0].attributes('rel')).toBe('noopener noreferrer')
     expect(links[0].find('b').exists()).toBe(false)
     expect(links[0].text()).toContain('<b>documentation</b>')
+  })
+
+  test('renders the apply-build confirmation as supported bold markdown without literal HTML tags', () => {
+    setActivePinia(createPinia())
+    useCatalogStore().hardwareList = {
+      cpu: [{ id: 'cpu-1', name: 'CPU', price: 2500 }]
+    }
+    const chat = useChatbotStore()
+
+    chat.applyBuild({ cpu: 'cpu-1' })
+    const confirmation = chat.history.at(-1)
+    const wrapper = mount(ChatbotWindow, {
+      props: {
+        isOpen: true,
+        isTyping: false,
+        history: [confirmation]
+      }
+    })
+    const content = wrapper.get('.msg-content')
+
+    expect(confirmation.text).not.toContain('<strong>')
+    expect(content.find('strong').text()).toContain('จัดสเปคลงตะกร้าเรียบร้อยแล้วครับ!')
+    expect(content.text()).not.toContain('<strong>')
   })
 })

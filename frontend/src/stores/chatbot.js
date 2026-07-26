@@ -160,7 +160,7 @@ export const useChatbotStore = defineStore('chatbot', {
         }
       })
 
-      this.addMessage('bot', `✅ <strong>จัดสเปคลงตะกร้าเรียบร้อยแล้วครับ!</strong> ราคารวมทั้งหมด ฿${calculatedTotal.toLocaleString()} บาท สามารถตรวจสอบรายละเอียดและปรับแก้เพิ่มเติมได้ที่หน้าจอหลักครับ`)
+      this.addMessage('bot', `✅ **จัดสเปคลงตะกร้าเรียบร้อยแล้วครับ!** ราคารวมทั้งหมด ฿${calculatedTotal.toLocaleString()} บาท สามารถตรวจสอบรายละเอียดและปรับแก้เพิ่มเติมได้ที่หน้าจอหลักครับ`)
     }
   }
 })
