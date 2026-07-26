@@ -119,7 +119,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
     // 2. Context Injection for Order Queries
     let orderContext = "";
     const orderMatch = message.match(/ORD-\d{4}/i);
-    if (orderMatch) {
+    if (orderMatch && req.user.role === 'admin') {
       const orderId = orderMatch[0].toUpperCase();
       try {
         const db = require('../config/db');
@@ -280,7 +280,11 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
 
     res.json(jsonResponse);
   } catch (error) {
-    next(error);
+    console.error('Chatbot message error:', error);
+    if (res.headersSent) {
+      return next(error);
+    }
+    return res.status(502).json({ error: 'Chatbot service unavailable' });
   }
 });
 
@@ -474,10 +478,11 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     }
 
     console.error('Stream error:', error);
-    let errMsg = error.message || 'Stream error';
-    if (errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED')) {
+    const providerError = error.message || '';
+    let errMsg = 'Chatbot service unavailable';
+    if (providerError.includes('429') || providerError.includes('Too Many Requests') || providerError.includes('RESOURCE_EXHAUSTED')) {
        errMsg = "ขออภัยครับ ตอนนี้ระบบ AI ถูกใช้งานหนักเกินขีดจำกัด (Rate Limit) กรุณารอสัก 1 นาทีแล้วลองถามใหม่อีกครั้งครับ 🙏";
-    } else if (errMsg.includes('503') || errMsg.includes('UNAVAILABLE')) {
+    } else if (providerError.includes('503') || providerError.includes('UNAVAILABLE')) {
        errMsg = "ขออภัยครับ ตอนนี้เซิร์ฟเวอร์ AI ฝั่ง Google ทำงานหนักเกินไป (503 Unavailable) กรุณารอสักครู่แล้วลองใหม่ครับ 🙏";
     }
     res.write(`event: error\ndata: ${JSON.stringify({ error: errMsg })}\n\n`);

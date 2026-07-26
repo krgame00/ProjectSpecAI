@@ -10,17 +10,38 @@ const mockGenerateContentStream = jest.fn().mockImplementation(async () => ({
     yield { text: 'mock reply', candidates: [] };
   },
 }));
+const mockGenerateContent = jest.fn().mockImplementation(async ({ contents }) => ({
+  text: JSON.stringify({
+    reply: contents.at(-1).parts[0].text,
+    recommended_build: null,
+  }),
+}));
+const mockDbQuery = jest.fn().mockImplementation(async (sql) => {
+  if (/\bFROM\s+orders\b/i.test(sql)) {
+    return [[{
+      id: 'ORD-4321',
+      customer_name: 'Private Customer',
+      assembly_type: 'premium',
+      total_price: '98765.00',
+      status: 'shipped',
+    }]];
+  }
+
+  return [[]];
+});
 
 jest.mock('@google/genai', () => ({
   GoogleGenAI: jest.fn().mockImplementation(() => ({
     models: {
+      generateContent: mockGenerateContent,
       generateContentStream: mockGenerateContentStream,
     },
   })),
 }));
 
 jest.mock('../config/db', () => ({
-  query: jest.fn().mockResolvedValue([[]]),
+  isFallback: jest.fn(() => false),
+  query: mockDbQuery,
 }));
 
 jest.mock('../services/chatbotSessions', () => {
@@ -38,8 +59,8 @@ jest.mock('../services/chatbotSessions', () => {
 const { chatbotSessions } = require('../services/chatbotSessions');
 const chatbotRouter = require('../routes/chatbot');
 
-function tokenFor(id) {
-  return jwt.sign({ id }, process.env.JWT_SECRET);
+function tokenFor(id, role = 'customer') {
+  return jwt.sign({ id, role }, process.env.JWT_SECRET);
 }
 
 async function startServer(router = chatbotRouter) {
@@ -76,6 +97,24 @@ describe('chatbot routes security', () => {
 
   beforeAll(async () => {
     testServer = await startServer();
+  });
+
+  beforeEach(() => {
+    mockGenerateContent.mockClear();
+    mockGenerateContent.mockImplementation(async ({ contents }) => ({
+      text: JSON.stringify({
+        reply: contents.at(-1).parts[0].text,
+        recommended_build: null,
+      }),
+    }));
+    mockGenerateContentStream.mockClear();
+    mockGenerateContentStream.mockImplementation(async () => ({
+      async *[Symbol.asyncIterator]() {
+        yield { text: 'mock reply', candidates: [] };
+      },
+    }));
+    mockDbQuery.mockClear();
+    delete process.env.GEMINI_API_KEY;
   });
 
   afterAll(async () => {
@@ -246,6 +285,106 @@ describe('chatbot routes security', () => {
       );
     } finally {
       await noConfigServer.close();
+    }
+  });
+
+  test('does not query or expose order details to a customer', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+
+    const response = await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'Please check ORD-4321', history: [] },
+      tokenFor('customer-user', 'customer')
+    );
+    const body = await response.json();
+    const orderQueries = mockDbQuery.mock.calls.filter(([sql]) =>
+      /\bFROM\s+orders\b/i.test(sql)
+    );
+
+    expect(response.status).toBe(200);
+    expect(orderQueries).toHaveLength(0);
+    expect(body.reply).not.toContain('Private Customer');
+    expect(body.reply).not.toContain('98765');
+    expect(body.reply).not.toContain('premium');
+    expect(body.reply).not.toContain('shipped');
+  });
+
+  test('preserves order context lookup for an admin', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+
+    const response = await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'Please check ORD-4321', history: [] },
+      tokenFor('admin-user', 'admin')
+    );
+    const body = await response.json();
+    const orderQueries = mockDbQuery.mock.calls.filter(([sql]) =>
+      /\bFROM\s+orders\b/i.test(sql)
+    );
+
+    expect(response.status).toBe(200);
+    expect(orderQueries).toHaveLength(1);
+    expect(body.reply).toContain('Private Customer');
+    expect(body.reply).toContain('98,765');
+  });
+
+  test('redacts provider errors from message responses', async () => {
+    const providerSecret = 'provider-secret-message-7c19';
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+    mockGenerateContent.mockRejectedValueOnce(new Error(providerSecret));
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    try {
+      const response = await post(
+        testServer.baseUrl,
+        '/message',
+        { message: 'recommend a CPU', history: [] },
+        tokenFor('message-error-user')
+      );
+      const bodyText = await response.text();
+
+      expect(response.status).toBe(502);
+      expect(response.headers.get('content-type')).toContain('application/json');
+      expect(bodyText).not.toContain(providerSecret);
+      expect(JSON.parse(bodyText)).toEqual({
+        error: 'Chatbot service unavailable',
+      });
+      expect(consoleError).toHaveBeenCalledWith(
+        'Chatbot message error:',
+        expect.objectContaining({ message: providerSecret })
+      );
+    } finally {
+      consoleError.mockRestore();
+    }
+  });
+
+  test('redacts arbitrary provider errors from stream events', async () => {
+    const providerSecret = 'provider-secret-stream-a82f';
+    mockGenerateContentStream.mockRejectedValueOnce(new Error(providerSecret));
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    try {
+      const response = await post(
+        testServer.baseUrl,
+        '/stream',
+        { text: 'recommend a GPU' },
+        tokenFor('stream-error-user')
+      );
+      const body = await response.text();
+
+      expect(response.status).toBe(200);
+      expect(body).not.toContain(providerSecret);
+      expect(body).toContain(
+        'event: error\ndata: {"error":"Chatbot service unavailable"}\n\n'
+      );
+      expect(consoleError).toHaveBeenCalledWith(
+        'Stream error:',
+        expect.objectContaining({ message: providerSecret })
+      );
+    } finally {
+      consoleError.mockRestore();
     }
   });
 });
