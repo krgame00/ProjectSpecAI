@@ -39,9 +39,9 @@
             <div v-if="msg.image" class="msg-image">
                <img :src="msg.image" alt="Uploaded Image" />
             </div>
-            <div class="msg-content" v-html="renderMarkdown(msg.text)"></div>
-            <div v-if="msg.sources && msg.sources.length" class="sources-container">
-              <a v-for="(source, idx) in msg.sources" :key="idx" :href="source.uri" target="_blank" class="source-chip">
+            <div class="msg-content" v-html="renderSafeMarkdown(msg.text)"></div>
+            <div v-if="sanitizeSources(msg.sources).length" class="sources-container">
+              <a v-for="(source, idx) in sanitizeSources(msg.sources)" :key="idx" :href="source.uri" target="_blank" rel="noopener noreferrer" class="source-chip">
                 🌐 {{ source.title.length > 25 ? source.title.substring(0, 25) + '...' : source.title }}
               </a>
             </div>
@@ -95,6 +95,7 @@
 
 <script setup>
 import { ref, watch, nextTick } from 'vue';
+import { renderSafeMarkdown, sanitizeSources } from '../utils/chatSecurity';
 
 const props = defineProps({
   isOpen: Boolean,
@@ -158,15 +159,6 @@ const handleSend = () => {
   }
 };
 
-const renderMarkdown = (text) => {
-  if (!text) return '';
-  // Basic markdown to HTML
-  let html = text;
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  html = html.replace(/\n/g, '<br>');
-  return html;
-};
 </script>
 
 <style scoped>
