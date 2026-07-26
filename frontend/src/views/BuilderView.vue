@@ -41,6 +41,7 @@
 
     <!-- Floating Chatbot -->
     <ChatbotWindow 
+      v-if="authStore.isAuthenticated"
       :isOpen="isChatOpen"
       :history="chatHistory"
       :isTyping="isTyping"
@@ -66,9 +67,11 @@ import ChatbotWindow from '../components/ChatbotWindow.vue';
 import PrintTemplate from '../components/PrintTemplate.vue';
 import { useBuilderStore } from '../stores/builder';
 import { useCatalogStore } from '../stores/catalog';
+import { useAuthStore } from '../stores/auth';
 
 const builderStore = useBuilderStore();
 const catalogStore = useCatalogStore();
+const authStore = useAuthStore();
 
 const isLoading = computed(() => catalogStore.isLoading);
 
