@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-const ADMIN_EMAIL = 'admin@pc.com';
-const ADMIN_PASS = 'admin';
+const ADMIN_EMAIL = 'admin@pcspec.dev';
+const ADMIN_PASS = 'admin123';
 
 test.describe('Admin Panel', () => {
 

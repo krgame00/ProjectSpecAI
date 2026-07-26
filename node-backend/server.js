@@ -23,6 +23,10 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const configuredAuthRateLimitMax = Number.parseInt(process.env.AUTH_RATE_LIMIT_MAX, 10);
+const authRateLimitMax = Number.isInteger(configuredAuthRateLimitMax) && configuredAuthRateLimitMax > 0
+  ? configuredAuthRateLimitMax
+  : 15;
 
 // Trust reverse proxy (Railway, Vercel, etc.) for correct IP in rate limiting
 app.set('trust proxy', 1);
@@ -42,7 +46,7 @@ const globalLimiter = rateLimit({
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, 
-  max: 15, // Limit each IP to 15 login/register requests per window
+  max: authRateLimitMax,
   message: { error: 'คุณพยายามเข้าสู่ระบบ/สมัครสมาชิกบ่อยเกินไป กรุณารอ 15 นาที' }
 });
 

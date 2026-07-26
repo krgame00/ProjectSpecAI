@@ -82,7 +82,7 @@ jobs:
         working-directory: frontend
 
       - name: Run E2E tests
-        run: npx playwright test
+        run: npm run test:e2e
         working-directory: frontend
         env:
           JWT_SECRET: pcspec_test_secret_2026
