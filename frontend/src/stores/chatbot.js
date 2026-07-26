@@ -86,6 +86,7 @@ export const useChatbotStore = defineStore('chatbot', {
         const reader = response.body.getReader()
         const decoder = new TextDecoder('utf-8')
         let buffer = ''
+        let currentEvent = 'message'
 
         while (true) {
           const { done, value } = await reader.read()
@@ -94,8 +95,6 @@ export const useChatbotStore = defineStore('chatbot', {
           buffer += decoder.decode(value, { stream: true })
           const lines = buffer.split('\n')
           buffer = lines.pop() || ''
-
-          let currentEvent = 'message'
 
           for (const line of lines) {
             if (line.startsWith('event: ')) {
@@ -128,6 +127,7 @@ export const useChatbotStore = defineStore('chatbot', {
                     this.history[botMsgIndex].recommended_build = null
                   }
                 } catch (err) {}
+                currentEvent = 'message'
               }
             }
           }

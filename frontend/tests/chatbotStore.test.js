@@ -22,6 +22,24 @@ const sseResponse = (...events) => {
   }
 }
 
+const chunkedSseResponse = (...chunks) => {
+  const encodedChunks = chunks.map((chunk) => new TextEncoder().encode(chunk))
+  let index = 0
+
+  return {
+    ok: true,
+    status: 200,
+    body: {
+      getReader: () => ({
+        read: async () => {
+          if (index >= encodedChunks.length) return { done: true, value: undefined }
+          return { done: false, value: encodedChunks[index++] }
+        }
+      })
+    }
+  }
+}
+
 const httpError = (status) => ({ ok: false, status })
 
 describe('Chatbot Store Tests', () => {
@@ -166,6 +184,19 @@ describe('Chatbot Store Tests', () => {
     expect(chat.history.slice(1)).toEqual([
       expect.objectContaining({ role: 'bot', text: 'recovered' })
     ])
+  })
+
+  test('keeps the SSE event type when its data arrives in a later reader chunk', async () => {
+    const auth = useAuthStore()
+    auth.setUser({ id: 7 }, 'member.jwt')
+    fetch.mockResolvedValue(chunkedSseResponse(
+      'event: session\n',
+      'data: {"sessionId":"chunked-session"}\n'
+    ))
+
+    await useChatbotStore().processBotResponse('hello')
+
+    expect(localStorage.getItem('chatbot_session_id')).toBe('chunked-session')
   })
 
   test('stops after the second 404 and surfaces one error message', async () => {
