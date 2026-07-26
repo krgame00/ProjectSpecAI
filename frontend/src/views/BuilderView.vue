@@ -41,13 +41,14 @@
 
     <!-- Floating Chatbot -->
     <ChatbotWindow 
-      v-if="authStore.isAuthenticated"
       :isOpen="isChatOpen"
       :history="chatHistory"
       :isTyping="isTyping"
+      :isAuthenticated="authStore.isAuthenticated"
       @toggle-chat="$emit('toggle-chat', $event)"
       @send-message="$emit('send-message', $event)"
       @apply-build="$emit('apply-build', $event)"
+      @request-login="$emit('request-login')"
     />
 
     <!-- Print Template (Hidden by default, shown on @media print) -->
@@ -91,7 +92,8 @@ const emit = defineEmits([
   'checkout',
   'toggle-chat',
   'send-message',
-  'apply-build'
+  'apply-build',
+  'request-login'
 ]);
 
 const categories = [
