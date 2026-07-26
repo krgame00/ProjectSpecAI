@@ -23,7 +23,7 @@
             <button class="btn btn-outline-danger btn-sm" @click="logout">ออกจากระบบ</button>
           </div>
           <div v-else>
-            <button class="btn btn-outline btn-sm" @click="showLoginModal = true">เข้าสู่ระบบ</button>
+            <button class="btn btn-outline btn-sm" @click="openLoginModal">เข้าสู่ระบบ</button>
           </div>
         </div>
       </div>
@@ -51,6 +51,7 @@
           @toggle-chat="chatbotStore.toggle"
           @send-message="chatbotStore.sendMessage"
           @apply-build="chatbotStore.applyBuild"
+          @request-login="openLoginModal"
         />
       </Transition>
     </router-view>
@@ -130,6 +131,11 @@ const authTab = ref('login');
 const loginForm = reactive({ email: '', password: '' });
 const registerForm = reactive({ name: '', email: '', password: '' });
 const router = useRouter();
+
+const openLoginModal = () => {
+  authTab.value = 'login'
+  showLoginModal.value = true
+}
 
 const categories = [
   { id: 'cpu', name: 'CPU', tooltip: 'สมองของระบบ' },

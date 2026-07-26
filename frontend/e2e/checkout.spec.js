@@ -3,11 +3,12 @@ import { test, expect } from '@playwright/test';
 const TEST_EMAIL = `co_${Date.now()}@test.com`;
 const TEST_PASS = 'checkout123';
 const TEST_NAME = 'Checkout User';
+const API_BASE = process.env.E2E_API_BASE || 'http://127.0.0.1:3001/api/v1';
 
 test.describe('Checkout Flow', () => {
 
   test.beforeAll(async ({ request }) => {
-    await request.post('http://localhost:3000/api/v1/auth/register', {
+    await request.post(`${API_BASE}/auth/register`, {
       data: { name: TEST_NAME, email: TEST_EMAIL, password: TEST_PASS }
     });
   });

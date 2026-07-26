@@ -44,9 +44,11 @@
       :isOpen="isChatOpen"
       :history="chatHistory"
       :isTyping="isTyping"
+      :isAuthenticated="authStore.isAuthenticated"
       @toggle-chat="$emit('toggle-chat', $event)"
       @send-message="$emit('send-message', $event)"
       @apply-build="$emit('apply-build', $event)"
+      @request-login="$emit('request-login')"
     />
 
     <!-- Print Template (Hidden by default, shown on @media print) -->
@@ -66,9 +68,11 @@ import ChatbotWindow from '../components/ChatbotWindow.vue';
 import PrintTemplate from '../components/PrintTemplate.vue';
 import { useBuilderStore } from '../stores/builder';
 import { useCatalogStore } from '../stores/catalog';
+import { useAuthStore } from '../stores/auth';
 
 const builderStore = useBuilderStore();
 const catalogStore = useCatalogStore();
+const authStore = useAuthStore();
 
 const isLoading = computed(() => catalogStore.isLoading);
 
@@ -88,7 +92,8 @@ const emit = defineEmits([
   'checkout',
   'toggle-chat',
   'send-message',
-  'apply-build'
+  'apply-build',
+  'request-login'
 ]);
 
 const categories = [

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { useBuilderStore } from './builder'
 import { useCatalogStore } from './catalog'
+import { useAuthStore } from './auth'
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai-production.up.railway.app/api/v1' : 'http://localhost:3001/api/v1')
 
@@ -40,19 +41,42 @@ export const useChatbotStore = defineStore('chatbot', {
         this.processBotResponse(text, image)
       }, 100)
     },
-    async processBotResponse(text, image = null) {
+    async processBotResponse(text, image = null, retriedSession = false) {
       try {
-        let sessionId = localStorage.getItem('chatbot_session_id')
-        if (!sessionId) {
-          sessionId = crypto.randomUUID()
-          localStorage.setItem('chatbot_session_id', sessionId)
+        const authStore = useAuthStore()
+        if (!authStore.token) {
+          this.addMessage('bot', 'กรุณาเข้าสู่ระบบก่อนใช้งานแชตบอต')
+          return
         }
+
+        const sessionId = localStorage.getItem('chatbot_session_id')
+        const requestBody = { text, image }
+        if (sessionId) requestBody.sessionId = sessionId
 
         const response = await fetch(`${API_BASE}/chatbot/stream`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text, image, sessionId })
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authStore.token}`
+          },
+          body: JSON.stringify(requestBody)
         })
+
+        if (response.status === 401) {
+          authStore.logout()
+          localStorage.removeItem('chatbot_session_id')
+          this.addMessage('bot', 'การเข้าสู่ระบบหมดอายุ กรุณาเข้าสู่ระบบอีกครั้ง')
+          return
+        }
+
+        if (response.status === 404) {
+          localStorage.removeItem('chatbot_session_id')
+          if (!retriedSession) {
+            return this.processBotResponse(text, image, true)
+          }
+          this.addMessage('bot', 'ไม่พบเซสชันแชต กรุณาลองส่งข้อความอีกครั้ง')
+          return
+        }
 
         if (!response.ok) throw new Error('API request failed')
 
@@ -62,6 +86,7 @@ export const useChatbotStore = defineStore('chatbot', {
         const reader = response.body.getReader()
         const decoder = new TextDecoder('utf-8')
         let buffer = ''
+        let currentEvent = 'message'
 
         while (true) {
           const { done, value } = await reader.read()
@@ -70,8 +95,6 @@ export const useChatbotStore = defineStore('chatbot', {
           buffer += decoder.decode(value, { stream: true })
           const lines = buffer.split('\n')
           buffer = lines.pop() || ''
-
-          let currentEvent = 'message'
 
           for (const line of lines) {
             if (line.startsWith('event: ')) {
@@ -104,6 +127,7 @@ export const useChatbotStore = defineStore('chatbot', {
                     this.history[botMsgIndex].recommended_build = null
                   }
                 } catch (err) {}
+                currentEvent = 'message'
               }
             }
           }
@@ -136,7 +160,7 @@ export const useChatbotStore = defineStore('chatbot', {
         }
       })
 
-      this.addMessage('bot', `✅ <strong>จัดสเปคลงตะกร้าเรียบร้อยแล้วครับ!</strong> ราคารวมทั้งหมด ฿${calculatedTotal.toLocaleString()} บาท สามารถตรวจสอบรายละเอียดและปรับแก้เพิ่มเติมได้ที่หน้าจอหลักครับ`)
+      this.addMessage('bot', `✅ **จัดสเปคลงตะกร้าเรียบร้อยแล้วครับ!** ราคารวมทั้งหมด ฿${calculatedTotal.toLocaleString()} บาท สามารถตรวจสอบรายละเอียดและปรับแก้เพิ่มเติมได้ที่หน้าจอหลักครับ`)
     }
   }
 })

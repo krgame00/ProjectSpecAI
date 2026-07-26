@@ -32,16 +32,16 @@
       </div>
       
       <!-- Chat Body -->
-      <div class="chat-body" ref="chatBodyRef">
+      <div v-if="isAuthenticated" class="chat-body" ref="chatBodyRef">
         <div v-for="(msg, index) in history" :key="index" :class="['msg', msg.role]">
           <div class="msg-avatar" v-if="msg.role === 'bot'">🤖</div>
           <div class="msg-bubble">
             <div v-if="msg.image" class="msg-image">
                <img :src="msg.image" alt="Uploaded Image" />
             </div>
-            <div class="msg-content" v-html="renderMarkdown(msg.text)"></div>
-            <div v-if="msg.sources && msg.sources.length" class="sources-container">
-              <a v-for="(source, idx) in msg.sources" :key="idx" :href="source.uri" target="_blank" class="source-chip">
+            <div class="msg-content" v-html="renderSafeMarkdown(msg.text)"></div>
+            <div v-if="sanitizeSources(msg.sources).length" class="sources-container">
+              <a v-for="(source, idx) in sanitizeSources(msg.sources)" :key="idx" :href="source.uri" target="_blank" rel="noopener noreferrer" class="source-chip">
                 🌐 {{ source.title.length > 25 ? source.title.substring(0, 25) + '...' : source.title }}
               </a>
             </div>
@@ -61,9 +61,16 @@
           </div>
         </div>
       </div>
+      <div v-else class="guest-chat-access" data-test="guest-chat-access">
+        <h2>เข้าสู่ระบบเพื่อใช้งาน SpecAI</h2>
+        <p>กรุณาเข้าสู่ระบบก่อน เพื่อใช้งานผู้ช่วย SpecAI</p>
+        <button type="button" data-test="chat-login" @click="$emit('request-login')">
+          เข้าสู่ระบบ
+        </button>
+      </div>
       
       <!-- Input -->
-      <div class="chat-input-container">
+      <div v-if="isAuthenticated" class="chat-input-container">
         <div class="image-preview" v-if="selectedImagePreview">
           <div class="image-preview-wrapper">
              <img :src="selectedImagePreview" />
@@ -95,14 +102,19 @@
 
 <script setup>
 import { ref, watch, nextTick } from 'vue';
+import { renderSafeMarkdown, sanitizeSources } from '../utils/chatSecurity';
 
 const props = defineProps({
   isOpen: Boolean,
+  isAuthenticated: {
+    type: Boolean,
+    default: false
+  },
   history: Array,
   isTyping: Boolean
 });
 
-const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build']);
+const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build', 'request-login']);
 
 const chatBodyRef = ref(null);
 const scrollToBottom = () => {
@@ -126,12 +138,32 @@ const fileInput = ref(null);
 const selectedImageBase64 = ref(null);
 const selectedImagePreview = ref(null);
 const selectedImageMime = ref(null);
+let activeImageReader = null;
+let imageReadGeneration = 0;
+
+const cancelActiveImageRead = () => {
+  imageReadGeneration += 1;
+  const reader = activeImageReader;
+  activeImageReader = null;
+  if (typeof reader?.abort === 'function') {
+    reader.abort();
+  }
+};
 
 const handleFileChange = (e) => {
   const file = e.target.files[0];
   if (!file) return;
+  cancelActiveImageRead();
+  const generation = imageReadGeneration;
   const reader = new FileReader();
+  activeImageReader = reader;
   reader.onload = (e) => {
+    if (
+      generation !== imageReadGeneration ||
+      reader !== activeImageReader ||
+      !props.isAuthenticated
+    ) return;
+    activeImageReader = null;
     selectedImagePreview.value = e.target.result;
     selectedImageMime.value = file.type;
     selectedImageBase64.value = e.target.result.split(',')[1];
@@ -140,11 +172,19 @@ const handleFileChange = (e) => {
 };
 
 const clearImage = () => {
+  cancelActiveImageRead();
   selectedImagePreview.value = null;
   selectedImageBase64.value = null;
   selectedImageMime.value = null;
   if (fileInput.value) fileInput.value.value = '';
 };
+
+watch(() => props.isAuthenticated, (isAuthenticated) => {
+  if (!isAuthenticated) {
+    userInput.value = '';
+    clearImage();
+  }
+});
 
 const handleSend = () => {
   if (userInput.value.trim() || selectedImageBase64.value) {
@@ -158,15 +198,6 @@ const handleSend = () => {
   }
 };
 
-const renderMarkdown = (text) => {
-  if (!text) return '';
-  // Basic markdown to HTML
-  let html = text;
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  html = html.replace(/\n/g, '<br>');
-  return html;
-};
 </script>
 
 <style scoped>
@@ -267,6 +298,44 @@ const renderMarkdown = (text) => {
 .chat-body { 
   flex: 1; overflow-y: auto; padding: 1.25rem; 
   display: flex; flex-direction: column; gap: 1rem; 
+}
+.guest-chat-access {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 2rem;
+  text-align: center;
+}
+.guest-chat-access h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--text-xl);
+  line-height: 1.35;
+}
+.guest-chat-access p {
+  margin: 0;
+  color: var(--ink-mute);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.guest-chat-access button {
+  margin-top: 0.35rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.guest-chat-access button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 .msg { 
   display: flex; gap: 0.6rem; align-items: flex-start;
