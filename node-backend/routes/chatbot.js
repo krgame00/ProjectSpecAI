@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { GoogleGenAI } = require('@google/genai');
-const crypto = require('crypto');
+const { authMiddleware } = require('../middleware/authMiddleware');
+const {
+  chatbotRateLimiter,
+  validateChatbotPayload,
+} = require('../middleware/chatbotSecurity');
+const { chatbotSessions } = require('../services/chatbotSessions');
 
 // Initialize Gemini Client
 let aiConfig = {};
@@ -44,13 +49,6 @@ const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชา�
 แต่ถ้าชิ้นส่วนไหนที่คุณแนะนำ **ไม่มีในระบบ** ให้ปล่อยค่าฟิลด์ ID ของชิ้นส่วนนั้นเป็น null ไปได้เลย (ระบบจะจัดการต่อเอง)`;
 
 // ---------- เก็บประวัติแชทต่อ session (ในหน่วยความจำ) ----------
-const sessions = new Map();
-
-function getHistory(sessionId) {
-  if (!sessions.has(sessionId)) sessions.set(sessionId, []);
-  return sessions.get(sessionId);
-}
-
 function buildParts({ text, image }) {
   const parts = [];
   if (text && text.trim()) parts.push({ text });
@@ -97,7 +95,7 @@ function checkInputGuardrails(input) {
 }
 
 // POST /api/chatbot/message
-router.post('/message', async (req, res, next) => {
+router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPayload, async (req, res, next) => {
   try {
     const { message, history } = req.body;
     if (!message) return res.status(400).json({ error: 'Message is required' });
@@ -287,14 +285,12 @@ router.post('/message', async (req, res, next) => {
 });
 
 // POST /api/chatbot/stream
-router.post('/stream', async (req, res, next) => {
+router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayload, async (req, res, next) => {
   try {
     const { text, image, sessionId } = req.body;
-    const sid = sessionId || crypto.randomUUID();
-
-    if (!text && !image) {
-      return res.status(400).json({ error: 'Message or image is required' });
-    }
+    const session = chatbotSessions.resolve(req.user.id, sessionId);
+    const sid = session.id;
+    const history = session.history;
 
     if (text && checkInputGuardrails(text)) {
       res.setHeader('Content-Type', 'text/event-stream');
@@ -319,8 +315,6 @@ router.post('/stream', async (req, res, next) => {
     }
 
     const userParts = buildParts({ text, image });
-    const history = getHistory(sid);
-    
     // Inject catalog context if text exists
     let catalogContext = "";
     if (text) {
@@ -469,6 +463,10 @@ router.post('/stream', async (req, res, next) => {
 
     res.write('event: done\ndata: {}\n\n');
   } catch (error) {
+    if (error.code === 'SESSION_NOT_FOUND' && !res.headersSent) {
+      return res.status(404).json({ error: 'Chat session not found' });
+    }
+
     console.error('Stream error:', error);
     let errMsg = error.message || 'Stream error';
     if (errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED')) {
@@ -484,12 +482,17 @@ router.post('/stream', async (req, res, next) => {
 });
 
 // POST /api/chatbot/clear
-router.post('/clear', (req, res) => {
-  const { sessionId } = req.body;
-  if (sessionId && sessions.has(sessionId)) {
-    sessions.delete(sessionId);
+router.post('/clear', authMiddleware, (req, res, next) => {
+  try {
+    chatbotSessions.clear(req.user.id, req.body.sessionId);
+    res.json({ ok: true });
+  } catch (error) {
+    if (error.code === 'SESSION_NOT_FOUND') {
+      return res.status(404).json({ error: 'Chat session not found' });
+    }
+
+    return next(error);
   }
-  res.json({ ok: true });
 });
 
 module.exports = router;
