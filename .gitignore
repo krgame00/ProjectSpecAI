@@ -21,6 +21,7 @@ test-results/
 old_dump*.sql
 catalog.json
 dump.html
+database_view.html
 frontend/public/gridgeist-*.html
 urls*.txt
 scraped_urls.txt
