@@ -108,35 +108,21 @@ const props = defineProps({
 defineEmits(['set-active-category', 'remove-item', 'checkout']);
 
 import { computed } from 'vue';
+import { calcTotalTdp } from '../stores/builder';
 
 const selectedCount = computed(() => {
   return Object.values(props.build).filter(v => v !== null).length;
 });
 
 const estimatedWattage = computed(() => {
-  let total = 0;
   if (!props.catalog) return 0;
-  // CPU
   const cpu = props.catalog.cpu?.find(i => i.id === props.build.cpu);
-  if (cpu) {
-    if (cpu.tdp) total += Number(cpu.tdp);
-    else if (cpu.specifications?.TDP) total += parseInt(cpu.specifications.TDP) || 65;
-    else total += 65;
-  }
-  // GPU
   const gpu = props.catalog.gpu?.find(i => i.id === props.build.gpu);
-  if (gpu) {
-    if (gpu.tdp) total += Number(gpu.tdp);
-    else if (gpu.specifications?.TDP) total += parseInt(gpu.specifications.TDP) || 150;
-    else total += 150;
-  }
-  // System Components (Motherboard, RAM, Storage, Fans)
-  if (props.build.mobo) total += 35;
-  if (props.build.ram) total += 10;
-  if (props.build.storage) total += 5;
-  if (!props.build.mobo && !props.build.ram && !props.build.storage && (cpu || gpu)) total += 50;
-
-  return Math.round(total);
+  const mobo = props.build.mobo;
+  const ram = props.build.ram;
+  const storage = props.build.storage;
+  
+  return calcTotalTdp(cpu, gpu, mobo, ram, storage);
 });
 
 const recommendedWattage = computed(() => {

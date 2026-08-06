@@ -1,3 +1,37 @@
+# MySQL Database HTML Exporter Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Create a Node.js export script and NPM command to generate a standalone interactive HTML database viewer (`database_view.html`) from MySQL.
+
+**Architecture:** A Node.js script connects to MySQL using `mysql2/promise`, queries all table schemas and records, masks sensitive fields, and embeds data into a single responsive HTML template with CSS/JS for tab switching, search, and JSON formatting.
+
+**Tech Stack:** Node.js, `mysql2/promise`, Vanilla HTML5/CSS3/JS, NPM scripts.
+
+## Global Constraints
+
+- Must read credentials from `node-backend/.env`
+- Must output `database_view.html` to workspace root `c:\Users\PC\Downloads\PCSpec\database_view.html`
+- Must add `"export-db"` script to `node-backend/package.json`
+- Must mask `password` fields in `users` table as `••••••••`
+
+---
+
+### Task 1: Create Database Exporter Script (`export_db_to_html.js`)
+
+**Files:**
+- Create: `node-backend/scripts/export_db_to_html.js`
+- Modify: `node-backend/package.json`
+
+**Interfaces:**
+- Consumes: MySQL Connection via `mysql2/promise` using `.env`
+- Produces: `database_view.html` in workspace root directory
+
+- [ ] **Step 1: Write exporter script `export_db_to_html.js`**
+
+Create `node-backend/scripts/export_db_to_html.js`:
+
+```javascript
 require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
 const mysql = require('mysql2/promise');
 const fs = require('fs');
@@ -26,16 +60,11 @@ async function exportDatabase() {
     console.log(`📦 Exporting table: ${tableName}`);
     const [rows] = await connection.query(`SELECT * FROM \`${tableName}\``);
     
-    // Mask sensitive fields and parse JSON string columns if needed
+    // Mask sensitive fields
     const sanitizedRows = rows.map(r => {
       const cleanRow = { ...r };
       if ('password' in cleanRow) {
         cleanRow.password = '••••••••';
-      }
-      if (typeof cleanRow.specifications === 'string') {
-        try {
-          cleanRow.specifications = JSON.parse(cleanRow.specifications);
-        } catch(e) {}
       }
       return cleanRow;
     });
@@ -45,16 +74,6 @@ async function exportDatabase() {
   }
 
   await connection.end();
-
-  const exportDir = path.join(__dirname, '../../database-export');
-  if (!fs.existsSync(exportDir)) {
-    fs.mkdirSync(exportDir, { recursive: true });
-  }
-
-  // Save JSON dump
-  const jsonPath = path.join(exportDir, 'all_database_data.json');
-  fs.writeFileSync(jsonPath, JSON.stringify(databaseData, null, 2), 'utf8');
-  console.log(`✅ Saved JSON dump to: ${jsonPath}`);
 
   const generatedAt = new Date().toLocaleString('th-TH', { dateStyle: 'medium', timeStyle: 'medium' });
 
@@ -325,12 +344,37 @@ async function exportDatabase() {
 </body>
 </html>`;
 
-  const htmlPath = path.join(exportDir, 'database_view.html');
-  fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-  console.log(`✅ Successfully exported HTML inspector to: ${htmlPath}`);
+  const outputPath = path.join(__dirname, '../../database_view.html');
+  fs.writeFileSync(outputPath, htmlContent, 'utf8');
+  console.log(`✅ Successfully exported database to: ${outputPath}`);
 }
 
 exportDatabase().catch(err => {
   console.error('❌ Failed to export database:', err);
   process.exit(1);
 });
+```
+
+- [ ] **Step 2: Add `"export-db"` command to `node-backend/package.json`**
+
+Modify `node-backend/package.json` scripts section to include `"export-db": "node scripts/export_db_to_html.js"`.
+
+- [ ] **Step 3: Run exporter script to generate `database_view.html`**
+
+Run: `node node-backend/scripts/export_db_to_html.js`
+Expected output: `✅ Successfully exported database to: .../database_view.html`
+
+- [ ] **Step 4: Verify `database_view.html` exists and contains exported tables**
+
+Check file existence: `database_view.html` in workspace root.
+
+- [ ] **Step 5: Add `database_view.html` to `.gitignore`**
+
+Ensure `database_view.html` is in `.gitignore` so exported DB snapshots are not committed.
+
+- [ ] **Step 6: Commit changes**
+
+```bash
+git add node-backend/scripts/export_db_to_html.js node-backend/package.json .gitignore
+git commit -m "feat: add database HTML exporter script and npm command"
+```

@@ -21,7 +21,8 @@ const routes = [
   {
     path: '/checkout',
     name: 'checkout',
-    component: () => import('../components/CheckoutView.vue')
+    component: () => import('../components/CheckoutView.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/articles',
