@@ -1,0 +1,988 @@
+{
+  "cpu": [
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM4 RYZEN 5 5500 3.6GHz 6C 12T",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product735_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4188/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am4-ryzen-5-5500-3.6ghz-6c-12t"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM4 RYZEN 5 5500GT 3.6GHz 6C 12T (MPK) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products130112_800.jpg",
+      "url": "https://www.ihavecpu.com/product/38950/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am4-ryzen-5-5500gt-3.6ghz-6c-12t-(mpk)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I5-12400F 2.5GHz 6C 12T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products149504_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42261/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i5-12400f-2.5ghz-6c-12t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM4 RYZEN 5 5600GT 3.6GHz 6C 12T (MPK) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products162030_800.jpg",
+      "url": "https://www.ihavecpu.com/product/44977/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am4-ryzen-5-5600gt-3.6ghz-6c-12t-(mpk)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM4 RYZEN 5 5600 3.5GHz 6C 12T",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product736_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4289/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am4-ryzen-5-5600-3.5ghz-6c-12t"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM4 RYZEN 5 5600GT 3.6GHz 6C 12T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product30275_800.jpg",
+      "url": "https://www.ihavecpu.com/product/14351/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am4-ryzen-5-5600gt-3.6ghz-6c-12t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I3-14100 3.5GHz 4C 8T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products179534_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48777/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i3-14100-3.5ghz-4c-8t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 5 7500F 3.7GHz 6C 12T (MPK)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products120155_800.jpg",
+      "url": "https://www.ihavecpu.com/product/11025/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-5-7500f-3.7ghz-6c-12t-(mpk)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1851 CORE ULTRA 5 225F  3.3GHz 10C 10T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products75639_800.jpg",
+      "url": "https://www.ihavecpu.com/product/27572/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1851-core-ultra-5-225f-3.3ghz-10c-10t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 5 7500F 3.7GHz 6C 12T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products63031_800.jpg",
+      "url": "https://www.ihavecpu.com/product/24243/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-5-7500f-3.7ghz-6c-12t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I3-14100 3.5GHz 4C 8T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180224_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48828/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i3-14100-3.5ghz-4c-8t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 5 8500G 3.5GHz 6C 12T",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products123931_800.jpg",
+      "url": "https://www.ihavecpu.com/product/14356/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-5-8500g-3.5ghz-6c-12t"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I5-14400F 2.5GHz 10C 16T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products150766_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42761/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i5-14400f-2.5ghz-10c-16t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 7 8700F 4.1GHz 8C 16T (MPK) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products120391_800.jpg",
+      "url": "https://www.ihavecpu.com/product/19307/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-7-8700f-4.1ghz-8c-16t-(mpk)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I5-14400 2.5GHz 10C 16T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products152724_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42929/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i5-14400-2.5ghz-10c-16t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I5-14600KF 3.5GHz 14C 20T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products181332_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48890/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i5-14600kf-3.5ghz-14c-20t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM4 RYZEN 7 5800XT 3.8GHz 8C 16T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products169821_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47090/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am4-ryzen-7-5800xt-3.8ghz-8c-16t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I7-14700F 2.1GHz 20C 28T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products160158_800.jpg",
+      "url": "https://www.ihavecpu.com/product/44893/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i7-14700f-2.1ghz-20c-28t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I7-14700KF 3.4GHz 20C 28T",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product40473_800.jpg",
+      "url": "https://www.ihavecpu.com/product/11030/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i7-14700kf-3.4ghz-20c-28t"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1851 CORE ULTRA 7 270K PLUS 3.7GHz 24C 24T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products160622_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45010/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1851-core-ultra-7-270k-plus-3.7ghz-24c-24t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 7 7800X3D 4.2 GHz 8C 16T",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product16311_800.jpg",
+      "url": "https://www.ihavecpu.com/product/8640/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-7-7800x3d-4.2-ghz-8c-16t"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 9 9900X 4.4GHz 12C 24T (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products61880_800.jpg",
+      "url": "https://www.ihavecpu.com/product/22902/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-9-9900x-4.4ghz-12c-24t-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) INTEL 1700 CORE I9-14900K 3.2GHz 24C 32T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180229_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48827/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-intel-1700-core-i9-14900k-3.2ghz-24c-32t-(tray)-(3y)"
+    },
+    {
+      "category_id": 1,
+      "category_slug": "cpu",
+      "name": "CPU (ซีพียู) AMD AM5 RYZEN 7 9800X3D 4.7GHz 8C 16T (TRAY) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180976_800.jpg",
+      "url": "https://www.ihavecpu.com/product/34701/cpu-(%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%B9)-amd-am5-ryzen-7-9800x3d-4.7ghz-8c-16t-(tray)-(3y)"
+    }
+  ],
+  "mobo": [
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM4) ASROCK A520M-HVS (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product7282_800.jpg",
+      "url": "https://www.ihavecpu.com/product/5069/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am4)-asrock-a520m-hvs-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM4) MSI A520M-A-PRO (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product7422_800.jpg",
+      "url": "https://www.ihavecpu.com/product/5512/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am4)-msi-a520m-a-pro-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M K V2 (REV.1.2) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products174204_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47928/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am4)-gigabyte-a520m-k-v2-(rev.1.2)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) COLORFUL H610M-D V20A DDR4 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products175142_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48002/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-colorful-h610m-d-v20a-ddr4-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) MSI PRO H610M-S DDR4 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products42273_800.jpg",
+      "url": "https://www.ihavecpu.com/product/18893/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-msi-pro-h610m-s-ddr4-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM4) GIGABYTE A520M H ARGB (REV.1.0) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products170705_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47216/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am4)-gigabyte-a520m-h-argb-(rev.1.0)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K DDR4 (REV.2.0) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products40588_800.jpg",
+      "url": "https://www.ihavecpu.com/product/14139/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-gigabyte-h610m-k-ddr4-(rev.2.0)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D4 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products79776_800.jpg",
+      "url": "https://www.ihavecpu.com/product/27910/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-asrock-h610m-h2-m.2-d4-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) GIGABYTE H610M K V2 DDR5 (REV.1.0) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products73209_800.jpg",
+      "url": "https://www.ihavecpu.com/product/26650/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-gigabyte-h610m-k-v2-ddr5-(rev.1.0)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) ASROCK H610M-H2/M.2-D5 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products124335_800.jpg",
+      "url": "https://www.ihavecpu.com/product/37756/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-asrock-h610m-h2-m.2-d5-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM4) ASUS PRIME A520M-K (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product1048_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4524/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am4)-asus-prime-a520m-k-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM5) MSI PRO A620AM-B EVO (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products143659_800.jpg",
+      "url": "https://www.ihavecpu.com/product/41303/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am5)-msi-pro-a620am-b-evo-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM5) ASROCK A620AM-HVS (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products161922_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45271/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am5)-asrock-a620am-hvs-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM5) GIGABYTE A620M H (REV.2.2) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products175297_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48009/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am5)-gigabyte-a620m-h-(rev.2.2)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(AM4) ASROCK B550M-HDV",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products80559_800.jpg",
+      "url": "https://www.ihavecpu.com/product/13943/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(am4)-asrock-b550m-hdv"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-E DDR5 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products121736_800.jpg",
+      "url": "https://www.ihavecpu.com/product/14003/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-msi-pro-b760m-e-ddr5-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-CS D4 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products80119_800.jpg",
+      "url": "https://www.ihavecpu.com/product/28421/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-asus-prime-h610m-cs-d4-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) GIGABYTE B760M H DDR4 (REV.1.0) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products72849_800.jpg",
+      "url": "https://www.ihavecpu.com/product/26653/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-gigabyte-b760m-h-ddr4-(rev.1.0)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1851) GIGABYTE H810M K (REV 1.0) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products98937_800.jpg",
+      "url": "https://www.ihavecpu.com/product/32456/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1851)-gigabyte-h810m-k-(rev-1.0)-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1851) ASROCK H810M-X (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products135739_800.jpg",
+      "url": "https://www.ihavecpu.com/product/40412/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1851)-asrock-h810m-x-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1851) MSI PRO H810M-C EX (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products173028_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47736/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1851)-msi-pro-h810m-c-ex-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) ASUS PRIME H610M-K DDR5 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products46036_800.jpg",
+      "url": "https://www.ihavecpu.com/product/19486/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-asus-prime-h610m-k-ddr5-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด)(1700) MSI PRO B760M-P DDR5 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products121706_800.jpg",
+      "url": "https://www.ihavecpu.com/product/11477/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)(1700)-msi-pro-b760m-p-ddr5-(3y)"
+    },
+    {
+      "category_id": 2,
+      "category_slug": "mobo",
+      "name": "MAINBOARD (เมนบอร์ด) (1700) ASROCK B760M PG LIGHTNING DDR4 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product32547_150.png",
+      "url": "https://www.ihavecpu.com/product/11438/mainboard-(%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94)-(1700)-asrock-b760m-pg-lightning-ddr4-(3y)"
+    }
+  ],
+  "ram": [
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) HIKSEMI ARMOR 8GB (8x1) DDR4 3200Mhz BLACK (HSC408U32D2) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products137192_800.jpg",
+      "url": "https://www.ihavecpu.com/product/40478/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-hiksemi-armor-8gb-(8x1)-ddr4-3200mhz-black-(hsc408u32d2)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) ADATA XPG GAMMIX X D35 8GB (8x1) DDR4 3200MHz BLACK (AX4U32008G16A-SBKD35) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products161883_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45266/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-adata-xpg-gammix-x-d35-8gb-(8x1)-ddr4-3200mhz-black-(ax4u32008g16a-sbkd35)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) HIKSEMI ARMOR 8GB (8x1) DDR4 3200Mhz WHITE (HSC408U32E2) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products173583_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47852/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-hiksemi-armor-8gb-(8x1)-ddr4-3200mhz-white-(hsc408u32e2)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) HIKSEMI FUTURE 8GB (8x1) DDR4 3200MHz BLACK (HSC408U32C2-8G) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products176482_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48151/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-hiksemi-future-8gb-(8x1)-ddr4-3200mhz-black-(hsc408u32c2-8g)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) LEXAR THOR DUAL16GB (8x2) DDR4 3200MHz (LD4BU008G-R3200GDXG) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products41537_800.jpg",
+      "url": "https://www.ihavecpu.com/product/18686/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-lexar-thor-dual16gb-(8x2)-ddr4-3200mhz-(ld4bu008g-r3200gdxg)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) GeIL ORION 16GB (8x2) DDR4 3200MHz GREY (GAOG416GB3200C22DC) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products146762_800.jpg",
+      "url": "https://www.ihavecpu.com/product/41984/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-geil-orion-16gb-(8x2)-ddr4-3200mhz-grey-(gaog416gb3200c22dc)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) CORSAIR VENGEANCE LPX 16GB (8x2) DDR4 3200MHz BLACK (CMK16GX4M2E3200C16) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product1942_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4106/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-corsair-vengeance-lpx-16gb-(8x2)-ddr4-3200mhz-black-(cmk16gx4m2e3200c16)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) KINGSTON FURY BEAST 16GB (16X1) DDR4 3200MHz BLACK (KF432C16BB/16) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products155514_800.jpg",
+      "url": "https://www.ihavecpu.com/product/16031/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-kingston-fury-beast-16gb-(16x1)-ddr4-3200mhz-black-(kf432c16bb-16)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) CORSAIR VENGEANCE LPX 16GB (8x2) DDR4 3200MHz WHITE (CMK16GX4M2E3200C16W) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products151296_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42817/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-corsair-vengeance-lpx-16gb-(8x2)-ddr4-3200mhz-white-(cmk16gx4m2e3200c16w)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) HIKSEMI FUTURE 16GB (16x1) DDR4 3200MHz BLACK (HSC416U32C2-16G) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products161696_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45262/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-hiksemi-future-16gb-(16x1)-ddr4-3200mhz-black-(hsc416u32c2-16g)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) HIKSEMI FUTURE 16GB (8x2) DDR4 3200MHz WHITE (HSC416U32F3) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products166129_800.jpg",
+      "url": "https://www.ihavecpu.com/product/46355/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-hiksemi-future-16gb-(8x2)-ddr4-3200mhz-white-(hsc416u32f3)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) ADATA XPG GAMMIX X D35 16GB (8x2) DDR4 3200MHz BLACK (AX4U32008G16A-DTBKD35) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products176456_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48141/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-adata-xpg-gammix-x-d35-16gb-(8x2)-ddr4-3200mhz-black-(ax4u32008g16a-dtbkd35)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) HIKSEMI FUTURE 16GB (8x2) DDR4 3200MHz BLACK (HSC416U32C3) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products176469_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48148/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-hiksemi-future-16gb-(8x2)-ddr4-3200mhz-black-(hsc416u32c3)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) CORSAIR VENGEANCE RGB PRO SL 16GB (8x2) DDR4 3200MHz WHITE (CMH16GX4M2E3200C16W) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product2026_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4559/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-corsair-vengeance-rgb-pro-sl-16gb-(8x2)-ddr4-3200mhz-white-(cmh16gx4m2e3200c16w)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) CORSAIR VENGEANCE RGB PRO SL 16GB (8x2) DDR4 3200MHz BLACK (CMH16GX4M2E3200C16) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product2094_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4602/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-corsair-vengeance-rgb-pro-sl-16gb-(8x2)-ddr4-3200mhz-black-(cmh16gx4m2e3200c16)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) KINGSTON FURY BEAST 16GB (8x2) DDR4 3200MHz RGB BLACK (KF432C16BB2AK2/16WP) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products155319_800.jpg",
+      "url": "https://www.ihavecpu.com/product/43741/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-kingston-fury-beast-16gb-(8x2)-ddr4-3200mhz-rgb-black-(kf432c16bb2ak2-16wp)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) ADATA XPG LANCER BLADE 16GB (16x1) DDR5 5600MHz (AX5U5600C4616G-SLABBK) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products179268_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48766/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-adata-xpg-lancer-blade-16gb-(16x1)-ddr5-5600mhz-(ax5u5600c4616g-slabbk)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) APACER PANTHER 16GB (16x1) DDR5 6000MHz (AH5U16G60C6227BAA-1) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products139269_800.jpg",
+      "url": "https://www.ihavecpu.com/product/40909/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-apacer-panther-16gb-(16x1)-ddr5-6000mhz-(ah5u16g60c6227baa-1)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) APACER NOX 16GB (16x1) DDR5 6000MHz (AH5U16G60C622MBAA-1) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products170778_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47217/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-apacer-nox-16gb-(16x1)-ddr5-6000mhz-(ah5u16g60c622mbaa-1)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) ADATA XPG LANCER BLADE RGB 16GB (16x1)  DDR5 6000MHz (AX5U6000C4816G-SLABRBK) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products160606_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45012/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-adata-xpg-lancer-blade-rgb-16gb-(16x1)-ddr5-6000mhz-(ax5u6000c4816g-slabrbk)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) KINGBANK KJXS 32GB (16x2) DDR5 5600MHz SILVER (K5.01.FP05DD9204) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products150566_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42162/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-kingbank-kjxs-32gb-(16x2)-ddr5-5600mhz-silver-(k5.01.fp05dd9204)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) KINGSTON FURY BEAST 32GB (16x2) DDR5 5600MHz BLACK (KF556C40BBK2-32)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product7623_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4812/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-kingston-fury-beast-32gb-(16x2)-ddr5-5600mhz-black-(kf556c40bbk2-32)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) CORSAIR VENGEANCE 32GB (16x2) DDR5 5600MHz BLACK (CMK32GX5M2B5600C40) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products72762_800.jpg",
+      "url": "https://www.ihavecpu.com/product/26646/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-corsair-vengeance-32gb-(16x2)-ddr5-5600mhz-black-(cmk32gx5m2b5600c40)-(lt)"
+    },
+    {
+      "category_id": 3,
+      "category_slug": "ram",
+      "name": "RAM (แรม) APACER PANTHER 32GB (16x2) DDR5 6000MHz (AH5U32G60C6227BAA-2) (LT)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products161739_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45260/ram-(%E0%B9%81%E0%B8%A3%E0%B8%A1)-apacer-panther-32gb-(16x2)-ddr5-6000mhz-(ah5u32g60c6227baa-2)-(lt)"
+    }
+  ],
+  "gpu": [
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) PALIT GEFORCE RTX 3050 STORM X 6GB GDDR6 (NE63050018JE-1072F) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products85859_800.jpg",
+      "url": "https://www.ihavecpu.com/product/30457/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-palit-geforce-rtx-3050-storm-x-6gb-gddr6-(ne63050018je-1072f)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) ZOTAC GAMING GEFORCE RTX 3050 TWIN EDGE OC - 6GB GDDR6 (ZT-A30510H-10L) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products106193_800.jpg",
+      "url": "https://www.ihavecpu.com/product/33853/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-zotac-gaming-geforce-rtx-3050-twin-edge-oc-6gb-gddr6-(zt-a30510h-10l)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) COLORFUL GEFORCE RTX 3050 6G V4-V - 6GB GDDR6 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products125094_800.jpg",
+      "url": "https://www.ihavecpu.com/product/37782/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-colorful-geforce-rtx-3050-6g-v4-v-6gb-gddr6-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) INNO3D GEFORCE RTX 3050 TWIN X2 V2 - 6GB GDDR6 (N30502-06D6-1880VA60) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products125878_800.jpg",
+      "url": "https://www.ihavecpu.com/product/37815/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-inno3d-geforce-rtx-3050-twin-x2-v2-6gb-gddr6-(n30502-06d6-1880va60)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) MSI GEFORCE RTX 3050 VENTUS 2X E 6G OC - 6GB GDDR6 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products77585_800.jpg",
+      "url": "https://www.ihavecpu.com/product/27777/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-msi-geforce-rtx-3050-ventus-2x-e-6g-oc-6gb-gddr6-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) GIGABYTE GEFORCE RTX 3050 WINDFORCE OC V2 6G - 6GB GDDR6 (GV-N3050WF2OCV2-6GD) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products77610_800.jpg",
+      "url": "https://www.ihavecpu.com/product/27778/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-gigabyte-geforce-rtx-3050-windforce-oc-v2-6g-6gb-gddr6-(gv-n3050wf2ocv2-6gd)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) GALAX GEFORCE RTX 3050 EX - 6GB GDDR6 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products84014_800.jpg",
+      "url": "https://www.ihavecpu.com/product/29354/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-galax-geforce-rtx-3050-ex-6gb-gddr6-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) ASUS DUAL GEFORCE RTX 3050 O6G - 6GB GDDR6 (DUAL-RTX3050-O6G) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products55523_800.jpg",
+      "url": "https://www.ihavecpu.com/product/21761/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-asus-dual-geforce-rtx-3050-o6g-6gb-gddr6-(dual-rtx3050-o6g)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) GIGABYTE RADEON RX 9060 XT GAMING OC  - 8GB GDDR6 (GV-R9060XTGAMING OC-8GD) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products107992_800.jpg",
+      "url": "https://www.ihavecpu.com/product/34129/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-gigabyte-radeon-rx-9060-xt-gaming-oc-8gb-gddr6-(gv-r9060xtgaming-oc-8gd)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) COLORFUL IGAME GEFORCE RTX 5060 ULTRA DUO OC - 8GB GDDR7 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180812_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48876/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-colorful-igame-geforce-rtx-5060-ultra-duo-oc-8gb-gddr7-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) SAPPHIRE PULSE RADEON RX 9060 XT GAMING OC - 16GB GDDR6 (DUAL HDMI/DP) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products107745_800.jpg",
+      "url": "https://www.ihavecpu.com/product/34137/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-sapphire-pulse-radeon-rx-9060-xt-gaming-oc-16gb-gddr6-(dual-hdmi-dp)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) POWERCOLOR REAPER RADEON RX 9060 XT - 16GB GDDR6 (RX9060XT 16G-A) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products107809_800.jpg",
+      "url": "https://www.ihavecpu.com/product/34141/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-powercolor-reaper-radeon-rx-9060-xt-16gb-gddr6-(rx9060xt-16g-a)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) ASROCK RADEON RX 9060 XT CHALLENGER OC - 16GB GDDR6 (RX9060XT CL 16GO) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products108939_800.jpg",
+      "url": "https://www.ihavecpu.com/product/34414/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-asrock-radeon-rx-9060-xt-challenger-oc-16gb-gddr6-(rx9060xt-cl-16go)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) COLORFUL IGAME GEFORCE RTX 5060 ULTRA OC - 8GB GDDR7 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180752_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48874/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-colorful-igame-geforce-rtx-5060-ultra-oc-8gb-gddr7-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) MSI GEFORCE RTX 3050 VENTUS 2X XS 8G OC - 8GB GDDR6",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180545_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48852/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-msi-geforce-rtx-3050-ventus-2x-xs-8g-oc-8gb-gddr6"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) PALIT GEFORCE RTX 5050 STORMX - 8GB GDDR6 (NE65050019P1-GB2070F) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products118662_800.jpg",
+      "url": "https://www.ihavecpu.com/product/36284/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-palit-geforce-rtx-5050-stormx-8gb-gddr6-(ne65050019p1-gb2070f)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) COLORFUL GEFORCE RTX 5060 TI GAMING DUO - 8GB GDDR7 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products175137_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48012/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-colorful-geforce-rtx-5060-ti-gaming-duo-8gb-gddr7-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) COLORFUL GEFORCE RTX 5050 BATTLE AX DUO - 8GB GDDR6 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products113215_800.jpg",
+      "url": "https://www.ihavecpu.com/product/35358/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-colorful-geforce-rtx-5050-battle-ax-duo-8gb-gddr6-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) INNO3D GEFORCE RTX 5050 TWIN X2 - 8GB GDDR6 (N50502-08D6-174071N) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products115956_800.jpg",
+      "url": "https://www.ihavecpu.com/product/35778/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-inno3d-geforce-rtx-5050-twin-x2-8gb-gddr6-(n50502-08d6-174071n)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) PALIT GEFORCE RTX 5050 DUAL - 8GB GDDR6 (NE65050019P1-GB2070D) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products118592_800.jpg",
+      "url": "https://www.ihavecpu.com/product/36285/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-palit-geforce-rtx-5050-dual-8gb-gddr6-(ne65050019p1-gb2070d)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) GALAX GEFORCE RTX 5050 1-CLICK OC V2 - 8GB GDDR6 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products149543_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42525/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-galax-geforce-rtx-5050-1-click-oc-v2-8gb-gddr6-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) COLORFUL GEFORCE RTX 5050 GAMING DUO - 8GB GDDR6 (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products151214_800.jpg",
+      "url": "https://www.ihavecpu.com/product/42800/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-colorful-geforce-rtx-5050-gaming-duo-8gb-gddr6-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) INNO3D GEFORCE RTX 5060 TI TWIN X2 V2 - 8GB GDDR7 (N506T2-08D7-19301619) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180565_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48851/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-inno3d-geforce-rtx-5060-ti-twin-x2-v2-8gb-gddr7-(n506t2-08d7-19301619)-(3y)"
+    },
+    {
+      "category_id": 4,
+      "category_slug": "gpu",
+      "name": "VGA(การ์ดจอ) GALAX GEFORCE RTX 5060 TI 1-CLICK OC V2 8GB GDDR7 128BIT  (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products180550_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48854/vga(%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%88%E0%B8%AD)-galax-geforce-rtx-5060-ti-1-click-oc-v2-8gb-gddr7-128bit-(3y)"
+    }
+  ],
+  "storage": [],
+  "psu": [
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) AZZA PSAZ 550W (80+BRONZE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product36175_150.png",
+      "url": "https://www.ihavecpu.com/product/10933/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-azza-psaz-550w-(80bronze)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) AEROCOOL AERO 550 - 550W (80+ BRONZE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products178972_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48020/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-aerocool-aero-550-550w-(80-bronze)-(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) MSI MAG A600DN 600W (80+WHITE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product49466_800.jpg",
+      "url": "https://www.ihavecpu.com/product/10944/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-msi-mag-a600dn-600w-(80white)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) MSI MAG A600DN 600W BULK (80+WHITE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products106639_800.jpg",
+      "url": "https://www.ihavecpu.com/product/33835/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-msi-mag-a600dn-600w-bulk-(80white)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) GIGABYTE GP-P550SS 550W (80+SILVER) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products50833_800.jpg",
+      "url": "https://www.ihavecpu.com/product/20329/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-gigabyte-gp-p550ss-550w-(80silver)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) GIGABYTE GP-P550SS ICE 550W (80+SILVER) WHITE (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products66171_800.jpg",
+      "url": "https://www.ihavecpu.com/product/24739/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-gigabyte-gp-p550ss-ice-550w-(80silver)white-(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) MSI MAG A550BN 550W (80+BRONZE) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products39843_150.png",
+      "url": "https://www.ihavecpu.com/product/12038/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-msi-mag-a550bn-550w-(80bronze)(5y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) MSI MAG A650BN 650W (80+BRONZE) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products160325_800.jpg",
+      "url": "https://www.ihavecpu.com/product/44899/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-msi-mag-a650bn-650w-(80bronze)(5y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) FSP VIC BD 650W (80+BRONZE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products171173_800.jpg",
+      "url": "https://www.ihavecpu.com/product/46407/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-fsp-vic-bd-650w-(80bronze)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) ASROCK PRO 650B - 650W (80+ BRONZE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products178966_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48142/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-asrock-pro-650b-650w-(80-bronze)-(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) GIGABYTE GP-P650SS 650W (80+SILVER) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products49254_800.jpg",
+      "url": "https://www.ihavecpu.com/product/20322/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-gigabyte-gp-p650ss-650w-(80silver)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) GIGABYTE GP-P650SS ICE 650W (80+SILVER) WHITE (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products68525_800.jpg",
+      "url": "https://www.ihavecpu.com/product/25392/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-gigabyte-gp-p650ss-ice-650w-(80silver)white-(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) COOLER MASTER MWE GOLD V3 - 650W (80+GOLD)(BLACK) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products136989_800.jpg",
+      "url": "https://www.ihavecpu.com/product/39820/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-cooler-master-mwe-gold-v3-650w-(80gold)(black)-(5y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) GIGABYTE GP-P750BS 750W (80+BRONZE) (3Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products92221_800.jpg",
+      "url": "https://www.ihavecpu.com/product/31597/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-gigabyte-gp-p750bs-750w-(80bronze)(3y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) COOLER MASTER MWE BRONZE 750 V3 230V - 750W (80+BRONZE) (MPE-7501-ACABW-3BTH) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products179260_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48508/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-cooler-master-mwe-bronze-750-v3-230v-750w-(80bronze)(mpe-7501-acabw-3bth)-(5y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) ASUS TUF GAMING 650B - 650W (80+BRONZE)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/product5460_800.jpg",
+      "url": "https://www.ihavecpu.com/product/4872/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-asus-tuf-gaming-650b-650w-(80bronze)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) COOLER MASTER ELITE 650W (80+GOLD) (MPX-6505-AFAG-BEU) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products161835_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45019/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-cooler-master-elite-650w-(80gold)(mpx-6505-afag-beu)-(5y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) ASUS TUF GAMING 750B - 750W (80+ BRONZE) (6Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products37995_800.jpg",
+      "url": "https://www.ihavecpu.com/product/17885/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-asus-tuf-gaming-750b-750w-(80-bronze)-(6y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) COOLER MASTER MWE V3 - 850W (80+GOLD)(MPE-8506-ACAG-BEU) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products175033_800.jpg",
+      "url": "https://www.ihavecpu.com/product/47854/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-cooler-master-mwe-v3-850w-(80gold)(mpe-8506-acag-beu)-(5y)"
+    },
+    {
+      "category_id": 6,
+      "category_slug": "psu",
+      "name": "PSU (อุปกรณ์จ่ายไฟ) COOLER MASTER ELITE 1000W (80+GOLD) (MPW-A001-AFAG-BEU) (5Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products161775_800.jpg",
+      "url": "https://www.ihavecpu.com/product/45011/psu-(%E0%B8%AD%E0%B8%B8%E0%B8%9B%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%9F)-cooler-master-elite-1000w-(80gold)(mpw-a001-afag-beu)-(5y)"
+    }
+  ],
+  "case": [
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) GIGABYTE C102 GLASS (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products57893_800.jpg",
+      "url": "https://www.ihavecpu.com/product/22869/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-gigabyte-c102-glass-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) GIGABYTE C102 GLASS ICE (WHITE)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products57887_800.jpg",
+      "url": "https://www.ihavecpu.com/product/22870/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-gigabyte-c102-glass-ice-(white)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC R03 (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products74519_800.jpg",
+      "url": "https://www.ihavecpu.com/product/27332/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-r03-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC R03 (WHITE)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products74523_800.jpg",
+      "url": "https://www.ihavecpu.com/product/27333/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-r03-(white)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC R30 (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products157219_800.jpg",
+      "url": "https://www.ihavecpu.com/product/44139/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-r30-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC R30 (WHITE)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products157229_800.jpg",
+      "url": "https://www.ihavecpu.com/product/44140/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-r30-(white)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) GIGABYTE C103 GLASS AutoRGB (BLACK)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products175114_800.jpg",
+      "url": "https://www.ihavecpu.com/product/48003/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-gigabyte-c103-glass-autorgb-(black)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC R06 ARGB (WHITE)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products112886_800.jpg",
+      "url": "https://www.ihavecpu.com/product/31878/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-r06-argb-(white)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC 401TG (BLACK)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products84798_800.jpg",
+      "url": "https://www.ihavecpu.com/product/18345/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-401tg-(black)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC 401TG (WHITE)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products84804_800.jpg",
+      "url": "https://www.ihavecpu.com/product/18346/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-401tg-(white)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU G390 V2 (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products98330_800.jpg",
+      "url": "https://www.ihavecpu.com/product/20947/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-g390-v2-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU G390 V2 (WHITE)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products98333_800.jpg",
+      "url": "https://www.ihavecpu.com/product/20948/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-g390-v2-(white)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU CRYSTAL Z6 MINI (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products69434_800.jpg",
+      "url": "https://www.ihavecpu.com/product/25907/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-crystal-z6-mini-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC 102 WOOD (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products83412_800.jpg",
+      "url": "https://www.ihavecpu.com/product/29348/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-102-wood-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC 102 WOOD (WHITE)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products83415_800.jpg",
+      "url": "https://www.ihavecpu.com/product/29349/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-102-wood-(white)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU OA01 (BLACK)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products98707_800.jpg",
+      "url": "https://www.ihavecpu.com/product/32445/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-oa01-(black)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU OA01 (WHITE)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products98728_800.jpg",
+      "url": "https://www.ihavecpu.com/product/32446/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-oa01-(white)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) OCYPUS x iHAVECPU GAMMA C52 ARGB (WHITE)(mATX) (2Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products124197_800.jpg",
+      "url": "https://www.ihavecpu.com/product/37630/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ocypus-x-ihavecpu-gamma-c52-argb-(white)(matx)-(2y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) OCYPUS x iHAVECPU GAMMA C52 ARGB (BLACK)(mATX) (2Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products124188_800.jpg",
+      "url": "https://www.ihavecpu.com/product/37636/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ocypus-x-ihavecpu-gamma-c52-argb-(black)(matx)-(2y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU PRISMA ARGB (BLACK)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products174311_800.jpg",
+      "url": "https://www.ihavecpu.com/product/39597/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-prisma-argb-(black)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU PRISMA ARGB (WHITE)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products134235_800.jpg",
+      "url": "https://www.ihavecpu.com/product/39598/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-prisma-argb-(white)(atx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU IHC R09 (BLACK)(mATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products167093_800.jpg",
+      "url": "https://www.ihavecpu.com/product/46023/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-ihc-r09-(black)(matx)-(1y)"
+    },
+    {
+      "category_id": 7,
+      "category_slug": "case",
+      "name": "CASE (เคส) iHAVECPU GLACIER V2 (BLACK)(ATX) (1Y)",
+      "image_url": "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products181832_800.jpg",
+      "url": "https://www.ihavecpu.com/product/49137/case-(%E0%B9%80%E0%B8%84%E0%B8%AA)-ihavecpu-glacier-v2-(black)(atx)-(1y)"
+    }
+  ]
+}
