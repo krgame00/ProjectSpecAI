@@ -117,14 +117,10 @@ export const useBuilderStore = defineStore('builder', {
 
       // 6. GPU Length Check
       if (cGpu && cCase) {
-        const gLenRaw = cGpu.specifications?.['Length'] || cGpu.specifications?.['Length (mm)'];
-        const cLenRaw = cCase.specifications?.['Max GPU Length'] || cCase.specifications?.['Max GPU Length (mm)'];
-        if (gLenRaw && cLenRaw) {
-          const gLen = parseInt(String(gLenRaw).replace(/\D/g, ''));
-          const cLen = parseInt(String(cLenRaw).replace(/\D/g, ''));
-          if (gLen && cLen && gLen > cLen) {
-            issues.push(`การ์ดจอขนาดใหญ่เกินไป: การ์ดจอยาว ${gLen}mm แต่เคสรองรับได้สูงสุดเพียง ${cLen}mm`);
-          }
+        const gLen = cGpu.lengthMm || (cGpu.specifications?.['Length'] ? parseInt(String(cGpu.specifications['Length']).replace(/\D/g, '')) : null);
+        const cLen = cCase.maxGpuLength || (cCase.specifications?.['Max GPU Length'] ? parseInt(String(cCase.specifications['Max GPU Length']).replace(/\D/g, '')) : null);
+        if (gLen && cLen && gLen > cLen) {
+          issues.push(`การ์ดจอขนาดใหญ่เกินไป: การ์ดจอยาว ${gLen}mm แต่เคสรองรับได้สูงสุดเพียง ${cLen}mm`);
         }
       }
 
@@ -171,8 +167,8 @@ export const useBuilderStore = defineStore('builder', {
       }
       // 4. Form Factor Match
       if (cMobo && cCase) {
-        const mForm = (cMobo.specifications?.['Form Factor'] || cMobo.name || '').toUpperCase();
-        const cSupport = (cCase.specifications?.['Form Factor Support'] || cCase.specifications?.['Form Factor'] || cCase.name || '').toUpperCase();
+        const mForm = (cMobo.formFactor || cMobo.specifications?.['Form Factor'] || cMobo.name || '').toUpperCase();
+        const cSupport = (cCase.formFactorSupport || cCase.specifications?.['Form Factor Support'] || cCase.specifications?.['Form Factor'] || cCase.name || '').toUpperCase();
         
         const isMoboATX = mForm.includes('ATX') && !mForm.includes('MICRO') && !mForm.includes('MATX') && !mForm.includes('ITX');
         const isMoboMATX = mForm.includes('MICRO') || mForm.includes('MATX');
@@ -196,19 +192,19 @@ export const useBuilderStore = defineStore('builder', {
       }
       // 6. GPU Length vs Case
       if (cGpu && cCase) {
-        const gLenRaw = cGpu.specifications?.['Length'] || cGpu.specifications?.['Length (mm)'];
-        const cLenRaw = cCase.specifications?.['Max GPU Length'] || cCase.specifications?.['Max GPU Length (mm)'];
-        if (gLenRaw && cLenRaw) {
-          const gLen = parseInt(String(gLenRaw).replace(/\D/g, ''));
-          const cLen = parseInt(String(cLenRaw).replace(/\D/g, ''));
-          if (gLen && cLen && gLen <= cLen) {
-            passes.push(`GPU ยาว ${gLen}mm ใส่เคสได้ (เคสรองรับสูงสุด ${cLen}mm)`);
-          }
+        const gLen = cGpu.lengthMm || (cGpu.specifications?.['Length'] ? parseInt(String(cGpu.specifications['Length']).replace(/\D/g, '')) : null);
+        const cLen = cCase.maxGpuLength || (cCase.specifications?.['Max GPU Length'] ? parseInt(String(cCase.specifications['Max GPU Length']).replace(/\D/g, '')) : null);
+        if (gLen && cLen && gLen <= cLen) {
+          passes.push(`GPU ยาว ${gLen}mm ใส่เคสได้ (เคสรองรับสูงสุด ${cLen}mm)`);
         }
       }
       // 7. Storage & Case Selected Passes
       if (cStorage) {
-        passes.push(`มี Storage (SSD/HDD) สำหรับติดตั้ง OS และเก็บข้อมูล`);
+        if (cStorage.readSpeedMbs && cStorage.writeSpeedMbs) {
+          passes.push(`Storage (${cStorage.type || 'SSD'}) ความเร็ว Read ${cStorage.readSpeedMbs} MB/s | Write ${cStorage.writeSpeedMbs} MB/s ช่วยให้โหลดเกมและเปิดเครื่องไวสูงสุด`);
+        } else {
+          passes.push(`มี Storage (SSD/HDD) สำหรับติดตั้ง OS และเก็บข้อมูล`);
+        }
       }
       if (cCase) {
         passes.push(`มีเคสคอมพิวเตอร์สำหรับประกอบชิ้นส่วนครบถ้วน`);

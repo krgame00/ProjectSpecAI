@@ -14,11 +14,12 @@ const hardwareController = {
     try {
       const queryStr = `
         SELECT p.*, cat.slug as category_slug,
-               c.socket as cpu_socket, c.tdp_watt as cpu_tdp,
-               m.socket as mobo_socket, m.ram_type as mobo_ram_type,
-               r.ram_type, r.capacity_gb,
-               g.tdp_watt as gpu_tdp, g.length_mm as gpu_length_mm,
-               psu.wattage as psu_wattage,
+               c.socket as cpu_socket, c.cores as cpu_cores, c.threads as cpu_threads, c.tdp_watt as cpu_tdp,
+               m.socket as mobo_socket, m.ram_type as mobo_ram_type, m.form_factor as mobo_form_factor,
+               r.ram_type, r.capacity_gb as ram_capacity_gb, r.bus_speed as ram_bus_speed,
+               g.chipset as gpu_chipset, g.vram_gb as gpu_vram_gb, g.tdp_watt as gpu_tdp, g.length_mm as gpu_length_mm,
+               st.type as storage_type, st.capacity_gb as storage_capacity_gb, st.read_speed_mbs as storage_read_speed, st.write_speed_mbs as storage_write_speed,
+               psu.wattage as psu_wattage, psu.efficiency_rating as psu_efficiency,
                case_spec.form_factor_support, case_spec.max_gpu_length_mm as case_max_gpu_length
         FROM products p
         JOIN categories cat ON p.category_id = cat.id
@@ -48,14 +49,27 @@ const hardwareController = {
           if (slug === 'cpu') {
             formatted.socket = product.cpu_socket;
             formatted.tdp = product.cpu_tdp;
+            formatted.cores = product.cpu_cores;
+            formatted.threads = product.cpu_threads;
           } else if (slug === 'mobo') {
             formatted.socket = product.mobo_socket;
             formatted.ramType = product.mobo_ram_type;
+            formatted.formFactor = product.mobo_form_factor;
           } else if (slug === 'ram') {
             formatted.type = product.ram_type;
+            formatted.capacityGb = product.ram_capacity_gb;
+            formatted.busSpeed = product.ram_bus_speed;
           } else if (slug === 'gpu') {
             formatted.tdp = product.gpu_tdp;
+            formatted.chipset = product.gpu_chipset;
+            formatted.vramGb = product.gpu_vram_gb;
+            formatted.lengthMm = product.gpu_length_mm;
             if (product.gpu_length_mm) formatted.specifications['Length (mm)'] = product.gpu_length_mm;
+          } else if (slug === 'storage') {
+            formatted.type = product.storage_type;
+            formatted.capacityGb = product.storage_capacity_gb;
+            formatted.readSpeedMbs = product.storage_read_speed;
+            formatted.writeSpeedMbs = product.storage_write_speed;
           } else if (slug === 'psu') {
             let w = product.psu_wattage;
             if (!w) {
@@ -63,7 +77,10 @@ const hardwareController = {
               w = match ? parseInt(match[1]) : 0;
             }
             formatted.wattage = w;
+            formatted.efficiencyRating = product.psu_efficiency;
           } else if (slug === 'case') {
+            formatted.formFactorSupport = product.form_factor_support;
+            formatted.maxGpuLength = product.case_max_gpu_length;
             if (product.case_max_gpu_length) formatted.specifications['Max GPU Length (mm)'] = product.case_max_gpu_length;
           }
 
