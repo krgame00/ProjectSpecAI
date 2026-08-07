@@ -25729,6 +25729,2148 @@
         "Memory Size": "8GB",
         "Power Requirement": "373W"
       }
+    },
+    {
+      "id": 12215,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "DARK POWER 13 850W 80 Plus Titanium (Full Modular)",
+      "price": "7900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12216,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "STRIDER 1300W 80 Plus Platinum (Full Modular)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12217,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "SIGNATURE 500W 80 Plus Bronze (Semi-Modular)",
+      "price": "2000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12218,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1000P2 1300W 80 Plus Platinum (White Edition)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12219,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "DQ-M-V2L 1600W 80 Plus Titanium (Semi-Modular)",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12220,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RM 700W 80 Plus Gold (White Edition)",
+      "price": "4000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12221,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V PLATINUM 500W 80 Plus Bronze (White Edition)",
+      "price": "2000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12222,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "DECATHLON 700W 80 Plus Bronze (Gen5 Ready)",
+      "price": "2800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12223,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER PF3 550W 80 Plus Platinum (Semi-Modular)",
+      "price": "5000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12224,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "DARK POWER 13 500W 80 Plus Platinum",
+      "price": "4800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12225,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "ATOM 1300W 80 Plus Titanium (Full Modular)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12226,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG STRIX 850G 650W 80 Plus Gold",
+      "price": "3800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12227,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "DARK POWER 13 850W 80 Plus Gold (ATX 3.0/PCIe 5.0)",
+      "price": "5400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12228,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "STRAIGHT POWER 12 850W 80 Plus Titanium (Semi-Modular)",
+      "price": "7900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12229,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER GF1 500W 80 Plus Bronze (Black)",
+      "price": "2000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12230,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V GOLD i 600W 80 Plus Bronze (Full Modular)",
+      "price": "2400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12231,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "UD850GM 1300W 80 Plus Titanium (Full Modular)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12232,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "DECATHLON 750W 80 Plus Platinum (Full Modular)",
+      "price": "5800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12233,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG STRIX 850G 550W 80 Plus Platinum (Semi-Modular)",
+      "price": "5000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12234,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "DARK POWER 13 700W 80 Plus Bronze (Black)",
+      "price": "2800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12235,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "PRIME PX 500W 80 Plus Titanium (White Edition)",
+      "price": "6500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12236,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "ATOM 1200W 80 Plus Platinum (Gen5 Ready)",
+      "price": "7600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12237,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "P650B 600W 80 Plus Platinum (White Edition)",
+      "price": "5200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12238,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "SMART BM2 1000W 80 Plus Platinum (Full Modular)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12239,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG STRIX 850G 1300W 80 Plus Titanium (Black)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12240,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "AX 1300W 80 Plus Platinum",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12241,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "PURE POWER 12 M 1000W 80 Plus Titanium (Black)",
+      "price": "8500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12242,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "MWE BRONZE 1000W 80 Plus Platinum",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12243,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RMe 850W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Semi-Modular)",
+      "price": "5400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12244,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "STRAIGHT POWER 12 1300W 80 Plus Platinum (Semi-Modular)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12245,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 750W 80 Plus Gold (ATX 3.0/PCIe 5.0) (White Edition)",
+      "price": "5000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12246,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "PURE POWER 12 M 850W 80 Plus Titanium (Full Modular)",
+      "price": "7900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12247,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "FOCUS PX 600W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Semi-Modular)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12248,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER PF3 1000W 80 Plus Platinum (Full Modular)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12249,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER PF3 1000W 80 Plus Titanium (Full Modular)",
+      "price": "8500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12250,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MAG A850GL 650W 80 Plus Gold (ATX 3.0/PCIe 5.0)",
+      "price": "4600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12251,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1200P 550W 80 Plus Bronze",
+      "price": "2200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12252,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "DQ-M-V2L 700W 80 Plus Titanium (Full Modular)",
+      "price": "7300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12253,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1200P 700W 80 Plus Platinum",
+      "price": "5600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12254,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "MWE GOLD V2 1300W 80 Plus Platinum (Full Modular)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12255,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 500W 80 Plus Bronze (Black)",
+      "price": "2000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12256,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 1600W 80 Plus Platinum",
+      "price": "9200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12257,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V GOLD i 600W 80 Plus Gold",
+      "price": "3600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12258,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RMx 650W 80 Plus Bronze (Gen5 Ready)",
+      "price": "2600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12259,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MAG A850GL 1200W 80 Plus Titanium",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12260,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MAG A850GL 550W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Full Modular)",
+      "price": "4200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12261,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "MWE BRONZE 750W 80 Plus Gold (ATX 3.0/PCIe 5.0) (White Edition)",
+      "price": "5000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12262,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER GF1 1200W 80 Plus Platinum (Full Modular)",
+      "price": "7600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12263,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RMx 600W 80 Plus Platinum (Black)",
+      "price": "5200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12264,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "HXi 1300W 80 Plus Platinum (Black)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12265,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "FOCUS PX 1200W 80 Plus Titanium",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12266,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 750W 80 Plus Bronze (Black)",
+      "price": "3000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12267,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "DECATHLON 600W 80 Plus Gold (Full Modular)",
+      "price": "3600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12268,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "DQ-M-V2L 1000W 80 Plus Platinum (Full Modular)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12269,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "P650B 1000W 80 Plus Titanium (White Edition)",
+      "price": "8500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12270,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "MWE GOLD V2 1200W 80 Plus Platinum (White Edition)",
+      "price": "7600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12271,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "P450B 1300W 80 Plus Titanium (Semi-Modular)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12272,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MEG Ai1300P 1200W 80 Plus Platinum (Gen5 Ready)",
+      "price": "7600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12273,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "STRAIGHT POWER 12 1600W 80 Plus Titanium (Semi-Modular)",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12274,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MAG A550BN 700W 80 Plus Titanium (Gen5 Ready)",
+      "price": "7300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12275,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "P450B 600W 80 Plus Platinum",
+      "price": "5200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12276,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "SMART BM2 700W 80 Plus Gold (ATX 3.0/PCIe 5.0)",
+      "price": "4800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12277,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 650W 80 Plus Titanium (Full Modular)",
+      "price": "7100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12278,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "HXi 500W 80 Plus Bronze (White Edition)",
+      "price": "2000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12279,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 1000W 80 Plus Titanium",
+      "price": "8500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12280,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "HELA 850W 80 Plus Platinum",
+      "price": "6200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12281,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 1600W 80 Plus Titanium",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12282,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "PX-G 1000W 80 Plus Platinum (Full Modular)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12283,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "DECATHLON 1200W 80 Plus Titanium",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12284,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER GF3 650W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Full Modular)",
+      "price": "4600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12285,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "PRIME PX 500W 80 Plus Platinum (White Edition)",
+      "price": "4800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12286,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "PM-D 550W 80 Plus Gold (Black)",
+      "price": "3400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12287,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "SYSTEM POWER 10 850W 80 Plus Titanium (Semi-Modular)",
+      "price": "7900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12288,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 500W 80 Plus Titanium (White Edition)",
+      "price": "6500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12289,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MAG A550BN 850W 80 Plus Bronze",
+      "price": "3400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12290,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "UD1000GM 750W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Full Modular)",
+      "price": "5000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12291,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "ATOM 1200W 80 Plus Titanium",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12292,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RM 550W 80 Plus Gold (Full Modular)",
+      "price": "3400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12293,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V PLATINUM 550W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Semi-Modular)",
+      "price": "4200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12294,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "TUF GAMING 650B 1300W 80 Plus Platinum (White Edition)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12295,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 1300W 80 Plus Titanium",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12296,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RMx 750W 80 Plus Platinum (Full Modular)",
+      "price": "5800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12297,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "ELITE V4 500W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Gen5 Ready)",
+      "price": "4000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12298,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "ATOM 750W 80 Plus Platinum (Gen5 Ready)",
+      "price": "5800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12299,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V PLATINUM 1300W 80 Plus Titanium",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12300,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER GF3 750W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Semi-Modular)",
+      "price": "5000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12301,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "TUF GAMING 650B 1200W 80 Plus Titanium (Black)",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12302,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 1000W 80 Plus Platinum (Black)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12303,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 700W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Semi-Modular)",
+      "price": "4800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12304,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "PK-D 1600W 80 Plus Platinum (Full Modular)",
+      "price": "9200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12305,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "TUF GAMING 650B 750W 80 Plus Titanium (Gen5 Ready)",
+      "price": "7500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12306,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "STRAIGHT POWER 12 650W 80 Plus Platinum (White Edition)",
+      "price": "5400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12307,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MEG Ai1300P 700W 80 Plus Gold (Black)",
+      "price": "4000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:14.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12308,
+      "category_id": 6,
+      "brand": "BE QUIET!",
+      "model": "SYSTEM POWER 10 850W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Semi-Modular)",
+      "price": "5400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "BE QUIET!",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12309,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 700W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Full Modular)",
+      "price": "4800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12310,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "UD1000GM 750W 80 Plus Titanium (Semi-Modular)",
+      "price": "7500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12311,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "PRIME TX 700W 80 Plus Platinum (Semi-Modular)",
+      "price": "5600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "700W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12312,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "HX 1300W 80 Plus Platinum (Black)",
+      "price": "8000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12313,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "SMART BM2 1600W 80 Plus Titanium (Gen5 Ready)",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12314,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "ATOM 1600W 80 Plus Platinum (Semi-Modular)",
+      "price": "9200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12315,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1200P 1000W 80 Plus Titanium",
+      "price": "8500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12316,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "UD750GM 600W 80 Plus Bronze (Gen5 Ready)",
+      "price": "2400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Bronze",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12317,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "FOCUS PX 750W 80 Plus Platinum (Semi-Modular)",
+      "price": "5800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12318,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER GF3 600W 80 Plus Platinum (Semi-Modular)",
+      "price": "5200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12319,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "CORE GM 850W 80 Plus Gold",
+      "price": "4600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "850W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12320,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "SMART BX1 650W 80 Plus Gold (White Edition)",
+      "price": "3800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Gold",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12321,
+      "category_id": 6,
+      "brand": "CORSAIR",
+      "model": "RMx 1600W 80 Plus Titanium (White Edition)",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12322,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "CSK 650W 80 Plus Gold (ATX 3.0/PCIe 5.0) (White Edition)",
+      "price": "4600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12323,
+      "category_id": 6,
+      "brand": "SEASONIC",
+      "model": "PRIME PX 1200W 80 Plus Titanium (White Edition)",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "SEASONIC",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12324,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "UD850GM 1600W 80 Plus Platinum (Semi-Modular)",
+      "price": "9200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "1600W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12325,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1000P2 1000W 80 Plus Titanium (Full Modular)",
+      "price": "8500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12326,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "TUF GAMING 650B 550W 80 Plus Gold (ATX 3.0/PCIe 5.0) (Gen5 Ready)",
+      "price": "4200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "550W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12327,
+      "category_id": 6,
+      "brand": "MSI",
+      "model": "MAG A750GL 1200W 80 Plus Titanium (Gen5 Ready)",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12328,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V PLATINUM 650W 80 Plus Platinum (Black)",
+      "price": "5400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12329,
+      "category_id": 6,
+      "brand": "COOLER MASTER",
+      "model": "V GOLD i 750W 80 Plus Titanium (Full Modular)",
+      "price": "7500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Wattage": "750W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12330,
+      "category_id": 6,
+      "brand": "SILVERSTONE",
+      "model": "STRIDER 1000W 80 Plus Platinum",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "SILVERSTONE",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12331,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1000P2 1200W 80 Plus Titanium (Black)",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12332,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 500W 80 Plus Platinum (Semi-Modular)",
+      "price": "4800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "500W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12333,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "PF 650W 80 Plus Platinum (Black)",
+      "price": "5400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "650W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12334,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "PX-G 1000W 80 Plus Platinum",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12335,
+      "category_id": 6,
+      "brand": "DEEPCOOL",
+      "model": "PF 1300W 80 Plus Titanium (Black)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12336,
+      "category_id": 6,
+      "brand": "ASUS",
+      "model": "ROG THOR 1000P2 1200W 80 Plus Platinum (Full Modular)",
+      "price": "7600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "(Full Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12337,
+      "category_id": 6,
+      "brand": "ANTEC",
+      "model": "NEOECO 1200W 80 Plus Titanium (Semi-Modular)",
+      "price": "9300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Wattage": "1200W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "(Semi-Modular)",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12338,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER PF3 600W 80 Plus Gold (ATX 3.0/PCIe 5.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "600W",
+        "Efficiency": "80 Plus Gold (ATX 3.0/PCIe 5.0)",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12339,
+      "category_id": 6,
+      "brand": "GIGABYTE",
+      "model": "UD850GM 1300W 80 Plus Titanium (Gen5 Ready)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Wattage": "1300W",
+        "Efficiency": "80 Plus Titanium",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
+    },
+    {
+      "id": 12340,
+      "category_id": 6,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHPOWER GF1 1000W 80 Plus Platinum (White Edition)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:59:15.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Wattage": "1000W",
+        "Efficiency": "80 Plus Platinum",
+        "Modularity": "Full Modular",
+        "Form Factor": "ATX"
+      }
     }
   ],
   "spec_case": [
@@ -30484,6 +32626,636 @@
       "product_id": 11404,
       "wattage": 1200,
       "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12215,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12216,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12217,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12218,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12219,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12220,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12221,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12222,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12223,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12224,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12225,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12226,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12227,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12228,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12229,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12230,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12231,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12232,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12233,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12234,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12235,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12236,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12237,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12238,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12239,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12240,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12241,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12242,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12243,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12244,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12245,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12246,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12247,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12248,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12249,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12250,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12251,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12252,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12253,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12254,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12255,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12256,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12257,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12258,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12259,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12260,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12261,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12262,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12263,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12264,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12265,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12266,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12267,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12268,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12269,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12270,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12271,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12272,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12273,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12274,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12275,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12276,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12277,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12278,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12279,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12280,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12281,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12282,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12283,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12284,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12285,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12286,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12287,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12288,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12289,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12290,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12291,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12292,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12293,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12294,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12295,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12296,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12297,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12298,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12299,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12300,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12301,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12302,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12303,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12304,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12305,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12306,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12307,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12308,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12309,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12310,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12311,
+      "wattage": 700,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12312,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12313,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12314,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12315,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12316,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 12317,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12318,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12319,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12320,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Gold"
+    },
+    {
+      "product_id": 12321,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12322,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12323,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12324,
+      "wattage": 1600,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12325,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12326,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12327,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12328,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12329,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12330,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12331,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12332,
+      "wattage": 500,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12333,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12334,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12335,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12336,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Platinum"
+    },
+    {
+      "product_id": 12337,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12338,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Gold (ATX 3.0/PCIe 5.0)"
+    },
+    {
+      "product_id": 12339,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Titanium"
+    },
+    {
+      "product_id": 12340,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Platinum"
     }
   ],
   "spec_ram": [
