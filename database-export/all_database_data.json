@@ -16888,6 +16888,2958 @@
         "Form Factor": "M.2 2280",
         "Write Speed": "6292 MB/s"
       }
+    },
+    {
+      "id": 11731,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900K",
+      "price": "22500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11732,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900KF",
+      "price": "21700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11733,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900F",
+      "price": "20000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11734,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900",
+      "price": "20600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11735,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700K",
+      "price": "15800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11736,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700KF",
+      "price": "15100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11737,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700F",
+      "price": "13600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11738,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700",
+      "price": "13900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11739,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14600K",
+      "price": "11900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11740,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14600KF",
+      "price": "11000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11741,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14500",
+      "price": "9100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11742,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14400F",
+      "price": "7590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11743,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14400",
+      "price": "7890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11744,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-14100F",
+      "price": "3890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "58W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11745,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-14100",
+      "price": "4690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "60W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11746,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 9 285K",
+      "price": "23800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "24",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11747,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 7 265K",
+      "price": "16500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "20",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11748,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 7 265KF",
+      "price": "15300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "20",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11749,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 5 245K",
+      "price": "12100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "14",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11750,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 5 245KF",
+      "price": "11100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "14",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11751,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900KS",
+      "price": "23900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "150W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11752,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900K",
+      "price": "20700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11753,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900KF",
+      "price": "19900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11754,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900F",
+      "price": "18600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11755,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-13700K",
+      "price": "14700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11756,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-13700KF",
+      "price": "13500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11757,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-13700F",
+      "price": "12300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11758,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13600K",
+      "price": "10400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11759,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13600KF",
+      "price": "9500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11760,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13500",
+      "price": "8290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11761,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13400F",
+      "price": "6390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11762,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13400",
+      "price": "6990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11763,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-13100F",
+      "price": "3390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "58W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11764,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-13100",
+      "price": "4390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "60W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11765,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-12900K",
+      "price": "16700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11766,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-12900KF",
+      "price": "15800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11767,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-12700K",
+      "price": "11800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "12",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11768,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-12700KF",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "12",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11769,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-12700F",
+      "price": "10000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "12",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11770,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12600K",
+      "price": "8090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11771,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12600KF",
+      "price": "7490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11772,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12400F",
+      "price": "4490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11773,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12400",
+      "price": "5290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11774,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-12100F",
+      "price": "2790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "58W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11775,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-12100",
+      "price": "3790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "60W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11776,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9950X",
+      "price": "23900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11777,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9900X3D",
+      "price": "22100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11778,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9900X",
+      "price": "18800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11779,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 8700G",
+      "price": "11800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11780,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 8600G",
+      "price": "8090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11781,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 3 8300G",
+      "price": "4190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11782,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7950X3D",
+      "price": "23000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11783,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7950X",
+      "price": "19900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11784,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7900X3D",
+      "price": "18000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11785,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7900X",
+      "price": "14700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11786,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7900",
+      "price": "13800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11787,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 7800X3D",
+      "price": "14800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11788,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 7700X",
+      "price": "12000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11789,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 7700",
+      "price": "10600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11790,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 7600X",
+      "price": "7990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11791,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 7600",
+      "price": "7290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11792,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 5950X",
+      "price": "15100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11793,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 5900X",
+      "price": "11100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11794,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5800X3D",
+      "price": "11700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11795,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5700X3D",
+      "price": "8490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11796,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5800X",
+      "price": "7690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11797,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5700X",
+      "price": "6090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11798,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5700G",
+      "price": "6490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11799,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5600X",
+      "price": "4990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11800,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5600G",
+      "price": "4590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11801,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 3 4100",
+      "price": "2190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11802,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 4600G",
+      "price": "3590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11803,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900KS (BOX)",
+      "price": "25000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "150W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11804,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900K (BOX)",
+      "price": "22400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11805,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900KF (BOX)",
+      "price": "21700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11806,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900F (BOX)",
+      "price": "19700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11807,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900 (BOX)",
+      "price": "20300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11808,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700K (BOX)",
+      "price": "15800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11809,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700KF (BOX)",
+      "price": "15000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11810,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700F (BOX)",
+      "price": "13300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11811,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700 (BOX)",
+      "price": "13800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11812,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14600K (BOX)",
+      "price": "12100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11813,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14600KF (BOX)",
+      "price": "11100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11814,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14500 (BOX)",
+      "price": "9400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11815,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14400F (BOX)",
+      "price": "7390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11816,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14400 (BOX)",
+      "price": "7890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11817,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-14100F (BOX)",
+      "price": "3790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "58W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11818,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-14100 (BOX)",
+      "price": "4690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "60W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11819,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 9 285K (BOX)",
+      "price": "23800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "24",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11820,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 7 265K (BOX)",
+      "price": "16500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "20",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11821,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 7 265KF (BOX)",
+      "price": "15600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "20",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11822,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 5 245K (BOX)",
+      "price": "11800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "14",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11823,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core Ultra 5 245KF (BOX)",
+      "price": "11100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "14",
+        "CPU Socket": "LGA1851",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11824,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900KS (BOX)",
+      "price": "23700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "150W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11825,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900K (BOX)",
+      "price": "20800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11826,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900KF (BOX)",
+      "price": "19900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11827,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-13900F (BOX)",
+      "price": "18600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11828,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-13700K (BOX)",
+      "price": "14500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11829,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-13700KF (BOX)",
+      "price": "13300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11830,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-13700F (BOX)",
+      "price": "12300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11831,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13600K (BOX)",
+      "price": "10500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11832,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13600KF (BOX)",
+      "price": "9700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11833,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13500 (BOX)",
+      "price": "8390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11834,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13400F (BOX)",
+      "price": "6690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11835,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-13400 (BOX)",
+      "price": "7290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11836,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-13100F (BOX)",
+      "price": "3390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "58W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11837,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-13100 (BOX)",
+      "price": "4390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "60W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11838,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-12900K (BOX)",
+      "price": "17000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11839,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-12900KF (BOX)",
+      "price": "16000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "16",
+        "Threads": "24",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11840,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-12700K (BOX)",
+      "price": "11700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:54.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "12",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11841,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-12700KF (BOX)",
+      "price": "11100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "12",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11842,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-12700F (BOX)",
+      "price": "10000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "12",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11843,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12600K (BOX)",
+      "price": "8390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11844,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12600KF (BOX)",
+      "price": "7590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "10",
+        "Threads": "16",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11845,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12400F (BOX)",
+      "price": "4590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11846,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-12400 (BOX)",
+      "price": "5490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11847,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-12100F (BOX)",
+      "price": "3090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "58W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11848,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i3-12100 (BOX)",
+      "price": "3790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "60W",
+        "Brand": "Intel",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11849,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9950X3D (BOX)",
+      "price": "25800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11850,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9950X (BOX)",
+      "price": "23700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11851,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9900X3D (BOX)",
+      "price": "22000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11852,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 9900X (BOX)",
+      "price": "18900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11853,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 9800X3D (BOX)",
+      "price": "17900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11854,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 9700X (BOX)",
+      "price": "14100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11855,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 9600X (BOX)",
+      "price": "9800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11856,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 8700G (BOX)",
+      "price": "12100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11857,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 8600G (BOX)",
+      "price": "8090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11858,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 8500G (BOX)",
+      "price": "6490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11859,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 3 8300G (BOX)",
+      "price": "3890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11860,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7950X3D (BOX)",
+      "price": "23000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11861,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7950X (BOX)",
+      "price": "19700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11862,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7900X3D (BOX)",
+      "price": "17700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11863,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7900X (BOX)",
+      "price": "15000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "170W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11864,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 7900 (BOX)",
+      "price": "13900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11865,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 7800X3D (BOX)",
+      "price": "15000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "120W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11866,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 7700X (BOX)",
+      "price": "11900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11867,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 7700 (BOX)",
+      "price": "10400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11868,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 7600X (BOX)",
+      "price": "7890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11869,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 7600 (BOX)",
+      "price": "7190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11870,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 7500F (BOX)",
+      "price": "5790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM5",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11871,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 5950X (BOX)",
+      "price": "15000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "16",
+        "Threads": "32",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11872,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 9 5900X (BOX)",
+      "price": "10900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "12",
+        "Threads": "24",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11873,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5800X3D (BOX)",
+      "price": "11300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11874,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5700X3D (BOX)",
+      "price": "8390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11875,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5800X (BOX)",
+      "price": "7590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "105W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11876,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5700X (BOX)",
+      "price": "6290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11877,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 7 5700G (BOX)",
+      "price": "6390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "8",
+        "Threads": "16",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11878,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5600X (BOX)",
+      "price": "4990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11879,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5600 (BOX)",
+      "price": "4190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11880,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5600G (BOX)",
+      "price": "4290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11881,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5500 (BOX)",
+      "price": "3190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11882,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 5500GT (BOX)",
+      "price": "3890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11883,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 3 4100 (BOX)",
+      "price": "2190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "4",
+        "Threads": "8",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11884,
+      "category_id": 1,
+      "brand": "AMD",
+      "model": "Ryzen 5 4600G (BOX)",
+      "price": "3490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "AMD",
+        "Cores": "6",
+        "Threads": "12",
+        "CPU Socket": "AM4",
+        "Architecture": "Zen"
+      }
+    },
+    {
+      "id": 11885,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900KS (MPK)",
+      "price": "25100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "150W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11886,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900K (MPK)",
+      "price": "22600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11887,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900KF (MPK)",
+      "price": "21300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11888,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900F (MPK)",
+      "price": "20100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11889,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i9-14900 (MPK)",
+      "price": "20700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "24",
+        "Threads": "32",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11890,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700K (MPK)",
+      "price": "15800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11891,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700KF (MPK)",
+      "price": "14900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11892,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700F (MPK)",
+      "price": "13400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11893,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i7-14700 (MPK)",
+      "price": "13700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "65W",
+        "Brand": "Intel",
+        "Cores": "20",
+        "Threads": "28",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
+    },
+    {
+      "id": 11894,
+      "category_id": 1,
+      "brand": "Intel",
+      "model": "Core i5-14600K (MPK)",
+      "price": "11800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:45:55.000Z",
+      "specifications": {
+        "TDP": "125W",
+        "Brand": "Intel",
+        "Cores": "14",
+        "Threads": "20",
+        "CPU Socket": "LGA1700",
+        "Architecture": "x86-64"
+      }
     }
   ],
   "spec_case": [
@@ -17519,6 +20471,1154 @@
       "cores": 6,
       "threads": 12,
       "tdp_watt": 65
+    },
+    {
+      "product_id": 11731,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11732,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11733,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11734,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11735,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11736,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11737,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11738,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11739,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11740,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11741,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11742,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11743,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11744,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 58
+    },
+    {
+      "product_id": 11745,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11746,
+      "socket": "LGA1851",
+      "cores": 24,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11747,
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11748,
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11749,
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11750,
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11751,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 150
+    },
+    {
+      "product_id": 11752,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11753,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11754,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11755,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11756,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11757,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11758,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11759,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11760,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11761,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11762,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11763,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 58
+    },
+    {
+      "product_id": 11764,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11765,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11766,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11767,
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11768,
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11769,
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11770,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11771,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11772,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11773,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11774,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 58
+    },
+    {
+      "product_id": 11775,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11776,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11777,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11778,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11779,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11780,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11781,
+      "socket": "AM5",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11782,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11783,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11784,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11785,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11786,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11787,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11788,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11789,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11790,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11791,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11792,
+      "socket": "AM4",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11793,
+      "socket": "AM4",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11794,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11795,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11796,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11797,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11798,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11799,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11800,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11801,
+      "socket": "AM4",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11802,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11803,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 150
+    },
+    {
+      "product_id": 11804,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11805,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11806,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11807,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11808,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11809,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11810,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11811,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11812,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11813,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11814,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11815,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11816,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11817,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 58
+    },
+    {
+      "product_id": 11818,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11819,
+      "socket": "LGA1851",
+      "cores": 24,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11820,
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11821,
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11822,
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11823,
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11824,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 150
+    },
+    {
+      "product_id": 11825,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11826,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11827,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11828,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11829,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11830,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11831,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11832,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11833,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11834,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11835,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11836,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 58
+    },
+    {
+      "product_id": 11837,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11838,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11839,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11840,
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11841,
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11842,
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11843,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11844,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11845,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11846,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11847,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 58
+    },
+    {
+      "product_id": 11848,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11849,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11850,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11851,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11852,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11853,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11854,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11855,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11856,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11857,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11858,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11859,
+      "socket": "AM5",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11860,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11861,
+      "socket": "AM5",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11862,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11863,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11864,
+      "socket": "AM5",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11865,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11866,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11867,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11868,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11869,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11870,
+      "socket": "AM5",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11871,
+      "socket": "AM4",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11872,
+      "socket": "AM4",
+      "cores": 12,
+      "threads": 24,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11873,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11874,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11875,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11876,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11877,
+      "socket": "AM4",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11878,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11879,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11880,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11881,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11882,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11883,
+      "socket": "AM4",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11884,
+      "socket": "AM4",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11885,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 150
+    },
+    {
+      "product_id": 11886,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11887,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11888,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11889,
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11890,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11891,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11892,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11893,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11894,
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp_watt": 125
     }
   ],
   "spec_gpu": [
