@@ -22291,6 +22291,2364 @@
         "Memory Type": "DDR5",
         "Memory Slots": "4 x DIMM"
       }
+    },
+    {
+      "id": 12024,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR PLATINUM DDR5 96GB (48GBx2) 6400MHz WHITE",
+      "price": "14240.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12025,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "RIPJAWS V DDR4 8GB (4GBx2) 2666MHz BLACK",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12026,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR5 48GB (24GBx2) 6400MHz WHITE",
+      "price": "7520.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12027,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO OVERCLOCKING DDR4 8GB (4GBx2) 2666MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12028,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z5 RGB DDR5 16GB (8GBx2) 8000MHz WHITE",
+      "price": "3040.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12029,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "HIKVISION U10 DDR4 16GB (8GBx2) 3200MHz RGB (WHITE)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12030,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR5 64GB (32GBx2) 6000MHz RGB (BLACK)",
+      "price": "9260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12031,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE DELTA RGB DDR4 64GB (32GBx2) 3600MHz WHITE",
+      "price": "5760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12032,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "VALUERAM DDR5 96GB (48GBx2) 4800MHz RGB (WHITE)",
+      "price": "13740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12033,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "PREMIER DDR4 16GB (8GBx2) 3600MHz RGB (BLACK)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12034,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE VULCAN Z DDR5 32GB (16GBx2) 6400MHz BLACK",
+      "price": "5280.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12035,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR4 8GB (4GBx2) 3200MHz RGB (BLACK)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12036,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "ARMOR DDR5 96GB (48GBx2) 6000MHz WHITE",
+      "price": "13440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12037,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR4 8GB (4GBx2) 2666MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12038,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY IMPACT DDR5 16GB (8GBx2) 7200MHz WHITE",
+      "price": "3040.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "7200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12039,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR4 16GB (8GBx2) 2666MHz BLACK",
+      "price": "1440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12040,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO OVERCLOCKING DDR5 16GB (8GBx2) 4800MHz RGB (BLACK)",
+      "price": "2540.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12041,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE DELTA RGB DDR4 32GB (16GBx2) 3200MHz BLACK",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12042,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z5 RGB DDR5 64GB (32GBx2) 8000MHz BLACK",
+      "price": "9760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12043,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR4 8GB (4GBx2) 3200MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12044,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY IMPACT DDR5 48GB (24GBx2) 4800MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12045,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "HIKVISION U10 DDR4 8GB (4GBx2) 3600MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12046,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR5 16GB (8GBx2) 8000MHz RGB (WHITE)",
+      "price": "3340.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12047,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "PREMIER DDR4 32GB (16GBx2) 3600MHz RGB (WHITE)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12048,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR5 16GB (8GBx2) 6400MHz RGB (WHITE)",
+      "price": "3340.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12049,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR4 32GB (16GBx2) 3200MHz WHITE",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12050,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z RGB DDR5 48GB (24GBx2) 5600MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12051,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR4 8GB (4GBx2) 3200MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12052,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR5 32GB (16GBx2) 6400MHz RGB (BLACK)",
+      "price": "5580.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12053,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR4 64GB (32GBx2) 3600MHz RGB (BLACK)",
+      "price": "6060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12054,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR5 96GB (48GBx2) 5200MHz WHITE",
+      "price": "13440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12055,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "ARMOR DDR4 32GB (16GBx2) 2666MHz RGB (BLACK)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12056,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG LANCER RGB DDR5 32GB (16GBx2) 6000MHz RGB (WHITE)",
+      "price": "4780.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12057,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR TITANIUM DDR4 8GB (4GBx2) 2666MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12058,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER ELITE DDR5 64GB (32GBx2) 6400MHz BLACK",
+      "price": "9760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12059,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR TITANIUM DDR4 16GB (8GBx2) 3600MHz WHITE",
+      "price": "1440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12060,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR5 48GB (24GBx2) 5200MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12061,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER VENOM DDR4 8GB (4GBx2) 3600MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12062,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO OVERCLOCKING DDR5 48GB (24GBx2) 4800MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12063,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER ELITE DDR4 16GB (8GBx2) 2666MHz RGB (WHITE)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12064,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG LANCER RGB DDR5 48GB (24GBx2) 6000MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12065,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE RGB DDR4 32GB (16GBx2) 2666MHz WHITE",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12066,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "ELITE DDR5 64GB (32GBx2) 5600MHz RGB (BLACK)",
+      "price": "9260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12067,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR4 64GB (32GBx2) 3200MHz RGB (WHITE)",
+      "price": "6060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12068,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR5 32GB (16GBx2) 5600MHz WHITE",
+      "price": "4480.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12069,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR4 8GB (4GBx2) 3200MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12070,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY BEAST DDR5 48GB (24GBx2) 5200MHz BLACK",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12071,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY RENEGADE DDR4 8GB (4GBx2) 3200MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12072,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER VENOM DDR5 32GB (16GBx2) 5600MHz WHITE",
+      "price": "4480.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12073,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY BEAST DDR4 32GB (16GBx2) 3600MHz RGB (BLACK)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12074,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR5 48GB (24GBx2) 5600MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12075,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "PREMIER DDR4 32GB (16GBx2) 2666MHz WHITE",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12076,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "HIKVISION U10 DDR5 48GB (24GBx2) 8000MHz WHITE",
+      "price": "7520.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12077,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR4 8GB (4GBx2) 3600MHz RGB (BLACK)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12078,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR5 48GB (24GBx2) 4800MHz RGB (WHITE)",
+      "price": "7020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12079,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE XTREEM DDR4 8GB (4GBx2) 3600MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12080,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY BEAST DDR5 64GB (32GBx2) 6400MHz RGB (BLACK)",
+      "price": "10060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12081,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY RENEGADE DDR4 32GB (16GBx2) 3200MHz RGB (BLACK)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12082,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "HIKVISION U10 DDR5 64GB (32GBx2) 6000MHz RGB (BLACK)",
+      "price": "9260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12083,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR4 16GB (8GBx2) 3200MHz RGB (BLACK)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12084,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER VENOM DDR5 64GB (32GBx2) 4800MHz RGB (WHITE)",
+      "price": "9260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12085,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER ELITE DDR4 8GB (4GBx2) 3600MHz RGB (BLACK)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12086,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER ELITE DDR5 32GB (16GBx2) 8000MHz RGB (BLACK)",
+      "price": "5580.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12087,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "ARMOR DDR4 16GB (8GBx2) 3200MHz WHITE",
+      "price": "1440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12088,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "FLARE X5 DDR5 48GB (24GBx2) 4800MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12089,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE LPX DDR4 64GB (32GBx2) 3600MHz RGB (WHITE)",
+      "price": "6060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12090,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "ARMOR DDR5 96GB (48GBx2) 7200MHz WHITE",
+      "price": "14240.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "7200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12091,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER ELITE DDR4 32GB (16GBx2) 2666MHz WHITE",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12092,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO GAMING DDR5 16GB (8GBx2) 7200MHz WHITE",
+      "price": "3040.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "7200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12093,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER VENOM DDR4 16GB (8GBx2) 3600MHz RGB (BLACK)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12094,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE XTREEM DDR5 32GB (16GBx2) 4800MHz BLACK",
+      "price": "4480.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12095,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR4 16GB (8GBx2) 3200MHz BLACK",
+      "price": "1440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12096,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR5 48GB (24GBx2) 5200MHz RGB (WHITE)",
+      "price": "7020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12097,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR4 8GB (4GBx2) 2666MHz BLACK",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12098,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z RGB DDR5 48GB (24GBx2) 5200MHz BLACK",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12099,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR TITANIUM DDR4 8GB (4GBx2) 3200MHz BLACK",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12100,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "ARMOR DDR5 64GB (32GBx2) 8000MHz RGB (WHITE)",
+      "price": "10060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12101,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE DELTA RGB DDR4 64GB (32GBx2) 2666MHz WHITE",
+      "price": "5760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12102,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR5 48GB (24GBx2) 5600MHz RGB (WHITE)",
+      "price": "7020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12103,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR4 32GB (16GBx2) 3200MHz RGB (BLACK)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12104,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z5 NEO DDR5 48GB (24GBx2) 6400MHz RGB (BLACK)",
+      "price": "7820.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12105,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "HIKVISION U10 DDR4 8GB (4GBx2) 2666MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12106,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE RGB DDR5 48GB (24GBx2) 8000MHz RGB (WHITE)",
+      "price": "7820.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12107,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER ELITE DDR4 8GB (4GBx2) 3200MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12108,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR5 64GB (32GBx2) 5200MHz WHITE",
+      "price": "8960.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12109,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR4 8GB (4GBx2) 3200MHz RGB (WHITE)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12110,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "VALUERAM DDR5 48GB (24GBx2) 5600MHz WHITE",
+      "price": "6720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12111,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR TITANIUM DDR4 32GB (16GBx2) 3600MHz RGB (WHITE)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12112,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE LPX DDR5 32GB (16GBx2) 6400MHz RGB (WHITE)",
+      "price": "5580.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12113,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z5 RGB DDR4 8GB (4GBx2) 3200MHz RGB (BLACK)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12114,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR5 32GB (16GBx2) 8000MHz BLACK",
+      "price": "5280.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12115,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR PLATINUM DDR4 32GB (16GBx2) 3200MHz BLACK",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12116,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "VALUERAM DDR5 16GB (8GBx2) 4800MHz WHITE",
+      "price": "2240.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12117,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR4 32GB (16GBx2) 2666MHz RGB (BLACK)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12118,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "ELITE DDR5 16GB (8GBx2) 8000MHz RGB (WHITE)",
+      "price": "3340.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12119,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE DELTA RGB DDR4 64GB (32GBx2) 2666MHz RGB (WHITE)",
+      "price": "6060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:19.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12120,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE LPX DDR5 32GB (16GBx2) 8000MHz BLACK",
+      "price": "5280.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "8000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12121,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR4 64GB (32GBx2) 2666MHz BLACK",
+      "price": "5760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12122,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE LPX DDR5 64GB (32GBx2) 5600MHz RGB (WHITE)",
+      "price": "9260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12123,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "ELITE DDR4 64GB (32GBx2) 2666MHz BLACK",
+      "price": "5760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12124,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO GAMING DDR5 64GB (32GBx2) 7200MHz RGB (WHITE)",
+      "price": "10060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "7200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12125,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "FLARE X5 DDR4 16GB (8GBx2) 2666MHz RGB (WHITE)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12126,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE DELTA RGB DDR5 32GB (16GBx2) 5600MHz WHITE",
+      "price": "4480.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12127,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE RGB DDR4 16GB (8GBx2) 2666MHz WHITE",
+      "price": "1440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12128,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE XTREEM DDR5 96GB (48GBx2) 5600MHz RGB (BLACK)",
+      "price": "13740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12129,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR PLATINUM DDR4 32GB (16GBx2) 3600MHz WHITE",
+      "price": "2880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12130,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO GAMING DDR5 32GB (16GBx2) 6000MHz RGB (BLACK)",
+      "price": "4780.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12131,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR4 8GB (4GBx2) 3200MHz BLACK",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12132,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "ELITE DDR5 48GB (24GBx2) 5600MHz RGB (WHITE)",
+      "price": "7020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12133,
+      "category_id": 3,
+      "brand": "KINGSTON",
+      "model": "FURY RENEGADE DDR4 8GB (4GBx2) 3600MHz RGB (BLACK)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12134,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "VENGEANCE LPX DDR5 96GB (48GBx2) 5200MHz WHITE",
+      "price": "13440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12135,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE DELTA RGB DDR4 8GB (4GBx2) 3200MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12136,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE VULCAN Z DDR5 64GB (32GBx2) 4800MHz WHITE",
+      "price": "8960.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "WHITE",
+        "Latency": "CL30",
+        "Capacity": "64GB",
+        "Bus Speed": "4800MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12137,
+      "category_id": 3,
+      "brand": "HIKSEMI",
+      "model": "ARMOR DDR4 8GB (4GBx2) 3600MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "HIKSEMI",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12138,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR TITANIUM DDR5 16GB (8GBx2) 6000MHz RGB (WHITE)",
+      "price": "2540.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12139,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR4 8GB (4GBx2) 2666MHz WHITE",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12140,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "PREMIER DDR5 48GB (24GBx2) 5200MHz RGB (BLACK)",
+      "price": "7020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12141,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM XG RGB DDR4 32GB (16GBx2) 2666MHz RGB (BLACK)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "32GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12142,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER STEEL DDR5 16GB (8GBx2) 5200MHz RGB (WHITE)",
+      "price": "2540.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12143,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR4 8GB (4GBx2) 3200MHz BLACK",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3200MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12144,
+      "category_id": 3,
+      "brand": "THERMALTAKE",
+      "model": "TOUGHRAM RC DDR5 96GB (48GBx2) 5200MHz RGB (BLACK)",
+      "price": "13740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "5200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12145,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "RIPJAWS S5 DDR4 16GB (8GBx2) 3600MHz RGB (BLACK)",
+      "price": "1740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12146,
+      "category_id": 3,
+      "brand": "CORSAIR",
+      "model": "DOMINATOR PLATINUM DDR5 32GB (16GBx2) 7200MHz RGB (BLACK)",
+      "price": "5580.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "7200MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12147,
+      "category_id": 3,
+      "brand": "PATRIOT",
+      "model": "VIPER VENOM DDR4 64GB (32GBx2) 2666MHz RGB (WHITE)",
+      "price": "6060.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Color": "RGB (WHITE)",
+        "Latency": "CL16",
+        "Capacity": "64GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12148,
+      "category_id": 3,
+      "brand": "ADATA",
+      "model": "XPG CASTER DDR5 96GB (48GBx2) 5600MHz RGB (BLACK)",
+      "price": "13740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "96GB",
+        "Bus Speed": "5600MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12149,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO OVERCLOCKING DDR4 8GB (4GBx2) 2666MHz BLACK",
+      "price": "720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "BLACK",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12150,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "PRO GAMING DDR5 32GB (16GBx2) 6400MHz BLACK",
+      "price": "5280.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "32GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12151,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR4 8GB (4GBx2) 3600MHz RGB (BLACK)",
+      "price": "1020.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL16",
+        "Capacity": "8GB",
+        "Bus Speed": "3600MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12152,
+      "category_id": 3,
+      "brand": "G.SKILL",
+      "model": "TRIDENT Z5 NEO DDR5 16GB (8GBx2) 6000MHz BLACK",
+      "price": "2240.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "G.SKILL",
+        "Color": "BLACK",
+        "Latency": "CL30",
+        "Capacity": "16GB",
+        "Bus Speed": "6000MHz",
+        "Memory Type": "DDR5"
+      }
+    },
+    {
+      "id": 12153,
+      "category_id": 3,
+      "brand": "CRUCIAL",
+      "model": "BASICS DDR4 16GB (8GBx2) 2666MHz WHITE",
+      "price": "1440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Color": "WHITE",
+        "Latency": "CL16",
+        "Capacity": "16GB",
+        "Bus Speed": "2666MHz",
+        "Memory Type": "DDR4"
+      }
+    },
+    {
+      "id": 12154,
+      "category_id": 3,
+      "brand": "TEAMGROUP",
+      "model": "T-FORCE VULCAN Z DDR5 48GB (24GBx2) 6400MHz RGB (BLACK)",
+      "price": "7820.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:52:20.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Color": "RGB (BLACK)",
+        "Latency": "CL30",
+        "Capacity": "48GB",
+        "Bus Speed": "6400MHz",
+        "Memory Type": "DDR5"
+      }
     }
   ],
   "spec_case": [
@@ -27042,6 +29400,792 @@
       "ram_type": "DDR4",
       "capacity_gb": 16,
       "bus_speed": 3200
+    },
+    {
+      "product_id": 12024,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12025,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12026,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12027,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12028,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12029,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12030,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12031,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12032,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12033,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12034,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12035,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12036,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12037,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12038,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 7200
+    },
+    {
+      "product_id": 12039,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12040,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12041,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12042,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12043,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12044,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12045,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12046,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12047,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12048,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12049,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12050,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12051,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12052,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12053,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12054,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12055,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12056,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12057,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12058,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12059,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12060,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12061,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12062,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12063,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12064,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12065,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12066,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12067,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12068,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12069,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12070,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12071,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12072,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12073,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12074,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12075,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12076,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12077,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12078,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12079,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12080,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12081,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12082,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12083,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12084,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12085,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12086,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12087,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12088,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12089,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12090,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 7200
+    },
+    {
+      "product_id": 12091,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12092,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 7200
+    },
+    {
+      "product_id": 12093,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12094,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12095,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12096,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12097,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12098,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12099,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12100,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12101,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12102,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12103,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12104,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12105,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12106,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12107,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12108,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12109,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12110,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12111,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12112,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12113,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12114,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12115,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12116,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12117,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12118,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12119,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12120,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 8000
+    },
+    {
+      "product_id": 12121,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12122,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12123,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12124,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 7200
+    },
+    {
+      "product_id": 12125,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12126,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12127,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12128,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12129,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12130,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12131,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12132,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12133,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12134,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12135,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12136,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 12137,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12138,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12139,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12140,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12141,
+      "ram_type": "DDR4",
+      "capacity_gb": 32,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12142,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12143,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 12144,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 5200
+    },
+    {
+      "product_id": 12145,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12146,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 7200
+    },
+    {
+      "product_id": 12147,
+      "ram_type": "DDR4",
+      "capacity_gb": 64,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12148,
+      "ram_type": "DDR5",
+      "capacity_gb": 96,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 12149,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12150,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 12151,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3600
+    },
+    {
+      "product_id": 12152,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 12153,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 2666
+    },
+    {
+      "product_id": 12154,
+      "ram_type": "DDR5",
+      "capacity_gb": 48,
+      "bus_speed": 6400
     }
   ],
   "spec_storage": [
