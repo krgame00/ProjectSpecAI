@@ -6,7 +6,7 @@
 ## 1. Overview
 The goal of this design is to establish 7 dedicated, strongly-typed component specification tables in MySQL (`smart_pc_builder`) to support strict technical compatibility checks (e.g. CPU Socket vs Motherboard Socket, TDP wattage summation, RAM type matching) and fast indexing while maintaining the master `products` table for shared attributes.
 
-An automated Node.js migration script will extract structured fields from existing JSON `specifications` across all 272 products and populate these 7 tables automatically.
+An automated Node.js migration script will extract structured fields from existing JSON `specifications` across all 478 products and populate these 7 tables automatically.
 
 ## 2. Database Schema (MySQL)
 
@@ -61,7 +61,7 @@ An automated Node.js migration script will extract structured fields from existi
 ## 3. Data Migration & Extraction Script (`node-backend/scripts/populate_typed_specs.js`)
 - Connects to MySQL using `node-backend/.env`.
 - Ensures all 7 `spec_*` tables exist (creates them if missing).
-- Iterates over all 272 products from `products` table.
+- Iterates over all 478 products from `products` table.
 - Parses `specifications` JSON and extracts structured attributes using Regex / JSON keys:
   - CPU: Socket, Cores, Threads, TDP
   - Motherboard: CPU Socket, Memory Type, Form Factor
