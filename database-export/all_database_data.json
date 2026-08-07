@@ -19840,6 +19840,2457 @@
         "CPU Socket": "LGA1700",
         "Architecture": "x86-64"
       }
+    },
+    {
+      "id": 11895,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MEG ACE X870-I D5 (V.2)",
+      "price": "23410.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11896,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "PRIME H610-I DDR4 (V.3)",
+      "price": "3380.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11897,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "RACING B850 D5 (V.1)",
+      "price": "6800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11898,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "COLORFUL BATTLE-AX X670E D5 (V.2)",
+      "price": "21660.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11899,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "TUF GAMING A520M- DDR4 (V.3)",
+      "price": "1890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11900,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "CVN B650-I D5 (V.1)",
+      "price": "7340.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11901,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "AORUS MASTER X670E D5 (V.2)",
+      "price": "31690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11902,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "GAMING X B860 D5 (V.3)",
+      "price": "6500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11903,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "TUF GAMING B550 DDR4 (V.1)",
+      "price": "5690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11904,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "AORUS MASTER X870E D5 (V.2)",
+      "price": "25350.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11905,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "MEG ACE X670M- D5 (V.3)",
+      "price": "16550.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11906,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "PRIME B650 D5 (V.1)",
+      "price": "5890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11907,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "AORUS ELITE B650-I D5 (V.2)",
+      "price": "7740.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11908,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "Phantom Gaming X570-I DDR4 (V.3)",
+      "price": "9890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11909,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "CVN X670E D5 (V.1)",
+      "price": "14900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11910,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "TUF GAMING B550 DDR4 (V.2)",
+      "price": "5090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11911,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "AORUS MASTER X870E D5 (V.3)",
+      "price": "25750.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11912,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "AORUS ELITE X670 D5 (V.1)",
+      "price": "15860.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11913,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "GAMING X A520 DDR4 (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11914,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "COLORFUL BATTLE-AX B550M- DDR4 (V.3)",
+      "price": "3490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11915,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "AORUS ELITE B850 D5 (V.1)",
+      "price": "8880.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11916,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "Phantom Gaming B860M- D5 (V.2)",
+      "price": "6300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11917,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MAG TOMAHAWK B550 DDR4 (V.3)",
+      "price": "4090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11918,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MAG TOMAHAWK X870E D5 (V.1)",
+      "price": "24460.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11919,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "GAMING X B850 D5 (V.2)",
+      "price": "8680.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11920,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "DS3H B550 DDR4 (V.3)",
+      "price": "3690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11921,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "CVN X670M- D5 (V.1)",
+      "price": "11300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11922,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MAG MORTAR B850-I D5 (V.2)",
+      "price": "8660.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11923,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "AORUS ELITE X670E-I D5 (V.3)",
+      "price": "20170.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11924,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Taichi H610 DDR4 (V.1)",
+      "price": "3440.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11925,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "COLORFUL BATTLE-AX A520 DDR4 (V.2)",
+      "price": "2850.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11926,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Taichi H610M- DDR4 (V.3)",
+      "price": "3840.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11927,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "DS3H B550 DDR4 (V.1)",
+      "price": "4090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11928,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "DS3H Z890M- D5 (V.2)",
+      "price": "13700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel Z890",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11929,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MAG TOMAHAWK X570 DDR4 (V.3)",
+      "price": "9790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11930,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "AORUS ELITE X870 D5 (V.1)",
+      "price": "16860.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11931,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "Steel Legend X570 DDR4 (V.2)",
+      "price": "7390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11932,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "CVN B850-I D5 (V.3)",
+      "price": "8660.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11933,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "DS3H B550-I DDR4 (V.1)",
+      "price": "5340.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11934,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "Phantom Gaming X870 D5 (V.2)",
+      "price": "16660.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11935,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "MAG TOMAHAWK X870EM- D5 (V.3)",
+      "price": "17100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11936,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "AORUS MASTER X870 D5 (V.1)",
+      "price": "18250.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11937,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "RACING X870-I D5 (V.2)",
+      "price": "16070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11938,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "MEG ACE B550M- DDR4 (V.3)",
+      "price": "6040.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11939,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "Phantom Gaming B850M- D5 (V.1)",
+      "price": "6200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11940,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "ROG STRIX X570M- DDR4 (V.2)",
+      "price": "10690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11941,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "MEG ACE X670 D5 (V.3)",
+      "price": "23290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11942,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "TUF GAMING A520 DDR4 (V.1)",
+      "price": "2490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11943,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "AORUS ELITE B850M- D5 (V.2)",
+      "price": "7000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11944,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "RACING B860 D5 (V.3)",
+      "price": "5900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11945,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "Taichi X870M- D5 (V.1)",
+      "price": "18050.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11946,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "COLORFUL BATTLE-AX B650-I D5 (V.2)",
+      "price": "7540.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11947,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "COLORFUL BATTLE-AX B650 D5 (V.3)",
+      "price": "8290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11948,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "PRIME X870 D5 (V.1)",
+      "price": "12700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11949,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "ROG STRIX B760-I D5 (V.2)",
+      "price": "9540.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "Intel B760",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11950,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Steel Legend B650M- D5 (V.3)",
+      "price": "5690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11951,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "Pro RS H610M- D5 (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11952,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "MPG EDGE B860M- D5 (V.2)",
+      "price": "6500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11953,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "MAG MORTAR X870 D5 (V.3)",
+      "price": "17460.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11954,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "Pro RS B860 D5 (V.1)",
+      "price": "8260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11955,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "AORUS MASTER X870E D5 (V.2)",
+      "price": "35690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11956,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "COLORFUL BATTLE-AX B860-I D5 (V.3)",
+      "price": "8070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11957,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "MEG ACE H610 D5 (V.1)",
+      "price": "5410.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11958,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "AORUS MASTER H610 DDR4 (V.2)",
+      "price": "5610.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11959,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "PRO B550 DDR4 (V.3)",
+      "price": "3490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11960,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "MAG MORTAR A520-I DDR4 (V.1)",
+      "price": "2660.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11961,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "RACING X870-I D5 (V.2)",
+      "price": "15870.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11962,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "Taichi X870E-I D5 (V.3)",
+      "price": "33560.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11963,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "AORUS MASTER X870E-I D5 (V.1)",
+      "price": "33760.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11964,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "PRO B860-I D5 (V.2)",
+      "price": "7670.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11965,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "CVN X870E D5 (V.3)",
+      "price": "23860.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11966,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "DS3H B860-I D5 (V.1)",
+      "price": "8070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11967,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MEG ACE Z790-I D5 (V.2)",
+      "price": "20080.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:23.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11968,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "MEG ACE X870-I D5 (V.3)",
+      "price": "24010.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:24.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11969,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Phantom Gaming B850 D5 (V.1)",
+      "price": "8680.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:24.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11970,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Taichi Z790 D5 (V.2)",
+      "price": "15190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:24.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11971,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "Taichi B550 DDR4 (V.3)",
+      "price": "7730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:26.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11972,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "DS3H Z790 D5 (V.1)",
+      "price": "14590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:27.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11973,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "ROG STRIX B650M- D5 (V.2)",
+      "price": "9040.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:27.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11974,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "Phantom Gaming Z790 D5 (V.3)",
+      "price": "9990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:28.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11975,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "Pro RS X870 D5 (V.1)",
+      "price": "12100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:28.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11976,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "PRIME A520 DDR4 (V.2)",
+      "price": "3050.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:28.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11977,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "PRO Z890 D5 (V.3)",
+      "price": "13500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:29.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel Z890",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11978,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "MPG EDGE X870M- D5 (V.1)",
+      "price": "12700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:29.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11979,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "MAG MORTAR Z790-I D5 (V.2)",
+      "price": "12990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:30.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11980,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "Phantom Gaming B850 D5 (V.3)",
+      "price": "6400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:30.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11981,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Steel Legend H610 D5 (V.1)",
+      "price": "3610.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:30.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11982,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "GAMING X X570M- DDR4 (V.2)",
+      "price": "7590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11983,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "DS3H X670-I D5 (V.3)",
+      "price": "14970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11984,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "GAMING X Z790M- D5 (V.1)",
+      "price": "9990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11985,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "AORUS MASTER Z790 D5 (V.2)",
+      "price": "21180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11986,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "PRIME A520 DDR4 (V.3)",
+      "price": "3050.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11987,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "AORUS MASTER X670 D5 (V.1)",
+      "price": "23490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11988,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "RACING X870M- D5 (V.2)",
+      "price": "12700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:31.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11989,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "GAMING X B760 D5 (V.3)",
+      "price": "4890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel B760",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11990,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "PRIME X570-I DDR4 (V.2)",
+      "price": "9490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11991,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "Taichi X570 DDR4 (V.3)",
+      "price": "15280.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X570",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11992,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "MAG TOMAHAWK X670 D5 (V.1)",
+      "price": "11700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11993,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "TUF GAMING B860M- D5 (V.2)",
+      "price": "5900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11994,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "TUF GAMING Z890 D5 (V.3)",
+      "price": "18260.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel Z890",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11995,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "RACING Z790M- D5 (V.1)",
+      "price": "10390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11996,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "Pro RS Z790M- D5 (V.2)",
+      "price": "10590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:32.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11997,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "MEG ACE B650 D5 (V.3)",
+      "price": "9040.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11998,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "MPG EDGE Z790-I D5 (V.1)",
+      "price": "12990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 11999,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "PRIME H610-I DDR4 (V.2)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12000,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "PRO B860M- D5 (V.3)",
+      "price": "6300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "Intel B860",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12001,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "GAMING X B760-I DDR4 (V.1)",
+      "price": "6960.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "Intel B760",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12002,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "GAMING X X670E-I D5 (V.2)",
+      "price": "20170.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12003,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Taichi A520-I DDR4 (V.3)",
+      "price": "3690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12004,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "RACING B650-I D5 (V.1)",
+      "price": "7340.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD B650",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12005,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "COLORFUL BATTLE-AX A520M- DDR4 (V.2)",
+      "price": "2290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:33.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12006,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MPG EDGE X670E D5 (V.3)",
+      "price": "21460.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12007,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "Phantom Gaming B550 DDR4 (V.1)",
+      "price": "4290.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12008,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "PRIME B550M- DDR4 (V.2)",
+      "price": "3490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD B550",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12009,
+      "category_id": 2,
+      "brand": "BIOSTAR",
+      "model": "COLORFUL BATTLE-AX Z790 D5 (V.3)",
+      "price": "14190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "BIOSTAR",
+        "Chipset": "Intel Z790",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12010,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "AORUS ELITE A520-I DDR4 (V.1)",
+      "price": "2860.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD A520",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM4",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12011,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "PRIME H610 DDR4 (V.2)",
+      "price": "2890.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR4",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12012,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "CVN X670-I D5 (V.3)",
+      "price": "14970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:34.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12013,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "PRO B850M- D5 (V.1)",
+      "price": "6200.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "AMD B850",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12014,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "AORUS ELITE H610-I D5 (V.2)",
+      "price": "3180.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12015,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "Taichi X670E D5 (V.3)",
+      "price": "22750.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "AMD X670E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12016,
+      "category_id": 2,
+      "brand": "MSI",
+      "model": "TUF GAMING B760 D5 (V.1)",
+      "price": "5490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Chipset": "Intel B760",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12017,
+      "category_id": 2,
+      "brand": "GIGABYTE",
+      "model": "GAMING X X870E D5 (V.2)",
+      "price": "24460.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "E-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12018,
+      "category_id": 2,
+      "brand": "COLORFUL",
+      "model": "MPG EDGE H610-I D5 (V.3)",
+      "price": "2980.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "COLORFUL",
+        "Chipset": "Intel H610",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1700",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12019,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "GAMING X X870E D5 (V.1)",
+      "price": "17100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:35.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12020,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "AORUS ELITE Z890M- D5 (V.2)",
+      "price": "13300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:36.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "Intel Z890",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "LGA1851",
+        "Form Factor": "Micro-ATX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12021,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "Pro RS X670-I D5 (V.3)",
+      "price": "14770.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:36.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X670",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12022,
+      "category_id": 2,
+      "brand": "ASROCK",
+      "model": "COLORFUL BATTLE-AX X870-I D5 (V.1)",
+      "price": "16270.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:36.000Z",
+      "specifications": {
+        "Brand": "ASROCK",
+        "Chipset": "AMD X870",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
+    },
+    {
+      "id": 12023,
+      "category_id": 2,
+      "brand": "ASUS",
+      "model": "MAG TOMAHAWK X870E-I D5 (V.2)",
+      "price": "21970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:49:36.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Chipset": "AMD X870E",
+        "LAN Speed": "2.5 Gbps",
+        "CPU Socket": "AM5",
+        "Form Factor": "Mini-ITX",
+        "Memory Type": "DDR5",
+        "Memory Slots": "4 x DIMM"
+      }
     }
   ],
   "spec_case": [
@@ -23029,6 +25480,780 @@
       "socket": "AM4",
       "ram_type": "DDR4",
       "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11895,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11896,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11897,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11898,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11899,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11900,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11901,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11902,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11903,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11904,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11905,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11906,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11907,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11908,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11909,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11910,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11911,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11912,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11913,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11914,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11915,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11916,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11917,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11918,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11919,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11920,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11921,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11922,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11923,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11924,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11925,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11926,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11927,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11928,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11929,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11930,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11931,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11932,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11933,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11934,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11935,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11936,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11937,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11938,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11939,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11940,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11941,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11942,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11943,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11944,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11945,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11946,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11947,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11948,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11949,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11950,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11951,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11952,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11953,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11954,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11955,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11956,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11957,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11958,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11959,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11960,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11961,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11962,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11963,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11964,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11965,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11966,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11967,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11968,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11969,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11970,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11971,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11972,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11973,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11974,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11975,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11976,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11977,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11978,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11979,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11980,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11981,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11982,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11983,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11984,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11985,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11986,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11987,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11988,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11989,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11990,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11991,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11992,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11993,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11994,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 11995,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11996,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11997,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 11998,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 11999,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12000,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 12001,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12002,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12003,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12004,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12005,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 12006,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 12007,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 12008,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 12009,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 12010,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12011,
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 12012,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12013,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 12014,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12015,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 12016,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 12017,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "E-ATX"
+    },
+    {
+      "product_id": 12018,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12019,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX"
+    },
+    {
+      "product_id": 12020,
+      "socket": "LGA1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 12021,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12022,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
+    },
+    {
+      "product_id": 12023,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Mini-ITX"
     }
   ],
   "spec_psu": [
