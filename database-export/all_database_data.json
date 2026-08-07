@@ -24649,6 +24649,1086 @@
         "Bus Speed": "6400MHz",
         "Memory Type": "DDR5"
       }
+    },
+    {
+      "id": 12155,
+      "category_id": 4,
+      "brand": "TUF",
+      "model": "TUF GAMING RTX 5090 32G",
+      "price": "83900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "TUF",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "348mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12156,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "AORUS RTX 5090 XTREME WATERFORCE 32G",
+      "price": "92900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "300mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12157,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "SUPRIM SOC RTX 5090 32G",
+      "price": "88700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "355mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12158,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "ROG STRIX RTX 5080 O16G GAMING",
+      "price": "47700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "340mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12159,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "GAMING OC RTX 5080 16G",
+      "price": "43700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "330mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12160,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "VENTUS 3X RTX 5080 16G OC",
+      "price": "43100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "322mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12161,
+      "category_id": 4,
+      "brand": "GALAX",
+      "model": "SG 1-Click OC RTX 5080 16G",
+      "price": "42300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "GALAX",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "336mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12162,
+      "category_id": 4,
+      "brand": "ZOTAC",
+      "model": "GAMING RTX 5080 AMP EXTREME AIRO",
+      "price": "42500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "ZOTAC",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "345mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12163,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "ROG STRIX RTX 4080 SUPER 16GB OC",
+      "price": "44900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "320W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 4080 SUPER",
+        "Length (mm)": "357mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "680W"
+      }
+    },
+    {
+      "id": 12164,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "AERO OC RTX 4080 SUPER 16G",
+      "price": "42700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "320W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 4080 SUPER",
+        "Length (mm)": "342mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "680W"
+      }
+    },
+    {
+      "id": 12165,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "GAMING X SLIM RTX 4080 SUPER 16G",
+      "price": "42300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "320W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 4080 SUPER",
+        "Length (mm)": "322mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "680W"
+      }
+    },
+    {
+      "id": 12166,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "TUF GAMING RTX 4070 Ti SUPER 16GB",
+      "price": "33900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "285W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+        "Length (mm)": "305mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "628W"
+      }
+    },
+    {
+      "id": 12167,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "GAMING OC RTX 4070 Ti SUPER 16G",
+      "price": "32500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "285W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+        "Length (mm)": "300mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "628W"
+      }
+    },
+    {
+      "id": 12168,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "VENTUS 2X RTX 4070 Ti SUPER 16G OC",
+      "price": "31700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "285W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+        "Length (mm)": "242mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "628W"
+      }
+    },
+    {
+      "id": 12169,
+      "category_id": 4,
+      "brand": "ZOTAC",
+      "model": "GAMING RTX 4070 SUPER TWIN EDGE 12G",
+      "price": "24100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "220W",
+        "Brand": "ZOTAC",
+        "Chipset": "NVIDIA GeForce RTX 4070 SUPER",
+        "Length (mm)": "225mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "530W"
+      }
+    },
+    {
+      "id": 12170,
+      "category_id": 4,
+      "brand": "GALAX",
+      "model": "EX GAMER RTX 4070 SUPER 12GB",
+      "price": "24100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "220W",
+        "Brand": "GALAX",
+        "Chipset": "NVIDIA GeForce RTX 4070 SUPER",
+        "Length (mm)": "323mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "530W"
+      }
+    },
+    {
+      "id": 12171,
+      "category_id": 4,
+      "brand": "INNO3D",
+      "model": "GEFORCE RTX 4070 SUPER TWIN X2 12G",
+      "price": "23300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "220W",
+        "Brand": "INNO3D",
+        "Chipset": "NVIDIA GeForce RTX 4070 SUPER",
+        "Length (mm)": "250mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "530W"
+      }
+    },
+    {
+      "id": 12172,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "DUAL RTX 4060 Ti 16GB OC",
+      "price": "17500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "165W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 4060 Ti",
+        "Length (mm)": "227mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "448W"
+      }
+    },
+    {
+      "id": 12173,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "VENTUS 2X RTX 4060 Ti 8GB OC",
+      "price": "14100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "160W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 4060 Ti",
+        "Length (mm)": "199mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "440W"
+      }
+    },
+    {
+      "id": 12174,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "EAGLE OC RTX 4060 Ti 8G",
+      "price": "14500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "160W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 4060 Ti",
+        "Length (mm)": "272mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "440W"
+      }
+    },
+    {
+      "id": 12175,
+      "category_id": 4,
+      "brand": "PALIT",
+      "model": "GEFORCE RTX 4060 DUAL 8GB",
+      "price": "10600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "115W",
+        "Brand": "PALIT",
+        "Chipset": "NVIDIA GeForce RTX 4060",
+        "Length (mm)": "249mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "373W"
+      }
+    },
+    {
+      "id": 12176,
+      "category_id": 4,
+      "brand": "ZOTAC",
+      "model": "GAMING RTX 4060 SOLO 8GB",
+      "price": "10100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "115W",
+        "Brand": "ZOTAC",
+        "Chipset": "NVIDIA GeForce RTX 4060",
+        "Length (mm)": "163mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "373W"
+      }
+    },
+    {
+      "id": 12177,
+      "category_id": 4,
+      "brand": "COLORFUL",
+      "model": "BATTLE-AX RTX 4060 NB DUO 8GB-V",
+      "price": "9600.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "115W",
+        "Brand": "COLORFUL",
+        "Chipset": "NVIDIA GeForce RTX 4060",
+        "Length (mm)": "249mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "373W"
+      }
+    },
+    {
+      "id": 12178,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "DUAL RTX 3050 6GB OC",
+      "price": "6490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "70W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 3050",
+        "Length (mm)": "201mm",
+        "Memory Size": "6GB",
+        "Power Requirement": "305W"
+      }
+    },
+    {
+      "id": 12179,
+      "category_id": 4,
+      "brand": "SAPPHIRE",
+      "model": "NITRO+ RX 7900 XTX 24GB VAPOR-X",
+      "price": "39500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "355W",
+        "Brand": "SAPPHIRE",
+        "Chipset": "AMD Radeon RX 7900 XTX",
+        "Length (mm)": "320mm",
+        "Memory Size": "24GB",
+        "Power Requirement": "733W"
+      }
+    },
+    {
+      "id": 12180,
+      "category_id": 4,
+      "brand": "POWERCOLOR",
+      "model": "RED DEVIL RX 7900 XTX 24GB",
+      "price": "38500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "355W",
+        "Brand": "POWERCOLOR",
+        "Chipset": "AMD Radeon RX 7900 XTX",
+        "Length (mm)": "338mm",
+        "Memory Size": "24GB",
+        "Power Requirement": "733W"
+      }
+    },
+    {
+      "id": 12181,
+      "category_id": 4,
+      "brand": "ASROCK",
+      "model": "PHANTOM GAMING RX 7900 XT 20GB OC",
+      "price": "30100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "315W",
+        "Brand": "ASROCK",
+        "Chipset": "AMD Radeon RX 7900 XT",
+        "Length (mm)": "330mm",
+        "Memory Size": "20GB",
+        "Power Requirement": "673W"
+      }
+    },
+    {
+      "id": 12182,
+      "category_id": 4,
+      "brand": "SAPPHIRE",
+      "model": "PULSE RX 7900 GRE 16GB",
+      "price": "22300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "260W",
+        "Brand": "SAPPHIRE",
+        "Chipset": "AMD Radeon RX 7900 GRE",
+        "Length (mm)": "280mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "590W"
+      }
+    },
+    {
+      "id": 12183,
+      "category_id": 4,
+      "brand": "POWERCOLOR",
+      "model": "HELLHOUND RX 7800 XT 16GB",
+      "price": "19300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "263W",
+        "Brand": "POWERCOLOR",
+        "Chipset": "AMD Radeon RX 7800 XT",
+        "Length (mm)": "322mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "595W"
+      }
+    },
+    {
+      "id": 12184,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "GAMING OC RX 7700 XT 12G",
+      "price": "16400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "245W",
+        "Brand": "GIGABYTE",
+        "Chipset": "AMD Radeon RX 7700 XT",
+        "Length (mm)": "301mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "568W"
+      }
+    },
+    {
+      "id": 12185,
+      "category_id": 4,
+      "brand": "SAPPHIRE",
+      "model": "PULSE RX 7600 XT 16GB",
+      "price": "13300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "190W",
+        "Brand": "SAPPHIRE",
+        "Chipset": "AMD Radeon RX 7600 XT",
+        "Length (mm)": "240mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "485W"
+      }
+    },
+    {
+      "id": 12186,
+      "category_id": 4,
+      "brand": "ASROCK",
+      "model": "CHALLENGER RX 7600 8GB OC",
+      "price": "9100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "165W",
+        "Brand": "ASROCK",
+        "Chipset": "AMD Radeon RX 7600",
+        "Length (mm)": "269mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "448W"
+      }
+    },
+    {
+      "id": 12187,
+      "category_id": 4,
+      "brand": "SPARKLE",
+      "model": "INTEL ARC B580 ORC OC 12GB",
+      "price": "9790.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "190W",
+        "Brand": "SPARKLE",
+        "Chipset": "Intel Arc B580",
+        "Length (mm)": "222mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "485W"
+      }
+    },
+    {
+      "id": 12188,
+      "category_id": 4,
+      "brand": "ASROCK",
+      "model": "INTEL ARC B580 STEEL LEGEND 12GB OC",
+      "price": "9590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "190W",
+        "Brand": "ASROCK",
+        "Chipset": "Intel Arc B580",
+        "Length (mm)": "278mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "485W"
+      }
+    },
+    {
+      "id": 12189,
+      "category_id": 4,
+      "brand": "GUNNIR",
+      "model": "INTEL ARC A770 PHOTON 16GB OC",
+      "price": "12300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "225W",
+        "Brand": "GUNNIR",
+        "Chipset": "Intel Arc A770",
+        "Length (mm)": "300mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "538W"
+      }
+    },
+    {
+      "id": 12190,
+      "category_id": 4,
+      "brand": "SPARKLE",
+      "model": "INTEL ARC A750 TITAN OC 8GB",
+      "price": "8390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "225W",
+        "Brand": "SPARKLE",
+        "Chipset": "Intel Arc A750",
+        "Length (mm)": "305mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "538W"
+      }
+    },
+    {
+      "id": 12191,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "ROG STRIX RTX 5090 O32G GAMING (Box)",
+      "price": "89500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "358mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12192,
+      "category_id": 4,
+      "brand": "TUF",
+      "model": "TUF GAMING RTX 5090 32G (Box)",
+      "price": "83900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "TUF",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "348mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12193,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "AORUS RTX 5090 XTREME WATERFORCE 32G (Box)",
+      "price": "92500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "300mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12194,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "SUPRIM SOC RTX 5090 32G (Box)",
+      "price": "89300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "600W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 5090",
+        "Length (mm)": "355mm",
+        "Memory Size": "32GB",
+        "Power Requirement": "1100W"
+      }
+    },
+    {
+      "id": 12195,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "ROG STRIX RTX 5080 O16G GAMING (Box)",
+      "price": "47500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "340mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12196,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "GAMING OC RTX 5080 16G (Box)",
+      "price": "43500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "330mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12197,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "VENTUS 3X RTX 5080 16G OC (Box)",
+      "price": "42500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "322mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12198,
+      "category_id": 4,
+      "brand": "GALAX",
+      "model": "SG 1-Click OC RTX 5080 16G (Box)",
+      "price": "42100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "GALAX",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "336mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12199,
+      "category_id": 4,
+      "brand": "ZOTAC",
+      "model": "GAMING RTX 5080 AMP EXTREME AIRO (Box)",
+      "price": "42300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "400W",
+        "Brand": "ZOTAC",
+        "Chipset": "NVIDIA GeForce RTX 5080",
+        "Length (mm)": "345mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "800W"
+      }
+    },
+    {
+      "id": 12200,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "ROG STRIX RTX 4080 SUPER 16GB OC (Box)",
+      "price": "44500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "320W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 4080 SUPER",
+        "Length (mm)": "357mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "680W"
+      }
+    },
+    {
+      "id": 12201,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "AERO OC RTX 4080 SUPER 16G (Box)",
+      "price": "42700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "320W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 4080 SUPER",
+        "Length (mm)": "342mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "680W"
+      }
+    },
+    {
+      "id": 12202,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "GAMING X SLIM RTX 4080 SUPER 16G (Box)",
+      "price": "41500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "320W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 4080 SUPER",
+        "Length (mm)": "322mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "680W"
+      }
+    },
+    {
+      "id": 12203,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "TUF GAMING RTX 4070 Ti SUPER 16GB (Box)",
+      "price": "33900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "285W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+        "Length (mm)": "305mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "628W"
+      }
+    },
+    {
+      "id": 12204,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "GAMING OC RTX 4070 Ti SUPER 16G (Box)",
+      "price": "32500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "285W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+        "Length (mm)": "300mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "628W"
+      }
+    },
+    {
+      "id": 12205,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "VENTUS 2X RTX 4070 Ti SUPER 16G OC (Box)",
+      "price": "32300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "285W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+        "Length (mm)": "242mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "628W"
+      }
+    },
+    {
+      "id": 12206,
+      "category_id": 4,
+      "brand": "ZOTAC",
+      "model": "GAMING RTX 4070 SUPER TWIN EDGE 12G (Box)",
+      "price": "24300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "220W",
+        "Brand": "ZOTAC",
+        "Chipset": "NVIDIA GeForce RTX 4070 SUPER",
+        "Length (mm)": "225mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "530W"
+      }
+    },
+    {
+      "id": 12207,
+      "category_id": 4,
+      "brand": "GALAX",
+      "model": "EX GAMER RTX 4070 SUPER 12GB (Box)",
+      "price": "24700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "220W",
+        "Brand": "GALAX",
+        "Chipset": "NVIDIA GeForce RTX 4070 SUPER",
+        "Length (mm)": "323mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "530W"
+      }
+    },
+    {
+      "id": 12208,
+      "category_id": 4,
+      "brand": "INNO3D",
+      "model": "GEFORCE RTX 4070 SUPER TWIN X2 12G (Box)",
+      "price": "23100.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "220W",
+        "Brand": "INNO3D",
+        "Chipset": "NVIDIA GeForce RTX 4070 SUPER",
+        "Length (mm)": "250mm",
+        "Memory Size": "12GB",
+        "Power Requirement": "530W"
+      }
+    },
+    {
+      "id": 12209,
+      "category_id": 4,
+      "brand": "ASUS",
+      "model": "DUAL RTX 4060 Ti 16GB OC (Box)",
+      "price": "18300.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "165W",
+        "Brand": "ASUS",
+        "Chipset": "NVIDIA GeForce RTX 4060 Ti",
+        "Length (mm)": "227mm",
+        "Memory Size": "16GB",
+        "Power Requirement": "448W"
+      }
+    },
+    {
+      "id": 12210,
+      "category_id": 4,
+      "brand": "MSI",
+      "model": "VENTUS 2X RTX 4060 Ti 8GB OC (Box)",
+      "price": "14700.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "160W",
+        "Brand": "MSI",
+        "Chipset": "NVIDIA GeForce RTX 4060 Ti",
+        "Length (mm)": "199mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "440W"
+      }
+    },
+    {
+      "id": 12211,
+      "category_id": 4,
+      "brand": "GIGABYTE",
+      "model": "EAGLE OC RTX 4060 Ti 8G (Box)",
+      "price": "14900.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "160W",
+        "Brand": "GIGABYTE",
+        "Chipset": "NVIDIA GeForce RTX 4060 Ti",
+        "Length (mm)": "272mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "440W"
+      }
+    },
+    {
+      "id": 12212,
+      "category_id": 4,
+      "brand": "PALIT",
+      "model": "GEFORCE RTX 4060 DUAL 8GB (Box)",
+      "price": "10000.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "115W",
+        "Brand": "PALIT",
+        "Chipset": "NVIDIA GeForce RTX 4060",
+        "Length (mm)": "249mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "373W"
+      }
+    },
+    {
+      "id": 12213,
+      "category_id": 4,
+      "brand": "ZOTAC",
+      "model": "GAMING RTX 4060 SOLO 8GB (Box)",
+      "price": "9500.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "115W",
+        "Brand": "ZOTAC",
+        "Chipset": "NVIDIA GeForce RTX 4060",
+        "Length (mm)": "163mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "373W"
+      }
+    },
+    {
+      "id": 12214,
+      "category_id": 4,
+      "brand": "COLORFUL",
+      "model": "BATTLE-AX RTX 4060 NB DUO 8GB-V (Box)",
+      "price": "9800.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T17:57:59.000Z",
+      "specifications": {
+        "TDP": "115W",
+        "Brand": "COLORFUL",
+        "Chipset": "NVIDIA GeForce RTX 4060",
+        "Length (mm)": "249mm",
+        "Memory Size": "8GB",
+        "Power Requirement": "373W"
+      }
     }
   ],
   "spec_case": [
@@ -27410,6 +28490,426 @@
       "vram_gb": 32,
       "tdp_watt": 1000,
       "length_mm": 357
+    },
+    {
+      "product_id": 12155,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12156,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12157,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12158,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12159,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12160,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12161,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12162,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12163,
+      "chipset": "NVIDIA GeForce RTX 4080 SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 680,
+      "length_mm": null
+    },
+    {
+      "product_id": 12164,
+      "chipset": "NVIDIA GeForce RTX 4080 SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 680,
+      "length_mm": null
+    },
+    {
+      "product_id": 12165,
+      "chipset": "NVIDIA GeForce RTX 4080 SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 680,
+      "length_mm": null
+    },
+    {
+      "product_id": 12166,
+      "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 628,
+      "length_mm": null
+    },
+    {
+      "product_id": 12167,
+      "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 628,
+      "length_mm": null
+    },
+    {
+      "product_id": 12168,
+      "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 628,
+      "length_mm": null
+    },
+    {
+      "product_id": 12169,
+      "chipset": "NVIDIA GeForce RTX 4070 SUPER",
+      "vram_gb": 12,
+      "tdp_watt": 530,
+      "length_mm": null
+    },
+    {
+      "product_id": 12170,
+      "chipset": "NVIDIA GeForce RTX 4070 SUPER",
+      "vram_gb": 12,
+      "tdp_watt": 530,
+      "length_mm": null
+    },
+    {
+      "product_id": 12171,
+      "chipset": "NVIDIA GeForce RTX 4070 SUPER",
+      "vram_gb": 12,
+      "tdp_watt": 530,
+      "length_mm": null
+    },
+    {
+      "product_id": 12172,
+      "chipset": "NVIDIA GeForce RTX 4060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 448,
+      "length_mm": null
+    },
+    {
+      "product_id": 12173,
+      "chipset": "NVIDIA GeForce RTX 4060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 440,
+      "length_mm": null
+    },
+    {
+      "product_id": 12174,
+      "chipset": "NVIDIA GeForce RTX 4060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 440,
+      "length_mm": null
+    },
+    {
+      "product_id": 12175,
+      "chipset": "NVIDIA GeForce RTX 4060",
+      "vram_gb": 8,
+      "tdp_watt": 373,
+      "length_mm": null
+    },
+    {
+      "product_id": 12176,
+      "chipset": "NVIDIA GeForce RTX 4060",
+      "vram_gb": 8,
+      "tdp_watt": 373,
+      "length_mm": null
+    },
+    {
+      "product_id": 12177,
+      "chipset": "NVIDIA GeForce RTX 4060",
+      "vram_gb": 8,
+      "tdp_watt": 373,
+      "length_mm": null
+    },
+    {
+      "product_id": 12178,
+      "chipset": "NVIDIA GeForce RTX 3050",
+      "vram_gb": 6,
+      "tdp_watt": 305,
+      "length_mm": null
+    },
+    {
+      "product_id": 12179,
+      "chipset": "AMD Radeon RX 7900 XTX",
+      "vram_gb": 24,
+      "tdp_watt": 733,
+      "length_mm": null
+    },
+    {
+      "product_id": 12180,
+      "chipset": "AMD Radeon RX 7900 XTX",
+      "vram_gb": 24,
+      "tdp_watt": 733,
+      "length_mm": null
+    },
+    {
+      "product_id": 12181,
+      "chipset": "AMD Radeon RX 7900 XT",
+      "vram_gb": 20,
+      "tdp_watt": 673,
+      "length_mm": null
+    },
+    {
+      "product_id": 12182,
+      "chipset": "AMD Radeon RX 7900 GRE",
+      "vram_gb": 16,
+      "tdp_watt": 590,
+      "length_mm": null
+    },
+    {
+      "product_id": 12183,
+      "chipset": "AMD Radeon RX 7800 XT",
+      "vram_gb": 16,
+      "tdp_watt": 595,
+      "length_mm": null
+    },
+    {
+      "product_id": 12184,
+      "chipset": "AMD Radeon RX 7700 XT",
+      "vram_gb": 12,
+      "tdp_watt": 568,
+      "length_mm": null
+    },
+    {
+      "product_id": 12185,
+      "chipset": "AMD Radeon RX 7600 XT",
+      "vram_gb": 16,
+      "tdp_watt": 485,
+      "length_mm": null
+    },
+    {
+      "product_id": 12186,
+      "chipset": "AMD Radeon RX 7600",
+      "vram_gb": 8,
+      "tdp_watt": 448,
+      "length_mm": null
+    },
+    {
+      "product_id": 12187,
+      "chipset": "Intel Arc B580",
+      "vram_gb": 12,
+      "tdp_watt": 485,
+      "length_mm": null
+    },
+    {
+      "product_id": 12188,
+      "chipset": "Intel Arc B580",
+      "vram_gb": 12,
+      "tdp_watt": 485,
+      "length_mm": null
+    },
+    {
+      "product_id": 12189,
+      "chipset": "Intel Arc A770",
+      "vram_gb": 16,
+      "tdp_watt": 538,
+      "length_mm": null
+    },
+    {
+      "product_id": 12190,
+      "chipset": "Intel Arc A750",
+      "vram_gb": 8,
+      "tdp_watt": 538,
+      "length_mm": null
+    },
+    {
+      "product_id": 12191,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12192,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12193,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12194,
+      "chipset": "NVIDIA GeForce RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1100,
+      "length_mm": null
+    },
+    {
+      "product_id": 12195,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12196,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12197,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12198,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12199,
+      "chipset": "NVIDIA GeForce RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": null
+    },
+    {
+      "product_id": 12200,
+      "chipset": "NVIDIA GeForce RTX 4080 SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 680,
+      "length_mm": null
+    },
+    {
+      "product_id": 12201,
+      "chipset": "NVIDIA GeForce RTX 4080 SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 680,
+      "length_mm": null
+    },
+    {
+      "product_id": 12202,
+      "chipset": "NVIDIA GeForce RTX 4080 SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 680,
+      "length_mm": null
+    },
+    {
+      "product_id": 12203,
+      "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 628,
+      "length_mm": null
+    },
+    {
+      "product_id": 12204,
+      "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 628,
+      "length_mm": null
+    },
+    {
+      "product_id": 12205,
+      "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "vram_gb": 16,
+      "tdp_watt": 628,
+      "length_mm": null
+    },
+    {
+      "product_id": 12206,
+      "chipset": "NVIDIA GeForce RTX 4070 SUPER",
+      "vram_gb": 12,
+      "tdp_watt": 530,
+      "length_mm": null
+    },
+    {
+      "product_id": 12207,
+      "chipset": "NVIDIA GeForce RTX 4070 SUPER",
+      "vram_gb": 12,
+      "tdp_watt": 530,
+      "length_mm": null
+    },
+    {
+      "product_id": 12208,
+      "chipset": "NVIDIA GeForce RTX 4070 SUPER",
+      "vram_gb": 12,
+      "tdp_watt": 530,
+      "length_mm": null
+    },
+    {
+      "product_id": 12209,
+      "chipset": "NVIDIA GeForce RTX 4060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 448,
+      "length_mm": null
+    },
+    {
+      "product_id": 12210,
+      "chipset": "NVIDIA GeForce RTX 4060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 440,
+      "length_mm": null
+    },
+    {
+      "product_id": 12211,
+      "chipset": "NVIDIA GeForce RTX 4060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 440,
+      "length_mm": null
+    },
+    {
+      "product_id": 12212,
+      "chipset": "NVIDIA GeForce RTX 4060",
+      "vram_gb": 8,
+      "tdp_watt": 373,
+      "length_mm": null
+    },
+    {
+      "product_id": 12213,
+      "chipset": "NVIDIA GeForce RTX 4060",
+      "vram_gb": 8,
+      "tdp_watt": 373,
+      "length_mm": null
+    },
+    {
+      "product_id": 12214,
+      "chipset": "NVIDIA GeForce RTX 4060",
+      "vram_gb": 8,
+      "tdp_watt": 373,
+      "length_mm": null
     }
   ],
   "spec_motherboard": [
