@@ -13526,6 +13526,38 @@
         "Power Requirement": "1000 Watt",
         "Max Digital Resolution": "7680 x 4320"
       }
+    },
+    {
+      "id": 11544,
+      "category_id": 7,
+      "brand": "GIGABYTE",
+      "model": "C103 GLASS AutoRGB (BLACK)(ATX) (1Y)",
+      "price": "1590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:37:01.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Source": "ihavecpu",
+        "Max GPU Length": "355mm",
+        "Form Factor Support": "Micro-ATX"
+      }
+    },
+    {
+      "id": 11545,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "GLACIER V2 (BLACK)(ATX) (1Y)",
+      "price": "1590.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1048_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T16:37:01.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Source": "ihavecpu",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Micro-ATX"
+      }
     }
   ],
   "spec_case": [
@@ -13893,6 +13925,16 @@
       "product_id": 11453,
       "form_factor_support": "Mini-Tower",
       "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11544,
+      "form_factor_support": "Micro-ATX",
+      "max_gpu_length_mm": 355
+    },
+    {
+      "product_id": 11545,
+      "form_factor_support": "Micro-ATX",
+      "max_gpu_length_mm": 390
     }
   ],
   "spec_cpu": [
