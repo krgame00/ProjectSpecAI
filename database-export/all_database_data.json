@@ -27871,6 +27871,2131 @@
         "Modularity": "Full Modular",
         "Form Factor": "ATX"
       }
+    },
+    {
+      "id": 12341,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC 102 WOOD (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12342,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "CERES 300 TG (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12343,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "4000D AIRFLOW (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12344,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG STRIX HELIOS (BLACK) (V.2)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12345,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y70 TI (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12346,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12347,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "PERFORMANCE 1 FT (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12348,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG STRIX HELIOS (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "7190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12349,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "6500X DUAL CHAMBER (BLACK) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12350,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "O11 DYNAMIC EVO (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "7190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12351,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "TUF GAMING GT302 ARGB (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12352,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y70 TOUCH (BLACK) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12353,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "3000D AIRFLOW (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12354,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC R03 (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12355,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "O11 VISION (BLACK) (V.1)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12356,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "KING 95 PRO (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12357,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "LANCOOL III (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12358,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "KING 95 PRO (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12359,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H5 FLOW (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12360,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG HYPERION GR701 (WOOD EDITION) (V.3)",
+      "price": "7190.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12361,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "MATREXX 55 V3 (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12362,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H1 V2 (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12363,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "PERFORMANCE 1 FT (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "430mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12364,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "MATREXX 55 V3 (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12365,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "3000D AIRFLOW (PANORAMA GLASS (BLACK)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12366,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "CMP 510 (BLACK) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12367,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "THE TOWER 500 (BLACK) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12368,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12369,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "HERA 360 (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12370,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "NX200M (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12371,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "CORE P3 TG (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12372,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC 401TG (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12373,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H6 FLOW (BLACK) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12374,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "C8 DUAL CHAMBER (PANORAMA GLASS (BLACK)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12375,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "AX90 ARGB (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12376,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "SKRIB RGB (WOOD EDITION) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12377,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC R03 (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12378,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "CYLON RGB (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12379,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "CYLON RGB (WOOD EDITION) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12380,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "SKRIB RGB (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12381,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "DRYFT ARGB (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12382,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "DAN A4-H2O (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12383,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "MASTERBOX Q300L (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12384,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "VIEW 270 TG ARGB (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12385,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H1 V2 (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12386,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG STRIX HELIOS (WHITE) (V.1)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12387,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "PERFORMANCE 1 FT (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12388,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "AIR 100 ARGB (BLACK) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12389,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "3000D AIRFLOW (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12390,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "2500X MICRO (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12391,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H1 V2 (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12392,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC 102 WOOD (BLACK) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12393,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "SKY TWO (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12394,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "O11 DYNAMIC EVO (BLACK) (V.3)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12395,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC 401TG (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12396,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "NX200M (BLACK) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12397,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG HYPERION GR701 (WHITE) (V.1)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12398,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "4000D AIRFLOW (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12399,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y70 TOUCH (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12400,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "PRIME AP201 (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12401,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "CERES 300 TG (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12402,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "THE TOWER 500 (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12403,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "GLACIER V2 (WOOD EDITION) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12404,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "LANCOOL III (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12405,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y60 TOUCH (BLACK) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12406,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H9 ELITE (BLACK) (V.1)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12407,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (WHITE) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "430mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12408,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "THE TOWER 300 (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12409,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12410,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "KING 95 PRO (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12411,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y60 TOUCH (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12412,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "LANCOOL 216 (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12413,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "TUF GAMING GT302 ARGB (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "430mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12414,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "4000D AIRFLOW (BLACK) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12415,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "HERA 360 (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12416,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12417,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "O11 AIR MINI (WHITE) (V.3)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12418,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y40 (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12419,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y70 TOUCH (PANORAMA GLASS (BLACK)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12420,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG HYPERION GR701 (WHITE) (V.3)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12421,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H7 FLOW (WOOD EDITION) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12422,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "CYLON RGB (PANORAMA GLASS (BLACK)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12423,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "MASTERBOX Q300L (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12424,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "CMP 510 (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "430mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12425,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "AERO ONE FROST (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12426,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "CERES 300 TG (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12427,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "MORPHEUS (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12428,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "HAF 700 EVO (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12429,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "5000D AIRFLOW (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "430mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12430,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H1 V2 (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12431,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "6500X DUAL CHAMBER (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12432,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "TD500 MESH V2 (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12433,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "AIR 100 ARGB (WOOD EDITION) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12434,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "TUF GAMING GT302 ARGB (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12435,
+      "category_id": 7,
+      "brand": "NZXT",
+      "model": "H5 FLOW (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "NZXT",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12436,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "IHC R03 (WOOD EDITION) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12437,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "HAF 700 EVO (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12438,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "DRYFT ARGB (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12439,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "LANCOOL III (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12440,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "PRISMA ARGB (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12441,
+      "category_id": 7,
+      "brand": "HYTE",
+      "model": "Y70 TOUCH (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "HYTE",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12442,
+      "category_id": 7,
+      "brand": "COOLER MASTER",
+      "model": "TD500 MESH V2 (PANORAMA GLASS (BLACK)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "COOLER MASTER",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12443,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "ROG HYPERION GR701 (BLACK) (V.2)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12444,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH560 DIGITAL (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "350mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12445,
+      "category_id": 7,
+      "brand": "AEROCOOL",
+      "model": "CYLON RGB (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "AEROCOOL",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "330mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12446,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "HERA 360 (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12447,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "HERA 360 (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12448,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "AIR 100 ARGB (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "420mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12449,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "AX90 ARGB (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "340mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12450,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "G390 V2 (PANORAMA GLASS (BLACK)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "410mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12451,
+      "category_id": 7,
+      "brand": "MONTECH",
+      "model": "HERA 360 (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "MONTECH",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12452,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12453,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "2500X MICRO (PANORAMA GLASS (WHITE)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "430mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12454,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CH370 (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12455,
+      "category_id": 7,
+      "brand": "ASUS",
+      "model": "TUF GAMING GT302 ARGB (PANORAMA GLASS (WHITE)) (V.1)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ASUS",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12456,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "CC560 ARGB (PANORAMA GLASS (BLACK)) (V.2)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "PANORAMA GLASS (BLACK)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "370mm",
+        "Form Factor Support": "Micro-ATX, Mini-ITX"
+      }
+    },
+    {
+      "id": 12457,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "5000D AIRFLOW (BLACK) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12458,
+      "category_id": 7,
+      "brand": "iHAVECPU",
+      "model": "GLACIER V2 (WHITE) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "iHAVECPU",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "320mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12459,
+      "category_id": 7,
+      "brand": "CORSAIR",
+      "model": "3000D AIRFLOW (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12460,
+      "category_id": 7,
+      "brand": "THERMALTAKE",
+      "model": "CORE P3 TG (WHITE) (V.3)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "THERMALTAKE",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "Mini-ITX"
+      }
+    },
+    {
+      "id": 12461,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "O11 DYNAMIC EVO (WHITE) (V.1)",
+      "price": "5990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "WHITE",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "400mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12462,
+      "category_id": 7,
+      "brand": "DEEPCOOL",
+      "model": "MORPHEUS (BLACK) (V.2)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "DEEPCOOL",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "360mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12463,
+      "category_id": 7,
+      "brand": "ANTEC",
+      "model": "C5 ARGB (PANORAMA GLASS (WHITE)) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "ANTEC",
+        "Color": "PANORAMA GLASS (WHITE)",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12464,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "LANCOOL III (BLACK) (V.1)",
+      "price": "1490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "BLACK",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "390mm",
+        "Form Factor Support": "ATX, Micro-ATX"
+      }
+    },
+    {
+      "id": 12465,
+      "category_id": 7,
+      "brand": "LIAN LI",
+      "model": "LANCOOL 216 (WOOD EDITION) (V.3)",
+      "price": "2690.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 10,
+      "created_at": "2026-08-07T18:00:40.000Z",
+      "specifications": {
+        "Brand": "LIAN LI",
+        "Color": "WOOD EDITION",
+        "Side Panel": "Tempered Glass",
+        "Max GPU Length": "380mm",
+        "Form Factor Support": "E-ATX, ATX, Micro-ATX"
+      }
     }
   ],
   "spec_case": [
@@ -28248,6 +30373,631 @@
       "product_id": 11545,
       "form_factor_support": "ATX, Micro-ATX",
       "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12341,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12342,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12343,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12344,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12345,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12346,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12347,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12348,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12349,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12350,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12351,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12352,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12353,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12354,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12355,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12356,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12357,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12358,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12359,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12360,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12361,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12362,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12363,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 430
+    },
+    {
+      "product_id": 12364,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12365,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12366,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12367,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12368,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12369,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12370,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12371,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12372,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12373,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12374,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12375,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12376,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12377,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12378,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12379,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12380,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12381,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12382,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12383,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12384,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12385,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12386,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12387,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12388,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12389,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12390,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12391,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12392,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12393,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12394,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12395,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12396,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12397,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12398,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12399,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12400,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12401,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12402,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12403,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12404,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12405,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12406,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12407,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 430
+    },
+    {
+      "product_id": 12408,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12409,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12410,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12411,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12412,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12413,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 430
+    },
+    {
+      "product_id": 12414,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12415,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12416,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12417,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12418,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12419,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12420,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12421,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12422,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12423,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12424,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 430
+    },
+    {
+      "product_id": 12425,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12426,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12427,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12428,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12429,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 430
+    },
+    {
+      "product_id": 12430,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12431,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12432,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12433,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12434,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12435,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12436,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12437,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12438,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12439,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12440,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12441,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12442,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12443,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12444,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 12445,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 330
+    },
+    {
+      "product_id": 12446,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12447,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12448,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 420
+    },
+    {
+      "product_id": 12449,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 340
+    },
+    {
+      "product_id": 12450,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 410
+    },
+    {
+      "product_id": 12451,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12452,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12453,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 430
+    },
+    {
+      "product_id": 12454,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12455,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12456,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 370
+    },
+    {
+      "product_id": 12457,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12458,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 320
+    },
+    {
+      "product_id": 12459,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12460,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12461,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 400
+    },
+    {
+      "product_id": 12462,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 360
+    },
+    {
+      "product_id": 12463,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
+    },
+    {
+      "product_id": 12464,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 390
+    },
+    {
+      "product_id": 12465,
+      "form_factor_support": "ATX, Micro-ATX",
+      "max_gpu_length_mm": 380
     }
   ],
   "spec_cpu": [
