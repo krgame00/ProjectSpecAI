@@ -138,7 +138,13 @@ async function migrateSpecs() {
       const chipset = specs['GPU Model'] || specs['Chipset'] || model;
       const vram = parseNum(specs['Memory Size']) || parseNum(model.match(/(\d+)GB/i)?.[1]);
       const tdp = parseNum(specs['Power Requirement'] || specs['TDP']) || (model.includes('5090') ? 600 : model.includes('5080') ? 400 : 250);
-      const length = parseNum(specs['Dimension']) || parseNum(specs['Length']);
+      let length = parseNum(specs['Length (mm)']) || parseNum(specs['length_mm']) || parseNum(specs['Length']) || parseNum(specs['Dimension']);
+      if (!length || length < 100 || length > 500) {
+        length = (model.includes('5090') || model.includes('4090') || model.includes('7900 XTX')) ? 350
+               : (model.includes('5080') || model.includes('4080') || model.includes('7900 XT')) ? 330
+               : (model.includes('4070') || model.includes('7800') || model.includes('7700')) ? 290
+               : 240;
+      }
 
       await conn.query(`
         INSERT INTO spec_gpu (product_id, chipset, vram_gb, tdp_watt, length_mm)

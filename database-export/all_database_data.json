@@ -32513,7 +32513,7 @@
       "chipset": "GeForce® RTX 5050",
       "vram_gb": 8,
       "tdp_watt": 550,
-      "length_mm": null
+      "length_mm": 240
     },
     {
       "product_id": 11102,
@@ -33388,420 +33388,420 @@
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 348
     },
     {
       "product_id": 12156,
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 300
     },
     {
       "product_id": 12157,
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 355
     },
     {
       "product_id": 12158,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 340
     },
     {
       "product_id": 12159,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 330
     },
     {
       "product_id": 12160,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 322
     },
     {
       "product_id": 12161,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 336
     },
     {
       "product_id": 12162,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 345
     },
     {
       "product_id": 12163,
       "chipset": "NVIDIA GeForce RTX 4080 SUPER",
       "vram_gb": 16,
       "tdp_watt": 680,
-      "length_mm": null
+      "length_mm": 357
     },
     {
       "product_id": 12164,
       "chipset": "NVIDIA GeForce RTX 4080 SUPER",
       "vram_gb": 16,
       "tdp_watt": 680,
-      "length_mm": null
+      "length_mm": 342
     },
     {
       "product_id": 12165,
       "chipset": "NVIDIA GeForce RTX 4080 SUPER",
       "vram_gb": 16,
       "tdp_watt": 680,
-      "length_mm": null
+      "length_mm": 322
     },
     {
       "product_id": 12166,
       "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
       "vram_gb": 16,
       "tdp_watt": 628,
-      "length_mm": null
+      "length_mm": 305
     },
     {
       "product_id": 12167,
       "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
       "vram_gb": 16,
       "tdp_watt": 628,
-      "length_mm": null
+      "length_mm": 300
     },
     {
       "product_id": 12168,
       "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
       "vram_gb": 16,
       "tdp_watt": 628,
-      "length_mm": null
+      "length_mm": 242
     },
     {
       "product_id": 12169,
       "chipset": "NVIDIA GeForce RTX 4070 SUPER",
       "vram_gb": 12,
       "tdp_watt": 530,
-      "length_mm": null
+      "length_mm": 225
     },
     {
       "product_id": 12170,
       "chipset": "NVIDIA GeForce RTX 4070 SUPER",
       "vram_gb": 12,
       "tdp_watt": 530,
-      "length_mm": null
+      "length_mm": 323
     },
     {
       "product_id": 12171,
       "chipset": "NVIDIA GeForce RTX 4070 SUPER",
       "vram_gb": 12,
       "tdp_watt": 530,
-      "length_mm": null
+      "length_mm": 250
     },
     {
       "product_id": 12172,
       "chipset": "NVIDIA GeForce RTX 4060 Ti",
       "vram_gb": 16,
       "tdp_watt": 448,
-      "length_mm": null
+      "length_mm": 227
     },
     {
       "product_id": 12173,
       "chipset": "NVIDIA GeForce RTX 4060 Ti",
       "vram_gb": 8,
       "tdp_watt": 440,
-      "length_mm": null
+      "length_mm": 199
     },
     {
       "product_id": 12174,
       "chipset": "NVIDIA GeForce RTX 4060 Ti",
       "vram_gb": 8,
       "tdp_watt": 440,
-      "length_mm": null
+      "length_mm": 272
     },
     {
       "product_id": 12175,
       "chipset": "NVIDIA GeForce RTX 4060",
       "vram_gb": 8,
       "tdp_watt": 373,
-      "length_mm": null
+      "length_mm": 249
     },
     {
       "product_id": 12176,
       "chipset": "NVIDIA GeForce RTX 4060",
       "vram_gb": 8,
       "tdp_watt": 373,
-      "length_mm": null
+      "length_mm": 163
     },
     {
       "product_id": 12177,
       "chipset": "NVIDIA GeForce RTX 4060",
       "vram_gb": 8,
       "tdp_watt": 373,
-      "length_mm": null
+      "length_mm": 249
     },
     {
       "product_id": 12178,
       "chipset": "NVIDIA GeForce RTX 3050",
       "vram_gb": 6,
       "tdp_watt": 305,
-      "length_mm": null
+      "length_mm": 201
     },
     {
       "product_id": 12179,
       "chipset": "AMD Radeon RX 7900 XTX",
       "vram_gb": 24,
       "tdp_watt": 733,
-      "length_mm": null
+      "length_mm": 320
     },
     {
       "product_id": 12180,
       "chipset": "AMD Radeon RX 7900 XTX",
       "vram_gb": 24,
       "tdp_watt": 733,
-      "length_mm": null
+      "length_mm": 338
     },
     {
       "product_id": 12181,
       "chipset": "AMD Radeon RX 7900 XT",
       "vram_gb": 20,
       "tdp_watt": 673,
-      "length_mm": null
+      "length_mm": 330
     },
     {
       "product_id": 12182,
       "chipset": "AMD Radeon RX 7900 GRE",
       "vram_gb": 16,
       "tdp_watt": 590,
-      "length_mm": null
+      "length_mm": 280
     },
     {
       "product_id": 12183,
       "chipset": "AMD Radeon RX 7800 XT",
       "vram_gb": 16,
       "tdp_watt": 595,
-      "length_mm": null
+      "length_mm": 322
     },
     {
       "product_id": 12184,
       "chipset": "AMD Radeon RX 7700 XT",
       "vram_gb": 12,
       "tdp_watt": 568,
-      "length_mm": null
+      "length_mm": 301
     },
     {
       "product_id": 12185,
       "chipset": "AMD Radeon RX 7600 XT",
       "vram_gb": 16,
       "tdp_watt": 485,
-      "length_mm": null
+      "length_mm": 240
     },
     {
       "product_id": 12186,
       "chipset": "AMD Radeon RX 7600",
       "vram_gb": 8,
       "tdp_watt": 448,
-      "length_mm": null
+      "length_mm": 269
     },
     {
       "product_id": 12187,
       "chipset": "Intel Arc B580",
       "vram_gb": 12,
       "tdp_watt": 485,
-      "length_mm": null
+      "length_mm": 222
     },
     {
       "product_id": 12188,
       "chipset": "Intel Arc B580",
       "vram_gb": 12,
       "tdp_watt": 485,
-      "length_mm": null
+      "length_mm": 278
     },
     {
       "product_id": 12189,
       "chipset": "Intel Arc A770",
       "vram_gb": 16,
       "tdp_watt": 538,
-      "length_mm": null
+      "length_mm": 300
     },
     {
       "product_id": 12190,
       "chipset": "Intel Arc A750",
       "vram_gb": 8,
       "tdp_watt": 538,
-      "length_mm": null
+      "length_mm": 305
     },
     {
       "product_id": 12191,
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 358
     },
     {
       "product_id": 12192,
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 348
     },
     {
       "product_id": 12193,
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 300
     },
     {
       "product_id": 12194,
       "chipset": "NVIDIA GeForce RTX 5090",
       "vram_gb": 32,
       "tdp_watt": 1100,
-      "length_mm": null
+      "length_mm": 355
     },
     {
       "product_id": 12195,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 340
     },
     {
       "product_id": 12196,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 330
     },
     {
       "product_id": 12197,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 322
     },
     {
       "product_id": 12198,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 336
     },
     {
       "product_id": 12199,
       "chipset": "NVIDIA GeForce RTX 5080",
       "vram_gb": 16,
       "tdp_watt": 800,
-      "length_mm": null
+      "length_mm": 345
     },
     {
       "product_id": 12200,
       "chipset": "NVIDIA GeForce RTX 4080 SUPER",
       "vram_gb": 16,
       "tdp_watt": 680,
-      "length_mm": null
+      "length_mm": 357
     },
     {
       "product_id": 12201,
       "chipset": "NVIDIA GeForce RTX 4080 SUPER",
       "vram_gb": 16,
       "tdp_watt": 680,
-      "length_mm": null
+      "length_mm": 342
     },
     {
       "product_id": 12202,
       "chipset": "NVIDIA GeForce RTX 4080 SUPER",
       "vram_gb": 16,
       "tdp_watt": 680,
-      "length_mm": null
+      "length_mm": 322
     },
     {
       "product_id": 12203,
       "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
       "vram_gb": 16,
       "tdp_watt": 628,
-      "length_mm": null
+      "length_mm": 305
     },
     {
       "product_id": 12204,
       "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
       "vram_gb": 16,
       "tdp_watt": 628,
-      "length_mm": null
+      "length_mm": 300
     },
     {
       "product_id": 12205,
       "chipset": "NVIDIA GeForce RTX 4070 Ti SUPER",
       "vram_gb": 16,
       "tdp_watt": 628,
-      "length_mm": null
+      "length_mm": 242
     },
     {
       "product_id": 12206,
       "chipset": "NVIDIA GeForce RTX 4070 SUPER",
       "vram_gb": 12,
       "tdp_watt": 530,
-      "length_mm": null
+      "length_mm": 225
     },
     {
       "product_id": 12207,
       "chipset": "NVIDIA GeForce RTX 4070 SUPER",
       "vram_gb": 12,
       "tdp_watt": 530,
-      "length_mm": null
+      "length_mm": 323
     },
     {
       "product_id": 12208,
       "chipset": "NVIDIA GeForce RTX 4070 SUPER",
       "vram_gb": 12,
       "tdp_watt": 530,
-      "length_mm": null
+      "length_mm": 250
     },
     {
       "product_id": 12209,
       "chipset": "NVIDIA GeForce RTX 4060 Ti",
       "vram_gb": 16,
       "tdp_watt": 448,
-      "length_mm": null
+      "length_mm": 227
     },
     {
       "product_id": 12210,
       "chipset": "NVIDIA GeForce RTX 4060 Ti",
       "vram_gb": 8,
       "tdp_watt": 440,
-      "length_mm": null
+      "length_mm": 199
     },
     {
       "product_id": 12211,
       "chipset": "NVIDIA GeForce RTX 4060 Ti",
       "vram_gb": 8,
       "tdp_watt": 440,
-      "length_mm": null
+      "length_mm": 272
     },
     {
       "product_id": 12212,
       "chipset": "NVIDIA GeForce RTX 4060",
       "vram_gb": 8,
       "tdp_watt": 373,
-      "length_mm": null
+      "length_mm": 249
     },
     {
       "product_id": 12213,
       "chipset": "NVIDIA GeForce RTX 4060",
       "vram_gb": 8,
       "tdp_watt": 373,
-      "length_mm": null
+      "length_mm": 163
     },
     {
       "product_id": 12214,
       "chipset": "NVIDIA GeForce RTX 4060",
       "vram_gb": 8,
       "tdp_watt": 373,
-      "length_mm": null
+      "length_mm": 249
     }
   ],
   "spec_motherboard": [
