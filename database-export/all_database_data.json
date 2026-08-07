@@ -13558,6 +13558,3336 @@
         "Max GPU Length": "390mm",
         "Form Factor Support": "Micro-ATX"
       }
+    },
+    {
+      "id": 11546,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE IRONWOLF 125 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3931 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3307 MB/s"
+      }
+    },
+    {
+      "id": 11547,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 ELITE 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4997 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3255 MB/s"
+      }
+    },
+    {
+      "id": 11548,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M371 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4543 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2826 MB/s"
+      }
+    },
+    {
+      "id": 11549,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 PRO LPX 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7157 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6524 MB/s"
+      }
+    },
+    {
+      "id": 11550,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM S270 SATA 512GB (2.5\" SATA III)",
+      "price": "950.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "512GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "500 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "481 MB/s"
+      }
+    },
+    {
+      "id": 11551,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP T-FORCE CARDEA A440 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7576 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6596 MB/s"
+      }
+    },
+    {
+      "id": 11552,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE FIRECUDA 530 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4617 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2774 MB/s"
+      }
+    },
+    {
+      "id": 11553,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL P5 Plus PCIe 4.0 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4948 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2695 MB/s"
+      }
+    },
+    {
+      "id": 11554,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NS100 SATA3 512GB (2.5\" SATA III)",
+      "price": "950.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "512GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "548 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "457 MB/s"
+      }
+    },
+    {
+      "id": 11555,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen5 12000 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "9330.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10636 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "9885 MB/s"
+      }
+    },
+    {
+      "id": 11556,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP MP44 PCIe 4.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4667 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2832 MB/s"
+      }
+    },
+    {
+      "id": 11557,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE IRONWOLF 125 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3648 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3481 MB/s"
+      }
+    },
+    {
+      "id": 11558,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M480 PRO 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "44130.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7526 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6769 MB/s"
+      }
+    },
+    {
+      "id": 11559,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT P210 SATA3 4TB (2.5\" SATA III)",
+      "price": "26450.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "4TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "500 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "463 MB/s"
+      }
+    },
+    {
+      "id": 11560,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND ESD380C 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3926 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2575 MB/s"
+      }
+    },
+    {
+      "id": 11561,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL P5 Plus PCIe 4.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4453 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2559 MB/s"
+      }
+    },
+    {
+      "id": 11562,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M480 PRO 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7665 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6816 MB/s"
+      }
+    },
+    {
+      "id": 11563,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA G2 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4800 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2768 MB/s"
+      }
+    },
+    {
+      "id": 11564,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT P300 M.2 PCIe 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4438 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3212 MB/s"
+      }
+    },
+    {
+      "id": 11565,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE NVMe SSD 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3757 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3311 MB/s"
+      }
+    },
+    {
+      "id": 11566,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 850 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3681 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2920 MB/s"
+      }
+    },
+    {
+      "id": 11567,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE BARRACUDA 120 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4752 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3350 MB/s"
+      }
+    },
+    {
+      "id": 11568,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL P5 Plus PCIe 4.0 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4187 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3317 MB/s"
+      }
+    },
+    {
+      "id": 11569,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA XPG GAMMIX S70 BLADE 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4116 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2686 MB/s"
+      }
+    },
+    {
+      "id": 11570,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA PLUS G3 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4486 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2794 MB/s"
+      }
+    },
+    {
+      "id": 11571,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD GREEN SN350 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4138 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3308 MB/s"
+      }
+    },
+    {
+      "id": 11572,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON A400 SATA3 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "537 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "496 MB/s"
+      }
+    },
+    {
+      "id": 11573,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM S270 SATA 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "522 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "502 MB/s"
+      }
+    },
+    {
+      "id": 11574,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM S270 SATA 500GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "500GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "540 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "486 MB/s"
+      }
+    },
+    {
+      "id": 11575,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 980 PRO 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "5930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7778 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6792 MB/s"
+      }
+    },
+    {
+      "id": 11576,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE250S PCIe 4.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4388 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3165 MB/s"
+      }
+    },
+    {
+      "id": 11577,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE250S PCIe 4.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4384 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2563 MB/s"
+      }
+    },
+    {
+      "id": 11578,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 980 PRO 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7306 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6343 MB/s"
+      }
+    },
+    {
+      "id": 11579,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 970 EVO PLUS 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4470 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2845 MB/s"
+      }
+    },
+    {
+      "id": 11580,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT P210 SATA3 1TB (2.5\" SATA III)",
+      "price": "3720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "1TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "557 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "483 MB/s"
+      }
+    },
+    {
+      "id": 11581,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL P5 Plus PCIe 4.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4236 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3280 MB/s"
+      }
+    },
+    {
+      "id": 11582,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE BARRACUDA 120 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3766 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2576 MB/s"
+      }
+    },
+    {
+      "id": 11583,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLUE SN570 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4008 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2837 MB/s"
+      }
+    },
+    {
+      "id": 11584,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M480 PRO 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7335 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6472 MB/s"
+      }
+    },
+    {
+      "id": 11585,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M470 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3864 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3210 MB/s"
+      }
+    },
+    {
+      "id": 11586,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M480 PRO 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7270 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6936 MB/s"
+      }
+    },
+    {
+      "id": 11587,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL T500 PCIe 4.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3714 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3451 MB/s"
+      }
+    },
+    {
+      "id": 11588,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA XPG GAMMIX S70 BLADE 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3546 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3187 MB/s"
+      }
+    },
+    {
+      "id": 11589,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 CORE XT 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3613 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3011 MB/s"
+      }
+    },
+    {
+      "id": 11590,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA PRO 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7149 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6777 MB/s"
+      }
+    },
+    {
+      "id": 11591,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA SATA3 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "508 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "489 MB/s"
+      }
+    },
+    {
+      "id": 11592,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA XPG GAMMIX S70 BLADE 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3521 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3229 MB/s"
+      }
+    },
+    {
+      "id": 11593,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE BARRACUDA Q5 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3748 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2682 MB/s"
+      }
+    },
+    {
+      "id": 11594,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP700 PCIe 5.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "33970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "11381 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "9590 MB/s"
+      }
+    },
+    {
+      "id": 11595,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP700 PCIe 5.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "9330.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "11849 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10253 MB/s"
+      }
+    },
+    {
+      "id": 11596,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND SSD220S SATA3 500GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "500GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "537 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "464 MB/s"
+      }
+    },
+    {
+      "id": 11597,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen4 7300 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3907 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2895 MB/s"
+      }
+    },
+    {
+      "id": 11598,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 990 EVO 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4467 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3387 MB/s"
+      }
+    },
+    {
+      "id": 11599,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND SSD220S SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "550 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "492 MB/s"
+      }
+    },
+    {
+      "id": 11600,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLACK SN850X 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7643 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6684 MB/s"
+      }
+    },
+    {
+      "id": 11601,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 980 PRO 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7771 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6313 MB/s"
+      }
+    },
+    {
+      "id": 11602,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR FORCE MP510 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3524 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2711 MB/s"
+      }
+    },
+    {
+      "id": 11603,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE 2.5\" SATA 1TB (2.5\" SATA III)",
+      "price": "3720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "1TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "503 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "484 MB/s"
+      }
+    },
+    {
+      "id": 11604,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT P210 SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "551 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "476 MB/s"
+      }
+    },
+    {
+      "id": 11605,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NM790 PCIe 4.0 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7694 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6856 MB/s"
+      }
+    },
+    {
+      "id": 11606,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen4 7300 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4804 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2815 MB/s"
+      }
+    },
+    {
+      "id": 11607,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE 2.5\" SATA 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "557 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "454 MB/s"
+      }
+    },
+    {
+      "id": 11608,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT BURST ELITE SATA3 4TB (2.5\" SATA III)",
+      "price": "26450.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "4TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "532 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "459 MB/s"
+      }
+    },
+    {
+      "id": 11609,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLUE SN580 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3526 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2843 MB/s"
+      }
+    },
+    {
+      "id": 11610,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT VIPER VP4300 Lite 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4073 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3246 MB/s"
+      }
+    },
+    {
+      "id": 11611,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE NVMe SSD 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3527 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2606 MB/s"
+      }
+    },
+    {
+      "id": 11612,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE NVMe SSD 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4597 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2759 MB/s"
+      }
+    },
+    {
+      "id": 11613,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NQ780 PCIe 4.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3565 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2730 MB/s"
+      }
+    },
+    {
+      "id": 11614,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLACK SN850X w/Heatsink 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7268 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6694 MB/s"
+      }
+    },
+    {
+      "id": 11615,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 CORE XT 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3702 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2660 MB/s"
+      }
+    },
+    {
+      "id": 11616,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON A400 SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "537 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "454 MB/s"
+      }
+    },
+    {
+      "id": 11617,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA PRO 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7446 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6719 MB/s"
+      }
+    },
+    {
+      "id": 11618,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 PRO LPX 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "44130.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7246 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6952 MB/s"
+      }
+    },
+    {
+      "id": 11619,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON A400 SATA3 512GB (2.5\" SATA III)",
+      "price": "950.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "512GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "501 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "502 MB/s"
+      }
+    },
+    {
+      "id": 11620,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL T500 PCIe 4.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3596 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2528 MB/s"
+      }
+    },
+    {
+      "id": 11621,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM S270 SATA 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "550 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "460 MB/s"
+      }
+    },
+    {
+      "id": 11622,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE 2.5\" SATA 4TB (2.5\" SATA III)",
+      "price": "26450.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "4TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "500 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "459 MB/s"
+      }
+    },
+    {
+      "id": 11623,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL P3 Plus PCIe 4.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4635 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3152 MB/s"
+      }
+    },
+    {
+      "id": 11624,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLACK SN770 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3738 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2812 MB/s"
+      }
+    },
+    {
+      "id": 11625,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M470 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4334 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2646 MB/s"
+      }
+    },
+    {
+      "id": 11626,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLACK SN850X 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7434 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6515 MB/s"
+      }
+    },
+    {
+      "id": 11627,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 CORE XT 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3740 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3473 MB/s"
+      }
+    },
+    {
+      "id": 11628,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON NV2 PCIe 4.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4886 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3373 MB/s"
+      }
+    },
+    {
+      "id": 11629,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP MP44 PCIe 4.0 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4526 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2740 MB/s"
+      }
+    },
+    {
+      "id": 11630,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP EX2 SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "518 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "498 MB/s"
+      }
+    },
+    {
+      "id": 11631,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP CX2 SATA3 1TB (2.5\" SATA III)",
+      "price": "3720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "1TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "557 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "478 MB/s"
+      }
+    },
+    {
+      "id": 11632,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON NV3 PCIe 4.0 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3996 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2782 MB/s"
+      }
+    },
+    {
+      "id": 11633,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE BARRACUDA 120 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4568 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3357 MB/s"
+      }
+    },
+    {
+      "id": 11634,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 ELITE 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4792 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2972 MB/s"
+      }
+    },
+    {
+      "id": 11635,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NM790 PCIe 4.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "44130.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7308 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6962 MB/s"
+      }
+    },
+    {
+      "id": 11636,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE220S 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3822 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3169 MB/s"
+      }
+    },
+    {
+      "id": 11637,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA G2 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4397 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2503 MB/s"
+      }
+    },
+    {
+      "id": 11638,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen4 7300 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3771 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3471 MB/s"
+      }
+    },
+    {
+      "id": 11639,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NM620 PCIe 3.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4108 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3449 MB/s"
+      }
+    },
+    {
+      "id": 11640,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M470 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3954 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3068 MB/s"
+      }
+    },
+    {
+      "id": 11641,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP EX2 SATA3 1TB (2.5\" SATA III)",
+      "price": "3720.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "1TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "542 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "481 MB/s"
+      }
+    },
+    {
+      "id": 11642,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA SU800 SATA3 4TB (2.5\" SATA III)",
+      "price": "26450.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "4TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "543 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "485 MB/s"
+      }
+    },
+    {
+      "id": 11643,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP EX2 SATA3 4TB (2.5\" SATA III)",
+      "price": "26450.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "4TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "522 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "474 MB/s"
+      }
+    },
+    {
+      "id": 11644,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND ESD380C 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4301 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3236 MB/s"
+      }
+    },
+    {
+      "id": 11645,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 990 EVO 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4788 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2749 MB/s"
+      }
+    },
+    {
+      "id": 11646,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR FORCE MP510 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4760 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2567 MB/s"
+      }
+    },
+    {
+      "id": 11647,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL MX500 SATA3 512GB (2.5\" SATA III)",
+      "price": "950.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "512GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "550 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "450 MB/s"
+      }
+    },
+    {
+      "id": 11648,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE FIRECUDA 540 PCIe 5.0 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "4780.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10403 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10653 MB/s"
+      }
+    },
+    {
+      "id": 11649,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA SU650 SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "539 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "456 MB/s"
+      }
+    },
+    {
+      "id": 11650,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL BX500 SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "511 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "497 MB/s"
+      }
+    },
+    {
+      "id": 11651,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA PRO 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "44130.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7144 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6510 MB/s"
+      }
+    },
+    {
+      "id": 11652,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NQ790 PCIe 4.0 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7307 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6463 MB/s"
+      }
+    },
+    {
+      "id": 11653,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE NVMe SSD 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3727 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2923 MB/s"
+      }
+    },
+    {
+      "id": 11654,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 870 QVO 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3524 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2905 MB/s"
+      }
+    },
+    {
+      "id": 11655,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE220S 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4174 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3117 MB/s"
+      }
+    },
+    {
+      "id": 11656,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE250S PCIe 4.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4365 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2719 MB/s"
+      }
+    },
+    {
+      "id": 11657,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NQ780 PCIe 4.0 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4978 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3334 MB/s"
+      }
+    },
+    {
+      "id": 11658,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLACK SN770 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4528 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3072 MB/s"
+      }
+    },
+    {
+      "id": 11659,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE NVMe SSD 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3647 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2544 MB/s"
+      }
+    },
+    {
+      "id": 11660,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE FIRECUDA 540 PCIe 5.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "9330.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10453 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "9894 MB/s"
+      }
+    },
+    {
+      "id": 11661,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen5 12000 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "67930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10969 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10048 MB/s"
+      }
+    },
+    {
+      "id": 11662,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NM790 PCIe 4.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "5930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7000 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6379 MB/s"
+      }
+    },
+    {
+      "id": 11663,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 PRO LPX 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7451 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6938 MB/s"
+      }
+    },
+    {
+      "id": 11664,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "546 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "491 MB/s"
+      }
+    },
+    {
+      "id": 11665,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE220S 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4587 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3388 MB/s"
+      }
+    },
+    {
+      "id": 11666,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 990 EVO 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4620 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2831 MB/s"
+      }
+    },
+    {
+      "id": 11667,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA PRO 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7111 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6594 MB/s"
+      }
+    },
+    {
+      "id": 11668,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND ESD380C 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4210 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2786 MB/s"
+      }
+    },
+    {
+      "id": 11669,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP EX2 SATA3 500GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "500GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "528 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "454 MB/s"
+      }
+    },
+    {
+      "id": 11670,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 970 EVO PLUS 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4360 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3007 MB/s"
+      }
+    },
+    {
+      "id": 11671,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen5 12000 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "4780.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10493 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10888 MB/s"
+      }
+    },
+    {
+      "id": 11672,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT BURST ELITE SATA3 512GB (2.5\" SATA III)",
+      "price": "950.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "512GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "506 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "507 MB/s"
+      }
+    },
+    {
+      "id": 11673,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD GREEN SN350 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4285 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3377 MB/s"
+      }
+    },
+    {
+      "id": 11674,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE250S PCIe 4.0 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3679 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2710 MB/s"
+      }
+    },
+    {
+      "id": 11675,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 900 PRO 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7070 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6951 MB/s"
+      }
+    },
+    {
+      "id": 11676,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLUE SN580 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4901 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2667 MB/s"
+      }
+    },
+    {
+      "id": 11677,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL T700 PCIe 5.0 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "9330.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10719 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10879 MB/s"
+      }
+    },
+    {
+      "id": 11678,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG T7 Shield 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4084 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3171 MB/s"
+      }
+    },
+    {
+      "id": 11679,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen5 12000 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "33970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "11147 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "9040 MB/s"
+      }
+    },
+    {
+      "id": 11680,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 870 EVO 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4778 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3470 MB/s"
+      }
+    },
+    {
+      "id": 11681,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE250S PCIe 4.0 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4756 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3060 MB/s"
+      }
+    },
+    {
+      "id": 11682,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP700 PCIe 5.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "67930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10657 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "9215 MB/s"
+      }
+    },
+    {
+      "id": 11683,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 850 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4484 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3237 MB/s"
+      }
+    },
+    {
+      "id": 11684,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 710 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4906 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3066 MB/s"
+      }
+    },
+    {
+      "id": 11685,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M371 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3777 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3476 MB/s"
+      }
+    },
+    {
+      "id": 11686,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP EX2 SATA3 512GB (2.5\" SATA III)",
+      "price": "950.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "512GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "553 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "509 MB/s"
+      }
+    },
+    {
+      "id": 11687,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD BLACK SN850X 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "5930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7431 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6254 MB/s"
+      }
+    },
+    {
+      "id": 11688,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 PRO LPX 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1730.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7375 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6743 MB/s"
+      }
+    },
+    {
+      "id": 11689,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE BARRACUDA Q5 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4821 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2689 MB/s"
+      }
+    },
+    {
+      "id": 11690,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE AORUS Gen5 12000 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "5490.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "11968 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10107 MB/s"
+      }
+    },
+    {
+      "id": 11691,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE FIRECUDA 540 PCIe 5.0 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "67930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "10710 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "10795 MB/s"
+      }
+    },
+    {
+      "id": 11692,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA SU800 SATA3 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "547 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "490 MB/s"
+      }
+    },
+    {
+      "id": 11693,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 CORE XT 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4837 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2533 MB/s"
+      }
+    },
+    {
+      "id": 11694,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NM790 PCIe 4.0 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "22070.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7703 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6700 MB/s"
+      }
+    },
+    {
+      "id": 11695,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT VIPER VP4300 Lite 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3528 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3192 MB/s"
+      }
+    },
+    {
+      "id": 11696,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL BX500 SATA3 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "554 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "480 MB/s"
+      }
+    },
+    {
+      "id": 11697,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 710 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4722 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3266 MB/s"
+      }
+    },
+    {
+      "id": 11698,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 900 PRO 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7233 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6234 MB/s"
+      }
+    },
+    {
+      "id": 11699,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE BARRACUDA Q5 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4402 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2953 MB/s"
+      }
+    },
+    {
+      "id": 11700,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE FIRECUDA 530 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4724 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3164 MB/s"
+      }
+    },
+    {
+      "id": 11701,
+      "category_id": 5,
+      "brand": "CRUCIAL",
+      "model": "CRUCIAL P3 Plus PCIe 4.0 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "CRUCIAL",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4994 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2689 MB/s"
+      }
+    },
+    {
+      "id": 11702,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT VIPER VP4300 Lite 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4101 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3480 MB/s"
+      }
+    },
+    {
+      "id": 11703,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA XPG GAMMIX S70 BLADE 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4610 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2608 MB/s"
+      }
+    },
+    {
+      "id": 11704,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA SATA3 500GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "500GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "511 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "455 MB/s"
+      }
+    },
+    {
+      "id": 11705,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON KC600 SATA3 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "543 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "457 MB/s"
+      }
+    },
+    {
+      "id": 11706,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA SATA3 4TB (2.5\" SATA III)",
+      "price": "26450.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "4TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "538 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "474 MB/s"
+      }
+    },
+    {
+      "id": 11707,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT BURST ELITE SATA3 256GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "256GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "503 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "470 MB/s"
+      }
+    },
+    {
+      "id": 11708,
+      "category_id": 5,
+      "brand": "LEXAR",
+      "model": "LEXAR NS100 SATA3 500GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "LEXAR",
+        "Capacity": "500GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "533 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "482 MB/s"
+      }
+    },
+    {
+      "id": 11709,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON NV2 PCIe 4.0 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3717 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2752 MB/s"
+      }
+    },
+    {
+      "id": 11710,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA G2 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4696 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2910 MB/s"
+      }
+    },
+    {
+      "id": 11711,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE IRONWOLF 125 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3812 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2985 MB/s"
+      }
+    },
+    {
+      "id": 11712,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE220S 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3640 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2652 MB/s"
+      }
+    },
+    {
+      "id": 11713,
+      "category_id": 5,
+      "brand": "GIGABYTE",
+      "model": "GIGABYTE GIGABYTE 2.5\" SATA 500GB (2.5\" SATA III)",
+      "price": "1090.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "GIGABYTE",
+        "Capacity": "500GB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "544 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "459 MB/s"
+      }
+    },
+    {
+      "id": 11714,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 970 EVO PLUS 500GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "500GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4798 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3272 MB/s"
+      }
+    },
+    {
+      "id": 11715,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD RED SA500 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4746 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3034 MB/s"
+      }
+    },
+    {
+      "id": 11716,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD GREEN SN350 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:02.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3559 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2790 MB/s"
+      }
+    },
+    {
+      "id": 11717,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 900 PRO 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "44130.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7453 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6900 MB/s"
+      }
+    },
+    {
+      "id": 11718,
+      "category_id": 5,
+      "brand": "WD",
+      "model": "WD RED SA500 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "WD",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4267 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2703 MB/s"
+      }
+    },
+    {
+      "id": 11719,
+      "category_id": 5,
+      "brand": "SAMSUNG",
+      "model": "SAMSUNG 870 QVO 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "SAMSUNG",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3840 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3132 MB/s"
+      }
+    },
+    {
+      "id": 11720,
+      "category_id": 5,
+      "brand": "SEAGATE",
+      "model": "SEAGATE FIRECUDA 530 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "SEAGATE",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3701 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3216 MB/s"
+      }
+    },
+    {
+      "id": 11721,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND SSD220S SATA3 2TB (2.5\" SATA III)",
+      "price": "13230.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "2TB",
+        "Interface": "2.5\" SATA III",
+        "Read Speed": "525 MB/s",
+        "Form Factor": "2.5 inch",
+        "Write Speed": "479 MB/s"
+      }
+    },
+    {
+      "id": 11722,
+      "category_id": 5,
+      "brand": "KIOXIA",
+      "model": "KIOXIA EXCERIA PLUS G3 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "4400.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "KIOXIA",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4034 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3464 MB/s"
+      }
+    },
+    {
+      "id": 11723,
+      "category_id": 5,
+      "brand": "TRANSCEND",
+      "model": "TRANSCEND MTE220S 512GB (NVMe M.2 PCIe 4.0)",
+      "price": "1210.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "TRANSCEND",
+        "Capacity": "512GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4771 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2739 MB/s"
+      }
+    },
+    {
+      "id": 11724,
+      "category_id": 5,
+      "brand": "PATRIOT",
+      "model": "PATRIOT P300 M.2 PCIe 4TB (NVMe M.2 PCIe 4.0)",
+      "price": "33930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "PATRIOT",
+        "Capacity": "4TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3645 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "3401 MB/s"
+      }
+    },
+    {
+      "id": 11725,
+      "category_id": 5,
+      "brand": "CORSAIR",
+      "model": "CORSAIR MP600 PRO LPX 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "5930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "CORSAIR",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7484 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6354 MB/s"
+      }
+    },
+    {
+      "id": 11726,
+      "category_id": 5,
+      "brand": "ADATA",
+      "model": "ADATA LEGEND 900 PRO 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "5930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "ADATA",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7423 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6634 MB/s"
+      }
+    },
+    {
+      "id": 11727,
+      "category_id": 5,
+      "brand": "TEAMGROUP",
+      "model": "TEAMGROUP MP44L PCIe 4.0 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1390.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "TEAMGROUP",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "3786 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2578 MB/s"
+      }
+    },
+    {
+      "id": 11728,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M480 PRO 1TB (NVMe M.2 PCIe 4.0)",
+      "price": "5930.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "1TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7364 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6310 MB/s"
+      }
+    },
+    {
+      "id": 11729,
+      "category_id": 5,
+      "brand": "MSI",
+      "model": "MSI SPATIUM M371 2TB (NVMe M.2 PCIe 4.0)",
+      "price": "16970.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "MSI",
+        "Capacity": "2TB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "4120 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "2570 MB/s"
+      }
+    },
+    {
+      "id": 11730,
+      "category_id": 5,
+      "brand": "KINGSTON",
+      "model": "KINGSTON KC3000 PCIe 4.0 256GB (NVMe M.2 PCIe 4.0)",
+      "price": "1990.00",
+      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123852_800.jpg",
+      "stock_quantity": 15,
+      "created_at": "2026-08-07T16:43:03.000Z",
+      "specifications": {
+        "Brand": "KINGSTON",
+        "Capacity": "256GB",
+        "Interface": "NVMe M.2 PCIe 4.0",
+        "Read Speed": "7676 MB/s",
+        "Form Factor": "M.2 2280",
+        "Write Speed": "6292 MB/s"
+      }
     }
   ],
   "spec_case": [
@@ -13928,12 +17258,12 @@
     },
     {
       "product_id": 11544,
-      "form_factor_support": "Micro-ATX",
+      "form_factor_support": "ATX, Micro-ATX",
       "max_gpu_length_mm": 355
     },
     {
       "product_id": 11545,
-      "form_factor_support": "Micro-ATX",
+      "form_factor_support": "ATX, Micro-ATX",
       "max_gpu_length_mm": 390
     }
   ],
@@ -16494,6 +19824,1301 @@
       "capacity_gb": 2000,
       "read_speed_mbs": 5000,
       "write_speed_mbs": 4000
+    },
+    {
+      "product_id": 11546,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3931,
+      "write_speed_mbs": 3307
+    },
+    {
+      "product_id": 11547,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4997,
+      "write_speed_mbs": 3255
+    },
+    {
+      "product_id": 11548,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4543,
+      "write_speed_mbs": 2826
+    },
+    {
+      "product_id": 11549,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 7157,
+      "write_speed_mbs": 6524
+    },
+    {
+      "product_id": 11550,
+      "type": "2.5 inch",
+      "capacity_gb": 512,
+      "read_speed_mbs": 500,
+      "write_speed_mbs": 481
+    },
+    {
+      "product_id": 11551,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7576,
+      "write_speed_mbs": 6596
+    },
+    {
+      "product_id": 11552,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4617,
+      "write_speed_mbs": 2774
+    },
+    {
+      "product_id": 11553,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4948,
+      "write_speed_mbs": 2695
+    },
+    {
+      "product_id": 11554,
+      "type": "2.5 inch",
+      "capacity_gb": 512,
+      "read_speed_mbs": 548,
+      "write_speed_mbs": 457
+    },
+    {
+      "product_id": 11555,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 10636,
+      "write_speed_mbs": 9885
+    },
+    {
+      "product_id": 11556,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4667,
+      "write_speed_mbs": 2832
+    },
+    {
+      "product_id": 11557,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 3648,
+      "write_speed_mbs": 3481
+    },
+    {
+      "product_id": 11558,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 7526,
+      "write_speed_mbs": 6769
+    },
+    {
+      "product_id": 11559,
+      "type": "2.5 inch",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 500,
+      "write_speed_mbs": 463
+    },
+    {
+      "product_id": 11560,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 3926,
+      "write_speed_mbs": 2575
+    },
+    {
+      "product_id": 11561,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4453,
+      "write_speed_mbs": 2559
+    },
+    {
+      "product_id": 11562,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7665,
+      "write_speed_mbs": 6816
+    },
+    {
+      "product_id": 11563,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4800,
+      "write_speed_mbs": 2768
+    },
+    {
+      "product_id": 11564,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4438,
+      "write_speed_mbs": 3212
+    },
+    {
+      "product_id": 11565,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 3757,
+      "write_speed_mbs": 3311
+    },
+    {
+      "product_id": 11566,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 3681,
+      "write_speed_mbs": 2920
+    },
+    {
+      "product_id": 11567,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4752,
+      "write_speed_mbs": 3350
+    },
+    {
+      "product_id": 11568,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4187,
+      "write_speed_mbs": 3317
+    },
+    {
+      "product_id": 11569,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4116,
+      "write_speed_mbs": 2686
+    },
+    {
+      "product_id": 11570,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4486,
+      "write_speed_mbs": 2794
+    },
+    {
+      "product_id": 11571,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4138,
+      "write_speed_mbs": 3308
+    },
+    {
+      "product_id": 11572,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 537,
+      "write_speed_mbs": 496
+    },
+    {
+      "product_id": 11573,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 522,
+      "write_speed_mbs": 502
+    },
+    {
+      "product_id": 11574,
+      "type": "2.5 inch",
+      "capacity_gb": 500,
+      "read_speed_mbs": 540,
+      "write_speed_mbs": 486
+    },
+    {
+      "product_id": 11575,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7778,
+      "write_speed_mbs": 6792
+    },
+    {
+      "product_id": 11576,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4388,
+      "write_speed_mbs": 3165
+    },
+    {
+      "product_id": 11577,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4384,
+      "write_speed_mbs": 2563
+    },
+    {
+      "product_id": 11578,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7306,
+      "write_speed_mbs": 6343
+    },
+    {
+      "product_id": 11579,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4470,
+      "write_speed_mbs": 2845
+    },
+    {
+      "product_id": 11580,
+      "type": "2.5 inch",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 557,
+      "write_speed_mbs": 483
+    },
+    {
+      "product_id": 11581,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4236,
+      "write_speed_mbs": 3280
+    },
+    {
+      "product_id": 11582,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3766,
+      "write_speed_mbs": 2576
+    },
+    {
+      "product_id": 11583,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4008,
+      "write_speed_mbs": 2837
+    },
+    {
+      "product_id": 11584,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 7335,
+      "write_speed_mbs": 6472
+    },
+    {
+      "product_id": 11585,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3864,
+      "write_speed_mbs": 3210
+    },
+    {
+      "product_id": 11586,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7270,
+      "write_speed_mbs": 6936
+    },
+    {
+      "product_id": 11587,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 3714,
+      "write_speed_mbs": 3451
+    },
+    {
+      "product_id": 11588,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3546,
+      "write_speed_mbs": 3187
+    },
+    {
+      "product_id": 11589,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 3613,
+      "write_speed_mbs": 3011
+    },
+    {
+      "product_id": 11590,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 7149,
+      "write_speed_mbs": 6777
+    },
+    {
+      "product_id": 11591,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 508,
+      "write_speed_mbs": 489
+    },
+    {
+      "product_id": 11592,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3521,
+      "write_speed_mbs": 3229
+    },
+    {
+      "product_id": 11593,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 3748,
+      "write_speed_mbs": 2682
+    },
+    {
+      "product_id": 11594,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 11381,
+      "write_speed_mbs": 9590
+    },
+    {
+      "product_id": 11595,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 11849,
+      "write_speed_mbs": 10253
+    },
+    {
+      "product_id": 11596,
+      "type": "2.5 inch",
+      "capacity_gb": 500,
+      "read_speed_mbs": 537,
+      "write_speed_mbs": 464
+    },
+    {
+      "product_id": 11597,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3907,
+      "write_speed_mbs": 2895
+    },
+    {
+      "product_id": 11598,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4467,
+      "write_speed_mbs": 3387
+    },
+    {
+      "product_id": 11599,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 550,
+      "write_speed_mbs": 492
+    },
+    {
+      "product_id": 11600,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7643,
+      "write_speed_mbs": 6684
+    },
+    {
+      "product_id": 11601,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 7771,
+      "write_speed_mbs": 6313
+    },
+    {
+      "product_id": 11602,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3524,
+      "write_speed_mbs": 2711
+    },
+    {
+      "product_id": 11603,
+      "type": "2.5 inch",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 503,
+      "write_speed_mbs": 484
+    },
+    {
+      "product_id": 11604,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 551,
+      "write_speed_mbs": 476
+    },
+    {
+      "product_id": 11605,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 7694,
+      "write_speed_mbs": 6856
+    },
+    {
+      "product_id": 11606,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4804,
+      "write_speed_mbs": 2815
+    },
+    {
+      "product_id": 11607,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 557,
+      "write_speed_mbs": 454
+    },
+    {
+      "product_id": 11608,
+      "type": "2.5 inch",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 532,
+      "write_speed_mbs": 459
+    },
+    {
+      "product_id": 11609,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 3526,
+      "write_speed_mbs": 2843
+    },
+    {
+      "product_id": 11610,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4073,
+      "write_speed_mbs": 3246
+    },
+    {
+      "product_id": 11611,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3527,
+      "write_speed_mbs": 2606
+    },
+    {
+      "product_id": 11612,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4597,
+      "write_speed_mbs": 2759
+    },
+    {
+      "product_id": 11613,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 3565,
+      "write_speed_mbs": 2730
+    },
+    {
+      "product_id": 11614,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7268,
+      "write_speed_mbs": 6694
+    },
+    {
+      "product_id": 11615,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 3702,
+      "write_speed_mbs": 2660
+    },
+    {
+      "product_id": 11616,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 537,
+      "write_speed_mbs": 454
+    },
+    {
+      "product_id": 11617,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7446,
+      "write_speed_mbs": 6719
+    },
+    {
+      "product_id": 11618,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 7246,
+      "write_speed_mbs": 6952
+    },
+    {
+      "product_id": 11619,
+      "type": "2.5 inch",
+      "capacity_gb": 512,
+      "read_speed_mbs": 501,
+      "write_speed_mbs": 502
+    },
+    {
+      "product_id": 11620,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3596,
+      "write_speed_mbs": 2528
+    },
+    {
+      "product_id": 11621,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 550,
+      "write_speed_mbs": 460
+    },
+    {
+      "product_id": 11622,
+      "type": "2.5 inch",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 500,
+      "write_speed_mbs": 459
+    },
+    {
+      "product_id": 11623,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4635,
+      "write_speed_mbs": 3152
+    },
+    {
+      "product_id": 11624,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3738,
+      "write_speed_mbs": 2812
+    },
+    {
+      "product_id": 11625,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4334,
+      "write_speed_mbs": 2646
+    },
+    {
+      "product_id": 11626,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 7434,
+      "write_speed_mbs": 6515
+    },
+    {
+      "product_id": 11627,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3740,
+      "write_speed_mbs": 3473
+    },
+    {
+      "product_id": 11628,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4886,
+      "write_speed_mbs": 3373
+    },
+    {
+      "product_id": 11629,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4526,
+      "write_speed_mbs": 2740
+    },
+    {
+      "product_id": 11630,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 518,
+      "write_speed_mbs": 498
+    },
+    {
+      "product_id": 11631,
+      "type": "2.5 inch",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 557,
+      "write_speed_mbs": 478
+    },
+    {
+      "product_id": 11632,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 3996,
+      "write_speed_mbs": 2782
+    },
+    {
+      "product_id": 11633,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4568,
+      "write_speed_mbs": 3357
+    },
+    {
+      "product_id": 11634,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4792,
+      "write_speed_mbs": 2972
+    },
+    {
+      "product_id": 11635,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 7308,
+      "write_speed_mbs": 6962
+    },
+    {
+      "product_id": 11636,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 3822,
+      "write_speed_mbs": 3169
+    },
+    {
+      "product_id": 11637,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4397,
+      "write_speed_mbs": 2503
+    },
+    {
+      "product_id": 11638,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 3771,
+      "write_speed_mbs": 3471
+    },
+    {
+      "product_id": 11639,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4108,
+      "write_speed_mbs": 3449
+    },
+    {
+      "product_id": 11640,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 3954,
+      "write_speed_mbs": 3068
+    },
+    {
+      "product_id": 11641,
+      "type": "2.5 inch",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 542,
+      "write_speed_mbs": 481
+    },
+    {
+      "product_id": 11642,
+      "type": "2.5 inch",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 543,
+      "write_speed_mbs": 485
+    },
+    {
+      "product_id": 11643,
+      "type": "2.5 inch",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 522,
+      "write_speed_mbs": 474
+    },
+    {
+      "product_id": 11644,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4301,
+      "write_speed_mbs": 3236
+    },
+    {
+      "product_id": 11645,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4788,
+      "write_speed_mbs": 2749
+    },
+    {
+      "product_id": 11646,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4760,
+      "write_speed_mbs": 2567
+    },
+    {
+      "product_id": 11647,
+      "type": "2.5 inch",
+      "capacity_gb": 512,
+      "read_speed_mbs": 550,
+      "write_speed_mbs": 450
+    },
+    {
+      "product_id": 11648,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 10403,
+      "write_speed_mbs": 10653
+    },
+    {
+      "product_id": 11649,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 539,
+      "write_speed_mbs": 456
+    },
+    {
+      "product_id": 11650,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 511,
+      "write_speed_mbs": 497
+    },
+    {
+      "product_id": 11651,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 7144,
+      "write_speed_mbs": 6510
+    },
+    {
+      "product_id": 11652,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7307,
+      "write_speed_mbs": 6463
+    },
+    {
+      "product_id": 11653,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3727,
+      "write_speed_mbs": 2923
+    },
+    {
+      "product_id": 11654,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 3524,
+      "write_speed_mbs": 2905
+    },
+    {
+      "product_id": 11655,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4174,
+      "write_speed_mbs": 3117
+    },
+    {
+      "product_id": 11656,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4365,
+      "write_speed_mbs": 2719
+    },
+    {
+      "product_id": 11657,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4978,
+      "write_speed_mbs": 3334
+    },
+    {
+      "product_id": 11658,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4528,
+      "write_speed_mbs": 3072
+    },
+    {
+      "product_id": 11659,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 3647,
+      "write_speed_mbs": 2544
+    },
+    {
+      "product_id": 11660,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 10453,
+      "write_speed_mbs": 9894
+    },
+    {
+      "product_id": 11661,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 10969,
+      "write_speed_mbs": 10048
+    },
+    {
+      "product_id": 11662,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7000,
+      "write_speed_mbs": 6379
+    },
+    {
+      "product_id": 11663,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7451,
+      "write_speed_mbs": 6938
+    },
+    {
+      "product_id": 11664,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 546,
+      "write_speed_mbs": 491
+    },
+    {
+      "product_id": 11665,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4587,
+      "write_speed_mbs": 3388
+    },
+    {
+      "product_id": 11666,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4620,
+      "write_speed_mbs": 2831
+    },
+    {
+      "product_id": 11667,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7111,
+      "write_speed_mbs": 6594
+    },
+    {
+      "product_id": 11668,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4210,
+      "write_speed_mbs": 2786
+    },
+    {
+      "product_id": 11669,
+      "type": "2.5 inch",
+      "capacity_gb": 500,
+      "read_speed_mbs": 528,
+      "write_speed_mbs": 454
+    },
+    {
+      "product_id": 11670,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4360,
+      "write_speed_mbs": 3007
+    },
+    {
+      "product_id": 11671,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 10493,
+      "write_speed_mbs": 10888
+    },
+    {
+      "product_id": 11672,
+      "type": "2.5 inch",
+      "capacity_gb": 512,
+      "read_speed_mbs": 506,
+      "write_speed_mbs": 507
+    },
+    {
+      "product_id": 11673,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4285,
+      "write_speed_mbs": 3377
+    },
+    {
+      "product_id": 11674,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 3679,
+      "write_speed_mbs": 2710
+    },
+    {
+      "product_id": 11675,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7070,
+      "write_speed_mbs": 6951
+    },
+    {
+      "product_id": 11676,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4901,
+      "write_speed_mbs": 2667
+    },
+    {
+      "product_id": 11677,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 10719,
+      "write_speed_mbs": 10879
+    },
+    {
+      "product_id": 11678,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4084,
+      "write_speed_mbs": 3171
+    },
+    {
+      "product_id": 11679,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 11147,
+      "write_speed_mbs": 9040
+    },
+    {
+      "product_id": 11680,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4778,
+      "write_speed_mbs": 3470
+    },
+    {
+      "product_id": 11681,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4756,
+      "write_speed_mbs": 3060
+    },
+    {
+      "product_id": 11682,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 10657,
+      "write_speed_mbs": 9215
+    },
+    {
+      "product_id": 11683,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4484,
+      "write_speed_mbs": 3237
+    },
+    {
+      "product_id": 11684,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4906,
+      "write_speed_mbs": 3066
+    },
+    {
+      "product_id": 11685,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3777,
+      "write_speed_mbs": 3476
+    },
+    {
+      "product_id": 11686,
+      "type": "2.5 inch",
+      "capacity_gb": 512,
+      "read_speed_mbs": 553,
+      "write_speed_mbs": 509
+    },
+    {
+      "product_id": 11687,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7431,
+      "write_speed_mbs": 6254
+    },
+    {
+      "product_id": 11688,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7375,
+      "write_speed_mbs": 6743
+    },
+    {
+      "product_id": 11689,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4821,
+      "write_speed_mbs": 2689
+    },
+    {
+      "product_id": 11690,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 11968,
+      "write_speed_mbs": 10107
+    },
+    {
+      "product_id": 11691,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 10710,
+      "write_speed_mbs": 10795
+    },
+    {
+      "product_id": 11692,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 547,
+      "write_speed_mbs": 490
+    },
+    {
+      "product_id": 11693,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4837,
+      "write_speed_mbs": 2533
+    },
+    {
+      "product_id": 11694,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 7703,
+      "write_speed_mbs": 6700
+    },
+    {
+      "product_id": 11695,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 3528,
+      "write_speed_mbs": 3192
+    },
+    {
+      "product_id": 11696,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 554,
+      "write_speed_mbs": 480
+    },
+    {
+      "product_id": 11697,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4722,
+      "write_speed_mbs": 3266
+    },
+    {
+      "product_id": 11698,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 7233,
+      "write_speed_mbs": 6234
+    },
+    {
+      "product_id": 11699,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4402,
+      "write_speed_mbs": 2953
+    },
+    {
+      "product_id": 11700,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4724,
+      "write_speed_mbs": 3164
+    },
+    {
+      "product_id": 11701,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4994,
+      "write_speed_mbs": 2689
+    },
+    {
+      "product_id": 11702,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 4101,
+      "write_speed_mbs": 3480
+    },
+    {
+      "product_id": 11703,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4610,
+      "write_speed_mbs": 2608
+    },
+    {
+      "product_id": 11704,
+      "type": "2.5 inch",
+      "capacity_gb": 500,
+      "read_speed_mbs": 511,
+      "write_speed_mbs": 455
+    },
+    {
+      "product_id": 11705,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 543,
+      "write_speed_mbs": 457
+    },
+    {
+      "product_id": 11706,
+      "type": "2.5 inch",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 538,
+      "write_speed_mbs": 474
+    },
+    {
+      "product_id": 11707,
+      "type": "2.5 inch",
+      "capacity_gb": 256,
+      "read_speed_mbs": 503,
+      "write_speed_mbs": 470
+    },
+    {
+      "product_id": 11708,
+      "type": "2.5 inch",
+      "capacity_gb": 500,
+      "read_speed_mbs": 533,
+      "write_speed_mbs": 482
+    },
+    {
+      "product_id": 11709,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 3717,
+      "write_speed_mbs": 2752
+    },
+    {
+      "product_id": 11710,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4696,
+      "write_speed_mbs": 2910
+    },
+    {
+      "product_id": 11711,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3812,
+      "write_speed_mbs": 2985
+    },
+    {
+      "product_id": 11712,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 3640,
+      "write_speed_mbs": 2652
+    },
+    {
+      "product_id": 11713,
+      "type": "2.5 inch",
+      "capacity_gb": 500,
+      "read_speed_mbs": 544,
+      "write_speed_mbs": 459
+    },
+    {
+      "product_id": 11714,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 4798,
+      "write_speed_mbs": 3272
+    },
+    {
+      "product_id": 11715,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4746,
+      "write_speed_mbs": 3034
+    },
+    {
+      "product_id": 11716,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 3559,
+      "write_speed_mbs": 2790
+    },
+    {
+      "product_id": 11717,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 7453,
+      "write_speed_mbs": 6900
+    },
+    {
+      "product_id": 11718,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 4267,
+      "write_speed_mbs": 2703
+    },
+    {
+      "product_id": 11719,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3840,
+      "write_speed_mbs": 3132
+    },
+    {
+      "product_id": 11720,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 3701,
+      "write_speed_mbs": 3216
+    },
+    {
+      "product_id": 11721,
+      "type": "2.5 inch",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 525,
+      "write_speed_mbs": 479
+    },
+    {
+      "product_id": 11722,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 4034,
+      "write_speed_mbs": 3464
+    },
+    {
+      "product_id": 11723,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 4771,
+      "write_speed_mbs": 2739
+    },
+    {
+      "product_id": 11724,
+      "type": "M.2 2280",
+      "capacity_gb": 4000,
+      "read_speed_mbs": 3645,
+      "write_speed_mbs": 3401
+    },
+    {
+      "product_id": 11725,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7484,
+      "write_speed_mbs": 6354
+    },
+    {
+      "product_id": 11726,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7423,
+      "write_speed_mbs": 6634
+    },
+    {
+      "product_id": 11727,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 3786,
+      "write_speed_mbs": 2578
+    },
+    {
+      "product_id": 11728,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7364,
+      "write_speed_mbs": 6310
+    },
+    {
+      "product_id": 11729,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 4120,
+      "write_speed_mbs": 2570
+    },
+    {
+      "product_id": 11730,
+      "type": "M.2 2280",
+      "capacity_gb": 256,
+      "read_speed_mbs": 7676,
+      "write_speed_mbs": 6292
     }
   ],
   "users": [
