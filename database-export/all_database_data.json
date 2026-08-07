@@ -13528,13 +13528,2932 @@
       }
     }
   ],
-  "spec_case": [],
-  "spec_cpu": [],
-  "spec_gpu": [],
-  "spec_motherboard": [],
-  "spec_psu": [],
-  "spec_ram": [],
-  "spec_storage": [],
+  "spec_case": [
+    {
+      "product_id": 11141,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11142,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11143,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11144,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11145,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11146,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11147,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11148,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11149,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11150,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11151,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11152,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11153,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11154,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11155,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11156,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11157,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11158,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11159,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11160,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11189,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11190,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11191,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11192,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11405,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11406,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11407,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11408,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11409,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11410,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11411,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11412,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11413,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11414,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11415,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11416,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11417,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11418,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11419,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11420,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11421,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11422,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11423,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11424,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11425,
+      "form_factor_support": "Small Form Factor",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11426,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11427,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11428,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11429,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11430,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11431,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11432,
+      "form_factor_support": "Small Form Factor",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11433,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11434,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11435,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11436,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11437,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11438,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11439,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11440,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11441,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11442,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11443,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11444,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11445,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11446,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11447,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11448,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11449,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11450,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11451,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11452,
+      "form_factor_support": "Mid-Tower",
+      "max_gpu_length_mm": 350
+    },
+    {
+      "product_id": 11453,
+      "form_factor_support": "Mini-Tower",
+      "max_gpu_length_mm": 350
+    }
+  ],
+  "spec_cpu": [
+    {
+      "product_id": 11038,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11041,
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp_watt": 60
+    },
+    {
+      "product_id": 11044,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11045,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11161,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 10,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11162,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11163,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11164,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11165,
+      "socket": "LGA1700",
+      "cores": 96,
+      "threads": 192,
+      "tdp_watt": 350
+    },
+    {
+      "product_id": 11166,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 10,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11167,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11168,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11169,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11170,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11171,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11172,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11173,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11174,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11175,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11176,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11197,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11198,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 120
+    },
+    {
+      "product_id": 11199,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 10,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11200,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11201,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11202,
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 32,
+      "tdp_watt": 170
+    },
+    {
+      "product_id": 11203,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11204,
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp_watt": 125
+    },
+    {
+      "product_id": 11205,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11206,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11207,
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 10,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11208,
+      "socket": "AM5",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11209,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    },
+    {
+      "product_id": 11210,
+      "socket": "LGA1700",
+      "cores": 96,
+      "threads": 192,
+      "tdp_watt": 350
+    },
+    {
+      "product_id": 11211,
+      "socket": "LGA1700",
+      "cores": 8,
+      "threads": 16,
+      "tdp_watt": 105
+    },
+    {
+      "product_id": 11212,
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp_watt": 65
+    }
+  ],
+  "spec_gpu": [
+    {
+      "product_id": 11086,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 300,
+      "length_mm": 224
+    },
+    {
+      "product_id": 11087,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 300,
+      "length_mm": 191
+    },
+    {
+      "product_id": 11088,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 197
+    },
+    {
+      "product_id": 11089,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 197
+    },
+    {
+      "product_id": 11090,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 500,
+      "length_mm": 200
+    },
+    {
+      "product_id": 11091,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 231
+    },
+    {
+      "product_id": 11092,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 169
+    },
+    {
+      "product_id": 11093,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 199
+    },
+    {
+      "product_id": 11094,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 450,
+      "length_mm": 161
+    },
+    {
+      "product_id": 11095,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 234
+    },
+    {
+      "product_id": 11096,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 225
+    },
+    {
+      "product_id": 11097,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 450,
+      "length_mm": 222
+    },
+    {
+      "product_id": 11098,
+      "chipset": "Radeon™ RX 6500 XT",
+      "vram_gb": 4,
+      "tdp_watt": 400,
+      "length_mm": 192
+    },
+    {
+      "product_id": 11099,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 197
+    },
+    {
+      "product_id": 11100,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 300,
+      "length_mm": 162
+    },
+    {
+      "product_id": 11101,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": null
+    },
+    {
+      "product_id": 11102,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 450,
+      "length_mm": 199
+    },
+    {
+      "product_id": 11103,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 231
+    },
+    {
+      "product_id": 11104,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 300,
+      "length_mm": 189
+    },
+    {
+      "product_id": 11105,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 225
+    },
+    {
+      "product_id": 11193,
+      "chipset": "Radeon™ RX 7600",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 229
+    },
+    {
+      "product_id": 11194,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 450,
+      "length_mm": 201
+    },
+    {
+      "product_id": 11195,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 450,
+      "length_mm": 245
+    },
+    {
+      "product_id": 11196,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 197
+    },
+    {
+      "product_id": 11306,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 248
+    },
+    {
+      "product_id": 11307,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 228
+    },
+    {
+      "product_id": 11308,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 208
+    },
+    {
+      "product_id": 11309,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 500,
+      "length_mm": 281
+    },
+    {
+      "product_id": 11310,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 227
+    },
+    {
+      "product_id": 11312,
+      "chipset": "Radeon™ RX 9060 XT",
+      "vram_gb": 8,
+      "tdp_watt": 450,
+      "length_mm": 281
+    },
+    {
+      "product_id": 11313,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 281
+    },
+    {
+      "product_id": 11314,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11315,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 208
+    },
+    {
+      "product_id": 11317,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11321,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 290
+    },
+    {
+      "product_id": 11322,
+      "chipset": "Radeon™ RX 9060 XT",
+      "vram_gb": 16,
+      "tdp_watt": 550,
+      "length_mm": 249
+    },
+    {
+      "product_id": 11328,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 229
+    },
+    {
+      "product_id": 11329,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 231
+    },
+    {
+      "product_id": 11330,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11332,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11334,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 234
+    },
+    {
+      "product_id": 11337,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 300
+    },
+    {
+      "product_id": 11340,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 268
+    },
+    {
+      "product_id": 11341,
+      "chipset": "Radeon™ RX 9060 XT",
+      "vram_gb": 16,
+      "tdp_watt": 500,
+      "length_mm": 220
+    },
+    {
+      "product_id": 11344,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 268
+    },
+    {
+      "product_id": 11347,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 301
+    },
+    {
+      "product_id": 11349,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11351,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 200
+    },
+    {
+      "product_id": 11353,
+      "chipset": "Radeon™ RX 9060 XT",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 202
+    },
+    {
+      "product_id": 11354,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 200
+    },
+    {
+      "product_id": 11454,
+      "chipset": "Radeon™ RX 6500 XT",
+      "vram_gb": 4,
+      "tdp_watt": 400,
+      "length_mm": 192
+    },
+    {
+      "product_id": 11455,
+      "chipset": "GeForce RTX™ 3050",
+      "vram_gb": 6,
+      "tdp_watt": 300,
+      "length_mm": 162
+    },
+    {
+      "product_id": 11456,
+      "chipset": "GeForce® RTX 5050",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 169
+    },
+    {
+      "product_id": 11457,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11458,
+      "chipset": "GeForce® RTX 5060",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11459,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11460,
+      "chipset": "Radeon™ RX 9060 XT",
+      "vram_gb": 16,
+      "tdp_watt": 500,
+      "length_mm": 220
+    },
+    {
+      "product_id": 11461,
+      "chipset": "Radeon™ RX 9060 XT",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11462,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 226
+    },
+    {
+      "product_id": 11463,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11464,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 600,
+      "length_mm": 252
+    },
+    {
+      "product_id": 11465,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11466,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 215
+    },
+    {
+      "product_id": 11467,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 229
+    },
+    {
+      "product_id": 11468,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 281
+    },
+    {
+      "product_id": 11469,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 281
+    },
+    {
+      "product_id": 11470,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 650,
+      "length_mm": 300
+    },
+    {
+      "product_id": 11471,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11472,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 8,
+      "tdp_watt": 550,
+      "length_mm": 302
+    },
+    {
+      "product_id": 11473,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 600,
+      "length_mm": 227
+    },
+    {
+      "product_id": 11474,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 650,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11475,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 600,
+      "length_mm": 226
+    },
+    {
+      "product_id": 11476,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 600,
+      "length_mm": 262
+    },
+    {
+      "product_id": 11477,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 600,
+      "length_mm": 247
+    },
+    {
+      "product_id": 11478,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 600,
+      "length_mm": 291
+    },
+    {
+      "product_id": 11479,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 650,
+      "length_mm": 310
+    },
+    {
+      "product_id": 11480,
+      "chipset": "Radeon™ RX 9070",
+      "vram_gb": 16,
+      "tdp_watt": 650,
+      "length_mm": 312
+    },
+    {
+      "product_id": 11481,
+      "chipset": "GeForce® RTX 5060 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 550,
+      "length_mm": 229
+    },
+    {
+      "product_id": 11482,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 231
+    },
+    {
+      "product_id": 11483,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11484,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 241
+    },
+    {
+      "product_id": 11485,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 252
+    },
+    {
+      "product_id": 11486,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 250
+    },
+    {
+      "product_id": 11487,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 236
+    },
+    {
+      "product_id": 11488,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 750,
+      "length_mm": 282
+    },
+    {
+      "product_id": 11489,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 300
+    },
+    {
+      "product_id": 11490,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 291
+    },
+    {
+      "product_id": 11491,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 300
+    },
+    {
+      "product_id": 11492,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 291
+    },
+    {
+      "product_id": 11493,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11494,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 750,
+      "length_mm": 249
+    },
+    {
+      "product_id": 11495,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 290
+    },
+    {
+      "product_id": 11496,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 750,
+      "length_mm": 334
+    },
+    {
+      "product_id": 11497,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 334
+    },
+    {
+      "product_id": 11498,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 288
+    },
+    {
+      "product_id": 11499,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": 325
+    },
+    {
+      "product_id": 11500,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": 325
+    },
+    {
+      "product_id": 11501,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 312
+    },
+    {
+      "product_id": 11502,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": 298
+    },
+    {
+      "product_id": 11503,
+      "chipset": "Radeon™ RX 9070 XT",
+      "vram_gb": 16,
+      "tdp_watt": 800,
+      "length_mm": 298
+    },
+    {
+      "product_id": 11504,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 750,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11505,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 338
+    },
+    {
+      "product_id": 11506,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 750,
+      "length_mm": 329
+    },
+    {
+      "product_id": 11507,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 750,
+      "length_mm": 317
+    },
+    {
+      "product_id": 11508,
+      "chipset": "GeForce® RTX 5070",
+      "vram_gb": 12,
+      "tdp_watt": 650,
+      "length_mm": 337
+    },
+    {
+      "product_id": 11509,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 251
+    },
+    {
+      "product_id": 11510,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 303
+    },
+    {
+      "product_id": 11511,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11512,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 330
+    },
+    {
+      "product_id": 11513,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11514,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11515,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11516,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 334
+    },
+    {
+      "product_id": 11517,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 303
+    },
+    {
+      "product_id": 11518,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11519,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 340
+    },
+    {
+      "product_id": 11520,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 750,
+      "length_mm": 338
+    },
+    {
+      "product_id": 11521,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 329
+    },
+    {
+      "product_id": 11522,
+      "chipset": "GeForce® RTX 5070 Ti",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11523,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 315
+    },
+    {
+      "product_id": 11524,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11525,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 329
+    },
+    {
+      "product_id": 11526,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11527,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11528,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 303
+    },
+    {
+      "product_id": 11529,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11530,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 303
+    },
+    {
+      "product_id": 11531,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11532,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 331
+    },
+    {
+      "product_id": 11533,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 304
+    },
+    {
+      "product_id": 11534,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 360
+    },
+    {
+      "product_id": 11535,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 360
+    },
+    {
+      "product_id": 11536,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 160
+    },
+    {
+      "product_id": 11537,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 354
+    },
+    {
+      "product_id": 11538,
+      "chipset": "GeForce® RTX 5080",
+      "vram_gb": 16,
+      "tdp_watt": 850,
+      "length_mm": 220
+    },
+    {
+      "product_id": 11539,
+      "chipset": "GeForce® RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1000,
+      "length_mm": 342
+    },
+    {
+      "product_id": 11540,
+      "chipset": "GeForce® RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1000,
+      "length_mm": 329
+    },
+    {
+      "product_id": 11541,
+      "chipset": "GeForce® RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1000,
+      "length_mm": 357
+    },
+    {
+      "product_id": 11542,
+      "chipset": "GeForce® RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1000,
+      "length_mm": 357
+    },
+    {
+      "product_id": 11543,
+      "chipset": "GeForce® RTX 5090",
+      "vram_gb": 32,
+      "tdp_watt": 1000,
+      "length_mm": 357
+    }
+  ],
+  "spec_motherboard": [
+    {
+      "product_id": 11046,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11047,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11048,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11049,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11050,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11051,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11052,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11053,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11054,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11055,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11056,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11057,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11058,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11059,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11060,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11061,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11062,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11063,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11064,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11065,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11177,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11178,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11179,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11180,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "M-ATX"
+    },
+    {
+      "product_id": 11213,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11214,
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11215,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11216,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11217,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11218,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "M-ATX"
+    },
+    {
+      "product_id": 11219,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11220,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11221,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11222,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11223,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11224,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "M-ATX"
+    },
+    {
+      "product_id": 11225,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11226,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11227,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11228,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11229,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11230,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11231,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11232,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11233,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11234,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11235,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11236,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11237,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11238,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11239,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11240,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11241,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11242,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11243,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11244,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "M-ATX"
+    },
+    {
+      "product_id": 11245,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11246,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11247,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11248,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "M-ATX"
+    },
+    {
+      "product_id": 11249,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11250,
+      "socket": "LGA 1700",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11251,
+      "socket": "LGA 1700",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11252,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11253,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11254,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11255,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11256,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11257,
+      "socket": "LGA 1851",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11258,
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "Micro-ATX"
+    },
+    {
+      "product_id": 11259,
+      "socket": "AM4",
+      "ram_type": "DDR4",
+      "form_factor": "Micro-ATX"
+    }
+  ],
+  "spec_psu": [
+    {
+      "product_id": 11121,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11122,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11123,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11124,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11125,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11126,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11127,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11128,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11129,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11130,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11131,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11132,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11133,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11134,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11135,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11136,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11137,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11138,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11139,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11140,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11185,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11186,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11187,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11188,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11355,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11356,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11357,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11358,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11359,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11360,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11361,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11362,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11363,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11364,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11365,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11366,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11367,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11368,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11369,
+      "wattage": 1050,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11370,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11371,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11372,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11373,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11374,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11375,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11376,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11377,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11378,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11379,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11380,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11381,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11382,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11383,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11384,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11385,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11386,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11387,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11388,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11389,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11390,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11391,
+      "wattage": 1250,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11392,
+      "wattage": 650,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11393,
+      "wattage": 550,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11394,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11395,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11396,
+      "wattage": 750,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11397,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11398,
+      "wattage": 600,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11399,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11400,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11401,
+      "wattage": 1300,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11402,
+      "wattage": 850,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11403,
+      "wattage": 1000,
+      "efficiency_rating": "80 Plus Bronze"
+    },
+    {
+      "product_id": 11404,
+      "wattage": 1200,
+      "efficiency_rating": "80 Plus Bronze"
+    }
+  ],
+  "spec_ram": [
+    {
+      "product_id": 11066,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11067,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11068,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11069,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11070,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11071,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11072,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11073,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11074,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11075,
+      "ram_type": "DDR5",
+      "capacity_gb": 8,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 11076,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11077,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11078,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11079,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11080,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11081,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11082,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11083,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11084,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11085,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11181,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11182,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11183,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11184,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11260,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11261,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 11262,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11263,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11264,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11265,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11266,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6800
+    },
+    {
+      "product_id": 11267,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11268,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11269,
+      "ram_type": "DDR5",
+      "capacity_gb": 64,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 11270,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11271,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11272,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11273,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11274,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11275,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 11276,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11277,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11278,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 11279,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11280,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11281,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 5600
+    },
+    {
+      "product_id": 11282,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11283,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11284,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11285,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11286,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11287,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11288,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11289,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11290,
+      "ram_type": "DDR5",
+      "capacity_gb": 8,
+      "bus_speed": 4800
+    },
+    {
+      "product_id": 11291,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11292,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11293,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6800
+    },
+    {
+      "product_id": 11294,
+      "ram_type": "DDR4",
+      "capacity_gb": 8,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11295,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11296,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11297,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11298,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11299,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11300,
+      "ram_type": "DDR5",
+      "capacity_gb": 16,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11301,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6400
+    },
+    {
+      "product_id": 11302,
+      "ram_type": "DDR5",
+      "capacity_gb": 32,
+      "bus_speed": 6000
+    },
+    {
+      "product_id": 11303,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    },
+    {
+      "product_id": 11304,
+      "ram_type": "DDR4",
+      "capacity_gb": 16,
+      "bus_speed": 3200
+    }
+  ],
+  "spec_storage": [
+    {
+      "product_id": 11106,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 5000,
+      "write_speed_mbs": 2500
+    },
+    {
+      "product_id": 11107,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7400,
+      "write_speed_mbs": 6500
+    },
+    {
+      "product_id": 11108,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7200,
+      "write_speed_mbs": 3800
+    },
+    {
+      "product_id": 11109,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7200,
+      "write_speed_mbs": 6200
+    },
+    {
+      "product_id": 11110,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 6000,
+      "write_speed_mbs": 5000
+    },
+    {
+      "product_id": 11111,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 6000,
+      "write_speed_mbs": 5000
+    },
+    {
+      "product_id": 11112,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 6000,
+      "write_speed_mbs": 4000
+    },
+    {
+      "product_id": 11113,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 6200,
+      "write_speed_mbs": 2300
+    },
+    {
+      "product_id": 11114,
+      "type": "M.2 2280",
+      "capacity_gb": 500,
+      "read_speed_mbs": 5000,
+      "write_speed_mbs": 3000
+    },
+    {
+      "product_id": 11115,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 14000,
+      "write_speed_mbs": 7500
+    },
+    {
+      "product_id": 11116,
+      "type": "M.2 2280",
+      "capacity_gb": 512,
+      "read_speed_mbs": 7200,
+      "write_speed_mbs": 4400
+    },
+    {
+      "product_id": 11117,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7000,
+      "write_speed_mbs": 6000
+    },
+    {
+      "product_id": 11118,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 5150,
+      "write_speed_mbs": 4900
+    },
+    {
+      "product_id": 11119,
+      "type": "M.2 2280",
+      "capacity_gb": 1000,
+      "read_speed_mbs": 7250,
+      "write_speed_mbs": 6900
+    },
+    {
+      "product_id": 11120,
+      "type": "M.2 2280",
+      "capacity_gb": 2000,
+      "read_speed_mbs": 5000,
+      "write_speed_mbs": 4000
+    }
+  ],
   "users": [
     {
       "id": 1,

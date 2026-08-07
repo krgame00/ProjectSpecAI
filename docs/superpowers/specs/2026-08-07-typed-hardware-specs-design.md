@@ -83,3 +83,4 @@ An automated Node.js migration script will extract structured fields from existi
 - Run `node node-backend/scripts/populate_typed_specs.js` to populate spec tables.
 - Run `npm test` in `node-backend` to ensure catalog API tests pass.
 - Run `npm run export-db` to verify all 7 `spec_*` tables are populated in `database_view.html`.
+
