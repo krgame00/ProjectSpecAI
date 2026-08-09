@@ -39,7 +39,7 @@ async def scrape_and_seed():
     db = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="1234",
+        password=os.getenv('DB_PASSWORD', '1234'),
         database="smart_pc_builder"
     )
     cursor = db.cursor()
