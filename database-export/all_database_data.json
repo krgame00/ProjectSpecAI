@@ -4428,516 +4428,6 @@
       }
     },
     {
-      "id": 11197,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 7 9800X3D",
-      "price": "17990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products66220_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "120W",
-        "Brand": "AMD",
-        "Cores": "8 Cores",
-        "Series": "9000 Series",
-        "Threads": "16 Threads",
-        "L2 Cache": "8 MB",
-        "L3 Cache": "96 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "4.7 GHz",
-        "CPU Cooler": "N/A",
-        "Boost Clock": "5.2 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "AMD Radeon™ Graphics",
-        "Processor Number": "Ryzen 7 9800X3D"
-      }
-    },
-    {
-      "id": 11198,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 7 9850X3D",
-      "price": "19590.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products156633_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "120W",
-        "Brand": "AMD",
-        "Cores": "8 Cores",
-        "Series": "9000 Series",
-        "Threads": "16 Threads",
-        "L2 Cache": "8 MB",
-        "L3 Cache": "96 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "4.7 GHz",
-        "Boost Clock": "5.6 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "AMD Radeon Graphics",
-        "Processor Number": "Ryzen 7 9850X3D"
-      }
-    },
-    {
-      "id": 11199,
-      "category_id": 1,
-      "brand": "INTEL",
-      "model": "ULTRA 5 225F",
-      "price": "4990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products75639_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "INTEL",
-        "Cores": "10 (6P+4E) Cores",
-        "Series": "CORE ULTRA 5 Processors",
-        "Threads": "10 Threads",
-        "L2 Cache": "22 MB",
-        "L3 Cache": "20 MB Intel® Smart Cache",
-        "Warranty": "3 Years",
-        "Base Clock": "3.3 GHz",
-        "CPU Cooler": "N/A",
-        "Boost Clock": "4.9 GHz",
-        "Socket Type": "LGA 1851",
-        "Graphics Models": "Intel® Ultra 5",
-        "Processor Number": "ULTRA 5 225F",
-        "Maximum Turbo Power": "121W"
-      }
-    },
-    {
-      "id": 11200,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 5 9600X",
-      "price": "8590.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products92022_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "AMD",
-        "Cores": "6 Cores",
-        "Series": "9000 Series",
-        "Threads": "12 Threads",
-        "L2 Cache": "6 MB",
-        "L3 Cache": "32 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.9 GHz",
-        "CPU Cooler": "No",
-        "Boost Clock": "5.4 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "AMD Radeon™ Graphics",
-        "Processor Number": "Ryzen 5 9600X"
-      }
-    },
-    {
-      "id": 11201,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 5 7500F",
-      "price": "5490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products63031_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "AMD",
-        "Cores": "6 Cores",
-        "Series": "7000 Series",
-        "Threads": "12 Threads",
-        "L2 Cache": "6 MB",
-        "L3 Cache": "32 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.7 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "5.0 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "Discrete Graphics Card Required",
-        "Processor Number": "Ryzen 5 7500F",
-        "Maximum Turbo Power": "95 Watt"
-      }
-    },
-    {
-      "id": 11202,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 9 9950X3D",
-      "price": "26990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products85479_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "170W",
-        "Brand": "AMD",
-        "Cores": "16 Core",
-        "Series": "9000 Series",
-        "Threads": "32 Threads",
-        "L2 Cache": "16 MB",
-        "L3 Cache": "128 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "4.3 GHz",
-        "Boost Clock": "5.7 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "AMD Radeon Graphics",
-        "Processor Number": "Ryzen 9 9950X3D"
-      }
-    },
-    {
-      "id": 11203,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 7 9700X",
-      "price": "12290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products88934_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "AMD",
-        "Cores": "8 Cores",
-        "Series": "9000 Series",
-        "Threads": "16 Threads",
-        "L2 Cache": "8 MB",
-        "L3 Cache": "32 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.8 GHz",
-        "CPU Cooler": "No",
-        "Boost Clock": "5.5 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "AMD Radeon™ Graphics",
-        "Processor Number": "Ryzen 7 9700X"
-      }
-    },
-    {
-      "id": 11204,
-      "category_id": 1,
-      "brand": "INTEL",
-      "model": "CORE i7",
-      "price": "11990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product40473_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:12.000Z",
-      "specifications": {
-        "TDP": "125W",
-        "Brand": "INTEL",
-        "Cores": "20 (8P+12E) Cores",
-        "Series": "14th Gen Intel® Core™ i7 Processor",
-        "Threads": "28 Threads",
-        "L2 Cache": "28 MB",
-        "L3 Cache": "33 MB Intel® Smart Cache",
-        "Warranty": "3 Years",
-        "Base Clock": "3.4 GHz",
-        "Boost Clock": "5.6 GHz",
-        "Socket Type": "LGA 1700",
-        "64Bit Support": "Yes",
-        "Processor Number": "CORE i7",
-        "Maximum Turbo Power": "253W"
-      }
-    },
-    {
-      "id": 11205,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 5 8500G",
-      "price": "5490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123931_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "AMD",
-        "Cores": "6 Cores",
-        "Series": "8000 Series",
-        "Threads": "12 Threads",
-        "L2 Cache": "6 MB",
-        "L3 Cache": "16 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.5 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "5.0 GHz",
-        "Socket Type": "AM5",
-        "Graphics Models": "AMD Radeon™ 740M",
-        "Processor Number": "Ryzen 5 8500G"
-      }
-    },
-    {
-      "id": 11206,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 5 5600",
-      "price": "4390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product736_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "AMD",
-        "Cores": "6 Cores",
-        "Series": "5000 Series",
-        "Threads": "12 Threads",
-        "L2 Cache": "3 MB",
-        "L3 Cache": "32 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.5 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "4.4 GHz",
-        "Socket Type": "AM4",
-        "64Bit Support": "N/A",
-        "Graphics Models": "Discrete Graphics Card Required",
-        "Processor Number": "Ryzen 5 5600"
-      }
-    },
-    {
-      "id": 11207,
-      "category_id": 1,
-      "brand": "INTEL",
-      "model": "ULTRA 5 225",
-      "price": "5990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products143506_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "INTEL",
-        "Cores": "10 (6P+4E) Cores",
-        "Series": "CORE ULTRA",
-        "Threads": "10 Threads",
-        "L2 Cache": "22 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.3 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "4.9 GHz",
-        "Socket Type": "LGA 1851",
-        "Graphics Models": "Intel® Graphics",
-        "Processor Number": "ULTRA 5 225",
-        "Maximum Turbo Power": "121W"
-      }
-    },
-    {
-      "id": 11208,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "CPU (ซีพียู) AMD AM5 RYZEN 7 7800X3D 4.2 GHz 8C 16T",
-      "price": "15190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product16311_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "AMD",
-        "Cores": "8 Cores",
-        "Series": "AMD Ryzen 7000 Series",
-        "Threads": "16 Threads",
-        "L2 Cache": "8 MB",
-        "L3 Cache": "96 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "4.2 GHz",
-        "Boost Clock": "5.0 GHz",
-        "Socket Type": "AM5",
-        "64Bit Support": "Yes",
-        "Graphics Models": "AMD Radeon™ Graphics",
-        "Maximum Turbo Power": "120 Watt"
-      }
-    },
-    {
-      "id": 11209,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 5 5500",
-      "price": "3190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product735_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "AMD",
-        "Cores": "6 Cores",
-        "Series": "5000 Series",
-        "Threads": "12 Threads",
-        "L2 Cache": "3 MB",
-        "L3 Cache": "16 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.6 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "4.2 GHz",
-        "Socket Type": "AM4",
-        "Graphics Models": "Discrete Graphics Card Required",
-        "Processor Number": "Ryzen 5 5500"
-      }
-    },
-    {
-      "id": 11210,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "RYZEN THREADRIPPER PRO 7995WX",
-      "price": "419990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products143685_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "350W",
-        "Brand": "AMD",
-        "Cores": "96 Core",
-        "Series": "7000 WX-Series",
-        "Threads": "192 Threads",
-        "L2 Cache": "96 MB",
-        "L3 Cache": "384 MB",
-        "Base Clock": "2.5 GHz",
-        "Boost Clock": "5.1 GHz",
-        "Socket Type": "sTR5",
-        "Graphics Models": "Discrete Graphics Card Required",
-        "Processor Number": "RYZEN THREADRIPPER PRO 7995WX"
-      }
-    },
-    {
-      "id": 11211,
-      "category_id": 1,
-      "brand": "AMD",
-      "model": "Ryzen 7 5800XT",
-      "price": "7990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products169821_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "105W",
-        "Brand": "AMD",
-        "Cores": "8 Cores",
-        "Series": "5000 Series",
-        "Threads": "16 Threads",
-        "L2 Cache": "4 MB",
-        "L3 Cache": "32 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "3.8 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "4.8 GHz",
-        "Socket Type": "AM4",
-        "Graphics Models": "Discrete Graphics Card Required",
-        "Processor Number": "Ryzen 7 5800XT"
-      }
-    },
-    {
-      "id": 11212,
-      "category_id": 1,
-      "brand": "INTEL",
-      "model": "CORE i5 12400F",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products88916_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "TDP": "65W",
-        "Brand": "INTEL",
-        "Cores": "6 (6P) Cores",
-        "Series": "12th Gen Intel® Core™ i5 Processor",
-        "Threads": "12 Threads",
-        "L2 Cache": "7.5 MB",
-        "L3 Cache": "18 MB",
-        "Warranty": "3 Years",
-        "Base Clock": "2.5 GHz",
-        "CPU Cooler": "Yes",
-        "Boost Clock": "4.4 GHz",
-        "Socket Type": "LGA 1700",
-        "64Bit Support": "N/A",
-        "Graphics Models": "Discrete Graphics Card Required",
-        "Processor Number": "CORE i5 12400F",
-        "Maximum Turbo Power": "117W"
-      }
-    },
-    {
-      "id": 11213,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "H810M K (REV 1.0) (3Y)",
-      "price": "2290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products98937_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "Intel® H810",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1851",
-        "Dimensions": "22.6 cm x 18.8 cm",
-        "Max Memory": "128GB",
-        "CPU Support": "CORE ULTRA",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek GbE LAN",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "2/4/5.1/7.1-channel",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor-Intel® HD Graphics support",
-        "Onboard Audio Chipset": "Realtek Audio CODEC"
-      }
-    },
-    {
-      "id": 11214,
-      "category_id": 2,
-      "brand": "MSI",
-      "model": "PRO B760M-E DDR5 (3Y)",
-      "price": "2190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products121736_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "MSI",
-        "Chipset": "Intel® B760",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "Interface": "",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "Max Memory": "128 GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 CH HD Audio",
-        "Rear Panel I/O": "",
-        "CPU Socket Type": "LGA 1700",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Dimensions W x D x H": "23.6 cm x 20.0 cm",
-        "Onboard Audio Chipset": "Realtek ALC897 Codec"
-      }
-    },
-    {
-      "id": 11215,
-      "category_id": 2,
-      "brand": "ASUS",
-      "model": "PRIME H610M-E D4-CSM DDR4 (3Y)",
-      "price": "2090.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product12310_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASUS",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "24.4 cm x 21.1 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 Surround Sound High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor (Depends on CPU)",
-        "Onboard Audio Chipset": "Realtek"
-      }
-    },
-    {
       "id": 11216,
       "category_id": 2,
       "brand": "Gigabyte",
@@ -5000,68 +4490,6 @@
       }
     },
     {
-      "id": 11218,
-      "category_id": 2,
-      "brand": "Colorful",
-      "model": "H610M-D V20A DDR4 (3Y)",
-      "price": "1550.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products175142_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "COLORFUL",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "225mm x 180 mm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "M-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek ALC897"
-      }
-    },
-    {
-      "id": 11219,
-      "category_id": 2,
-      "brand": "MSI",
-      "model": "PRO H610M-S DDR4 (3Y)",
-      "price": "1590.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products42273_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "MSI",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "23.6 cm x 20.0 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H 1Gbps",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1-Channel High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor",
-        "Onboard Audio Chipset": "Realtek® ALC897 Codec"
-      }
-    },
-    {
       "id": 11220,
       "category_id": 2,
       "brand": "ASUS",
@@ -5093,37 +4521,6 @@
       }
     },
     {
-      "id": 11221,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "H610M K V2 DDR5 (REV.1.0) (3Y)",
-      "price": "1890.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products73209_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "22.6 cm x 18.8 cm",
-        "Max Memory": "128GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek GbE LAN",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "2/4/5.1/7.1-channel",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor-Intel® HD Graphics support",
-        "Onboard Audio Chipset": "Realtek® Audio CODEC"
-      }
-    },
-    {
       "id": 11222,
       "category_id": 2,
       "brand": "Gigabyte",
@@ -5152,37 +4549,6 @@
         "Expansion Slots": "",
         "Onboard Graphics": "Integrated Graphics Processor-Intel® HD Graphics support",
         "Onboard Audio Chipset": "Realtek Audio CODEC"
-      }
-    },
-    {
-      "id": 11223,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "A520M H ARGB (REV.1.0) (3Y)",
-      "price": "1690.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products170705_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "AMD A520",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "23.3 x 19.8 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek GbE LAN",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor with AMD Radeon™ Graphics support",
-        "Onboard Audio Chipset": "Realtek® Audio CODEC"
       }
     },
     {
@@ -5341,37 +4707,6 @@
       }
     },
     {
-      "id": 11229,
-      "category_id": 2,
-      "brand": "ASUS",
-      "model": "PRIME A620M-K-CSM (3Y)",
-      "price": "2290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products152729_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASUS",
-        "Chipset": "AMD A620",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM5",
-        "Dimensions": "22.6 cm x 22.1 cm",
-        "Max Memory": "96GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 Surround Sound",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek 7.1 Surround Sound High Definition Audio CODEC"
-      }
-    },
-    {
       "id": 11230,
       "category_id": 2,
       "brand": "Gigabyte",
@@ -5400,68 +4735,6 @@
         "Expansion Slots": "",
         "Onboard Graphics": "Integrated Graphics Processor with AMD Radeon™ Graphics support",
         "Onboard Audio Chipset": "Realtek® Audio CODEC"
-      }
-    },
-    {
-      "id": 11231,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "A520M K V2 (REV.1.2) (3Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products174204_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "AMD A520",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "233 x 198 mm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek GbE LAN",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor with AMD Radeon™ Graphics support",
-        "Onboard Audio Chipset": "Realtek Audio CODEC"
-      }
-    },
-    {
-      "id": 11232,
-      "category_id": 2,
-      "brand": "ASRock",
-      "model": "A620AM-HVS (3Y)",
-      "price": "1990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161922_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASROCK",
-        "Chipset": "AMD A620A",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM5",
-        "Dimensions": "244 x 229 mm.",
-        "Max Memory": "128GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 CH HD Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated AMD RDNA™ graphics",
-        "Onboard Audio Chipset": "Realtek ALC897 Audio Codec"
       }
     },
     {
@@ -5524,99 +4797,6 @@
         "Expansion Slots": "",
         "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
         "Onboard Audio Chipset": "Realtek ALC897 Codec"
-      }
-    },
-    {
-      "id": 11235,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "B760M H DDR4 (REV.1.0) (3Y)",
-      "price": "2290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products72849_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "Intel® B760",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "23.0 cm x 21.5 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "2/4/5.1/7.1-channel",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek"
-      }
-    },
-    {
-      "id": 11236,
-      "category_id": 2,
-      "brand": "MSI",
-      "model": "PRO A620AM-B EVO (3Y)",
-      "price": "1990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products143659_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "MSI",
-        "Chipset": "AMD A620A",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "100/1000/2500 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM5",
-        "Dimensions": "218 x 243.84 mm",
-        "Max Memory": "128GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "RTL8125 2.5Gbit LAN",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1-Channel High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor",
-        "Onboard Audio Chipset": "Realtek ALC897 Codec"
-      }
-    },
-    {
-      "id": 11237,
-      "category_id": 2,
-      "brand": "ASUS",
-      "model": "PRIME A520M-K (3Y)",
-      "price": "1490.00",
-      "image_url": "/images/mobo.png",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASUS",
-        "Chipset": "AMD A520",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "22.6 cm x 22.6 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1-Channel High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics CPU ( actual support depend on CPU )",
-        "Onboard Audio Chipset": "Realtek RTL8111H"
       }
     },
     {
@@ -5837,68 +5017,6 @@
       }
     },
     {
-      "id": 11245,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "H610M K DDR4 (REV.2.0) (3Y)",
-      "price": "1690.00",
-      "image_url": "/images/mobo.png",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "22.6 cm x 18.8 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "2/4/5.1/7.1-channel",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek Audio CODEC"
-      }
-    },
-    {
-      "id": 11246,
-      "category_id": 2,
-      "brand": "ASUS",
-      "model": "PRIME H610M-K DDR5 (3Y)",
-      "price": "1890.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products46036_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASUS",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "23.4 cm x 20.3 cm",
-        "Max Memory": "96GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 Surround Sound High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek"
-      }
-    },
-    {
       "id": 11247,
       "category_id": 2,
       "brand": "MSI",
@@ -6023,68 +5141,6 @@
       }
     },
     {
-      "id": 11251,
-      "category_id": 2,
-      "brand": "ASUS",
-      "model": "PRIME H610M-CS D4 (3Y)",
-      "price": "1790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products80119_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASUS",
-        "Chipset": "Intel® H610",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+4 Pin",
-        "CPU Socket": "LGA 1700",
-        "Dimensions": "24.4 cm x 24.4 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 Surround Sound High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek"
-      }
-    },
-    {
-      "id": 11252,
-      "category_id": 2,
-      "brand": "MSI",
-      "model": "A520M-A-PRO (3Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product7422_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "MSI",
-        "Chipset": "AMD A520",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+4 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "23.6 cm x 20.0 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1-Channel High Definition Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphic on Processor",
-        "Onboard Audio Chipset": "Realtek ALC892/ALC897 Codec"
-      }
-    },
-    {
       "id": 11253,
       "category_id": 2,
       "brand": "ASUS",
@@ -6113,68 +5169,6 @@
         "Expansion Slots": "",
         "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
         "Onboard Audio Chipset": "Realtek 7.1 Surround Sound High Definition Audio CODEC"
-      }
-    },
-    {
-      "id": 11254,
-      "category_id": 2,
-      "brand": "ASRock",
-      "model": "B550M-HDV",
-      "price": "2190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products80559_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASROCK",
-        "Chipset": "AMD B550",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+4 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "23.0 cm x 20.1 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 CH HD Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated AMD Radeon Vega Series Graphics in Ryzen Series APU",
-        "Onboard Audio Chipset": "Realtek ALC887/897"
-      }
-    },
-    {
-      "id": 11255,
-      "category_id": 2,
-      "brand": "ASRock",
-      "model": "A520M-HVS (3Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product7282_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "ASROCK",
-        "Chipset": "AMD A520",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+4 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "23.0 cm x 20.1 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek RTL8111H",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "7.1 CH HD Audio",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphic on Processor",
-        "Onboard Audio Chipset": "Realtek ALC887/897"
       }
     },
     {
@@ -6237,90 +5231,6 @@
         "Expansion Slots": "",
         "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
         "Onboard Audio Chipset": "Realtek 7.1 Surround Sound High Definition Audio CODEC"
-      }
-    },
-    {
-      "id": 11258,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "A620M H (REV.2.2) (3Y)",
-      "price": "1990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products175297_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "AMD A620A",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "10/100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM5",
-        "Dimensions": "230 x 225  mm",
-        "Max Memory": "128GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek GbE LAN",
-        "Memory Type": "DDR5",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Integrated Graphics Processor with AMD Radeon™ Graphics support",
-        "Onboard Audio Chipset": "Realtek Audio CODEC"
-      }
-    },
-    {
-      "id": 11259,
-      "category_id": 2,
-      "brand": "Gigabyte",
-      "model": "A520M K V2 (REV.1.1) (3Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products42896_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brands": "GIGABYTE",
-        "Chipset": "AMD A520",
-        "Storage": "",
-        "Warranty": "3 Years",
-        "LAN Speed": "100/1000 Mbps",
-        "Power Pin": "24+8 Pin",
-        "CPU Socket": "AM4",
-        "Dimensions": "23.3 x 19.8 cm",
-        "Max Memory": "64GB",
-        "CPU Support": "",
-        "Form Factor": "Micro-ATX",
-        "LAN Chipset": "Realtek 1Gb Ethernet",
-        "Memory Type": "DDR4",
-        "Memory Slots": "2 x DIMM",
-        "Audio Channels": "2/4/5.1/7.1-channel",
-        "Rear Panel I/O": "",
-        "Expansion Slots": "",
-        "Onboard Graphics": "Requires a CPU With Integrated Graphics.",
-        "Onboard Audio Chipset": "Realtek"
-      }
-    },
-    {
-      "id": 11260,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "ARMOR 16GB (8x2) DDR4 3200Mhz BLACK (HSC416U32D3) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products155511_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL18",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.25V",
-        "Memory Color": "BLACK",
-        "Memory Series": "ARMOR",
-        "Tested Latency": "18-22-22-42",
-        "Memory Capacity": "16GB (2x 8GB)"
       }
     },
     {
@@ -6540,28 +5450,6 @@
       }
     },
     {
-      "id": 11271,
-      "category_id": 3,
-      "brand": "ADATA",
-      "model": "XPG GAMMIX X D35 8GB (8x1) DDR4 3200MHz BLACK (AX4U32008G16A-SBKD35) (LT)",
-      "price": "2790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161883_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ADATA",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.2V",
-        "Memory Color": "BLACK",
-        "Memory Series": "XPG GAMMIX X D35",
-        "Tested Latency": "16-20-20",
-        "Memory Capacity": "8GB (8GBx1)"
-      }
-    },
-    {
       "id": 11272,
       "category_id": 3,
       "brand": "KINGSTON",
@@ -6581,28 +5469,6 @@
         "Memory Series": "FURY RENEGADE RGB",
         "Tested Latency": "32-39-39",
         "Memory Capacity": "32GB (16GBx2)"
-      }
-    },
-    {
-      "id": 11273,
-      "category_id": 3,
-      "brand": "GEIL",
-      "model": "ORION 16GB (8x2) DDR4 3200MHz GREY (GAOG416GB3200C22DC) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products146762_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GEIL",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL22",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.20V",
-        "Memory Color": "GRAY",
-        "Memory Series": "ORION",
-        "Tested Latency": "22-22-22-52",
-        "Memory Capacity": "16GB (8GBx2)"
       }
     },
     {
@@ -6647,27 +5513,6 @@
         "Memory Series": "FURY BEAST",
         "Tested Latency": "40-40-40",
         "Memory Capacity": "32GB (16GBx2)"
-      }
-    },
-    {
-      "id": 11276,
-      "category_id": 3,
-      "brand": "CORSAIR",
-      "model": "VENGEANCE LPX 16GB (8x2) DDR4 3200MHz BLACK (CMK16GX4M2E3200C16) (LT)",
-      "price": "4990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product1942_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "CORSAIR",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.35 V",
-        "Memory Color": "BLACK",
-        "Memory Series": "VENGEANCE LPX",
-        "Tested Latency": "16-20-20-38",
-        "Memory Capacity": "16GB (8GBx2)"
       }
     },
     {
@@ -6778,63 +5623,6 @@
       }
     },
     {
-      "id": 11282,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "ARMOR 8GB (8x1) DDR4 3200Mhz WHITE (HSC408U32E2) (LT)",
-      "price": "2790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products173583_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR4",
-        "Memory Color": "WHITE",
-        "Memory Series": "ARMOR",
-        "Memory Capacity": "8GB (8GBx1)"
-      }
-    },
-    {
-      "id": 11283,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "ARMOR 16GB (16x1) DDR4 3200MHz BLACK (HSC416U32D2) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161945_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR4",
-        "Memory Color": "BLACK",
-        "Memory Series": "ARMOR",
-        "Memory Capacity": "16GB (16GBx1)"
-      }
-    },
-    {
-      "id": 11284,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "FUTURE 16GB (8x2) DDR4 3200MHz WHITE (HSC416U32F3) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products166129_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR4",
-        "Memory Color": "WHITE",
-        "Memory Series": "FUTURE",
-        "Memory Capacity": "16GB (2x 8GB)"
-      }
-    },
-    {
       "id": 11285,
       "category_id": 3,
       "brand": "ADATA",
@@ -6857,25 +5645,6 @@
       }
     },
     {
-      "id": 11286,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "ARMOR 16GB (16x1) DDR4 3200MHz WHITE (HSC416U32E2) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161948_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR4",
-        "Memory Color": "WHITE",
-        "Memory Series": "ARMOR",
-        "Memory Capacity": "16GB (16GBx1)"
-      }
-    },
-    {
       "id": 11287,
       "category_id": 3,
       "brand": "COLORFIRE",
@@ -6894,89 +5663,6 @@
         "Memory Color": "WHITE",
         "Memory Series": "MEOW",
         "Memory Capacity": "32GB (16GBx2)"
-      }
-    },
-    {
-      "id": 11288,
-      "category_id": 3,
-      "brand": "Corsair",
-      "model": "VENGEANCE RGB PRO SL 16GB (8x2) DDR4 3200MHz BLACK (CMH16GX4M2E3200C16) (LT)",
-      "price": "5490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product2094_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.35 V",
-        "Memory Color": "BLACK",
-        "Memory Series": "VENGEANCE RGB PRO SL",
-        "Tested Latency": "16-20-20-38",
-        "Memory Capacity": "16GB (8GBx2)"
-      }
-    },
-    {
-      "id": 11289,
-      "category_id": 3,
-      "brand": "KINGBANK",
-      "model": "KJXS 16GB (8x2) DDR4 3200MHz SILVER (K5.01.FP049C9201) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products147808_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "KINGBANK",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.35V",
-        "Memory Color": "SILVER",
-        "Memory Series": "KJXS",
-        "Tested Latency": "16-20-20-38",
-        "Memory Capacity": "16GB (8GBx2)"
-      }
-    },
-    {
-      "id": 11290,
-      "category_id": 3,
-      "brand": "ADATA",
-      "model": "RAM NOTEBOOK (แรมโน้ตบุ๊ค) ADATA 8GB 4800MHz DDR5 (AD5S48008G-S) (LT)",
-      "price": "2990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product12128_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ADATA",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR5",
-        "SPD Voltage": "1.1 V",
-        "Memory Color": "BLACK",
-        "Memory Series": "AD5S48008G-S",
-        "Memory Capacity": "8GB (8GBx1)"
-      }
-    },
-    {
-      "id": 11291,
-      "category_id": 3,
-      "brand": "CORSAIR",
-      "model": "VENGEANCE LPX 16GB (8x2) DDR4 3200MHz WHITE (CMK16GX4M2E3200C16W) (LT)",
-      "price": "4990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products151296_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "CORSAIR",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.2V",
-        "Memory Color": "WHITE",
-        "Memory Series": "VENGEANCE LPX",
-        "Tested Latency": "16-20-20-38",
-        "Memory Capacity": "16GB (8GBx2)"
       }
     },
     {
@@ -7023,69 +5709,6 @@
       }
     },
     {
-      "id": 11294,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "ARMOR 8GB (8x1) DDR4 3200Mhz BLACK (HSC408U32D2) (LT)",
-      "price": "2790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products137192_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR4",
-        "Memory Color": "BLACK",
-        "Memory Series": "ARMOR",
-        "Memory Capacity": "8GB (8GBx1)"
-      }
-    },
-    {
-      "id": 11295,
-      "category_id": 3,
-      "brand": "APACER",
-      "model": "NOX 16GB (16x1) DDR5 6000MHz (AH5U16G60C622MBAA-1) (LT)",
-      "price": "8490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products170778_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "APACER",
-        "Speed": "6000MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL38",
-        "Memory Type": "DDR5",
-        "SPD Voltage": "1.35V",
-        "Memory Color": "BLACK",
-        "Memory Series": "NOX",
-        "Tested Latency": "38-48-48-96",
-        "Memory Capacity": "16GB (16GBx1)"
-      }
-    },
-    {
-      "id": 11296,
-      "category_id": 3,
-      "brand": "ADATA",
-      "model": "XPG LANCER BLADE RGB 16GB (16x1)  DDR5 6000MHz (AX5U6000C4816G-SLABRBK) (LT)",
-      "price": "8990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products160606_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ADATA",
-        "Speed": "6000MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL48",
-        "Memory Type": "DDR5",
-        "SPD Voltage": "1.35V",
-        "Memory Color": "BLACK",
-        "Memory Series": "U-DIMM",
-        "Tested Latency": "48-48-48",
-        "Memory Capacity": "16GB (16GBx1)"
-      }
-    },
-    {
       "id": 11297,
       "category_id": 3,
       "brand": "CORSAIR",
@@ -7126,47 +5749,6 @@
         "Memory Series": "ARES RGB",
         "Tested Latency": "32-38-38-76",
         "Memory Capacity": "32GB (16GBx2)"
-      }
-    },
-    {
-      "id": 11299,
-      "category_id": 3,
-      "brand": "HIKSEMI",
-      "model": "FUTURE 16GB (16x1) DDR4 3200MHz BLACK (HSC416U32C2-16G) (LT)",
-      "price": "4990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161696_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "HIKSEMI",
-        "Speed": "3200MHz",
-        "Warranty": "Lifetime",
-        "Memory Type": "DDR4",
-        "Memory Color": "BLACK",
-        "Memory Series": "FUTURE",
-        "Memory Capacity": "16GB (16GBx1)"
-      }
-    },
-    {
-      "id": 11300,
-      "category_id": 3,
-      "brand": "KINGBANK",
-      "model": "KJXS 16GB (16x1) DDR5 6000MHz SILVER (K5.01.FP05ED7201) (LT)",
-      "price": "8490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products170780_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "KINGBANK",
-        "Speed": "6000MHz",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL36",
-        "Memory Type": "DDR5",
-        "SPD Voltage": "1.35V",
-        "Memory Color": "SILVER",
-        "Memory Series": "KJXS",
-        "Tested Latency": "36-36-36-80",
-        "Memory Capacity": "16GB (16GBx1)"
       }
     },
     {
@@ -7211,47 +5793,6 @@
         "Memory Series": "VENGEANCE",
         "Tested Latency": "36-44-44-96",
         "Memory Capacity": "32GB (16GBx2)"
-      }
-    },
-    {
-      "id": 11303,
-      "category_id": 3,
-      "brand": "LEXAR",
-      "model": "THOR DUAL16GB (8x2) DDR4 3200MHz (LD4BU008G-R3200GDXG) (LT)",
-      "price": "4790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products41537_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "LEXAR",
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.35 V",
-        "Memory Color": "DARK GREY",
-        "Memory Series": "THOR",
-        "Tested Latency": "16-18-18-38",
-        "Memory Capacity": "16GB (8GBx2)"
-      }
-    },
-    {
-      "id": 11304,
-      "category_id": 3,
-      "brand": "Corsair",
-      "model": "VENGEANCE RGB PRO SL 16GB (8x2) DDR4 3200MHz WHITE (CMH16GX4M2E3200C16W) (LT)",
-      "price": "5490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product2026_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Warranty": "Lifetime",
-        "Cas Latency": "CL16",
-        "Memory Type": "DDR4",
-        "SPD Voltage": "1.35 V",
-        "Memory Color": "WHITE",
-        "Memory Series": "VENGEANCE RGB PRO SL",
-        "Tested Latency": "16-20-20-38",
-        "Memory Capacity": "16GB (8GBx2)"
       }
     },
     {
@@ -7835,33 +6376,6 @@
       }
     },
     {
-      "id": 11355,
-      "category_id": 6,
-      "brand": "AEROCOOL",
-      "model": "AERO 550 - 550W (80+ BRONZE) (3Y)",
-      "price": "1190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products178972_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "AEROCOOL",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Form Factor": "ATX",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "4.5 A",
-        "Input Voltage": "200-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "47-63Hz",
-        "Molex Connector": "4",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "550 Watt"
-      }
-    },
-    {
       "id": 11356,
       "category_id": 6,
       "brand": "THERMALTAKE",
@@ -7915,35 +6429,6 @@
         "Input Frequency": "47-63Hz",
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "1000 Watt"
-      }
-    },
-    {
-      "id": 11358,
-      "category_id": 6,
-      "brand": "MSI",
-      "model": "MAG A850GN PCIE5 850W (80+GOLD) (7Y)",
-      "price": "2890.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products139874_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "MSI",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "7 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "Protection OCP/ OVP/ OPP/ SCP/ OTP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "10 A",
-        "Input Voltage": "AC 100-240V",
-        "PCIe Connector": "",
-        "SATA Connector": "4",
-        "Input Frequency": "47-63Hz",
-        "Molex Connector": "2",
-        "Energy Efficient": "80 PLUS GOLD",
-        "Continuous Power W": "850 Watt"
       }
     },
     {
@@ -8059,34 +6544,6 @@
       }
     },
     {
-      "id": 11363,
-      "category_id": 6,
-      "brand": "MSI",
-      "model": "MAG A650BNL 650W (80+BRONZE) WHITE (3Y)",
-      "price": "1990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products130491_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "MSI",
-        "Modular": "N/A",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "150 x 140 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "Protection OCP/OVP/SCP/OPP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Voltage": "110-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "2",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
       "id": 11364,
       "category_id": 6,
       "brand": "MSI",
@@ -8111,116 +6568,6 @@
         "Input Frequency": "50-60Hz",
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "1000 Watt"
-      }
-    },
-    {
-      "id": 11365,
-      "category_id": 6,
-      "brand": "THERMALTAKE",
-      "model": "SMART BX1 650W (80+BRONZE) (5Y)",
-      "price": "1690.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products46120_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "THERMALTAKE",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "150 x 140 x 86 mm",
-        "Form Factor": "ATX",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "12 A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "6",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
-      "id": 11366,
-      "category_id": 6,
-      "brand": "MSI",
-      "model": "MAG A600DN 600W (80+WHITE) (3Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product49466_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "MSI",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "1 x 4-Pin",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS WHITE",
-        "Continuous Power W": "600 Watt"
-      }
-    },
-    {
-      "id": 11367,
-      "category_id": 6,
-      "brand": "AEROCOOL",
-      "model": "UNITED POWER 600W (80+WHITE) (3Y)",
-      "price": "1190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product9619_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "AEROCOOL",
-        "Weight": "1.28 KG",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "4.5 A",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "4",
-        "Input Frequency": "47-63Hz",
-        "PSU Form Factor": "ATX",
-        "Energy Efficient": "80 PLUS WHITE",
-        "Continuous Power W": "600 Watt",
-        "Dimensions W x D x H": "150 x 140 x 86 mm"
-      }
-    },
-    {
-      "id": 11368,
-      "category_id": 6,
-      "brand": "ASROCK",
-      "model": "PRO 650B - 650W (80+ BRONZE) (3Y)",
-      "price": "1690.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products178966_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ASROCK",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "10A-5A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "1 x 6+2-pin",
-        "SATA Connector": "4",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "2",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt"
       }
     },
     {
@@ -8250,93 +6597,6 @@
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "1050 Watt",
         "Dimensions W x D x H": "140 x 150 x 86 mm"
-      }
-    },
-    {
-      "id": 11370,
-      "category_id": 6,
-      "brand": "GIGABYTE",
-      "model": "GP-P650SS 650W (80+SILVER) (3Y)",
-      "price": "1790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products49254_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "6.3 A",
-        "Input Voltage": "155-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS SILVER",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
-      "id": 11371,
-      "category_id": 6,
-      "brand": "MSI",
-      "model": "MAG A650BN 650W (80+BRONZE) (5Y)",
-      "price": "1650.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products160325_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "MSI",
-        "Weight": "1.7 Kg",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "Protection OCP/ OVP/ OPP/ SCP/ OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "10 A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "2",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
-      "id": 11372,
-      "category_id": 6,
-      "brand": "COOLER MASTER",
-      "model": "ELITE 750W (80+GOLD) (MPX-7505-AFAG-BEU) (5Y)",
-      "price": "2790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161807_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "COOLER MASTER",
-        "Modular": "Fully Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "UVP / OVP / OPP / OTP / SCP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "10A-5A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "",
-        "SATA Connector": "4",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "2",
-        "Energy Efficient": "80 PLUS GOLD",
-        "Continuous Power W": "750 Watt"
       }
     },
     {
@@ -8455,57 +6715,6 @@
       }
     },
     {
-      "id": 11377,
-      "category_id": 6,
-      "brand": "AZZA",
-      "model": "PSAZ 550W (80+BRONZE) (3Y)",
-      "price": "1190.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product36175_800.png",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "AZZA",
-        "Warranty": "3 Years",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "47-63Hz",
-        "PSU Form Factor": "ATX",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "550 Watt"
-      }
-    },
-    {
-      "id": 11378,
-      "category_id": 6,
-      "brand": "COOLER MASTER",
-      "model": "MWE GOLD V3 - 650W (80+GOLD)(BLACK) (5Y)",
-      "price": "1890.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products136989_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "COOLER MASTER",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "10A-5A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "4 x 6+2-pin",
-        "SATA Connector": "6",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "3",
-        "Energy Efficient": "80 PLUS GOLD",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
       "id": 11379,
       "category_id": 6,
       "brand": "CORSAIR",
@@ -8531,91 +6740,6 @@
         "Input Frequency": "47-63Hz",
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "850 Watt"
-      }
-    },
-    {
-      "id": 11380,
-      "category_id": 6,
-      "brand": "COOLER MASTER",
-      "model": "ELITE 650W (80+GOLD) (MPX-6505-AFAG-BEU) (5Y)",
-      "price": "2290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products161835_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "COOLER MASTER",
-        "Modular": "Fully Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "UVP / OVP / OPP / OTP / SCP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "10A-5A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "4",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "2",
-        "Energy Efficient": "80 PLUS GOLD",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
-      "id": 11381,
-      "category_id": 6,
-      "brand": "ASUS",
-      "model": "TUF GAMING 750B - 750W (80+ BRONZE) (6Y)",
-      "price": "2590.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products37995_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ASUS",
-        "Weight": "2.18 Kg.",
-        "Modular": "Non Modular",
-        "Fan Size": "135 mm",
-        "Warranty": "6 Years",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "10A-5A",
-        "PCIe Connector": "4 x 6+2-pin",
-        "SATA Connector": "8",
-        "Input Frequency": "47-63Hz",
-        "PSU Form Factor": "ATX",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "750 Watt",
-        "Dimensions W x D x H": "150 × 150 × 86 mm"
-      }
-    },
-    {
-      "id": 11382,
-      "category_id": 6,
-      "brand": "GIGABYTE",
-      "model": "GP-P650SS ICE 650W (80+SILVER) WHITE (3Y)",
-      "price": "1790.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products68525_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "6.3 A",
-        "Input Voltage": "155-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS SILVER",
-        "Continuous Power W": "650 Watt"
       }
     },
     {
@@ -8647,120 +6771,6 @@
       }
     },
     {
-      "id": 11384,
-      "category_id": 6,
-      "brand": "GIGABYTE",
-      "model": "GP-P550SS ICE 550W (80+SILVER) WHITE (3Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products66171_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "6.3 A",
-        "Input Voltage": "155-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS SILVER",
-        "Continuous Power W": "550 Watt"
-      }
-    },
-    {
-      "id": 11385,
-      "category_id": 6,
-      "brand": "FSP",
-      "model": "VIC BD 550W (80+BRONZE) (3Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products171194_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "FSP",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OCP / OVP / OPP / OTP / SCP/ UVP / NLO / SIP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "6-3A",
-        "Input Voltage": "200-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "3",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "550 Watt"
-      }
-    },
-    {
-      "id": 11386,
-      "category_id": 6,
-      "brand": "FSP",
-      "model": "VIC BD 650W (80+BRONZE) (3Y)",
-      "price": "1650.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products171173_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "FSP",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "140 x 150 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OCP / OVP / OPP / OTP / SCP/ UVP / NLO / SIP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "6-3A",
-        "Input Voltage": "200-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Molex Connector": "3",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
-      "id": 11387,
-      "category_id": 6,
-      "brand": "CORSAIR",
-      "model": "CX650 - 650W (80+BRONZE)(CP-9020278-NA) (5Y)",
-      "price": "1950.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products55878_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "CORSAIR",
-        "Weight": "2.37Kg",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "150 x 125 x 86 mm.",
-        "Form Factor": "ATX",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "10A-5A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "1 x 6+2-pin",
-        "SATA Connector": "3",
-        "Input Frequency": "47-63Hz",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt"
-      }
-    },
-    {
       "id": 11388,
       "category_id": 6,
       "brand": "GIGABYTE",
@@ -8786,34 +6796,6 @@
         "Input Frequency": "50-60Hz",
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "850 Watt"
-      }
-    },
-    {
-      "id": 11389,
-      "category_id": 6,
-      "brand": "CORSAIR",
-      "model": "CX750 - 750W (80+BRONZE)(CP-9020279-NA) (5Y)",
-      "price": "1990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products64941_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "CORSAIR",
-        "Weight": "2.37Kg",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "5 Years",
-        "Dimensions": "150 x 125 x 86 mm.",
-        "Form Factor": "ATX",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "10A-5A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "3 x 6+2-pin",
-        "SATA Connector": "3",
-        "Input Frequency": "47-63Hz",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "750 Watt"
       }
     },
     {
@@ -8872,62 +6854,6 @@
         "Molex Connector": "4",
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "1250 Watt"
-      }
-    },
-    {
-      "id": 11392,
-      "category_id": 6,
-      "brand": "ASUS",
-      "model": "TUF GAMING 650B - 650W (80+BRONZE)",
-      "price": "2090.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product5460_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ASUS",
-        "Weight": "2.06 Kg.",
-        "Modular": "Non Modular",
-        "Fan Size": "135 mm",
-        "Warranty": "6 Years",
-        "Protections": "Protection OPP/OVP/UVP/SCP/OCP/OTP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "10 A",
-        "PCIe Connector": "4 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "PSU Form Factor": "ATX",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "650 Watt",
-        "Dimensions W x D x H": "150 × 150 × 86 mm"
-      }
-    },
-    {
-      "id": 11393,
-      "category_id": 6,
-      "brand": "GIGABYTE",
-      "model": "GP-P550SS 550W (80+SILVER) (3Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products50833_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "150 x 140 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "6.3 A",
-        "Input Voltage": "155-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS SILVER",
-        "Continuous Power W": "550 Watt"
       }
     },
     {
@@ -8990,34 +6916,6 @@
       }
     },
     {
-      "id": 11396,
-      "category_id": 6,
-      "brand": "GIGABYTE",
-      "model": "GP-P750BS 750W (80+BRONZE) (3Y)",
-      "price": "1990.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products92221_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "150 x 140 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "OVP/OPP/SCP/UVP/OCP/OTP",
-        "MB Connector": "1 x 20+4-pin",
-        "CPU Connector": "2 x 4+4-pin",
-        "Input Current": "6 A",
-        "Input Voltage": "200-240V",
-        "PCIe Connector": "4 x 6+2-pin",
-        "SATA Connector": "7",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS BRONZE",
-        "Continuous Power W": "750 Watt"
-      }
-    },
-    {
       "id": 11397,
       "category_id": 6,
       "brand": "COOLER MASTER",
@@ -9043,34 +6941,6 @@
         "Molex Connector": "2",
         "Energy Efficient": "80 PLUS GOLD",
         "Continuous Power W": "850 Watt"
-      }
-    },
-    {
-      "id": 11398,
-      "category_id": 6,
-      "brand": "MSI",
-      "model": "MAG A600DN 600W BULK (80+WHITE) (3Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products106639_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "MSI",
-        "Modular": "Non Modular",
-        "Fan Size": "120 mm",
-        "Warranty": "3 Years",
-        "Dimensions": "150 x 140 x 86 mm",
-        "Form Factor": "ATX",
-        "Protections": "Protection OCP/OVP/SCP/OPP",
-        "MB Connector": "1 x 24-pin",
-        "CPU Connector": "1 x 4+4-Pin",
-        "Input Current": "10 A",
-        "Input Voltage": "100-240V",
-        "PCIe Connector": "2 x 6+2-pin",
-        "SATA Connector": "5",
-        "Input Frequency": "50-60Hz",
-        "Energy Efficient": "80 PLUS WHITE",
-        "Continuous Power W": "600 Watt"
       }
     },
     {
@@ -9246,120 +7116,6 @@
       }
     },
     {
-      "id": 11405,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "PRISMA ARGB (BLACK)(ATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products174311_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "PRISMA ARGB",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "380mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "Top : 360mm",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "180mm",
-        "Drive Bays Support": "3.5\" x 2 , 2.5\" x 1",
-        "Dimensions D x W x H": "456 x 222 x 465 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11406,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "CRYSTAL Z6 MINI (BLACK)(mATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products69434_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "CRYSTAL Z6 MINI",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "330mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "160mm",
-        "Drive Bays Support": "3.5\" x2 , 2.5\" x1",
-        "Dimensions D x W x H": "339 x 270 x 375 mm",
-        "Power Supply Support": "ATX, SFX, SFX - L"
-      }
-    },
-    {
-      "id": 11407,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC R30 (BLACK)(mATX) (1Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products157219_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "IHC R30",
-        "Weight": "4.0 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "330mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "Top : 240,280mm",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "",
-        "Dimensions D x W x H": "370 x 220 x 408 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11408,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC R09 (BLACK)(mATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products167093_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "IHC R09",
-        "Weight": "4.0 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "330mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x2  + 2.5\" x1",
-        "Dimensions D x W x H": "370 x 220 x 408 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
       "id": 11409,
       "category_id": 7,
       "brand": "LIAN LI",
@@ -9384,207 +7140,6 @@
         "CPU Cooler Support": "162mm",
         "Drive Bays Support": "3.5\" x1  + 2.5\" x2 or 2.5\" x3",
         "Dimensions D x W x H": "419.6 x 275.1 x 395.2 mm",
-        "Power Supply Support": "ATX"
-      }
-    },
-    {
-      "id": 11410,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC 401TG (BLACK)(ATX) (1Y)",
-      "price": "1390.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products84798_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "401TG",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "305mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x4 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x 1 , 2.5\" x 2",
-        "Dimensions D x W x H": "335 x 216 x 445 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11411,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "OA01 (BLACK)(ATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products98707_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "OA01",
-        "Weight": "3.5 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "315mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "180mm",
-        "Drive Bays Support": "3.5\" x1+1 , 2.5\" x1",
-        "Dimensions D x W x H": "330 x 218 x 445 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11412,
-      "category_id": 7,
-      "brand": "GIGABYTE",
-      "model": "C102 GLASS (BLACK)(mATX) (1Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products57893_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Color": "BLACK",
-        "Model": "C102",
-        "Weight": "5.79 Kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "410mm",
-        "Expansion Slots": "5 Slots",
-        "Fan Installment": "120mm x2 Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "165mm",
-        "Drive Bays Support": "3.5\" x1, 2.5\"x2",
-        "Dimensions D x W x H": "450 x 210 x 450 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11413,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC R30 (WHITE)(mATX) (1Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products157229_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "IHC R30",
-        "Weight": "4.0 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "330mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "Top : 240,280mm",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "",
-        "Dimensions D x W x H": "370 x 220 x 408 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11414,
-      "category_id": 7,
-      "brand": "ZALMAN",
-      "model": "M4 SE (BLACK)(mATX) (1Y)",
-      "price": "1090.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products174532_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "ZALMAN",
-        "Color": "BLACK",
-        "Model": "M4 SE",
-        "Weight": "4.3 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "320mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x6 FRGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "157mm",
-        "Drive Bays Support": "",
-        "Dimensions D x W x H": "385 x 200 x 424 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11415,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC 102 WOOD (WHITE)(mATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products83415_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "IHC 102",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "305mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x 1,2.5\" x 1",
-        "Dimensions D x W x H": "358 x 218 x 403 mm",
-        "Power Supply Support": "ATX"
-      }
-    },
-    {
-      "id": 11416,
-      "category_id": 7,
-      "brand": "OCYPUS",
-      "model": "x iHAVECPU GAMMA C52 ARGB (BLACK)(mATX) (2Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products124188_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "OCYPUS",
-        "Color": "BLACK",
-        "Model": "GAMMA C52 ARGB",
-        "Weight": "6.2 kg",
-        "Warranty": "2 Years",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "425mm",
-        "Expansion Slots": "5 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "170mm",
-        "Drive Bays Support": "3.5\" x1+1 , 2.5\" x1",
-        "Dimensions D x W x H": "434 x 218 x 414 mm",
         "Power Supply Support": "ATX"
       }
     },
@@ -9617,90 +7172,6 @@
       }
     },
     {
-      "id": 11418,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC R03 (WHITE)(mATX) (1Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products74523_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "R03",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "330mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "Top : 240,280mm",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x2 , 2.5\"x1",
-        "Dimensions D x W x H": "365 x 200 x 395 mm",
-        "Power Supply Support": "ATX, SFX, SFX - L"
-      }
-    },
-    {
-      "id": 11419,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC 102 WOOD (BLACK)(mATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products83412_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:13.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "IHC 102",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "305mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x 1,2.5\" x 1",
-        "Dimensions D x W x H": "358 x 218 x 403 mm",
-        "Power Supply Support": "ATX"
-      }
-    },
-    {
-      "id": 11420,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC R06 ARGB (WHITE)(mATX) (1Y)",
-      "price": "1350.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products112886_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "IHC R06",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "329mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x 2 , 2.5\" x 1",
-        "Dimensions D x W x H": "380 x 220 x 410 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
       "id": 11421,
       "category_id": 7,
       "brand": "THERMALTAKE",
@@ -9725,94 +7196,6 @@
         "CPU Cooler Support": "165mm",
         "Drive Bays Support": "3.5\" x2  + 2.5\" x1 or 2.5\" x3",
         "Dimensions D x W x H": "432 x 216 x 422 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11422,
-      "category_id": 7,
-      "brand": "GIGABYTE",
-      "model": "C103 GLASS ARGB (BLACK)(ATX) (1Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products175114_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "GIGABYTE",
-        "Color": "BLACK",
-        "Model": "C103 GLASS ARGB",
-        "Weight": "5.65 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Accessories": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "355mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x4 Auto RGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "165mm",
-        "Drive Bays Support": "",
-        "Dimensions D x W x H": "402 x 210 x 478 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11423,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "G390 V2 (BLACK)(mATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products98330_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "G390",
-        "Weight": "4.1 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "380mm",
-        "Expansion Slots": "5 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "165mm",
-        "Drive Bays Support": "3.5\" x1 , 2.5\"x2",
-        "Dimensions D x W x H": "395 x 228 x 415 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11424,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "OA01 (WHITE)(ATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products98728_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "OA01",
-        "Weight": "3.5 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "315mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "180mm",
-        "Drive Bays Support": "3.5\" x1+1 , 2.5\" x1",
-        "Dimensions D x W x H": "330 x 218 x 445 mm",
         "Power Supply Support": "ATX PSU"
       }
     },
@@ -9988,35 +7371,6 @@
       }
     },
     {
-      "id": 11431,
-      "category_id": 7,
-      "brand": "OCYPUS",
-      "model": "x iHAVECPU GAMMA C52 ARGB (WHITE)(mATX) (2Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products124197_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "OCYPUS",
-        "Color": "WHITE",
-        "Model": "GAMMA C52 ARGB",
-        "Weight": "6.2 kg",
-        "Warranty": "2 Years",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "425mm",
-        "Expansion Slots": "5 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "170mm",
-        "Drive Bays Support": "3.5\" x1+1 , 2.5\" x1",
-        "Dimensions D x W x H": "434 x 218 x 414 mm",
-        "Power Supply Support": "ATX"
-      }
-    },
-    {
       "id": 11432,
       "category_id": 7,
       "brand": "DEEPCOOL",
@@ -10133,34 +7487,6 @@
       }
     },
     {
-      "id": 11436,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "PRISMA ARGB (WHITE)(ATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products134235_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "PRISMA ARGB",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "380mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "Top : 360mm",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "180mm",
-        "Drive Bays Support": "3.5\" x 2 , 2.5\" x 1",
-        "Dimensions D x W x H": "456 x 222 x 465 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
       "id": 11437,
       "category_id": 7,
       "brand": "iHAVECPU",
@@ -10239,35 +7565,6 @@
         "CPU Cooler Support": "165mm",
         "Drive Bays Support": "3.5\" x 2 , 2.5\" 2",
         "Dimensions D x W x H": "425 x 280 x 350 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11440,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "G390 V2 (WHITE)(mATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products98333_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "G390",
-        "Weight": "4.1 kg",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "380mm",
-        "Expansion Slots": "5 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "165mm",
-        "Drive Bays Support": "3.5\" x1 , 2.5\"x2",
-        "Dimensions D x W x H": "395 x 228 x 415 mm",
         "Power Supply Support": "ATX PSU"
       }
     },
@@ -10386,34 +7683,6 @@
       }
     },
     {
-      "id": 11445,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC 401TG (WHITE)(ATX) (1Y)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products84804_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "401TG",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "305mm",
-        "Expansion Slots": "7 Slots",
-        "Fan Installment": "120mm x4 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x 1 , 2.5\" x 2",
-        "Dimensions D x W x H": "335 x 216 x 445 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
       "id": 11446,
       "category_id": 7,
       "brand": "OCYPUS",
@@ -10443,34 +7712,6 @@
       }
     },
     {
-      "id": 11447,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "IHC R03 (BLACK)(mATX) (1Y)",
-      "price": "1290.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products74519_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "BLACK",
-        "Model": "R03",
-        "Warranty": "1 Year",
-        "Front I/O": "",
-        "Fan Support": "",
-        "Form Factor": "Mini-Tower",
-        "VGA Support": "330mm",
-        "Expansion Slots": "4 Slots",
-        "Fan Installment": "120mm x3 ARGB Fans",
-        "Radiator Support": "Top : 240,280mm",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "175mm",
-        "Drive Bays Support": "3.5\" x2 , 2.5\"x1",
-        "Dimensions D x W x H": "365 x 200 x 395 mm",
-        "Power Supply Support": "ATX, SFX, SFX - L"
-      }
-    },
-    {
       "id": 11448,
       "category_id": 7,
       "brand": "ASUS",
@@ -10496,34 +7737,6 @@
         "CPU Cooler Support": "165mm",
         "Drive Bays Support": "3.5\"/2.5\" x2",
         "Dimensions D x W x H": "435 x 238 x 511 mm",
-        "Power Supply Support": "ATX PSU"
-      }
-    },
-    {
-      "id": 11449,
-      "category_id": 7,
-      "brand": "iHAVECPU",
-      "model": "GLACIER (WHITE)(ATX)",
-      "price": "1490.00",
-      "image_url": "https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product54112_800.jpg",
-      "stock_quantity": 10,
-      "created_at": "2026-07-12T06:35:14.000Z",
-      "specifications": {
-        "Brand": "iHAVECPU",
-        "Color": "WHITE",
-        "Model": "GLACIER",
-        "Warranty": "1 Year",
-        "Front I/O": "USB 3.0 Type-A(x1) , USB 2.0 Type-A(x2) , Speaker (x1) , Mic-in (x1) , Power , Reset , LED Control",
-        "Fan Support": "",
-        "Form Factor": "Mid-Tower",
-        "VGA Support": "390mm",
-        "Expansion Slots": "7 slots + 2 vertical slots",
-        "Fan Installment": "120mm x4 ARGB Fans",
-        "Radiator Support": "",
-        "Mainboard Support": "",
-        "CPU Cooler Support": "165mm",
-        "Drive Bays Support": "3.5\" x2 , 2.5\" x2",
-        "Dimensions D x W x H": "420 x 210 x 480 mm",
         "Power Supply Support": "ATX PSU"
       }
     },
@@ -15442,62 +12655,7 @@
       "max_gpu_length_mm": 350
     },
     {
-      "product_id": 11405,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11406,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11407,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11408,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
       "product_id": 11409,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11410,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11411,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11412,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11413,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11414,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11415,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11416,
       "form_factor_support": "Mini-Tower",
       "max_gpu_length_mm": 350
     },
@@ -15507,38 +12665,8 @@
       "max_gpu_length_mm": 350
     },
     {
-      "product_id": 11418,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11419,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11420,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
       "product_id": 11421,
       "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11422,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11423,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11424,
-      "form_factor_support": "Mid-Tower",
       "max_gpu_length_mm": 350
     },
     {
@@ -15572,11 +12700,6 @@
       "max_gpu_length_mm": 350
     },
     {
-      "product_id": 11431,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
       "product_id": 11432,
       "form_factor_support": "Small Form Factor",
       "max_gpu_length_mm": 350
@@ -15597,11 +12720,6 @@
       "max_gpu_length_mm": 350
     },
     {
-      "product_id": 11436,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
       "product_id": 11437,
       "form_factor_support": "Mid-Tower",
       "max_gpu_length_mm": 350
@@ -15613,11 +12731,6 @@
     },
     {
       "product_id": 11439,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11440,
       "form_factor_support": "Mini-Tower",
       "max_gpu_length_mm": 350
     },
@@ -15642,27 +12755,12 @@
       "max_gpu_length_mm": 350
     },
     {
-      "product_id": 11445,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
       "product_id": 11446,
       "form_factor_support": "Mid-Tower",
       "max_gpu_length_mm": 350
     },
     {
-      "product_id": 11447,
-      "form_factor_support": "Mini-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
       "product_id": 11448,
-      "form_factor_support": "Mid-Tower",
-      "max_gpu_length_mm": 350
-    },
-    {
-      "product_id": 11449,
       "form_factor_support": "Mid-Tower",
       "max_gpu_length_mm": 350
     },
@@ -15952,118 +13050,6 @@
       "cores": 16,
       "threads": 32,
       "tdp_watt": 170
-    },
-    {
-      "product_id": 11197,
-      "socket": "LGA1700",
-      "cores": 8,
-      "threads": 16,
-      "tdp_watt": 120
-    },
-    {
-      "product_id": 11198,
-      "socket": "LGA1700",
-      "cores": 8,
-      "threads": 16,
-      "tdp_watt": 120
-    },
-    {
-      "product_id": 11199,
-      "socket": "LGA1700",
-      "cores": 10,
-      "threads": 10,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11200,
-      "socket": "LGA1700",
-      "cores": 6,
-      "threads": 12,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11201,
-      "socket": "LGA1700",
-      "cores": 6,
-      "threads": 12,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11202,
-      "socket": "LGA1700",
-      "cores": 16,
-      "threads": 32,
-      "tdp_watt": 170
-    },
-    {
-      "product_id": 11203,
-      "socket": "LGA1700",
-      "cores": 8,
-      "threads": 16,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11204,
-      "socket": "LGA1700",
-      "cores": 20,
-      "threads": 28,
-      "tdp_watt": 125
-    },
-    {
-      "product_id": 11205,
-      "socket": "LGA1700",
-      "cores": 6,
-      "threads": 12,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11206,
-      "socket": "LGA1700",
-      "cores": 6,
-      "threads": 12,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11207,
-      "socket": "LGA1700",
-      "cores": 10,
-      "threads": 10,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11208,
-      "socket": "AM5",
-      "cores": 8,
-      "threads": 16,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11209,
-      "socket": "LGA1700",
-      "cores": 6,
-      "threads": 12,
-      "tdp_watt": 65
-    },
-    {
-      "product_id": 11210,
-      "socket": "LGA1700",
-      "cores": 96,
-      "threads": 192,
-      "tdp_watt": 350
-    },
-    {
-      "product_id": 11211,
-      "socket": "LGA1700",
-      "cores": 8,
-      "threads": 16,
-      "tdp_watt": 105
-    },
-    {
-      "product_id": 11212,
-      "socket": "LGA1700",
-      "cores": 6,
-      "threads": 12,
-      "tdp_watt": 65
     },
     {
       "product_id": 12466,
@@ -17453,24 +14439,6 @@
       "form_factor": "M-ATX"
     },
     {
-      "product_id": 11213,
-      "socket": "LGA 1851",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11214,
-      "socket": "LGA1700",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11215,
-      "socket": "LGA 1700",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
       "product_id": 11216,
       "socket": "LGA 1700",
       "ram_type": "DDR5",
@@ -17483,26 +14451,8 @@
       "form_factor": "Micro-ATX"
     },
     {
-      "product_id": 11218,
-      "socket": "LGA 1700",
-      "ram_type": "DDR4",
-      "form_factor": "M-ATX"
-    },
-    {
-      "product_id": 11219,
-      "socket": "LGA 1700",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
       "product_id": 11220,
       "socket": "LGA 1851",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11221,
-      "socket": "LGA 1700",
       "ram_type": "DDR5",
       "form_factor": "Micro-ATX"
     },
@@ -17510,12 +14460,6 @@
       "product_id": 11222,
       "socket": "LGA 1851",
       "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11223,
-      "socket": "AM4",
-      "ram_type": "DDR4",
       "form_factor": "Micro-ATX"
     },
     {
@@ -17549,27 +14493,9 @@
       "form_factor": "Micro-ATX"
     },
     {
-      "product_id": 11229,
-      "socket": "AM5",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
       "product_id": 11230,
       "socket": "AM4",
       "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11231,
-      "socket": "AM4",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11232,
-      "socket": "AM5",
-      "ram_type": "DDR5",
       "form_factor": "Micro-ATX"
     },
     {
@@ -17582,24 +14508,6 @@
       "product_id": 11234,
       "socket": "AM5",
       "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11235,
-      "socket": "LGA 1700",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11236,
-      "socket": "AM5",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11237,
-      "socket": "AM4",
-      "ram_type": "DDR4",
       "form_factor": "Micro-ATX"
     },
     {
@@ -17645,18 +14553,6 @@
       "form_factor": "M-ATX"
     },
     {
-      "product_id": 11245,
-      "socket": "LGA 1700",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11246,
-      "socket": "LGA 1700",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
       "product_id": 11247,
       "socket": "AM5",
       "ram_type": "DDR5",
@@ -17681,33 +14577,9 @@
       "form_factor": "Micro-ATX"
     },
     {
-      "product_id": 11251,
-      "socket": "LGA 1700",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11252,
-      "socket": "AM4",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
       "product_id": 11253,
       "socket": "LGA 1851",
       "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11254,
-      "socket": "AM4",
-      "ram_type": "DDR4",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11255,
-      "socket": "AM4",
-      "ram_type": "DDR4",
       "form_factor": "Micro-ATX"
     },
     {
@@ -17720,18 +14592,6 @@
       "product_id": 11257,
       "socket": "LGA 1851",
       "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11258,
-      "socket": "AM5",
-      "ram_type": "DDR5",
-      "form_factor": "Micro-ATX"
-    },
-    {
-      "product_id": 11259,
-      "socket": "AM4",
-      "ram_type": "DDR4",
       "form_factor": "Micro-ATX"
     },
     {
@@ -18001,11 +14861,6 @@
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11355,
-      "wattage": 550,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11356,
       "wattage": 850,
       "efficiency_rating": "80 Plus Bronze"
@@ -18013,11 +14868,6 @@
     {
       "product_id": 11357,
       "wattage": 1000,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11358,
-      "wattage": 850,
       "efficiency_rating": "80 Plus Bronze"
     },
     {
@@ -18041,53 +14891,13 @@
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11363,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11364,
       "wattage": 1000,
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11365,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11366,
-      "wattage": 600,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11367,
-      "wattage": 600,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11368,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11369,
       "wattage": 1050,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11370,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11371,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11372,
-      "wattage": 750,
       "efficiency_rating": "80 Plus Bronze"
     },
     {
@@ -18111,33 +14921,8 @@
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11377,
-      "wattage": 550,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11378,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11379,
       "wattage": 850,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11380,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11381,
-      "wattage": 750,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11382,
-      "wattage": 650,
       "efficiency_rating": "80 Plus Bronze"
     },
     {
@@ -18146,33 +14931,8 @@
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11384,
-      "wattage": 550,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11385,
-      "wattage": 550,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11386,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11387,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11388,
       "wattage": 850,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11389,
-      "wattage": 750,
       "efficiency_rating": "80 Plus Bronze"
     },
     {
@@ -18186,16 +14946,6 @@
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11392,
-      "wattage": 650,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11393,
-      "wattage": 550,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11394,
       "wattage": 750,
       "efficiency_rating": "80 Plus Bronze"
@@ -18206,18 +14956,8 @@
       "efficiency_rating": "80 Plus Bronze"
     },
     {
-      "product_id": 11396,
-      "wattage": 750,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
       "product_id": 11397,
       "wattage": 850,
-      "efficiency_rating": "80 Plus Bronze"
-    },
-    {
-      "product_id": 11398,
-      "wattage": 600,
       "efficiency_rating": "80 Plus Bronze"
     },
     {
@@ -18497,12 +15237,6 @@
       "bus_speed": 3200
     },
     {
-      "product_id": 11260,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
       "product_id": 11261,
       "ram_type": "DDR5",
       "capacity_gb": 32,
@@ -18563,22 +15297,10 @@
       "bus_speed": 6000
     },
     {
-      "product_id": 11271,
-      "ram_type": "DDR4",
-      "capacity_gb": 8,
-      "bus_speed": 3200
-    },
-    {
       "product_id": 11272,
       "ram_type": "DDR5",
       "capacity_gb": 32,
       "bus_speed": 6400
-    },
-    {
-      "product_id": 11273,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
     },
     {
       "product_id": 11274,
@@ -18591,12 +15313,6 @@
       "ram_type": "DDR5",
       "capacity_gb": 32,
       "bus_speed": 5600
-    },
-    {
-      "product_id": 11276,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
     },
     {
       "product_id": 11277,
@@ -18629,64 +15345,16 @@
       "bus_speed": 5600
     },
     {
-      "product_id": 11282,
-      "ram_type": "DDR4",
-      "capacity_gb": 8,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11283,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11284,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
       "product_id": 11285,
       "ram_type": "DDR5",
       "capacity_gb": 32,
       "bus_speed": 6400
     },
     {
-      "product_id": 11286,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
       "product_id": 11287,
       "ram_type": "DDR5",
       "capacity_gb": 32,
       "bus_speed": 6000
-    },
-    {
-      "product_id": 11288,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11289,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11290,
-      "ram_type": "DDR5",
-      "capacity_gb": 8,
-      "bus_speed": 4800
-    },
-    {
-      "product_id": 11291,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
     },
     {
       "product_id": 11292,
@@ -18701,24 +15369,6 @@
       "bus_speed": 6800
     },
     {
-      "product_id": 11294,
-      "ram_type": "DDR4",
-      "capacity_gb": 8,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11295,
-      "ram_type": "DDR5",
-      "capacity_gb": 16,
-      "bus_speed": 6000
-    },
-    {
-      "product_id": 11296,
-      "ram_type": "DDR5",
-      "capacity_gb": 16,
-      "bus_speed": 6000
-    },
-    {
       "product_id": 11297,
       "ram_type": "DDR5",
       "capacity_gb": 32,
@@ -18731,18 +15381,6 @@
       "bus_speed": 6400
     },
     {
-      "product_id": 11299,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11300,
-      "ram_type": "DDR5",
-      "capacity_gb": 16,
-      "bus_speed": 6000
-    },
-    {
       "product_id": 11301,
       "ram_type": "DDR5",
       "capacity_gb": 32,
@@ -18753,18 +15391,6 @@
       "ram_type": "DDR5",
       "capacity_gb": 32,
       "bus_speed": 6000
-    },
-    {
-      "product_id": 11303,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
-    },
-    {
-      "product_id": 11304,
-      "ram_type": "DDR4",
-      "capacity_gb": 16,
-      "bus_speed": 3200
     },
     {
       "product_id": 12514,
