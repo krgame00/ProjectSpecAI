@@ -37,8 +37,8 @@ def download_image(url, filename):
 async def scrape_and_seed():
     print("Connecting to MySQL...")
     db = mysql.connector.connect(
-        host="localhost",
-        user="root",
+        host=os.getenv('DB_HOST', 'localhost'),
+        user=os.getenv('DB_USER', 'root'),
         password=os.getenv('DB_PASSWORD', '1234'),
         database="smart_pc_builder"
     )
