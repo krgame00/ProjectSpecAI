@@ -1,41 +1,6 @@
 import { defineStore } from 'pinia'
 import { useCatalogStore } from './catalog'
-
-// Helper: Exhaustive iGPU Check
-export const hasIGPU = (cpu) => {
-  if (!cpu || !cpu.name) return true;
-  const name = cpu.name.toUpperCase();
-
-  // Intel 'F' series has NO iGPU
-  if (name.includes('INTEL') || name.includes('CORE') || name.includes('ULTRA')) {
-    if (/\b\w+F\b/.test(name) || name.endsWith('F')) return false;
-    return true;
-  }
-
-  // AMD CPUs
-  if (name.includes('AMD') || name.includes('RYZEN') || name.includes('THREADRIPPER')) {
-    if (/\b\d{4}F\b/.test(name) || name.endsWith('F') || name.includes('THREADRIPPER')) return false;
-    if (/\b(7\d{3}|9\d{3})\b/.test(name)) return true;
-    if (/\b8\d{3}G\b/.test(name) || name.endsWith('G') || name.endsWith('GT')) return true;
-    if (/\b(1\d{3}|2\d{3}|3\d{3}|4\d{3}|5\d{3})\b/.test(name)) {
-      return name.includes('G') || name.includes('GT');
-    }
-    return true;
-  }
-  return true;
-};
-
-// Helper: Standard System TDP Calculation
-export const calcTotalTdp = (cCpu, cGpu, cMobo, cRam, cStorage) => {
-  let totalTdp = 0;
-  if (cCpu) totalTdp += (Number(cCpu.tdp) || 65);
-  if (cGpu) totalTdp += (Number(cGpu.tdp) || 150);
-  if (cMobo) totalTdp += 35;
-  if (cRam) totalTdp += 10;
-  if (cStorage) totalTdp += 5;
-  if (!cMobo && !cRam && !cStorage && (cCpu || cGpu)) totalTdp += 50;
-  return totalTdp;
-};
+import { hasIGPU, calcTotalTdp } from '../utils/compatibility'
 
 export const useBuilderStore = defineStore('builder', {
   state: () => ({
@@ -85,6 +50,22 @@ export const useBuilderStore = defineStore('builder', {
         if (cPsu.wattage < recommendedWattage) {
           issues.push(`กำลังไฟอาจไม่พอ: ระบบต้องการไฟขั้นต่ำ ${recommendedWattage}W แต่ PSU ที่เลือกจ่ายได้ ${cPsu.wattage || 0}W`)
         }
+      }
+
+      // 2a. RAM Speed vs Motherboard Max Speed (if known)
+      if (cMobo && cRam) {
+        const mbMaxSpeed = cMobo.specifications?.['Max Memory Speed'] || cMobo.specifications?.['Max Speed'];
+        const mbSpeed = mbMaxSpeed ? parseInt(String(mbMaxSpeed).replace(/\D/g, '')) : null;
+        const ramSpeed = cRam.busSpeed || (cRam.specifications?.['Speed'] ? parseInt(String(cRam.specifications['Speed']).replace(/\D/g, '')) : null);
+        if (mbSpeed && ramSpeed && ramSpeed > mbSpeed) {
+          issues.push(`แรมอาจวิ่งไม่เต็มสปีด: เมนบอร์ดรองรับ RAM สูงสุด ${mbSpeed}MHz แต่แรมที่เลือกเป็น ${ramSpeed}MHz ระบบจะลดสปีดลงมาเอง (Downclock)`);
+        }
+      }
+
+      // 2b. RAM Capacity Warning (less than 8GB)
+      const ramGb = cRam?.capacityGb || (cRam?.specifications?.['Capacity'] ? parseInt(String(cRam.specifications['Capacity']).replace(/\D/g, '')) : null);
+      if (cRam && ramGb && ramGb < 8) {
+        issues.push(`แรมน้อยเกินไป: ${cRam.name} มีความจุเพียง ${ramGb}GB อาจไม่เพียงพอสำหรับการเล่นเกมหรือทำงานทั่วไปในปี 2026 แนะนำอย่างน้อย 16GB`);
       }
 
       // 3. iGPU vs Discrete GPU Check

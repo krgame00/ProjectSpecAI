@@ -108,7 +108,7 @@ const props = defineProps({
 defineEmits(['set-active-category', 'remove-item', 'checkout']);
 
 import { computed } from 'vue';
-import { calcTotalTdp } from '../stores/builder';
+import { calcTotalTdp } from '../utils/compatibility';
 
 const selectedCount = computed(() => {
   return Object.values(props.build).filter(v => v !== null).length;
