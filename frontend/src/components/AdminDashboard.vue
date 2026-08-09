@@ -153,11 +153,16 @@
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <h3>จัดการสินค้าในระบบ</h3>
             <div style="display: flex; gap: 1rem;">
-              <select class="form-control" style="width: 200px;" v-model="inventoryCategory">
-                <option v-for="cat in categories" :key="'inv-'+cat.id" :value="cat.id">{{ cat.name }}</option>
-              </select>
-              <button class="btn btn-primary" @click="openProductModal()">+ เพิ่มสินค้า</button>
-            </div>
+                          <button class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;" @click="handleSyncPrices" :disabled="isSyncingPrices">
+                            <span v-if="isSyncingPrices" class="spinner-small"></span>
+                            <span v-else>🔄</span>
+                            {{ isSyncingPrices ? 'กำลังซิงก์ราคา…' : 'Sync Latest Prices' }}
+                          </button>
+                          <select class="form-control" style="width: 200px;" v-model="inventoryCategory">
+                            <option v-for="cat in categories" :key="'inv-'+cat.id" :value="cat.id">{{ cat.name }}</option>
+                          </select>
+                          <button class="btn btn-primary" @click="openProductModal()">+ เพิ่มสินค้า</button>
+                        </div>
           </div>
           <table class="data-table" v-if="catalog[inventoryCategory]">
             <thead>
@@ -420,6 +425,7 @@ import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 import { useAdminStore } from '../stores/admin';
 import { useToastStore } from '../stores/toast';
+import { useCatalogStore } from '../stores/catalog';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
@@ -514,6 +520,22 @@ const deleteUser = (id) => {
 onMounted(() => { fetchUsers(); });
 
 const inventoryCategory = ref('cpu');
+
+// --- Price Sync (Phase 4.3) ---
+const isSyncingPrices = ref(false);
+const handleSyncPrices = async () => {
+  if (isSyncingPrices.value) return;
+  isSyncingPrices.value = true;
+  try {
+    const result = await adminStore.syncPrices(null, 200);
+    if (result && result.updated > 0) {
+      const catalogStore = useCatalogStore();
+      await catalogStore.fetchCatalog();
+    }
+  } finally {
+    isSyncingPrices.value = false;
+  }
+};
 
 const totalSales = computed(() => props.orders.reduce((sum, ord) => sum + (ord.total_price || ord.total || 0), 0));
 const pendingAssemblies = computed(() => props.orders.filter(o => o.status === 'pending' || o.status === 'assembling').length);
