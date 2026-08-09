@@ -1,9 +1,7 @@
 import asyncio
 import json
-import os
 import re
 import sys
-import mysql.connector
 from scrapling.fetchers import AsyncDynamicSession
 
 CATEGORIES = [

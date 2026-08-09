@@ -3,7 +3,11 @@ import json
 import os
 import re
 import sys
+from pathlib import Path
 from scrapling.fetchers import AsyncDynamicSession
+
+# Deterministic output path regardless of CWD (run from anywhere)
+OUT_DIR = Path(__file__).resolve().parent.parent
 
 async def main():
     print("📡 Fetching real SSD products from Advice...")
@@ -44,7 +48,7 @@ async def main():
                 "image_url": img_src if img_src else "https://ihcupload-bkk.s3.ap-southeast-7.amazonaws.com/img/product/products40588_800.jpg"
             })
             
-    with open('scraped_advice_ssd_real.json', 'w', encoding='utf-8') as f:
+    with open(OUT_DIR / 'scraped_advice_ssd_real.json', 'w', encoding='utf-8') as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
         
     print(f"✅ Saved {len(items)} real Advice SSDs to scraped_advice_ssd_real.json!")
