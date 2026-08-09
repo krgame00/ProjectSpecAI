@@ -28,6 +28,8 @@ scraped_urls.txt
 # Scraper Outputs & DB Exports (regenerated artifacts, not source)
 scraped_*.json
 scraped_*.html
+scraped_*.db
+scraped_*.sqlite
 database-export/
 data_export*.json
 *.export.json
