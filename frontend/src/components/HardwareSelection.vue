@@ -125,17 +125,53 @@
 
     <!-- Details Modal -->
     <div class="modal-overlay" v-if="showingDetails" @click.self="showingDetails = null">
-      <div class="modal-content"
-        style="max-width: 520px; padding: 0; background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
-        <div class="modal-header"
-          style="padding: 1.5rem; border-bottom: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="font-size: 1.15rem; margin: 0; color: var(--ink);">{{ showingDetails.name }}</h3>
-          <button class="close-btn" @click="showingDetails = null"
-            style="background: transparent; border: none; font-size: 1.25rem; color: var(--ink-mute); cursor: pointer;">✕</button>
+      <div class="modal-content detail-modal-content">
+        <div class="modal-header detail-modal-header">
+          <div class="header-left">
+            <span class="product-category-badge">{{ activeCategoryInfo?.name || 'Hardware' }}</span>
+            <h3 class="modal-title">{{ showingDetails.name }}</h3>
+          </div>
+          <button class="close-btn" @click="showingDetails = null">✕</button>
         </div>
-        <div class="modal-body"
-          style="padding: 1.5rem; white-space: pre-wrap; font-family: var(--font-mono); font-size: 0.85rem; line-height: 2; color: var(--ink-secondary); max-height: 60vh; overflow-y: auto; background: var(--canvas-soft);">
-          {{ showingDetails.details || 'ไม่มีข้อมูลรายละเอียดเพิ่มเติมสำหรับสินค้านี้' }}
+        
+        <div class="modal-body detail-modal-body">
+          <!-- Image and Price Overview -->
+          <div class="product-overview-card">
+            <div class="product-img-wrapper">
+              <img :src="showingDetails.image || '/images/default.png'" :alt="showingDetails.name" class="modal-product-img" />
+            </div>
+            <div class="product-price-info">
+              <span class="price-label">ราคาประมาณ</span>
+              <span class="price-value">฿{{ Number(showingDetails.price || 0).toLocaleString() }}</span>
+              <button 
+                class="btn-select-modal" 
+                :class="{ 'selected': selectedItemId === showingDetails.id }"
+                @click="$emit('select-item', activeCategory, showingDetails.id); showingDetails = null;"
+              >
+                {{ selectedItemId === showingDetails.id ? '✓ อุปกรณ์ที่เลือกอยู่' : '+ เลือกอุปกรณ์นี้' }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Rich Specifications Grid -->
+          <div class="specs-section">
+            <h4 class="specs-title">⚡ คุณสมบัติและสเปกเชิงลึก (Specifications)</h4>
+            
+            <div v-if="showingDetails.specifications && Object.keys(showingDetails.specifications).length > 0" class="specs-grid">
+              <div v-for="(val, key) in showingDetails.specifications" :key="key" class="spec-row">
+                <span class="spec-label">{{ key }}</span>
+                <span class="spec-val">{{ val }}</span>
+              </div>
+            </div>
+            
+            <div v-else-if="showingDetails.details" class="raw-details-text">
+              {{ showingDetails.details }}
+            </div>
+
+            <div v-else class="empty-specs-notice">
+              ไม่มีข้อมูลคุณสมบัติเพิ่มเติมสำหรับอุปกรณ์ชิ้นนี้
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -740,5 +776,220 @@ const getItemSpecsList = (catId, item) => {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.modal-content.detail-modal-content {
+  max-width: 680px;
+  width: 95%;
+  border-radius: var(--radius-xl, 16px);
+  background: var(--canvas, #ffffff);
+  border: 1px solid var(--hairline, #e2e8f0);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+}
+
+.detail-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--hairline, #e2e8f0);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--canvas-soft, #f8fafc);
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-right: 1rem;
+}
+
+.product-category-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.15rem 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-size: 0.725rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modal-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink, #0f172a);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--ink-mute, #64748b);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.close-btn:hover {
+  background: rgba(0,0,0,0.06);
+  color: var(--ink, #0f172a);
+}
+
+.detail-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-overview-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--canvas-soft, #f8fafc);
+  border: 1px solid var(--hairline, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+}
+
+@media (max-width: 540px) {
+  .product-overview-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.product-img-wrapper {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--canvas, #1e293b);
+  border: 1px solid var(--hairline, rgba(255, 255, 255, 0.1));
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.modal-product-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-price-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  color: var(--ink-mute, #94a3b8);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.price-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #10b981;
+}
+
+.btn-select-modal {
+  margin-top: 0.25rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  background: #10b981;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.btn-select-modal:hover {
+  background: #059669;
+}
+
+.btn-select-modal.selected {
+  background: #3b82f6;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.specs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.specs-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--ink, #f8fafc);
+  margin: 0;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.65rem;
+}
+
+.spec-row {
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 0.85rem;
+  background: var(--canvas-soft, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--hairline, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  gap: 0.2rem;
+}
+
+.spec-label {
+  font-size: 0.725rem;
+  color: var(--ink-mute, #94a3b8);
+  font-weight: 600;
+}
+
+.spec-val {
+  font-size: 0.85rem;
+  color: var(--ink, #f8fafc);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.raw-details-text {
+  padding: 1rem;
+  background: var(--canvas-soft, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--hairline, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--ink-secondary, #cbd5e1);
+  white-space: pre-wrap;
+}
+
+.empty-specs-notice {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--ink-mute, #94a3b8);
+  font-size: 0.85rem;
+  background: var(--canvas-soft, rgba(255, 255, 255, 0.04));
+  border-radius: 8px;
 }
 </style>

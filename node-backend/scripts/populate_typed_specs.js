@@ -101,7 +101,9 @@ async function migrateSpecs() {
     const model = p.model || '';
 
     if (slug === 'cpu') {
-      const socket = specs['CPU Socket'] || specs['Socket'] || (model.includes('AM5') ? 'AM5' : model.includes('AM4') ? 'AM4' : 'LGA1700');
+      let rawSocket = specs['CPU Socket'] || specs['Socket'] || (model.includes('AM5') ? 'AM5' : model.includes('AM4') ? 'AM4' : 'LGA1700');
+      let socketMatch = String(rawSocket).match(/(AM\d|LGA\s*\d+|1700|1851|1200|1151|sTRX4|TR4)/i);
+      const socket = socketMatch ? socketMatch[0].toUpperCase() : rawSocket.substring(0, 20);
       const tdp = parseNum(specs['TDP'] || specs['Thermal Design Power']) || (model.includes('F') || model.includes('G') ? 65 : 125);
       const cores = parseNum(specs['Cores'] || specs['Core Count']);
       const threads = parseNum(specs['Threads'] || specs['Thread Count']);
