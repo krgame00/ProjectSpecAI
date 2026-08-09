@@ -25,6 +25,13 @@ frontend/public/gridgeist-*.html
 urls*.txt
 scraped_urls.txt
 
+# Scraper Outputs & DB Exports (regenerated artifacts, not source)
+scraped_*.json
+scraped_*.html
+database-export/
+data_export*.json
+*.export.json
+
 # OS & IDE Files
 .DS_Store
 .vscode/
