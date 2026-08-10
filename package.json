@@ -1,0 +1,14 @@
+{
+  "name": "pcspec-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PCSpec backend (Express) — root package.json so Render default commands work from repo root",
+  "scripts": {
+    "postinstall": "cd node-backend && npm install --omit=dev",
+    "start": "node node-backend/server.js",
+    "build": "cd node-backend && npm install --omit=dev"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
