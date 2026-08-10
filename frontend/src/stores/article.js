@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai-production.up.railway.app/api/v1' : 'http://localhost:3001/api/v1')
+const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1')
 
 function authHeaders() {
   const token = typeof localStorage !== 'undefined' && localStorage.getItem ? localStorage.getItem('token') : null
