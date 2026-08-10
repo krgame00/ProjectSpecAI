@@ -32,9 +32,13 @@ scraped_*.json
 scraped_*.html
 scraped_*.db
 scraped_*.sqlite
-database-export/
+database-export/all_database_data.json
 data_export*.json
 *.export.json
+
+# แต่ .db + viewer HTML ตั้งใจ commit ไว้ให้โหลดดูได้ (pcspec.db, database_view.html)
+!database-export/pcspec.db
+!database-export/database_view.html
 
 # OS & IDE Files
 .DS_Store
