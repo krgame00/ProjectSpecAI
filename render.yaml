@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: pcspec-backend
+    runtime: node
+    rootDir: node-backend
+    plan: free
+    buildCommand: npm install --production
+    startCommand: node server.js
+    healthCheckPath: /api/v1/health
+    autoDeploy: false
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "4000"
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: smart_pc_builder
+      - key: DB_SSL
+        value: "true"
+      - key: JWT_SECRET
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
