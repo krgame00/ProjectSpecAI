@@ -10,7 +10,8 @@ async function exportDatabase() {
     port: parseInt(process.env.DB_PORT || '3306'),
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME || 'smart_pc_builder'
+    database: process.env.DB_NAME || 'smart_pc_builder',
+    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : undefined
   });
 
   console.log('🔍 Fetching database tables...');
