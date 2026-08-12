@@ -1,5 +1,5 @@
 <template>
-  <div class="container checkout-view">
+  <div ref="checkoutViewRef" class="container checkout-view">
     <div class="header-action">
       <button class="btn btn-outline" @click="router.push('/build')">← กลับไปหน้าจัดสเปค</button>
       <h2 style="margin: 0;">สรุปรายการสั่งซื้อ</h2>
@@ -35,16 +35,27 @@
         <div class="panel glass-panel">
           <h3>ข้อมูลการจัดส่ง</h3>
           <div class="form-group">
-            <label>ชื่อ-นามสกุล ผู้รับ <span class="required">*</span></label>
-            <input type="text" class="form-control" v-model="customer.name" placeholder="ระบุชื่อ-นามสกุล" :class="{ 'input-error': errorMessage && !customer.name.trim() }">
+            <label for="checkout-name">ชื่อ-นามสกุล ผู้รับ <span class="required">*</span></label>
+            <input
+              id="checkout-name"
+              v-model="customer.name"
+              type="text"
+              class="form-control"
+              placeholder="ระบุชื่อ-นามสกุล"
+              :class="{ 'input-error': nameError }"
+              :aria-invalid="nameError ? 'true' : undefined"
+              :aria-describedby="nameError ? 'checkout-name-error' : undefined"
+              @input="nameError = ''"
+            >
+            <p v-if="nameError" id="checkout-name-error" class="field-error">{{ nameError }}</p>
           </div>
           <div class="form-group">
-            <label>ที่อยู่สำหรับจัดส่ง</label>
-            <textarea class="form-control" v-model="customer.address" rows="3" placeholder="ระบุที่อยู่จัดส่งแบบครบถ้วน"></textarea>
+            <label for="checkout-address">ที่อยู่สำหรับจัดส่ง</label>
+            <textarea id="checkout-address" class="form-control" v-model="customer.address" rows="3" placeholder="ระบุที่อยู่จัดส่งแบบครบถ้วน"></textarea>
           </div>
           <div class="form-group">
-            <label>เบอร์โทรศัพท์</label>
-            <input type="text" class="form-control" v-model="customer.phone" placeholder="08X-XXX-XXXX">
+            <label for="checkout-phone">เบอร์โทรศัพท์</label>
+            <input id="checkout-phone" type="tel" class="form-control" v-model="customer.phone" inputmode="tel" placeholder="08X-XXX-XXXX">
           </div>
           
           <div v-if="errorMessage" class="error-message">
@@ -116,7 +127,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted } from 'vue';
+import { ref, reactive, computed, nextTick, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBuilderStore } from '../stores/builder';
 import { useToastStore } from '../stores/toast';
@@ -134,6 +145,8 @@ const customer = reactive({ name: '', address: '', phone: '' });
 const assemblyChoice = ref('none');
 const isSubmitting = ref(false);
 const errorMessage = ref('');
+const nameError = ref('');
+const checkoutViewRef = ref(null);
 
 const getItem = (catId, itemId) => props.catalog[catId]?.find(i => i.id === itemId);
 
@@ -153,8 +166,12 @@ onMounted(() => {
 
 const handlePlaceOrder = async () => {
   errorMessage.value = '';
+  nameError.value = '';
   if (!customer.name.trim()) {
-    customer.name = 'ลูกค้าทดสอบ'; // Default for testing if left blank
+    nameError.value = 'กรุณาระบุชื่อ-นามสกุลผู้รับ';
+    await nextTick();
+    checkoutViewRef.value?.querySelector('#checkout-name')?.focus();
+    return;
   }
   
   isSubmitting.value = true;
@@ -203,19 +220,20 @@ const handlePlaceOrder = async () => {
 </script>
 
 <style scoped>
-.checkout-view { padding-top: 2rem; padding-bottom: 5rem; }
+.checkout-view { padding-top: 1.25rem; padding-bottom: 5rem; }
 .header-action { 
-  display: flex; gap: 1.25rem; align-items: center; margin-bottom: 2.5rem; 
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 0.75rem; margin-bottom: 1.5rem;
 }
 .header-action h2 {
   font-size: var(--text-xl); font-weight: 600; color: var(--ink);
 }
 .checkout-grid { 
-  display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-lg); align-items: start; 
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); align-items: start;
 }
 .left-col { display: flex; flex-direction: column; gap: var(--space-lg); }
 .panel { 
-  padding: 2rem; border-radius: var(--radius-lg);
+  padding: clamp(1rem, 4vw, 2rem); border-radius: var(--radius-lg);
   background: var(--canvas); border: 1px solid var(--hairline);
   box-shadow: var(--shadow-sm);
 }
@@ -223,11 +241,11 @@ const handlePlaceOrder = async () => {
   margin-bottom: 1.5rem; font-size: var(--text-lg); font-weight: 600; color: var(--ink);
 }
 .checkout-item-row { 
-  display: flex; justify-content: space-between; align-items: center; 
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem;
   padding: 1rem 0; border-bottom: 1px solid var(--hairline-cool);
 }
 .checkout-item-row:last-child { border-bottom: none; }
-.checkout-item-info { display: flex; align-items: center; gap: 1rem; }
+.checkout-item-info { display: flex; align-items: center; gap: 1rem; min-width: 0; }
 .checkout-item-img { 
   width: 56px; height: 56px; 
   background: var(--canvas-soft); border-radius: var(--radius-sm); 
@@ -240,6 +258,7 @@ const handlePlaceOrder = async () => {
 }
 .item-name { 
   font-weight: 500; font-size: var(--text-sm); color: var(--ink); margin-top: 0.15rem;
+  overflow-wrap: anywhere;
 }
 .checkout-item-price { 
   font-family: var(--font-sans); font-weight: 600; color: var(--ink);
@@ -249,15 +268,26 @@ const handlePlaceOrder = async () => {
   display: block; margin-bottom: 0.5rem; font-size: var(--text-sm); 
   color: var(--ink-mute); font-weight: 500;
 }
+.form-control {
+  min-height: 44px;
+  font-size: 1rem;
+}
+textarea.form-control { min-height: 7rem; }
 .required { color: var(--danger); }
 .input-error { border-color: var(--danger) !important; box-shadow: 0 0 0 1px var(--danger); }
+.field-error {
+  margin: 0.4rem 0 0;
+  color: var(--danger);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
 .error-message { 
   display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;
   padding: 0.75rem 1rem; background: var(--danger-soft); 
   color: var(--danger); border-radius: var(--radius-sm); font-size: var(--text-sm);
   border: 1px solid var(--danger-border); font-weight: 500;
 }
-.sticky { position: sticky; top: 5.5rem; }
+.sticky { position: static; }
 .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
 .radio-label { 
   display: flex; align-items: center; gap: 1rem; 
@@ -308,8 +338,18 @@ hr { border: 0; height: 1px; background: var(--hairline-cool); margin: 1.5rem 0;
 .empty-state h3 { font-size: var(--text-lg); color: var(--ink); margin-bottom: 0.5rem; }
 .empty-state p { color: var(--ink-mute); margin-bottom: 2rem; max-width: 400px; }
 
-@media (max-width: 1024px) {
-  .checkout-grid { grid-template-columns: 1fr; }
-  .sticky { position: static; }
+@media (min-width: 48rem) {
+  .checkout-view { padding-top: 2rem; }
+  .header-action {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .checkout-grid { grid-template-columns: minmax(0, 1.5fr) minmax(18rem, 1fr); }
+  .sticky { position: sticky; top: 5.5rem; }
 }
 </style>

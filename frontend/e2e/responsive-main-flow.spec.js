@@ -103,4 +103,25 @@ test('mobile summary expands without covering the SpecAI launcher', async ({ pag
   await assertNoPageOverflow(page)
 })
 
+test('checkout stacks fields and summary on a phone', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await prepareApi(page)
+  await page.goto('/build')
+  await page.locator('.product-card .add-btn').first().click()
+  await page.locator('[data-test="mobile-summary-toggle"]').click()
+  await page.locator('.checkout-btn').click()
+
+  await expect(page).toHaveURL(/\/checkout$/)
+  const left = await page.locator('.left-col').boundingBox()
+  const right = await page.locator('.right-col').boundingBox()
+  const nameInput = page.locator('#checkout-name')
+  const nameBox = await nameInput.boundingBox()
+  const fontSize = await nameInput.evaluate(element => Number.parseFloat(getComputedStyle(element).fontSize))
+
+  expect(right.y).toBeGreaterThanOrEqual(left.y + left.height)
+  expect(nameBox.height).toBeGreaterThanOrEqual(44)
+  expect(fontSize).toBeGreaterThanOrEqual(16)
+  await assertNoPageOverflow(page)
+})
+
 export { assertNoPageOverflow, prepareApi }
