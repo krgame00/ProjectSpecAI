@@ -32,3 +32,13 @@ The following are strict foundational rules specific to the **PCSpec** project (
 - **Post-mortem**: Use the `post-mortem` skill (เขียนสรุปวิเคราะห์สาเหตุบั๊ก) to write the canonical engineering record of a fixed bug after a debug session lands a fix.
 - **Code Review & Scrutinize**: When claiming work is complete or reviewing a plan, use `requesting-code-review`, `loop-verifier`, and `scrutinize` (รีวิวโค้ดแบบเจาะลึก จับผิดอย่างสร้างสรรค์) to ensure the code meets requirements and has no edge-case regressions.
 - **Management Talk**: Use the `management-talk` skill (แปลงโค้ดให้เป็นภาษาสำหรับคุยกับผู้บริหาร สไตล์นายอาร์ม) when summarizing complex technical work or status updates.
+
+### 6. 🤖 Mandatory AI Documentation Rule (กฎเหล็กในการสร้างคู่มือสำหรับ AI ตัวอื่น)
+- **ทุกครั้งที่มีการทำงานหรือทำฟีเจอร์ใดๆ ให้ผู้ใช้:** เอเจนต์จะต้องสกัดและเขียน/อัปเดตไฟล์แผนงานเชิงเทคนิค (`.md`) ในโฟลเดอร์ `plans/` ทุกครั้ง
+- **โครงสร้างไฟล์ `.md` ต้องประกอบด้วย:**
+  1. **สถาปัตยกรรมและตำแหน่งไฟล์ (File & Architecture Mapping)**
+  2. **คู่มือและขั้นตอนการรันคำสั่งเชิงลึกเรียงตามลำดับ (Step-by-Step Execution Commands for AI)**
+  3. **กฎเหล็กในโค้ดและวิธีแก้บั๊ก (Code Rules & Edge-case Handling)**
+  4. **ชุดคำสั่งทดสอบยืนยันผลลัพธ์ (Testing & Verification Checklist)**
+- เพื่อให้ AI Agent ตัวอื่น (เช่น Claude, ChatGPT, DeepSeek, Cursor) หรือ Developer ท่านอื่นมาอ่านแล้วสามารถรันหรือทำงานต่อได้ทันที 100% โดยไม่ต้องเดาสุ่ม
+
