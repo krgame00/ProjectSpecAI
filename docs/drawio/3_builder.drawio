@@ -1,0 +1,79 @@
+<mxfile host="Electron" modified="2026-08-12T15:44:22.018Z" agent="PCSpec Generator" version="21.0.0" type="device">
+  <diagram id="diagram_1" name="3. จัดสเปคด้วยตนเอง (Manual PC Builder)">
+    <mxGraphModel dx="1200" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="header_title" value="3. จัดสเปคด้วยตนเอง (Manual PC Builder)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="660" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="เริ่มต้น" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="80" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="fetch" value="ดึงแคตตาล็อกอุปกรณ์จาก MySQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="184" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="show_ui" value="แสดงหน้าจัดสเปค 8 หมวดหมู่" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="298" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="select_cat" value="เลือกหมวดหมู่อุปกรณ์" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="412" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="select_item" value="คลิกเลือกอุปกรณ์เข้าสเปค" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="526" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="add_store" value="เพิ่มอุปกรณ์ลง Builder Store" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="640" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="calc_watts" value="คำนวณราคารวม &amp; Wattage รวม" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="754" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="check_compat" value="เรียกตรวจความเข้ากันได้" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="868" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="user_action" value="ต้องการจัดอุปกรณ์เพิ่มหรือไม่?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="982" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="show_done" value="แสดงสเปคคอมพิวเตอร์สมบูรณ์" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1132" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="จบการทำงาน" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1246" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="start" target="fetch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="fetch" target="show_ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="show_ui" target="select_cat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="select_cat" target="select_item">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="select_item" target="add_store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="add_store" target="calc_watts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="calc_watts" target="check_compat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="check_compat" target="user_action">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_9" value="เสร็จสิ้น" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="user_action" target="show_done">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_10" value="จัดเพิ่ม" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="user_action" target="select_cat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="show_done" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

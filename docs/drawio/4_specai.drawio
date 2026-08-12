@@ -1,0 +1,73 @@
+<mxfile host="Electron" modified="2026-08-12T15:44:22.020Z" agent="PCSpec Generator" version="21.0.0" type="device">
+  <diagram id="diagram_1" name="4. ใช้ระบบ SpecAI ช่วยจัดสเปค (AI Spec Generator)">
+    <mxGraphModel dx="1200" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="header_title" value="4. ใช้ระบบ SpecAI ช่วยจัดสเปค (AI Spec Generator)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="660" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="เริ่มต้น" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="80" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="open_ui" value="เปิดหน้าต่าง SpecAI" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="184" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="input_crit" value="ระบุงบประมาณ &amp; วัตถุประสงค์" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="298" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="send_api" value="ส่ง POST /api/chatbot/generate-spec" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="412" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="fetch_db" value="Backend ดึงสินค้าจาก MySQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="526" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="call_gemini" value="ส่ง Prompt ให้ Gemini AI จัดสเปค" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="640" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="show_result" value="แสดงสเปคคอมจัดโดย AI (JSON)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="754" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="confirm" value="พึงพอใจสเปคนี้หรือไม่?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="868" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="apply_store" value="นำสเปคเข้า Builder Store อัตโนมัติ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=13;align=center;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1018" width="260" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="จบการทำงาน" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1132" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="start" target="open_ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="open_ui" target="input_crit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="input_crit" target="send_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="send_api" target="fetch_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="fetch_db" target="call_gemini">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="call_gemini" target="show_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="show_result" target="confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_8" value="พึงพอใจ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="confirm" target="apply_store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_9" value="ไม่พึงพอใจ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="confirm" target="input_crit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#000000;exitX=0.5;exitY=1;exitPerimeter=1;entryX=0.5;entryY=0;entryPerimeter=1;" edge="1" parent="1" source="apply_store" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
