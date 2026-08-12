@@ -47,4 +47,20 @@ test.describe('responsive foundation', () => {
   }
 })
 
+test('landing actions and hardware scene fit a 320px phone', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 })
+  await prepareApi(page)
+  await page.goto('/')
+
+  const actions = page.locator('.hero-actions')
+  const box = await actions.boundingBox()
+  const primary = await actions.locator('.btn').first().boundingBox()
+
+  expect(box.x).toBeGreaterThanOrEqual(0)
+  expect(box.x + box.width).toBeLessThanOrEqual(320)
+  expect(primary.width).toBeGreaterThanOrEqual(260)
+  await expect(actions.locator('.btn')).toHaveCount(2)
+  await assertNoPageOverflow(page)
+})
+
 export { assertNoPageOverflow, prepareApi }

@@ -122,7 +122,7 @@ const totalProductCount = computed(() => {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 3rem var(--page-gutter);
   background: radial-gradient(circle at center, rgba(62, 207, 142, 0.08) 0%, var(--canvas) 70%);
   border-bottom: 1px solid var(--hairline);
   position: relative;
@@ -161,28 +161,40 @@ const totalProductCount = computed(() => {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 11vw, 4rem);
   line-height: 1.1;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
 }
 
 .hero-subtitle {
-  font-size: var(--text-lg);
+  font-size: 1rem;
   color: var(--ink-mute);
   line-height: 1.6;
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-wrap: pretty;
 }
 
 .hero-actions {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   justify-content: center;
+  width: 100%;
+}
+
+.hero-actions .btn {
+  width: 100%;
+  min-height: 48px;
 }
 
 .btn-lg {
@@ -212,25 +224,25 @@ const totalProductCount = computed(() => {
 
 /* 3D Scene */
 .hero-3d-scene {
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: 100%;
   max-width: 800px;
-  height: 300px;
+  height: auto;
   position: relative;
   z-index: 1;
-  perspective: 1200px;
-  display: flex;
+  display: grid;
+  gap: 0.75rem;
   justify-content: center;
   align-items: center;
 }
 
 .card-3d {
-  position: absolute;
+  position: static;
   background: var(--canvas-soft);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  width: 260px;
+  width: min(100%, 30rem);
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
@@ -262,14 +274,14 @@ const totalProductCount = computed(() => {
 }
 
 .card-cpu {
-  transform: rotateX(15deg) rotateY(-20deg) translateZ(0px) translateX(-180px) translateY(20px);
-  animation: float-1 6s ease-in-out infinite;
+  transform: none;
+  animation: none;
   z-index: 2;
 }
 
 .card-gpu {
-  transform: rotateX(15deg) rotateY(0deg) translateZ(50px) translateY(-30px);
-  animation: float-2 7s ease-in-out infinite;
+  transform: none;
+  animation: none;
   background: var(--canvas);
   border-color: var(--primary-alpha);
   box-shadow: 0 16px 32px rgba(62, 207, 142, 0.1);
@@ -277,8 +289,8 @@ const totalProductCount = computed(() => {
 }
 
 .card-ram {
-  transform: rotateX(15deg) rotateY(20deg) translateZ(-50px) translateX(180px) translateY(40px);
-  animation: float-3 5.5s ease-in-out infinite;
+  transform: none;
+  animation: none;
   z-index: 1;
 }
 
@@ -299,18 +311,19 @@ const totalProductCount = computed(() => {
 
 /* Features Section */
 .features {
-  padding: 6rem 2rem;
+  width: 100%;
+  padding: 4rem var(--page-gutter);
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 8vw, 2.5rem);
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 1rem;
@@ -323,8 +336,8 @@ const totalProductCount = computed(() => {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
 }
 
 .feature-card {
@@ -333,12 +346,6 @@ const totalProductCount = computed(() => {
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
 }
 
 .feature-tag {
@@ -375,6 +382,9 @@ const totalProductCount = computed(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
 }
 
 .brand {
@@ -389,12 +399,48 @@ const totalProductCount = computed(() => {
   font-size: var(--text-sm);
 }
 
-@media (max-width: 768px) {
-  .hero-title { font-size: 2.5rem; }
-  .hero-actions { flex-direction: column; }
-  .hero-3d-scene { height: auto; flex-direction: column; gap: 1rem; perspective: none; }
-  .card-cpu, .card-gpu, .card-ram { position: relative; transform: none !important; animation: none; width: 100%; max-width: 300px; }
-  .footer-content { flex-direction: column; gap: 1rem; text-align: center; }
-  .features-grid { grid-template-columns: 1fr; }
+@media (min-width: 48rem) {
+  .hero { padding: 5rem var(--page-gutter) 4rem; }
+  .hero-subtitle { font-size: var(--text-lg); }
+  .hero-actions { width: auto; flex-direction: row; }
+  .hero-actions .btn { width: auto; }
+  .footer-content { flex-direction: row; gap: 2rem; text-align: left; }
+}
+
+@media (min-width: 64rem) and (hover: hover) {
+  .hero-3d-scene {
+    height: 300px;
+    margin-top: 5rem;
+    display: flex;
+    gap: 0;
+    perspective: 1200px;
+  }
+  .card-3d { position: absolute; width: 260px; }
+  .card-cpu {
+    transform: rotateX(15deg) rotateY(-20deg) translateZ(0) translateX(-180px) translateY(20px);
+    animation: float-1 6s ease-in-out infinite;
+  }
+  .card-gpu {
+    transform: rotateX(15deg) rotateY(0) translateZ(50px) translateY(-30px);
+    animation: float-2 7s ease-in-out infinite;
+  }
+  .card-ram {
+    transform: rotateX(15deg) rotateY(20deg) translateZ(-50px) translateX(180px) translateY(40px);
+    animation: float-3 5.5s ease-in-out infinite;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-effect::after,
+  .card-cpu,
+  .card-gpu,
+  .card-ram {
+    animation: none;
+  }
 }
 </style>
