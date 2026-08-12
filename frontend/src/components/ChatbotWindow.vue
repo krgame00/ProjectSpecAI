@@ -117,10 +117,17 @@ const props = defineProps({
 const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build', 'request-login']);
 
 const chatBodyRef = ref(null);
+const isNearBottom = () => {
+  const el = chatBodyRef.value;
+  if (!el) return true;
+  // ถ้าผู้ใช้อยู่ห่างจากด้านล่างเกิน 120px ถือว่ากำลังอ่านข้อความเก่า → ไม่เด้งลง
+  return el.scrollHeight - el.scrollTop - el.clientHeight < 120;
+};
 const scrollToBottom = () => {
   nextTick(() => {
-    if (chatBodyRef.value) {
-      chatBodyRef.value.scrollTop = chatBodyRef.value.scrollHeight;
+    const el = chatBodyRef.value;
+    if (el && isNearBottom()) {
+      el.scrollTop = el.scrollHeight;
     }
   });
 };
@@ -195,6 +202,11 @@ const handleSend = () => {
     emit('send-message', { text: userInput.value, image: imageObj });
     userInput.value = '';
     clearImage();
+    // ผู้ใช้ส่งข้อความ → เด้งลงล่างเสมอ (แม้กำลังเลื่อนดูของเก่า)
+    nextTick(() => {
+      const el = chatBodyRef.value;
+      if (el) el.scrollTop = el.scrollHeight;
+    });
   }
 };
 
