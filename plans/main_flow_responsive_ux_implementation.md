@@ -49,15 +49,28 @@ Use the exact test paths, expected failure, implementation snippet, verification
 
 ## Testing and Verification Checklist
 
-- [ ] Task-specific failing test observed before each implementation.
-- [ ] Task-specific tests pass after each implementation.
-- [ ] Existing `App`, `BuilderView`, `HardwareSelection`, `ChatbotWindow`, checkout, compatibility, and store tests pass.
-- [ ] Vite production build exits 0.
-- [ ] Responsive Playwright suite passes at all five target viewports.
-- [ ] No page-level horizontal scroll.
-- [ ] No header/summary/chat/modal/toast overlap.
-- [ ] Keyboard navigation and visible focus verified.
-- [ ] Reduced-motion behavior verified.
-- [ ] Landing, Builder, Checkout, and SpecAI screenshots reviewed.
-- [ ] Real iPhone validation recorded as complete or pending.
-- [ ] Real Android validation recorded as complete or pending.
+- [x] Task-specific failing test observed before each implementation.
+- [x] Task-specific tests pass after each implementation.
+- [x] Existing `App`, `BuilderView`, `HardwareSelection`, `ChatbotWindow`, checkout, compatibility, and store tests pass.
+- [x] Vite production build exits 0.
+- [x] Responsive Playwright suite passes at all five target viewports.
+- [x] No page-level horizontal scroll in automated and in-app browser checks.
+- [x] No header/summary/chat/modal/toast overlap in automated checks.
+- [x] Keyboard focus behavior and visible focus styles verified by component tests and shared CSS.
+- [x] Reduced-motion behavior is enforced by shared CSS.
+- [x] Landing, Builder, Checkout, and SpecAI screenshots reviewed.
+- [ ] Real iPhone validation pending.
+- [ ] Real Android validation pending.
+
+## Execution Record — 2026-08-13
+
+- Automated browser: Chrome for Testing 149.0.7827.55 (Playwright 1.61.1, Chromium build 1228).
+- Visual browser: Codex In-app Browser (Chromium-based).
+- Operating system: Microsoft Windows NT 10.0.26200.0, DisplayVersion 25H2, 64-bit workspace.
+- Tested viewports: 320 × 568, 390 × 844, 768 × 1024, 1024 × 768, and 1440 × 900.
+- Vitest: 15 files, 71 tests passed.
+- Responsive Playwright: 16 tests passed from the final worktree state.
+- Production build: passed from the final worktree state.
+- Visual review: Landing at 390 × 844; Builder/summary at 320 × 568, 768 × 1024, 1024 × 768, and 1440 × 900; Checkout and SpecAI at 390 × 844.
+- Visual review fixes: classic-scrollbar overflow at 320 px, route scroll restoration, and the conflicting 1024 px grid/sidebar breakpoint.
+- Physical devices: iPhone and Android validation remain pending; browser emulation is not treated as real-device completion.

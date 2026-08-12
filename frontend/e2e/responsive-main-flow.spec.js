@@ -47,6 +47,40 @@ test.describe('responsive foundation', () => {
   }
 })
 
+test.describe('primary flow matrix', () => {
+  for (const viewport of [
+    { width: 320, height: 568 },
+    { width: 390, height: 844 },
+    { width: 768, height: 1024 },
+    { width: 1024, height: 768 },
+    { width: 1440, height: 900 }
+  ]) {
+    test(`moves from landing to a selected build at ${viewport.width}x${viewport.height}`, async ({ page }) => {
+      await page.setViewportSize(viewport)
+      await prepareApi(page)
+      await page.goto('/')
+      await assertNoPageOverflow(page)
+      await page.locator('.hero-actions').getByRole('link').first().click()
+      await expect(page).toHaveURL(/\/build$/)
+      await page.locator('.product-card .add-btn').first().click()
+
+      if (viewport.width < 1024) {
+        await page.locator('[data-test="mobile-summary-toggle"]').click()
+      }
+
+      await expect(page.locator('.total-value')).toContainText('7,290')
+
+      if (viewport.width >= 1024) {
+        const sidebar = await page.locator('.sidebar').boundingBox()
+        const main = await page.locator('.main-content').boundingBox()
+        expect(main.x).toBeGreaterThanOrEqual(sidebar.x + sidebar.width)
+      }
+
+      await assertNoPageOverflow(page)
+    })
+  }
+})
+
 test('landing actions and hardware scene fit a 320px phone', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 })
   await prepareApi(page)
@@ -108,10 +142,16 @@ test('checkout stacks fields and summary on a phone', async ({ page }) => {
   await prepareApi(page)
   await page.goto('/build')
   await page.locator('.product-card .add-btn').first().click()
+  await page.evaluate(() => {
+    document.body.style.minHeight = '1600px'
+    window.scrollTo(0, 400)
+  })
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0)
   await page.locator('[data-test="mobile-summary-toggle"]').click()
   await page.locator('.checkout-btn').click()
 
   await expect(page).toHaveURL(/\/checkout$/)
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
   const left = await page.locator('.left-col').boundingBox()
   const right = await page.locator('.right-col').boundingBox()
   const nameInput = page.locator('#checkout-name')

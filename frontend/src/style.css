@@ -116,7 +116,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  min-width: 320px;
+  min-width: min(20rem, 100%);
   overflow-wrap: anywhere;
 }
 
@@ -173,7 +173,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: var(--space-xl) 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 63.99rem) {
   .grid-layout {
     grid-template-columns: 1fr;
   }
