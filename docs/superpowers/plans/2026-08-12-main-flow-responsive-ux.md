@@ -106,7 +106,7 @@ Run:
 
 ```bash
 cd frontend
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js
 ```
 
 Expected: FAIL because the viewport meta tag does not yet include `viewport-fit=cover`. Record any additional overflow failure with its viewport and measured `scrollWidth`.
@@ -162,7 +162,7 @@ Run:
 ```bash
 cd frontend
 npm test -- --run tests/App.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js
 ```
 
 Expected: App unit tests and the safe-area viewport checks pass at all five viewport sizes.
@@ -276,7 +276,7 @@ Run:
 ```bash
 cd frontend
 npm test -- --run tests/App.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/auth.spec.js --project=chromium
+npx playwright test --config=e2e/playwright.config.js e2e/auth.spec.js
 ```
 
 Expected: all App tests and existing authentication browser tests pass.
@@ -326,7 +326,7 @@ Run:
 
 ```bash
 cd frontend
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium --grep "landing actions"
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --grep "landing actions"
 ```
 
 Expected: FAIL because the current phone CTA sizes to its label instead of the available action width.
@@ -366,7 +366,7 @@ Run:
 
 ```bash
 cd frontend
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium --grep "landing|overflow"
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --grep "landing|overflow"
 npm run build
 ```
 
@@ -498,7 +498,7 @@ Run:
 ```bash
 cd frontend
 npm test -- --run tests/HardwareSelection.test.js tests/BuilderView.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium --grep "builder cards"
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --grep "builder cards"
 ```
 
 Expected: all listed tests pass.
@@ -637,7 +637,7 @@ Run:
 ```bash
 cd frontend
 npm test -- --run tests/PriceSummary.test.js tests/BuilderView.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium --grep "mobile summary"
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --grep "mobile summary"
 ```
 
 Expected: unit disclosure and mobile overlap tests pass.
@@ -764,7 +764,7 @@ Run:
 ```bash
 cd frontend
 npm test -- --run tests/CheckoutView.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium --grep "checkout"
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --grep "checkout"
 npm run build
 ```
 
@@ -899,7 +899,7 @@ Run:
 ```bash
 cd frontend
 npm test -- --run tests/ChatbotWindow.test.js tests/BuilderView.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium --grep "SpecAI|overlay"
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --grep "SpecAI|overlay"
 ```
 
 Expected: existing privacy/scroll behavior and new dialog/geometry coverage pass.
@@ -945,7 +945,7 @@ Run:
 
 ```bash
 cd frontend
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js
 ```
 
 Expected: all responsive matrix tests pass with zero page-overflow or overlay-intersection failures.
@@ -958,7 +958,7 @@ Run:
 cd frontend
 npm test -- --run
 npm run build
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js
 ```
 
 Expected: Vitest reports zero failures, Vite exits 0, and the responsive Playwright project reports zero failures.

@@ -24,7 +24,7 @@ Execute Tasks 1–8 in order from the authoritative plan. Each task follows this
 ```powershell
 Set-Location frontend
 npm test -- --run tests/App.test.js tests/BuilderView.test.js tests/HardwareSelection.test.js tests/PriceSummary.test.js tests/CheckoutView.test.js tests/ChatbotWindow.test.js
-npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js --project=chromium
+npx playwright test --config=e2e/playwright.config.js e2e/responsive-main-flow.spec.js
 npm run build
 Set-Location ..
 git diff --check

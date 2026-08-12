@@ -87,6 +87,16 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 150ms var(--ease-out);
   --transition-normal: 200ms var(--ease-out);
+
+  /* Responsive layout and semantic layers */
+  --z-header: 40;
+  --z-sticky: 50;
+  --z-chat: 60;
+  --z-backdrop: 70;
+  --z-modal: 80;
+  --z-toast: 90;
+  --page-gutter: clamp(1rem, 3vw, 1.5rem);
+  --content-max: 1280px;
 }
 
 /* ---------- Reset & Base ---------- */
@@ -106,6 +116,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  min-width: 320px;
+  overflow-wrap: anywhere;
+}
+
+html { overflow-x: clip; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -122,9 +148,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- Layout ---------- */
 .container {
-  max-width: 1280px;
+  width: min(100%, var(--content-max));
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 var(--space-xl);
+  padding-inline: var(--page-gutter);
 }
 
 .grid-layout {
@@ -322,7 +349,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-bottom: 1px solid var(--hairline-cool);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: var(--z-header);
 }
 .nav-content {
   display: flex;
@@ -402,10 +429,29 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  .container { padding: 0 var(--space-lg); }
+  .container { padding-inline: var(--page-gutter); }
   .nav-content { padding: var(--space-md) var(--space-lg); }
   .logo { font-size: var(--text-lg); }
   .btn-sm { font-size: var(--text-xs); padding: 4px 8px; }
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ---------- Gridgeist System Utilities ---------- */
