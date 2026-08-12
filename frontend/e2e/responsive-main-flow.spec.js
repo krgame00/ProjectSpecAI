@@ -73,9 +73,63 @@ test.describe('primary flow matrix', () => {
       if (viewport.width >= 1024) {
         const sidebar = await page.locator('.sidebar').boundingBox()
         const main = await page.locator('.main-content').boundingBox()
+        const grid = await page.locator('.grid-layout').boundingBox()
         expect(main.x).toBeGreaterThanOrEqual(sidebar.x + sidebar.width)
+        expect(grid.width).toBeLessThanOrEqual(1280)
       }
 
+      await assertNoPageOverflow(page)
+    })
+  }
+})
+
+test.describe('phone overlay and focus lifecycle', () => {
+  for (const viewport of [
+    { width: 320, height: 568 },
+    { width: 390, height: 844 }
+  ]) {
+    test(`keeps primary overlays operable at ${viewport.width}x${viewport.height}`, async ({ page }) => {
+      await page.setViewportSize(viewport)
+      await prepareApi(page)
+      await page.goto('/build')
+
+      const navToggle = page.locator('[data-test="nav-toggle"]')
+      await navToggle.click()
+      await expect(navToggle).toHaveAttribute('aria-expanded', 'true')
+      await page.locator('#primary-navigation').getByRole('button', { name: 'เข้าสู่ระบบ' }).click()
+      const authDialog = page.getByRole('dialog', { name: /บัญชีผู้ใช้ ForgeLabs/ })
+      await expect(authDialog).toBeVisible()
+      const firstAuthTab = authDialog.locator('.auth-tab').first()
+      await expect(firstAuthTab).toBeFocused()
+      await firstAuthTab.press('Shift+Tab')
+      await expect(authDialog.locator('.modal-body .btn-primary')).toBeFocused()
+      const authClose = await authDialog.getByRole('button', { name: 'ปิดหน้าต่างบัญชีผู้ใช้' }).evaluate(element => ({
+        width: element.offsetWidth,
+        height: element.offsetHeight
+      }))
+      expect(authClose.width).toBeGreaterThanOrEqual(44)
+      expect(authClose.height).toBeGreaterThanOrEqual(44)
+      await authDialog.press('Escape')
+      await expect(authDialog).toBeHidden()
+      await expect(navToggle).toBeFocused()
+
+      await page.locator('.product-card .add-btn').first().click()
+      const summaryToggle = page.locator('[data-test="mobile-summary-toggle"]')
+      await summaryToggle.click()
+      await expect(summaryToggle).toHaveAttribute('aria-expanded', 'true')
+      const remove = await page.locator('.sidebar-remove-btn').first().boundingBox()
+      expect(remove.width).toBeGreaterThanOrEqual(44)
+      expect(remove.height).toBeGreaterThanOrEqual(44)
+      await summaryToggle.click()
+      await expect(summaryToggle).toHaveAttribute('aria-expanded', 'false')
+
+      const launcher = page.getByRole('button', { name: 'เปิด SpecAI' })
+      await launcher.click()
+      const specAi = page.getByRole('dialog', { name: 'SpecAI' })
+      await expect(specAi).toBeVisible()
+      await specAi.press('Escape')
+      await expect(specAi).toBeHidden()
+      await expect(launcher).toBeFocused()
       await assertNoPageOverflow(page)
     })
   }
@@ -97,6 +151,19 @@ test('landing actions and hardware scene fit a 320px phone', async ({ page }) =>
   await assertNoPageOverflow(page)
 })
 
+test('reduced-motion preference disables decorative movement', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await prepareApi(page)
+  await page.goto('/')
+
+  const motion = await page.locator('.card-3d').first().evaluate(element => ({
+    animationDuration: getComputedStyle(element).animationDuration,
+    transitionDuration: getComputedStyle(element).transitionDuration
+  }))
+  expect(Number.parseFloat(motion.animationDuration)).toBeLessThanOrEqual(0.01)
+  expect(Number.parseFloat(motion.transitionDuration)).toBeLessThanOrEqual(0.01)
+})
+
 test('builder product cards remain readable at 320px', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 })
   await prepareApi(page)
@@ -109,7 +176,35 @@ test('builder product cards remain readable at 320px', async ({ page }) => {
   expect(card.x).toBeGreaterThanOrEqual(0)
   expect(card.x + card.width).toBeLessThanOrEqual(320)
   expect(card.width).toBeGreaterThanOrEqual(280)
+  for (const control of ['.details-btn', '.add-btn']) {
+    const target = await product.locator(control).boundingBox()
+    expect(target.width).toBeGreaterThanOrEqual(44)
+    expect(target.height).toBeGreaterThanOrEqual(44)
+  }
+  const guidance = await page.locator('.tooltip-icon').boundingBox()
+  expect(guidance.width).toBeGreaterThanOrEqual(44)
+  expect(guidance.height).toBeGreaterThanOrEqual(44)
   await assertNoPageOverflow(page)
+})
+
+test('builder categories and product dialogs work from the keyboard', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await prepareApi(page)
+  await page.goto('/build')
+
+  const motherboard = page.locator('.category-button').nth(1)
+  await motherboard.press('Enter')
+  await expect(page.locator('.category-title-text')).toContainText('Motherboard')
+
+  await page.locator('.category-button').first().press('Enter')
+  const details = page.locator('.details-btn').first()
+  await expect(details).toHaveAttribute('aria-label', /INTEL Core i5/)
+  await details.press('Enter')
+  const dialog = page.getByRole('dialog', { name: /INTEL Core i5/ })
+  await expect(dialog).toBeVisible()
+  await dialog.press('Escape')
+  await expect(dialog).toBeHidden()
+  await expect(details).toBeFocused()
 })
 
 test('mobile summary expands without covering the SpecAI launcher', async ({ page }) => {

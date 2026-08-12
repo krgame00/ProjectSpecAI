@@ -4,13 +4,14 @@
     <ToastNotification />
 
     <!-- Top Navigation -->
-    <nav class="top-nav" v-if="$route.path !== '/admin'">
+    <nav class="top-nav" v-if="$route.path !== '/admin'" :inert="chatbotStore.isOpen || showLoginModal">
       <div class="nav-content container">
         <div class="logo" @click="$router.push('/')" style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
           <img src="/images/logo.png" alt="ForgeLabs Logo" style="height: 32px; width: auto; border-radius: 4px;">
           <div class="logo-text" style="display: flex; align-items: center;">Forge<span>Labs</span></div>
         </div>
         <button
+          ref="navToggleRef"
           type="button"
           class="nav-toggle touch-target"
           data-test="nav-toggle"
@@ -41,6 +42,7 @@
     </nav>
 
     <!-- Main Views Transition via Vue Router -->
+    <div class="route-content" :inert="showLoginModal">
     <router-view v-slot="{ Component }">
       <Transition name="page" mode="out-in">
         <component
@@ -66,15 +68,18 @@
         />
       </Transition>
     </router-view>
+    </div>
 
     <!-- Auth Modal -->
     <Transition name="modal">
-      <div class="modal-overlay" v-if="showLoginModal" @click.self="showLoginModal = false">
+      <div class="modal-overlay" v-if="showLoginModal" @click.self="closeLoginModal">
       <div
+        ref="authDialogRef"
         class="modal-content glass-panel"
         role="dialog"
         aria-modal="true"
         aria-labelledby="auth-dialog-title"
+        tabindex="-1"
       >
         <h2 id="auth-dialog-title" class="sr-only">บัญชีผู้ใช้ ForgeLabs</h2>
         <div class="modal-header">
@@ -82,7 +87,7 @@
             <button :class="['auth-tab', { active: authTab === 'login' }]" @click="authTab = 'login'">เข้าสู่ระบบ</button>
             <button :class="['auth-tab', { active: authTab === 'register' }]" @click="authTab = 'register'">สมัครสมาชิก</button>
           </div>
-          <button class="close-btn" @click="showLoginModal = false">✕</button>
+          <button class="close-btn" aria-label="ปิดหน้าต่างบัญชีผู้ใช้" @click="closeLoginModal">✕</button>
         </div>
 
         <div class="modal-body" v-if="authTab === 'login'">
@@ -129,6 +134,7 @@ import { useChatbotStore } from './stores/chatbot';
 import { useArticleStore } from './stores/article';
 import { useToastStore } from './stores/toast';
 import ToastNotification from './components/ToastNotification.vue';
+import { useDialogFocus } from './composables/useDialogFocus';
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
 
@@ -144,6 +150,9 @@ const currentUser = computed(() => authStore.user);
 const userRole = computed(() => authStore.user?.role || 'guest');
 
 const showLoginModal = ref(false);
+const authDialogRef = ref(null);
+const authReturnFocusRef = ref(null);
+const navToggleRef = ref(null);
 const isNavOpen = ref(false);
 const authTab = ref('login');
 const loginForm = reactive({ email: '', password: '' });
@@ -163,11 +172,18 @@ const navigateTo = (path) => {
   router.push(path);
 };
 
-const openLoginModal = () => {
+const openLoginModal = (event) => {
+  authReturnFocusRef.value = isNavOpen.value
+    ? navToggleRef.value
+    : event?.currentTarget instanceof HTMLElement ? event.currentTarget : null
   closeNav()
   authTab.value = 'login'
   showLoginModal.value = true
 }
+const closeLoginModal = () => {
+  showLoginModal.value = false
+}
+useDialogFocus(showLoginModal, authDialogRef, closeLoginModal, authReturnFocusRef)
 
 const categories = [
   { id: 'cpu', name: 'CPU', tooltip: 'สมองของระบบ' },
@@ -417,6 +433,13 @@ const handleCheckout = () => {
   .nav-actions .btn { width: 100%; }
   .user-actions { flex-direction: column; align-items: stretch; }
   .user-name { padding: var(--space-sm) 0; text-align: center; }
+}
+
+@media (max-width: 63.99rem) {
+  .modal-enter-from .modal-content,
+  .modal-leave-to .modal-content {
+    transform: translateY(12px);
+  }
 }
 @keyframes spin {
   to { transform: rotate(360deg); }

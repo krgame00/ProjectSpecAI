@@ -1,7 +1,7 @@
 <template>
   <div class="chatbot-container">
     <!-- Chatbot FAB -->
-    <button class="chat-fab" v-show="!isOpen" @click="$emit('toggle-chat', true)" aria-label="เปิด SpecAI">
+    <button ref="launcherRef" class="chat-fab" v-show="!isOpen" @click="$emit('toggle-chat', true)" aria-label="เปิด SpecAI">
       <div class="fab-glow"></div>
       <div class="fab-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 11.5C21 16.75 16.75 21 11.5 21C10.08 21 8.73 20.69 7.5 20.13L3 21L3.87 16.5C3.31 15.27 3 13.92 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.25 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="12" r="1" fill="currentColor"/><circle cx="12.5" cy="12" r="1" fill="currentColor"/><circle cx="16.5" cy="12" r="1" fill="currentColor"/></svg>
@@ -11,11 +11,14 @@
 
     <!-- Chatbot Window -->
     <div
+      v-if="isOpen"
+      ref="dialogRef"
       class="chatbot-wrapper"
       :class="{ 'is-open': isOpen }"
       role="dialog"
+      aria-modal="true"
       aria-labelledby="specai-title"
-      :aria-hidden="!isOpen"
+      tabindex="-1"
     >
       <!-- Header -->
       <div class="chat-header">
@@ -109,6 +112,7 @@
 <script setup>
 import { ref, watch, nextTick } from 'vue';
 import { renderSafeMarkdown, sanitizeSources } from '../utils/chatSecurity';
+import { useDialogFocus } from '../composables/useDialogFocus';
 
 const props = defineProps({
   isOpen: Boolean,
@@ -121,6 +125,10 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build', 'request-login']);
+const dialogRef = ref(null);
+const launcherRef = ref(null);
+const closeDialog = () => emit('toggle-chat', false);
+useDialogFocus(() => props.isOpen, dialogRef, closeDialog, launcherRef);
 
 const chatBodyRef = ref(null);
 const isNearBottom = () => {

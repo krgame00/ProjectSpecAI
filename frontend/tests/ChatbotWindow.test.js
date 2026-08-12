@@ -54,10 +54,18 @@ describe('ChatbotWindow access presentation', () => {
 
     const dialog = wrapper.get('[role="dialog"]')
     expect(dialog.attributes('aria-labelledby')).toBe('specai-title')
+    expect(dialog.attributes('aria-modal')).toBe('true')
     expect(wrapper.get('#specai-title').text()).toContain('SpecAI')
     expect(wrapper.get('[aria-label="ปิด SpecAI"]')).toBeTruthy()
     expect(wrapper.get('[aria-label="แนบรูปภาพ"]')).toBeTruthy()
     expect(wrapper.get('[aria-label="ส่งข้อความ"]')).toBeTruthy()
+  })
+
+  test('does not leave a closed dialog in the keyboard focus order', () => {
+    const wrapper = mount(ChatbotWindow, { props: { ...guestProps, isOpen: false } })
+
+    expect(wrapper.find('[role="dialog"]').exists()).toBe(false)
+    expect(wrapper.get('[aria-label="เปิด SpecAI"]')).toBeTruthy()
   })
 
   test('shows the guest message and CTA without member history or controls', () => {

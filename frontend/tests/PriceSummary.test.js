@@ -18,6 +18,16 @@ const props = {
 }
 
 describe('PriceSummary mobile disclosure', () => {
+  test('renders hardware categories as keyboard-operable buttons', async () => {
+    const wrapper = mount(PriceSummary, { props })
+    const category = wrapper.get('.category-button')
+
+    expect(category.element.tagName).toBe('BUTTON')
+    expect(category.attributes('aria-current')).toBe('true')
+    await category.trigger('click')
+    expect(wrapper.emitted('set-active-category')).toEqual([['cpu']])
+  })
+
   test('toggles details and exposes state to assistive technology', async () => {
     const wrapper = mount(PriceSummary, { props })
     const toggle = wrapper.get('[data-test="mobile-summary-toggle"]')

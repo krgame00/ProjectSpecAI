@@ -448,9 +448,15 @@ img { max-width: 100%; height: auto; display: block; }
   .btn-sm { font-size: var(--text-xs); padding: 4px 8px; }
 }
 
-@media (pointer: coarse) {
+@media (pointer: coarse), (max-width: 63.99rem) {
   .btn,
-  .touch-target {
+  .touch-target,
+  .close-btn,
+  .details-btn,
+  .add-btn,
+  .clear-search-btn,
+  .sidebar-remove-btn,
+  .tooltip-icon {
     min-width: 44px;
     min-height: 44px;
   }

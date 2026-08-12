@@ -55,10 +55,11 @@ Use the exact test paths, expected failure, implementation snippet, verification
 - [x] Vite production build exits 0.
 - [x] Responsive Playwright suite passes at all five target viewports.
 - [x] No page-level horizontal scroll in automated and in-app browser checks.
-- [x] No header/summary/chat/modal/toast overlap in automated checks.
-- [x] Keyboard focus behavior and visible focus styles verified by component tests and shared CSS.
-- [x] Reduced-motion behavior is enforced by shared CSS.
-- [x] Landing, Builder, Checkout, and SpecAI screenshots reviewed.
+- [x] No header/summary/chat/modal/toast overlap in the automated primary-flow scenarios.
+- [x] Keyboard category selection plus modal focus entry, trap, Escape, and return behavior verified.
+- [x] Reduced-motion behavior verified in Chromium emulation.
+- [x] Targeted Landing, Builder, Checkout, and SpecAI screenshots reviewed at representative viewports.
+- [ ] Full surface-by-viewport screenshot archive remains pending; geometry and overflow are automated at all five viewports.
 - [ ] Real iPhone validation pending.
 - [ ] Real Android validation pending.
 
@@ -68,8 +69,8 @@ Use the exact test paths, expected failure, implementation snippet, verification
 - Visual browser: Codex In-app Browser (Chromium-based).
 - Operating system: Microsoft Windows NT 10.0.26200.0, DisplayVersion 25H2, 64-bit workspace.
 - Tested viewports: 320 × 568, 390 × 844, 768 × 1024, 1024 × 768, and 1440 × 900.
-- Vitest: 15 files, 71 tests passed.
-- Responsive Playwright: 16 tests passed from the final worktree state.
+- Vitest: 15 files, 74 tests passed.
+- Responsive Playwright: 20 tests passed from the final worktree state, including both phone overlay/focus flows, keyboard builder operation, touch-target geometry, reduced motion, desktop content bounds, and the five-viewport primary-flow matrix.
 - Production build: passed from the final worktree state.
 - Visual review: Landing at 390 × 844; Builder/summary at 320 × 568, 768 × 1024, 1024 × 768, and 1440 × 900; Checkout and SpecAI at 390 × 844.
 - Visual review fixes: classic-scrollbar overflow at 320 px, route scroll restoration, and the conflicting 1024 px grid/sidebar breakpoint.

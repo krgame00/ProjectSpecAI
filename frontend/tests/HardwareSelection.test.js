@@ -76,6 +76,31 @@ describe('HardwareSelection.vue', () => {
 
     expect(wrapper.get('.product-card.selected').attributes('aria-current')).toBe('true')
     expect(wrapper.get('.product-card.selected .add-btn').element.tagName).toBe('BUTTON')
+    expect(wrapper.get('.product-card.selected .add-btn').attributes('aria-label')).toContain('Product A')
+  })
+
+  test('labels filters and exposes product details as a modal dialog', async () => {
+    const wrapper = mount(HardwareSelection, {
+      props: {
+        activeCategory: 'cpu',
+        activeCategoryInfo: mockActiveCategoryInfo,
+        products: mockProducts,
+        selectedItemId: null,
+        compatibilityIssues: [],
+        hasAnyComponent: false
+      },
+      attachTo: document.body
+    })
+
+    expect(wrapper.get('.search-input').attributes('aria-label')).toContain('CPU')
+    expect(wrapper.get('.sort-select').attributes('aria-label')).not.toBe('')
+    await wrapper.get('.details-btn').trigger('click')
+
+    const dialog = wrapper.get('[role="dialog"]')
+    expect(dialog.attributes('aria-modal')).toBe('true')
+    expect(dialog.attributes('aria-labelledby')).toBe('hardware-details-title')
+    expect(wrapper.get('[aria-label="ปิดรายละเอียดสินค้า"]')).toBeTruthy()
+    wrapper.unmount()
   })
 
   test('replaces a failed product image with the category fallback', async () => {

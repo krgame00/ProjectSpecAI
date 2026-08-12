@@ -134,5 +134,6 @@ describe('App guest login request', () => {
     expect(dialog.attributes('aria-modal')).toBe('true')
     expect(dialog.attributes('aria-labelledby')).toBe('auth-dialog-title')
     expect(wrapper.get('#auth-dialog-title').text()).not.toBe('')
+    expect(wrapper.get('[aria-label="ปิดหน้าต่างบัญชีผู้ใช้"]')).toBeTruthy()
   })
 })

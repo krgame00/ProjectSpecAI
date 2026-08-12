@@ -80,18 +80,25 @@
           v-for="cat in categories" 
           :key="cat.id" 
           :class="['category-item', { active: activeCategory === cat.id, selected: build[cat.id] }]"
-          @click="$emit('set-active-category', cat.id)"
         >
-          <div class="cat-indicator"></div>
-          <div class="cat-content">
-            <div class="cat-header">
-              <span class="cat-name">{{ cat.name }}</span>
-              <span class="cat-badge" v-if="build[cat.id]">
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-              <span class="cat-badge empty" v-else>—</span>
+          <button
+            type="button"
+            class="category-button"
+            :aria-current="activeCategory === cat.id ? 'true' : undefined"
+            @click="$emit('set-active-category', cat.id)"
+          >
+            <div class="cat-indicator"></div>
+            <div class="cat-content">
+              <div class="cat-header">
+                <span class="cat-name">{{ cat.name }}</span>
+                <span class="cat-badge" v-if="build[cat.id]">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="cat-badge empty" v-else>—</span>
+              </div>
             </div>
-            <div class="cat-selected-item" v-if="build[cat.id]">
+          </button>
+          <div class="cat-selected-item" v-if="build[cat.id]">
               <div class="item-name">{{ getItemName(cat.id, build[cat.id]) }}</div>
               <div class="item-price" v-if="getItemPrice(cat.id, build[cat.id]) !== '0'">฿{{ getItemPrice(cat.id, build[cat.id]) }}</div>
               <div class="item-price" v-else style="color: var(--danger);">ติดต่อสอบถาม</div>
@@ -108,7 +115,6 @@
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                 นำออก
               </button>
-            </div>
           </div>
         </li>
       </ul>
@@ -277,6 +283,21 @@ const printSpec = () => {
   cursor: pointer;
 }
 .mobile-summary-toggle strong { color: var(--primary); }
+.category-button {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.9rem 1.25rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
 
 @media (max-width: 63.99rem) {
   .sidebar {
@@ -472,13 +493,11 @@ const printSpec = () => {
 }
 .category-list { list-style: none; }
 .category-item { 
-  padding: 0.9rem 1.25rem; 
+  padding: 0;
   border-bottom: 1px solid var(--hairline-cool); 
   cursor: pointer; 
   transition: all var(--transition-fast); 
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
+  display: block;
 }
 .category-item:last-child { border-bottom: none; }
 .category-item:hover { background: var(--canvas-soft); }
@@ -531,7 +550,7 @@ const printSpec = () => {
   box-shadow: 0 2px 8px color-mix(in oklch, #3ecf8e 40%, transparent);
 }
 
-.cat-selected-item { margin-top: 0.5rem; }
+.cat-selected-item { margin-top: 0; padding: 0 1.25rem 0.9rem; }
 .item-name { 
   font-size: var(--text-xs); 
   color: var(--ink-mute);

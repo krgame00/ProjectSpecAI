@@ -1,6 +1,6 @@
 <template>
   <div class="hardware-selection">
-    <div class="category-header">
+    <div class="category-header" :inert="Boolean(showingDetails)">
       <div class="category-title-left">
         <div class="category-icon-wrap">
           <span class="category-emoji">{{ getCategoryEmoji(activeCategory) }}</span>
@@ -18,26 +18,26 @@
         </div>
       </div>
       <div class="tooltip-wrapper">
-        <span class="tooltip-icon">?</span>
-        <div class="tooltip-text">{{ activeCategoryInfo.tooltip }}</div>
+        <button type="button" class="tooltip-icon" :aria-expanded="String(isGuidanceOpen)" aria-controls="category-guidance" @click="isGuidanceOpen = !isGuidanceOpen">?</button>
+        <div id="category-guidance" class="tooltip-text" :class="{ 'is-open': isGuidanceOpen }">{{ activeCategoryInfo.tooltip }}</div>
       </div>
     </div>
 
     <!-- Filters Bar -->
-    <div class="filters-bar">
+    <div class="filters-bar" :inert="Boolean(showingDetails)">
       <div class="search-bar-wrapper">
         <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8" />
           <path d="m21 21-4.3-4.3" />
         </svg>
-        <input type="text" v-model="searchQuery" class="search-input"
+        <input type="text" v-model="searchQuery" class="search-input" :aria-label="`ค้นหา ${activeCategoryInfo.name}`"
           :placeholder="`ค้นหา ${activeCategoryInfo.name}...`">
-        <button v-if="searchQuery" class="clear-search-btn" @click="searchQuery = ''" title="ล้างการค้นหา">✕</button>
+        <button v-if="searchQuery" class="clear-search-btn" aria-label="ล้างการค้นหา" @click="searchQuery = ''">✕</button>
       </div>
 
       <div class="sort-wrapper">
-        <select v-model="sortOrder" class="sort-select">
+        <select v-model="sortOrder" class="sort-select" aria-label="เรียงลำดับสินค้า">
           <option value="default">เรียงตามความนิยม</option>
           <option value="price_asc">ราคา: ต่ำไปสูง</option>
           <option value="price_desc">ราคา: สูงไปต่ำ</option>
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <div class="product-grid" v-if="filteredProducts.length > 0">
+    <div class="product-grid" v-if="filteredProducts.length > 0" :inert="Boolean(showingDetails)">
       <div class="product-card hairline-grid" v-for="item in filteredProducts" :key="item.id"
         :class="{ selected: selectedItemId === item.id }"
         :aria-current="selectedItemId === item.id ? 'true' : undefined"
@@ -68,7 +68,7 @@
           </svg>
         </div>
 
-        <button class="details-btn" @click.stop="openDetails(item)" title="ดูรายละเอียดสเปค">
+        <button class="details-btn" :aria-label="`ดูรายละเอียด ${item.name}`" @click.stop="openDetails(item, $event.currentTarget)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
@@ -102,7 +102,12 @@
               <span style="font-size: 0.85rem; color: var(--danger); font-weight: 500;">เช็คราคาหน้าร้าน</span>
             </template>
           </div>
-          <button class="add-btn" :class="{ 'is-selected': selectedItemId === item.id }">
+          <button
+            class="add-btn"
+            :class="{ 'is-selected': selectedItemId === item.id }"
+            :aria-label="selectedItemId === item.id ? `ยกเลิกการเลือก ${item.name}` : `เลือก ${item.name}`"
+            @click.stop="$emit('select-item', activeCategory, item.id)"
+          >
             <svg v-if="selectedItemId === item.id" width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -115,7 +120,7 @@
       </div>
     </div>
 
-    <div v-else class="empty-search">
+    <div v-else class="empty-search" :inert="Boolean(showingDetails)">
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
         stroke-linecap="round" stroke-linejoin="round" style="color: var(--ink-mute); margin-bottom: 1rem;">
         <circle cx="11" cy="11" r="8" />
@@ -126,14 +131,14 @@
     </div>
 
     <!-- Details Modal -->
-    <div class="modal-overlay" v-if="showingDetails" @click.self="showingDetails = null">
-      <div class="modal-content detail-modal-content">
+    <div class="modal-overlay" v-if="showingDetails" @click.self="closeDetails">
+      <div ref="detailsDialogRef" class="modal-content detail-modal-content" role="dialog" aria-modal="true" aria-labelledby="hardware-details-title" tabindex="-1">
         <div class="modal-header detail-modal-header">
           <div class="header-left">
             <span class="product-category-badge">{{ activeCategoryInfo?.name || 'Hardware' }}</span>
-            <h3 class="modal-title">{{ showingDetails.name }}</h3>
+            <h3 id="hardware-details-title" class="modal-title">{{ showingDetails.name }}</h3>
           </div>
-          <button class="close-btn" @click="showingDetails = null">✕</button>
+          <button class="close-btn" aria-label="ปิดรายละเอียดสินค้า" @click="closeDetails">✕</button>
         </div>
         
         <div class="modal-body detail-modal-body">
@@ -182,6 +187,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useDialogFocus } from '../composables/useDialogFocus';
 
 const props = defineProps({
   activeCategory: String, activeCategoryInfo: Object,
@@ -192,6 +198,7 @@ defineEmits(['select-item']);
 
 const searchQuery = ref('');
 const sortOrder = ref('default');
+const isGuidanceOpen = ref(false);
 
 const filteredProducts = computed(() => {
   let result = [...props.products];
@@ -211,9 +218,16 @@ const filteredProducts = computed(() => {
 });
 
 const showingDetails = ref(null);
-const openDetails = (item) => {
+const detailsDialogRef = ref(null);
+const detailsTriggerRef = ref(null);
+const openDetails = (item, trigger) => {
+  detailsTriggerRef.value = trigger;
   showingDetails.value = item;
 };
+const closeDetails = () => {
+  showingDetails.value = null;
+};
+useDialogFocus(showingDetails, detailsDialogRef, closeDetails, detailsTriggerRef);
 
 const handleProductImageError = (event) => {
   const image = event.currentTarget;
@@ -496,7 +510,9 @@ const getItemSpecsList = (catId, item) => {
   line-height: 1.6;
 }
 
-.tooltip-wrapper:hover .tooltip-text {
+.tooltip-wrapper:hover .tooltip-text,
+.tooltip-wrapper:focus-within .tooltip-text,
+.tooltip-text.is-open {
   opacity: 1;
   visibility: visible;
   bottom: 120%;

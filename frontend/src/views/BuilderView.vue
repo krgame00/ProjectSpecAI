@@ -8,7 +8,7 @@
       </div>
     </div>
     
-    <div v-else class="grid-layout">
+    <div v-else class="grid-layout" :inert="isChatOpen">
       <!-- Sidebar -->
       <PriceSummary 
         :categories="categories" 
