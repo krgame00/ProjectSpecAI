@@ -5,6 +5,7 @@
         v-for="toast in toastStore.toasts" 
         :key="toast.id" 
         :class="['toast-item', `toast-${toast.type}`]"
+        :role="toast.type === 'error' ? 'alert' : 'status'"
         @click="toastStore.remove(toast.id)"
       >
         <div class="toast-icon">
@@ -16,7 +17,7 @@
         <div class="toast-content">
           <div class="toast-message">{{ toast.message }}</div>
         </div>
-        <button class="toast-close" @click.stop="toastStore.remove(toast.id)">&times;</button>
+        <button class="toast-close" aria-label="ปิดการแจ้งเตือน" @click.stop="toastStore.remove(toast.id)">&times;</button>
       </div>
     </TransitionGroup>
   </div>
@@ -30,38 +31,35 @@ const toastStore = useToastStore()
 <style scoped>
 .toast-container {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 9999;
+  top: max(1rem, calc(0.5rem + env(safe-area-inset-top)));
+  right: max(1rem, calc(0.5rem + env(safe-area-inset-right)));
+  z-index: var(--z-toast);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-width: 420px;
-  width: calc(100vw - 3rem);
+  max-width: 26rem;
+  width: calc(100vw - 2rem - env(safe-area-inset-left) - env(safe-area-inset-right));
   pointer-events: none;
 }
 
 .toast-item {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
   pointer-events: auto;
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
   padding: 0.9rem 1.1rem;
-  background: rgba(28, 28, 28, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--hairline-cool, #2a2a2a);
+  background: var(--canvas);
+  border: 1px solid var(--hairline-strong);
   border-radius: var(--radius-lg, 12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  color: var(--ink, #ffffff);
+  box-shadow: var(--shadow-lg);
+  color: var(--ink);
   font-size: 0.9rem;
   line-height: 1.4;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.toast-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
 }
 
 .toast-icon {
@@ -72,8 +70,9 @@ const toastStore = useToastStore()
 
 .toast-content {
   flex: 1;
+  min-width: 0;
   white-space: pre-line;
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .toast-message {
@@ -87,8 +86,13 @@ const toastStore = useToastStore()
   font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
+  width: 44px;
+  height: 44px;
   padding: 0;
-  margin-left: 0.5rem;
+  margin: -0.55rem -0.7rem -0.55rem 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: color 0.15s;
 }
 
@@ -98,23 +102,38 @@ const toastStore = useToastStore()
 
 /* Variant Styles */
 .toast-success {
-  border-left: 4px solid var(--primary, #3ecf8e);
-  background: linear-gradient(135deg, rgba(62, 207, 142, 0.12) 0%, rgba(28, 28, 28, 0.96) 100%);
+  border-color: var(--success);
 }
+.toast-success .toast-icon { color: var(--success); }
 
 .toast-error {
-  border-left: 4px solid var(--danger, #ff2201);
-  background: linear-gradient(135deg, rgba(255, 34, 1, 0.12) 0%, rgba(28, 28, 28, 0.96) 100%);
+  border-color: var(--danger);
 }
+.toast-error .toast-icon { color: var(--danger); }
 
 .toast-warning {
-  border-left: 4px solid var(--warning, #ffdb13);
-  background: linear-gradient(135deg, rgba(255, 219, 19, 0.12) 0%, rgba(28, 28, 28, 0.96) 100%);
+  border-color: var(--warning);
 }
+.toast-warning .toast-icon { color: var(--warning); }
 
 .toast-info {
-  border-left: 4px solid #3b82f6;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(28, 28, 28, 0.96) 100%);
+  border-color: var(--primary);
+}
+.toast-info .toast-icon { color: var(--primary); }
+
+@media (hover: hover) and (pointer: fine) {
+  .toast-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+@media (max-width: 30rem) {
+  .toast-container {
+    right: calc(0.5rem + env(safe-area-inset-right));
+    left: calc(0.5rem + env(safe-area-inset-left));
+    width: auto;
+  }
 }
 
 /* Animations */
@@ -131,5 +150,11 @@ const toastStore = useToastStore()
 .toast-slide-leave-to {
   opacity: 0;
   transform: translateY(-20px) scale(0.9);
+}
+
+@media (max-width: 30rem) {
+  .toast-slide-enter-from {
+    transform: translateY(-0.75rem);
+  }
 }
 </style>

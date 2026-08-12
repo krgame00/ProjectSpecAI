@@ -43,6 +43,23 @@ const selectImage = async (wrapper, file) => {
 }
 
 describe('ChatbotWindow access presentation', () => {
+  test('exposes the window and icon controls with accessible names', () => {
+    const wrapper = mount(ChatbotWindow, {
+      props: {
+        ...guestProps,
+        isAuthenticated: true,
+        isTyping: false
+      }
+    })
+
+    const dialog = wrapper.get('[role="dialog"]')
+    expect(dialog.attributes('aria-labelledby')).toBe('specai-title')
+    expect(wrapper.get('#specai-title').text()).toContain('SpecAI')
+    expect(wrapper.get('[aria-label="ปิด SpecAI"]')).toBeTruthy()
+    expect(wrapper.get('[aria-label="แนบรูปภาพ"]')).toBeTruthy()
+    expect(wrapper.get('[aria-label="ส่งข้อความ"]')).toBeTruthy()
+  })
+
   test('shows the guest message and CTA without member history or controls', () => {
     const wrapper = mount(ChatbotWindow, { props: guestProps })
 

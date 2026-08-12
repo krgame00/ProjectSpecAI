@@ -1,7 +1,7 @@
 <template>
   <div class="chatbot-container">
     <!-- Chatbot FAB -->
-    <button class="chat-fab" v-show="!isOpen" @click="$emit('toggle-chat', true)" title="เปิดแชตบอต SpecAI">
+    <button class="chat-fab" v-show="!isOpen" @click="$emit('toggle-chat', true)" aria-label="เปิด SpecAI">
       <div class="fab-glow"></div>
       <div class="fab-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 11.5C21 16.75 16.75 21 11.5 21C10.08 21 8.73 20.69 7.5 20.13L3 21L3.87 16.5C3.31 15.27 3 13.92 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.25 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="12" r="1" fill="currentColor"/><circle cx="12.5" cy="12" r="1" fill="currentColor"/><circle cx="16.5" cy="12" r="1" fill="currentColor"/></svg>
@@ -10,7 +10,13 @@
     </button>
 
     <!-- Chatbot Window -->
-    <div class="chatbot-wrapper" :class="{ 'is-open': isOpen }">
+    <div
+      class="chatbot-wrapper"
+      :class="{ 'is-open': isOpen }"
+      role="dialog"
+      aria-labelledby="specai-title"
+      :aria-hidden="!isOpen"
+    >
       <!-- Header -->
       <div class="chat-header">
         <div class="chat-header-left">
@@ -19,14 +25,14 @@
             <span>🤖</span>
           </div>
           <div class="header-info">
-            <span class="header-name">SpecAI</span>
+            <span id="specai-title" class="header-name">SpecAI</span>
             <span class="header-status">
               <span class="status-dot"></span>
               ออนไลน์ · พร้อมช่วยเหลือ
             </span>
           </div>
         </div>
-        <button class="close-chat-btn" @click="$emit('toggle-chat', false)">
+        <button class="close-chat-btn" aria-label="ปิด SpecAI" @click="$emit('toggle-chat', false)">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
       </div>
@@ -74,12 +80,12 @@
         <div class="image-preview" v-if="selectedImagePreview">
           <div class="image-preview-wrapper">
              <img :src="selectedImagePreview" />
-             <button class="clear-image-btn" @click="clearImage">✕</button>
+             <button class="clear-image-btn" aria-label="นำรูปภาพออก" @click="clearImage">✕</button>
           </div>
         </div>
         <div class="chat-input">
           <div class="input-wrapper">
-            <button class="attach-btn" @click="fileInput.click()" title="แนบรูปภาพ">
+            <button class="attach-btn" aria-label="แนบรูปภาพ" @click="fileInput.click()">
               📎
             </button>
             <input type="file" ref="fileInput" @change="handleFileChange" accept="image/*" style="display:none" />
@@ -90,7 +96,7 @@
               @keyup.enter="handleSend" 
               placeholder="พิมพ์เป้าหมาย เช่น เน้นเล่นเกม..."
             >
-            <button class="send-btn" @click="handleSend" :class="{ active: userInput.trim() || selectedImageBase64 }">
+            <button class="send-btn" aria-label="ส่งข้อความ" @click="handleSend" :class="{ active: userInput.trim() || selectedImageBase64 }">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
@@ -216,7 +222,8 @@ const handleSend = () => {
 .chatbot-container { position: relative; }
 .chat-fab { 
   position: fixed; 
-  bottom: 2rem; right: 2rem;
+  bottom: max(2rem, calc(1rem + env(safe-area-inset-bottom)));
+  right: max(2rem, calc(1rem + env(safe-area-inset-right)));
   width: 60px; height: 60px;
   border-radius: 50%;
   background: var(--canvas-night);
@@ -225,7 +232,7 @@ const handleSend = () => {
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow-lg);
-  z-index: 99;
+  z-index: var(--z-chat);
   transition: all var(--transition-normal);
 }
 .chat-fab:hover { 
@@ -248,7 +255,7 @@ const handleSend = () => {
   width: 400px; height: 580px;
   border-radius: var(--radius-lg);
   display: flex; flex-direction: column;
-  z-index: 100; overflow: hidden;
+  z-index: var(--z-chat); overflow: hidden;
   transform-origin: bottom right;
   transition: transform var(--transition-base), opacity var(--transition-base);
   opacity: 0; pointer-events: none; 
@@ -296,7 +303,7 @@ const handleSend = () => {
   background: transparent;
   border: 1px solid transparent;
   color: var(--ink-mute);
-  width: 32px; height: 32px;
+  width: 44px; height: 44px;
   border-radius: var(--radius-sm);
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
@@ -343,6 +350,7 @@ const handleSend = () => {
   font-family: var(--font-sans);
   font-weight: 600;
   cursor: pointer;
+  min-height: 44px;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 .guest-chat-access button:hover {
@@ -431,7 +439,7 @@ const handleSend = () => {
 .chat-input input::placeholder { color: var(--ink-faint); }
 .send-btn { 
   background: var(--canvas); border: 1px solid var(--hairline); color: var(--ink-mute);
-  width: 36px; height: 36px; border-radius: 50%;
+  width: 44px; height: 44px; border-radius: 50%;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
   transition: all var(--transition-fast); flex-shrink: 0;
 }
@@ -457,11 +465,13 @@ const handleSend = () => {
 .image-preview-wrapper img { height: 60px; border-radius: 8px; border: 1px solid var(--hairline-strong); }
 .clear-image-btn {
   position: absolute; top: -6px; right: -6px; background: var(--danger); color: white;
-  border: none; border-radius: 50%; width: 20px; height: 20px; font-size: 10px; cursor: pointer;
+  border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 14px; cursor: pointer;
+  transform: translate(12px, -12px);
 }
 .attach-btn {
   background: transparent; border: none; font-size: 1.2rem; cursor: pointer;
-  padding: 0 4px; color: var(--ink-mute); transition: color 0.2s;
+  width: 44px; height: 44px; padding: 0; color: var(--ink-mute); transition: color 0.2s;
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .attach-btn:hover { color: var(--primary); }
 
@@ -479,11 +489,28 @@ const handleSend = () => {
 }
 @media (max-width: 820px) {
   .chatbot-wrapper { 
-    bottom: 0; right: 0; left: 0; width: 100%; height: 75vh;
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    border: 0;
+  }
+  .chat-header {
+    padding-top: calc(0.75rem + env(safe-area-inset-top));
+    padding-right: calc(0.75rem + env(safe-area-inset-right));
+    padding-left: calc(0.75rem + env(safe-area-inset-left));
+  }
+  .chat-body,
+  .guest-chat-access {
+    padding-right: calc(1rem + env(safe-area-inset-right));
+    padding-left: calc(1rem + env(safe-area-inset-left));
   }
   .chat-input {
-    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    padding-right: calc(0.75rem + env(safe-area-inset-right));
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    padding-left: calc(0.75rem + env(safe-area-inset-left));
   }
+  .chat-input input { font-size: 1rem; }
 }
 </style>

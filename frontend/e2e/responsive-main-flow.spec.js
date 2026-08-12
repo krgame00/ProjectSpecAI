@@ -124,4 +124,43 @@ test('checkout stacks fields and summary on a phone', async ({ page }) => {
   await assertNoPageOverflow(page)
 })
 
+test('SpecAI becomes a safe full-screen workspace on a phone', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await prepareApi(page)
+  await page.goto('/build')
+  await page.getByRole('button', { name: 'เปิด SpecAI' }).click()
+
+  const dialog = page.getByRole('dialog', { name: 'SpecAI' })
+  const bounds = await dialog.boundingBox()
+  const close = await page.getByRole('button', { name: 'ปิด SpecAI' }).boundingBox()
+
+  expect(bounds.x).toBe(0)
+  expect(bounds.y).toBe(0)
+  expect(bounds.width).toBe(390)
+  expect(bounds.height).toBe(844)
+  expect(close.width).toBeGreaterThanOrEqual(44)
+  expect(close.height).toBeGreaterThanOrEqual(44)
+  await assertNoPageOverflow(page)
+})
+
+test('toast stays in the phone viewport with a touch-sized dismiss action', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await prepareApi(page)
+  await page.goto('/')
+  await page.locator('[data-test="nav-toggle"]').click()
+  await page.locator('#primary-navigation').getByRole('button', { name: 'เข้าสู่ระบบ' }).click()
+  await page.locator('.modal-body .btn-primary').click()
+
+  const toast = page.locator('.toast-warning')
+  await expect(toast).toBeVisible()
+  const bounds = await toast.boundingBox()
+  const close = await toast.getByRole('button', { name: 'ปิดการแจ้งเตือน' }).boundingBox()
+
+  expect(bounds.x).toBeGreaterThanOrEqual(0)
+  expect(bounds.x + bounds.width).toBeLessThanOrEqual(390)
+  expect(close.width).toBeGreaterThanOrEqual(44)
+  expect(close.height).toBeGreaterThanOrEqual(44)
+  await assertNoPageOverflow(page)
+})
+
 export { assertNoPageOverflow, prepareApi }
