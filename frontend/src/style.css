@@ -449,6 +449,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (pointer: coarse), (max-width: 63.99rem) {
+  button,
+  select,
   .btn,
   .touch-target,
   .close-btn,

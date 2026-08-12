@@ -64,7 +64,7 @@
           @toggle-chat="chatbotStore.toggle"
           @send-message="chatbotStore.sendMessage"
           @apply-build="chatbotStore.applyBuild"
-          @request-login="openLoginModal"
+          @request-login="openLoginFromChat"
         />
       </Transition>
     </router-view>
@@ -124,7 +124,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, computed } from 'vue';
+import { ref, reactive, onMounted, computed, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from './stores/auth';
 import { useBuilderStore } from './stores/builder';
@@ -184,6 +184,11 @@ const closeLoginModal = () => {
   showLoginModal.value = false
 }
 useDialogFocus(showLoginModal, authDialogRef, closeLoginModal, authReturnFocusRef)
+const openLoginFromChat = async () => {
+  chatbotStore.toggle(false)
+  await nextTick()
+  openLoginModal({ currentTarget: document.querySelector('.chat-fab') })
+}
 
 const categories = [
   { id: 'cpu', name: 'CPU', tooltip: 'สมองของระบบ' },

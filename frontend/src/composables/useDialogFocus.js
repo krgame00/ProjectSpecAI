@@ -8,11 +8,14 @@ const focusableSelector = [
   'textarea:not([disabled])',
   '[tabindex]:not([tabindex="-1"])'
 ].join(',')
+const dialogStack = []
 
 export function useDialogFocus(isOpen, dialogRef, close, returnFocusRef) {
+  const dialogToken = Symbol('dialog')
   let previousFocus = null
 
   const onKeydown = (event) => {
+    if (dialogStack.at(-1) !== dialogToken) return
     if (event.key === 'Escape') {
       event.preventDefault()
       close()
@@ -40,10 +43,16 @@ export function useDialogFocus(isOpen, dialogRef, close, returnFocusRef) {
   }
 
   const stopListening = () => document.removeEventListener('keydown', onKeydown)
+  const removeFromStack = () => {
+    const index = dialogStack.lastIndexOf(dialogToken)
+    if (index !== -1) dialogStack.splice(index, 1)
+  }
 
   watch(isOpen, async (open) => {
     if (open) {
       previousFocus = document.activeElement
+      removeFromStack()
+      dialogStack.push(dialogToken)
       await nextTick()
       document.addEventListener('keydown', onKeydown)
       const first = dialogRef.value?.querySelector(focusableSelector)
@@ -52,10 +61,14 @@ export function useDialogFocus(isOpen, dialogRef, close, returnFocusRef) {
     }
 
     stopListening()
+    removeFromStack()
     await nextTick()
     const returnTarget = returnFocusRef?.value || previousFocus
     if (returnTarget?.isConnected) returnTarget.focus()
   }, { immediate: true })
 
-  onBeforeUnmount(stopListening)
+  onBeforeUnmount(() => {
+    stopListening()
+    removeFromStack()
+  })
 }

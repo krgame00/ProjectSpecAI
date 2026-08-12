@@ -101,6 +101,9 @@ test.describe('phone overlay and focus lifecycle', () => {
       await expect(authDialog).toBeVisible()
       const firstAuthTab = authDialog.locator('.auth-tab').first()
       await expect(firstAuthTab).toBeFocused()
+      const authTabSize = await firstAuthTab.evaluate(element => ({ width: element.offsetWidth, height: element.offsetHeight }))
+      expect(authTabSize.width).toBeGreaterThanOrEqual(44)
+      expect(authTabSize.height).toBeGreaterThanOrEqual(44)
       await firstAuthTab.press('Shift+Tab')
       await expect(authDialog.locator('.modal-body .btn-primary')).toBeFocused()
       const authClose = await authDialog.getByRole('button', { name: 'ปิดหน้าต่างบัญชีผู้ใช้' }).evaluate(element => ({
@@ -127,8 +130,13 @@ test.describe('phone overlay and focus lifecycle', () => {
       await launcher.click()
       const specAi = page.getByRole('dialog', { name: 'SpecAI' })
       await expect(specAi).toBeVisible()
-      await specAi.press('Escape')
+      await expect(page.locator('.grid-layout')).toHaveAttribute('inert', '')
+      await specAi.getByRole('button', { name: 'เข้าสู่ระบบ' }).click()
       await expect(specAi).toBeHidden()
+      const nestedAuth = page.getByRole('dialog', { name: /บัญชีผู้ใช้ ForgeLabs/ })
+      await expect(nestedAuth).toBeVisible()
+      await nestedAuth.press('Escape')
+      await expect(nestedAuth).toBeHidden()
       await expect(launcher).toBeFocused()
       await assertNoPageOverflow(page)
     })
@@ -184,6 +192,14 @@ test('builder product cards remain readable at 320px', async ({ page }) => {
   const guidance = await page.locator('.tooltip-icon').boundingBox()
   expect(guidance.width).toBeGreaterThanOrEqual(44)
   expect(guidance.height).toBeGreaterThanOrEqual(44)
+  await product.locator('.details-btn').click()
+  const modalSelect = await page.locator('.btn-select-modal').evaluate(element => ({
+    width: element.offsetWidth,
+    height: element.offsetHeight
+  }))
+  expect(modalSelect.width).toBeGreaterThanOrEqual(44)
+  expect(modalSelect.height).toBeGreaterThanOrEqual(44)
+  await page.getByRole('button', { name: 'ปิดรายละเอียดสินค้า' }).click()
   await assertNoPageOverflow(page)
 })
 
