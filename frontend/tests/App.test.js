@@ -82,4 +82,57 @@ describe('App guest login request', () => {
     expect(wrapper.find('.modal-overlay').exists()).toBe(true)
     expect(wrapper.get('.auth-tab.active').text()).toContain('เข้าสู่ระบบ')
   })
+
+  test('toggles the mobile navigation with an explicit expanded state', async () => {
+    const router = { push: vi.fn() }
+    const wrapper = mount(App, {
+      global: {
+        plugins: [pinia],
+        provide: {
+          [routerKey]: router
+        },
+        mocks: {
+          $route: { path: '/' },
+          $router: router
+        },
+        stubs: {
+          RouterView: RouterViewStub
+        }
+      }
+    })
+
+    const toggle = wrapper.get('[data-test="nav-toggle"]')
+    expect(toggle.attributes('aria-expanded')).toBe('false')
+
+    await toggle.trigger('click')
+
+    expect(toggle.attributes('aria-expanded')).toBe('true')
+    expect(wrapper.get('#primary-navigation').classes()).toContain('is-open')
+  })
+
+  test('exposes authentication as a labelled modal dialog', async () => {
+    const router = { push: vi.fn() }
+    const wrapper = mount(App, {
+      global: {
+        plugins: [pinia],
+        provide: {
+          [routerKey]: router
+        },
+        mocks: {
+          $route: { path: '/' },
+          $router: router
+        },
+        stubs: {
+          RouterView: RouterViewStub
+        }
+      }
+    })
+
+    await wrapper.findAll('.nav-actions .btn-outline')[2].trigger('click')
+
+    const dialog = wrapper.get('[role="dialog"]')
+    expect(dialog.attributes('aria-modal')).toBe('true')
+    expect(dialog.attributes('aria-labelledby')).toBe('auth-dialog-title')
+    expect(wrapper.get('#auth-dialog-title').text()).not.toBe('')
+  })
 })

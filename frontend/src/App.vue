@@ -10,16 +10,27 @@
           <img src="/images/logo.png" alt="ForgeLabs Logo" style="height: 32px; width: auto; border-radius: 4px;">
           <div class="logo-text" style="display: flex; align-items: center;">Forge<span>Labs</span></div>
         </div>
-        <div class="nav-actions">
+        <button
+          type="button"
+          class="nav-toggle touch-target"
+          data-test="nav-toggle"
+          aria-controls="primary-navigation"
+          :aria-expanded="String(isNavOpen)"
+          aria-label="เปิดหรือปิดเมนูหลัก"
+          @click="toggleNav"
+        >
+          <span aria-hidden="true">{{ isNavOpen ? '×' : '☰' }}</span>
+        </button>
+        <div id="primary-navigation" :class="['nav-actions', { 'is-open': isNavOpen }]">
           <div class="nav-subtitle">ระบบจัดสเปคอัจฉริยะ พร้อม AI แนะนำ</div>
 
-          <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/build' }]" @click="$router.push('/build')">💻 จัดสเปค</button>
-          <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/articles' }]" @click="$router.push('/articles')">📰 บทความ</button>
+          <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/build' }]" @click="navigateTo('/build')">💻 จัดสเปค</button>
+          <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/articles' }]" @click="navigateTo('/articles')">📰 บทความ</button>
 
           <div v-if="currentUser" class="user-actions">
             <span v-if="userRole !== 'admin'" class="user-name">👤 {{ currentUser.name }}</span>
-            <button v-if="userRole === 'admin'" class="btn btn-primary btn-sm" @click="$router.push('/admin')">⚙️ หลังบ้านแอดมิน</button>
-            <button v-if="userRole !== 'admin'" class="btn btn-outline-primary btn-sm" @click="$router.push('/profile')">ข้อมูลส่วนตัว</button>
+            <button v-if="userRole === 'admin'" class="btn btn-primary btn-sm" @click="navigateTo('/admin')">⚙️ หลังบ้านแอดมิน</button>
+            <button v-if="userRole !== 'admin'" class="btn btn-outline-primary btn-sm" @click="navigateTo('/profile')">ข้อมูลส่วนตัว</button>
             <button class="btn btn-outline-danger btn-sm" @click="logout">ออกจากระบบ</button>
           </div>
           <div v-else>
@@ -59,7 +70,13 @@
     <!-- Auth Modal -->
     <Transition name="modal">
       <div class="modal-overlay" v-if="showLoginModal" @click.self="showLoginModal = false">
-      <div class="modal-content glass-panel">
+      <div
+        class="modal-content glass-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-dialog-title"
+      >
+        <h2 id="auth-dialog-title" class="sr-only">บัญชีผู้ใช้ ForgeLabs</h2>
         <div class="modal-header">
           <div class="auth-tabs">
             <button :class="['auth-tab', { active: authTab === 'login' }]" @click="authTab = 'login'">เข้าสู่ระบบ</button>
@@ -127,12 +144,27 @@ const currentUser = computed(() => authStore.user);
 const userRole = computed(() => authStore.user?.role || 'guest');
 
 const showLoginModal = ref(false);
+const isNavOpen = ref(false);
 const authTab = ref('login');
 const loginForm = reactive({ email: '', password: '' });
 const registerForm = reactive({ name: '', email: '', password: '' });
 const router = useRouter();
 
+const toggleNav = () => {
+  isNavOpen.value = !isNavOpen.value;
+};
+
+const closeNav = () => {
+  isNavOpen.value = false;
+};
+
+const navigateTo = (path) => {
+  closeNav();
+  router.push(path);
+};
+
 const openLoginModal = () => {
+  closeNav()
   authTab.value = 'login'
   showLoginModal.value = true
 }
@@ -209,6 +241,7 @@ const handleRegisterSubmit = async () => {
 };
 
 const logout = () => {
+  closeNav();
   authStore.logout();
   router.push('/');
 };
@@ -228,19 +261,33 @@ const handleCheckout = () => {
   position: fixed; 
   top: 0; left: 0; right: 0; bottom: 0; 
   background: rgba(23, 23, 23, 0.6); 
-  z-index: 200; 
+  z-index: var(--z-backdrop);
   display: flex; 
   align-items: center; 
-  justify-content: center; 
+  justify-content: center;
+  padding: max(1rem, env(safe-area-inset-top)) var(--page-gutter) max(1rem, env(safe-area-inset-bottom));
 }
 .modal-content { 
   border-radius: var(--radius-xl); 
-  width: 90%; 
+  width: min(100%, 420px);
   max-width: 420px; 
-  overflow: hidden; 
+  max-height: calc(100dvh - 2rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  overflow-y: auto;
   background: var(--canvas);
   border: 1px solid var(--hairline);
   box-shadow: var(--shadow-xl);
+}
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-sm);
+  background: var(--canvas);
+  color: var(--ink);
+  cursor: pointer;
 }
 .modal-header { 
   padding: 1.5rem 1.75rem 0; 
@@ -351,6 +398,25 @@ const handleCheckout = () => {
   border-radius: 50%;
   border-top-color: var(--primary);
   animation: spin 0.7s linear infinite;
+}
+
+@media (max-width: 767px) {
+  .nav-toggle { display: inline-flex; }
+  .nav-actions {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-lg) var(--page-gutter) max(var(--space-lg), env(safe-area-inset-bottom));
+    background: var(--canvas-soft);
+    border-bottom: 1px solid var(--hairline-cool);
+    box-shadow: var(--shadow-md);
+  }
+  .nav-actions.is-open { display: flex; }
+  .nav-actions .btn { width: 100%; }
+  .user-actions { flex-direction: column; align-items: stretch; }
+  .user-name { padding: var(--space-sm) 0; text-align: center; }
 }
 @keyframes spin {
   to { transform: rotate(360deg); }

@@ -134,6 +134,18 @@ textarea {
   outline-offset: 2px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   font-weight: 500;
@@ -358,6 +370,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: var(--space-lg) var(--space-xl);
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
 }
 .logo {
   font-size: var(--text-xl);
