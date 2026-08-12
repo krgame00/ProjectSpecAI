@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1528" width="930" height="1528" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">1. สมัครสมาชิก (User Registration)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 372 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="408" y="383" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="399" fill="#000000" font-size="12" font-weight="700">ถูกต้อง</text>
+  <path d="M 520 325 L 720 325 L 720 407 L 720 407 L 720 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="531" y="301" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="317" fill="#000000" font-size="12" font-weight="700">ไม่ถูกต้อง</text>
+  <path d="M 720 486 L 720 325 L 400 325 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 600 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="408" y="765" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">ไม่ซ้ำ</text>
+  <path d="M 520 707 L 720 707 L 720 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="531" y="683" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">อีเมลซ้ำ</text>
+  <path d="M 720 868 L 720 516 L 400 516 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 982 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 1096 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 1324 L 400 1384" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกข้อมูลสมัครสมาชิก</text>
+  </g>
+  <g>
+    <polygon points="400,278 520,325 400,372 280,325" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="278" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="325" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="372" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="325" r="3.5" fill="#000000"/>
+    <text x="400" y="330" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจความถูกต้องบนหน้าเว็บ</text>
+  </g>
+  <g>
+    <polygon points="608,432 850,432 832,486 590,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแจ้งเตือนข้อมูลไม่ถูกต้อง</text>
+  </g>
+  <g>
+    <rect x="270" y="546" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API POST /api/auth/register</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจอีเมลซ้ำใน MySQL</text>
+  </g>
+  <g>
+    <polygon points="608,814 850,814 832,868 590,868" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแจ้งเตือนอีเมลนี้ถูกใช้แล้ว</text>
+  </g>
+  <g>
+    <rect x="270" y="928" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="960" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เข้ารหัสผ่านด้วย bcrypt</text>
+  </g>
+  <g>
+    <rect x="270" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกข้อมูลลงตาราง users</text>
+  </g>
+  <g>
+    <polygon points="288,1156 530,1156 512,1210 270,1210" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงข้อความ สมัครสมาชิกสำเร็จ</text>
+  </g>
+  <g>
+    <rect x="270" y="1270" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1302" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">นำไปยังหน้าเข้าสู่ระบบ (Login)</text>
+  </g>
+  <g>
+    <rect x="320" y="1384" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1411" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>

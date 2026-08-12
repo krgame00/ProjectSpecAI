@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>PCSpec Database ER Diagram Studio (MySQL smart_pc_builder)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border: #ced4da;
+      --text: #212529;
+      --text-header: #000000;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 30px;
+    }
+    header {
+      max-width: 1060px;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h1 {
+      color: var(--text-header);
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: #495057;
+      font-size: 15px;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .btn {
+      background: #212529;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #343a40;
+    }
+    .btn-drawio {
+      background: #0d6efd;
+    }
+    .btn-drawio:hover {
+      background: #0b5ed7;
+    }
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: #e9ecef;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .card-header h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #000000;
+    }
+    .svg-container {
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🗄️ Smart PC Builder - Database ER Diagram (MySQL)</h1>
+    <p class="subtitle">แผนผังความสัมพันธ์ตารางข้อมูล (Entity-Relationship Diagram) สำหรับระบบ PCSpec</p>
+    <div class="btn-group">
+      <a href="./drawio/smart_pc_builder_er_diagram.drawio" download="smart_pc_builder_er_diagram.drawio" class="btn btn-drawio">✏️ ดาวน์โหลดไฟล์ไปแก้ไขใน Draw.io (.drawio)</a>
+      <a href="./er_diagram.svg" download="smart_pc_builder_er_diagram.svg" class="btn">📥 ดาวน์โหลดรูปภาพ SVG ขาวดำ</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2>ER Diagram Preview (Clean Monochrome Academic Theme)</h2>
+      </div>
+      <div class="svg-container">
+        <img src="./er_diagram.svg" alt="ER Diagram" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>

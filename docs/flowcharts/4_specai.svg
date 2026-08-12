@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1260" width="880" height="1260" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">4. ใช้ระบบ SpecAI ช่วยจัดสเปค (AI Spec Generator)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 674 L 400 734" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 788 L 400 848" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 942 L 400 1002" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <rect x="408" y="953" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="969" fill="#000000" font-size="12" font-weight="700">พึงพอใจ</text>
+  <path d="M 520 895 L 620 895 L 620 253 L 400 253 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <rect x="531" y="871" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="887" fill="#000000" font-size="12" font-weight="700">ไม่พึงพอใจ</text>
+  <path d="M 400 1056 L 400 1116" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เปิดหน้าต่าง SpecAI</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ระบุงบประมาณ &amp; วัตถุประสงค์</text>
+  </g>
+  <g>
+    <rect x="270" y="392" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง POST /api/chatbot/generate-spec</text>
+  </g>
+  <g>
+    <rect x="270" y="506" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">Backend ดึงสินค้าจาก MySQL</text>
+  </g>
+  <g>
+    <rect x="270" y="620" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="652" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง Prompt ให้ Gemini AI จัดสเปค</text>
+  </g>
+  <g>
+    <polygon points="288,734 530,734 512,788 270,788" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="766" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงสเปคคอมจัดโดย AI (JSON)</text>
+  </g>
+  <g>
+    <polygon points="400,848 520,895 400,942 280,895" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="848" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="895" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="942" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="895" r="3.5" fill="#000000"/>
+    <text x="400" y="900" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">พึงพอใจสเปคนี้หรือไม่?</text>
+  </g>
+  <g>
+    <rect x="270" y="1002" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1034" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">นำสเปคเข้า Builder Store อัตโนมัติ</text>
+  </g>
+  <g>
+    <rect x="320" y="1116" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1143" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>

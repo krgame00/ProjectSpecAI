@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1642" width="930" height="1642" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">9. ระบบสั่งซื้อ (Order &amp; Checkout System)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 372 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="408" y="383" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="399" fill="#000000" font-size="12" font-weight="700">มีสินค้า</text>
+  <path d="M 520 325 L 620 325 L 620 407 L 720 407 L 720 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="531" y="301" width="137" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="317" fill="#000000" font-size="12" font-weight="700">ไม่มีสินค้า</text>
+  <path d="M 400 600 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="408" y="765" width="181" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">เข้าสู่ระบบแล้ว</text>
+  <path d="M 520 707 L 620 707 L 620 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="531" y="683" width="203" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">ยังไม่เข้าสู่ระบบ</text>
+  <path d="M 720 868 L 720 764 L 400 764 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 982 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1096 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1324 L 400 1384" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1438 L 400 1498" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 720 486 L 720 992 L 400 992 L 400 1498" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ตรวจสอบรายการสินค้าในสเปค</text>
+  </g>
+  <g>
+    <polygon points="400,278 520,325 400,372 280,325" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="278" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="325" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="372" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="325" r="3.5" fill="#000000"/>
+    <text x="400" y="330" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">มีรายการสินค้าหรือไม่?</text>
+  </g>
+  <g>
+    <polygon points="608,432 850,432 832,486 590,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือน: โปรดเลือกสินค้าก่อน</text>
+  </g>
+  <g>
+    <polygon points="288,546 530,546 512,600 270,600" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กดปุ่มสั่งซื้อสินค้า (Checkout)</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">เข้าสู่ระบบ (Login) หรือยัง?</text>
+  </g>
+  <g>
+    <polygon points="608,814 850,814 832,868 590,868" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงหน้าต่างเข้าสู่ระบบก่อน</text>
+  </g>
+  <g>
+    <polygon points="288,928 530,928 512,982 270,982" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="960" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกที่อยู่จัดส่ง &amp; วิธีชำระเงิน</text>
+  </g>
+  <g>
+    <rect x="270" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API POST /api/orders</text>
+  </g>
+  <g>
+    <rect x="270" y="1156" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกคำสั่งซื้อลงตาราง orders</text>
+  </g>
+  <g>
+    <rect x="270" y="1270" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1302" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ล้างข้อมูลสเปคในตะกร้า</text>
+  </g>
+  <g>
+    <polygon points="288,1384 530,1384 512,1438 270,1438" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1416" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงสั่งซื้อสำเร็จ พร้อม Order ID</text>
+  </g>
+  <g>
+    <rect x="320" y="1498" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1525" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>

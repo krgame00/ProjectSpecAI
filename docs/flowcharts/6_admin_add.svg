@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1414" width="930" height="1414" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">6. ระบบเพิ่มข้อมูลอุปกรณ์ (Admin Add Hardware)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 258 L 400 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="408" y="269" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="285" fill="#000000" font-size="12" font-weight="700">เป็น Admin</text>
+  <path d="M 520 211 L 620 211 L 620 293 L 720 293 L 720 318" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="531" y="187" width="148" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="203" fill="#000000" font-size="12" font-weight="700">ไม่ใช่ Admin</text>
+  <path d="M 400 486 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 600 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="408" y="765" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">ไม่มีรูป</text>
+  <path d="M 520 707 L 620 707 L 620 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="531" y="683" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">มีรูปภาพ</text>
+  <path d="M 720 868 L 720 955 L 400 955 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 982 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 1096 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 720 372 L 720 821 L 400 821 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="400,164 520,211 400,258 280,211" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="164" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="211" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="258" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="211" r="3.5" fill="#000000"/>
+    <text x="400" y="216" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจสอบสิทธิ์ Admin</text>
+  </g>
+  <g>
+    <polygon points="608,318 850,318 832,372 590,372" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="350" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือน: ปฏิเสธการเข้าถึง</text>
+  </g>
+  <g>
+    <polygon points="288,432 530,432 512,486 270,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงฟอร์มเพิ่มข้อมูลอุปกรณ์</text>
+  </g>
+  <g>
+    <polygon points="288,546 530,546 512,600 270,600" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกชื่อ, หมวดหมู่, ราคา, TDP</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">มีการอัปโหลดรูปภาพหรือไม่?</text>
+  </g>
+  <g>
+    <rect x="590" y="814" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">อัปโหลดภาพไปที่ /api/upload</text>
+  </g>
+  <g>
+    <rect x="270" y="928" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="960" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ใช้ Path รูปภาพตั้งต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกคำขอ POST /api/hardware</text>
+  </g>
+  <g>
+    <polygon points="288,1156 530,1156 512,1210 270,1210" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงข้อความ เพิ่มอุปกรณ์สำเร็จ</text>
+  </g>
+  <g>
+    <rect x="320" y="1270" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1297" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>

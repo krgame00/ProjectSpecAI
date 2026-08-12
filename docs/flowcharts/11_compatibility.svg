@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1836" width="930" height="1836" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_11" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">11. ระบบตรวจความเข้ากันได้ของอุปกรณ์ (Hardware Compatibility Check)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 486 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="497" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="513" fill="#000000" font-size="12" font-weight="700">ตรงกัน</text>
+  <path d="M 520 439 L 620 439 L 620 521 L 720 521 L 720 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="415" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="431" fill="#000000" font-size="12" font-weight="700">ไม่ตรงกัน</text>
+  <path d="M 720 600 L 720 630 L 400 630 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="765" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">รองรับ</text>
+  <path d="M 520 707 L 620 707 L 620 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="683" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">ไม่รองรับ</text>
+  <path d="M 720 868 L 720 898 L 400 898 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 1022 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="1033" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1049" fill="#000000" font-size="12" font-weight="700">เพียงพอ</text>
+  <path d="M 520 975 L 620 975 L 620 1057 L 720 1057 L 720 1082" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="951" width="71" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="967" fill="#000000" font-size="12" font-weight="700">ไม่พอ</text>
+  <path d="M 720 1136 L 720 1166 L 400 1166 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 1250 L 400 1310" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 1404 L 400 1464" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="1415" width="181" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1431" fill="#000000" font-size="12" font-weight="700">เข้ากันได้ 100%</text>
+  <path d="M 520 1357 L 620 1357 L 620 1553 L 720 1553 L 720 1578" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="1333" width="148" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="1349" fill="#000000" font-size="12" font-weight="700">พบข้อผิดพลาด</text>
+  <path d="M 400 1518 L 400 1692" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 720 1632 L 720 1662 L 400 1662 L 400 1692" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="164" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เฝ้าติดตาม Builder Store Real-time</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">มีการเพิ่ม/ลบ/เปลี่ยนอุปกรณ์</text>
+  </g>
+  <g>
+    <polygon points="400,392 520,439 400,486 280,439" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="392" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="439" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="486" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="439" r="3.5" fill="#000000"/>
+    <text x="400" y="444" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">1. ตรวจ Socket CPU กับ Mainboard</text>
+  </g>
+  <g>
+    <rect x="590" y="546" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกเตือน: Socket ไม่ตรงกัน</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">2. ตรวจ RAM Type กับ Mainboard</text>
+  </g>
+  <g>
+    <rect x="590" y="814" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกเตือน: RAM Type ไม่รองรับ</text>
+  </g>
+  <g>
+    <polygon points="400,928 520,975 400,1022 280,975" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="928" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="975" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="1022" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="975" r="3.5" fill="#000000"/>
+    <text x="400" y="980" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">3. คำนวณ TDP รวมกับ PSU Watt</text>
+  </g>
+  <g>
+    <rect x="590" y="1082" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1114" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกเตือน: PSU Watt ไม่พอ</text>
+  </g>
+  <g>
+    <rect x="270" y="1196" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1228" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">รวบรวมผลการตรวจสอบทั้งหมด</text>
+  </g>
+  <g>
+    <polygon points="400,1310 520,1357 400,1404 280,1357" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="1310" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="1357" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="1404" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="1357" r="3.5" fill="#000000"/>
+    <text x="400" y="1362" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">พบข้อผิดพลาด ความไม่เข้ากันหรือไม่?</text>
+  </g>
+  <g>
+    <polygon points="288,1464 530,1464 512,1518 270,1518" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1496" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแถบเขียว: เข้ากันได้ 100%</text>
+  </g>
+  <g>
+    <polygon points="608,1578 850,1578 832,1632 590,1632" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1610" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแถบเตือนสีแดง/ส้ม พร้อมวิธีแก้</text>
+  </g>
+  <g>
+    <rect x="320" y="1692" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1719" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>PCSpec Standard Flowchart Studio (Black & White Monochrome Academic Theme)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border: #ced4da;
+      --text: #212529;
+      --text-header: #000000;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 30px;
+    }
+    header {
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h1 {
+      color: var(--text-header);
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: #495057;
+      font-size: 15px;
+    }
+    .badge-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .badge {
+      display: inline-block;
+      background: #212529;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+    .badge-drawio {
+      background: #0d6efd;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: #e9ecef;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .card-header h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #000000;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      background: #212529;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #343a40;
+    }
+    .btn-drawio {
+      background: #0d6efd;
+    }
+    .btn-drawio:hover {
+      background: #0b5ed7;
+    }
+    .svg-container {
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+      overflow-x: auto;
+    }
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📐 PCSpec Standard Flowcharts (Black & White Academic Style)</h1>
+    <p class="subtitle">สไตล์ขาวดำเรียบหรู สำหรับใส่เล่มรายงานวิชาการ ปริญญานิพนธ์ และสไลด์นำเสนอ</p>
+    <div class="badge-group">
+      <span class="badge">✓ สไตล์ขาวดำ ล็อกมุมแหลม (Vertices) 100%</span>
+      <a href="./drawio/pcspec_all_11_flowcharts.drawio" download="pcspec_all_11_flowcharts.drawio" class="badge badge-drawio">✏️ ดาวน์โหลดไฟล์ขาวดำรวม (.drawio) ไปแก้ไขต่อใน Draw.io</a>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <section class="card" id="card_1">
+      <div class="card-header">
+        <h2>1. สมัครสมาชิก (User Registration)</h2>
+        <div class="btn-group">
+          <a href="./drawio/1_register.drawio" download="1_register.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/1_register.svg" download="1_register.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1528" width="930" height="1528" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">1. สมัครสมาชิก (User Registration)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 372 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="408" y="383" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="399" fill="#000000" font-size="12" font-weight="700">ถูกต้อง</text>
+  <path d="M 520 325 L 720 325 L 720 407 L 720 407 L 720 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="531" y="301" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="317" fill="#000000" font-size="12" font-weight="700">ไม่ถูกต้อง</text>
+  <path d="M 720 486 L 720 325 L 400 325 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 600 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="408" y="765" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">ไม่ซ้ำ</text>
+  <path d="M 520 707 L 720 707 L 720 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <rect x="531" y="683" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">อีเมลซ้ำ</text>
+  <path d="M 720 868 L 720 516 L 400 516 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 982 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 1096 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <path d="M 400 1324 L 400 1384" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_1)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกข้อมูลสมัครสมาชิก</text>
+  </g>
+  <g>
+    <polygon points="400,278 520,325 400,372 280,325" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="278" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="325" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="372" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="325" r="3.5" fill="#000000"/>
+    <text x="400" y="330" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจความถูกต้องบนหน้าเว็บ</text>
+  </g>
+  <g>
+    <polygon points="608,432 850,432 832,486 590,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแจ้งเตือนข้อมูลไม่ถูกต้อง</text>
+  </g>
+  <g>
+    <rect x="270" y="546" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API POST /api/auth/register</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจอีเมลซ้ำใน MySQL</text>
+  </g>
+  <g>
+    <polygon points="608,814 850,814 832,868 590,868" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแจ้งเตือนอีเมลนี้ถูกใช้แล้ว</text>
+  </g>
+  <g>
+    <rect x="270" y="928" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="960" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เข้ารหัสผ่านด้วย bcrypt</text>
+  </g>
+  <g>
+    <rect x="270" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกข้อมูลลงตาราง users</text>
+  </g>
+  <g>
+    <polygon points="288,1156 530,1156 512,1210 270,1210" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงข้อความ สมัครสมาชิกสำเร็จ</text>
+  </g>
+  <g>
+    <rect x="270" y="1270" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1302" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">นำไปยังหน้าเข้าสู่ระบบ (Login)</text>
+  </g>
+  <g>
+    <rect x="320" y="1384" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1411" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_2">
+      <div class="card-header">
+        <h2>2. เข้าสู่ระบบ (User Login &amp; JWT Auth)</h2>
+        <div class="btn-group">
+          <a href="./drawio/2_login.drawio" download="2_login.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/2_login.svg" download="2_login.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1414" width="930" height="1414" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">2. เข้าสู่ระบบ (User Login &amp; JWT Auth)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 400 486 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <rect x="408" y="497" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="513" fill="#000000" font-size="12" font-weight="700">ถูกต้อง</text>
+  <path d="M 520 439 L 720 439 L 720 521 L 720 521 L 720 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <rect x="531" y="415" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="431" fill="#000000" font-size="12" font-weight="700">ไม่ถูกต้อง</text>
+  <path d="M 720 600 L 720 382 L 400 382 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 400 714 L 400 774" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 400 828 L 400 888" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 400 982 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <rect x="408" y="993" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1009" fill="#000000" font-size="12" font-weight="700">Customer</text>
+  <path d="M 520 935 L 720 935 L 720 1017 L 720 1017 L 720 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <rect x="531" y="911" width="71" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="927" fill="#000000" font-size="12" font-weight="700">Admin</text>
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <path d="M 720 1096 L 720 1183 L 400 1183 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_2)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอก อีเมล และ รหัสผ่าน</text>
+  </g>
+  <g>
+    <rect x="270" y="278" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API POST /api/auth/login</text>
+  </g>
+  <g>
+    <polygon points="400,392 520,439 400,486 280,439" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="392" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="439" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="486" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="439" r="3.5" fill="#000000"/>
+    <text x="400" y="444" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจสอบข้อมูลในฐานข้อมูล</text>
+  </g>
+  <g>
+    <polygon points="608,546 850,546 832,600 590,600" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือนอีเมล/รหัสผ่านผิด</text>
+  </g>
+  <g>
+    <rect x="270" y="660" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="692" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">สร้าง JWT Token &amp; ดึง Role</text>
+  </g>
+  <g>
+    <rect x="270" y="774" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="806" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกลง localStorage/Pinia</text>
+  </g>
+  <g>
+    <polygon points="400,888 520,935 400,982 280,935" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="888" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="935" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="982" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="935" r="3.5" fill="#000000"/>
+    <text x="400" y="940" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจสอบสิทธิ์ Role</text>
+  </g>
+  <g>
+    <rect x="590" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ไปหน้า Admin (/admin)</text>
+  </g>
+  <g>
+    <rect x="270" y="1156" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ไปหน้า Builder (/build)</text>
+  </g>
+  <g>
+    <rect x="320" y="1270" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1297" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_3">
+      <div class="card-header">
+        <h2>3. จัดสเปคด้วยตนเอง (Manual PC Builder)</h2>
+        <div class="btn-group">
+          <a href="./drawio/3_builder.drawio" download="3_builder.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/3_builder.svg" download="3_builder.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1374" width="880" height="1374" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">3. จัดสเปคด้วยตนเอง (Manual PC Builder)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 674 L 400 734" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 788 L 400 848" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 902 L 400 962" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 1056 L 400 1116" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <rect x="408" y="1067" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1083" fill="#000000" font-size="12" font-weight="700">เสร็จสิ้น</text>
+  <path d="M 520 1009 L 620 1009 L 620 367 L 400 367 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <rect x="531" y="985" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="1001" fill="#000000" font-size="12" font-weight="700">จัดเพิ่ม</text>
+  <path d="M 400 1170 L 400 1230" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="164" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ดึงแคตตาล็อกอุปกรณ์จาก MySQL</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงหน้าจัดสเปค 8 หมวดหมู่</text>
+  </g>
+  <g>
+    <polygon points="288,392 530,392 512,446 270,446" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เลือกหมวดหมู่อุปกรณ์</text>
+  </g>
+  <g>
+    <polygon points="288,506 530,506 512,560 270,560" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">คลิกเลือกอุปกรณ์เข้าสเปค</text>
+  </g>
+  <g>
+    <rect x="270" y="620" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="652" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เพิ่มอุปกรณ์ลง Builder Store</text>
+  </g>
+  <g>
+    <rect x="270" y="734" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="766" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">คำนวณราคารวม &amp; Wattage รวม</text>
+  </g>
+  <g>
+    <rect x="270" y="848" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="880" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เรียกตรวจความเข้ากันได้</text>
+  </g>
+  <g>
+    <polygon points="400,962 520,1009 400,1056 280,1009" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="962" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="1009" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="1056" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="1009" r="3.5" fill="#000000"/>
+    <text x="400" y="1014" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ต้องการจัดอุปกรณ์เพิ่มหรือไม่?</text>
+  </g>
+  <g>
+    <polygon points="288,1116 530,1116 512,1170 270,1170" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1148" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงสเปคคอมพิวเตอร์สมบูรณ์</text>
+  </g>
+  <g>
+    <rect x="320" y="1230" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1257" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_4">
+      <div class="card-header">
+        <h2>4. ใช้ระบบ SpecAI ช่วยจัดสเปค (AI Spec Generator)</h2>
+        <div class="btn-group">
+          <a href="./drawio/4_specai.drawio" download="4_specai.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/4_specai.svg" download="4_specai.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1260" width="880" height="1260" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">4. ใช้ระบบ SpecAI ช่วยจัดสเปค (AI Spec Generator)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 674 L 400 734" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 788 L 400 848" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <path d="M 400 942 L 400 1002" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <rect x="408" y="953" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="969" fill="#000000" font-size="12" font-weight="700">พึงพอใจ</text>
+  <path d="M 520 895 L 620 895 L 620 253 L 400 253 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <rect x="531" y="871" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="887" fill="#000000" font-size="12" font-weight="700">ไม่พึงพอใจ</text>
+  <path d="M 400 1056 L 400 1116" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_4)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เปิดหน้าต่าง SpecAI</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ระบุงบประมาณ &amp; วัตถุประสงค์</text>
+  </g>
+  <g>
+    <rect x="270" y="392" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง POST /api/chatbot/generate-spec</text>
+  </g>
+  <g>
+    <rect x="270" y="506" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">Backend ดึงสินค้าจาก MySQL</text>
+  </g>
+  <g>
+    <rect x="270" y="620" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="652" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง Prompt ให้ Gemini AI จัดสเปค</text>
+  </g>
+  <g>
+    <polygon points="288,734 530,734 512,788 270,788" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="766" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงสเปคคอมจัดโดย AI (JSON)</text>
+  </g>
+  <g>
+    <polygon points="400,848 520,895 400,942 280,895" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="848" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="895" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="942" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="895" r="3.5" fill="#000000"/>
+    <text x="400" y="900" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">พึงพอใจสเปคนี้หรือไม่?</text>
+  </g>
+  <g>
+    <rect x="270" y="1002" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1034" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">นำสเปคเข้า Builder Store อัตโนมัติ</text>
+  </g>
+  <g>
+    <rect x="320" y="1116" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1143" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_5">
+      <div class="card-header">
+        <h2>5. ใช้แชตบอทถามข้อมูลเกี่ยวกับคอม (AI Hardware Chatbot)</h2>
+        <div class="btn-group">
+          <a href="./drawio/5_chatbot.drawio" download="5_chatbot.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/5_chatbot.svg" download="5_chatbot.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1146" width="880" height="1146" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">5. ใช้แชตบอทถามข้อมูลเกี่ยวกับคอม (AI Hardware Chatbot)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 674 L 400 734" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 788 L 400 848" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <path d="M 400 942 L 400 1002" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <rect x="408" y="953" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="969" fill="#000000" font-size="12" font-weight="700">ปิดแชต</text>
+  <path d="M 520 895 L 620 895 L 620 253 L 400 253 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_5)" />
+  <rect x="531" y="871" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="887" fill="#000000" font-size="12" font-weight="700">ถามเพิ่ม</text>
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เปิดหน้าต่าง AI Chatbot</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">พิมพ์คำถามเกี่ยวกับคอมพิวเตอร์</text>
+  </g>
+  <g>
+    <rect x="270" y="392" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง POST /api/chatbot/message</text>
+  </g>
+  <g>
+    <rect x="270" y="506" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">Backend แนบ Context สินค้าจาก DB</text>
+  </g>
+  <g>
+    <rect x="270" y="620" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="652" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่งคำถาม + Context ให้ Gemini</text>
+  </g>
+  <g>
+    <polygon points="288,734 530,734 512,788 270,788" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="766" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงข้อความคำตอบบนหน้าต่างแชต</text>
+  </g>
+  <g>
+    <polygon points="400,848 520,895 400,942 280,895" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="848" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="895" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="942" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="895" r="3.5" fill="#000000"/>
+    <text x="400" y="900" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ต้องการถามเพิ่มเติมหรือไม่?</text>
+  </g>
+  <g>
+    <rect x="320" y="1002" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1029" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_6">
+      <div class="card-header">
+        <h2>6. ระบบเพิ่มข้อมูลอุปกรณ์ (Admin Add Hardware)</h2>
+        <div class="btn-group">
+          <a href="./drawio/6_admin_add.drawio" download="6_admin_add.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/6_admin_add.svg" download="6_admin_add.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1414" width="930" height="1414" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">6. ระบบเพิ่มข้อมูลอุปกรณ์ (Admin Add Hardware)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 258 L 400 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="408" y="269" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="285" fill="#000000" font-size="12" font-weight="700">เป็น Admin</text>
+  <path d="M 520 211 L 620 211 L 620 293 L 720 293 L 720 318" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="531" y="187" width="148" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="203" fill="#000000" font-size="12" font-weight="700">ไม่ใช่ Admin</text>
+  <path d="M 400 486 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 600 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="408" y="765" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">ไม่มีรูป</text>
+  <path d="M 520 707 L 620 707 L 620 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <rect x="531" y="683" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">มีรูปภาพ</text>
+  <path d="M 720 868 L 720 955 L 400 955 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 982 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 1096 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <path d="M 720 372 L 720 821 L 400 821 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_6)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="400,164 520,211 400,258 280,211" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="164" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="211" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="258" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="211" r="3.5" fill="#000000"/>
+    <text x="400" y="216" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจสอบสิทธิ์ Admin</text>
+  </g>
+  <g>
+    <polygon points="608,318 850,318 832,372 590,372" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="350" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือน: ปฏิเสธการเข้าถึง</text>
+  </g>
+  <g>
+    <polygon points="288,432 530,432 512,486 270,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงฟอร์มเพิ่มข้อมูลอุปกรณ์</text>
+  </g>
+  <g>
+    <polygon points="288,546 530,546 512,600 270,600" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกชื่อ, หมวดหมู่, ราคา, TDP</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">มีการอัปโหลดรูปภาพหรือไม่?</text>
+  </g>
+  <g>
+    <rect x="590" y="814" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">อัปโหลดภาพไปที่ /api/upload</text>
+  </g>
+  <g>
+    <rect x="270" y="928" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="960" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ใช้ Path รูปภาพตั้งต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกคำขอ POST /api/hardware</text>
+  </g>
+  <g>
+    <polygon points="288,1156 530,1156 512,1210 270,1210" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงข้อความ เพิ่มอุปกรณ์สำเร็จ</text>
+  </g>
+  <g>
+    <rect x="320" y="1270" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1297" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_7">
+      <div class="card-header">
+        <h2>7. ระบบแก้ไขข้อมูลอุปกรณ์ (Admin Edit &amp; Delete Hardware)</h2>
+        <div class="btn-group">
+          <a href="./drawio/7_admin_edit.drawio" download="7_admin_edit.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/7_admin_edit.svg" download="7_admin_edit.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1454" width="930" height="1454" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">7. ระบบแก้ไขข้อมูลอุปกรณ์ (Admin Edit &amp; Delete Hardware)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 258 L 400 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="408" y="269" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="285" fill="#000000" font-size="12" font-weight="700">เป็น Admin</text>
+  <path d="M 520 211 L 620 211 L 620 293 L 720 293 L 720 318" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="531" y="187" width="148" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="203" fill="#000000" font-size="12" font-weight="700">ไม่ใช่ Admin</text>
+  <path d="M 400 486 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 640 L 400 700" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="408" y="651" width="137" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="667" fill="#000000" font-size="12" font-weight="700">แก้ไขข้อมูล</text>
+  <path d="M 520 593 L 620 593 L 620 903 L 720 903 L 720 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="531" y="569" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="585" fill="#000000" font-size="12" font-weight="700">ลบอุปกรณ์</text>
+  <path d="M 400 754 L 400 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 868 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 720 1022 L 720 1082" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="728" y="1033" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="736" y="1049" fill="#000000" font-size="12" font-weight="700">ยืนยัน</text>
+  <path d="M 840 975 L 940 975 L 940 407 L 400 407 L 400 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="851" y="951" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="859" y="967" fill="#000000" font-size="12" font-weight="700">ยกเลิก</text>
+  <path d="M 720 1136 L 720 1166 L 400 1166 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 1250 L 400 1310" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 720 372 L 720 841 L 400 841 L 400 1310" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="400,164 520,211 400,258 280,211" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="164" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="211" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="258" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="211" r="3.5" fill="#000000"/>
+    <text x="400" y="216" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจสอบสิทธิ์ Admin</text>
+  </g>
+  <g>
+    <polygon points="608,318 850,318 832,372 590,372" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="350" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือน: ปฏิเสธการเข้าถึง</text>
+  </g>
+  <g>
+    <polygon points="288,432 530,432 512,486 270,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงรายการฮาร์ดแวร์ทั้งหมด</text>
+  </g>
+  <g>
+    <polygon points="400,546 520,593 400,640 280,593" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="546" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="593" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="640" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="593" r="3.5" fill="#000000"/>
+    <text x="400" y="598" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">เลือกคำสั่งการทำงาน</text>
+  </g>
+  <g>
+    <polygon points="288,700 530,700 512,754 270,754" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="732" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกข้อมูลแก้ไขในฟอร์ม</text>
+  </g>
+  <g>
+    <rect x="270" y="814" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API PUT /api/hardware/:id</text>
+  </g>
+  <g>
+    <polygon points="720,928 840,975 720,1022 600,975" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="720" cy="928" r="3.5" fill="#000000"/>
+    <circle cx="840" cy="975" r="3.5" fill="#000000"/>
+    <circle cx="720" cy="1022" r="3.5" fill="#000000"/>
+    <circle cx="600" cy="975" r="3.5" fill="#000000"/>
+    <text x="720" y="980" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ยืนยันการลบสินค้า?</text>
+  </g>
+  <g>
+    <rect x="590" y="1082" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1114" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API DELETE /api/hardware/:id</text>
+  </g>
+  <g>
+    <rect x="270" y="1196" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1228" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">อัปเดตตารางสินค้าล่าสุด</text>
+  </g>
+  <g>
+    <rect x="320" y="1310" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1337" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_8">
+      <div class="card-header">
+        <h2>8. ระบบบทความ (Articles &amp; Tech News)</h2>
+        <div class="btn-group">
+          <a href="./drawio/8_articles.drawio" download="8_articles.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/8_articles.svg" download="8_articles.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 992" width="880" height="992" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">8. ระบบบทความ (Articles &amp; Tech News)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <path d="M 400 674 L 400 734" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <path d="M 400 788 L 400 848" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_8)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="164" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ผู้ใช้เข้าสู่หน้าบทความ /articles</text>
+  </g>
+  <g>
+    <rect x="270" y="278" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API GET /api/articles</text>
+  </g>
+  <g>
+    <polygon points="288,392 530,392 512,446 270,446" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงรายการการ์ดข่าวสารไอที</text>
+  </g>
+  <g>
+    <polygon points="288,506 530,506 512,560 270,560" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">คลิกเลือกบทความที่สนใจ</text>
+  </g>
+  <g>
+    <rect x="270" y="620" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="652" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API GET /api/articles/:id</text>
+  </g>
+  <g>
+    <polygon points="288,734 530,734 512,788 270,788" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="766" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเนื้อหาบทความแบบเต็ม</text>
+  </g>
+  <g>
+    <rect x="320" y="848" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="875" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_9">
+      <div class="card-header">
+        <h2>9. ระบบสั่งซื้อ (Order &amp; Checkout System)</h2>
+        <div class="btn-group">
+          <a href="./drawio/9_checkout.drawio" download="9_checkout.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/9_checkout.svg" download="9_checkout.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1642" width="930" height="1642" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">9. ระบบสั่งซื้อ (Order &amp; Checkout System)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 372 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="408" y="383" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="399" fill="#000000" font-size="12" font-weight="700">มีสินค้า</text>
+  <path d="M 520 325 L 620 325 L 620 407 L 720 407 L 720 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="531" y="301" width="137" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="317" fill="#000000" font-size="12" font-weight="700">ไม่มีสินค้า</text>
+  <path d="M 400 600 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="408" y="765" width="181" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">เข้าสู่ระบบแล้ว</text>
+  <path d="M 520 707 L 620 707 L 620 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <rect x="531" y="683" width="203" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">ยังไม่เข้าสู่ระบบ</text>
+  <path d="M 720 868 L 720 764 L 400 764 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 982 L 400 1042" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1096 L 400 1156" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1210 L 400 1270" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1324 L 400 1384" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 400 1438 L 400 1498" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <path d="M 720 486 L 720 992 L 400 992 L 400 1498" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_9)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ตรวจสอบรายการสินค้าในสเปค</text>
+  </g>
+  <g>
+    <polygon points="400,278 520,325 400,372 280,325" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="278" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="325" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="372" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="325" r="3.5" fill="#000000"/>
+    <text x="400" y="330" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">มีรายการสินค้าหรือไม่?</text>
+  </g>
+  <g>
+    <polygon points="608,432 850,432 832,486 590,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือน: โปรดเลือกสินค้าก่อน</text>
+  </g>
+  <g>
+    <polygon points="288,546 530,546 512,600 270,600" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กดปุ่มสั่งซื้อสินค้า (Checkout)</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">เข้าสู่ระบบ (Login) หรือยัง?</text>
+  </g>
+  <g>
+    <polygon points="608,814 850,814 832,868 590,868" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงหน้าต่างเข้าสู่ระบบก่อน</text>
+  </g>
+  <g>
+    <polygon points="288,928 530,928 512,982 270,982" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="960" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกที่อยู่จัดส่ง &amp; วิธีชำระเงิน</text>
+  </g>
+  <g>
+    <rect x="270" y="1042" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1074" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API POST /api/orders</text>
+  </g>
+  <g>
+    <rect x="270" y="1156" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1188" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกคำสั่งซื้อลงตาราง orders</text>
+  </g>
+  <g>
+    <rect x="270" y="1270" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1302" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ล้างข้อมูลสเปคในตะกร้า</text>
+  </g>
+  <g>
+    <polygon points="288,1384 530,1384 512,1438 270,1438" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1416" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงสั่งซื้อสำเร็จ พร้อม Order ID</text>
+  </g>
+  <g>
+    <rect x="320" y="1498" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1525" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_10">
+      <div class="card-header">
+        <h2>10. ระบบพิมพ์เอกสารสเปคคอม (Export / Print PDF)</h2>
+        <div class="btn-group">
+          <a href="./drawio/10_print_pdf.drawio" download="10_print_pdf.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/10_print_pdf.svg" download="10_print_pdf.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1032" width="880" height="1032" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">10. ระบบพิมพ์เอกสารสเปคคอม (Export / Print PDF)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <path d="M 400 714 L 400 774" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <rect x="408" y="725" width="192" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="741" fill="#000000" font-size="12" font-weight="700">พิมพ์ / Save PDF</text>
+  <path d="M 520 667 L 620 667 L 620 139 L 400 139 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <rect x="531" y="643" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="659" fill="#000000" font-size="12" font-weight="700">ยกเลิก</text>
+  <path d="M 400 828 L 400 888" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_10)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="288,164 530,164 512,218 270,218" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ดูรายการสเปคคอมในหน้า Builder</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กดปุ่มพิมพ์เอกสาร / Export PDF</text>
+  </g>
+  <g>
+    <rect x="270" y="392" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">สร้างโครงร่างใบเสนอราคา Spec Sheet</text>
+  </g>
+  <g>
+    <rect x="270" y="506" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เรียกใช้คำสั่ง window.print()</text>
+  </g>
+  <g>
+    <polygon points="400,620 520,667 400,714 280,667" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="620" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="667" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="714" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="667" r="3.5" fill="#000000"/>
+    <text x="400" y="672" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">คำสั่งในหน้าต่างการพิมพ์</text>
+  </g>
+  <g>
+    <rect x="270" y="774" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="806" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">พิมพ์เอกสารหรือบันทึกไฟล์ PDF</text>
+  </g>
+  <g>
+    <rect x="320" y="888" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="915" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+    <section class="card" id="card_11">
+      <div class="card-header">
+        <h2>11. ระบบตรวจความเข้ากันได้ของอุปกรณ์ (Hardware Compatibility Check)</h2>
+        <div class="btn-group">
+          <a href="./drawio/11_compatibility.drawio" download="11_compatibility.drawio" class="btn btn-drawio">✏️ แก้ไขใน Draw.io (.drawio)</a>
+          <a href="./flowcharts/11_compatibility.svg" download="11_compatibility.svg" class="btn">ดาวน์โหลด SVG ขาวดำ</a>
+        </div>
+      </div>
+      <div class="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1836" width="930" height="1836" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_11" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">11. ระบบตรวจความเข้ากันได้ของอุปกรณ์ (Hardware Compatibility Check)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 486 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="497" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="513" fill="#000000" font-size="12" font-weight="700">ตรงกัน</text>
+  <path d="M 520 439 L 620 439 L 620 521 L 720 521 L 720 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="415" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="431" fill="#000000" font-size="12" font-weight="700">ไม่ตรงกัน</text>
+  <path d="M 720 600 L 720 630 L 400 630 L 400 660" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 754 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="765" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="781" fill="#000000" font-size="12" font-weight="700">รองรับ</text>
+  <path d="M 520 707 L 620 707 L 620 789 L 720 789 L 720 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="683" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="699" fill="#000000" font-size="12" font-weight="700">ไม่รองรับ</text>
+  <path d="M 720 868 L 720 898 L 400 898 L 400 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 1022 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="1033" width="93" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1049" fill="#000000" font-size="12" font-weight="700">เพียงพอ</text>
+  <path d="M 520 975 L 620 975 L 620 1057 L 720 1057 L 720 1082" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="951" width="71" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="967" fill="#000000" font-size="12" font-weight="700">ไม่พอ</text>
+  <path d="M 720 1136 L 720 1166 L 400 1166 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 1250 L 400 1310" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 400 1404 L 400 1464" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="408" y="1415" width="181" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1431" fill="#000000" font-size="12" font-weight="700">เข้ากันได้ 100%</text>
+  <path d="M 520 1357 L 620 1357 L 620 1553 L 720 1553 L 720 1578" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <rect x="531" y="1333" width="148" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="1349" fill="#000000" font-size="12" font-weight="700">พบข้อผิดพลาด</text>
+  <path d="M 400 1518 L 400 1692" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <path d="M 720 1632 L 720 1662 L 400 1662 L 400 1692" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_11)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="164" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เฝ้าติดตาม Builder Store Real-time</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">มีการเพิ่ม/ลบ/เปลี่ยนอุปกรณ์</text>
+  </g>
+  <g>
+    <polygon points="400,392 520,439 400,486 280,439" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="392" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="439" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="486" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="439" r="3.5" fill="#000000"/>
+    <text x="400" y="444" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">1. ตรวจ Socket CPU กับ Mainboard</text>
+  </g>
+  <g>
+    <rect x="590" y="546" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="578" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกเตือน: Socket ไม่ตรงกัน</text>
+  </g>
+  <g>
+    <polygon points="400,660 520,707 400,754 280,707" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="660" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="707" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="754" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="707" r="3.5" fill="#000000"/>
+    <text x="400" y="712" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">2. ตรวจ RAM Type กับ Mainboard</text>
+  </g>
+  <g>
+    <rect x="590" y="814" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกเตือน: RAM Type ไม่รองรับ</text>
+  </g>
+  <g>
+    <polygon points="400,928 520,975 400,1022 280,975" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="928" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="975" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="1022" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="975" r="3.5" fill="#000000"/>
+    <text x="400" y="980" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">3. คำนวณ TDP รวมกับ PSU Watt</text>
+  </g>
+  <g>
+    <rect x="590" y="1082" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1114" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">บันทึกเตือน: PSU Watt ไม่พอ</text>
+  </g>
+  <g>
+    <rect x="270" y="1196" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1228" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">รวบรวมผลการตรวจสอบทั้งหมด</text>
+  </g>
+  <g>
+    <polygon points="400,1310 520,1357 400,1404 280,1357" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="1310" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="1357" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="1404" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="1357" r="3.5" fill="#000000"/>
+    <text x="400" y="1362" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">พบข้อผิดพลาด ความไม่เข้ากันหรือไม่?</text>
+  </g>
+  <g>
+    <polygon points="288,1464 530,1464 512,1518 270,1518" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1496" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแถบเขียว: เข้ากันได้ 100%</text>
+  </g>
+  <g>
+    <polygon points="608,1578 850,1578 832,1632 590,1632" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1610" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงแถบเตือนสีแดง/ส้ม พร้อมวิธีแก้</text>
+  </g>
+  <g>
+    <rect x="320" y="1692" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1719" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

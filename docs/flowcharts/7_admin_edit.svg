@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 1454" width="930" height="1454" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="930" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">7. ระบบแก้ไขข้อมูลอุปกรณ์ (Admin Edit &amp; Delete Hardware)</text>
+  <text x="670" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 258 L 400 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="408" y="269" width="126" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="285" fill="#000000" font-size="12" font-weight="700">เป็น Admin</text>
+  <path d="M 520 211 L 620 211 L 620 293 L 720 293 L 720 318" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="531" y="187" width="148" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="203" fill="#000000" font-size="12" font-weight="700">ไม่ใช่ Admin</text>
+  <path d="M 400 486 L 400 546" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 640 L 400 700" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="408" y="651" width="137" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="667" fill="#000000" font-size="12" font-weight="700">แก้ไขข้อมูล</text>
+  <path d="M 520 593 L 620 593 L 620 903 L 720 903 L 720 928" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="531" y="569" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="585" fill="#000000" font-size="12" font-weight="700">ลบอุปกรณ์</text>
+  <path d="M 400 754 L 400 814" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 868 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 720 1022 L 720 1082" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="728" y="1033" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="736" y="1049" fill="#000000" font-size="12" font-weight="700">ยืนยัน</text>
+  <path d="M 840 975 L 940 975 L 940 407 L 400 407 L 400 432" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <rect x="851" y="951" width="82" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="859" y="967" fill="#000000" font-size="12" font-weight="700">ยกเลิก</text>
+  <path d="M 720 1136 L 720 1166 L 400 1166 L 400 1196" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 400 1250 L 400 1310" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <path d="M 720 372 L 720 841 L 400 841 L 400 1310" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_7)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <polygon points="400,164 520,211 400,258 280,211" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="164" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="211" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="258" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="211" r="3.5" fill="#000000"/>
+    <text x="400" y="216" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ตรวจสอบสิทธิ์ Admin</text>
+  </g>
+  <g>
+    <polygon points="608,318 850,318 832,372 590,372" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="350" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงเตือน: ปฏิเสธการเข้าถึง</text>
+  </g>
+  <g>
+    <polygon points="288,432 530,432 512,486 270,486" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="464" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงรายการฮาร์ดแวร์ทั้งหมด</text>
+  </g>
+  <g>
+    <polygon points="400,546 520,593 400,640 280,593" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="546" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="593" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="640" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="593" r="3.5" fill="#000000"/>
+    <text x="400" y="598" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">เลือกคำสั่งการทำงาน</text>
+  </g>
+  <g>
+    <polygon points="288,700 530,700 512,754 270,754" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="732" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">กรอกข้อมูลแก้ไขในฟอร์ม</text>
+  </g>
+  <g>
+    <rect x="270" y="814" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="846" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API PUT /api/hardware/:id</text>
+  </g>
+  <g>
+    <polygon points="720,928 840,975 720,1022 600,975" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="720" cy="928" r="3.5" fill="#000000"/>
+    <circle cx="840" cy="975" r="3.5" fill="#000000"/>
+    <circle cx="720" cy="1022" r="3.5" fill="#000000"/>
+    <circle cx="600" cy="975" r="3.5" fill="#000000"/>
+    <text x="720" y="980" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ยืนยันการลบสินค้า?</text>
+  </g>
+  <g>
+    <rect x="590" y="1082" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="720" y="1114" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ส่ง API DELETE /api/hardware/:id</text>
+  </g>
+  <g>
+    <rect x="270" y="1196" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1228" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">อัปเดตตารางสินค้าล่าสุด</text>
+  </g>
+  <g>
+    <rect x="320" y="1310" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1337" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>

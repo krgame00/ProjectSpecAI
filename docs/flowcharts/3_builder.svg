@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1374" width="880" height="1374" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+  <defs>
+    <marker id="arrow_3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="880" height="50" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <text x="30" y="32" fill="#000000" font-size="18" font-weight="700">3. จัดสเปคด้วยตนเอง (Manual PC Builder)</text>
+  <text x="620" y="32" fill="#495057" font-size="12" font-weight="600">✓ 100% Strict Vertex Snapping</text>
+  <path d="M 400 104 L 400 164" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 218 L 400 278" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 332 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 446 L 400 506" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 560 L 400 620" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 674 L 400 734" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 788 L 400 848" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 902 L 400 962" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <path d="M 400 1056 L 400 1116" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <rect x="408" y="1067" width="115" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="416" y="1083" fill="#000000" font-size="12" font-weight="700">เสร็จสิ้น</text>
+  <path d="M 520 1009 L 620 1009 L 620 367 L 400 367 L 400 392" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <rect x="531" y="985" width="104" height="22" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="539" y="1001" fill="#000000" font-size="12" font-weight="700">จัดเพิ่ม</text>
+  <path d="M 400 1170 L 400 1230" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow_3)" />
+  <g>
+    <rect x="320" y="60" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="87" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">เริ่มต้น</text>
+  </g>
+  <g>
+    <rect x="270" y="164" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="196" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">ดึงแคตตาล็อกอุปกรณ์จาก MySQL</text>
+  </g>
+  <g>
+    <polygon points="288,278 530,278 512,332 270,332" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="310" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงหน้าจัดสเปค 8 หมวดหมู่</text>
+  </g>
+  <g>
+    <polygon points="288,392 530,392 512,446 270,446" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="424" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เลือกหมวดหมู่อุปกรณ์</text>
+  </g>
+  <g>
+    <polygon points="288,506 530,506 512,560 270,560" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="538" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">คลิกเลือกอุปกรณ์เข้าสเปค</text>
+  </g>
+  <g>
+    <rect x="270" y="620" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="652" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เพิ่มอุปกรณ์ลง Builder Store</text>
+  </g>
+  <g>
+    <rect x="270" y="734" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="766" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">คำนวณราคารวม &amp; Wattage รวม</text>
+  </g>
+  <g>
+    <rect x="270" y="848" width="260" height="54" rx="4" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="880" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">เรียกตรวจความเข้ากันได้</text>
+  </g>
+  <g>
+    <polygon points="400,962 520,1009 400,1056 280,1009" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <!-- Black vertex indicator dots -->
+    <circle cx="400" cy="962" r="3.5" fill="#000000"/>
+    <circle cx="520" cy="1009" r="3.5" fill="#000000"/>
+    <circle cx="400" cy="1056" r="3.5" fill="#000000"/>
+    <circle cx="280" cy="1009" r="3.5" fill="#000000"/>
+    <text x="400" y="1014" fill="#000000" font-size="13" font-weight="700" text-anchor="middle">ต้องการจัดอุปกรณ์เพิ่มหรือไม่?</text>
+  </g>
+  <g>
+    <polygon points="288,1116 530,1116 512,1170 270,1170" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="1148" fill="#000000" font-size="13" font-weight="600" text-anchor="middle">แสดงสเปคคอมพิวเตอร์สมบูรณ์</text>
+  </g>
+  <g>
+    <rect x="320" y="1230" width="160" height="44" rx="22" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="400" y="1257" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">จบการทำงาน</text>
+  </g>
+</svg>
