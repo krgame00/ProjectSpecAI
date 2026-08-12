@@ -61,4 +61,38 @@ describe('HardwareSelection.vue', () => {
     const badge = wrapper.find('.selected-badge')
     expect(badge.exists()).toBe(true)
   })
+
+  test('exposes the selected product as the current item', () => {
+    const wrapper = mount(HardwareSelection, {
+      props: {
+        activeCategory: 'cpu',
+        activeCategoryInfo: mockActiveCategoryInfo,
+        products: mockProducts,
+        selectedItemId: 1,
+        compatibilityIssues: [],
+        hasAnyComponent: true
+      }
+    })
+
+    expect(wrapper.get('.product-card.selected').attributes('aria-current')).toBe('true')
+    expect(wrapper.get('.product-card.selected .add-btn').element.tagName).toBe('BUTTON')
+  })
+
+  test('replaces a failed product image with the category fallback', async () => {
+    const wrapper = mount(HardwareSelection, {
+      props: {
+        activeCategory: 'cpu',
+        activeCategoryInfo: mockActiveCategoryInfo,
+        products: [{ ...mockProducts[0], image: '/broken.png' }],
+        selectedItemId: null,
+        compatibilityIssues: [],
+        hasAnyComponent: false
+      }
+    })
+
+    const image = wrapper.get('.product-card img')
+    await image.trigger('error')
+
+    expect(image.attributes('src')).toBe('/images/cpu.png')
+  })
 })

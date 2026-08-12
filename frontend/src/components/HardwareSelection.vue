@@ -53,7 +53,9 @@
 
     <div class="product-grid" v-if="filteredProducts.length > 0">
       <div class="product-card hairline-grid" v-for="item in filteredProducts" :key="item.id"
-        :class="{ selected: selectedItemId === item.id }" @click="$emit('select-item', activeCategory, item.id)">
+        :class="{ selected: selectedItemId === item.id }"
+        :aria-current="selectedItemId === item.id ? 'true' : undefined"
+        @click="$emit('select-item', activeCategory, item.id)">
         <!-- Selected checkmark -->
         <div class="selected-badge" v-if="selectedItemId === item.id" title="คลิกเพื่อยกเลิกการเลือก">
           <svg class="check-icon" width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -76,7 +78,7 @@
 
         <div class="product-img-wrap">
           <div class="product-img">
-            <img :src="item.image" :alt="item.name">
+            <img :src="item.image" :alt="item.name" @error="handleProductImageError">
           </div>
         </div>
 
@@ -213,6 +215,13 @@ const openDetails = (item) => {
   showingDetails.value = item;
 };
 
+const handleProductImageError = (event) => {
+  const image = event.currentTarget;
+  if (image.dataset.fallbackApplied === 'true') return;
+  image.dataset.fallbackApplied = 'true';
+  image.src = `/images/${props.activeCategory}.png`;
+};
+
 const getCategoryEmoji = (cat) => {
   const map = {
     cpu: '🧠', mobo: '🔧', ram: '💾',
@@ -287,6 +296,8 @@ const getItemSpecsList = (catId, item) => {
   background: var(--canvas);
   border: 1px solid var(--hairline);
   box-shadow: var(--shadow-sm);
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .category-title-left {
@@ -326,8 +337,9 @@ const getItemSpecsList = (catId, item) => {
 
 .filters-bar {
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .search-bar-wrapper {
@@ -353,6 +365,7 @@ const getItemSpecsList = (catId, item) => {
 
 .search-input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   color: var(--ink);
@@ -383,6 +396,7 @@ const getItemSpecsList = (catId, item) => {
   outline: none;
   transition: all 0.2s ease;
   font-family: inherit;
+  width: 100%;
 }
 
 .sort-select:focus {
@@ -490,21 +504,26 @@ const getItemSpecsList = (catId, item) => {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-md);
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 23rem) {
   .product-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 500px) {
+@media (min-width: 48rem) {
+  .filters-bar { flex-direction: row; align-items: center; }
+  .sort-select { width: auto; }
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
   }
+}
+
+@media (min-width: 87.5rem) {
+  .product-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
 .product-card {
@@ -519,6 +538,7 @@ const getItemSpecsList = (catId, item) => {
   background: var(--canvas);
   border: 1px solid var(--hairline);
   box-shadow: var(--shadow-xs);
+  min-width: 0;
 }
 
 .product-card:hover {
@@ -531,6 +551,11 @@ const getItemSpecsList = (catId, item) => {
   border-color: var(--primary);
   background: var(--canvas);
   box-shadow: 0 0 0 1px var(--primary), var(--shadow-md);
+}
+
+.product-name,
+.spec-value {
+  overflow-wrap: anywhere;
 }
 
 .selected-badge {
@@ -748,18 +773,19 @@ const getItemSpecsList = (catId, item) => {
   bottom: 0;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
-  z-index: 9999;
+  z-index: var(--z-backdrop);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: max(1rem, env(safe-area-inset-top)) var(--page-gutter) max(1rem, env(safe-area-inset-bottom));
 }
 
 .modal-content {
   border-radius: var(--radius-lg);
-  width: 90%;
+  width: min(100%, 42.5rem);
   max-width: 520px;
-  overflow: hidden;
+  max-height: calc(100dvh - 2rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  overflow-y: auto;
   background: var(--canvas);
   border: 1px solid var(--hairline);
   box-shadow: var(--shadow-xl);
@@ -787,7 +813,14 @@ const getItemSpecsList = (catId, item) => {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  max-height: 88vh;
+  max-height: calc(100dvh - 2rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+@media (hover: none) {
+  .product-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-xs);
+  }
 }
 
 .detail-modal-header {

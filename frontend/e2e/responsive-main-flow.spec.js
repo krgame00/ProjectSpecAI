@@ -63,4 +63,19 @@ test('landing actions and hardware scene fit a 320px phone', async ({ page }) =>
   await assertNoPageOverflow(page)
 })
 
+test('builder product cards remain readable at 320px', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 })
+  await prepareApi(page)
+  await page.goto('/build')
+
+  const product = page.locator('.product-card').first()
+  await expect(product).toBeVisible()
+  const card = await product.boundingBox()
+
+  expect(card.x).toBeGreaterThanOrEqual(0)
+  expect(card.x + card.width).toBeLessThanOrEqual(320)
+  expect(card.width).toBeGreaterThanOrEqual(280)
+  await assertNoPageOverflow(page)
+})
+
 export { assertNoPageOverflow, prepareApi }
