@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container builder-view">
     <!-- Loader -->
     <div v-if="isLoading" class="loader-wrapper">
       <div class="spinner spinner-primary"></div>
@@ -127,6 +127,13 @@ const activeCategoryInfo = computed(() => categories.find(c => c.id === activeCa
 
 .spinner-primary {
   border-top-color: var(--primary);
+}
+
+@media (max-width: 63.99rem) {
+  .builder-view {
+    --mobile-summary-offset: 4.75rem;
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
 }
 
 .loader-text {

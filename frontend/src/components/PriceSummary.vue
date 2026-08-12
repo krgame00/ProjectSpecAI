@@ -1,5 +1,22 @@
 <template>
-  <aside class="sidebar">
+  <aside :class="['sidebar', { 'is-mobile-open': isMobileSummaryOpen }]">
+    <button
+      type="button"
+      class="mobile-summary-toggle"
+      data-test="mobile-summary-toggle"
+      aria-controls="mobile-build-summary"
+      :aria-expanded="String(isMobileSummaryOpen)"
+      @click="toggleMobileSummary"
+    >
+      <span>ยอดรวม <strong>฿{{ totalPrice.toLocaleString() }}</strong></span>
+      <span aria-hidden="true">{{ isMobileSummaryOpen ? '⌄' : '⌃' }}</span>
+    </button>
+
+    <div
+      id="mobile-build-summary"
+      class="summary-details"
+      :hidden="isCompactViewport && !isMobileSummaryOpen"
+    >
     <!-- Total Price Box -->
     <div class="total-price-box hairline-grid">
       <div class="price-box-glow"></div>
@@ -96,10 +113,14 @@
         </li>
       </ul>
     </div>
+    </div>
   </aside>
 </template>
 
 <script setup>
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { calcTotalTdp } from '../utils/compatibility';
+
 const props = defineProps({
   categories: Array, build: Object, catalog: Object, 
   totalPrice: Number, activeCategory: String, 
@@ -107,8 +128,29 @@ const props = defineProps({
 });
 defineEmits(['set-active-category', 'remove-item', 'checkout']);
 
-import { computed } from 'vue';
-import { calcTotalTdp } from '../utils/compatibility';
+const isMobileSummaryOpen = ref(false);
+const isCompactViewport = ref(true);
+let compactMediaQuery;
+
+const syncCompactViewport = (event) => {
+  isCompactViewport.value = event.matches;
+  if (!event.matches) isMobileSummaryOpen.value = false;
+};
+
+onMounted(() => {
+  if (typeof window.matchMedia !== 'function') return;
+  compactMediaQuery = window.matchMedia('(max-width: 1023px)');
+  syncCompactViewport(compactMediaQuery);
+  compactMediaQuery.addEventListener?.('change', syncCompactViewport);
+});
+
+onBeforeUnmount(() => {
+  compactMediaQuery?.removeEventListener?.('change', syncCompactViewport);
+});
+
+const toggleMobileSummary = () => {
+  isMobileSummaryOpen.value = !isMobileSummaryOpen.value;
+};
 
 const selectedCount = computed(() => {
   return Object.values(props.build).filter(v => v !== null).length;
@@ -213,13 +255,56 @@ const printSpec = () => {
   display: flex; 
   flex-direction: column; 
   gap: var(--space-md); 
-  position: sticky; 
-  top: 5.5rem; 
+  min-width: 0;
 }
-@media (max-width: 1024px) {
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.summary-details[hidden] { display: none; }
+.mobile-summary-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-md);
+  background: var(--canvas-soft);
+  color: var(--ink);
+  font-weight: 500;
+  cursor: pointer;
+}
+.mobile-summary-toggle strong { color: var(--primary); }
+
+@media (max-width: 63.99rem) {
   .sidebar {
-    position: static;
+    position: fixed;
+    z-index: var(--z-sticky);
+    left: max(1rem, env(safe-area-inset-left));
+    right: max(6rem, calc(5rem + env(safe-area-inset-right)));
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    gap: 0.5rem;
   }
+  .summary-details {
+    max-height: min(60dvh, 32rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    background: var(--canvas);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@media (min-width: 64rem) {
+  .sidebar {
+    position: sticky;
+    top: 5.5rem;
+  }
+  .mobile-summary-toggle { display: none; }
 }
 .total-price-box { 
   border-radius: var(--radius-lg); 

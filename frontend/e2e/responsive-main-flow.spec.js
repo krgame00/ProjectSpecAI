@@ -78,4 +78,29 @@ test('builder product cards remain readable at 320px', async ({ page }) => {
   await assertNoPageOverflow(page)
 })
 
+test('mobile summary expands without covering the SpecAI launcher', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await prepareApi(page)
+  await page.goto('/build')
+  await page.locator('.product-card .add-btn').first().click()
+
+  const toggle = page.locator('[data-test="mobile-summary-toggle"]')
+  await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+
+  const summary = await page.locator('#mobile-build-summary').boundingBox()
+  const chat = await page.locator('.chat-fab').boundingBox()
+  const intersects = !(
+    summary.x + summary.width <= chat.x ||
+    chat.x + chat.width <= summary.x ||
+    summary.y + summary.height <= chat.y ||
+    chat.y + chat.height <= summary.y
+  )
+
+  expect(intersects).toBe(false)
+  await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  await assertNoPageOverflow(page)
+})
+
 export { assertNoPageOverflow, prepareApi }
