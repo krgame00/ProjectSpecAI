@@ -4,7 +4,7 @@
     <div v-if="isLoading" class="loader-wrapper">
       <div class="spinner spinner-primary"></div>
       <div class="loader-text">
-        กำลังดึงข้อมูลสเปกฮาร์ดแวร์ล่าสุดจากฐานข้อมูล MySQL...
+        ระบบกำลังโหลดรายการสินค้า/อุปกรณ์ กรุณารอสักครู่...
       </div>
     </div>
     
