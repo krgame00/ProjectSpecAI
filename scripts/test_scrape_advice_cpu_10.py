@@ -53,8 +53,15 @@ def fetch_cpu_list():
                     txt = it.get_text(' ', strip=True)
                     name_m = re.match(r'^(.*?)\s*฿', txt)
                     name = name_m.group(1).strip() if name_m else txt[:60]
-                    price_m = re.search(r'฿([\d,]+\.?\d*)', txt)
-                    price = float(price_m.group(1).replace(',', '')) if price_m else 0
+                    # ราคา: หา ฿ ตัวแรกที่ > 100 (ข้ามส่วนลด เช่น -฿20)
+                    price = 0
+                    for pm in re.finditer(r'฿([\d,]+\.?\d*)', txt):
+                        try:
+                            v = float(pm.group(1).replace(',', ''))
+                            if v > 100:
+                                price = v
+                                break
+                        except: pass
                     brand = 'Generic'
                     up = name.upper()
                     if 'AMD' in up: brand = 'AMD'
