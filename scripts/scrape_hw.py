@@ -137,51 +137,51 @@ def fetch_ihavecpu(cat_key):
     print(f"  ได้ {len(out)} ชิ้น")
     return out
 
-# ---------------- Advice (requests + BS4) ----------------
+# ---------------- Advice (Scrapling - stealthy) ----------------
 def fetch_advice(cat_key):
     try:
-        import requests
-        from bs4 import BeautifulSoup
+        import asyncio
+        from scrapling.fetchers import AsyncStealthySession
     except ImportError:
-        print("❌ ต้องติดตั้ง requests + beautifulsoup4: pip install requests beautifulsoup4")
+        print("❌ ต้องติดตั้ง scrapling: pip install \"scrapling[all]>=0.4.12\"")
         return []
     cfg = CAT_CONFIG[cat_key]
-    print(f"📡 Advice.co.th: ดึงรายการ {cat_key.upper()} (หลายหน้า)...")
+    print(f"📡 Advice.co.th (Scrapling): ดึงรายการ {cat_key.upper()}...")
     out = []
     seen = set()
-    for u in cfg['advice_urls']:
-        try:
-            r = requests.get(u, headers={'User-Agent': 'Mozilla/5.0'}, timeout=20)
-            r.encoding = 'utf-8'
-            soup = BeautifulSoup(r.text, 'html.parser')
-            for it in soup.select('.col-product-list'):
-                a = it.find('a')
-                href = a.get('href', '') if a else ''
-                full = urljoin('https://www.advice.co.th', href) if href else ''
-                if full in seen: continue
-                seen.add(full)
-                img = it.find('img')
-                img_src = img.get('src', '') if img else ''
-                if img_src and not img_src.startswith('http'):
-                    img_src = urljoin('https://www.advice.co.th', img_src)
-                txt = it.get_text(' ', strip=True)
-                nm = re.match(r'^(.*?)\s*฿', txt)
-                name = nm.group(1).strip() if nm else txt[:60]
-                price = 0
-                for pm in re.finditer(r'฿([\d,]+\.?\d*)', txt):
-                    try:
-                        v = float(pm.group(1).replace(',', ''))
-                        if v > 100:
-                            price = v
-                            break
-                    except: pass
-                brand = detect_brand(name)
-                if name and price > 0:
-                    rec = {'model': name, 'brand': brand, 'price': price, 'image_url': img_src, 'url': full, 'source': 'advice', 'category': cat_key}
-                    rec.update(detect_specs(cat_key, name))
-                    out.append(rec)
-        except Exception as e:
-            print(f"  ⚠️ error {u}: {e}")
+    async def _fetch():
+        async with AsyncStealthySession(headless=True, network_idle=True) as session:
+            for u in cfg['advice_urls']:
+                try:
+                    page = await session.fetch(u)
+                    items = page.css('.col-product-list')
+                    for it in items:
+                        href = it.css('a::attr(href)').get()
+                        full = urljoin('https://www.advice.co.th', href) if href else ''
+                        if full in seen: continue
+                        seen.add(full)
+                        img_src = it.css('img::attr(src)').get() or ''
+                        if img_src and not img_src.startswith('http'):
+                            img_src = urljoin('https://www.advice.co.th', img_src)
+                        txt = ' '.join(t.strip() for t in it.css('::text').getall() if t.strip())
+                        nm = re.match(r'^(.*?)\s*฿', txt)
+                        name = nm.group(1).strip() if nm else txt[:60]
+                        price = 0
+                        for pm in re.finditer(r'฿([\d,]+\.?\d*)', txt):
+                            try:
+                                v = float(pm.group(1).replace(',', ''))
+                                if v > 100:
+                                    price = v
+                                    break
+                            except: pass
+                        brand = detect_brand(name)
+                        if name and price > 0:
+                            rec = {'model': name, 'brand': brand, 'price': price, 'image_url': img_src, 'url': full, 'source': 'advice', 'category': cat_key}
+                            rec.update(detect_specs(cat_key, name))
+                            out.append(rec)
+                except Exception as e:
+                    print(f"  ⚠️ error {u}: {e}")
+    asyncio.run(_fetch())
     print(f"  ได้ {len(out)} ชิ้น")
     return out
 
