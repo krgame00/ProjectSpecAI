@@ -9,17 +9,24 @@ function authHeaders() {
 
 export const useArticleStore = defineStore('article', {
   state: () => ({
-    articles: []
+    articles: [],
+    isLoading: false,
+    error: null
   }),
   actions: {
     async fetchArticles() {
+      this.isLoading = true
+      this.error = null
       try {
         const res = await fetch(`${API_BASE}/articles`)
-        if (res.ok) {
-          this.articles = await res.json()
-        }
-      } catch (err) {
-        console.error('Failed to load articles:', err)
+        if (!res.ok) throw new Error(`โหลดบทความไม่สำเร็จ (${res.status})`)
+        this.articles = await res.json()
+        return true
+      } catch (error) {
+        this.error = error instanceof Error ? error.message : 'โหลดบทความไม่สำเร็จ'
+        return false
+      } finally {
+        this.isLoading = false
       }
     },
     async saveArticle(article) {
