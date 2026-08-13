@@ -248,6 +248,25 @@ test('mobile summary expands without covering the SpecAI launcher', async ({ pag
   await assertNoPageOverflow(page)
 })
 
+test('short viewport summary releases scrolling back to the catalog', async ({ page }) => {
+  await page.setViewportSize({ width: 883, height: 589 })
+  await prepareApi(page)
+  await page.goto('/build')
+  await page.locator('.product-card .add-btn').first().click()
+  await page.locator('[data-test="mobile-summary-toggle"]').click()
+
+  const behavior = await page.locator('#mobile-build-summary').evaluate(element => {
+    const style = getComputedStyle(element)
+    return {
+      maxHeight: Number.parseFloat(style.maxHeight),
+      overscrollY: style.overscrollBehaviorY
+    }
+  })
+
+  expect(behavior.maxHeight).toBeLessThanOrEqual(589 * 0.48 + 1)
+  expect(behavior.overscrollY).toBe('auto')
+})
+
 test('checkout stacks fields and summary on a phone', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await prepareApi(page)

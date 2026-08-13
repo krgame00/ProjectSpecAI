@@ -311,12 +311,18 @@ const printSpec = () => {
   .summary-details {
     max-height: min(60dvh, 32rem);
     overflow-y: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior-y: auto;
     padding: 0.5rem;
     border: 1px solid var(--hairline);
     border-radius: var(--radius-lg);
     background: var(--canvas);
     box-shadow: var(--shadow-lg);
+  }
+}
+
+@media (max-width: 63.99rem) and (max-height: 43.75rem) {
+  .summary-details {
+    max-height: 48dvh;
   }
 }
 
