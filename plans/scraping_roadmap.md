@@ -26,7 +26,11 @@
 ```bash
 python scripts/fast_scrape_ihavecpu_correct.py
 ```
-- **สิ่งที่สคริปต์ทำ:** ยิงคำขอไปที่ API `https://apisp.ihavecpu.com/api/product/listCate?category_id=...` เพื่อดึงราคาขายจริง (`price_sale`) และรูปภาพ HD (`_800.jpg`) จากนั้นใช้ Scrapling เจาะหน้าสินค้าเพื่อเก็บสเปคยิบย่อย บันทึกลงตาราง `products` ใน MySQL และบันทึกเป็นไฟล์ JSON สำรอง
+- **สิ่งที่สคริปต์ทำ:** ยิงคำขอไปที่ API `https://apisp.ihavecpu.com/api/product/listCate?category_id=...` เพื่อดึงราคาขายจริง (`price_sale`) และรูปภาพ HD (`image800`) จากนั้นใช้ Scrapling เจาะหน้าสินค้าเพื่อเก็บสเปคยิบย่อย บันทึกลงตาราง `products` ใน MySQL และบันทึกเป็นไฟล์ JSON สำรอง
+- ⚠️ **หมายเหตุสำคัญเรื่อง Category ID:** ihavecpu API ใช้ `category_id` **ต่างจาก DB ของเรา** ต้อง map ให้ถูก:
+  - ihavecpu API: `CPU=9`, `SSD/Storage=15` (ดูผลสำรวจ API จริง)
+  - DB ของเรา: `CPU=1`, `RAM=3`, `GPU=4`, `Storage=5`, `PSU=6`, `Case=7`
+  - ดูตัวอย่างใน `scripts/test_scrape_cpu_10.py` (เทสต์ดึง CPU 10 ชิ้นสุ่ม)
 
 ### Step 2: กระจายสเปคเข้าสู่ Strongly Typed Tables (`spec_*`)
 ```bash
