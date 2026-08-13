@@ -30,7 +30,7 @@ python scripts/fast_scrape_ihavecpu_correct.py
 - ⚠️ **หมายเหตุสำคัญเรื่อง Category ID:** ihavecpu API ใช้ `category_id` **ต่างจาก DB ของเรา** ต้อง map ให้ถูก:
   - ihavecpu API: `CPU=9`, `SSD/Storage=15` (ดูผลสำรวจ API จริง)
   - DB ของเรา: `CPU=1`, `RAM=3`, `GPU=4`, `Storage=5`, `PSU=6`, `Case=7`
-  - ดูตัวอย่างใน `scripts/test_scrape_cpu_10.py` (เทสต์ดึง CPU 10 ชิ้นสุ่ม)
+  - ดูตัวอย่างใน `scripts/scrape_cpu.py` (สคริปเตอร์รวม รองรับ ihavecpu + Advice เลือกผ่าน `--source`)
 
 ### Step 2: กระจายสเปคเข้าสู่ Strongly Typed Tables (`spec_*`)
 ```bash
