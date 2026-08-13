@@ -29,9 +29,9 @@ graph TD
 1. **เพิ่มพารามิเตอร์ Category IDs:**
    - `CPU`: `category_id = 1`
    - `Mainboard`: `category_id = 2`
-   - `GPU`: `category_id = 3`
-   - `RAM`: `category_id = 4`
-   - `Storage`: `category_id = 15`
+   - `RAM`: `category_id = 3`
+   - `GPU`: `category_id = 4`
+   - `Storage`: `category_id = 5`
    - `PSU`: `category_id = 6`
    - `Case`: `category_id = 7`
 2. **เพิ่มพารามิเตอร์ CLI Argument `--category`:**

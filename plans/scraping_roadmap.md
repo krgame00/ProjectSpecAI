@@ -65,7 +65,23 @@ cd Frontend && npm run dev
 - ✅ **ต้องใช้** ฟิลด์ `item.get('brand')` จาก API หรือใช้ Regex ตรวจจับจากชื่อสินค้า (`title`) เช่น:
   `LEXAR`, `PREDATOR`, `ADATA`, `KINGSTON`, `WD`, `SAMSUNG`, `CRUCIAL`, `CORSAIR`, `ASUS`, `GIGABYTE`, `MSI`
 
-### 3. กฎการกรองขยะสเปค (Spec Key Noise Cleaning Rule)
+### 4. กฎการระบุหมวดหมู่ให้ถูกต้อง (Category Mapping Rule) — สำคัญมาก
+- ✅ **ต้องใช้ Category ID ให้ตรงกับ `categories` table ใน DB เสมอ:**
+  - `CPU = 1`, `Mainboard = 2`, `RAM = 3`, `GPU = 4`, `Storage = 5`, `PSU = 6`, `Case = 7`
+- ❌ **ห้ามสับสน:** GPU ต้องเป็น `category_id = 4` (ไม่ใช่ 3), RAM = 3 (ไม่ใช่ 4)
+- ✅ **ตรวจสอบชื่อรุ่นก่อนบันทึก:** หาก `model` มีคำว่า `RADEON/RTX/GEFORCE/VGA` ต้องอยู่หมวด 4 (GPU) เท่านั้น หากหลุดไปหมวดอื่นให้ย้ายทันที
+- ⚠️ ดูแผนภายใน `scripts/run_full_deep_scraper.py` ว่ามี `'id': N` ตรงกับหมวดจริงหรือไม่ (เคยผิด GPU↔RAM มาแล้ว)
+
+### 5. กฎการตรวจสอบ Socket ให้ถูกต้อง (Socket Validation Rule)
+- ✅ **CPU AMD (Ryzen)** ต้องได้ Socket `AM4` หรือ `AM5` เท่านั้น (ห้ามเป็น `LGA1700` ของ Intel)
+- ✅ **CPU Intel (Core/Ultra)** ต้องได้ Socket `LGA*` (LGA1700, LGA1851) เท่านั้น
+- ✅ **เมนบอร์ด:** ถ้า `brand` เป็น AMD → socket `AM4/AM5`; ถ้า Intel → `LGA*`
+- 🔧 หาก `spec_cpu.socket` ว่าง ให้ดึงจาก `specifications.Socket Type` (JSON) ก่อน ห้ามปล่อยว่าง
+
+### 6. กฎการเติม Cores/Threads ที่หายไป (Fallback Rule)
+- หาก `spec_cpu.cores` ว่างจาก scraper ให้เติมจากชื่อรุ่น:
+  - Regex `(\d+)\s*[Cc]` → cores, `(\d+)\s*[Tt]` → threads
+  -  fallback: `Ryzen 3=4, Ryzen 5=6, Ryzen 7=8, Ryzen 9=12/16`, `Core i3=4, i5=6, i7=8, i9=16`, `Ultra 5=10, Ultra 7=20, Ultra 9=24`
 - **ปัญหาเดิม:** Regex สแกน HTML อาจดึงแท็กขยะ CSS/JS/HTML Comment ติดมาด้วย เช่น `'wait_for_update'`, `<!-- Generator...`, `.css-11jjlqg`
 - ✅ **วิธีแก้:** ต้องผ่านฟังก์ชันกรอง `is_valid_spec_key(key)` ทุกครั้งก่อนเก็บบันทึก:
 ```python

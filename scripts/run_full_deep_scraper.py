@@ -34,19 +34,19 @@ CATEGORIES = [
         ]
     },
     {
-        'id': 3, # GPU
-        'slug': 'gpu',
-        'urls': [
-            "https://www.advice.co.th/product/graphic-card-vga-",
-            "https://www.ihavecpu.com/category/graphic-card"
-        ]
-    },
-    {
-        'id': 4, # RAM
+        'id': 3, # RAM
         'slug': 'ram',
         'urls': [
             "https://www.advice.co.th/product/ram-for-pc",
             "https://www.ihavecpu.com/category/ram"
+        ]
+    },
+    {
+        'id': 4, # GPU
+        'slug': 'gpu',
+        'urls': [
+            "https://www.advice.co.th/product/graphic-card-vga-",
+            "https://www.ihavecpu.com/category/graphic-card"
         ]
     },
     {
