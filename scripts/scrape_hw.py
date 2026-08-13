@@ -268,6 +268,7 @@ def main():
     ap.add_argument('--limit', type=int, default=10)
     ap.add_argument('--seed', type=int, default=None)
     ap.add_argument('--save', action='store_true', help='บันทึก JSON ลง database-export/')
+    ap.add_argument('--db', action='store_true', help='บันทึกลง MySQL/TiDB จริง')
     args = ap.parse_args()
 
     if args.seed is not None:
@@ -305,6 +306,102 @@ def main():
         with open(out, 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
         print(f"\n💾 บันทึกลง: {out}")
+
+    if args.db:
+        save_to_db(results, CAT_CONFIG[args.category]['db_id'])
+
+# ---------------- Save to DB ----------------
+def save_to_db(products, db_category_id):
+    """บันทึกลง MySQL/TiDB ตาม SOP Step 1-2 (products + spec_*)"""
+    try:
+        import pymysql
+        from dotenv import load_dotenv
+    except ImportError:
+        print("❌ ต้องติดตั้ง pymysql + python-dotenv: pip install pymysql python-dotenv")
+        return
+    load_dotenv(os.path.join(os.path.dirname(__file__), '..', 'node-backend', '.env'))
+    conn = pymysql.connect(
+        host=os.getenv('DB_HOST', 'localhost'),
+        port=int(os.getenv('DB_PORT', '3306')),
+        user=os.getenv('DB_USER', 'root'),
+        password=os.getenv('DB_PASSWORD', ''),
+        database=os.getenv('DB_NAME', 'smart_pc_builder'),
+        charset='utf8mb4',
+        cursorclass=pymysql.cursors.DictCursor,
+    )
+    inserted = 0
+    updated = 0
+    with conn.cursor() as c:
+        for p in products:
+            model = p['model']
+            # หาของเก่า (อัปเดตราคาหากมี)
+            c.execute("SELECT id FROM products WHERE model=%s AND category_id=%s", (model, db_category_id))
+            row = c.fetchone()
+            specs_json = json.dumps(p, ensure_ascii=False)
+            if row:
+                pid = row['id']
+                c.execute("UPDATE products SET price=%s, image_url=%s, specifications=%s WHERE id=%s",
+                          (p['price'], p['image_url'], specs_json, pid))
+                updated += 1
+            else:
+                c.execute("""INSERT INTO products (category_id, brand, model, price, image_url, stock_quantity, specifications, product_url)
+                            VALUES (%s, %s, %s, %s, %s, 15, %s, %s)""",
+                          (db_category_id, p['brand'], model, p['price'], p['image_url'], specs_json, p['url']))
+                pid = c.lastrowid
+                inserted += 1
+            # เขียน spec_* ตามหมวด
+            _upsert_spec(c, p, pid)
+            conn.commit()
+    conn.close()
+    print(f"\n🗄️  บันทึกลง DB: แทรกใหม่ {inserted} | อัปเดต {updated}")
+
+def _upsert_spec(c, p, pid):
+    """เขียน/อัปเดตตาราง spec_* ตามหมวด"""
+    cat = p.get('category')
+    if cat == 'cpu':
+        socket = p.get('socket_detected', '')
+        cores = _extract_int(p['model'], r'(\d+)\s*[Cc]')
+        threads = _extract_int(p['model'], r'(\d+)\s*[Tt]')
+        c.execute("DELETE FROM spec_cpu WHERE product_id=%s", (pid,))
+        if socket or cores or threads:
+            c.execute("INSERT INTO spec_cpu (product_id, socket, tdp_watt, cores, threads) VALUES (%s,%s,NULL,%s,%s)",
+                      (pid, socket or None, cores, threads))
+    elif cat == 'gpu':
+        vram = p.get('vram_gb')
+        c.execute("DELETE FROM spec_gpu WHERE product_id=%s", (pid,))
+        if vram:
+            c.execute("INSERT INTO spec_gpu (product_id, tdp_watt, length_mm, chipset, vram_gb) VALUES (%s,NULL,NULL,%s,%s)",
+                      (pid, p['brand'], vram))
+    elif cat == 'ram':
+        ram_type = p.get('ram_type', '')
+        cap = _extract_int(p['model'], r'(\d+)\s*GB')
+        c.execute("DELETE FROM spec_ram WHERE product_id=%s", (pid,))
+        if ram_type or cap:
+            c.execute("INSERT INTO spec_ram (product_id, ram_type, capacity_gb, bus_speed) VALUES (%s,%s,%s,NULL)",
+                      (pid, ram_type or None, cap))
+    elif cat == 'storage':
+        cap = p.get('capacity_gb')
+        ctype = p.get('type', '')
+        c.execute("DELETE FROM spec_storage WHERE product_id=%s", (pid,))
+        if cap or ctype:
+            c.execute("INSERT INTO spec_storage (product_id, type, capacity_gb, read_speed_mbs, write_speed_mbs) VALUES (%s,%s,%s,NULL,NULL)",
+                      (pid, ctype or None, cap))
+    elif cat == 'psu':
+        watt = p.get('wattage')
+        c.execute("DELETE FROM spec_psu WHERE product_id=%s", (pid,))
+        if watt:
+            c.execute("INSERT INTO spec_psu (product_id, wattage, efficiency_rating) VALUES (%s,%s,NULL)",
+                      (pid, watt))
+    elif cat == 'case':
+        ff = p.get('form_factor', '')
+        c.execute("DELETE FROM spec_case WHERE product_id=%s", (pid,))
+        if ff:
+            c.execute("INSERT INTO spec_case (product_id, form_factor_support, max_gpu_length_mm) VALUES (%s,%s,NULL)",
+                      (pid, ff))
+
+def _extract_int(text, pattern):
+    m = re.search(pattern, text.upper())
+    return int(m.group(1)) if m else None
 
 if __name__ == '__main__':
     main()
