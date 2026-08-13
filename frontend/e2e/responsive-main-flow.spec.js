@@ -278,7 +278,16 @@ test('short viewport exposes every category and collapses after selection', asyn
 
   await toggle.click()
   await expect(toggle).toHaveAttribute('aria-expanded', 'true')
-  await summary.evaluate(element => { element.scrollTop = element.scrollHeight })
+  const scrollState = await summary.evaluate(element => {
+    element.scrollTop = element.scrollHeight
+    return {
+      scrollHeight: element.scrollHeight,
+      clientHeight: element.clientHeight,
+      scrollTop: element.scrollTop
+    }
+  })
+  expect(scrollState.scrollHeight).toBeGreaterThan(scrollState.clientHeight)
+  expect(scrollState.scrollTop).toBeGreaterThan(0)
 
   const summaryBox = await summary.boundingBox()
   const caseBox = await caseCategory.boundingBox()
