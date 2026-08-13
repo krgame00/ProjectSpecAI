@@ -267,6 +267,29 @@ test('short viewport summary releases scrolling back to the catalog', async ({ p
   expect(behavior.overscrollY).toBe('auto')
 })
 
+test('short viewport exposes every category and collapses after selection', async ({ page }) => {
+  await page.setViewportSize({ width: 793, height: 517 })
+  await prepareApi(page)
+  await page.goto('/build')
+
+  const toggle = page.locator('[data-test="mobile-summary-toggle"]')
+  const summary = page.locator('#mobile-build-summary')
+  const caseCategory = page.locator('.category-button').filter({ hasText: 'Case' })
+
+  await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+  await summary.evaluate(element => { element.scrollTop = element.scrollHeight })
+
+  const summaryBox = await summary.boundingBox()
+  const caseBox = await caseCategory.boundingBox()
+  expect(caseBox.y).toBeGreaterThanOrEqual(summaryBox.y)
+  expect(caseBox.y + caseBox.height).toBeLessThanOrEqual(summaryBox.y + summaryBox.height)
+
+  await caseCategory.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  await expect(page.locator('.category-title-text')).toContainText('Case')
+})
+
 test('checkout stacks fields and summary on a phone', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await prepareApi(page)

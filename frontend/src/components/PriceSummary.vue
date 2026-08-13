@@ -85,7 +85,7 @@
             type="button"
             class="category-button"
             :aria-current="activeCategory === cat.id ? 'true' : undefined"
-            @click="$emit('set-active-category', cat.id)"
+            @click="selectCategory(cat.id)"
           >
             <div class="cat-indicator"></div>
             <div class="cat-content">
@@ -132,7 +132,7 @@ const props = defineProps({
   totalPrice: Number, activeCategory: String, 
   compatibilityIssues: Array, compatibilityPasses: Array, hasAnyComponent: Boolean
 });
-defineEmits(['set-active-category', 'remove-item', 'checkout']);
+const emit = defineEmits(['set-active-category', 'remove-item', 'checkout']);
 
 const isMobileSummaryOpen = ref(false);
 const isCompactViewport = ref(true);
@@ -156,6 +156,11 @@ onBeforeUnmount(() => {
 
 const toggleMobileSummary = () => {
   isMobileSummaryOpen.value = !isMobileSummaryOpen.value;
+};
+
+const selectCategory = (categoryId) => {
+  emit('set-active-category', categoryId);
+  if (isCompactViewport.value) isMobileSummaryOpen.value = false;
 };
 
 const selectedCount = computed(() => {
@@ -317,6 +322,9 @@ const printSpec = () => {
     border-radius: var(--radius-lg);
     background: var(--canvas);
     box-shadow: var(--shadow-lg);
+  }
+  .summary-details > * {
+    flex-shrink: 0;
   }
 }
 
