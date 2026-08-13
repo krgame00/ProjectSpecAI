@@ -1,0 +1,27 @@
+import DOMPurify from 'dompurify'
+
+const ALLOWED_TAGS = ['p', 'br', 'h2', 'h3', 'h4', 'strong', 'em', 'ul', 'ol', 'li', 'blockquote', 'a', 'img', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'pre', 'code']
+const ALLOWED_ATTR = ['href', 'src', 'alt', 'title', 'scope']
+
+export function sanitizeArticleHtml(value) {
+  return DOMPurify.sanitize(String(value ?? ''), {
+    ALLOWED_TAGS,
+    ALLOWED_ATTR,
+    ALLOW_DATA_ATTR: false
+  })
+}
+
+export function articleExcerpt(value, maxLength = 180) {
+  const template = document.createElement('template')
+  template.innerHTML = sanitizeArticleHtml(value)
+  const text = (template.content.textContent ?? '').replace(/\s+/g, ' ').trim()
+  return text.length > maxLength ? `${text.slice(0, maxLength).trimEnd()}…` : text
+}
+
+export function formatArticleDate(value, options = { year: 'numeric', month: 'long', day: 'numeric' }) {
+  if (!value) return '-'
+  const parsed = new Date(value)
+  return Number.isNaN(parsed.getTime())
+    ? String(value)
+    : new Intl.DateTimeFormat('th-TH', options).format(parsed)
+}
