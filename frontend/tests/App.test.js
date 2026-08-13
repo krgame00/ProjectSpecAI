@@ -32,11 +32,11 @@ const RouterViewStub = defineComponent({
 describe('App guest login request', () => {
   let pinia
 
-  const mountApp = (router = { push: vi.fn() }) => mount(App, {
+  const mountApp = (router = { push: vi.fn() }, routePath = '/') => mount(App, {
     global: {
       plugins: [pinia],
       provide: { [routerKey]: router },
-      mocks: { $route: { path: '/' }, $router: router },
+      mocks: { $route: { path: routePath }, $router: router },
       stubs: { RouterView: RouterViewStub }
     }
   })
@@ -62,7 +62,9 @@ describe('App guest login request', () => {
 
   test('opens the existing modal on a routed request and resets it to login', async () => {
     const router = { push: vi.fn() }
-    const wrapper = mountApp(router)
+    const wrapper = mountApp(router, '/build')
+
+    expect(wrapper.findAll('.nav-actions .btn-outline')[0].classes()).toContain('active')
 
     await wrapper.findAll('.nav-actions .btn-outline')[2].trigger('click')
     await wrapper.findAll('.auth-tab')[1].trigger('click')
