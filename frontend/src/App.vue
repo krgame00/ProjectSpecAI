@@ -53,10 +53,13 @@
           :currentUser="currentUser"
           :orders="adminStore.orders"
           :articles="articleStore.articles"
+          :articles-loading="articleStore.isLoading"
+          :articles-error="articleStore.error"
           @save-product="adminStore.saveProduct"
           @delete-product="adminStore.deleteProduct"
           @save-article="articleStore.saveArticle"
           @delete-article="articleStore.deleteArticle"
+          @retry-articles="articleStore.fetchArticles"
           @update-order-status="adminStore.updateOrderStatus"
           :isChatOpen="chatbotStore.isOpen"
           :chatHistory="chatbotStore.history"
@@ -201,8 +204,10 @@ const categories = [
 ];
 
 onMounted(async () => {
-  await catalogStore.fetchCatalog();
-  await articleStore.fetchArticles();
+  await Promise.all([
+    catalogStore.fetchCatalog(),
+    articleStore.fetchArticles()
+  ])
   if (userRole.value === 'admin') {
     await adminStore.fetchOrders();
   }

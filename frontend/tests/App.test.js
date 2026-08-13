@@ -32,6 +32,15 @@ const RouterViewStub = defineComponent({
 describe('App guest login request', () => {
   let pinia
 
+  const mountApp = (router = { push: vi.fn() }) => mount(App, {
+    global: {
+      plugins: [pinia],
+      provide: { [routerKey]: router },
+      mocks: { $route: { path: '/' }, $router: router },
+      stubs: { RouterView: RouterViewStub }
+    }
+  })
+
   beforeEach(() => {
     const values = new Map()
     vi.stubGlobal('localStorage', {
@@ -53,21 +62,7 @@ describe('App guest login request', () => {
 
   test('opens the existing modal on a routed request and resets it to login', async () => {
     const router = { push: vi.fn() }
-    const wrapper = mount(App, {
-      global: {
-        plugins: [pinia],
-        provide: {
-          [routerKey]: router
-        },
-        mocks: {
-          $route: { path: '/build' },
-          $router: router
-        },
-        stubs: {
-          RouterView: RouterViewStub
-        }
-      }
-    })
+    const wrapper = mountApp(router)
 
     await wrapper.findAll('.nav-actions .btn-outline')[2].trigger('click')
     await wrapper.findAll('.auth-tab')[1].trigger('click')
@@ -85,21 +80,7 @@ describe('App guest login request', () => {
 
   test('toggles the mobile navigation with an explicit expanded state', async () => {
     const router = { push: vi.fn() }
-    const wrapper = mount(App, {
-      global: {
-        plugins: [pinia],
-        provide: {
-          [routerKey]: router
-        },
-        mocks: {
-          $route: { path: '/' },
-          $router: router
-        },
-        stubs: {
-          RouterView: RouterViewStub
-        }
-      }
-    })
+    const wrapper = mountApp(router)
 
     const toggle = wrapper.get('[data-test="nav-toggle"]')
     expect(toggle.attributes('aria-expanded')).toBe('false')
@@ -112,21 +93,7 @@ describe('App guest login request', () => {
 
   test('exposes authentication as a labelled modal dialog', async () => {
     const router = { push: vi.fn() }
-    const wrapper = mount(App, {
-      global: {
-        plugins: [pinia],
-        provide: {
-          [routerKey]: router
-        },
-        mocks: {
-          $route: { path: '/' },
-          $router: router
-        },
-        stubs: {
-          RouterView: RouterViewStub
-        }
-      }
-    })
+    const wrapper = mountApp(router)
 
     await wrapper.findAll('.nav-actions .btn-outline')[2].trigger('click')
 
@@ -135,5 +102,20 @@ describe('App guest login request', () => {
     expect(dialog.attributes('aria-labelledby')).toBe('auth-dialog-title')
     expect(wrapper.get('#auth-dialog-title').text()).not.toBe('')
     expect(wrapper.get('[aria-label="ปิดหน้าต่างบัญชีผู้ใช้"]')).toBeTruthy()
+  })
+
+  test('starts catalog and article requests without serializing them', async () => {
+    let releaseCatalog
+    const catalogStore = useCatalogStore()
+    const articleStore = useArticleStore()
+    catalogStore.fetchCatalog = vi.fn(() => new Promise(resolve => { releaseCatalog = resolve }))
+    articleStore.fetchArticles = vi.fn().mockResolvedValue(true)
+
+    mountApp()
+    await nextTick()
+
+    expect(catalogStore.fetchCatalog).toHaveBeenCalledOnce()
+    expect(articleStore.fetchArticles).toHaveBeenCalledOnce()
+    releaseCatalog()
   })
 })
