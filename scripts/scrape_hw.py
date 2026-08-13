@@ -98,6 +98,16 @@ CAT_CONFIG = {
         ],
         'detect': 'case',
     },
+    'mainboard': {
+        'db_id': 2,
+        'ihavecpu_api': 28,  # MAINBOARD
+        'advice_urls': [
+            "https://www.advice.co.th/product/mainboard",
+            "https://www.advice.co.th/product/mainboard-amd",
+            "https://www.advice.co.th/product/mainboard-intel",
+        ],
+        'detect': 'mainboard',
+    },
 }
 
 # ---------------- ihavecpu (API) ----------------
@@ -258,6 +268,15 @@ def detect_specs(cat_key, model):
     if cat_key == 'case':
         ff = detect_case_form(model)
         return {'form_factor': ff} if ff else {}
+    if cat_key == 'mainboard':
+        d = {}
+        s = detect_socket(model)
+        if s: d['socket_detected'] = s
+        rt = detect_ram_type(model)
+        if rt: d['ram_type'] = rt
+        ff = detect_case_form(model)  # Mainboard form factor (ATX/mATX/ITX)
+        if ff: d['form_factor'] = ff
+        return d
     return {}
 
 # ---------------- Main ----------------
@@ -359,13 +378,13 @@ def _upsert_spec(c, p, pid):
     """เขียน/อัปเดตตาราง spec_* ตามหมวด"""
     cat = p.get('category')
     if cat == 'cpu':
-        socket = p.get('socket_detected', '')
+        socket = p.get('socket_detected', '') or ''
         cores = _extract_int(p['model'], r'(\d+)\s*[Cc]')
         threads = _extract_int(p['model'], r'(\d+)\s*[Tt]')
         c.execute("DELETE FROM spec_cpu WHERE product_id=%s", (pid,))
         if socket or cores or threads:
-            c.execute("INSERT INTO spec_cpu (product_id, socket, tdp_watt, cores, threads) VALUES (%s,%s,NULL,%s,%s)",
-                      (pid, socket or None, cores, threads))
+            c.execute("INSERT INTO spec_cpu (product_id, socket, tdp_watt, cores, threads) VALUES (%s,%s,0,%s,%s)",
+                      (pid, socket or '', cores, threads))
     elif cat == 'gpu':
         vram = p.get('vram_gb')
         c.execute("DELETE FROM spec_gpu WHERE product_id=%s", (pid,))
@@ -398,6 +417,14 @@ def _upsert_spec(c, p, pid):
         if ff:
             c.execute("INSERT INTO spec_case (product_id, form_factor_support, max_gpu_length_mm) VALUES (%s,%s,NULL)",
                       (pid, ff))
+    elif cat == 'mainboard':
+        socket = p.get('socket_detected', '') or ''
+        ram_type = p.get('ram_type', '') or ''
+        ff = p.get('form_factor', '') or ''
+        c.execute("DELETE FROM spec_motherboard WHERE product_id=%s", (pid,))
+        if socket or ram_type or ff:
+            c.execute("INSERT INTO spec_motherboard (product_id, socket, ram_type, form_factor) VALUES (%s,%s,%s,%s)",
+                      (pid, socket or '', ram_type or '', ff or ''))
 
 def _extract_int(text, pattern):
     m = re.search(pattern, text.upper())
