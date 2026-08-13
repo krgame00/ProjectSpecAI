@@ -80,6 +80,24 @@ CAT_CONFIG = {
         ],
         'detect': 'storage',
     },
+    'psu': {
+        'db_id': 6,
+        'ihavecpu_api': 45,  # PSU
+        'advice_urls': [
+            "https://www.advice.co.th/product/power-supply",
+            "https://www.advice.co.th/product/power-supply-psu-",
+        ],
+        'detect': 'psu',
+    },
+    'case': {
+        'db_id': 7,
+        'ihavecpu_api': 46,  # CASE
+        'advice_urls': [
+            "https://www.advice.co.th/product/pc-case",
+            "https://www.advice.co.th/product/pc-case-gaming",
+        ],
+        'detect': 'case',
+    },
 }
 
 # ---------------- ihavecpu (API) ----------------
@@ -204,6 +222,21 @@ def detect_storage(model):
         ctype = 'NVMe SSD' if 'NVME' in model.upper() or 'M.2' in model.upper() else ('SSD' if 'SSD' in model.upper() else None)
     return capacity, ctype
 
+def detect_psu_wattage(model):
+    """PSU wattage จากชื่อรุ่น (W)"""
+    m = re.search(r'(\d+)\s*W', model.upper())
+    return int(m.group(1)) if m else None
+
+def detect_case_form(model):
+    """Case form factor จากชื่อรุ่น"""
+    up = model.upper()
+    forms = []
+    if 'ATX' in up: forms.append('ATX')
+    if 'MICRO-ATX' in up or 'M-ATX' in up or 'MATX' in up: forms.append('Micro-ATX')
+    if 'MINI-ITX' in up or 'ITX' in up: forms.append('Mini-ITX')
+    if 'E-ATX' in up or 'EATX' in up: forms.append('E-ATX')
+    return ' / '.join(forms) if forms else ''
+
 def detect_specs(cat_key, model):
     """คืน dict สเปคตามหมวด (สำหรับบันทึกลง DB)"""
     if cat_key == 'cpu':
@@ -219,6 +252,12 @@ def detect_specs(cat_key, model):
         if cap: d['capacity_gb'] = cap
         if ctype: d['type'] = ctype
         return d
+    if cat_key == 'psu':
+        w = detect_psu_wattage(model)
+        return {'wattage': w} if w else {}
+    if cat_key == 'case':
+        ff = detect_case_form(model)
+        return {'form_factor': ff} if ff else {}
     return {}
 
 # ---------------- Main ----------------
@@ -254,6 +293,8 @@ def main():
         if p.get('ram_type'): extra += f" | Type: {p['ram_type']}"
         if p.get('vram_gb'): extra += f" | VRAM: {p['vram_gb']}GB"
         if p.get('capacity_gb'): extra += f" | Cap: {p['capacity_gb']}GB"
+        if p.get('wattage'): extra += f" | Watt: {p['wattage']}W"
+        if p.get('form_factor'): extra += f" | Form: {p['form_factor']}"
         print(f"{i:2}. [{p['brand']}] {p['model'][:50]}")
         print(f"    ราคา: ฿{p['price']:,.0f}{extra} | รูป: {'มี' if p['image_url'] else 'ไม่มี'} | {p['source']}")
         print(f"    URL: {p['url']}")
