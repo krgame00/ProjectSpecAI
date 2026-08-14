@@ -162,6 +162,7 @@ const markCoverFailed = id => failedCovers.value.add(id)
 }
 
 .articles-state .btn {
+  min-height: 44px;
   margin-top: var(--space-xl);
 }
 
