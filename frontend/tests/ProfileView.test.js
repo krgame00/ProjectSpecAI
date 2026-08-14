@@ -7,6 +7,14 @@ import { useAuthStore } from '../src/stores/auth'
 
 let pinia
 
+const deferred = () => {
+  let resolve
+  const promise = new Promise(resolvePromise => {
+    resolve = resolvePromise
+  })
+  return { promise, resolve }
+}
+
 const mountProfile = router => mount(ProfileView, {
   global: {
     plugins: [pinia],
@@ -53,7 +61,10 @@ describe('ProfileView', () => {
 
     expect(fetch).toHaveBeenCalledWith(
       'http://localhost:3001/api/v1/auth/profile',
-      { headers: { Authorization: 'Bearer store-token' } }
+      expect.objectContaining({
+        headers: { Authorization: 'Bearer store-token' },
+        signal: expect.any(AbortSignal)
+      })
     )
     expect(wrapper.text()).toContain('member@example.com')
   })
@@ -72,15 +83,41 @@ describe('ProfileView', () => {
         })
       }))
 
-    const wrapper = mountProfile({ replace: vi.fn() })
+    const router = { replace: vi.fn() }
+    const auth = useAuthStore()
+    const logout = vi.spyOn(auth, 'logout')
+    const wrapper = mountProfile(router)
     await flushPromises()
 
     expect(wrapper.text()).toContain('offline')
+    expect(auth.token).toBe('token-1')
+    expect(logout).not.toHaveBeenCalled()
+    expect(router.replace).not.toHaveBeenCalled()
     await wrapper.get('[data-test="profile-retry"]').trigger('click')
     await flushPromises()
 
     expect(fetch).toHaveBeenCalledTimes(2)
     expect(wrapper.text()).toContain('ok@example.com')
+    expect(auth.token).toBe('token-1')
+    expect(logout).not.toHaveBeenCalled()
+    expect(router.replace).not.toHaveBeenCalled()
+  })
+
+  test('keeps a non-401 server failure recoverable without ending the session', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 }))
+    const router = { replace: vi.fn() }
+    const auth = useAuthStore()
+    const logout = vi.spyOn(auth, 'logout')
+
+    const wrapper = mountProfile(router)
+    await flushPromises()
+
+    expect(wrapper.get('[data-test="profile-retry"]').exists()).toBe(true)
+    expect(wrapper.text()).toContain('500')
+    expect(auth.token).toBe('token-1')
+    expect(auth.user).toEqual({ id: 1, name: 'Member' })
+    expect(logout).not.toHaveBeenCalled()
+    expect(router.replace).not.toHaveBeenCalled()
   })
 
   test('logs out and replaces the route immediately on 401', async () => {
@@ -99,6 +136,44 @@ describe('ProfileView', () => {
     expect(logout).toHaveBeenCalledOnce()
     expect(router.replace).toHaveBeenCalledWith('/')
     expect(wrapper.find('[data-test="profile-retry"]').exists()).toBe(false)
+  })
+
+  test('ignores a deferred 401 from an earlier auth session', async () => {
+    const request = deferred()
+    vi.stubGlobal('fetch', vi.fn().mockReturnValue(request.promise))
+    const router = { replace: vi.fn() }
+    const auth = useAuthStore()
+    const logout = vi.spyOn(auth, 'logout')
+
+    mountProfile(router)
+    await flushPromises()
+    auth.setUser({ id: 2, name: 'New member' }, 'token-2')
+    request.resolve({ ok: false, status: 401 })
+    await flushPromises()
+
+    expect(auth.token).toBe('token-2')
+    expect(auth.user).toEqual({ id: 2, name: 'New member' })
+    expect(logout).not.toHaveBeenCalled()
+    expect(router.replace).not.toHaveBeenCalled()
+  })
+
+  test('aborts the pending profile request when the view unmounts', async () => {
+    let requestSignal
+    vi.stubGlobal('fetch', vi.fn().mockImplementation((_, options) => {
+      requestSignal = options.signal
+      return new Promise((_, reject) => {
+        requestSignal?.addEventListener('abort', () => {
+          reject(new DOMException('Aborted', 'AbortError'))
+        })
+      })
+    }))
+
+    const wrapper = mountProfile({ replace: vi.fn() })
+    await flushPromises()
+    wrapper.unmount()
+    await flushPromises()
+
+    expect(requestSignal?.aborted).toBe(true)
   })
 
   test('signs out through the auth store and replaces the route', async () => {

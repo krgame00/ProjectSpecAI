@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
@@ -52,24 +52,33 @@ const authStore = useAuthStore();
 const profile = ref(null);
 const loading = ref(true);
 const error = ref(null);
+let mounted = true;
+let activeRequestController = null;
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
 
 async function loadProfile() {
-  if (!authStore.token) {
+  const requestToken = authStore.token;
+  if (!requestToken) {
     await router.replace('/');
     return;
   }
 
+  activeRequestController?.abort();
+  const requestController = new AbortController();
+  activeRequestController = requestController;
   loading.value = true;
   error.value = null;
 
   try {
     const response = await fetch(`${API_BASE}/auth/profile`, {
       headers: {
-        'Authorization': `Bearer ${authStore.token}`
-      }
+        'Authorization': `Bearer ${requestToken}`
+      },
+      signal: requestController.signal
     });
+
+    if (!isCurrentRequest(requestToken, requestController)) return;
 
     if (response.status === 401) {
       authStore.logout();
@@ -81,14 +90,27 @@ async function loadProfile() {
       throw new Error(`ไม่สามารถดึงข้อมูลโปรไฟล์ได้ (Error: ${response.status})`);
     }
 
-    profile.value = await response.json();
+    const data = await response.json();
+    if (isCurrentRequest(requestToken, requestController)) {
+      profile.value = data;
+    }
   } catch (reason) {
+    if (!isCurrentRequest(requestToken, requestController)) return;
     error.value = reason instanceof Error
       ? reason.message
       : 'ไม่สามารถดึงข้อมูลโปรไฟล์ได้';
   } finally {
-    loading.value = false;
+    if (mounted && activeRequestController === requestController) {
+      loading.value = false;
+      activeRequestController = null;
+    }
   }
+}
+
+function isCurrentRequest(requestToken, requestController) {
+  return mounted
+    && activeRequestController === requestController
+    && authStore.token === requestToken;
 }
 
 function logout() {
@@ -97,6 +119,11 @@ function logout() {
 }
 
 onMounted(loadProfile);
+onBeforeUnmount(() => {
+  mounted = false;
+  activeRequestController?.abort();
+  activeRequestController = null;
+});
 </script>
 
 <style scoped>
