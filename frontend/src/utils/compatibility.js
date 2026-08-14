@@ -18,10 +18,11 @@ export const extractSocket = (item) => {
 }
 
 // AMD: "AM5", "AM4", "sTRX5", "sTR5", "TRX50" (Threadripper)
-// Intel: "LGA1700", "LGA1851", "LGA1200", "LGA1151", "LGA2066"
+// Intel: "LGA1700", "LGA1851", "LGA1200", "LGA1151", "LGA2066", "LGA1155"
 export const normalizeSocket = (socket) => {
   if (!socket) return null
-  const s = String(socket).trim().toUpperCase()
+  let s = String(socket).replace(/\s+/g, '').trim().toUpperCase()
+  if (/^\d{4}$/.test(s)) s = `LGA${s}` // e.g. "1155" -> "LGA1155", "1700" -> "LGA1700"
   return s
 }
 
@@ -39,8 +40,9 @@ export const socketMatches = (cpuSocket, moboSocket) => {
   const a = extractSocket(cpuSocket)
   const b = extractSocket(moboSocket)
   if (!a || !b) return true // unknown -> cannot judge
-  const na = String(a).trim().toUpperCase()
-  const nb = String(b).trim().toUpperCase()
+  const na = normalizeSocket(a)
+  const nb = normalizeSocket(b)
+  if (!na || !nb) return true
   // Treat "AM5"/"AM4" family prefixes as compatible ONLY when exact family
   if (/^AM\d/.test(na) && /^AM\d/.test(nb)) {
     if (na.startsWith('AM5') && nb.startsWith('AM5')) return true

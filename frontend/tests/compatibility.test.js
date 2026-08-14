@@ -34,6 +34,15 @@ describe('compatibility utils', () => {
     expect(out[0].type).toBe('issue')
   })
 
+  test('socketMatches handles whitespace and aliases gracefully', () => {
+    expect(socketMatches('LGA1700', 'LGA 1700')).toBe(true)
+    expect(socketMatches('LGA 1851', 'LGA1851')).toBe(true)
+    expect(socketMatches('1155', 'LGA1155')).toBe(true)
+    expect(socketMatches('AM5', 'AM5')).toBe(true)
+    expect(socketMatches('AM5', 'AM4')).toBe(false)
+    expect(socketMatches('LGA1700', 'LGA1851')).toBe(false)
+  })
+
   test('checkRamCompatibility returns issue on DDR4 vs DDR5', () => {
     const out = checkRamCompatibility(mobo, { ...ram, type: 'DDR4' })
     expect(out[0].type).toBe('issue')

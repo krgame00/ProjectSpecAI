@@ -1,0 +1,74 @@
+<h2>ทิศทาง UX/UI สำหรับ Articles + Profile</h2>
+<p class="subtitle">เลือกแนวที่ควรใช้เป็นระบบเดียวกัน โดยคงโทน ForgeLabs เดิมและเน้นมือถือก่อน</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1rem;background:var(--card);color:var(--card-foreground)">
+      <div style="display:grid;gap:.65rem">
+        <div style="font-weight:500">บทความและความรู้</div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:.65rem">
+          <div style="min-height:7rem;background:var(--muted);border:1px solid var(--border);border-radius:.5rem"></div>
+          <div style="display:grid;align-content:center;gap:.4rem">
+            <div class="text-small text-muted">ล่าสุด · 13 สิงหาคม 2569</div>
+            <div style="font-weight:500">เลือก PSU ให้พอดีกับสเปค</div>
+            <div class="text-small text-muted">อ่านง่าย เห็นหัวข้อและสาระสำคัญก่อนภาพตกแต่ง</div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:.55rem;display:grid;gap:.35rem">
+          <div style="font-weight:500">โปรไฟล์ของคุณ</div>
+          <div class="text-small text-muted">ชื่อผู้ใช้ · อีเมล · สถานะบัญชี แสดงเป็นรายการอ่านง่าย</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A · Reading-first (แนะนำ)</h3>
+      <p>บทความเด่นแบบ editorial กระชับ รายการอื่นเป็นแถว/กริดที่อ่านเร็ว ส่วน Profile ใช้ information list ไม่ซ้อนการ์ด</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1rem;background:var(--card);color:var(--card-foreground)">
+      <div style="display:grid;gap:.65rem">
+        <div style="font-weight:500">บทความและความรู้</div>
+        <div style="min-height:6rem;background:var(--muted);border-radius:.5rem"></div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem">
+          <div style="border:1px solid var(--border);border-radius:.5rem;padding:.55rem"><div class="text-small">คู่มือเลือก CPU</div></div>
+          <div style="border:1px solid var(--border);border-radius:.5rem;padding:.55rem"><div class="text-small">SSD แบบไหนดี</div></div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:.5rem;padding:.65rem">
+          <div style="font-weight:500">Profile card</div>
+          <div class="text-small text-muted">ข้อมูลทุกส่วนอยู่ในกล่องเดียว</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B · Card-led</h3>
+      <p>คงภาษาภาพปัจจุบันมากที่สุด เพิ่มความเรียบร้อยและ responsive แต่ยังมีกรอบการ์ดจำนวนมาก</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1rem;background:var(--card);color:var(--card-foreground)">
+      <div style="display:grid;gap:.55rem">
+        <div style="display:flex;justify-content:space-between;gap:.5rem;align-items:center">
+          <div style="font-weight:500">Knowledge feed</div>
+          <div class="viz-badge">7 บทความ</div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:.5rem">
+          <div class="text-small text-muted">13 ส.ค. 2569</div><div style="font-weight:500">เลือก RAM ให้ตรงเมนบอร์ด</div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:.5rem">
+          <div class="text-small text-muted">10 ส.ค. 2569</div><div style="font-weight:500">เช็กกำลังไฟก่อนประกอบ</div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:.5rem">
+          <div style="font-weight:500">Account settings</div>
+          <div class="text-small text-muted">เน้นความหนาแน่นและข้อมูลมากกว่าภาพ</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C · Utility-dense</h3>
+      <p>เร็วและประหยัดพื้นที่ เหมาะกับผู้ใช้ประจำ แต่ลดบทบาทภาพบทความและให้ความรู้สึกคล้ายเครื่องมือมากขึ้น</p>
+    </div>
+  </div>
+</div>
