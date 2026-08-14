@@ -69,6 +69,45 @@ describe('ArticleDetailView', () => {
     expect(router.push).not.toHaveBeenCalled()
   })
 
+  test('keeps a sanitized table semantic inside a named focusable scroll region', async () => {
+    const wrapper = mountDetail({
+      articles: [{
+        id: 7,
+        title: 'Wide specifications',
+        created_at: '2026-08-13T00:00:00.000Z',
+        content: '<table tabindex="4" aria-label="Spoofed"><tbody><tr><td>GPU</td><td>Very wide value</td></tr></tbody></table>'
+      }]
+    })
+
+    const region = wrapper.get('.article-table-scroll')
+    expect(region.attributes()).toMatchObject({
+      tabindex: '0',
+      role: 'region',
+      'aria-label': 'ตารางข้อมูลบทความ 1'
+    })
+    expect(region.get('table').attributes('tabindex')).toBeUndefined()
+    expect(region.get('table').attributes('aria-label')).toBeUndefined()
+
+    Object.defineProperty(region.element, 'clientWidth', { configurable: true, value: 200 })
+    Object.defineProperty(region.element, 'scrollWidth', { configurable: true, value: 800 })
+    region.element.scrollLeft = 0
+    await region.trigger('keydown', { key: 'ArrowRight' })
+    expect(region.element.scrollLeft).toBeGreaterThan(0)
+  })
+
+  test('adds a machine-readable datetime for a valid article date', () => {
+    const wrapper = mountDetail({
+      articles: [{
+        id: 7,
+        title: 'Dated article',
+        created_at: '2026-08-13T00:00:00.000Z',
+        content: '<p>Body</p>'
+      }]
+    })
+
+    expect(wrapper.get('time').attributes('datetime')).toBe('2026-08-13T00:00:00.000Z')
+  })
+
   test.each([
     [{ articlesLoading: true }, '[role="status"]'],
     [{ articlesError: 'offline' }, '[role="alert"]'],

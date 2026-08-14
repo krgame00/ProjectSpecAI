@@ -172,6 +172,9 @@ test('preserves the populated profile footprint while its request is loading', a
 
   const loading = page.locator('[data-test="profile-loading"]')
   await expect(loading).toBeVisible()
+  const loadingLabel = loading.locator('.profile-loading-label')
+  await expect(loadingLabel).toBeVisible()
+  expect(await contrastRatio(loadingLabel)).toBeGreaterThanOrEqual(4.5)
   const loadingBox = await loading.boundingBox()
   expect(loadingBox).not.toBeNull()
 

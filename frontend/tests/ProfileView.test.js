@@ -115,10 +115,40 @@ describe('ProfileView', () => {
     const loading = wrapper.get('[data-test="profile-loading"]')
 
     expect(loading.attributes('role')).toBe('status')
-    expect(loading.get('.sr-only').text()).not.toBe('')
+    expect(loading.get('.profile-loading-label').text()).not.toBe('')
+    expect(loading.get('.profile-loading-label').classes()).not.toContain('sr-only')
     expect(loading.findAll('[data-test="profile-skeleton-row"]')).toHaveLength(4)
     expect(loading.get('[data-test="profile-skeleton-details"]').attributes('aria-hidden')).toBe('true')
     expect(loading.get('[data-test="profile-skeleton-action"]').attributes('aria-hidden')).toBe('true')
+  })
+
+  test('settles a rejected missing-token redirect without requesting profile data', async () => {
+    const auth = useAuthStore()
+    auth.token = null
+    const navigationError = new Error('cancelled navigation')
+    const router = { replace: vi.fn().mockRejectedValue(navigationError) }
+    vi.stubGlobal('fetch', vi.fn())
+
+    const wrapper = mountProfile(router)
+    await flushPromises()
+
+    expect(router.replace).toHaveBeenCalledWith('/')
+    expect(fetch).not.toHaveBeenCalled()
+    expect(wrapper.find('[data-test="profile-loading"]').exists()).toBe(false)
+  })
+
+  test('uses a labelled section instead of a main landmark when embedded', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({ name: 'Admin', email: 'admin@example.com', role: 'admin' })
+    }))
+
+    const wrapper = mountProfile({ replace: vi.fn() }, { props: { embedded: true } })
+    await flushPromises()
+
+    expect(wrapper.findAll('main')).toHaveLength(0)
+    expect(wrapper.get('section.profile-page').attributes('aria-labelledby')).toBe('profile-title')
   })
 
   test('keeps a network failure in place and retries', async () => {

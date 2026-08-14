@@ -42,11 +42,17 @@
     </nav>
 
     <!-- Main Views Transition via Vue Router -->
-    <div class="route-content" :inert="showLoginModal">
+    <div ref="routeContentRef" class="route-content" :inert="showLoginModal">
     <router-view v-slot="{ Component }">
-      <Transition name="page" mode="out-in">
+      <Transition
+        name="page"
+        mode="out-in"
+        @before-enter="prepareRouteFocus"
+        @after-enter="focusRouteDestination"
+      >
         <component
           :is="Component"
+          :key="$route.fullPath"
           :catalog="catalogStore.getCategorizedHardware"
           :categories="categories"
           :userRole="userRole"
@@ -72,6 +78,9 @@
       </Transition>
     </router-view>
     </div>
+    <p class="sr-only" aria-live="polite" aria-atomic="true" data-test="route-announcement">
+      {{ routeAnnouncement }}
+    </p>
 
     <!-- Auth Modal -->
     <Transition name="modal">
@@ -153,6 +162,8 @@ const currentUser = computed(() => authStore.user);
 const userRole = computed(() => authStore.user?.role || 'guest');
 
 const showLoginModal = ref(false);
+const routeContentRef = ref(null);
+const routeAnnouncement = ref('');
 const authDialogRef = ref(null);
 const authReturnFocusRef = ref(null);
 const navToggleRef = ref(null);
@@ -161,6 +172,25 @@ const authTab = ref('login');
 const loginForm = reactive({ email: '', password: '' });
 const registerForm = reactive({ name: '', email: '', password: '' });
 const router = useRouter();
+
+const prepareRouteFocus = () => {
+  routeAnnouncement.value = ''
+}
+
+const focusRouteDestination = async () => {
+  await nextTick()
+  const target = routeContentRef.value?.querySelector('[data-route-focus]')
+  if (!(target instanceof HTMLElement)) return
+
+  target.focus({ preventScroll: true })
+  const labelledBy = target.getAttribute('aria-labelledby')
+  const heading = labelledBy
+    ? document.getElementById(labelledBy)
+    : target.querySelector('h1')
+  routeAnnouncement.value = heading?.textContent?.trim()
+    || target.getAttribute('aria-label')
+    || ''
+}
 
 const toggleNav = () => {
   isNavOpen.value = !isNavOpen.value;

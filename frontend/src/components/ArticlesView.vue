@@ -1,7 +1,7 @@
 <template>
-  <main class="articles-view container">
+  <main class="articles-view container" data-route-focus tabindex="-1" aria-labelledby="articles-title">
     <header class="articles-header">
-      <h1>บทความและความรู้</h1>
+      <h1 id="articles-title">บทความและความรู้</h1>
       <p>อัปเดตข่าวสารและเทคนิคการจัดสเปคคอมพิวเตอร์ล่าสุด</p>
     </header>
 
@@ -52,7 +52,7 @@
           <span class="hero-badge">ล่าสุด</span>
         </div>
         <div class="hero-content">
-          <time>{{ formatArticleDate(featuredArticle.created_at || featuredArticle.date) }}</time>
+          <time :datetime="articleDateTime(featuredArticle.created_at || featuredArticle.date)">{{ formatArticleDate(featuredArticle.created_at || featuredArticle.date) }}</time>
           <h2>{{ featuredArticle.title }}</h2>
           <p class="article-excerpt hero-excerpt">{{ articleExcerpt(featuredArticle.content) }}</p>
           <span class="read-more-link">อ่านต่อ →</span>
@@ -84,7 +84,7 @@
             </div>
           </div>
           <div class="article-content">
-            <time>{{ formatArticleDate(article.created_at || article.date) }}</time>
+            <time :datetime="articleDateTime(article.created_at || article.date)">{{ formatArticleDate(article.created_at || article.date) }}</time>
             <h3>{{ article.title }}</h3>
             <p class="article-excerpt">{{ articleExcerpt(article.content) }}</p>
             <span class="read-more-link">อ่านต่อ →</span>
@@ -97,7 +97,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { articleExcerpt, formatArticleDate } from '../utils/articleContent'
+import { articleDateTime, articleExcerpt, formatArticleDate } from '../utils/articleContent'
 
 const props = defineProps({
   articles: {
@@ -130,6 +130,11 @@ const markCoverFailed = article => failedCovers.value.set(article.id, articleIma
 <style scoped>
 .articles-view {
   padding-block: var(--space-xxl) var(--space-huge);
+}
+
+.articles-view:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
 }
 
 .articles-header {
@@ -190,9 +195,15 @@ const markCoverFailed = article => failedCovers.value.set(article.id, articleIma
 .hero-image,
 .article-image {
   position: relative;
-  min-height: 13rem;
   overflow: hidden;
   background: var(--canvas-soft);
+}
+
+.hero-image {
+  min-height: 0;
+  max-height: 18rem;
+  aspect-ratio: 16 / 10;
+  flex: none;
 }
 
 .hero-image img,
@@ -382,6 +393,8 @@ const markCoverFailed = article => failedCovers.value.set(article.id, articleIma
 
   .hero-image {
     min-height: 24rem;
+    max-height: none;
+    aspect-ratio: auto;
   }
 
   .hero-content {

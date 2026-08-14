@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 const articles = [{
   id: 7,
   title: 'คู่มือจัดสเปคที่มีชื่อยาวมากสำหรับหน้าจอขนาดเล็ก',
-  content: '<h2>เริ่มต้น</h2><p>เนื้อหา</p><table><tbody><tr><td>LONG-HARDWARE-ID-WITHOUT-SPACES</td></tr></tbody></table>',
+  content: '<h2>เริ่มต้น</h2><p>เนื้อหา</p><table tabindex="8" role="presentation" aria-label="Spoofed"><tbody><tr><td>LONG-HARDWARE-ID-WITHOUT-SPACES</td><td>CPU-COMPATIBILITY-SOCKET-VALUE</td><td>MEMORY-CLEARANCE-MEASUREMENT</td><td>POWER-SUPPLY-HEADROOM-VALUE</td><td>FINAL-OFFSCREEN-SPECIFICATION</td></tr></tbody></table>',
   image_url: '/missing-cover.jpg',
   created_at: '2026-08-13T00:00:00.000Z'
 }, {
@@ -89,15 +89,14 @@ for (const viewport of [
 
     await tabTo(page, articleLink)
     await expect(articleLink).toBeFocused()
+    await expect.poll(() => articleLink.evaluate(element => element.matches(':focus-visible'))).toBe(true)
     const focus = await articleLink.evaluate(element => {
       const styles = getComputedStyle(element)
       return {
-        visible: element.matches(':focus-visible'),
         outlineStyle: styles.outlineStyle,
         outlineWidth: Number.parseFloat(styles.outlineWidth)
       }
     })
-    expect(focus.visible).toBe(true)
     expect(focus.outlineStyle).toBe('solid')
     expect(focus.outlineWidth).toBeGreaterThan(0)
     await page.keyboard.press('Enter')
@@ -214,4 +213,86 @@ test('honors reduced motion and shows a failed-cover fallback', async ({ page })
     Number.parseFloat(getComputedStyle(element).transitionDuration)
   ))
   expect(duration).toBeLessThanOrEqual(0.01)
+})
+
+test('moves focus and announces article destinations after keyboard route navigation', async ({ page }) => {
+  await prepare(page)
+  await page.goto('/articles')
+
+  const articleLink = page.getByRole('link', { name: /คู่มือจัดสเปค/ })
+  await tabTo(page, articleLink)
+  await page.keyboard.press('Enter')
+
+  const detailMain = page.locator('main.article-detail-view')
+  await expect(page).toHaveURL(/\/article\/7$/)
+  await expect(detailMain).toBeFocused()
+  await expect(page.locator('[data-test="route-announcement"]')).toContainText('คู่มือจัดสเปค')
+
+  const backLink = page.getByRole('link', { name: /กลับไปหน้าบทความ/ }).first()
+  await page.keyboard.press('Tab')
+  await expect(backLink).toBeFocused()
+  await page.keyboard.press('Enter')
+
+  const articlesMain = page.locator('main.articles-view')
+  await expect(page).toHaveURL(/\/articles$/)
+  await expect(articlesMain).toBeFocused()
+  await expect(page.locator('[data-test="route-announcement"]')).toHaveText('บทความและความรู้')
+})
+
+test('makes trusted rich tables keyboard-scrollable without trusting author attributes', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await prepare(page)
+  await page.goto('/article/7')
+
+  const region = page.getByRole('region', { name: 'ตารางข้อมูลบทความ 1' })
+  const table = region.locator('table')
+  await expect(region).toHaveAttribute('tabindex', '0')
+  await expect(table).not.toHaveAttribute('tabindex', '8')
+  await expect(table).not.toHaveAttribute('role', 'presentation')
+  await expect(table).not.toHaveAttribute('aria-label', 'Spoofed')
+  expect(await region.evaluate(element => element.scrollWidth)).toBeGreaterThan(
+    await region.evaluate(element => element.clientWidth)
+  )
+
+  const lastCell = page.getByRole('cell', { name: 'FINAL-OFFSCREEN-SPECIFICATION' })
+  const lastCellHandle = await lastCell.elementHandle()
+  const initiallyOffscreen = await region.evaluate((element, cell) => (
+    cell.getBoundingClientRect().right > element.getBoundingClientRect().right + 1
+  ), lastCellHandle)
+  expect(initiallyOffscreen).toBe(true)
+
+  await region.focus()
+  await expect(region).toBeFocused()
+  for (let index = 0; index < 30; index += 1) await page.keyboard.press('ArrowRight')
+
+  await expect.poll(() => region.evaluate(element => element.scrollLeft)).toBeGreaterThan(0)
+  await expect.poll(() => region.evaluate((element, cell) => (
+    cell.getBoundingClientRect().right <= element.getBoundingClientRect().right + 1
+  ), lastCellHandle)).toBe(true)
+  await expectNoPageOverflow(page)
+})
+
+test('bounds a successfully loaded phone feature cover', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 })
+  const coveredArticles = [{ ...articles[0], image_url: '/successful-cover.svg' }, ...articles.slice(1)]
+  await page.route('**/api/v1/hardware/catalog', route => route.fulfill({ json: {} }))
+  await page.route('**/api/v1/articles', route => route.fulfill({ json: coveredArticles }))
+  await page.route('**/successful-cover.svg', route => route.fulfill({
+    contentType: 'image/svg+xml',
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1200"><rect width="600" height="1200" fill="#3ecf8e"/></svg>'
+  }))
+
+  await page.goto('/articles')
+
+  const imageBox = await page.locator('.hero-article .hero-image').boundingBox()
+  const cover = page.locator('.hero-article .hero-image img')
+  const coverBox = await cover.boundingBox()
+  expect(imageBox).not.toBeNull()
+  expect(coverBox).not.toBeNull()
+  expect(imageBox.height).toBeLessThanOrEqual(190)
+  expect(imageBox.width / imageBox.height).toBeCloseTo(16 / 10, 1)
+  expect(coverBox.width).toBeCloseTo(imageBox.width, 0)
+  expect(coverBox.height).toBeCloseTo(imageBox.height, 0)
+  await expect(cover).toHaveCSS('object-fit', 'cover')
+  await expectNoPageOverflow(page)
 })

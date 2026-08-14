@@ -92,7 +92,7 @@
 
         <!-- Admin Profile Tab -->
         <div v-if="adminTab === 'profile'">
-          <ProfileView />
+          <ProfileView embedded />
         </div>
 
         <!-- Orders Tab -->

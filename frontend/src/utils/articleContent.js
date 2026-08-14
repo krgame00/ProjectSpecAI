@@ -2,6 +2,7 @@ import DOMPurify from 'dompurify'
 
 const ALLOWED_TAGS = ['p', 'br', 'h2', 'h3', 'h4', 'strong', 'em', 'ul', 'ol', 'li', 'blockquote', 'a', 'img', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'pre', 'code']
 const ALLOWED_ATTR = ['href', 'src', 'alt', 'title', 'scope']
+const TABLE_REGION_LABEL = 'ตารางข้อมูลบทความ'
 
 export function sanitizeArticleHtml(value) {
   const sanitized = DOMPurify.sanitize(String(value ?? ''), {
@@ -14,6 +15,15 @@ export function sanitizeArticleHtml(value) {
   template.innerHTML = sanitized
   template.content.querySelectorAll('img').forEach(image => {
     if (!image.getAttribute('alt')?.trim()) image.remove()
+  })
+  template.content.querySelectorAll('table').forEach((table, index) => {
+    const region = document.createElement('div')
+    region.className = 'article-table-scroll'
+    region.tabIndex = 0
+    region.setAttribute('role', 'region')
+    region.setAttribute('aria-label', `${TABLE_REGION_LABEL} ${index + 1}`)
+    table.replaceWith(region)
+    region.append(table)
   })
   return template.innerHTML
 }
@@ -31,4 +41,10 @@ export function formatArticleDate(value, options = { year: 'numeric', month: 'lo
   return Number.isNaN(parsed.getTime())
     ? String(value)
     : new Intl.DateTimeFormat('th-TH', options).format(parsed)
+}
+
+export function articleDateTime(value) {
+  if (!value) return undefined
+  const parsed = new Date(value)
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
 }

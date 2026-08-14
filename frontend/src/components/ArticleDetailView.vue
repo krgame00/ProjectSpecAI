@@ -1,10 +1,10 @@
 <template>
-  <main v-if="articlesLoading" class="article-state" role="status" aria-live="polite">
+  <main v-if="articlesLoading" class="article-state" data-route-focus tabindex="-1" role="status" aria-live="polite" aria-label="กำลังโหลดบทความ">
     <p>กำลังโหลดบทความ</p>
   </main>
 
-  <main v-else-if="articlesError" class="article-state" role="alert">
-    <h1>โหลดบทความไม่สำเร็จ</h1>
+  <main v-else-if="articlesError" class="article-state" data-route-focus tabindex="-1" role="alert" aria-labelledby="article-error-title">
+    <h1 id="article-error-title">โหลดบทความไม่สำเร็จ</h1>
     <p>{{ articlesError }}</p>
     <div class="article-state-actions">
       <button class="btn btn-primary" type="button" data-test="article-retry" @click="$emit('retry-articles')">
@@ -14,13 +14,20 @@
     </div>
   </main>
 
-  <main v-else-if="!article" class="article-state" data-test="article-not-found">
-    <h1>ไม่พบบทความ</h1>
+  <main v-else-if="!article" class="article-state" data-route-focus tabindex="-1" data-test="article-not-found" aria-labelledby="article-not-found-title">
+    <h1 id="article-not-found-title">ไม่พบบทความ</h1>
     <p>บทความนี้อาจถูกย้ายหรือลบแล้ว</p>
     <RouterLink class="btn btn-outline" to="/articles">กลับไปหน้าบทความ</RouterLink>
   </main>
 
-  <article v-else class="article-detail-view">
+  <main
+    v-else
+    class="article-detail-view"
+    data-route-focus
+    tabindex="-1"
+    aria-labelledby="article-title"
+    @keydown="handleArticleContentKeydown"
+  >
     <RouterLink class="back-link" to="/articles">← กลับไปหน้าบทความ</RouterLink>
 
     <div class="hero-header">
@@ -42,17 +49,17 @@
     </div>
 
     <div class="article-body-container">
-      <time class="article-date">{{ formatArticleDate(article.created_at || article.date) }}</time>
-      <h1 class="article-title">{{ article.title }}</h1>
+      <time class="article-date" :datetime="articleDateTime(article.created_at || article.date)">{{ formatArticleDate(article.created_at || article.date) }}</time>
+      <h1 id="article-title" class="article-title">{{ article.title }}</h1>
       <div class="article-content" v-html="safeContent"></div>
     </div>
-  </article>
+  </main>
 </template>
 
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { formatArticleDate, sanitizeArticleHtml } from '../utils/articleContent'
+import { articleDateTime, formatArticleDate, sanitizeArticleHtml } from '../utils/articleContent'
 
 const props = defineProps({
   articles: {
@@ -81,6 +88,15 @@ const coverVisible = computed(() => Boolean(articleImage.value) && !coverFailed.
 watch([() => article.value?.id, articleImage], () => {
   coverFailed.value = false
 })
+
+function handleArticleContentKeydown(event) {
+  if (!(event.target instanceof HTMLElement) || !event.target.classList.contains('article-table-scroll')) return
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
+  event.preventDefault()
+  const direction = event.key === 'ArrowRight' ? 1 : -1
+  const step = Math.max(48, Math.round(event.target.clientWidth * 0.25))
+  event.target.scrollLeft += direction * step
+}
 </script>
 
 <style scoped>
@@ -91,6 +107,12 @@ watch([() => article.value?.id, articleImage], () => {
   margin: 0 auto;
   padding: clamp(1rem, 3vw, 2rem) var(--page-gutter) var(--space-huge);
   color: var(--ink);
+}
+
+.article-detail-view:focus-visible,
+.article-state:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
 }
 
 .back-link,
@@ -248,13 +270,23 @@ watch([() => article.value?.id, articleImage], () => {
   border-radius: var(--radius-md);
 }
 
-.article-content :deep(table) {
-  display: block;
+.article-content :deep(.article-table-scroll) {
   max-width: 100%;
   margin: var(--space-xl) 0;
   overflow-x: auto;
-  border-collapse: collapse;
+  contain: inline-size;
   overscroll-behavior-inline: contain;
+}
+
+.article-content :deep(.article-table-scroll:focus-visible) {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.article-content :deep(table) {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
 }
 
 .article-content :deep(th),

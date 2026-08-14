@@ -1,5 +1,11 @@
 <template>
-  <main class="container profile-page" aria-labelledby="profile-title">
+  <component
+    :is="embedded ? 'section' : 'main'"
+    class="container profile-page"
+    aria-labelledby="profile-title"
+    :data-route-focus="embedded ? undefined : ''"
+    :tabindex="embedded ? undefined : -1"
+  >
     <section class="profile-card">
       <header class="profile-header">
         <p class="profile-eyebrow">บัญชีสมาชิก</p>
@@ -13,7 +19,7 @@
         role="status"
         aria-live="polite"
       >
-        <span class="sr-only">กำลังโหลดข้อมูลโปรไฟล์</span>
+        <p class="profile-loading-label">กำลังโหลดข้อมูลโปรไฟล์</p>
         <dl
           class="profile-details profile-details-skeleton"
           data-test="profile-skeleton-details"
@@ -78,7 +84,7 @@
         </footer>
       </template>
     </section>
-  </main>
+  </component>
 </template>
 
 <script setup>
@@ -88,6 +94,12 @@ import { useAuthStore } from '../stores/auth';
 
 const router = useRouter();
 const authStore = useAuthStore();
+const { embedded } = defineProps({
+  embedded: {
+    type: Boolean,
+    default: false
+  }
+});
 const profile = ref(null);
 const loading = ref(true);
 const error = ref(null);
@@ -111,7 +123,7 @@ async function loadProfile({ restoreRetryFocus = false } = {}) {
     profile.value = null;
     error.value = null;
     loading.value = false;
-    await router.replace('/');
+    await replaceHome();
     return;
   }
 
@@ -182,6 +194,14 @@ function cancelActiveRequest() {
   activeRequestController = null;
 }
 
+function replaceHome() {
+  try {
+    return Promise.resolve(router.replace('/')).catch(() => undefined);
+  } catch {
+    return Promise.resolve();
+  }
+}
+
 function handleSessionChange(nextToken) {
   if (!mounted) return;
 
@@ -191,7 +211,7 @@ function handleSessionChange(nextToken) {
 
   if (!nextToken) {
     loading.value = false;
-    void router.replace('/');
+    void replaceHome();
     return;
   }
 
@@ -258,6 +278,13 @@ onBeforeUnmount(() => {
 
 .profile-loading {
   width: 100%;
+}
+
+.profile-loading-label {
+  margin: var(--space-lg) 0 0;
+  color: var(--ink-mute);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .profile-details-skeleton > div {

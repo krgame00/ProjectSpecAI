@@ -112,4 +112,17 @@ describe('ArticlesView', () => {
     expect(grid.get('h2#articles-grid-heading').classes()).toContain('sr-only')
     expect(grid.findAll('h3')).toHaveLength(2)
   })
+
+  test('adds machine-readable datetimes only for parseable article dates', () => {
+    const wrapper = mountView({
+      articles: [
+        { id: 1, title: 'Valid date', content: 'One', created_at: '2026-08-13T00:00:00.000Z' },
+        { id: 2, title: 'Legacy date', content: 'Two', date: 'วันที่เดิม' }
+      ]
+    })
+
+    const times = wrapper.findAll('time')
+    expect(times[0].attributes('datetime')).toBe('2026-08-13T00:00:00.000Z')
+    expect(times[1].attributes('datetime')).toBeUndefined()
+  })
 })
