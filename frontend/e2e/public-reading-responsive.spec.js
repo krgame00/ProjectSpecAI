@@ -21,6 +21,17 @@ const expectNoPageOverflow = async page => {
   expect(size.scroll).toBeLessThanOrEqual(size.width)
 }
 
+const deferred = () => {
+  let resolve
+  const promise = new Promise(done => { resolve = done })
+  return { promise, resolve }
+}
+
+const refreshArticles = page => page.evaluate(async () => {
+  const { useArticleStore } = await import('/src/stores/article.js')
+  void useArticleStore().fetchArticles()
+})
+
 for (const viewport of [
   { width: 320, height: 568 },
   { width: 390, height: 844 },
@@ -49,10 +60,10 @@ for (const viewport of [
 }
 
 test('keeps loading ahead of the empty state until articles settle', async ({ page }) => {
-  let releaseArticles
+  const responseGate = deferred()
   await page.route('**/api/v1/hardware/catalog', route => route.fulfill({ json: {} }))
   await page.route('**/api/v1/articles', async route => {
-    await new Promise(resolve => { releaseArticles = resolve })
+    await responseGate.promise
     await route.fulfill({ json: [] })
   })
 
@@ -61,8 +72,56 @@ test('keeps loading ahead of the empty state until articles settle', async ({ pa
   await expect(page.getByRole('status')).toBeVisible()
   await expect(page.locator('[data-test="articles-empty"]')).toBeHidden()
 
-  releaseArticles()
+  responseGate.resolve()
   await expect(page.locator('[data-test="articles-empty"]')).toBeVisible()
+})
+
+test('detail loading state hides stale article content', async ({ page }) => {
+  const responseGate = deferred()
+  let attempts = 0
+  await page.route('**/api/v1/hardware/catalog', route => route.fulfill({ json: {} }))
+  await page.route('**/api/v1/articles', async route => {
+    attempts += 1
+    if (attempts === 2) await responseGate.promise
+    await route.fulfill({ json: articles })
+  })
+
+  await page.goto('/article/7')
+  await expect(page.locator('.article-detail-view')).toBeVisible()
+
+  await refreshArticles(page)
+
+  await expect(page.getByRole('status')).toBeVisible()
+  await expect(page.locator('.article-detail-view')).toBeHidden()
+  await expect(page.locator('[data-test="article-not-found"]')).toBeHidden()
+
+  responseGate.resolve()
+  await expect(page.locator('.article-detail-view')).toBeVisible()
+  expect(attempts).toBe(2)
+})
+
+test('detail error state hides stale content and retries through App', async ({ page }) => {
+  let attempts = 0
+  await page.route('**/api/v1/hardware/catalog', route => route.fulfill({ json: {} }))
+  await page.route('**/api/v1/articles', route => {
+    attempts += 1
+    return attempts === 2
+      ? route.fulfill({ status: 503, json: {} })
+      : route.fulfill({ json: articles })
+  })
+
+  await page.goto('/article/7')
+  await expect(page.locator('.article-detail-view')).toBeVisible()
+
+  await refreshArticles(page)
+
+  await expect(page.getByRole('alert')).toBeVisible()
+  await expect(page.locator('.article-detail-view')).toBeHidden()
+  await expect(page.locator('[data-test="article-not-found"]')).toBeHidden()
+  await page.getByRole('button', { name: 'ลองอีกครั้ง' }).click()
+
+  await expect(page.locator('.article-detail-view')).toBeVisible()
+  expect(attempts).toBe(3)
 })
 
 test('retries a failed article request through App', async ({ page }) => {
