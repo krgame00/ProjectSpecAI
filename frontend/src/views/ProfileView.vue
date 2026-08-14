@@ -1,16 +1,24 @@
 <template>
-  <div class="container profile-container">
-    <div class="profile-card">
-      <h2 class="profile-title">ข้อมูลโปรไฟล์ (Profile)</h2>
-      
-      <div v-if="loading" class="text-center loading-text">
-        กำลังโหลดข้อมูล...
+  <main class="container profile-page" aria-labelledby="profile-title">
+    <section class="profile-card">
+      <header class="profile-header">
+        <p class="profile-eyebrow">บัญชีสมาชิก</p>
+        <h1 id="profile-title">ข้อมูลโปรไฟล์</h1>
+      </header>
+
+      <div
+        v-if="loading"
+        class="profile-state"
+        role="status"
+        aria-live="polite"
+      >
+        กำลังโหลดข้อมูลโปรไฟล์
       </div>
-      
-      <div v-else-if="error" class="text-center error-text">
+
+      <div v-else-if="error" class="profile-state profile-error" role="alert">
         <p>{{ error }}</p>
         <button
-          class="btn btn-outline-danger"
+          class="btn btn-primary"
           data-test="profile-retry"
           type="button"
           @click="loadProfile"
@@ -18,32 +26,44 @@
           ลองอีกครั้ง
         </button>
       </div>
-      
-      <div v-else-if="profile">
-        <div class="profile-info">
-          <p><strong>ชื่อผู้ใช้งาน:</strong> <span>{{ profile.name }}</span></p>
-          <p><strong>อีเมล:</strong> <span>{{ profile.email }}</span></p>
-          <p><strong>สถานะบัญชี:</strong> <span class="badge">{{ profile.role }}</span></p>
-          <p><strong>วันที่สมัคร:</strong> <span>{{ profile.created_at ? new Date(profile.created_at).toLocaleDateString('th-TH') : '-' }}</span></p>
-        </div>
-        
-        <div class="logout-wrapper">
+
+      <template v-else-if="profile">
+        <dl class="profile-details">
+          <div>
+            <dt>ชื่อผู้ใช้งาน</dt>
+            <dd>{{ profile.name || '-' }}</dd>
+          </div>
+          <div>
+            <dt>อีเมล</dt>
+            <dd>{{ profile.email || '-' }}</dd>
+          </div>
+          <div>
+            <dt>สถานะบัญชี</dt>
+            <dd><span class="badge">{{ profile.role || '-' }}</span></dd>
+          </div>
+          <div>
+            <dt>วันที่สมัคร</dt>
+            <dd>{{ formattedCreatedAt }}</dd>
+          </div>
+        </dl>
+
+        <footer class="profile-danger-zone">
           <button
             class="btn btn-outline-danger"
-            data-test="profile-sign-out"
+            data-test="profile-signout"
             type="button"
             @click="logout"
           >
             ออกจากระบบ
           </button>
-        </div>
-      </div>
-    </div>
-  </div>
+        </footer>
+      </template>
+    </section>
+  </main>
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
@@ -54,6 +74,14 @@ const loading = ref(true);
 const error = ref(null);
 let mounted = true;
 let activeRequestController = null;
+
+const formattedCreatedAt = computed(() => {
+  if (!profile.value?.created_at) return '-';
+  const date = new Date(profile.value.created_at);
+  return Number.isNaN(date.getTime())
+    ? '-'
+    : new Intl.DateTimeFormat('th-TH').format(date);
+});
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
 
@@ -127,89 +155,148 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.profile-container {
-  padding-top: 4rem;
+.profile-page {
+  padding-block: clamp(2rem, 6vw, 5rem);
 }
 
 .profile-card {
-  padding: 2.5rem;
-  max-width: 600px;
+  width: 100%;
+  max-width: 44rem;
   margin: 0 auto;
-  background: var(--canvas);
-  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background: var(--canvas-soft);
   border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
 }
 
-.profile-title {
-  margin-bottom: 2rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.loading-text {
-  color: var(--ink-mute);
-}
-
-.error-text {
-  color: var(--danger);
-}
-
-.logout-wrapper {
-  margin-top: 2.5rem;
-  text-align: center;
-}
-
-.profile-info p {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-  color: var(--ink);
-  margin-bottom: 0;
-  padding: 1rem 0;
+.profile-header {
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
   border-bottom: 1px solid var(--hairline-cool);
 }
-.profile-info p:last-child {
+
+.profile-eyebrow {
+  margin-bottom: var(--space-xs);
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.profile-header h1 {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.profile-state {
+  display: flex;
+  min-height: 10rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-lg);
+  color: var(--ink-mute);
+  line-height: 1.6;
+}
+
+.profile-error p {
+  color: var(--danger);
+  overflow-wrap: anywhere;
+}
+
+.profile-details {
+  margin: 0;
+}
+
+.profile-details > div {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-xs);
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--hairline-cool);
+}
+
+.profile-details > div:last-child {
   border-bottom: none;
 }
-.profile-info strong {
-  font-weight: 500;
+
+.profile-details dt {
   color: var(--ink-mute);
+  font-size: var(--text-sm);
+  font-weight: 500;
 }
+
+.profile-details dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
 .badge {
-  background: var(--primary-bg);
-  color: var(--primary-deep);
+  display: inline-flex;
+  align-items: center;
   padding: 0.25rem 0.75rem;
+  color: var(--primary);
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-border);
   border-radius: var(--radius-full);
-  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
   font-weight: 600;
   text-transform: uppercase;
-  border: 1px solid var(--primary-border);
 }
-.text-center { text-align: center; }
-.btn-danger {
-  background: var(--danger);
-  color: #fff;
-  border: 1px solid var(--danger);
-  padding: 0.6rem 2rem;
-  border-radius: var(--radius-md);
-  font-weight: 500;
+
+.profile-state .btn,
+.profile-danger-zone .btn {
+  width: 100%;
+  min-height: 44px;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
 }
-.btn-danger:hover {
-  background: var(--danger);
-  opacity: 0.9;
+
+.profile-state .btn:focus-visible,
+.profile-danger-zone .btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
 }
-.btn-outline-danger {
-  background: transparent;
-  color: var(--danger);
-  border: 1px solid var(--danger);
-  padding: 0.6rem 2rem;
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  transition: all var(--transition-fast);
+
+.profile-danger-zone {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--hairline-cool);
 }
-.btn-outline-danger:hover {
-  background: rgba(255, 34, 1, 0.1);
+
+.profile-danger-zone .btn-outline-danger:hover {
+  background: rgba(255, 34, 1, 0.08);
+}
+
+@media (min-width: 40rem) {
+  .profile-details > div {
+    grid-template-columns: minmax(8rem, 11rem) minmax(0, 1fr);
+    align-items: center;
+    column-gap: var(--space-xl);
+  }
+
+  .profile-details dd {
+    text-align: right;
+  }
+
+  .profile-state .btn,
+  .profile-danger-zone .btn {
+    width: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-state .btn,
+  .profile-danger-zone .btn {
+    transition: none;
+  }
 }
 </style>
