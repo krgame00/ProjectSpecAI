@@ -8,10 +8,18 @@
       </div>
       
       <div v-else-if="error" class="text-center error-text">
-        {{ error }}
+        <p>{{ error }}</p>
+        <button
+          class="btn btn-outline-danger"
+          data-test="profile-retry"
+          type="button"
+          @click="loadProfile"
+        >
+          ลองอีกครั้ง
+        </button>
       </div>
       
-      <div v-else>
+      <div v-else-if="profile">
         <div class="profile-info">
           <p><strong>ชื่อผู้ใช้งาน:</strong> <span>{{ profile.name }}</span></p>
           <p><strong>อีเมล:</strong> <span>{{ profile.email }}</span></p>
@@ -20,7 +28,14 @@
         </div>
         
         <div class="logout-wrapper">
-          <button class="btn btn-outline-danger" @click="logout">ออกจากระบบ</button>
+          <button
+            class="btn btn-outline-danger"
+            data-test="profile-sign-out"
+            type="button"
+            @click="logout"
+          >
+            ออกจากระบบ
+          </button>
         </div>
       </div>
     </div>
@@ -28,65 +43,60 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
 
 const router = useRouter();
-const profile = ref({});
+const authStore = useAuthStore();
+const profile = ref(null);
 const loading = ref(true);
-const error = ref('');
+const error = ref(null);
 
-const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3000/api/v1');
+const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
 
-onMounted(async () => {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    router.push('/');
+async function loadProfile() {
+  if (!authStore.token) {
+    await router.replace('/');
     return;
   }
+
+  loading.value = true;
+  error.value = null;
 
   try {
     const response = await fetch(`${API_BASE}/auth/profile`, {
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${authStore.token}`
       }
     });
 
-    if (!response.ok) {
-      if (response.status === 401) {
-        throw new Error('Session หมดอายุ กรุณาเข้าสู่ระบบใหม่');
-      } else {
-        throw new Error(`ไม่สามารถดึงข้อมูลโปรไฟล์ได้ (Error: ${response.status})`);
-      }
+    if (response.status === 401) {
+      authStore.logout();
+      await router.replace('/');
+      return;
     }
 
-    const data = await response.json();
-    profile.value = data;
-  } catch (err) {
-    error.value = err.message;
-    console.error('Profile fetch error:', err);
-    // Only redirect if it's an auth error, not a random network error
-    if (err.message.includes('Session')) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      setTimeout(() => {
-        if (router.currentRoute.value.path !== '/admin') {
-          router.push('/');
-        } else {
-          window.location.reload();
-        }
-      }, 2000);
+    if (!response.ok) {
+      throw new Error(`ไม่สามารถดึงข้อมูลโปรไฟล์ได้ (Error: ${response.status})`);
     }
+
+    profile.value = await response.json();
+  } catch (reason) {
+    error.value = reason instanceof Error
+      ? reason.message
+      : 'ไม่สามารถดึงข้อมูลโปรไฟล์ได้';
   } finally {
     loading.value = false;
   }
-});
+}
 
-const logout = () => {
-  localStorage.removeItem('token');
-  localStorage.removeItem('user');
-  window.location.href = '/'; // Force reload to clear App.vue state
-};
+function logout() {
+  authStore.logout();
+  router.replace('/');
+}
+
+onMounted(loadProfile);
 </script>
 
 <style scoped>
