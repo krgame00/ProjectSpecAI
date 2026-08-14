@@ -1,134 +1,424 @@
 <template>
-  <div class="articles-view container">
-    <div style="margin-bottom: 3rem; text-align: center;">
-      <h2 style="font-size: var(--text-3xl); font-weight: 700; color: var(--ink);">บทความและความรู้</h2>
-      <p style="color: var(--ink-mute); margin-top: 0.5rem; font-size: 1.1rem;">อัปเดตข่าวสารและเทคนิคการจัดสเปคคอมพิวเตอร์ล่าสุด</p>
-    </div>
+  <main class="articles-view container">
+    <header class="articles-header">
+      <h1>บทความและความรู้</h1>
+      <p>อัปเดตข่าวสารและเทคนิคการจัดสเปคคอมพิวเตอร์ล่าสุด</p>
+    </header>
 
-    <!-- Featured Article (Hero) -->
-    <div v-if="featuredArticle" class="hero-article" @click="$router.push(`/article/${featuredArticle.id}`)">
-      <div class="hero-image">
-        <img :src="featuredArticle.image_url || featuredArticle.image" :alt="featuredArticle.title" @error="$event.target.style.display='none'" />
-        <div class="hero-badge">ล่าสุด</div>
+    <section v-if="articlesLoading" class="articles-skeleton" role="status" aria-live="polite">
+      <span class="sr-only">กำลังโหลดบทความ</span>
+      <div class="skeleton-feature" aria-hidden="true">
+        <span class="skeleton-block skeleton-image"></span>
+        <span class="skeleton-copy"></span>
       </div>
-      <div class="hero-content">
-        <div class="article-date">{{ featuredArticle.created_at ? new Date(featuredArticle.created_at).toLocaleDateString() : featuredArticle.date }}</div>
-        <h2 class="hero-title">{{ featuredArticle.title }}</h2>
-        <div class="article-excerpt hero-excerpt" v-html="featuredArticle.content"></div>
-        <div class="read-more-link">อ่านต่อ ➔</div>
+      <div class="skeleton-grid" aria-hidden="true">
+        <span v-for="item in 3" :key="item" class="skeleton-block skeleton-card"></span>
       </div>
-    </div>
+    </section>
 
-    <!-- Grid Articles -->
-    <div class="articles-grid" v-if="gridArticles.length > 0">
-      <div v-for="article in gridArticles" :key="article.id" class="article-card" @click="$router.push(`/article/${article.id}`)">
-        <div class="article-image">
-          <img :src="article.image_url || article.image" :alt="article.title" @error="$event.target.style.display='none'" />
+    <section v-else-if="articlesError" class="articles-state" role="alert">
+      <h2>โหลดบทความไม่สำเร็จ</h2>
+      <p>{{ articlesError }}</p>
+      <button class="btn btn-primary" type="button" data-test="articles-retry" @click="$emit('retry-articles')">
+        ลองอีกครั้ง
+      </button>
+    </section>
+
+    <section v-else-if="articles.length === 0" class="articles-state" data-test="articles-empty">
+      <h2>ยังไม่มีบทความ</h2>
+      <p>บทความและเคล็ดลับใหม่จะปรากฏที่นี่</p>
+    </section>
+
+    <template v-else>
+      <RouterLink
+        class="hero-article"
+        :to="{ name: 'article-detail', params: { id: featuredArticle.id } }"
+      >
+        <div class="hero-image">
+          <img
+            v-if="coverVisible(featuredArticle)"
+            :src="articleImage(featuredArticle)"
+            :alt="featuredArticle.title"
+            @error="markCoverFailed(featuredArticle.id)"
+          />
+          <div
+            v-else
+            class="article-image-fallback"
+            role="img"
+            :aria-label="`ไม่มีภาพปกสำหรับ ${featuredArticle.title}`"
+          >
+            PCSpec
+          </div>
+          <span class="hero-badge">ล่าสุด</span>
         </div>
-        <div class="article-content">
-          <div class="article-date">{{ article.created_at ? new Date(article.created_at).toLocaleDateString() : article.date }}</div>
-          <h3 class="article-title">{{ article.title }}</h3>
-          <div class="article-excerpt" v-html="article.content"></div>
-          <div class="read-more-link" style="margin-top: auto;">อ่านต่อ ➔</div>
+        <div class="hero-content">
+          <time>{{ formatArticleDate(featuredArticle.created_at || featuredArticle.date) }}</time>
+          <h2>{{ featuredArticle.title }}</h2>
+          <p class="article-excerpt hero-excerpt">{{ articleExcerpt(featuredArticle.content) }}</p>
+          <span class="read-more-link">อ่านต่อ →</span>
         </div>
-      </div>
-    </div>
-    
-    <div v-if="!articles || articles.length === 0" style="text-align: center; color: var(--ink-mute); padding: 3rem;">
-      ยังไม่มีบทความในขณะนี้
-    </div>
-  </div>
+      </RouterLink>
+
+      <section v-if="gridArticles.length" class="articles-grid" aria-label="บทความเพิ่มเติม">
+        <RouterLink
+          v-for="article in gridArticles"
+          :key="article.id"
+          class="article-card"
+          :to="{ name: 'article-detail', params: { id: article.id } }"
+        >
+          <div class="article-image">
+            <img
+              v-if="coverVisible(article)"
+              :src="articleImage(article)"
+              :alt="article.title"
+              @error="markCoverFailed(article.id)"
+            />
+            <div
+              v-else
+              class="article-image-fallback"
+              role="img"
+              :aria-label="`ไม่มีภาพปกสำหรับ ${article.title}`"
+            >
+              PCSpec
+            </div>
+          </div>
+          <div class="article-content">
+            <time>{{ formatArticleDate(article.created_at || article.date) }}</time>
+            <h3>{{ article.title }}</h3>
+            <p class="article-excerpt">{{ articleExcerpt(article.content) }}</p>
+            <span class="read-more-link">อ่านต่อ →</span>
+          </div>
+        </RouterLink>
+      </section>
+    </template>
+  </main>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue'
+import { articleExcerpt, formatArticleDate } from '../utils/articleContent'
 
 const props = defineProps({
-  articles: Array
-});
+  articles: {
+    type: Array,
+    default: () => []
+  },
+  articlesLoading: {
+    type: Boolean,
+    default: false
+  },
+  articlesError: {
+    type: String,
+    default: null
+  }
+})
 
-defineEmits(['read-article']);
+defineEmits(['retry-articles'])
 
-const featuredArticle = computed(() => {
-  if (!props.articles || props.articles.length === 0) return null;
-  return props.articles[0];
-});
-
-const gridArticles = computed(() => {
-  if (!props.articles || props.articles.length <= 1) return [];
-  return props.articles.slice(1);
-});
+const failedCovers = ref(new Set())
+const featuredArticle = computed(() => props.articles[0])
+const gridArticles = computed(() => props.articles.slice(1))
+const articleImage = article => article.image_url || article.image || ''
+const coverVisible = article => Boolean(articleImage(article)) && !failedCovers.value.has(article.id)
+const markCoverFailed = id => failedCovers.value.add(id)
 </script>
 
 <style scoped>
 .articles-view {
-  padding-top: 3rem;
-  padding-bottom: 5rem;
-  animation: fadeIn 0.3s ease-out;
+  padding-block: var(--space-xxl) var(--space-huge);
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.articles-header {
+  max-width: 44rem;
+  margin-bottom: var(--space-xxl);
+}
+
+.articles-header h1 {
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.articles-header p,
+.articles-state p {
+  max-width: 65ch;
+  margin-top: var(--space-sm);
+  color: var(--ink-mute);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.articles-state {
+  display: flex;
+  min-height: 15rem;
+  padding: var(--space-xl);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--canvas-soft);
+}
+
+.articles-state .btn {
+  margin-top: var(--space-xl);
+}
+
+.hero-article,
+.article-card {
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--canvas);
+  overflow: hidden;
+  transition: border-color var(--transition-normal), background-color var(--transition-normal);
 }
 
 .hero-article {
-  display: flex; flex-direction: column; margin-bottom: 3rem;
-  border-radius: var(--radius-lg); overflow: hidden; cursor: pointer;
-  background: var(--canvas); border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-sm); transition: all var(--transition-normal);
+  display: flex;
+  margin-bottom: var(--space-xxl);
+  flex-direction: column;
 }
-@media (min-width: 768px) {
-  .hero-article { flex-direction: row; height: 400px; }
+
+.hero-image,
+.article-image {
+  position: relative;
+  min-height: 13rem;
+  overflow: hidden;
+  background: var(--canvas-soft);
 }
-.hero-article:hover {
-  transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--hairline-strong);
+
+.hero-image img,
+.article-image img,
+.article-image-fallback {
+  width: 100%;
+  height: 100%;
 }
-.hero-image { flex: 1; position: relative; overflow: hidden; }
-.hero-image img {
-  width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+
+.hero-image img,
+.article-image img {
+  object-fit: cover;
+  transition: transform var(--transition-normal);
 }
-.hero-article:hover .hero-image img { transform: scale(1.03); }
+
+.article-image-fallback {
+  display: grid;
+  min-height: inherit;
+  place-items: center;
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  background: var(--canvas-soft);
+}
+
 .hero-badge {
-  position: absolute; top: 1rem; left: 1rem; background: var(--primary); color: var(--on-primary);
-  padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600;
-  text-transform: uppercase; box-shadow: var(--shadow-sm);
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  padding: var(--space-xxs) var(--space-sm);
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--text-xs);
+  font-weight: 600;
 }
-.hero-content {
-  flex: 1; padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;
-  background: var(--canvas-soft); border-left: 1px solid var(--hairline);
-}
-.hero-title {
-  font-size: var(--text-2xl); font-weight: 700; margin: 1rem 0; line-height: 1.3; color: var(--ink);
-}
-.hero-excerpt { -webkit-line-clamp: 4; font-size: 1.05rem; margin-bottom: 2rem; color: var(--ink-mute); }
 
-.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-xl); }
-.article-card {
-  display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius-lg);
-  cursor: pointer; background: var(--canvas); border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-xs); transition: all var(--transition-normal);
+.hero-content,
+.article-content {
+  display: flex;
+  padding: var(--space-xl);
+  flex-direction: column;
+  align-items: flex-start;
 }
-.article-card:hover {
-  transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--hairline-strong);
-}
-.article-image { width: 100%; height: 220px; overflow: hidden; background: var(--canvas-soft); }
-.article-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.article-card:hover .article-image img { transform: scale(1.03); }
-.article-content { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
 
-.article-date {
-  font-size: var(--text-xs); color: var(--primary-deep); font-family: var(--font-sans); font-weight: 600; letter-spacing: 1px;
+.hero-content time,
+.article-content time {
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
 }
-.article-title {
-  font-size: var(--text-lg); font-weight: 600; line-height: 1.4; color: var(--ink); transition: color var(--transition-fast);
+
+.hero-content h2,
+.article-content h3 {
+  margin-top: var(--space-md);
+  font-weight: 500;
+  text-wrap: balance;
+  transition: color var(--transition-fast);
 }
-.article-card:hover .article-title, .hero-article:hover .hero-title { color: var(--primary-deep); }
+
+.hero-content h2 {
+  font-size: var(--text-xl);
+}
+
+.article-content h3 {
+  font-size: var(--text-lg);
+}
+
 .article-excerpt {
-  font-size: var(--text-sm); color: var(--ink-mute); line-height: 1.6;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  display: -webkit-box;
+  margin-top: var(--space-md);
+  overflow: hidden;
+  color: var(--ink-mute);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
+
+.hero-excerpt {
+  -webkit-line-clamp: 4;
+}
+
 .read-more-link {
-  font-size: 0.85rem; font-weight: 600; color: var(--primary-deep); display: inline-flex; align-items: center; transition: opacity 0.2s;
+  margin-top: var(--space-xl);
+  color: var(--primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
 }
-.article-card:hover .read-more-link, .hero-article:hover .read-more-link { opacity: 0.8; }
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-lg);
+}
+
+.article-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.article-image {
+  min-height: 12rem;
+  aspect-ratio: 16 / 10;
+}
+
+.article-content {
+  flex: 1;
+}
+
+.article-content .read-more-link {
+  margin-top: auto;
+  padding-top: var(--space-xl);
+}
+
+.hero-article:focus-visible,
+.article-card:focus-visible {
+  border-color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.articles-skeleton {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.skeleton-feature,
+.skeleton-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.skeleton-feature {
+  min-height: 22rem;
+  padding: var(--space-lg);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-block,
+.skeleton-copy {
+  display: block;
+  border-radius: var(--radius-md);
+  background: var(--canvas-soft);
+  animation: skeleton-pulse 1.4s ease-in-out infinite alternate;
+}
+
+.skeleton-image {
+  min-height: 13rem;
+}
+
+.skeleton-copy {
+  min-height: 8rem;
+}
+
+.skeleton-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.skeleton-card {
+  min-height: 20rem;
+  border: 1px solid var(--hairline);
+}
+
+@keyframes skeleton-pulse {
+  from { opacity: 0.55; }
+  to { opacity: 1; }
+}
+
+@media (min-width: 48rem) {
+  .articles-view {
+    padding-top: var(--space-huge);
+  }
+
+  .hero-article,
+  .skeleton-feature {
+    grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+  }
+
+  .hero-article {
+    display: grid;
+    min-height: 24rem;
+  }
+
+  .hero-image {
+    min-height: 24rem;
+  }
+
+  .hero-content {
+    justify-content: center;
+    border-left: 1px solid var(--hairline);
+  }
+
+  .skeleton-feature {
+    display: grid;
+  }
+}
+
+@media (hover: hover) {
+  .hero-article:hover,
+  .article-card:hover {
+    border-color: var(--hairline-strong);
+    background: var(--canvas-soft);
+    text-decoration: none;
+  }
+
+  .hero-article:hover h2,
+  .article-card:hover h3 {
+    color: var(--primary);
+  }
+
+  .hero-article:hover img,
+  .article-card:hover img {
+    transform: scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-article,
+  .article-card,
+  .hero-image img,
+  .article-image img {
+    transition: none;
+  }
+
+  .skeleton-block,
+  .skeleton-copy {
+    animation: none;
+  }
+}
 </style>
