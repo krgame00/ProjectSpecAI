@@ -38,6 +38,9 @@
   --danger: #ff2201;
   --danger-soft: #fff0ee;
   --danger-border: rgba(255, 34, 1, 0.2);
+  --danger-on-dark: #ff5c49;
+  --danger-on-dark-soft: #372421;
+  --danger-on-dark-border: rgba(255, 92, 73, 0.65);
   --success: #3ecf8e;
   --success-soft: #edfcf4;
   --success-border: rgba(62, 207, 142, 0.2);

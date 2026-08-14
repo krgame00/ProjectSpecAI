@@ -8,20 +8,39 @@
 
       <div
         v-if="loading"
-        class="profile-state"
+        class="profile-loading"
+        data-test="profile-loading"
         role="status"
         aria-live="polite"
       >
-        กำลังโหลดข้อมูลโปรไฟล์
+        <span class="sr-only">กำลังโหลดข้อมูลโปรไฟล์</span>
+        <dl
+          class="profile-details profile-details-skeleton"
+          data-test="profile-skeleton-details"
+          aria-hidden="true"
+        >
+          <div v-for="index in 4" :key="index" data-test="profile-skeleton-row">
+            <dt><span class="profile-skeleton-line profile-skeleton-label"></span></dt>
+            <dd><span class="profile-skeleton-line profile-skeleton-value"></span></dd>
+          </div>
+        </dl>
+        <footer
+          class="profile-danger-zone profile-danger-zone-skeleton"
+          data-test="profile-skeleton-action"
+          aria-hidden="true"
+        >
+          <span class="profile-skeleton-button"></span>
+        </footer>
       </div>
 
       <div v-else-if="error" class="profile-state profile-error" role="alert">
         <p>{{ error }}</p>
         <button
+          ref="retryButtonRef"
           class="btn btn-primary"
           data-test="profile-retry"
           type="button"
-          @click="loadProfile"
+          @click="retryProfile"
         >
           ลองอีกครั้ง
         </button>
@@ -63,7 +82,7 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
@@ -72,7 +91,8 @@ const authStore = useAuthStore();
 const profile = ref(null);
 const loading = ref(true);
 const error = ref(null);
-let mounted = true;
+const retryButtonRef = ref(null);
+let mounted = false;
 let activeRequestController = null;
 
 const formattedCreatedAt = computed(() => {
@@ -85,9 +105,12 @@ const formattedCreatedAt = computed(() => {
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
 
-async function loadProfile() {
+async function loadProfile({ restoreRetryFocus = false } = {}) {
   const requestToken = authStore.token;
   if (!requestToken) {
+    profile.value = null;
+    error.value = null;
+    loading.value = false;
     await router.replace('/');
     return;
   }
@@ -108,9 +131,8 @@ async function loadProfile() {
 
     if (!isCurrentRequest(requestToken, requestController)) return;
 
-    if (response.status === 401) {
+    if (response.status === 401 || response.status === 404) {
       authStore.logout();
-      await router.replace('/');
       return;
     }
 
@@ -131,6 +153,12 @@ async function loadProfile() {
     if (mounted && activeRequestController === requestController) {
       loading.value = false;
       activeRequestController = null;
+      if (restoreRetryFocus && error.value) {
+        await nextTick();
+        if (mounted && authStore.token === requestToken) {
+          retryButtonRef.value?.focus();
+        }
+      }
     }
   }
 }
@@ -143,14 +171,42 @@ function isCurrentRequest(requestToken, requestController) {
 
 function logout() {
   authStore.logout();
-  router.replace('/');
 }
 
-onMounted(loadProfile);
-onBeforeUnmount(() => {
-  mounted = false;
+function retryProfile() {
+  return loadProfile({ restoreRetryFocus: true });
+}
+
+function cancelActiveRequest() {
   activeRequestController?.abort();
   activeRequestController = null;
+}
+
+function handleSessionChange(nextToken) {
+  if (!mounted) return;
+
+  cancelActiveRequest();
+  profile.value = null;
+  error.value = null;
+
+  if (!nextToken) {
+    loading.value = false;
+    void router.replace('/');
+    return;
+  }
+
+  void loadProfile();
+}
+
+watch(() => authStore.token, handleSessionChange, { flush: 'sync' });
+
+onMounted(() => {
+  mounted = true;
+  void loadProfile();
+});
+onBeforeUnmount(() => {
+  mounted = false;
+  cancelActiveRequest();
 });
 </script>
 
@@ -200,8 +256,41 @@ onBeforeUnmount(() => {
   line-height: 1.6;
 }
 
+.profile-loading {
+  width: 100%;
+}
+
+.profile-details-skeleton > div {
+  min-height: 5.75rem;
+}
+
+.profile-skeleton-line,
+.profile-skeleton-button {
+  display: block;
+  background: var(--hairline);
+  border-radius: var(--radius-xs);
+}
+
+.profile-skeleton-line {
+  height: 1em;
+}
+
+.profile-skeleton-label {
+  width: min(7rem, 70%);
+}
+
+.profile-skeleton-value {
+  width: min(15rem, 88%);
+}
+
+.profile-skeleton-button {
+  width: min(9rem, 100%);
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+}
+
 .profile-error p {
-  color: var(--danger);
+  color: var(--danger-on-dark);
   overflow-wrap: anywhere;
 }
 
@@ -272,11 +361,21 @@ onBeforeUnmount(() => {
   border-top: 1px solid var(--hairline-cool);
 }
 
+.profile-danger-zone .btn-outline-danger {
+  color: var(--danger-on-dark);
+  border-color: var(--danger-on-dark-border);
+}
+
 .profile-danger-zone .btn-outline-danger:hover {
-  background: rgba(255, 34, 1, 0.08);
+  color: var(--danger-on-dark);
+  background: var(--danger-on-dark-soft);
 }
 
 @media (min-width: 40rem) {
+  .profile-details-skeleton > div {
+    min-height: 3.5rem;
+  }
+
   .profile-details > div {
     grid-template-columns: minmax(8rem, 11rem) minmax(0, 1fr);
     align-items: center;
@@ -285,6 +384,10 @@ onBeforeUnmount(() => {
 
   .profile-details dd {
     text-align: right;
+  }
+
+  .profile-details-skeleton dd .profile-skeleton-line {
+    margin-left: auto;
   }
 
   .profile-state .btn,

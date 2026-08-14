@@ -1,6 +1,7 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
+import { nextTick } from 'vue'
 import { routerKey } from 'vue-router'
 import ProfileView from '../src/views/ProfileView.vue'
 import { useAuthStore } from '../src/stores/auth'
@@ -9,13 +10,16 @@ let pinia
 
 const deferred = () => {
   let resolve
-  const promise = new Promise(resolvePromise => {
+  let reject
+  const promise = new Promise((resolvePromise, rejectPromise) => {
     resolve = resolvePromise
+    reject = rejectPromise
   })
-  return { promise, resolve }
+  return { promise, reject, resolve }
 }
 
-const mountProfile = router => mount(ProfileView, {
+const mountProfile = (router, options = {}) => mount(ProfileView, {
+  ...options,
   global: {
     plugins: [pinia],
     provide: { [routerKey]: router }
@@ -104,6 +108,19 @@ describe('ProfileView', () => {
     expect(wrapper.get('[role="alert"]').text()).toContain('offline')
   })
 
+  test('preserves the populated row and action footprint while loading', () => {
+    vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})))
+
+    const wrapper = mountProfile({ replace: vi.fn() })
+    const loading = wrapper.get('[data-test="profile-loading"]')
+
+    expect(loading.attributes('role')).toBe('status')
+    expect(loading.get('.sr-only').text()).not.toBe('')
+    expect(loading.findAll('[data-test="profile-skeleton-row"]')).toHaveLength(4)
+    expect(loading.get('[data-test="profile-skeleton-details"]').attributes('aria-hidden')).toBe('true')
+    expect(loading.get('[data-test="profile-skeleton-action"]').attributes('aria-hidden')).toBe('true')
+  })
+
   test('keeps a network failure in place and retries', async () => {
     vi.stubGlobal('fetch', vi.fn()
       .mockRejectedValueOnce(new Error('offline'))
@@ -138,6 +155,29 @@ describe('ProfileView', () => {
     expect(router.replace).not.toHaveBeenCalled()
   })
 
+  test('restores Retry focus after another recoverable failure', async () => {
+    const retryRequest = deferred()
+    vi.stubGlobal('fetch', vi.fn()
+      .mockRejectedValueOnce(new Error('offline'))
+      .mockReturnValueOnce(retryRequest.promise))
+
+    const wrapper = mountProfile({ replace: vi.fn() }, { attachTo: document.body })
+    await flushPromises()
+
+    const retry = wrapper.get('[data-test="profile-retry"]')
+    retry.element.focus()
+    await retry.trigger('click')
+    await nextTick()
+
+    expect(wrapper.get('[data-test="profile-loading"]').exists()).toBe(true)
+    retryRequest.reject(new Error('still offline'))
+    await flushPromises()
+
+    const restoredRetry = wrapper.get('[data-test="profile-retry"]')
+    expect(document.activeElement).toBe(restoredRetry.element)
+    wrapper.unmount()
+  })
+
   test('keeps a non-401 server failure recoverable without ending the session', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 }))
     const router = { replace: vi.fn() }
@@ -155,8 +195,8 @@ describe('ProfileView', () => {
     expect(router.replace).not.toHaveBeenCalled()
   })
 
-  test('logs out and replaces the route immediately on 401', async () => {
-    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 401 }))
+  test.each([401, 404])('logs out and replaces the route immediately on %i', async status => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status }))
     const router = {
       replace: vi.fn(),
       push: vi.fn(),
@@ -173,21 +213,94 @@ describe('ProfileView', () => {
     expect(wrapper.find('[data-test="profile-retry"]').exists()).toBe(false)
   })
 
-  test('ignores a deferred 401 from an earlier auth session', async () => {
-    const request = deferred()
-    vi.stubGlobal('fetch', vi.fn().mockReturnValue(request.promise))
+  test('clears rendered profile data and redirects when the store logs out externally', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({
+        name: 'Old member',
+        email: 'old@example.com',
+        role: 'customer',
+        created_at: null
+      })
+    }))
+    const router = { replace: vi.fn().mockResolvedValue() }
+    const auth = useAuthStore()
+    const wrapper = mountProfile(router)
+    await flushPromises()
+
+    expect(wrapper.text()).toContain('old@example.com')
+
+    auth.logout()
+    await flushPromises()
+
+    expect(router.replace).toHaveBeenCalledOnce()
+    expect(router.replace).toHaveBeenCalledWith('/')
+    expect(wrapper.text()).not.toContain('old@example.com')
+    expect(wrapper.find('.profile-details').exists()).toBe(false)
+  })
+
+  test('clears old data, aborts superseded work, and loads a replacement session', async () => {
+    const supersededRequest = deferred()
+    let supersededSignal
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 200,
+        json: async () => ({
+          name: 'Old member',
+          email: 'old@example.com',
+          role: 'customer',
+          created_at: null
+        })
+      })
+      .mockImplementationOnce((_, options) => {
+        supersededSignal = options.signal
+        return supersededRequest.promise
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 200,
+        json: async () => ({
+          name: 'Newest member',
+          email: 'newest@example.com',
+          role: 'customer',
+          created_at: null
+        })
+      }))
     const router = { replace: vi.fn() }
     const auth = useAuthStore()
     const logout = vi.spyOn(auth, 'logout')
-
-    mountProfile(router)
+    const wrapper = mountProfile(router)
     await flushPromises()
+
+    expect(wrapper.text()).toContain('old@example.com')
+
     auth.setUser({ id: 2, name: 'New member' }, 'token-2')
-    request.resolve({ ok: false, status: 401 })
+    await nextTick()
+
+    expect(wrapper.text()).not.toContain('old@example.com')
+    expect(wrapper.get('[data-test="profile-loading"]').exists()).toBe(true)
+
+    auth.setUser({ id: 3, name: 'Newest member' }, 'token-3')
     await flushPromises()
 
-    expect(auth.token).toBe('token-2')
-    expect(auth.user).toEqual({ id: 2, name: 'New member' })
+    expect(supersededSignal?.aborted).toBe(true)
+    expect(fetch).toHaveBeenCalledTimes(3)
+    expect(fetch).toHaveBeenNthCalledWith(
+      3,
+      'http://localhost:3001/api/v1/auth/profile',
+      expect.objectContaining({ headers: { Authorization: 'Bearer token-3' } })
+    )
+    expect(wrapper.text()).toContain('newest@example.com')
+    expect(wrapper.text()).not.toContain('old@example.com')
+
+    supersededRequest.resolve({ ok: false, status: 401 })
+    await flushPromises()
+
+    expect(auth.token).toBe('token-3')
+    expect(auth.user).toEqual({ id: 3, name: 'Newest member' })
+    expect(wrapper.text()).toContain('newest@example.com')
     expect(logout).not.toHaveBeenCalled()
     expect(router.replace).not.toHaveBeenCalled()
   })
