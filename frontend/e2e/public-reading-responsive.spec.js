@@ -6,6 +6,30 @@ const articles = [{
   content: '<h2>เริ่มต้น</h2><p>เนื้อหา</p><table><tbody><tr><td>LONG-HARDWARE-ID-WITHOUT-SPACES</td></tr></tbody></table>',
   image_url: '/missing-cover.jpg',
   created_at: '2026-08-13T00:00:00.000Z'
+}, {
+  id: 8,
+  title: 'บทความกริดหนึ่ง',
+  content: '<p>เนื้อหาสำหรับทดสอบการจัดวางกริด</p>',
+  image_url: '',
+  created_at: '2026-08-12T00:00:00.000Z'
+}, {
+  id: 9,
+  title: 'บทความกริดสองที่มีชื่อยาวเพื่อทดสอบการตัดบรรทัดบนหน้าจอแคบ',
+  content: '<p>เนื้อหาสำหรับทดสอบการจัดวางกริด</p>',
+  image_url: '',
+  created_at: '2026-08-11T00:00:00.000Z'
+}, {
+  id: 10,
+  title: 'บทความกริดสาม',
+  content: '<p>เนื้อหาสำหรับทดสอบการจัดวางกริด</p>',
+  image_url: '',
+  created_at: '2026-08-10T00:00:00.000Z'
+}, {
+  id: 11,
+  title: 'บทความกริดสี่',
+  content: '<p>เนื้อหาสำหรับทดสอบการจัดวางกริด</p>',
+  image_url: '',
+  created_at: '2026-08-09T00:00:00.000Z'
 }]
 
 const prepare = async page => {
@@ -21,6 +45,14 @@ const expectNoPageOverflow = async page => {
   expect(size.scroll).toBeLessThanOrEqual(size.width)
 }
 
+const tabTo = async (page, target, maxTabs = 20) => {
+  for (let index = 0; index < maxTabs; index += 1) {
+    await page.keyboard.press('Tab')
+    if (await target.evaluate(element => element === document.activeElement)) return
+  }
+  throw new Error(`Target was not reached after ${maxTabs} Tab presses`)
+}
+
 const deferred = () => {
   let resolve
   const promise = new Promise(done => { resolve = done })
@@ -33,11 +65,11 @@ const refreshArticles = page => page.evaluate(async () => {
 })
 
 for (const viewport of [
-  { width: 320, height: 568 },
-  { width: 390, height: 844 },
-  { width: 768, height: 1024 },
-  { width: 1024, height: 768 },
-  { width: 1440, height: 900 }
+  { width: 320, height: 568, gridColumns: 1, featureDisplay: 'flex' },
+  { width: 390, height: 844, gridColumns: 1, featureDisplay: 'flex' },
+  { width: 768, height: 1024, gridColumns: 2, featureDisplay: 'grid' },
+  { width: 1024, height: 768, gridColumns: 3, featureDisplay: 'grid' },
+  { width: 1440, height: 900, gridColumns: 4, featureDisplay: 'grid' }
 ]) {
   test(`articles reflow at ${viewport.width}px`, async ({ page }) => {
     await page.setViewportSize(viewport)
@@ -46,9 +78,28 @@ for (const viewport of [
 
     const articleLink = page.getByRole('link', { name: /คู่มือจัดสเปค/ })
     await expect(articleLink).toBeVisible()
+    await expect(page.locator('.articles-grid')).toBeVisible()
+    await expect(page.locator('.article-card')).toHaveCount(4)
+    await expect(page.locator('.hero-article')).toHaveCSS('display', viewport.featureDisplay)
+    const renderedColumns = await page.locator('.articles-grid').evaluate(element => (
+      getComputedStyle(element).gridTemplateColumns.split(' ').length
+    ))
+    expect(renderedColumns).toBe(viewport.gridColumns)
     await expectNoPageOverflow(page)
 
-    await articleLink.focus()
+    await tabTo(page, articleLink)
+    await expect(articleLink).toBeFocused()
+    const focus = await articleLink.evaluate(element => {
+      const styles = getComputedStyle(element)
+      return {
+        visible: element.matches(':focus-visible'),
+        outlineStyle: styles.outlineStyle,
+        outlineWidth: Number.parseFloat(styles.outlineWidth)
+      }
+    })
+    expect(focus.visible).toBe(true)
+    expect(focus.outlineStyle).toBe('solid')
+    expect(focus.outlineWidth).toBeGreaterThan(0)
     await page.keyboard.press('Enter')
 
     await expect(page).toHaveURL(/\/article\/7$/)
@@ -158,7 +209,7 @@ test('honors reduced motion and shows a failed-cover fallback', async ({ page })
   await page.route('**/missing-cover.jpg', route => route.abort())
   await page.goto('/articles')
 
-  await expect(page.locator('.article-image-fallback')).toBeVisible()
+  await expect(page.locator('.hero-article .article-image-fallback')).toBeVisible()
   const duration = await page.locator('.hero-article').evaluate(element => (
     Number.parseFloat(getComputedStyle(element).transitionDuration)
   ))

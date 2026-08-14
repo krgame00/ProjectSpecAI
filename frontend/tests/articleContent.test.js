@@ -9,6 +9,28 @@ describe('article content utilities', () => {
     expect(safe).not.toMatch(/script|onclick|javascript:/i)
   })
 
+  test('removes rich-content images without non-empty alternative text', () => {
+    const safe = sanitizeArticleHtml([
+      '<img src="missing.jpg">',
+      '<img src="empty.jpg" alt="">',
+      '<img src="blank.jpg" alt="   ">',
+      '<img src="kept.jpg" alt="แผนผังการติดตั้ง CPU">'
+    ].join(''))
+    const template = document.createElement('template')
+    template.innerHTML = safe
+
+    const images = [...template.content.querySelectorAll('img')]
+    expect(images).toHaveLength(1)
+    expect(images[0].getAttribute('src')).toBe('kept.jpg')
+    expect(images[0].getAttribute('alt')).toBe('แผนผังการติดตั้ง CPU')
+  })
+
+  test('removes ARIA attributes outside the explicit rich-content allowlist', () => {
+    const safe = sanitizeArticleHtml('<p aria-label="Spoofed label" aria-hidden="true">Visible copy</p>')
+
+    expect(safe).toBe('<p>Visible copy</p>')
+  })
+
   test('turns rich content into a bounded plain-text excerpt', () => {
     expect(articleExcerpt('<p>Alpha <strong>Beta</strong></p>', 10)).toBe('Alpha Beta')
     expect(articleExcerpt(`<p>${'ก'.repeat(20)}</p>`, 10)).toBe(`${'ก'.repeat(10)}…`)

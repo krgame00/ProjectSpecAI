@@ -39,7 +39,7 @@
             v-if="coverVisible(featuredArticle)"
             :src="articleImage(featuredArticle)"
             :alt="featuredArticle.title"
-            @error="markCoverFailed(featuredArticle.id)"
+            @error="markCoverFailed(featuredArticle)"
           />
           <div
             v-else
@@ -59,7 +59,8 @@
         </div>
       </RouterLink>
 
-      <section v-if="gridArticles.length" class="articles-grid" aria-label="บทความเพิ่มเติม">
+      <section v-if="gridArticles.length" class="articles-grid" aria-labelledby="articles-grid-heading">
+        <h2 id="articles-grid-heading" class="sr-only">บทความเพิ่มเติม</h2>
         <RouterLink
           v-for="article in gridArticles"
           :key="article.id"
@@ -71,7 +72,7 @@
               v-if="coverVisible(article)"
               :src="articleImage(article)"
               :alt="article.title"
-              @error="markCoverFailed(article.id)"
+              @error="markCoverFailed(article)"
             />
             <div
               v-else
@@ -115,12 +116,15 @@ const props = defineProps({
 
 defineEmits(['retry-articles'])
 
-const failedCovers = ref(new Set())
+const failedCovers = ref(new Map())
 const featuredArticle = computed(() => props.articles[0])
 const gridArticles = computed(() => props.articles.slice(1))
 const articleImage = article => article.image_url || article.image || ''
-const coverVisible = article => Boolean(articleImage(article)) && !failedCovers.value.has(article.id)
-const markCoverFailed = id => failedCovers.value.add(id)
+const coverVisible = article => {
+  const image = articleImage(article)
+  return Boolean(image) && failedCovers.value.get(article.id) !== image
+}
+const markCoverFailed = article => failedCovers.value.set(article.id, articleImage(article))
 </script>
 
 <style scoped>

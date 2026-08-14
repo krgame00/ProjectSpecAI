@@ -11,22 +11,28 @@ export const useArticleStore = defineStore('article', {
   state: () => ({
     articles: [],
     isLoading: false,
-    error: null
+    error: null,
+    requestGeneration: 0
   }),
   actions: {
     async fetchArticles() {
+      const requestGeneration = ++this.requestGeneration
       this.isLoading = true
       this.error = null
       try {
         const res = await fetch(`${API_BASE}/articles`)
         if (!res.ok) throw new Error(`โหลดบทความไม่สำเร็จ (${res.status})`)
-        this.articles = await res.json()
+        const articles = await res.json()
+        if (!Array.isArray(articles)) throw new Error('Invalid article response')
+        if (requestGeneration !== this.requestGeneration) return false
+        this.articles = articles
         return true
       } catch (error) {
+        if (requestGeneration !== this.requestGeneration) return false
         this.error = error instanceof Error ? error.message : 'โหลดบทความไม่สำเร็จ'
         return false
       } finally {
-        this.isLoading = false
+        if (requestGeneration === this.requestGeneration) this.isLoading = false
       }
     },
     async saveArticle(article) {
@@ -42,6 +48,8 @@ export const useArticleStore = defineStore('article', {
         })
         if (res.ok) {
           const data = await res.json()
+          this.requestGeneration += 1
+          this.isLoading = false
           if (isNew) {
             this.articles.push(data.article || article)
           } else {
@@ -60,6 +68,8 @@ export const useArticleStore = defineStore('article', {
           headers: authHeaders()
         })
         if (res.ok) {
+          this.requestGeneration += 1
+          this.isLoading = false
           this.articles = this.articles.filter(a => a.id !== articleId)
         }
       } catch (err) {

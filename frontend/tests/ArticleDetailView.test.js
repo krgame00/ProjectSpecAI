@@ -1,7 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { afterEach, describe, expect, test, vi } from 'vitest'
+import { parse } from '@vue/compiler-sfc'
+import { afterAll, afterEach, beforeAll, describe, expect, test, vi } from 'vitest'
 import { routeLocationKey, routerKey } from 'vue-router'
 import ArticleDetailView from '../src/components/ArticleDetailView.vue'
+import articleDetailSource from '../src/components/ArticleDetailView.vue?raw'
 
 const mountedWrappers = []
 
@@ -37,6 +39,16 @@ afterEach(() => {
 })
 
 describe('ArticleDetailView', () => {
+  let styleElement
+
+  beforeAll(() => {
+    styleElement = document.createElement('style')
+    styleElement.textContent = parse(articleDetailSource).descriptor.styles.map(style => style.content).join('\n')
+    document.head.append(styleElement)
+  })
+
+  afterAll(() => styleElement.remove())
+
   test('sanitizes rich article content and does not navigate on Escape', () => {
     const router = { push: vi.fn() }
     const wrapper = mountDetail({
@@ -90,5 +102,28 @@ describe('ArticleDetailView', () => {
     await brokenCover.get('img[src="/broken.jpg"]').trigger('error')
 
     expect(brokenCover.get('.article-image-fallback').attributes('aria-label')).toBe('ไม่มีภาพปกสำหรับ Broken cover')
+  })
+
+  test('retries a failed cover when the same article receives a corrected image URL', async () => {
+    const wrapper = mountDetail({
+      articles: [{ id: 7, title: 'Corrected cover', content: 'Body', image_url: '/broken.jpg' }]
+    })
+
+    await wrapper.get('img[src="/broken.jpg"]').trigger('error')
+    expect(wrapper.find('img').exists()).toBe(false)
+
+    await wrapper.setProps({
+      articles: [{ id: 7, title: 'Corrected cover', content: 'Body', image_url: '/corrected.jpg' }]
+    })
+
+    expect(wrapper.get('img[src="/corrected.jpg"]').attributes('alt')).toBe('Corrected cover')
+  })
+
+  test('keeps the detail error back link at least 44px tall', () => {
+    const wrapper = mountDetail({ articlesError: 'offline' })
+    const styles = getComputedStyle(wrapper.get('.text-link').element)
+
+    expect(styles.display).toBe('inline-flex')
+    expect(styles.minHeight).toBe('44px')
   })
 })

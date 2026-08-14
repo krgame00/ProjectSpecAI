@@ -78,7 +78,7 @@ const safeContent = computed(() => sanitizeArticleHtml(article.value?.content))
 const articleImage = computed(() => article.value?.image_url || article.value?.image || '')
 const coverVisible = computed(() => Boolean(articleImage.value) && !coverFailed.value)
 
-watch(() => article.value?.id, () => {
+watch([() => article.value?.id, articleImage], () => {
   coverFailed.value = false
 })
 </script>
@@ -106,6 +106,12 @@ watch(() => article.value?.id, () => {
   align-items: center;
   min-height: 44px;
   margin-bottom: var(--space-lg);
+}
+
+.text-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
 }
 
 .back-link:hover,

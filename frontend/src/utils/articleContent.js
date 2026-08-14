@@ -4,11 +4,18 @@ const ALLOWED_TAGS = ['p', 'br', 'h2', 'h3', 'h4', 'strong', 'em', 'ul', 'ol', '
 const ALLOWED_ATTR = ['href', 'src', 'alt', 'title', 'scope']
 
 export function sanitizeArticleHtml(value) {
-  return DOMPurify.sanitize(String(value ?? ''), {
+  const sanitized = DOMPurify.sanitize(String(value ?? ''), {
     ALLOWED_TAGS,
     ALLOWED_ATTR,
-    ALLOW_DATA_ATTR: false
+    ALLOW_DATA_ATTR: false,
+    ALLOW_ARIA_ATTR: false
   })
+  const template = document.createElement('template')
+  template.innerHTML = sanitized
+  template.content.querySelectorAll('img').forEach(image => {
+    if (!image.getAttribute('alt')?.trim()) image.remove()
+  })
+  return template.innerHTML
 }
 
 export function articleExcerpt(value, maxLength = 180) {

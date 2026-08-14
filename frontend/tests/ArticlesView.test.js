@@ -82,4 +82,34 @@ describe('ArticlesView', () => {
 
     expect(wrapper.get('[aria-label="ไม่มีภาพปกสำหรับ Broken cover"]').exists()).toBe(true)
   })
+
+  test('retries a failed cover when the same article receives a corrected image URL', async () => {
+    const wrapper = mountView({
+      articles: [{ id: 7, title: 'Corrected cover', content: 'Body', image_url: '/broken.jpg' }]
+    })
+
+    await wrapper.get('img[src="/broken.jpg"]').trigger('error')
+    expect(wrapper.find('img').exists()).toBe(false)
+
+    await wrapper.setProps({
+      articles: [{ id: 7, title: 'Corrected cover', content: 'Body', image_url: '/corrected.jpg' }]
+    })
+
+    expect(wrapper.get('img[src="/corrected.jpg"]').attributes('alt')).toBe('Corrected cover')
+  })
+
+  test('labels the remaining-articles grid with an h2 before its h3 card titles', () => {
+    const wrapper = mountView({
+      articles: [
+        { id: 1, title: 'Featured', content: 'One' },
+        { id: 2, title: 'Grid one', content: 'Two' },
+        { id: 3, title: 'Grid two', content: 'Three' }
+      ]
+    })
+
+    const grid = wrapper.get('.articles-grid')
+    expect(grid.attributes('aria-labelledby')).toBe('articles-grid-heading')
+    expect(grid.get('h2#articles-grid-heading').classes()).toContain('sr-only')
+    expect(grid.findAll('h3')).toHaveLength(2)
+  })
 })
