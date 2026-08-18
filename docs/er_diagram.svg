@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850" width="1000" height="850" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 880" width="1020" height="880" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
@@ -6,214 +6,247 @@
   </defs>
 
   <!-- Header -->
-  <rect x="0" y="0" width="1000" height="55" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  <rect x="0" y="0" width="1020" height="55" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
   <text x="30" y="35" fill="#000000" font-size="18" font-weight="700">Smart PC Builder - Database ER Diagram (MySQL)</text>
-  <text x="750" y="35" fill="#495057" font-size="12" font-weight="600">✓ Black &amp; White Academic Theme</text>
+  <text x="760" y="35" fill="#495057" font-size="12" font-weight="600">✓ Complete 13 Tables Academic Theme</text>
 
   <!-- Connection Lines -->
   <!-- users -> orders -->
-  <path d="M 285 140 L 375 140" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="310" y="128" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="317" y="142" font-size="11" font-weight="700" fill="#000000">1 : N</text>
+  <path d="M 290 140 L 370 140" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="312" y="128" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="319" y="142" font-size="11" font-weight="700" fill="#000000">1 : N</text>
 
   <!-- orders -> order_items -->
-  <path d="M 625 140 L 715 140" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="650" y="128" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="657" y="142" font-size="11" font-weight="700" fill="#000000">1 : N</text>
+  <path d="M 620 140 L 710 140" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="647" y="128" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="654" y="142" font-size="11" font-weight="700" fill="#000000">1 : N</text>
 
   <!-- categories -> products -->
-  <path d="M 285 410 L 375 410" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="310" y="398" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="317" y="412" font-size="11" font-weight="700" fill="#000000">1 : N</text>
+  <path d="M 290 410 L 370 410" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="312" y="398" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="319" y="412" font-size="11" font-weight="700" fill="#000000">1 : N</text>
 
   <!-- products -> order_items -->
-  <path d="M 625 390 L 670 390 L 670 190 L 715 190" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="650" y="280" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="657" y="294" font-size="11" font-weight="700" fill="#000000">1 : N</text>
+  <path d="M 620 380 L 665 380 L 665 180 L 710 180" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="645" y="270" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="652" y="284" font-size="11" font-weight="700" fill="#000000">1 : N</text>
 
   <!-- products -> spec_cpu -->
-  <path d="M 625 410 L 715 410" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="650" y="398" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="657" y="412" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
+  <path d="M 620 400 L 665 400 L 665 305 L 710 305" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="645" y="340" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="652" y="354" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
 
   <!-- products -> spec_motherboard -->
-  <path d="M 625 535 L 715 535" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="650" y="523" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="657" y="537" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
+  <path d="M 620 425 L 710 425" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="647" y="413" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="654" y="427" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
 
   <!-- products -> spec_ram -->
-  <path d="M 625 560 L 670 560 L 670 660 L 715 660" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <path d="M 620 460 L 665 460 L 665 545 L 710 545" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <rect x="645" y="490" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="652" y="504" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
 
   <!-- products -> spec_gpu -->
-  <path d="M 500 580 L 500 620" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <path d="M 620 490 L 665 490 L 665 655 L 710 655" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- products -> spec_storage -->
+  <path d="M 620 520 L 665 520 L 665 765 L 710 765" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
 
   <!-- products -> spec_psu -->
-  <path d="M 375 560 L 330 560 L 330 660 L 285 660" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <path d="M 370 540 L 330 540 L 330 745 L 290 745" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
 
   <!-- products -> spec_case -->
-  <path d="M 375 570 L 310 570 L 310 760 L 285 760" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
+  <path d="M 495 580 L 495 630" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
   <!-- Table: users -->
   <g>
-    <rect x="55" y="80" width="230" height="185" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="55" y="80" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="170" y="100" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">USERS</text>
-    <text x="67" y="128" font-size="12" font-weight="700" fill="#000000">[PK] id</text>
-    <text x="273" y="128" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="67" y="150" font-size="12" font-weight="400" fill="#000000">name</text>
-    <text x="273" y="150" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
-    <text x="67" y="172" font-size="12" font-weight="700" fill="#000000">[UQ] email</text>
-    <text x="273" y="172" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
-    <text x="67" y="194" font-size="12" font-weight="400" fill="#000000">password</text>
-    <text x="273" y="194" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
-    <text x="67" y="216" font-size="12" font-weight="400" fill="#000000">role</text>
-    <text x="273" y="216" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
-    <text x="67" y="238" font-size="12" font-weight="400" fill="#000000">created_at</text>
-    <text x="273" y="238" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
+    <rect x="60" y="80" width="230" height="165" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="60" y="80" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="175" y="99" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">USERS</text>
+    <text x="70" y="125" font-size="11" font-weight="700" fill="#000000">[PK] id</text>
+    <text x="280" y="125" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="70" y="147" font-size="11" font-weight="400" fill="#000000">name</text>
+    <text x="280" y="147" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
+    <text x="70" y="169" font-size="11" font-weight="700" fill="#000000">[UQ] email</text>
+    <text x="280" y="169" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
+    <text x="70" y="191" font-size="11" font-weight="400" fill="#000000">password</text>
+    <text x="280" y="191" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
+    <text x="70" y="213" font-size="11" font-weight="400" fill="#000000">role</text>
+    <text x="280" y="213" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
+    <text x="70" y="235" font-size="11" font-weight="400" fill="#000000">created_at</text>
+    <text x="280" y="235" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
   </g>
   <!-- Table: orders -->
   <g>
-    <rect x="375" y="80" width="250" height="230" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="375" y="80" width="250" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="500" y="100" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">ORDERS</text>
-    <text x="387" y="128" font-size="12" font-weight="700" fill="#000000">[PK] id</text>
-    <text x="613" y="128" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="387" y="150" font-size="12" font-weight="700" fill="#000000">[FK] user_id</text>
-    <text x="613" y="150" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="387" y="172" font-size="12" font-weight="400" fill="#000000">customer_name</text>
-    <text x="613" y="172" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
-    <text x="387" y="194" font-size="12" font-weight="400" fill="#000000">customer_address</text>
-    <text x="613" y="194" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TEXT</text>
-    <text x="387" y="216" font-size="12" font-weight="400" fill="#000000">customer_phone</text>
-    <text x="613" y="216" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
-    <text x="387" y="238" font-size="12" font-weight="400" fill="#000000">assembly_type</text>
-    <text x="613" y="238" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="387" y="260" font-size="12" font-weight="400" fill="#000000">total_price</text>
-    <text x="613" y="260" font-size="11" font-weight="400" fill="#495057" text-anchor="end">DECIMAL(10,2)</text>
-    <text x="387" y="282" font-size="12" font-weight="400" fill="#000000">status</text>
-    <text x="613" y="282" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="387" y="304" font-size="12" font-weight="400" fill="#000000">created_at</text>
-    <text x="613" y="304" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
+    <rect x="370" y="80" width="250" height="230" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="370" y="80" width="250" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="495" y="99" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">ORDERS</text>
+    <text x="380" y="125" font-size="11" font-weight="700" fill="#000000">[PK] id</text>
+    <text x="610" y="125" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="380" y="147" font-size="11" font-weight="700" fill="#000000">[FK] user_id</text>
+    <text x="610" y="147" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="380" y="169" font-size="11" font-weight="400" fill="#000000">customer_name</text>
+    <text x="610" y="169" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
+    <text x="380" y="191" font-size="11" font-weight="400" fill="#000000">customer_address</text>
+    <text x="610" y="191" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TEXT</text>
+    <text x="380" y="213" font-size="11" font-weight="400" fill="#000000">customer_phone</text>
+    <text x="610" y="213" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
+    <text x="380" y="235" font-size="11" font-weight="400" fill="#000000">assembly_type</text>
+    <text x="610" y="235" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="380" y="257" font-size="11" font-weight="400" fill="#000000">total_price</text>
+    <text x="610" y="257" font-size="11" font-weight="400" fill="#495057" text-anchor="end">DECIMAL(10,2)</text>
+    <text x="380" y="279" font-size="11" font-weight="400" fill="#000000">status</text>
+    <text x="610" y="279" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="380" y="301" font-size="11" font-weight="400" fill="#000000">created_at</text>
+    <text x="610" y="301" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
   </g>
   <!-- Table: order_items -->
   <g>
-    <rect x="715" y="80" width="230" height="155" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="715" y="80" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="830" y="100" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">ORDER_ITEMS</text>
-    <text x="727" y="128" font-size="12" font-weight="700" fill="#000000">[PK] id</text>
-    <text x="933" y="128" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="727" y="150" font-size="12" font-weight="700" fill="#000000">[FK] order_id</text>
-    <text x="933" y="150" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="727" y="172" font-size="12" font-weight="700" fill="#000000">[FK] product_id</text>
-    <text x="933" y="172" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="727" y="194" font-size="12" font-weight="400" fill="#000000">category_slug</text>
-    <text x="933" y="194" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="727" y="216" font-size="12" font-weight="400" fill="#000000">price</text>
-    <text x="933" y="216" font-size="11" font-weight="400" fill="#495057" text-anchor="end">DECIMAL(10,2)</text>
+    <rect x="710" y="80" width="230" height="145" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="710" y="80" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="825" y="99" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">ORDER_ITEMS</text>
+    <text x="720" y="125" font-size="11" font-weight="700" fill="#000000">[PK] id</text>
+    <text x="930" y="125" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="147" font-size="11" font-weight="700" fill="#000000">[FK] order_id</text>
+    <text x="930" y="147" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="720" y="169" font-size="11" font-weight="700" fill="#000000">[FK] product_id</text>
+    <text x="930" y="169" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="191" font-size="11" font-weight="400" fill="#000000">category_slug</text>
+    <text x="930" y="191" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="720" y="213" font-size="11" font-weight="400" fill="#000000">price</text>
+    <text x="930" y="213" font-size="11" font-weight="400" fill="#495057" text-anchor="end">DECIMAL(10,2)</text>
   </g>
   <!-- Table: categories -->
   <g>
-    <rect x="55" y="350" width="230" height="155" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="55" y="350" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="170" y="370" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">CATEGORIES</text>
-    <text x="67" y="398" font-size="12" font-weight="700" fill="#000000">[PK] id</text>
-    <text x="273" y="398" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="67" y="420" font-size="12" font-weight="700" fill="#000000">[UQ] slug</text>
-    <text x="273" y="420" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="67" y="442" font-size="12" font-weight="400" fill="#000000">name_th</text>
-    <text x="273" y="442" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
-    <text x="67" y="464" font-size="12" font-weight="400" fill="#000000">description</text>
-    <text x="273" y="464" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TEXT</text>
-    <text x="67" y="486" font-size="12" font-weight="400" fill="#000000">created_at</text>
-    <text x="273" y="486" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
+    <rect x="60" y="350" width="230" height="145" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="60" y="350" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="175" y="369" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">CATEGORIES</text>
+    <text x="70" y="395" font-size="11" font-weight="700" fill="#000000">[PK] id</text>
+    <text x="280" y="395" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="70" y="417" font-size="11" font-weight="700" fill="#000000">[UQ] slug</text>
+    <text x="280" y="417" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="70" y="439" font-size="11" font-weight="400" fill="#000000">name_th</text>
+    <text x="280" y="439" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
+    <text x="70" y="461" font-size="11" font-weight="400" fill="#000000">description</text>
+    <text x="280" y="461" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TEXT</text>
+    <text x="70" y="483" font-size="11" font-weight="400" fill="#000000">created_at</text>
+    <text x="280" y="483" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
   </g>
   <!-- Table: products -->
   <g>
-    <rect x="375" y="350" width="250" height="230" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="375" y="350" width="250" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="500" y="370" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">PRODUCTS</text>
-    <text x="387" y="398" font-size="12" font-weight="700" fill="#000000">[PK] id</text>
-    <text x="613" y="398" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="387" y="420" font-size="12" font-weight="700" fill="#000000">[FK] category_id</text>
-    <text x="613" y="420" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="387" y="442" font-size="12" font-weight="400" fill="#000000">brand</text>
-    <text x="613" y="442" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
-    <text x="387" y="464" font-size="12" font-weight="400" fill="#000000">model</text>
-    <text x="613" y="464" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
-    <text x="387" y="486" font-size="12" font-weight="400" fill="#000000">price</text>
-    <text x="613" y="486" font-size="11" font-weight="400" fill="#495057" text-anchor="end">DECIMAL(10,2)</text>
-    <text x="387" y="508" font-size="12" font-weight="400" fill="#000000">image_url</text>
-    <text x="613" y="508" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
-    <text x="387" y="530" font-size="12" font-weight="400" fill="#000000">stock_quantity</text>
-    <text x="613" y="530" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="387" y="552" font-size="12" font-weight="400" fill="#000000">specifications</text>
-    <text x="613" y="552" font-size="11" font-weight="400" fill="#495057" text-anchor="end">JSON</text>
-    <text x="387" y="574" font-size="12" font-weight="400" fill="#000000">created_at</text>
-    <text x="613" y="574" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
+    <rect x="370" y="350" width="250" height="230" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="370" y="350" width="250" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="495" y="369" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">PRODUCTS</text>
+    <text x="380" y="395" font-size="11" font-weight="700" fill="#000000">[PK] id</text>
+    <text x="610" y="395" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="380" y="417" font-size="11" font-weight="700" fill="#000000">[FK] category_id</text>
+    <text x="610" y="417" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="380" y="439" font-size="11" font-weight="400" fill="#000000">brand</text>
+    <text x="610" y="439" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(100)</text>
+    <text x="380" y="461" font-size="11" font-weight="400" fill="#000000">model</text>
+    <text x="610" y="461" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
+    <text x="380" y="483" font-size="11" font-weight="400" fill="#000000">price</text>
+    <text x="610" y="483" font-size="11" font-weight="400" fill="#495057" text-anchor="end">DECIMAL(10,2)</text>
+    <text x="380" y="505" font-size="11" font-weight="400" fill="#000000">image_url</text>
+    <text x="610" y="505" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
+    <text x="380" y="527" font-size="11" font-weight="400" fill="#000000">stock_quantity</text>
+    <text x="610" y="527" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="380" y="549" font-size="11" font-weight="400" fill="#000000">specifications</text>
+    <text x="610" y="549" font-size="11" font-weight="400" fill="#495057" text-anchor="end">JSON</text>
+    <text x="380" y="571" font-size="11" font-weight="400" fill="#000000">created_at</text>
+    <text x="610" y="571" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
+  </g>
+  <!-- Table: articles -->
+  <g>
+    <rect x="60" y="530" width="230" height="145" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="60" y="530" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="175" y="549" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">ARTICLES</text>
+    <text x="70" y="575" font-size="11" font-weight="700" fill="#000000">[PK] id</text>
+    <text x="280" y="575" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="70" y="597" font-size="11" font-weight="400" fill="#000000">title</text>
+    <text x="280" y="597" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
+    <text x="70" y="619" font-size="11" font-weight="400" fill="#000000">content</text>
+    <text x="280" y="619" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TEXT</text>
+    <text x="70" y="641" font-size="11" font-weight="400" fill="#000000">image_url</text>
+    <text x="280" y="641" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
+    <text x="70" y="663" font-size="11" font-weight="400" fill="#000000">created_at</text>
+    <text x="280" y="663" font-size="11" font-weight="400" fill="#495057" text-anchor="end">TIMESTAMP</text>
   </g>
   <!-- Table: spec_cpu -->
   <g>
-    <rect x="715" y="350" width="230" height="110" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="715" y="350" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="830" y="370" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">SPEC_CPU</text>
-    <text x="727" y="398" font-size="12" font-weight="700" fill="#000000">[PK/FK] product_id</text>
-    <text x="933" y="398" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="727" y="420" font-size="12" font-weight="400" fill="#000000">socket</text>
-    <text x="933" y="420" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="727" y="442" font-size="12" font-weight="400" fill="#000000">tdp_watt</text>
-    <text x="933" y="442" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <rect x="710" y="260" width="230" height="95" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="710" y="260" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="825" y="279" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_CPU</text>
+    <text x="720" y="305" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="930" y="305" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="327" font-size="11" font-weight="400" fill="#000000">socket</text>
+    <text x="930" y="327" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="720" y="349" font-size="11" font-weight="400" fill="#000000">tdp_watt</text>
+    <text x="930" y="349" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
   </g>
   <!-- Table: spec_motherboard -->
   <g>
-    <rect x="715" y="485" width="230" height="110" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="715" y="485" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="830" y="505" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">SPEC_MOTHERBOARD</text>
-    <text x="727" y="533" font-size="12" font-weight="700" fill="#000000">[PK/FK] product_id</text>
-    <text x="933" y="533" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="727" y="555" font-size="12" font-weight="400" fill="#000000">socket</text>
-    <text x="933" y="555" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
-    <text x="727" y="577" font-size="12" font-weight="400" fill="#000000">ram_type</text>
-    <text x="933" y="577" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
+    <rect x="710" y="380" width="230" height="95" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="710" y="380" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="825" y="399" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_MOTHERBOARD</text>
+    <text x="720" y="425" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="930" y="425" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="447" font-size="11" font-weight="400" fill="#000000">socket</text>
+    <text x="930" y="447" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="720" y="469" font-size="11" font-weight="400" fill="#000000">ram_type</text>
+    <text x="930" y="469" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
   </g>
   <!-- Table: spec_ram -->
   <g>
-    <rect x="715" y="620" width="230" height="110" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="715" y="620" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="830" y="640" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">SPEC_RAM</text>
-    <text x="727" y="668" font-size="12" font-weight="700" fill="#000000">[PK/FK] product_id</text>
-    <text x="933" y="668" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="727" y="690" font-size="12" font-weight="400" fill="#000000">ram_type</text>
-    <text x="933" y="690" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
-    <text x="727" y="712" font-size="12" font-weight="400" fill="#000000">capacity_gb</text>
-    <text x="933" y="712" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <rect x="710" y="500" width="230" height="95" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="710" y="500" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="825" y="519" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_RAM</text>
+    <text x="720" y="545" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="930" y="545" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="567" font-size="11" font-weight="400" fill="#000000">ram_type</text>
+    <text x="930" y="567" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(20)</text>
+    <text x="720" y="589" font-size="11" font-weight="400" fill="#000000">capacity_gb</text>
+    <text x="930" y="589" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
   </g>
   <!-- Table: spec_gpu -->
   <g>
-    <rect x="375" y="620" width="250" height="90" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="375" y="620" width="250" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="500" y="640" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">SPEC_GPU</text>
-    <text x="387" y="668" font-size="12" font-weight="700" fill="#000000">[PK/FK] product_id</text>
-    <text x="613" y="668" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="387" y="690" font-size="12" font-weight="400" fill="#000000">tdp_watt</text>
-    <text x="613" y="690" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <rect x="710" y="620" width="230" height="75" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="710" y="620" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="825" y="639" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_GPU</text>
+    <text x="720" y="665" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="930" y="665" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="687" font-size="11" font-weight="400" fill="#000000">tdp_watt</text>
+    <text x="930" y="687" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+  </g>
+  <!-- Table: spec_storage -->
+  <g>
+    <rect x="710" y="720" width="230" height="95" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="710" y="720" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="825" y="739" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_STORAGE</text>
+    <text x="720" y="765" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="930" y="765" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="720" y="787" font-size="11" font-weight="400" fill="#000000">type</text>
+    <text x="930" y="787" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(50)</text>
+    <text x="720" y="809" font-size="11" font-weight="400" fill="#000000">capacity_gb</text>
+    <text x="930" y="809" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
   </g>
   <!-- Table: spec_psu -->
   <g>
-    <rect x="55" y="620" width="230" height="90" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="55" y="620" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="170" y="640" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">SPEC_PSU</text>
-    <text x="67" y="668" font-size="12" font-weight="700" fill="#000000">[PK/FK] product_id</text>
-    <text x="273" y="668" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="67" y="690" font-size="12" font-weight="400" fill="#000000">wattage</text>
-    <text x="273" y="690" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <rect x="60" y="710" width="230" height="75" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="60" y="710" width="230" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="175" y="729" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_PSU</text>
+    <text x="70" y="755" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="280" y="755" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="70" y="777" font-size="11" font-weight="400" fill="#000000">wattage</text>
+    <text x="280" y="777" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
   </g>
   <!-- Table: spec_case -->
   <g>
-    <rect x="55" y="730" width="230" height="90" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="55" y="730" width="230" height="30" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="170" y="750" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">SPEC_CASE</text>
-    <text x="67" y="778" font-size="12" font-weight="700" fill="#000000">[PK/FK] product_id</text>
-    <text x="273" y="778" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
-    <text x="67" y="800" font-size="12" font-weight="400" fill="#000000">form_factor_support</text>
-    <text x="273" y="800" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
+    <rect x="370" y="630" width="250" height="75" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <rect x="370" y="630" width="250" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
+    <text x="495" y="649" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">SPEC_CASE</text>
+    <text x="380" y="675" font-size="11" font-weight="700" fill="#000000">[PK/FK] product_id</text>
+    <text x="610" y="675" font-size="11" font-weight="400" fill="#495057" text-anchor="end">INT</text>
+    <text x="380" y="697" font-size="11" font-weight="400" fill="#000000">form_factor_support</text>
+    <text x="610" y="697" font-size="11" font-weight="400" fill="#495057" text-anchor="end">VARCHAR(255)</text>
   </g>
 </svg>

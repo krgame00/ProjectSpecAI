@@ -1,12 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const drawioDir = path.join(__dirname, '..', 'docs', 'drawio');
-const svgDir = path.join(__dirname, '..', 'docs');
-const downloadDrawioPath = 'C:/Users/PC/Downloads/smart_pc_builder_er_diagram.drawio';
+const targetDownloadPath = 'C:/Users/PC/Downloads/smart_pc_builder_er_diagram.drawio';
+const backupDownloadPath = 'C:/Users/PC/Downloads/smart_pc_builder_er_diagram_backup.drawio';
 
-if (!fs.existsSync(drawioDir)) fs.mkdirSync(drawioDir, { recursive: true });
-if (!fs.existsSync(svgDir)) fs.mkdirSync(svgDir, { recursive: true });
+const docsDrawioPath = path.join(__dirname, '..', 'docs', 'drawio', 'smart_pc_builder_er_diagram.drawio');
+const docsSvgPath = path.join(__dirname, '..', 'docs', 'er_diagram.svg');
+
+// Backup original
+if (fs.existsSync(targetDownloadPath)) {
+  fs.copyFileSync(targetDownloadPath, backupDownloadPath);
+  console.log('Created backup at:', backupDownloadPath);
+}
 
 function escapeXml(unsafe) {
   if (!unsafe) return '';
@@ -19,6 +24,7 @@ function escapeXml(unsafe) {
 }
 
 const tables = [
+  // 1. Users
   {
     id: 'table_users',
     name: 'users',
@@ -32,6 +38,7 @@ const tables = [
       { name: 'created_at', type: 'TIMESTAMP' }
     ]
   },
+  // 2. Orders
   {
     id: 'table_orders',
     name: 'orders',
@@ -48,6 +55,7 @@ const tables = [
       { name: 'created_at', type: 'TIMESTAMP' }
     ]
   },
+  // 3. Order Items
   {
     id: 'table_order_items',
     name: 'order_items',
@@ -60,6 +68,7 @@ const tables = [
       { name: 'price', type: 'DECIMAL(10,2)' }
     ]
   },
+  // 4. Categories
   {
     id: 'table_categories',
     name: 'categories',
@@ -72,6 +81,7 @@ const tables = [
       { name: 'created_at', type: 'TIMESTAMP' }
     ]
   },
+  // 5. Products (Master)
   {
     id: 'table_products',
     name: 'products',
@@ -88,6 +98,7 @@ const tables = [
       { name: 'created_at', type: 'TIMESTAMP' }
     ]
   },
+  // 6. Articles (New)
   {
     id: 'table_articles',
     name: 'articles',
@@ -100,6 +111,7 @@ const tables = [
       { name: 'created_at', type: 'TIMESTAMP' }
     ]
   },
+  // 7. Spec CPU
   {
     id: 'table_spec_cpu',
     name: 'spec_cpu',
@@ -110,6 +122,7 @@ const tables = [
       { name: 'tdp_watt', type: 'INT' }
     ]
   },
+  // 8. Spec Motherboard
   {
     id: 'table_spec_mobo',
     name: 'spec_motherboard',
@@ -120,6 +133,7 @@ const tables = [
       { name: 'ram_type', type: 'VARCHAR(20)' }
     ]
   },
+  // 9. Spec RAM
   {
     id: 'table_spec_ram',
     name: 'spec_ram',
@@ -130,6 +144,7 @@ const tables = [
       { name: 'capacity_gb', type: 'INT' }
     ]
   },
+  // 10. Spec GPU
   {
     id: 'table_spec_gpu',
     name: 'spec_gpu',
@@ -139,6 +154,7 @@ const tables = [
       { name: 'tdp_watt', type: 'INT' }
     ]
   },
+  // 11. Spec Storage (New)
   {
     id: 'table_spec_storage',
     name: 'spec_storage',
@@ -149,6 +165,7 @@ const tables = [
       { name: 'capacity_gb', type: 'INT' }
     ]
   },
+  // 12. Spec PSU
   {
     id: 'table_spec_psu',
     name: 'spec_psu',
@@ -158,6 +175,7 @@ const tables = [
       { name: 'wattage', type: 'INT' }
     ]
   },
+  // 13. Spec Case
   {
     id: 'table_spec_case',
     name: 'spec_case',
@@ -183,7 +201,7 @@ const relationships = [
   { from: 'table_products', to: 'table_spec_case', label: '1 : 1', style: 'exitX=0.5;exitY=1;entryX=0.5;entryY=0;' }
 ];
 
-function generateDrawioER() {
+function generateDrawioXml() {
   let cellsXml = `        <mxCell id="0" />\n        <mxCell id="1" parent="0" />\n`;
 
   // Header Title
@@ -217,7 +235,7 @@ function generateDrawioER() {
         </mxCell>\n`;
   });
 
-  const xmlContent = `<mxfile host="Electron" modified="${new Date().toISOString()}" agent="PCSpec ER Generator" version="21.0.0" type="device">
+  return `<mxfile host="Electron" modified="${new Date().toISOString()}" agent="PCSpec ER Generator" version="21.0.0" type="device">
   <diagram id="diagram_er" name="ER Diagram (smart_pc_builder)">
     <mxGraphModel dx="1400" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
@@ -225,103 +243,14 @@ ${cellsXml}      </root>
     </mxGraphModel>
   </diagram>
 </mxfile>`;
-
-  const drawioPath = path.join(drawioDir, 'smart_pc_builder_er_diagram.drawio');
-  fs.writeFileSync(drawioPath, xmlContent, 'utf8');
-  fs.writeFileSync(downloadDrawioPath, xmlContent, 'utf8');
-  console.log('Created Draw.io ER files at:', drawioPath, 'and', downloadDrawioPath);
 }
 
-function generateSvgER() {
-  const svgWidth = 1020;
-  const svgHeight = 880;
+const xmlOutput = generateDrawioXml();
 
-  let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${svgWidth} ${svgHeight}" width="${svgWidth}" height="${svgHeight}" style="background-color: #ffffff; font-family: 'Inter', system-ui, sans-serif;">
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000" />
-    </marker>
-  </defs>
+// Write to Downloads
+fs.writeFileSync(targetDownloadPath, xmlOutput, 'utf8');
+console.log('Updated Download file:', targetDownloadPath);
 
-  <!-- Header -->
-  <rect x="0" y="0" width="${svgWidth}" height="55" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
-  <text x="30" y="35" fill="#000000" font-size="18" font-weight="700">Smart PC Builder - Database ER Diagram (MySQL)</text>
-  <text x="${svgWidth - 260}" y="35" fill="#495057" font-size="12" font-weight="600">✓ Complete 13 Tables Academic Theme</text>
-
-  <!-- Connection Lines -->
-  <!-- users -> orders -->
-  <path d="M 290 140 L 370 140" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="312" y="128" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="319" y="142" font-size="11" font-weight="700" fill="#000000">1 : N</text>
-
-  <!-- orders -> order_items -->
-  <path d="M 620 140 L 710 140" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="647" y="128" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="654" y="142" font-size="11" font-weight="700" fill="#000000">1 : N</text>
-
-  <!-- categories -> products -->
-  <path d="M 290 410 L 370 410" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="312" y="398" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="319" y="412" font-size="11" font-weight="700" fill="#000000">1 : N</text>
-
-  <!-- products -> order_items -->
-  <path d="M 620 380 L 665 380 L 665 180 L 710 180" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="645" y="270" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="652" y="284" font-size="11" font-weight="700" fill="#000000">1 : N</text>
-
-  <!-- products -> spec_cpu -->
-  <path d="M 620 400 L 665 400 L 665 305 L 710 305" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="645" y="340" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="652" y="354" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
-
-  <!-- products -> spec_motherboard -->
-  <path d="M 620 425 L 710 425" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="647" y="413" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="654" y="427" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
-
-  <!-- products -> spec_ram -->
-  <path d="M 620 460 L 665 460 L 665 545 L 710 545" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-  <rect x="645" y="490" width="40" height="20" rx="3" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-  <text x="652" y="504" font-size="11" font-weight="700" fill="#000000">1 : 1</text>
-
-  <!-- products -> spec_gpu -->
-  <path d="M 620 490 L 665 490 L 665 655 L 710 655" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-
-  <!-- products -> spec_storage -->
-  <path d="M 620 520 L 665 520 L 665 765 L 710 765" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-
-  <!-- products -> spec_psu -->
-  <path d="M 370 540 L 330 540 L 330 745 L 290 745" fill="none" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-
-  <!-- products -> spec_case -->
-  <path d="M 495 580 L 495 630" stroke="#000000" stroke-width="1.8" marker-end="url(#arrow)" />
-`;
-
-  // Draw Entity Tables
-  tables.forEach(tbl => {
-    svgContent += `  <!-- Table: ${tbl.name} -->
-  <g>
-    <rect x="${tbl.x}" y="${tbl.y}" width="${tbl.w}" height="${tbl.h}" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-    <rect x="${tbl.x}" y="${tbl.y}" width="${tbl.w}" height="28" rx="6" fill="#f1f3f5" stroke="#000000" stroke-width="2"/>
-    <text x="${tbl.x + tbl.w / 2}" y="${tbl.y + 19}" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">${tbl.name.toUpperCase()}</text>\n`;
-
-    tbl.columns.forEach((col, idx) => {
-      const colY = tbl.y + 45 + idx * 22;
-      const keyTag = col.key ? `[${col.key}] ` : '';
-      const fontWeight = col.key ? '700' : '400';
-      svgContent += `    <text x="${tbl.x + 10}" y="${colY}" font-size="11" font-weight="${fontWeight}" fill="#000000">${keyTag}${col.name}</text>
-    <text x="${tbl.x + tbl.w - 10}" y="${colY}" font-size="11" font-weight="400" fill="#495057" text-anchor="end">${col.type}</text>\n`;
-    });
-
-    svgContent += `  </g>\n`;
-  });
-
-  svgContent += `</svg>`;
-
-  const svgPath = path.join(svgDir, 'er_diagram.svg');
-  fs.writeFileSync(svgPath, svgContent, 'utf8');
-  console.log('Created SVG ER file at:', svgPath);
-}
-
-generateDrawioER();
-generateSvgER();
+// Write to docs folder
+fs.writeFileSync(docsDrawioPath, xmlOutput, 'utf8');
+console.log('Updated Docs Draw.io file:', docsDrawioPath);
