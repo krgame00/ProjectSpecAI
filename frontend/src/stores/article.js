@@ -1,11 +1,8 @@
 import { defineStore } from 'pinia'
+import { adminErrorMessage, adminRequest } from '../services/adminApi'
+import { useToastStore } from './toast'
 
 const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1')
-
-function authHeaders() {
-  const token = typeof localStorage !== 'undefined' && localStorage.getItem ? localStorage.getItem('token') : null
-  return token ? { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' } : { 'Content-Type': 'application/json' }
-}
 
 export const useArticleStore = defineStore('article', {
   state: () => ({
@@ -37,43 +34,37 @@ export const useArticleStore = defineStore('article', {
     },
     async saveArticle(article) {
       const isNew = !article.id
-      const url = isNew ? `${API_BASE}/articles` : `${API_BASE}/articles/${article.id}`
+      const url = isNew ? '/articles' : `/articles/${article.id}`
       const method = isNew ? 'POST' : 'PUT'
 
       try {
-        const res = await fetch(url, {
-          method,
-          headers: authHeaders(),
-          body: JSON.stringify(article)
-        })
-        if (res.ok) {
-          const data = await res.json()
-          this.requestGeneration += 1
-          this.isLoading = false
-          if (isNew) {
-            this.articles.push(data.article || article)
-          } else {
-            const idx = this.articles.findIndex(a => a.id === article.id)
-            if (idx !== -1) this.articles[idx] = { ...this.articles[idx], ...article }
-          }
+        const data = await adminRequest(url, { method, body: article })
+        const saved = data?.article || data
+        this.requestGeneration += 1
+        this.isLoading = false
+        if (isNew) this.articles.push(saved)
+        else {
+          const idx = this.articles.findIndex(a => a.id === article.id)
+          if (idx !== -1) this.articles[idx] = saved
         }
+        useToastStore().success(isNew ? 'เพิ่มบทความสำเร็จ' : 'บันทึกบทความสำเร็จ')
+        return saved
       } catch (err) {
-        console.error('Failed to save article', err)
+        if (!err?.sessionExpired) useToastStore().error(adminErrorMessage(err, 'บันทึกบทความไม่สำเร็จ'))
+        return false
       }
     },
     async deleteArticle(articleId) {
       try {
-        const res = await fetch(`${API_BASE}/articles/${articleId}`, {
-          method: 'DELETE',
-          headers: authHeaders()
-        })
-        if (res.ok) {
-          this.requestGeneration += 1
-          this.isLoading = false
-          this.articles = this.articles.filter(a => a.id !== articleId)
-        }
+        await adminRequest(`/articles/${articleId}`, { method: 'DELETE' })
+        this.requestGeneration += 1
+        this.isLoading = false
+        this.articles = this.articles.filter(a => a.id !== articleId)
+        useToastStore().success('ลบบทความสำเร็จ')
+        return true
       } catch (err) {
-        console.error('Failed to delete article', err)
+        if (!err?.sessionExpired) useToastStore().error(adminErrorMessage(err, 'ลบบทความไม่สำเร็จ'))
+        return false
       }
     }
   }

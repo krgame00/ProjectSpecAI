@@ -7,6 +7,6 @@ const { authMiddleware, adminMiddleware } = require('../middleware/authMiddlewar
 router.get('/', authMiddleware, adminMiddleware, ordersController.getAll);
 router.post('/', validateRequired(['assembly_type', 'total_price', 'build_items']), validateEnum('assembly_type', ['none', 'standard', 'premium']), validatePositiveNumber(['total_price']), ordersController.create);
 router.get('/:id/status', ordersController.getStatus);
-router.put('/:id/status', authMiddleware, adminMiddleware, ordersController.updateStatus);
+router.put('/:id/status', authMiddleware, adminMiddleware, validateRequired(['status']), validateEnum('status', ['pending', 'assembling', 'shipped']), ordersController.updateStatus);
 
 module.exports = router;

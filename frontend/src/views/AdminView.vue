@@ -7,11 +7,6 @@
       :catalog="catalog"
       :articles="articles"
       :currentUser="currentUser"
-      @save-product="(data) => $emit('save-product', data)"
-      @delete-product="(data) => $emit('delete-product', data)"
-      @save-article="(data) => $emit('save-article', data)"
-      @delete-article="(id) => $emit('delete-article', id)"
-      @update-order-status="(id, status) => $emit('update-order-status', id, status)"
     />
     <div v-else class="container">
       <div class="unauthorized-card">
@@ -35,13 +30,6 @@ const props = defineProps({
   currentUser: Object
 });
 
-const emit = defineEmits([
-  'save-product',
-  'delete-product',
-  'save-article',
-  'delete-article',
-  'update-order-status'
-]);
 </script>
 
 <style scoped>

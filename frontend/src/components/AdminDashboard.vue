@@ -77,10 +77,10 @@
                 <td>{{ new Date(user.created_at).toLocaleDateString('th-TH') }}</td>
                 <td>
                   <div style="display: flex; gap: 0.5rem; justify-content: center;">
-                    <button class="btn btn-outline btn-sm" @click="toggleUserRole(user)" :disabled="user.id === currentUser.id">
+                    <button class="btn btn-outline btn-sm" @click="toggleUserRole(user)" :disabled="user.id === currentUser.id || pendingUserId === user.id">
                       ปรับสิทธิ์
                     </button>
-                    <button class="btn btn-outline-danger btn-sm" @click="deleteUser(user.id)" :disabled="user.id === currentUser.id">
+                    <button class="btn btn-outline-danger btn-sm" @click="deleteUser(user.id)" :disabled="user.id === currentUser.id || pendingUserId === user.id">
                       ลบ
                     </button>
                   </div>
@@ -130,7 +130,7 @@
                 </td>
                 <td>
                   <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto; background: var(--canvas); color: var(--ink); height: 32px;" :value="order.status" @change="$emit('update-order-status', order.id, $event.target.value)">
+                    <select class="form-control" style="padding: 0.25rem 0.5rem; width: auto; background: var(--canvas); color: var(--ink); height: 32px;" :value="order.status" :disabled="pendingOrderId === order.id" @change="updateOrderStatus(order, $event)">
                       <option value="pending" style="background: var(--canvas); color: var(--ink);">รอดำเนินการ</option>
                       <option value="assembling" style="background: var(--canvas); color: var(--ink);">กำลังประกอบ</option>
                       <option value="shipped" style="background: var(--canvas); color: var(--ink);">จัดส่งแล้ว</option>
@@ -273,7 +273,7 @@
     </div>
 
     <!-- Product Modal -->
-    <div class="modal-overlay" v-if="showProductModal" @click.self="showProductModal = false">
+    <div class="modal-overlay" data-test="product-modal" v-if="showProductModal" @click.self="!isSavingProduct && (showProductModal = false)">
       <div class="modal-content glass-panel" style="max-width: 700px; padding: 0;">
         <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
           <h3 style="display: flex; align-items: center; gap: 0.5rem;">
@@ -287,7 +287,7 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem;">
             <div class="form-group" style="margin: 0;">
               <label>รหัสสินค้า (ID)</label>
-              <input type="text" class="form-control" v-model="productForm.id" :disabled="!!editingProduct" style="background: rgba(0,0,0,0.1);">
+              <input type="text" class="form-control" v-model="productForm.id" disabled placeholder="ระบบจะสร้าง ID ให้อัตโนมัติ" style="background: rgba(0,0,0,0.1);">
             </div>
             <div class="form-group" style="margin: 0;">
               <label>ราคา (บาท)</label>
@@ -300,7 +300,7 @@
 
           <div class="form-group">
             <label>ชื่อสินค้า</label>
-            <input type="text" class="form-control" v-model="productForm.name" placeholder="ระบุชื่อสินค้าแบบเต็ม...">
+            <input type="text" data-test="product-name" class="form-control" v-model="productForm.name" placeholder="ระบุชื่อสินค้าแบบเต็ม...">
           </div>
 
           <div class="form-group">
@@ -335,14 +335,14 @@
           </div>
         </div>
         <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 1rem; background: rgba(0,0,0,0.2);">
-          <button class="btn btn-outline" @click="showProductModal = false">ยกเลิก</button>
-          <button class="btn btn-primary" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveProduct">💾 บันทึกสินค้า</button>
+          <button class="btn btn-outline" :disabled="isSavingProduct" @click="showProductModal = false">ยกเลิก</button>
+          <button class="btn btn-primary" data-test="save-product" :disabled="isSavingProduct" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveProduct">{{ isSavingProduct ? 'กำลังบันทึก…' : '💾 บันทึกสินค้า' }}</button>
         </div>
       </div>
     </div>
 
     <!-- Article Modal -->
-    <div class="modal-overlay" v-if="showArticleModal" @click.self="showArticleModal = false">
+    <div class="modal-overlay" data-test="article-modal" v-if="showArticleModal" @click.self="!isSavingArticle && (showArticleModal = false)">
       <div class="modal-content glass-panel" style="max-width: 700px; padding: 0;">
         <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
           <h3 style="display: flex; align-items: center; gap: 0.5rem;">
@@ -390,8 +390,8 @@
           </div>
         </div>
         <div style="padding: 1.5rem; border-top: 1px solid var(--hairline); display: flex; justify-content: flex-end; gap: 1rem; background: var(--canvas-soft);">
-          <button class="btn btn-outline" @click="showArticleModal = false">ยกเลิก</button>
-          <button class="btn btn-primary" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveArticle">🚀 เผยแพร่บทความ</button>
+          <button class="btn btn-outline" :disabled="isSavingArticle" @click="showArticleModal = false">ยกเลิก</button>
+          <button class="btn btn-primary" data-test="save-article" :disabled="isSavingArticle" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveArticle">{{ isSavingArticle ? 'กำลังบันทึก…' : '🚀 เผยแพร่บทความ' }}</button>
         </div>
       </div>
     </div>
@@ -409,7 +409,7 @@
           <button class="btn btn-outline" style="flex: 1; padding: 0.5rem 1rem;" @click="closeConfirm">ยกเลิก</button>
           <button class="btn" style="flex: 1; padding: 0.5rem 1rem; font-weight: 600;" 
             :class="confirmModal.type === 'danger' ? 'btn-danger' : 'btn-primary'" 
-            @click="executeConfirm">
+            :disabled="isConfirming" @click="executeConfirm">
             ตกลง
           </button>
         </div>
@@ -426,10 +426,13 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 import { useAdminStore } from '../stores/admin';
 import { useToastStore } from '../stores/toast';
 import { useCatalogStore } from '../stores/catalog';
+import { useArticleStore } from '../stores/article';
+import { adminRequest, API_BASE } from '../services/adminApi';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 const adminStore = useAdminStore();
+const articleStore = useArticleStore();
 const toast = useToastStore();
 const users = computed(() => adminStore.users);
 
@@ -444,25 +447,18 @@ const uploadArticleImage = async (event) => {
   formData.append('image', file);
 
   try {
-    const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3000/api/v1');
-    const token = localStorage.getItem('token');
-    const response = await fetch(`${API_BASE}/upload`, {
-      method: 'POST',
-      headers: token ? { 'Authorization': `Bearer ${token}` } : {},
-      body: formData
-    });
-    const data = await response.json();
-    if (data.success) {
+    const data = await adminRequest('/upload', { method: 'POST', body: formData });
+    if (data?.success) {
       const baseUrl = API_BASE.replace('/api/v1', '');
       articleForm.image = baseUrl + data.url;
       articleImgError.value = false;
       toast.success('อัปโหลดรูปภาพสำเร็จ');
     } else {
-      toast.error('อัปโหลดรูปล้มเหลว: ' + (data.error || 'Unknown error'));
+      toast.error('อัปโหลดรูปล้มเหลว: ' + (data?.error || 'Unknown error'));
     }
   } catch (error) {
     console.error('Error uploading image:', error);
-    toast.error('เกิดข้อผิดพลาดในการเชื่อมต่อเพื่ออัปโหลดรูปภาพ');
+    if (!error?.sessionExpired) toast.error(error?.message || 'เกิดข้อผิดพลาดในการเชื่อมต่อเพื่ออัปโหลดรูปภาพ');
   } finally {
     isUploadingArticleImage.value = false;
   }
@@ -471,8 +467,6 @@ const uploadArticleImage = async (event) => {
 const props = defineProps({
   orders: Array, categories: Array, catalog: Object, articles: Array, currentUser: Object
 });
-const emit = defineEmits(['save-product', 'delete-product', 'save-article', 'delete-article', 'update-order-status']);
-
 const adminTab = ref('dashboard');
 
 // Chart Data (Mock 7-day revenue)
@@ -503,17 +497,21 @@ const fetchUsers = async () => {
   await adminStore.fetchUsers();
 };
 
+const pendingUserId = ref(null);
+const pendingOrderId = ref(null);
 const toggleUserRole = (user) => {
   showConfirm(`คุณแน่ใจว่าต้องการเปลี่ยนสิทธิ์ของ ${user.name} หรือไม่?`, async () => {
-    await adminStore.toggleUserRole(user);
-    toast.success('เปลี่ยนสิทธิ์ผู้ใช้งานสำเร็จ');
+    pendingUserId.value = user.id;
+    try { return await adminStore.toggleUserRole(user); }
+    finally { pendingUserId.value = null; }
   }, 'warning');
 };
 
 const deleteUser = (id) => {
   showConfirm('คุณแน่ใจว่าต้องการลบบัญชีนี้? การกระทำนี้ไม่สามารถยกเลิกได้!', async () => {
-    await adminStore.deleteUser(id);
-    toast.success('ลบบัญชีผู้ใช้งานสำเร็จ');
+    pendingUserId.value = id;
+    try { return await adminStore.deleteUser(id); }
+    finally { pendingUserId.value = null; }
   }, 'danger');
 };
 
@@ -545,6 +543,14 @@ const getStatusLabel = (status) => {
   return map[status] || status;
 };
 
+const updateOrderStatus = async (order, event) => {
+  const nextStatus = event.target.value;
+  pendingOrderId.value = order.id;
+  const success = await adminStore.updateOrderStatus(order.id, nextStatus);
+  if (!success) event.target.value = order.status;
+  pendingOrderId.value = null;
+};
+
 // --- Order Details Modal ---
 const showOrderModal = ref(false);
 const selectedOrder = ref(null);
@@ -564,7 +570,8 @@ const getHardwareItem = (category, itemId) => {
 const showProductModal = ref(false);
 const editingProduct = ref(null);
 const productImgError = ref(false);
-const productForm = reactive({ id: '', name: '', price: 0, image: '', specList: [] });
+const productForm = reactive({ id: null, name: '', price: 0, image: '', specList: [] });
+const isSavingProduct = ref(false);
 
 const openProductModal = (product = null) => {
   productImgError.value = false;
@@ -590,7 +597,19 @@ const openProductModal = (product = null) => {
     productForm.image = product.image || '';
     
     // Parse JSON object to array of {key, value} for UI, ensuring preset keys are included
-    const specs = product.specifications || {};
+    const specs = { ...(product.specifications || {}) };
+    const typedByCategory = {
+      cpu: { Socket: product.socket, Cores: product.cores, Threads: product.threads, TDP: product.tdp },
+      mobo: { Socket: product.socket, 'Form Factor': product.formFactor, 'Memory Type': product.ramType },
+      ram: { Type: product.type, Capacity: product.capacityGb, Speed: product.busSpeed },
+      gpu: { GPU: product.chipset, VRAM: product.vramGb, Length: product.lengthMm, TDP: product.tdp },
+      storage: { Type: product.type, Capacity: product.capacityGb, 'Read Speed': product.readSpeedMbs, 'Write Speed': product.writeSpeedMbs },
+      psu: { Wattage: product.wattage, Efficiency: product.efficiencyRating },
+      case: { 'Form Factor': product.formFactorSupport, 'Max GPU Length': product.maxGpuLength }
+    };
+    Object.entries(typedByCategory[inventoryCategory.value] || {}).forEach(([key, value]) => {
+      if ((specs[key] === undefined || specs[key] === '') && value != null) specs[key] = value;
+    });
     const mergedSpecs = categoryKeys.map(key => ({
       key, 
       value: specs[key] !== undefined ? String(specs[key]) : ''
@@ -606,7 +625,7 @@ const openProductModal = (product = null) => {
     productForm.specList = mergedSpecs;
   } else {
     editingProduct.value = null;
-    productForm.id = `temp-${inventoryCategory.value}-${Date.now().toString().slice(-4)}`;
+    productForm.id = null;
     productForm.name = '';
     productForm.price = 0;
     productForm.image = `/images/${inventoryCategory.value}.png`;
@@ -619,29 +638,34 @@ const openProductModal = (product = null) => {
 const addSpec = () => productForm.specList.push({ key: '', value: '' });
 const removeSpec = (index) => productForm.specList.splice(index, 1);
 
-const saveProduct = () => {
+const saveProduct = async () => {
+  if (isSavingProduct.value) return;
   // Convert specList array back to JSON object
   const specObj = {};
   productForm.specList.forEach(item => {
     if (item.key.trim()) specObj[item.key.trim()] = item.value;
   });
 
-  emit('save-product', {
-    category: inventoryCategory.value,
-    product: {
-      id: productForm.id,
-      name: productForm.name,
-      price: productForm.price,
-      image: productForm.image,
-      specifications: specObj
-    }
-  });
-  showProductModal.value = false;
+  isSavingProduct.value = true;
+  let saved = false;
+  try {
+    saved = await adminStore.saveProduct({
+      category: inventoryCategory.value,
+      product: {
+        id: productForm.id,
+        name: productForm.name,
+        price: productForm.price,
+        image: productForm.image,
+        specifications: specObj
+      }
+    });
+  } finally { isSavingProduct.value = false; }
+  if (saved) showProductModal.value = false;
 };
 
 const deleteProduct = (id) => {
   showConfirm('ยืนยันการลบสินค้านี้?', () => {
-    emit('delete-product', {
+    return adminStore.deleteProduct({
       category: inventoryCategory.value,
       productId: id
     });
@@ -653,6 +677,7 @@ const showArticleModal = ref(false);
 const editingArticle = ref(null);
 const articleImgError = ref(false);
 const articleForm = reactive({ id: 0, title: '', date: '', image: '', content: '' });
+const isSavingArticle = ref(false);
 
 const openArticleModal = (article = null) => {
   articleImgError.value = false;
@@ -674,14 +699,18 @@ const openArticleModal = (article = null) => {
   showArticleModal.value = true;
 };
 
-const saveArticle = () => {
-  emit('save-article', { ...articleForm });
-  showArticleModal.value = false;
+const saveArticle = async () => {
+  if (isSavingArticle.value) return;
+  isSavingArticle.value = true;
+  let saved = false;
+  try { saved = await articleStore.saveArticle({ ...articleForm }); }
+  finally { isSavingArticle.value = false; }
+  if (saved) showArticleModal.value = false;
 };
 
 const deleteArticle = (id) => {
   showConfirm('ยืนยันการลบบทความนี้?', () => {
-    emit('delete-article', id);
+    return articleStore.deleteArticle(id);
   }, 'danger');
 };
 
@@ -692,6 +721,7 @@ const confirmModal = reactive({
   onConfirm: null,
   type: 'danger'
 });
+const isConfirming = ref(false);
 
 const showConfirm = (message, onConfirmCallback, type = 'danger') => {
   confirmModal.message = message;
@@ -705,9 +735,14 @@ const closeConfirm = () => {
   confirmModal.onConfirm = null;
 };
 
-const executeConfirm = () => {
-  if (confirmModal.onConfirm) confirmModal.onConfirm();
-  closeConfirm();
+const executeConfirm = async () => {
+  if (!confirmModal.onConfirm || isConfirming.value) return;
+  isConfirming.value = true;
+  try { await confirmModal.onConfirm(); }
+  finally {
+    isConfirming.value = false;
+    closeConfirm();
+  }
 };
 </script>
 

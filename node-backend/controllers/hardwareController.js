@@ -9,6 +9,94 @@ function splitName(fullName) {
   return { brand, model };
 }
 
+const CATEGORY_IDS = { cpu: 1, mobo: 2, ram: 3, gpu: 4, storage: 5, psu: 6, case: 7 };
+
+const specValue = (specs, ...keys) => {
+  for (const key of keys) {
+    if (specs[key] !== undefined && specs[key] !== '') return specs[key];
+  }
+  return null;
+};
+
+const numericSpec = (specs, ...keys) => {
+  const value = specValue(specs, ...keys);
+  if (value == null) return null;
+  const match = String(value).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : null;
+};
+
+const capacityGb = (specs, ...keys) => {
+  const value = specValue(specs, ...keys);
+  const amount = numericSpec(specs, ...keys);
+  return value != null && /TB/i.test(String(value)) && amount != null ? amount * 1000 : amount;
+};
+
+function validateProduct(body) {
+  const { name, category, price, specifications = {} } = body || {};
+  if (!name || !String(name).trim()) return 'Product name is required';
+  if (!CATEGORY_IDS[category]) return 'Invalid product category';
+  if (!Number.isFinite(Number(price)) || Number(price) <= 0) return 'Product price must be greater than zero';
+  const required = {
+    cpu: [['Socket', 'CPU Socket']],
+    mobo: [['Socket'], ['Memory Type', 'RAM Type'], ['Form Factor']],
+    ram: [['Type', 'Memory Type', 'RAM Type'], ['Capacity', 'Capacity (GB)']],
+    gpu: [['Length', 'Length (mm)', 'GPU Length'], ['TDP', 'Power Consumption']],
+    psu: [['Wattage', 'Power']],
+    case: [['Form Factor', 'Form Factor Support'], ['Max GPU Length', 'Max GPU Length (mm)']]
+  };
+  const missing = (required[category] || []).find(keys => specValue(specifications, ...keys) == null);
+  return missing ? `${missing[0]} specification is required for ${category}` : null;
+}
+
+async function upsertTypedSpecs(connection, category, productId, specs) {
+  const definitions = {
+    cpu: {
+      sql: `INSERT INTO spec_cpu (product_id, socket, cores, threads, tdp_watt) VALUES (?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE socket=VALUES(socket), cores=VALUES(cores), threads=VALUES(threads), tdp_watt=VALUES(tdp_watt)`,
+      values: [specValue(specs, 'Socket', 'CPU Socket'), numericSpec(specs, 'Cores'), numericSpec(specs, 'Threads'), numericSpec(specs, 'TDP')]
+    },
+    mobo: {
+      sql: `INSERT INTO spec_motherboard (product_id, socket, form_factor, ram_type) VALUES (?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE socket=VALUES(socket), form_factor=VALUES(form_factor), ram_type=VALUES(ram_type)`,
+      values: [specValue(specs, 'Socket'), specValue(specs, 'Form Factor'), specValue(specs, 'Memory Type', 'RAM Type')]
+    },
+    ram: {
+      sql: `INSERT INTO spec_ram (product_id, ram_type, capacity_gb, bus_speed) VALUES (?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE ram_type=VALUES(ram_type), capacity_gb=VALUES(capacity_gb), bus_speed=VALUES(bus_speed)`,
+      values: [specValue(specs, 'Type', 'Memory Type', 'RAM Type'), numericSpec(specs, 'Capacity', 'Capacity (GB)'), numericSpec(specs, 'Speed', 'Bus Speed')]
+    },
+    gpu: {
+      sql: `INSERT INTO spec_gpu (product_id, chipset, vram_gb, length_mm, tdp_watt) VALUES (?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE chipset=VALUES(chipset), vram_gb=VALUES(vram_gb), length_mm=VALUES(length_mm), tdp_watt=VALUES(tdp_watt)`,
+      values: [specValue(specs, 'GPU', 'Chipset'), numericSpec(specs, 'VRAM'), numericSpec(specs, 'Length', 'Length (mm)', 'GPU Length'), numericSpec(specs, 'TDP', 'Power Consumption')]
+    },
+    storage: {
+      sql: `INSERT INTO spec_storage (product_id, type, capacity_gb, read_speed_mbs, write_speed_mbs) VALUES (?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE type=VALUES(type), capacity_gb=VALUES(capacity_gb), read_speed_mbs=VALUES(read_speed_mbs), write_speed_mbs=VALUES(write_speed_mbs)`,
+      values: [specValue(specs, 'Type', 'Interface'), capacityGb(specs, 'Capacity', 'Capacity (GB)'), numericSpec(specs, 'Read Speed'), numericSpec(specs, 'Write Speed')]
+    },
+    psu: {
+      sql: `INSERT INTO spec_psu (product_id, wattage, efficiency_rating) VALUES (?, ?, ?)
+            ON DUPLICATE KEY UPDATE wattage=VALUES(wattage), efficiency_rating=VALUES(efficiency_rating)`,
+      values: [numericSpec(specs, 'Wattage', 'Power'), specValue(specs, 'Efficiency', 'Rating')]
+    },
+    case: {
+      sql: `INSERT INTO spec_case (product_id, form_factor_support, max_gpu_length_mm) VALUES (?, ?, ?)
+            ON DUPLICATE KEY UPDATE form_factor_support=VALUES(form_factor_support), max_gpu_length_mm=VALUES(max_gpu_length_mm)`,
+      values: [specValue(specs, 'Form Factor', 'Form Factor Support'), numericSpec(specs, 'Max GPU Length', 'Max GPU Length (mm)')]
+    }
+  };
+  const definition = definitions[category];
+  if (definition) await connection.query(definition.sql, [productId, ...definition.values]);
+}
+
+function canonicalProduct(id, body) {
+  return {
+    id, category: body.category, name: String(body.name).trim(), price: Number(body.price),
+    image: body.image || `/images/${body.category}.png`, specifications: body.specifications || {}
+  };
+}
+
 function formatProductName(brand, model) {
   let b = (brand || '').trim();
   let m = (model || '').trim();
@@ -176,44 +264,66 @@ const hardwareController = {
   },
 
   create: async (req, res, next) => {
+    let connection;
     try {
-      const { name, price, image, category, specifications } = req.body;
+      const validationError = validateProduct(req.body);
+      if (validationError) return res.status(400).json({ error: validationError });
+      const { name, price, image, category, specifications = {} } = req.body;
       const { brand, model } = splitName(name);
 
       if (!db.isFallback()) {
-        const catIdMap = { cpu: 1, mobo: 2, ram: 3, gpu: 4, storage: 5, psu: 6, case: 7 };
-        const catId = catIdMap[category] || 1;
-        const [result] = await db.query(
+        connection = await db.pool.getConnection();
+        await connection.beginTransaction();
+        const [result] = await connection.query(
           'INSERT INTO products (brand, model, price, image_url, category_id, specifications) VALUES (?, ?, ?, ?, ?, ?)',
-          [brand, model, price, image, catId, JSON.stringify(specifications || {})]
+          [brand, model, Number(price), image, CATEGORY_IDS[category], JSON.stringify(specifications)]
         );
-        res.json({ success: true, id: result.insertId, dbId: result.insertId });
+        await upsertTypedSpecs(connection, category, result.insertId, specifications);
+        await connection.commit();
+        return res.status(201).json({ success: true, product: canonicalProduct(result.insertId, req.body) });
       } else {
         const dbId = Math.floor(Math.random() * 10000) + 5000;
-        res.json({ success: true, id: dbId, dbId });
+        return res.status(201).json({ success: true, product: canonicalProduct(dbId, req.body) });
       }
     } catch (error) {
+      if (connection) await connection.rollback();
       next(error);
+    } finally {
+      if (connection) connection.release();
     }
   },
 
   update: async (req, res, next) => {
+    let connection;
     try {
+      const validationError = validateProduct(req.body);
+      if (validationError) return res.status(400).json({ error: validationError });
       const frontendId = req.params.id;
-      const { name, price, image, specifications } = req.body;
+      const { name, price, image, category, specifications = {} } = req.body;
       const dbId = mapFrontendIdToDbId(frontendId);
       const { brand, model } = splitName(name);
 
       if (!db.isFallback()) {
-        await db.query(
-          'UPDATE products SET brand = ?, model = ?, price = ?, image_url = ?, specifications = ? WHERE id = ?',
-          [brand, model, price, image, JSON.stringify(specifications || {}), dbId]
+        connection = await db.pool.getConnection();
+        await connection.beginTransaction();
+        const [existing] = await connection.query('SELECT id FROM products WHERE id = ? FOR UPDATE', [dbId]);
+        if (!existing.length) {
+          await connection.rollback();
+          return res.status(404).json({ error: 'Product not found' });
+        }
+        await connection.query(
+          'UPDATE products SET brand = ?, model = ?, price = ?, image_url = ?, category_id = ?, specifications = ? WHERE id = ?',
+          [brand, model, Number(price), image, CATEGORY_IDS[category], JSON.stringify(specifications), dbId]
         );
+        await upsertTypedSpecs(connection, category, dbId, specifications);
+        await connection.commit();
       }
-
-      res.json({ success: true });
+      return res.json({ success: true, product: canonicalProduct(dbId, req.body) });
     } catch (error) {
+      if (connection) await connection.rollback();
       next(error);
+    } finally {
+      if (connection) connection.release();
     }
   },
 
@@ -223,10 +333,13 @@ const hardwareController = {
       const dbId = mapFrontendIdToDbId(frontendId);
 
       if (!db.isFallback()) {
-        await db.query('DELETE FROM products WHERE id = ?', [dbId]);
+        const [references] = await db.query('SELECT order_id FROM order_items WHERE product_id = ? LIMIT 1', [dbId]);
+        if (references.length) return res.status(409).json({ error: 'สินค้านี้อยู่ในประวัติออเดอร์ จึงไม่สามารถลบได้' });
+        const [result] = await db.query('DELETE FROM products WHERE id = ?', [dbId]);
+        if (!result.affectedRows) return res.status(404).json({ error: 'Product not found' });
       }
 
-      res.json({ success: true });
+      return res.json({ success: true });
     } catch (error) {
       next(error);
     }

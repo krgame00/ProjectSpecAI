@@ -1,6 +1,7 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { afterEach, expect, test, beforeEach, describe, vi } from 'vitest'
 import { useArticleStore } from '../src/stores/article'
+import { useAuthStore } from '../src/stores/auth'
 
 const deferred = () => {
   let resolve
@@ -16,6 +17,8 @@ const articleResponse = articles => ({
 describe('Article Store Tests', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
+    vi.stubGlobal('localStorage', { getItem: vi.fn(() => null), setItem: vi.fn(), removeItem: vi.fn() })
+    useAuthStore().token = 'test-token'
   })
 
   afterEach(() => vi.restoreAllMocks())
@@ -155,5 +158,18 @@ describe('Article Store Tests', () => {
     await article.deleteArticle(1)
     expect(article.articles).toHaveLength(1)
     expect(article.articles[0].id).toBe(2)
+  })
+
+  test('save and delete return false and preserve article state when the API fails', async () => {
+    const store = useArticleStore()
+    store.articles = [{ id: 1, title: 'Keep' }]
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: false, status: 500, headers: { get: () => 'application/json' },
+      json: async () => ({ error: 'write failed' })
+    })
+
+    await expect(store.saveArticle({ id: 1, title: 'Changed' })).resolves.toBe(false)
+    await expect(store.deleteArticle(1)).resolves.toBe(false)
+    expect(store.articles).toEqual([{ id: 1, title: 'Keep' }])
   })
 })
