@@ -61,6 +61,28 @@
 
         <!-- Users Tab -->
         <div v-if="adminTab === 'users'" id="admin-panel-users" role="tabpanel" aria-labelledby="admin-tab-users" class="admin-card">
+          <header class="operations-header">
+            <div>
+              <h3>จัดการสมาชิก</h3>
+              <p class="operations-description">ค้นหาบัญชี ตรวจสอบสิทธิ์ และจัดการสมาชิกในระบบ</p>
+            </div>
+            <output class="operations-count" data-test="users-result-count" aria-live="polite">{{ filteredUsers.length }} รายการ</output>
+          </header>
+          <div class="operations-toolbar" role="search" aria-label="ค้นหาและกรองสมาชิก">
+            <label class="operations-search">
+              <span>ค้นหาสมาชิก</span>
+              <input v-model="userQuery" data-test="users-search" class="form-control" type="search" placeholder="ชื่อ อีเมล หรือ ID">
+            </label>
+            <label class="operations-filter">
+              <span>สิทธิ์</span>
+              <select v-model="userRole" data-test="users-role-filter" class="form-control">
+                <option value="all">ทุกสิทธิ์</option>
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+              </select>
+            </label>
+            <button v-if="userQuery || userRole !== 'all'" data-test="users-reset" class="btn btn-outline" type="button" @click="resetUserFilters">ล้างตัวกรอง</button>
+          </div>
           <div class="admin-table-region" data-test="users-table-region" tabindex="0" aria-label="ตารางสมาชิก เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table">
             <thead>
@@ -74,7 +96,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="user in users" :key="user.id">
+              <tr v-for="user in filteredUsers" :key="user.id">
                 <td>{{ user.id }}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
@@ -99,7 +121,7 @@
           </table>
           </div>
           <div class="admin-mobile-list" aria-label="รายชื่อสมาชิก">
-            <article v-for="user in users" :key="'user-card-'+user.id" class="admin-mobile-card" :data-test="`user-card-${user.id}`">
+            <article v-for="user in filteredUsers" :key="'user-card-'+user.id" class="admin-mobile-card" :data-test="`user-card-${user.id}`">
               <div class="admin-mobile-card__heading">
                 <strong>{{ user.name }}</strong>
                 <span class="admin-mobile-card__id">#{{ user.id }}</span>
@@ -114,7 +136,11 @@
                 <button class="btn btn-outline-danger" @click="deleteUser(user.id)" :disabled="user.id === currentUser.id || pendingUserId === user.id">ลบ</button>
               </div>
             </article>
-            <p v-if="users.length === 0" class="admin-empty">ยังไม่มีสมาชิกในระบบ</p>
+          </div>
+          <p v-if="users.length === 0" class="admin-empty" data-test="users-empty">ยังไม่มีสมาชิกในระบบ</p>
+          <div v-else-if="filteredUsers.length === 0" class="admin-empty admin-no-results" data-test="users-no-results">
+            <p>ไม่พบสมาชิกที่ตรงกับตัวกรอง</p>
+            <button class="btn btn-outline" type="button" @click="resetUserFilters">ล้างตัวกรอง</button>
           </div>
         </div>
 
@@ -125,6 +151,29 @@
 
         <!-- Orders Tab -->
         <div v-if="adminTab === 'orders'" id="admin-panel-orders" role="tabpanel" aria-labelledby="admin-tab-orders" class="admin-card hairline-grid">
+          <header class="operations-header">
+            <div>
+              <h3>รายการสั่งซื้อ</h3>
+              <p class="operations-description">ติดตามคำสั่งซื้อและอัปเดตสถานะงานประกอบ</p>
+            </div>
+            <output class="operations-count" data-test="orders-result-count" aria-live="polite">{{ filteredOrders.length }} รายการ</output>
+          </header>
+          <div class="operations-toolbar" role="search" aria-label="ค้นหาและกรองคำสั่งซื้อ">
+            <label class="operations-search">
+              <span>ค้นหาคำสั่งซื้อ</span>
+              <input v-model="orderQuery" data-test="orders-search" class="form-control" type="search" placeholder="หมายเลขออเดอร์หรือลูกค้า">
+            </label>
+            <label class="operations-filter">
+              <span>สถานะ</span>
+              <select v-model="orderStatus" data-test="orders-status-filter" class="form-control">
+                <option value="all">ทุกสถานะ</option>
+                <option value="pending">รอดำเนินการ</option>
+                <option value="assembling">กำลังประกอบ</option>
+                <option value="shipped">จัดส่งแล้ว</option>
+              </select>
+            </label>
+            <button v-if="orderQuery || orderStatus !== 'all'" data-test="orders-reset" class="btn btn-outline" type="button" @click="resetOrderFilters">ล้างตัวกรอง</button>
+          </div>
           <div class="admin-table-region" data-test="orders-table-region" tabindex="0" aria-label="ตารางคำสั่งซื้อ เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table hairline-grid">
             <thead>
@@ -138,7 +187,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="order in orders" :key="order.id">
+              <tr v-for="order in filteredOrders" :key="order.id">
                 <td style="font-family: var(--font-mono); font-weight: 600;">
                   {{ order.id }}
                   <div style="font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; font-weight: normal;">
@@ -170,14 +219,11 @@
                   </div>
                 </td>
               </tr>
-              <tr v-if="orders.length === 0">
-                <td colspan="6" style="text-align: center; color: var(--muted); padding: 2rem;">ยังไม่มีคำสั่งซื้อในระบบ</td>
-              </tr>
             </tbody>
           </table>
           </div>
           <div class="admin-mobile-list" aria-label="รายการคำสั่งซื้อ">
-            <article v-for="order in orders" :key="'order-card-'+order.id" class="admin-mobile-card" :data-test="`order-card-${order.id}`">
+            <article v-for="order in filteredOrders" :key="'order-card-'+order.id" class="admin-mobile-card" :data-test="`order-card-${order.id}`">
               <div class="admin-mobile-card__heading">
                 <strong>{{ order.id }}</strong>
                 <span class="badge" :class="'badge-' + order.status">{{ getStatusLabel(order.status) }}</span>
@@ -197,28 +243,46 @@
                 <button class="btn btn-outline" @click="openOrderModal(order)">📄 รายละเอียด</button>
               </div>
             </article>
-            <p v-if="orders.length === 0" class="admin-empty">ยังไม่มีคำสั่งซื้อในระบบ</p>
+          </div>
+          <p v-if="orders.length === 0" class="admin-empty" data-test="orders-empty">ยังไม่มีคำสั่งซื้อในระบบ</p>
+          <div v-else-if="filteredOrders.length === 0" class="admin-empty admin-no-results" data-test="orders-no-results">
+            <p>ไม่พบคำสั่งซื้อที่ตรงกับตัวกรอง</p>
+            <button class="btn btn-outline" type="button" @click="resetOrderFilters">ล้างตัวกรอง</button>
           </div>
         </div>
 
         <!-- Inventory Tab -->
         <div v-if="adminTab === 'inventory'" id="admin-panel-inventory" role="tabpanel" aria-labelledby="admin-tab-inventory" class="admin-card admin-section-card">
-          <div class="admin-toolbar">
-            <h3>จัดการสินค้าในระบบ</h3>
-            <div class="admin-toolbar__actions">
-                          <button class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;" @click="handleSyncPrices" :disabled="isSyncingPrices">
-                            <span v-if="isSyncingPrices" class="spinner-small"></span>
-                            <span v-else>🔄</span>
-                            {{ isSyncingPrices ? 'กำลังซิงก์ราคา…' : 'Sync Latest Prices' }}
-                          </button>
-                          <select class="form-control admin-category-select" v-model="inventoryCategory" aria-label="หมวดหมู่สินค้า">
-                            <option v-for="cat in categories" :key="'inv-'+cat.id" :value="cat.id">{{ cat.name }}</option>
-                          </select>
-                          <button class="btn btn-primary" data-test="add-product" @click="openProductModal()">+ เพิ่มสินค้า</button>
-                        </div>
+          <header class="operations-header">
+            <div>
+              <h3>จัดการสินค้า</h3>
+              <p class="operations-description">ดูแลแคตตาล็อก สเปก และราคาสินค้าแยกตามหมวดหมู่</p>
+            </div>
+            <output class="operations-count" data-test="products-result-count" aria-live="polite">{{ filteredProducts.length }} รายการ</output>
+          </header>
+          <div class="operations-toolbar" role="search" aria-label="ค้นหาและกรองสินค้า">
+            <label class="operations-search">
+              <span>ค้นหาสินค้า</span>
+              <input v-model="productQuery" data-test="products-search" class="form-control" type="search" placeholder="ชื่อ ID หรือสเปก">
+            </label>
+            <label class="operations-filter">
+              <span>หมวดหมู่</span>
+              <select class="form-control admin-category-select" v-model="inventoryCategory">
+                <option v-for="cat in categories" :key="'inv-'+cat.id" :value="cat.id">{{ cat.name }}</option>
+              </select>
+            </label>
+            <button v-if="productQuery" data-test="products-reset" class="btn btn-outline" type="button" @click="resetProductFilters">ล้างตัวกรอง</button>
+            <div class="operations-actions">
+              <button class="btn btn-outline" @click="handleSyncPrices" :disabled="isSyncingPrices">
+                <span v-if="isSyncingPrices" class="spinner-small"></span>
+                <span v-else aria-hidden="true">🔄</span>
+                {{ isSyncingPrices ? 'กำลังซิงก์ราคา…' : 'ซิงก์ราคาล่าสุด' }}
+              </button>
+              <button class="btn btn-primary" data-test="add-product" @click="openProductModal()">+ เพิ่มสินค้า</button>
+            </div>
           </div>
           <div class="admin-table-region" data-test="inventory-table-region" tabindex="0" aria-label="ตารางสินค้า เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
-          <table class="data-table" v-if="catalog[inventoryCategory]">
+          <table class="data-table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -229,7 +293,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in catalog[inventoryCategory]" :key="'inv-item-'+item.id">
+              <tr v-for="item in filteredProducts" :key="'inv-item-'+item.id">
                 <td style="font-family: var(--font-mono); color: var(--muted);">{{ item.id }}</td>
                 <td>{{ item.name }}</td>
                 <td style="font-family: var(--font-mono); font-weight: 600;">฿{{ item.price.toLocaleString() }}</td>
@@ -245,7 +309,7 @@
           </table>
           </div>
           <div class="admin-mobile-list" aria-label="รายการสินค้า">
-            <article v-for="item in (catalog[inventoryCategory] || [])" :key="'product-card-'+item.id" class="admin-mobile-card" :data-test="`product-card-${item.id}`">
+            <article v-for="item in filteredProducts" :key="'product-card-'+item.id" class="admin-mobile-card" :data-test="`product-card-${item.id}`">
               <div class="admin-mobile-card__heading">
                 <strong>{{ item.name }}</strong>
                 <span class="admin-mobile-card__id">#{{ item.id }}</span>
@@ -259,15 +323,36 @@
                 <button class="btn btn-outline-danger" @click="deleteProduct(item.id)">ลบ</button>
               </div>
             </article>
-            <p v-if="!catalog[inventoryCategory] || catalog[inventoryCategory].length === 0" class="admin-empty">ยังไม่มีสินค้าในหมวดนี้</p>
+          </div>
+          <p v-if="!catalog[inventoryCategory] || catalog[inventoryCategory].length === 0" class="admin-empty" data-test="products-empty">ยังไม่มีสินค้าในหมวดนี้</p>
+          <div v-else-if="filteredProducts.length === 0" class="admin-empty admin-no-results" data-test="products-no-results">
+            <p>ไม่พบสินค้าที่ตรงกับคำค้นหา</p>
+            <button class="btn btn-outline" type="button" @click="resetProductFilters">ล้างตัวกรอง</button>
           </div>
         </div>
 
         <!-- Articles Tab -->
         <div v-if="adminTab === 'articles'" id="admin-panel-articles" role="tabpanel" aria-labelledby="admin-tab-articles" class="admin-card admin-section-card">
-          <div class="admin-toolbar">
-            <h3>จัดการบทความ</h3>
-            <button class="btn btn-primary" data-test="add-article" @click="openArticleModal()">+ เพิ่มบทความ</button>
+          <header class="operations-header">
+            <div>
+              <h3>จัดการบทความ</h3>
+              <p class="operations-description">ค้นหา ตรวจสอบวันที่เผยแพร่ และดูแลเนื้อหาความรู้</p>
+            </div>
+            <output class="operations-count" data-test="articles-result-count" aria-live="polite">{{ filteredArticles.length }} รายการ</output>
+          </header>
+          <div class="operations-toolbar" role="search" aria-label="ค้นหาและกรองบทความ">
+            <label class="operations-search">
+              <span>ค้นหาบทความ</span>
+              <input v-model="articleQuery" data-test="articles-search" class="form-control" type="search" placeholder="หัวข้อหรือ ID">
+            </label>
+            <label class="operations-filter">
+              <span>วันที่เผยแพร่</span>
+              <input v-model="articleDate" data-test="articles-date-filter" class="form-control" type="date">
+            </label>
+            <button v-if="articleQuery || articleDate" data-test="articles-reset" class="btn btn-outline" type="button" @click="resetArticleFilters">ล้างตัวกรอง</button>
+            <div class="operations-actions">
+              <button class="btn btn-primary" data-test="add-article" @click="openArticleModal()">+ เพิ่มบทความ</button>
+            </div>
           </div>
           <div class="admin-table-region" data-test="articles-table-region" tabindex="0" aria-label="ตารางบทความ เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table">
@@ -281,7 +366,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="article in articles" :key="'art-'+article.id">
+              <tr v-for="article in filteredArticles" :key="'art-'+article.id">
                 <td style="font-family: var(--font-mono); color: var(--muted);">{{ article.id }}</td>
                 <td><img :src="article.image" :alt="`ภาพปก ${article.title}`" style="width: 50px; height: 30px; object-fit: cover; border-radius: 4px;" /></td>
                 <td>{{ article.title }}</td>
@@ -291,14 +376,11 @@
                   <button class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; background: var(--error-bg); color: var(--error); border: 1px solid var(--error);" @click="deleteArticle(article.id)">ลบ</button>
                 </td>
               </tr>
-              <tr v-if="!articles || articles.length === 0">
-                <td colspan="5" style="text-align: center; color: var(--muted); padding: 2rem;">ยังไม่มีบทความในระบบ</td>
-              </tr>
             </tbody>
           </table>
           </div>
           <div class="admin-mobile-list" aria-label="รายการบทความ">
-            <article v-for="article in articles" :key="'article-card-'+article.id" class="admin-mobile-card" :data-test="`article-card-${article.id}`">
+            <article v-for="article in filteredArticles" :key="'article-card-'+article.id" class="admin-mobile-card" :data-test="`article-card-${article.id}`">
               <div class="admin-mobile-card__heading">
                 <strong>{{ article.title }}</strong>
                 <span class="admin-mobile-card__id">#{{ article.id }}</span>
@@ -313,7 +395,11 @@
                 <button class="btn btn-outline-danger" @click="deleteArticle(article.id)">ลบ</button>
               </div>
             </article>
-            <p v-if="!articles || articles.length === 0" class="admin-empty">ยังไม่มีบทความในระบบ</p>
+          </div>
+          <p v-if="!articles || articles.length === 0" class="admin-empty" data-test="articles-empty">ยังไม่มีบทความในระบบ</p>
+          <div v-else-if="filteredArticles.length === 0" class="admin-empty admin-no-results" data-test="articles-no-results">
+            <p>ไม่พบบทความที่ตรงกับตัวกรอง</p>
+            <button class="btn btn-outline" type="button" @click="resetArticleFilters">ล้างตัวกรอง</button>
           </div>
         </div>
       </main>
@@ -520,6 +606,12 @@ import { useToastStore } from '../stores/toast';
 import { useCatalogStore } from '../stores/catalog';
 import { useArticleStore } from '../stores/article';
 import { adminRequest, API_BASE } from '../services/adminApi';
+import {
+  filterArticles,
+  filterOrders,
+  filterProducts,
+  filterUsers
+} from '../utils/adminCollectionFilters';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
@@ -560,6 +652,13 @@ const props = defineProps({
   orders: Array, categories: Array, catalog: Object, articles: Array, currentUser: Object
 });
 const adminTab = ref('dashboard');
+const orderQuery = ref('');
+const orderStatus = ref('all');
+const productQuery = ref('');
+const articleQuery = ref('');
+const articleDate = ref('');
+const userQuery = ref('');
+const userRole = ref('all');
 const adminTabs = [
   { id: 'dashboard', icon: '📊', label: 'Dashboard ภาพรวม' },
   { id: 'orders', icon: '📦', label: 'รายการสั่งซื้อ (Orders)' },
@@ -623,6 +722,36 @@ const deleteUser = (id) => {
 onMounted(() => { fetchUsers(); });
 
 const inventoryCategory = ref('cpu');
+const filteredOrders = computed(() => filterOrders(props.orders || [], {
+  query: orderQuery.value,
+  status: orderStatus.value
+}));
+const filteredProducts = computed(() => filterProducts(
+  props.catalog?.[inventoryCategory.value] || [],
+  { query: productQuery.value }
+));
+const filteredArticles = computed(() => filterArticles(props.articles || [], {
+  query: articleQuery.value,
+  date: articleDate.value
+}));
+const filteredUsers = computed(() => filterUsers(users.value || [], {
+  query: userQuery.value,
+  role: userRole.value
+}));
+
+const resetOrderFilters = () => {
+  orderQuery.value = '';
+  orderStatus.value = 'all';
+};
+const resetProductFilters = () => { productQuery.value = ''; };
+const resetArticleFilters = () => {
+  articleQuery.value = '';
+  articleDate.value = '';
+};
+const resetUserFilters = () => {
+  userQuery.value = '';
+  userRole.value = 'all';
+};
 
 // --- Price Sync (Phase 4.3) ---
 const isSyncingPrices = ref(false);

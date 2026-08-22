@@ -104,6 +104,83 @@ describe('AdminDashboard profile embedding', () => {
     currentUser: { id: 1, name: 'Admin', role: 'admin' }
   }
 
+  test('filters orders locally, updates the result count, and resets without changing props', async () => {
+    const orders = [
+      { id: 'ORD-1', customer_name: 'Admin Ploy', assembly_type: 'standard', total_price: 1000, status: 'assembling', created_at: '2026-08-20', build_items: {} },
+      { id: 'ORD-2', customer_name: 'Checkout User', assembly_type: 'none', total_price: 2000, status: 'pending', created_at: '2026-08-21', build_items: {} }
+    ]
+    const wrapper = mountDashboard({ ...collectionProps, orders })
+    await wrapper.get('#admin-tab-orders').trigger('click')
+
+    await wrapper.get('[data-test="orders-search"]').setValue('  ploy ')
+    await wrapper.get('[data-test="orders-status-filter"]').setValue('assembling')
+
+    expect(wrapper.get('[data-test="orders-result-count"]').text()).toContain('1')
+    expect(wrapper.findAll('[data-test^="order-card-"]')).toHaveLength(1)
+    expect(wrapper.get('[data-test="orders-table-region"]').text()).toContain('ORD-1')
+    expect(wrapper.get('[data-test="orders-table-region"]').text()).not.toContain('ORD-2')
+    expect(orders).toHaveLength(2)
+
+    await wrapper.get('[data-test="orders-reset"]').trigger('click')
+    expect(wrapper.get('[data-test="orders-result-count"]').text()).toContain('2')
+  })
+
+  test('uses the same filtered products for the table and mobile cards', async () => {
+    const catalog = {
+      cpu: [
+        { id: 7, name: 'Typed CPU', price: 5000, socket: 'AM5', image: '/cpu.png' },
+        { id: 8, name: 'Office CPU', price: 3000, socket: 'LGA1700', image: '/cpu.png' }
+      ]
+    }
+    const wrapper = mountDashboard({ ...collectionProps, catalog })
+    await wrapper.get('#admin-tab-inventory').trigger('click')
+
+    await wrapper.get('[data-test="products-search"]').setValue('Typed CPU')
+    expect(wrapper.get('[data-test="products-result-count"]').text()).toContain('1')
+    expect(wrapper.get('[data-test="inventory-table-region"]').text()).toContain('Typed CPU')
+    expect(wrapper.get('[data-test="inventory-table-region"]').text()).not.toContain('Office CPU')
+    expect(wrapper.get('[data-test="product-card-7"]').text()).toContain('Typed CPU')
+
+    await wrapper.get('[data-test="products-search"]').setValue('missing')
+    expect(wrapper.find('[data-test="product-card-7"]').exists()).toBe(false)
+    expect(wrapper.get('[data-test="products-no-results"]').text()).toContain('ไม่พบสินค้า')
+  })
+
+  test('combines article title and date filters, then restores all articles', async () => {
+    const articles = [
+      { id: 10, title: 'DDR5 Guide', content: 'Content', image: '/cover.png', date: '2026-08-20' },
+      { id: 11, title: 'SSD Guide', content: 'Content', image: '/cover.png', date: '2026-08-21' }
+    ]
+    const wrapper = mountDashboard({ ...collectionProps, articles })
+    await wrapper.get('#admin-tab-articles').trigger('click')
+
+    await wrapper.get('[data-test="articles-search"]').setValue('ddr5')
+    await wrapper.get('[data-test="articles-date-filter"]').setValue('2026-08-20')
+    expect(wrapper.get('[data-test="articles-result-count"]').text()).toContain('1')
+    expect(wrapper.get('[data-test="articles-table-region"]').text()).toContain('DDR5 Guide')
+    expect(wrapper.get('[data-test="articles-table-region"]').text()).not.toContain('SSD Guide')
+
+    await wrapper.get('[data-test="articles-reset"]').trigger('click')
+    expect(wrapper.get('[data-test="articles-result-count"]').text()).toContain('2')
+  })
+
+  test('filters users by email and role without changing Admin store state', async () => {
+    const admin = useAdminStore()
+    admin.users = [
+      { id: 1, name: 'Admin', email: 'admin@test.local', role: 'admin', created_at: '2026-01-01' },
+      { id: 2, name: 'Member One', email: 'member@test.local', role: 'customer', created_at: '2026-02-01' }
+    ]
+    const wrapper = mountDashboard(collectionProps)
+    await wrapper.get('#admin-tab-users').trigger('click')
+
+    await wrapper.get('[data-test="users-search"]').setValue('MEMBER@TEST')
+    await wrapper.get('[data-test="users-role-filter"]').setValue('customer')
+    expect(wrapper.get('[data-test="users-result-count"]').text()).toContain('1')
+    expect(wrapper.get('[data-test="users-table-region"]').text()).toContain('Member One')
+    expect(wrapper.get('[data-test="users-table-region"]').text()).not.toContain('admin@test.local')
+    expect(admin.users).toHaveLength(2)
+  })
+
   test.each([
     ['orders', '[data-test="order-card-ORD-1"]', 'ORD-1'],
     ['inventory', '[data-test="product-card-7"]', 'Typed CPU'],
