@@ -179,6 +179,69 @@ test.describe('Admin CRUD with API fixtures', () => {
 });
 
 test.describe('Admin responsive workflows', () => {
+  test('desktop filters orders locally and keeps the table header visible while scrolling', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 700 });
+    const orders = Array.from({ length: 18 }, (_, index) => ({
+      id: `ORD-${index + 1}`,
+      customer_name: index === 11 ? 'Target Customer' : `Customer ${index + 1}`,
+      assembly_type: 'standard',
+      total_price: 9990,
+      status: index % 2 ? 'pending' : 'assembling',
+      created_at: '2026-08-20',
+      build_items: {}
+    }));
+    const state = await useAdminFixture(page, { orders });
+    await openAdmin(page);
+    await page.getByRole('tab', { name: /รายการสั่งซื้อ/ }).click();
+
+    const requestCount = state.requests.length;
+    await page.locator('[data-test="orders-search"]').fill('Target Customer');
+    await expect(page.locator('[data-test="orders-result-count"]')).toContainText('1 รายการ');
+    await expect(page.getByRole('row', { name: /ORD-12/ })).toBeVisible();
+    expect(state.requests.length).toBe(requestCount);
+
+    await page.locator('[data-test="orders-table-region"]').evaluate(element => { element.scrollTop = 220; });
+    await expect(page.locator('[data-test="orders-table-region"] thead')).toHaveCSS('position', 'sticky');
+  });
+
+  test('mobile product search keeps the matching card actionable without horizontal overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 800 });
+    await useAdminFixture(page, {
+      catalog: {
+        cpu: [
+          { id: 1, name: 'Existing CPU', price: 3900, socket: 'AM4' },
+          { id: 2, name: 'Mobile Target CPU', price: 5900, socket: 'AM5' }
+        ],
+        mobo: [], ram: [], gpu: [], storage: [], psu: [], case: []
+      }
+    });
+    await openAdmin(page);
+    await page.getByRole('tab', { name: /คลังสินค้า/ }).click();
+    await page.locator('[data-test="products-search"]').fill('Mobile Target');
+
+    const card = page.locator('[data-test="product-card-2"]');
+    await expect(card).toBeVisible();
+    await expect(page.locator('[data-test="product-card-1"]')).toHaveCount(0);
+    await expect(card.getByRole('button', { name: 'แก้ไข' })).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(360);
+  });
+
+  test('tablet operations toolbar stays inside the viewport and exposes keyboard focus', async ({ page }) => {
+    await page.setViewportSize({ width: 768, height: 900 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+    await page.getByRole('tab', { name: /จัดการบทความ/ }).click();
+
+    const toolbar = page.getByRole('search', { name: 'ค้นหาและกรองบทความ' });
+    const bounds = await toolbar.boundingBox();
+    expect(bounds.x).toBeGreaterThanOrEqual(0);
+    expect(bounds.x + bounds.width).toBeLessThanOrEqual(768);
+    await page.locator('[data-test="articles-search"]').focus();
+    await expect(page.locator('[data-test="articles-search"]')).toBeFocused();
+    await expect(page.locator('[data-test="articles-search"]')).toHaveCSS('outline-style', 'solid');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(768);
+  });
+
   test('mobile uses sticky tabs, actionable cards, and a viewport-contained dialog', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 800 });
     await useAdminFixture(page);
