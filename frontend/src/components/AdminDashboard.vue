@@ -61,6 +61,7 @@
 
         <!-- Users Tab -->
         <div v-if="adminTab === 'users'" id="admin-panel-users" role="tabpanel" aria-labelledby="admin-tab-users" class="admin-card">
+          <div class="admin-table-region" data-test="users-table-region" tabindex="0" aria-label="ตารางสมาชิก เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table">
             <thead>
               <tr>
@@ -96,6 +97,25 @@
               </tr>
             </tbody>
           </table>
+          </div>
+          <div class="admin-mobile-list" aria-label="รายชื่อสมาชิก">
+            <article v-for="user in users" :key="'user-card-'+user.id" class="admin-mobile-card" :data-test="`user-card-${user.id}`">
+              <div class="admin-mobile-card__heading">
+                <strong>{{ user.name }}</strong>
+                <span class="admin-mobile-card__id">#{{ user.id }}</span>
+              </div>
+              <dl class="admin-mobile-card__facts">
+                <div><dt>อีเมล</dt><dd>{{ user.email || '-' }}</dd></div>
+                <div><dt>สิทธิ์</dt><dd><span :class="['status-badge', user.role === 'admin' ? 'completed' : 'pending']">{{ user.role }}</span></dd></div>
+                <div><dt>วันที่สมัคร</dt><dd>{{ new Date(user.created_at).toLocaleDateString('th-TH') }}</dd></div>
+              </dl>
+              <div class="admin-actions">
+                <button class="btn btn-outline" @click="toggleUserRole(user)" :disabled="user.id === currentUser.id || pendingUserId === user.id">ปรับสิทธิ์</button>
+                <button class="btn btn-outline-danger" @click="deleteUser(user.id)" :disabled="user.id === currentUser.id || pendingUserId === user.id">ลบ</button>
+              </div>
+            </article>
+            <p v-if="users.length === 0" class="admin-empty">ยังไม่มีสมาชิกในระบบ</p>
+          </div>
         </div>
 
         <!-- Admin Profile Tab -->
@@ -105,6 +125,7 @@
 
         <!-- Orders Tab -->
         <div v-if="adminTab === 'orders'" id="admin-panel-orders" role="tabpanel" aria-labelledby="admin-tab-orders" class="admin-card hairline-grid">
+          <div class="admin-table-region" data-test="orders-table-region" tabindex="0" aria-label="ตารางคำสั่งซื้อ เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table hairline-grid">
             <thead>
               <tr class="font-mono">
@@ -154,24 +175,49 @@
               </tr>
             </tbody>
           </table>
+          </div>
+          <div class="admin-mobile-list" aria-label="รายการคำสั่งซื้อ">
+            <article v-for="order in orders" :key="'order-card-'+order.id" class="admin-mobile-card" :data-test="`order-card-${order.id}`">
+              <div class="admin-mobile-card__heading">
+                <strong>{{ order.id }}</strong>
+                <span class="badge" :class="'badge-' + order.status">{{ getStatusLabel(order.status) }}</span>
+              </div>
+              <dl class="admin-mobile-card__facts">
+                <div><dt>ลูกค้า</dt><dd>{{ order.customer_name || order.customer }}</dd></div>
+                <div><dt>ยอดสุทธิ</dt><dd>฿{{ (order.total_price || order.total || 0).toLocaleString() }}</dd></div>
+                <div><dt>วันที่</dt><dd>{{ new Date(order.created_at || order.date).toLocaleDateString('th-TH') }}</dd></div>
+              </dl>
+              <div class="admin-actions admin-actions--stack">
+                <label class="sr-only" :for="`order-status-${order.id}`">สถานะคำสั่งซื้อ {{ order.id }}</label>
+                <select :id="`order-status-${order.id}`" class="form-control" :value="order.status" :disabled="pendingOrderId === order.id" @change="updateOrderStatus(order, $event)">
+                  <option value="pending">รอดำเนินการ</option>
+                  <option value="assembling">กำลังประกอบ</option>
+                  <option value="shipped">จัดส่งแล้ว</option>
+                </select>
+                <button class="btn btn-outline" @click="openOrderModal(order)">📄 รายละเอียด</button>
+              </div>
+            </article>
+            <p v-if="orders.length === 0" class="admin-empty">ยังไม่มีคำสั่งซื้อในระบบ</p>
+          </div>
         </div>
 
         <!-- Inventory Tab -->
-        <div v-if="adminTab === 'inventory'" id="admin-panel-inventory" role="tabpanel" aria-labelledby="admin-tab-inventory" class="admin-card" style="padding: 2rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <div v-if="adminTab === 'inventory'" id="admin-panel-inventory" role="tabpanel" aria-labelledby="admin-tab-inventory" class="admin-card admin-section-card">
+          <div class="admin-toolbar">
             <h3>จัดการสินค้าในระบบ</h3>
-            <div style="display: flex; gap: 1rem;">
+            <div class="admin-toolbar__actions">
                           <button class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;" @click="handleSyncPrices" :disabled="isSyncingPrices">
                             <span v-if="isSyncingPrices" class="spinner-small"></span>
                             <span v-else>🔄</span>
                             {{ isSyncingPrices ? 'กำลังซิงก์ราคา…' : 'Sync Latest Prices' }}
                           </button>
-                          <select class="form-control" style="width: 200px;" v-model="inventoryCategory">
+                          <select class="form-control admin-category-select" v-model="inventoryCategory" aria-label="หมวดหมู่สินค้า">
                             <option v-for="cat in categories" :key="'inv-'+cat.id" :value="cat.id">{{ cat.name }}</option>
                           </select>
-                          <button class="btn btn-primary" @click="openProductModal()">+ เพิ่มสินค้า</button>
+                          <button class="btn btn-primary" data-test="add-product" @click="openProductModal()">+ เพิ่มสินค้า</button>
                         </div>
           </div>
+          <div class="admin-table-region" data-test="inventory-table-region" tabindex="0" aria-label="ตารางสินค้า เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table" v-if="catalog[inventoryCategory]">
             <thead>
               <tr>
@@ -197,14 +243,33 @@
               </tr>
             </tbody>
           </table>
+          </div>
+          <div class="admin-mobile-list" aria-label="รายการสินค้า">
+            <article v-for="item in (catalog[inventoryCategory] || [])" :key="'product-card-'+item.id" class="admin-mobile-card" :data-test="`product-card-${item.id}`">
+              <div class="admin-mobile-card__heading">
+                <strong>{{ item.name }}</strong>
+                <span class="admin-mobile-card__id">#{{ item.id }}</span>
+              </div>
+              <dl class="admin-mobile-card__facts">
+                <div><dt>ราคา</dt><dd>฿{{ item.price.toLocaleString() }}</dd></div>
+                <div><dt>สเปค</dt><dd>{{ item.socket || item.type || (item.wattage ? item.wattage + 'W' : '-') }}</dd></div>
+              </dl>
+              <div class="admin-actions">
+                <button class="btn btn-outline" @click="openProductModal(item)">แก้ไข</button>
+                <button class="btn btn-outline-danger" @click="deleteProduct(item.id)">ลบ</button>
+              </div>
+            </article>
+            <p v-if="!catalog[inventoryCategory] || catalog[inventoryCategory].length === 0" class="admin-empty">ยังไม่มีสินค้าในหมวดนี้</p>
+          </div>
         </div>
 
         <!-- Articles Tab -->
-        <div v-if="adminTab === 'articles'" id="admin-panel-articles" role="tabpanel" aria-labelledby="admin-tab-articles" class="admin-card" style="padding: 2rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <div v-if="adminTab === 'articles'" id="admin-panel-articles" role="tabpanel" aria-labelledby="admin-tab-articles" class="admin-card admin-section-card">
+          <div class="admin-toolbar">
             <h3>จัดการบทความ</h3>
-            <button class="btn btn-primary" @click="openArticleModal()">+ เพิ่มบทความ</button>
+            <button class="btn btn-primary" data-test="add-article" @click="openArticleModal()">+ เพิ่มบทความ</button>
           </div>
+          <div class="admin-table-region" data-test="articles-table-region" tabindex="0" aria-label="ตารางบทความ เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม">
           <table class="data-table">
             <thead>
               <tr>
@@ -218,7 +283,7 @@
             <tbody>
               <tr v-for="article in articles" :key="'art-'+article.id">
                 <td style="font-family: var(--font-mono); color: var(--muted);">{{ article.id }}</td>
-                <td><img :src="article.image" style="width: 50px; height: 30px; object-fit: cover; border-radius: 4px;" /></td>
+                <td><img :src="article.image" :alt="`ภาพปก ${article.title}`" style="width: 50px; height: 30px; object-fit: cover; border-radius: 4px;" /></td>
                 <td>{{ article.title }}</td>
                 <td>{{ article.date }}</td>
                 <td>
@@ -231,6 +296,25 @@
               </tr>
             </tbody>
           </table>
+          </div>
+          <div class="admin-mobile-list" aria-label="รายการบทความ">
+            <article v-for="article in articles" :key="'article-card-'+article.id" class="admin-mobile-card" :data-test="`article-card-${article.id}`">
+              <div class="admin-mobile-card__heading">
+                <strong>{{ article.title }}</strong>
+                <span class="admin-mobile-card__id">#{{ article.id }}</span>
+              </div>
+              <div class="admin-mobile-card__media">
+                <img v-if="article.image" :src="article.image" :alt="`ภาพปก ${article.title}`">
+                <span v-else aria-hidden="true">📰</span>
+                <time :datetime="article.date">{{ article.date }}</time>
+              </div>
+              <div class="admin-actions">
+                <button class="btn btn-outline" @click="openArticleModal(article)">แก้ไข</button>
+                <button class="btn btn-outline-danger" @click="deleteArticle(article.id)">ลบ</button>
+              </div>
+            </article>
+            <p v-if="!articles || articles.length === 0" class="admin-empty">ยังไม่มีบทความในระบบ</p>
+          </div>
         </div>
       </main>
     </div>
@@ -809,6 +893,24 @@ const executeConfirm = async () => {
   border-radius: var(--radius-lg);
   overflow-x: auto;
 }
+.admin-section-card { padding: 2rem; }
+.admin-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.admin-toolbar__actions, .admin-actions { display: flex; align-items: center; gap: 0.75rem; }
+.admin-category-select { width: 200px; }
+.admin-table-region { max-width: 100%; overflow-x: auto; }
+.admin-mobile-list { display: none; padding: 1rem; }
+.admin-mobile-card { padding: 1rem; border: 1px solid var(--hairline-cool); background: var(--canvas); }
+.admin-mobile-card + .admin-mobile-card { margin-top: 0.75rem; }
+.admin-mobile-card__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.admin-mobile-card__heading strong { overflow-wrap: anywhere; }
+.admin-mobile-card__id { color: var(--ink-mute); font-family: var(--font-mono); font-size: var(--text-xs); }
+.admin-mobile-card__facts { display: grid; gap: 0.75rem; margin: 1rem 0; }
+.admin-mobile-card__facts div { display: grid; grid-template-columns: minmax(5rem, 0.4fr) 1fr; gap: 0.75rem; }
+.admin-mobile-card__facts dt { color: var(--ink-mute); }
+.admin-mobile-card__facts dd { margin: 0; overflow-wrap: anywhere; }
+.admin-mobile-card__media { display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0; color: var(--ink-mute); }
+.admin-mobile-card__media img { width: 64px; height: 44px; object-fit: cover; border-radius: var(--radius-sm); }
+.admin-empty { margin: 0; padding: 2rem 1rem; text-align: center; color: var(--ink-mute); }
 
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); }
 .stat-card { 

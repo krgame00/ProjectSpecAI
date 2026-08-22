@@ -96,6 +96,50 @@ describe('AdminDashboard profile embedding', () => {
     expect(wrapper.findAll('.admin-menu > li[tabindex]')).toHaveLength(0)
   })
 
+  const collectionProps = {
+    orders: [{ id: 'ORD-1', customer_name: 'Buyer', assembly_type: 'standard', total_price: 9990, status: 'pending', created_at: '2026-08-20', build_items: {} }],
+    categories: [{ id: 'cpu', name: 'CPU' }],
+    catalog: { cpu: [{ id: 7, name: 'Typed CPU', price: 5000, socket: 'AM5', image: '/cpu.png' }] },
+    articles: [{ id: 10, title: 'Fixture Article', content: 'Content', image: '/cover.png', date: '2026-08-20' }],
+    currentUser: { id: 1, name: 'Admin', role: 'admin' }
+  }
+
+  test.each([
+    ['orders', '[data-test="order-card-ORD-1"]', 'ORD-1'],
+    ['inventory', '[data-test="product-card-7"]', 'Typed CPU'],
+    ['articles', '[data-test="article-card-10"]', 'Fixture Article'],
+    ['users', '[data-test="user-card-2"]', 'Member One']
+  ])('renders an actionable mobile summary card for %s', async (tab, selector, expectedText) => {
+    useAdminStore().users = [
+      collectionProps.currentUser,
+      { id: 2, name: 'Member One', email: 'member@test.local', role: 'customer', created_at: '2026-02-01' }
+    ]
+    const wrapper = mountDashboard(collectionProps)
+
+    await wrapper.get(`#admin-tab-${tab}`).trigger('click')
+
+    expect(wrapper.get(selector).text()).toContain(expectedText)
+    expect(wrapper.get(selector).findAll('button').length).toBeGreaterThan(0)
+  })
+
+  test('labels the inventory table as a keyboard-scrollable region', async () => {
+    const wrapper = mountDashboard(collectionProps)
+    await wrapper.get('#admin-tab-inventory').trigger('click')
+
+    const region = wrapper.get('[data-test="inventory-table-region"]')
+    expect(region.attributes('tabindex')).toBe('0')
+    expect(region.attributes('aria-label')).toBe('ตารางสินค้า เลื่อนแนวนอนเพื่อดูข้อมูลเพิ่มเติม')
+  })
+
+  test('opens the existing product editor from its mobile card', async () => {
+    const wrapper = mountDashboard(collectionProps)
+    await wrapper.get('#admin-tab-inventory').trigger('click')
+
+    await wrapper.get('[data-test="product-card-7"] button').trigger('click')
+
+    expect(wrapper.get('[data-test="product-modal"] input[data-test="product-name"]').element.value).toBe('Typed CPU')
+  })
+
   test('keeps a new product modal and its values open after failure, then closes only after success', async () => {
     const admin = useAdminStore()
     admin.saveProduct = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce({ id: 91 })
