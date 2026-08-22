@@ -95,7 +95,7 @@ test.describe('Admin CRUD with API fixtures', () => {
   test('creates, edits and deletes a product using real mutation payloads', async ({ page }) => {
     const state = await useAdminFixture(page);
     await openAdmin(page);
-    await page.getByText('⚙️ คลังสินค้า').click();
+    await page.getByRole('tab', { name: /คลังสินค้า/ }).click();
     await page.getByText('+ เพิ่มสินค้า').click();
     await page.locator('[data-test="product-name"]').fill('Fixture CPU');
     await page.locator('[data-test="product-modal"] input[type="number"]').fill('4990');
@@ -121,7 +121,7 @@ test.describe('Admin CRUD with API fixtures', () => {
   test('creates, edits and deletes an article and renders canonical fields', async ({ page }) => {
     const state = await useAdminFixture(page);
     await openAdmin(page);
-    await page.getByText('📰 จัดการบทความ').click();
+    await page.getByRole('tab', { name: /จัดการบทความ/ }).click();
     await page.getByText('+ เพิ่มบทความ').click();
     await page.getByPlaceholder('ระบุหัวข้อบทความที่น่าสนใจ...').fill('Fixture Article');
     await page.getByPlaceholder('พิมพ์เนื้อหาที่นี่...').fill('Article content');
@@ -143,7 +143,7 @@ test.describe('Admin CRUD with API fixtures', () => {
   test('changes member role, deletes member and updates order status only after responses', async ({ page }) => {
     const state = await useAdminFixture(page);
     await openAdmin(page);
-    await page.getByText('👥 จัดการสมาชิก').click();
+    await page.getByRole('tab', { name: /จัดการสมาชิก/ }).click();
     const memberRow = page.getByRole('row', { name: /Member One/ });
     await memberRow.getByText('ปรับสิทธิ์').click();
     await page.getByText('ตกลง').click();
@@ -152,7 +152,7 @@ test.describe('Admin CRUD with API fixtures', () => {
     await page.getByText('ตกลง').click();
     await expect(page.getByRole('row', { name: /Member One/ })).toHaveCount(0);
 
-    await page.getByText('📦 รายการสั่งซื้อ').click();
+    await page.getByRole('tab', { name: /รายการสั่งซื้อ/ }).click();
     await page.getByRole('row', { name: /ORD-1/ }).locator('select').selectOption('shipped');
     await expect(page.getByRole('row', { name: /ORD-1/ })).toContainText('จัดส่งแล้ว');
     expect(state.requests.some(item => item.path === '/auth/users/2/role' && item.body.role === 'admin')).toBe(true);
@@ -163,7 +163,7 @@ test.describe('Admin CRUD with API fixtures', () => {
   test('keeps product input for retry after error, then expires and clears the session', async ({ page }) => {
     const state = await useAdminFixture(page, { productFailure: { status: 500, message: 'temporary write failure' } });
     await openAdmin(page);
-    await page.getByText('⚙️ คลังสินค้า').click();
+    await page.getByRole('tab', { name: /คลังสินค้า/ }).click();
     await page.getByText('+ เพิ่มสินค้า').click();
     await page.locator('[data-test="product-name"]').fill('Retry Product');
     await page.locator('[data-test="product-modal"] input[type="number"]').fill('4500');
@@ -175,5 +175,60 @@ test.describe('Admin CRUD with API fixtures', () => {
     await expect(page).toHaveURL(/\/\?login=required$/);
     await expect.poll(() => page.evaluate(() => localStorage.getItem('token'))).toBeNull();
     await expect(page.getByText(/Session Admin หมดอายุ/)).toBeVisible();
+  });
+});
+
+test.describe('Admin responsive workflows', () => {
+  test('mobile uses sticky tabs, actionable cards, and a viewport-contained dialog', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 800 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+
+    const tabs = page.getByRole('tablist', { name: 'ส่วนจัดการระบบ' });
+    await expect(tabs).toHaveCSS('position', 'sticky');
+    await page.getByRole('tab', { name: /คลังสินค้า/ }).click();
+    await expect(page.locator('[data-test="product-card-1"]')).toBeVisible();
+    await expect(page.locator('[data-test="inventory-table-region"]')).toBeHidden();
+
+    await page.locator('[data-test="add-product"]').click();
+    const modal = page.locator('[data-test="product-modal"] .admin-modal');
+    const box = await modal.boundingBox();
+    expect(box.x).toBe(0);
+    expect(box.width).toBe(320);
+    await expect(modal.locator('.admin-modal__footer')).toHaveCSS('position', 'sticky');
+
+    await page.locator('[data-test="product-name"]').fill('Mobile Fixture CPU');
+    await page.locator('[data-test="product-modal"] input[type="number"]').fill('4590');
+    await page.locator('[data-test="save-product"]').click();
+    await expect(page.locator('[data-test="product-card-101"]')).toContainText('Mobile Fixture CPU');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(320);
+  });
+
+  test('tablet keeps collections inside keyboard-scrollable table regions', async ({ page }) => {
+    await page.setViewportSize({ width: 768, height: 900 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+
+    await expect(page.getByRole('tablist', { name: 'ส่วนจัดการระบบ' })).toHaveCSS('position', 'sticky');
+    await page.getByRole('tab', { name: /คลังสินค้า/ }).click();
+    const region = page.locator('[data-test="inventory-table-region"]');
+    await expect(region).toBeVisible();
+    await expect(page.locator('[data-test="product-card-1"]')).toBeHidden();
+    await region.focus();
+    await expect(region).toBeFocused();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(768);
+  });
+
+  test('desktop retains the compact sidebar and full table presentation', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+
+    await expect(page.locator('.admin-layout')).toHaveCSS('grid-template-columns', /\d+px \d+px/);
+    await expect(page.getByRole('tablist', { name: 'ส่วนจัดการระบบ' })).toHaveCSS('position', 'static');
+    await page.getByRole('tab', { name: /จัดการสมาชิก/ }).click();
+    await expect(page.locator('[data-test="users-table-region"]')).toBeVisible();
+    await expect(page.locator('[data-test="user-card-2"]')).toBeHidden();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(1440);
   });
 });

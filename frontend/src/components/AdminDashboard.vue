@@ -1,9 +1,9 @@
 <template>
   <div class="container admin-view">
-    <div style="margin-bottom: 2rem;">
+    <header class="admin-heading">
       <h2 style="font-size: var(--text-2xl); color: var(--accent); text-shadow: var(--accent-glow);">ระบบจัดการหลังบ้าน (Admin Panel)</h2>
       <p style="color: var(--muted);">ภาพรวมร้านค้า การสั่งซื้อ สินค้าคงคลัง และบทความ</p>
-    </div>
+    </header>
 
     <div class="admin-layout">
       <aside class="admin-sidebar">
@@ -23,9 +23,9 @@
             </button>
           </li>
         </ul>
-        <div style="padding: 1rem; margin-top: auto; border-top: 1px solid var(--hairline-cool);">
+        <div class="admin-return" style="padding: 1rem; margin-top: auto; border-top: 1px solid var(--hairline-cool);">
           <button class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" @click="$router.push('/')">
-            ⬅️ กลับหน้าร้านค้า
+            <span aria-hidden="true">⬅️</span><span class="admin-return__label">กลับหน้าร้านค้า</span>
           </button>
         </div>
       </aside>
@@ -51,9 +51,9 @@
             </div>
           </div>
           
-          <div class="admin-card" style="margin-top: 2rem; padding: 2rem;">
+          <div class="admin-card admin-chart-card">
             <h3 style="margin-bottom: 1.5rem; color: var(--ink);">สถิติยอดขาย 7 วันย้อนหลัง</h3>
-            <div style="height: 300px;">
+            <div class="admin-chart">
               <Bar :data="chartData" :options="chartOptions" v-if="chartData.labels" />
             </div>
           </div>
@@ -330,7 +330,7 @@
           <button class="close-btn" aria-label="ปิดรายละเอียดคำสั่งซื้อ" @click="showOrderModal = false">✕</button>
         </div>
         <div class="modal-body admin-modal__body" style="max-height: 70vh; overflow-y: auto; padding: 1.5rem;">
-          <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-mute); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+          <div class="order-meta-grid" style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-mute);">
             <div><strong>ลูกค้า:</strong> {{ selectedOrder?.customer_name || selectedOrder?.customer }}</div>
             <div><strong>รูปแบบประกอบ:</strong> {{ selectedOrder?.assembly_type || selectedOrder?.assembly }}</div>
             <div><strong>เบอร์โทร:</strong> {{ selectedOrder?.customer_phone || '-' }}</div>
@@ -397,7 +397,7 @@
 
           <div class="form-group">
             <label>รูปภาพ (URL)</label>
-            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="admin-media-field">
               <input type="text" class="form-control" v-model="productForm.image" placeholder="ระบุ URL รูปภาพ (เช่น /images/cpu.png)" style="flex: 1;" @input="productImgError = false">
               <div style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 1px dashed var(--hairline-strong); overflow: hidden; background: var(--canvas-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                 <template v-if="productForm.image">
@@ -417,7 +417,7 @@
               <span style="font-size: 0.75rem; color: var(--muted); font-weight: normal;">(เช่น Socket: AM4)</span>
             </label>
             <div style="background: var(--canvas-soft); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 1rem;">
-              <div v-for="(spec, index) in productForm.specList" :key="index" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div v-for="(spec, index) in productForm.specList" :key="index" class="admin-spec-row">
                 <input type="text" class="form-control" v-model="spec.key" placeholder="Key" style="flex: 1; padding: 0.4rem; font-size: 0.85rem;">
                 <input type="text" class="form-control" v-model="spec.value" placeholder="Value" style="flex: 2; padding: 0.4rem; font-size: 0.85rem;">
                 <button class="btn btn-outline-danger" style="padding: 0.4rem 0.6rem;" @click="removeSpec(index)">✕</button>
@@ -457,7 +457,7 @@
             </div>
             <div class="form-group" style="margin: 0;">
               <label>ภาพปก (อัปโหลดรูปภาพ)</label>
-              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="admin-media-field">
                 <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
                   <input type="file" accept="image/*" class="form-control" @change="uploadArticleImage" :disabled="isUploadingArticleImage" style="padding-top: 0.5rem;">
                   <small v-if="isUploadingArticleImage" style="color: var(--primary);">กำลังอัปโหลด...</small>
@@ -497,7 +497,7 @@
         <h3 id="confirm-modal-title" style="margin-bottom: 0.75rem; color: var(--ink); font-size: 1.25rem;">ยืนยันการทำรายการ</h3>
         <p style="color: var(--ink-mute); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.5;">{{ confirmModal.message }}</p>
         
-        <div style="display: flex; justify-content: center; gap: 1rem;">
+        <div class="admin-confirm-actions">
           <button class="btn btn-outline" style="flex: 1; padding: 0.5rem 1rem;" @click="closeConfirm">ยกเลิก</button>
           <button class="btn" style="flex: 1; padding: 0.5rem 1rem; font-weight: 600;" 
             :class="confirmModal.type === 'danger' ? 'btn-danger' : 'btn-primary'" 
@@ -866,13 +866,17 @@ const executeConfirm = async () => {
   background-color: #111111;
   color: var(--ink);
 }
-.admin-layout { display: grid; grid-template-columns: 250px 1fr; gap: var(--space-lg); align-items: start; }
+.admin-heading { margin-bottom: 2rem; }
+.admin-heading p { margin: 0.35rem 0 0; }
+.admin-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: var(--space-lg); align-items: start; }
+.admin-main { min-width: 0; }
 
 .admin-sidebar { 
   background: var(--canvas); border-radius: var(--radius-lg); 
   border: 1px solid var(--hairline); overflow: hidden; padding: 0.5rem 0 0 0; 
   box-shadow: var(--shadow-sm);
   display: flex; flex-direction: column; min-height: 500px;
+  position: sticky; top: 1rem;
 }
 .admin-menu { list-style: none; margin: 0; padding: 0; }
 .admin-menu li { border-bottom: 1px solid var(--hairline-cool); }
@@ -891,7 +895,7 @@ const executeConfirm = async () => {
   border: 1px solid var(--hairline);
   box-shadow: var(--shadow-sm);
   border-radius: var(--radius-lg);
-  overflow-x: auto;
+  overflow: hidden;
 }
 .admin-section-card { padding: 2rem; }
 .admin-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
@@ -911,8 +915,15 @@ const executeConfirm = async () => {
 .admin-mobile-card__media { display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0; color: var(--ink-mute); }
 .admin-mobile-card__media img { width: 64px; height: 44px; object-fit: cover; border-radius: var(--radius-sm); }
 .admin-empty { margin: 0; padding: 2rem 1rem; text-align: center; color: var(--ink-mute); }
+.admin-chart-card { margin-top: 2rem; padding: 2rem; }
+.admin-chart { height: clamp(240px, 32vw, 320px); }
+.order-meta-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.5rem; }
+.admin-media-field { display: flex; gap: 1rem; align-items: flex-start; }
+.admin-media-field > * { min-width: 0; }
+.admin-spec-row { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+.admin-confirm-actions { display: flex; justify-content: center; gap: 1rem; }
 
-.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); }
+.stat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); }
 .stat-card { 
   padding: 1.5rem; border-radius: var(--radius-lg); text-align: left; 
   background: var(--canvas); border: 1px solid var(--hairline); box-shadow: var(--shadow-sm);
@@ -965,7 +976,96 @@ const executeConfirm = async () => {
 .btn-danger { background: var(--error-bg, #441111); color: var(--error, #ff4444); border: 1px solid var(--error, #ff4444); }
 .btn-danger:hover { background: var(--error, #ff4444); color: #fff; }
 
-@media (max-width: 820px) {
-  .admin-layout { grid-template-columns: 1fr; }
+.admin-tabs button:focus-visible,
+.admin-table-region:focus-visible,
+.admin-mobile-card .btn:focus-visible,
+.admin-modal .btn:focus-visible,
+.admin-modal .form-control:focus-visible,
+.close-btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .admin-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .admin-sidebar {
+    top: 0; z-index: 50; min-height: 0; padding: 0;
+    display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    overflow: visible;
+  }
+  .admin-tabs {
+    position: sticky; top: 0; z-index: 51;
+    display: flex; min-width: 0; overflow-x: auto; overscroll-behavior-inline: contain;
+    scrollbar-width: thin; background: var(--canvas);
+  }
+  .admin-menu li { flex: 0 0 auto; border: 0; }
+  .admin-menu button { width: auto; min-height: 48px; padding: 0.75rem 1rem; white-space: nowrap; }
+  .admin-return { margin: 0 !important; padding: 0.35rem !important; border: 0 !important; background: var(--canvas); }
+  .admin-return .btn { min-height: 44px; white-space: nowrap; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-toolbar { align-items: flex-start; flex-wrap: wrap; }
+  .admin-toolbar__actions { flex-wrap: wrap; justify-content: flex-end; }
+  .admin-table-region .data-table { min-width: 760px; }
+  .admin-table-region .data-table th:first-child,
+  .admin-table-region .data-table td:first-child { position: sticky; left: 0; z-index: 1; background: var(--canvas); }
+  .admin-table-region .data-table th:first-child { background: var(--canvas-soft); z-index: 2; }
+}
+
+@media (max-width: 640px) {
+  .admin-view { padding-top: 1rem; padding-bottom: 3rem; }
+  .admin-heading { margin-bottom: 1rem; }
+  .admin-heading h2 { font-size: clamp(1.25rem, 6vw, var(--text-2xl)) !important; line-height: 1.25; }
+  .admin-heading p { font-size: var(--text-sm); }
+  .admin-menu button { min-height: 44px; padding: 0.65rem 0.85rem; }
+  .admin-return__label { display: none; }
+  .admin-return .btn { width: 44px !important; padding: 0; }
+  .stat-grid { grid-template-columns: minmax(0, 1fr); }
+  .stat-card { padding: 1rem; }
+  .stat-val { font-size: var(--text-2xl); }
+  .admin-chart-card { margin-top: 1rem; padding: 1rem; }
+  .admin-chart { height: clamp(220px, 80vw, 280px); }
+  .admin-section-card { padding: 0; }
+  .admin-toolbar { flex-direction: column; align-items: stretch; margin: 0; padding: 1rem; }
+  .admin-toolbar__actions { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
+  .admin-toolbar__actions .btn, .admin-category-select { width: 100%; min-height: 44px; }
+  .admin-table-region { display: none; }
+  .admin-mobile-list { display: block; }
+  .admin-mobile-card { border-radius: var(--radius-md); }
+  .admin-mobile-card__facts div { grid-template-columns: minmax(4.5rem, 0.4fr) minmax(0, 1fr); }
+  .admin-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-actions--stack { grid-template-columns: minmax(0, 1fr); }
+  .admin-actions .btn, .admin-actions .form-control { width: 100%; min-height: 44px; }
+  .modal-overlay { padding: 0; align-items: stretch; }
+  .admin-modal:not(.admin-modal--confirm) {
+    width: 100dvw; height: 100dvh; max-width: none !important; max-height: none;
+    border: 0; border-radius: 0;
+  }
+  .admin-modal--confirm { width: calc(100dvw - 2rem); max-height: calc(100dvh - 2rem); margin: auto; padding: 1.5rem 1rem !important; }
+  .modal-header { position: sticky; top: 0; z-index: 2; padding: 1rem !important; }
+  .modal-header h3 { min-width: 0; font-size: 1rem !important; line-height: 1.35; }
+  .close-btn { min-width: 44px; min-height: 44px; flex: 0 0 44px; }
+  .admin-modal__body { max-height: none !important; padding: 1rem !important; }
+  .admin-modal__footer {
+    position: sticky; bottom: 0; z-index: 2; padding: 0.75rem 1rem !important;
+    display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-modal__footer .btn { width: 100%; min-height: 44px; padding-inline: 0.75rem !important; }
+  .admin-form-grid, .admin-form-grid--article { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .order-meta-grid { grid-template-columns: minmax(0, 1fr); }
+  .admin-media-field { align-items: stretch; gap: 0.75rem; }
+  .admin-spec-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) 44px; }
+  .admin-spec-row .btn { min-height: 44px; padding: 0 !important; }
+  .admin-confirm-actions { gap: 0.75rem; }
+  .admin-confirm-actions .btn { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-view *, .admin-view *::before, .admin-view *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 </style>
