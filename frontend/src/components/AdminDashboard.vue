@@ -7,13 +7,21 @@
 
     <div class="admin-layout">
       <aside class="admin-sidebar">
-        <ul class="admin-menu">
-          <li :class="{active: adminTab === 'dashboard'}" @click="adminTab = 'dashboard'">📊 Dashboard ภาพรวม</li>
-          <li :class="{active: adminTab === 'orders'}" @click="adminTab = 'orders'">📦 รายการสั่งซื้อ (Orders)</li>
-          <li :class="{active: adminTab === 'inventory'}" @click="adminTab = 'inventory'">⚙️ คลังสินค้า (Inventory)</li>
-          <li :class="{active: adminTab === 'articles'}" @click="adminTab = 'articles'">📰 จัดการบทความ (Articles)</li>
-          <li :class="{active: adminTab === 'users'}" @click="fetchUsers(); adminTab = 'users'">👥 จัดการสมาชิก (Users)</li>
-          <li :class="{active: adminTab === 'profile'}" @click="adminTab = 'profile'">👤 ข้อมูลโปรไฟล์แอดมิน</li>
+        <ul class="admin-menu admin-tabs" role="tablist" aria-label="ส่วนจัดการระบบ">
+          <li v-for="tab in adminTabs" :key="tab.id" role="presentation">
+            <button
+              type="button"
+              role="tab"
+              :id="`admin-tab-${tab.id}`"
+              :aria-controls="`admin-panel-${tab.id}`"
+              :aria-selected="adminTab === tab.id"
+              :class="{ active: adminTab === tab.id }"
+              @click="selectAdminTab(tab.id)"
+            >
+              <span aria-hidden="true">{{ tab.icon }}</span>
+              <span>{{ tab.label }}</span>
+            </button>
+          </li>
         </ul>
         <div style="padding: 1rem; margin-top: auto; border-top: 1px solid var(--hairline-cool);">
           <button class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" @click="$router.push('/')">
@@ -24,7 +32,7 @@
 
       <main class="admin-main">
         <!-- Dashboard Tab -->
-        <div v-if="adminTab === 'dashboard'">
+        <div v-if="adminTab === 'dashboard'" id="admin-panel-dashboard" role="tabpanel" aria-labelledby="admin-tab-dashboard">
           <div class="stat-grid">
             <div class="stat-card">
               <div class="stat-title">ยอดขายรวม (Gross Revenue)</div>
@@ -52,7 +60,7 @@
         </div>
 
         <!-- Users Tab -->
-        <div v-if="adminTab === 'users'" class="admin-card">
+        <div v-if="adminTab === 'users'" id="admin-panel-users" role="tabpanel" aria-labelledby="admin-tab-users" class="admin-card">
           <table class="data-table">
             <thead>
               <tr>
@@ -91,12 +99,12 @@
         </div>
 
         <!-- Admin Profile Tab -->
-        <div v-if="adminTab === 'profile'">
+        <div v-if="adminTab === 'profile'" id="admin-panel-profile" role="tabpanel" aria-labelledby="admin-tab-profile">
           <ProfileView embedded />
         </div>
 
         <!-- Orders Tab -->
-        <div v-if="adminTab === 'orders'" class="admin-card hairline-grid">
+        <div v-if="adminTab === 'orders'" id="admin-panel-orders" role="tabpanel" aria-labelledby="admin-tab-orders" class="admin-card hairline-grid">
           <table class="data-table hairline-grid">
             <thead>
               <tr class="font-mono">
@@ -149,7 +157,7 @@
         </div>
 
         <!-- Inventory Tab -->
-        <div v-if="adminTab === 'inventory'" class="admin-card" style="padding: 2rem;">
+        <div v-if="adminTab === 'inventory'" id="admin-panel-inventory" role="tabpanel" aria-labelledby="admin-tab-inventory" class="admin-card" style="padding: 2rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <h3>จัดการสินค้าในระบบ</h3>
             <div style="display: flex; gap: 1rem;">
@@ -192,7 +200,7 @@
         </div>
 
         <!-- Articles Tab -->
-        <div v-if="adminTab === 'articles'" class="admin-card" style="padding: 2rem;">
+        <div v-if="adminTab === 'articles'" id="admin-panel-articles" role="tabpanel" aria-labelledby="admin-tab-articles" class="admin-card" style="padding: 2rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
             <h3>จัดการบทความ</h3>
             <button class="btn btn-primary" @click="openArticleModal()">+ เพิ่มบทความ</button>
@@ -468,6 +476,14 @@ const props = defineProps({
   orders: Array, categories: Array, catalog: Object, articles: Array, currentUser: Object
 });
 const adminTab = ref('dashboard');
+const adminTabs = [
+  { id: 'dashboard', icon: '📊', label: 'Dashboard ภาพรวม' },
+  { id: 'orders', icon: '📦', label: 'รายการสั่งซื้อ (Orders)' },
+  { id: 'inventory', icon: '⚙️', label: 'คลังสินค้า (Inventory)' },
+  { id: 'articles', icon: '📰', label: 'จัดการบทความ (Articles)' },
+  { id: 'users', icon: '👥', label: 'จัดการสมาชิก (Users)' },
+  { id: 'profile', icon: '👤', label: 'ข้อมูลโปรไฟล์แอดมิน' }
+];
 
 // Chart Data (Mock 7-day revenue)
 const chartData = ref({
@@ -495,6 +511,11 @@ const chartOptions = {
 // Users State
 const fetchUsers = async () => {
   await adminStore.fetchUsers();
+};
+
+const selectAdminTab = (tabId) => {
+  adminTab.value = tabId;
+  if (tabId === 'users') fetchUsers();
 };
 
 const pendingUserId = ref(null);
@@ -770,14 +791,16 @@ const executeConfirm = async () => {
   display: flex; flex-direction: column; min-height: 500px;
 }
 .admin-menu { list-style: none; margin: 0; padding: 0; }
-.admin-menu li { 
-  padding: 1rem 1.5rem; cursor: pointer; border-bottom: 1px solid var(--hairline-cool); 
-  transition: all var(--transition-fast); display: flex; align-items: center; gap: 0.75rem; 
-  font-size: var(--text-sm); font-weight: 500; color: var(--ink-mute);
-}
+.admin-menu li { border-bottom: 1px solid var(--hairline-cool); }
 .admin-menu li:last-child { border-bottom: none; }
-.admin-menu li:hover { background: var(--canvas-soft); color: var(--ink); }
-.admin-menu li.active { background: var(--canvas-soft); border-left: 4px solid var(--primary); color: var(--primary-deep); font-weight: 600;}
+.admin-menu button {
+  width: 100%; padding: 1rem 1.5rem; cursor: pointer; border: 1px solid transparent;
+  background: transparent; transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  display: flex; align-items: center; gap: 0.75rem; text-align: left;
+  font: inherit; font-size: var(--text-sm); font-weight: 500; color: var(--ink-mute);
+}
+.admin-menu button:hover { background: var(--canvas-soft); color: var(--ink); }
+.admin-menu button.active { background: var(--canvas-soft); border-color: var(--hairline-strong); color: var(--primary-deep); font-weight: 600;}
 
 .admin-card {
   background: var(--canvas);

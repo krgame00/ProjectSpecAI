@@ -54,7 +54,7 @@ describe('AdminDashboard profile embedding', () => {
       }
     })
 
-    await wrapper.findAll('.admin-menu li')[5].trigger('click')
+    await wrapper.findAll('.admin-menu button')[5].trigger('click')
     await flushPromises()
 
     expect(wrapper.findAll('main')).toHaveLength(1)
@@ -74,11 +74,33 @@ describe('AdminDashboard profile embedding', () => {
     }
   })
 
+  test('exposes every Admin section as an accessible tab and labelled panel', async () => {
+    const wrapper = mountDashboard()
+    const tabs = wrapper.findAll('[role="tab"]')
+
+    expect(tabs).toHaveLength(6)
+    expect(tabs[0].attributes('aria-selected')).toBe('true')
+    expect(tabs[0].attributes('aria-controls')).toBe('admin-panel-dashboard')
+
+    await tabs[2].trigger('click')
+
+    expect(wrapper.get('#admin-tab-inventory').attributes('aria-selected')).toBe('true')
+    expect(wrapper.get('#admin-panel-inventory').attributes('role')).toBe('tabpanel')
+    expect(wrapper.get('#admin-panel-inventory').attributes('aria-labelledby')).toBe('admin-tab-inventory')
+  })
+
+  test('uses real buttons instead of clickable list items for Admin navigation', () => {
+    const wrapper = mountDashboard()
+
+    expect(wrapper.findAll('.admin-menu > li > button')).toHaveLength(6)
+    expect(wrapper.findAll('.admin-menu > li[tabindex]')).toHaveLength(0)
+  })
+
   test('keeps a new product modal and its values open after failure, then closes only after success', async () => {
     const admin = useAdminStore()
     admin.saveProduct = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce({ id: 91 })
     const wrapper = mountDashboard()
-    await wrapper.findAll('.admin-menu li')[2].trigger('click')
+    await wrapper.findAll('.admin-menu button')[2].trigger('click')
     await wrapper.findAll('button').find(button => button.text().includes('เพิ่มสินค้า')).trigger('click')
     const modal = wrapper.get('[data-test="product-modal"]')
     await modal.get('input[data-test="product-name"]').setValue('Retry CPU')
@@ -102,7 +124,7 @@ describe('AdminDashboard profile embedding', () => {
     const articleStore = (await import('../src/stores/article')).useArticleStore()
     articleStore.saveArticle = vi.fn(() => new Promise(resolve => { finish = resolve }))
     const wrapper = mountDashboard()
-    await wrapper.findAll('.admin-menu li')[3].trigger('click')
+    await wrapper.findAll('.admin-menu button')[3].trigger('click')
     await wrapper.findAll('button').find(button => button.text().includes('เพิ่มบทความ')).trigger('click')
     const save = wrapper.get('button[data-test="save-article"]')
     await save.trigger('click')
@@ -122,7 +144,7 @@ describe('AdminDashboard profile embedding', () => {
     const wrapper = mountDashboard({
       catalog: { cpu: [{ id: 7, name: 'Typed CPU', price: 5000, socket: 'AM5', cores: 8, threads: 16, tdp: 105, specifications: {} }] }
     })
-    await wrapper.findAll('.admin-menu li')[2].trigger('click')
+    await wrapper.findAll('.admin-menu button')[2].trigger('click')
     await wrapper.get('tbody tr button').trigger('click')
     await wrapper.get('button[data-test="save-product"]').trigger('click')
     await flushPromises()
