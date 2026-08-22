@@ -140,6 +140,42 @@ describe('AdminDashboard profile embedding', () => {
     expect(wrapper.get('[data-test="product-modal"] input[data-test="product-name"]').element.value).toBe('Typed CPU')
   })
 
+  test('keeps modal scrolling separate from its persistent action footer', async () => {
+    const wrapper = mountDashboard()
+    await wrapper.get('#admin-tab-inventory').trigger('click')
+    await wrapper.get('[data-test="add-product"]').trigger('click')
+
+    const modal = wrapper.get('[data-test="product-modal"]')
+    expect(modal.get('.admin-modal__body').exists()).toBe(true)
+    expect(modal.get('.admin-modal__footer [data-test="save-product"]').exists()).toBe(true)
+  })
+
+  test('uses responsive form grids instead of fixed inline columns', async () => {
+    const wrapper = mountDashboard()
+    await wrapper.get('#admin-tab-inventory').trigger('click')
+    await wrapper.get('[data-test="add-product"]').trigger('click')
+
+    expect(wrapper.findAll('[data-test="product-modal"] .admin-form-grid').length).toBeGreaterThan(0)
+  })
+
+  test('labels order, article, and confirmation dialogs for assistive technology', async () => {
+    const wrapper = mountDashboard(collectionProps)
+
+    await wrapper.get('#admin-tab-orders').trigger('click')
+    await wrapper.get('[data-test="order-card-ORD-1"] button').trigger('click')
+    expect(wrapper.get('[role="dialog"][aria-labelledby="order-modal-title"]').attributes('aria-modal')).toBe('true')
+    await wrapper.get('[aria-label="ปิดรายละเอียดคำสั่งซื้อ"]').trigger('click')
+
+    await wrapper.get('#admin-tab-articles').trigger('click')
+    await wrapper.get('[data-test="add-article"]').trigger('click')
+    expect(wrapper.get('[role="dialog"][aria-labelledby="article-modal-title"]').attributes('aria-modal')).toBe('true')
+    await wrapper.get('[aria-label="ปิดฟอร์มบทความ"]').trigger('click')
+
+    await wrapper.get('#admin-tab-inventory').trigger('click')
+    await wrapper.get('[data-test="product-card-7"] .btn-outline-danger').trigger('click')
+    expect(wrapper.get('[role="dialog"][aria-labelledby="confirm-modal-title"]').attributes('aria-modal')).toBe('true')
+  })
+
   test('keeps a new product modal and its values open after failure, then closes only after success', async () => {
     const admin = useAdminStore()
     admin.saveProduct = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce({ id: 91 })

@@ -321,15 +321,15 @@
 
     <!-- Order Details Modal -->
     <div class="modal-overlay" v-if="showOrderModal" @click.self="showOrderModal = false">
-      <div class="modal-content glass-panel" style="max-width: 600px; padding: 0;">
+      <div class="modal-content glass-panel admin-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title" style="max-width: 600px; padding: 0;">
         <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
-          <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+          <h3 id="order-modal-title" style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
             <span>📄</span> 
             รายละเอียดคำสั่งซื้อ {{ selectedOrder?.id }}
           </h3>
-          <button class="close-btn" @click="showOrderModal = false">✕</button>
+          <button class="close-btn" aria-label="ปิดรายละเอียดคำสั่งซื้อ" @click="showOrderModal = false">✕</button>
         </div>
-        <div class="modal-body" style="max-height: 70vh; overflow-y: auto; padding: 1.5rem;">
+        <div class="modal-body admin-modal__body" style="max-height: 70vh; overflow-y: auto; padding: 1.5rem;">
           <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--ink-mute); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
             <div><strong>ลูกค้า:</strong> {{ selectedOrder?.customer_name || selectedOrder?.customer }}</div>
             <div><strong>รูปแบบประกอบ:</strong> {{ selectedOrder?.assembly_type || selectedOrder?.assembly }}</div>
@@ -358,7 +358,7 @@
           </div>
           <div v-else style="text-align: center; color: var(--muted); padding: 1rem;">ไม่มีข้อมูลรายการชิ้นส่วน</div>
         </div>
-        <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; background: rgba(0,0,0,0.2);">
+        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; background: rgba(0,0,0,0.2);">
           <button class="btn btn-outline" @click="showOrderModal = false">ปิด</button>
         </div>
       </div>
@@ -366,17 +366,17 @@
 
     <!-- Product Modal -->
     <div class="modal-overlay" data-test="product-modal" v-if="showProductModal" @click.self="!isSavingProduct && (showProductModal = false)">
-      <div class="modal-content glass-panel" style="max-width: 700px; padding: 0;">
+      <div class="modal-content glass-panel admin-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" style="max-width: 700px; padding: 0;">
         <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
-          <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+          <h3 id="product-modal-title" style="display: flex; align-items: center; gap: 0.5rem;">
             <span style="font-size: 1.5rem;">📦</span> 
             {{ editingProduct ? 'แก้ไขข้อมูลสินค้า' : 'เพิ่มสินค้าใหม่ในคลัง' }}
           </h3>
-          <button class="close-btn" @click="showProductModal = false">✕</button>
+          <button class="close-btn" aria-label="ปิดฟอร์มสินค้า" @click="showProductModal = false">✕</button>
         </div>
-        <div class="modal-body" style="max-height: 75vh; overflow-y: auto; padding: 2rem;">
+        <div class="modal-body admin-modal__body" style="max-height: 75vh; overflow-y: auto; padding: 2rem;">
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem;">
+          <div class="admin-form-grid">
             <div class="form-group" style="margin: 0;">
               <label>รหัสสินค้า (ID)</label>
               <input type="text" class="form-control" v-model="productForm.id" disabled placeholder="ระบบจะสร้าง ID ให้อัตโนมัติ" style="background: rgba(0,0,0,0.1);">
@@ -426,7 +426,7 @@
             </div>
           </div>
         </div>
-        <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 1rem; background: rgba(0,0,0,0.2);">
+        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 1rem; background: rgba(0,0,0,0.2);">
           <button class="btn btn-outline" :disabled="isSavingProduct" @click="showProductModal = false">ยกเลิก</button>
           <button class="btn btn-primary" data-test="save-product" :disabled="isSavingProduct" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveProduct">{{ isSavingProduct ? 'กำลังบันทึก…' : '💾 บันทึกสินค้า' }}</button>
         </div>
@@ -435,22 +435,22 @@
 
     <!-- Article Modal -->
     <div class="modal-overlay" data-test="article-modal" v-if="showArticleModal" @click.self="!isSavingArticle && (showArticleModal = false)">
-      <div class="modal-content glass-panel" style="max-width: 700px; padding: 0;">
+      <div class="modal-content glass-panel admin-modal" role="dialog" aria-modal="true" aria-labelledby="article-modal-title" style="max-width: 700px; padding: 0;">
         <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
-          <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+          <h3 id="article-modal-title" style="display: flex; align-items: center; gap: 0.5rem;">
             <span style="font-size: 1.5rem;">📝</span> 
             {{ editingArticle ? 'แก้ไขบทความ' : 'เขียนบทความใหม่' }}
           </h3>
-          <button class="close-btn" @click="showArticleModal = false">✕</button>
+          <button class="close-btn" aria-label="ปิดฟอร์มบทความ" @click="showArticleModal = false">✕</button>
         </div>
-        <div class="modal-body" style="max-height: 75vh; overflow-y: auto; padding: 2rem;">
+        <div class="modal-body admin-modal__body" style="max-height: 75vh; overflow-y: auto; padding: 2rem;">
           
           <div class="form-group">
             <label>หัวข้อบทความ</label>
             <input type="text" class="form-control" v-model="articleForm.title" style="font-size: 1.1rem; font-weight: 600;" placeholder="ระบุหัวข้อบทความที่น่าสนใจ...">
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin-bottom: 1rem;">
+          <div class="admin-form-grid admin-form-grid--article">
             <div class="form-group" style="margin: 0;">
               <label>วันที่อัปเดต</label>
               <input type="date" class="form-control" v-model="articleForm.date">
@@ -481,7 +481,7 @@
             <textarea class="form-control" style="height: 250px; line-height: 1.6; font-size: 0.95rem; background: var(--canvas-soft);" v-model="articleForm.content" placeholder="พิมพ์เนื้อหาที่นี่..."></textarea>
           </div>
         </div>
-        <div style="padding: 1.5rem; border-top: 1px solid var(--hairline); display: flex; justify-content: flex-end; gap: 1rem; background: var(--canvas-soft);">
+        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--hairline); display: flex; justify-content: flex-end; gap: 1rem; background: var(--canvas-soft);">
           <button class="btn btn-outline" :disabled="isSavingArticle" @click="showArticleModal = false">ยกเลิก</button>
           <button class="btn btn-primary" data-test="save-article" :disabled="isSavingArticle" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveArticle">{{ isSavingArticle ? 'กำลังบันทึก…' : '🚀 เผยแพร่บทความ' }}</button>
         </div>
@@ -489,12 +489,12 @@
     </div>
     <!-- Confirm Modal -->
     <div class="modal-overlay" v-if="confirmModal.show" @click.self="closeConfirm" style="z-index: 3000;">
-      <div class="modal-content glass-panel" style="max-width: 400px; padding: 2.5rem 2rem; text-align: center;">
+      <div class="modal-content glass-panel admin-modal admin-modal--confirm" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title" style="max-width: 400px; padding: 2.5rem 2rem; text-align: center;">
         <div style="font-size: 3rem; margin-bottom: 1rem; line-height: 1;">
           <span v-if="confirmModal.type === 'danger'">⚠️</span>
           <span v-else>❓</span>
         </div>
-        <h3 style="margin-bottom: 0.75rem; color: var(--ink); font-size: 1.25rem;">ยืนยันการทำรายการ</h3>
+        <h3 id="confirm-modal-title" style="margin-bottom: 0.75rem; color: var(--ink); font-size: 1.25rem;">ยืนยันการทำรายการ</h3>
         <p style="color: var(--ink-mute); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.5;">{{ confirmModal.message }}</p>
         
         <div style="display: flex; justify-content: center; gap: 1rem;">
@@ -950,6 +950,11 @@ const executeConfirm = async () => {
   box-shadow: var(--shadow-xl);
   overflow: hidden;
 }
+.admin-modal { display: flex; flex-direction: column; max-height: calc(100dvh - 2rem); }
+.admin-modal__body { min-height: 0; flex: 1 1 auto; }
+.admin-modal__footer { flex: 0 0 auto; }
+.admin-form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; margin-bottom: 1rem; }
+.admin-form-grid--article { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
 .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; border-bottom: 1px solid var(--hairline-cool); background: rgba(0,0,0,0.2); }
 .modal-body { padding: 2rem; max-height: 75vh; overflow-y: auto; }
 .close-btn { background: none; border: none; font-size: 1.25rem; color: var(--ink-mute); cursor: pointer; transition: color var(--transition-fast); }
