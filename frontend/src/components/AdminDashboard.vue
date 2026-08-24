@@ -369,7 +369,7 @@
               <tr v-for="article in filteredArticles" :key="'art-'+article.id">
                 <td style="font-family: var(--font-mono); color: var(--muted);">{{ article.id }}</td>
                 <td><img :src="article.image" :alt="`ภาพปก ${article.title}`" style="width: 50px; height: 30px; object-fit: cover; border-radius: 4px;" /></td>
-                <td>{{ article.title }}</td>
+                <td><span class="article-title-text">{{ article.title }}</span></td>
                 <td>{{ article.date }}</td>
                 <td>
                   <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; margin-right: 0.5rem;" @click="openArticleModal(article)">แก้ไข</button>
@@ -1094,8 +1094,10 @@ const executeConfirm = async () => {
 .data-table td { color: var(--ink); }
 #admin-panel-articles .data-table th:nth-child(3),
 #admin-panel-articles .data-table td:nth-child(3) { width: 50%; }
-#admin-panel-articles .data-table td:nth-child(3) {
-  max-width: 34rem; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+#admin-panel-articles .data-table td:nth-child(3) { max-width: 34rem; }
+.article-title-text {
+  display: -webkit-box; overflow: hidden; overflow-wrap: anywhere;
+  -webkit-box-orient: vertical; -webkit-line-clamp: 2;
 }
 
 .badge { display: inline-flex; align-items: center; padding: 0.35rem 0.75rem; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; }

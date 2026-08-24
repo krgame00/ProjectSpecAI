@@ -179,6 +179,22 @@ test.describe('Admin CRUD with API fixtures', () => {
 });
 
 test.describe('Admin responsive workflows', () => {
+  test('desktop article titles keep table-cell geometry without a blank column gap', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 800 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+    await page.getByRole('tab', { name: /จัดการบทความ/ }).click();
+
+    const row = page.getByRole('row', { name: /Existing Article/ });
+    const titleCell = row.locator('td').nth(2);
+    const dateCell = row.locator('td').nth(3);
+    await expect(titleCell).toHaveCSS('display', 'table-cell');
+
+    const titleBounds = await titleCell.boundingBox();
+    const dateBounds = await dateCell.boundingBox();
+    expect(Math.abs(dateBounds.x - (titleBounds.x + titleBounds.width))).toBeLessThanOrEqual(2);
+  });
+
   test('desktop filters orders locally and keeps the table header visible while scrolling', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 700 });
     const orders = Array.from({ length: 18 }, (_, index) => ({
