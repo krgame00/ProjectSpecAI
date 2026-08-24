@@ -23,7 +23,7 @@
             </button>
           </li>
         </ul>
-        <div class="admin-return" style="padding: 1rem; margin-top: auto; border-top: 1px solid var(--hairline-cool);">
+        <div class="admin-return">
           <button class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" @click="$router.push('/')">
             <span aria-hidden="true">⬅️</span><span class="admin-return__label">กลับหน้าร้านค้า</span>
           </button>
@@ -301,8 +301,10 @@
                   {{ item.socket || item.type || item.wattage ? (item.socket || item.type || item.wattage+'W') : '-' }}
                 </td>
                 <td>
-                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; margin-right: 0.5rem;" @click="openProductModal(item)">แก้ไข</button>
-                  <button class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; background: var(--error-bg); color: var(--error); border: 1px solid var(--error);" @click="deleteProduct(item.id)">ลบ</button>
+                  <div class="admin-row-actions">
+                    <button class="btn btn-outline btn-sm admin-row-action" @click="openProductModal(item)">แก้ไข</button>
+                    <button class="btn btn-outline-danger btn-sm admin-row-action" @click="deleteProduct(item.id)">ลบ</button>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -372,8 +374,10 @@
                 <td><span class="article-title-text">{{ article.title }}</span></td>
                 <td>{{ article.date }}</td>
                 <td>
-                  <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; margin-right: 0.5rem;" @click="openArticleModal(article)">แก้ไข</button>
-                  <button class="btn" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; background: var(--error-bg); color: var(--error); border: 1px solid var(--error);" @click="deleteArticle(article.id)">ลบ</button>
+                  <div class="admin-row-actions">
+                    <button class="btn btn-outline btn-sm admin-row-action" @click="openArticleModal(article)">แก้ไข</button>
+                    <button class="btn btn-outline-danger btn-sm admin-row-action" @click="deleteArticle(article.id)">ลบ</button>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -1004,9 +1008,10 @@ const executeConfirm = async () => {
   background: var(--canvas); border-radius: var(--radius-lg); 
   border: 1px solid var(--hairline); overflow: hidden; padding: 0.5rem 0 0 0; 
   box-shadow: var(--shadow-sm);
-  display: flex; flex-direction: column; min-height: 500px;
+  display: flex; flex-direction: column;
   position: sticky; top: 1rem;
 }
+.admin-return { padding: 1rem; border-top: 1px solid var(--hairline-cool); }
 .admin-menu { list-style: none; margin: 0; padding: 0; }
 .admin-menu li { border-bottom: 1px solid var(--hairline-cool); }
 .admin-menu li:last-child { border-bottom: none; }
@@ -1029,6 +1034,11 @@ const executeConfirm = async () => {
 .admin-section-card { padding: 0; }
 .admin-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
 .admin-toolbar__actions, .admin-actions { display: flex; align-items: center; gap: 0.75rem; }
+.admin-row-actions { display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+.admin-row-action {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 3.5rem; min-height: 32px; padding: 0.25rem 0.6rem; font-size: 0.8rem;
+}
 .admin-category-select { width: 200px; }
 .operations-header {
   display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem;
@@ -1094,6 +1104,10 @@ const executeConfirm = async () => {
 .data-table td { color: var(--ink); }
 #admin-panel-articles .data-table th:nth-child(3),
 #admin-panel-articles .data-table td:nth-child(3) { width: 50%; }
+#admin-panel-inventory .data-table th:last-child,
+#admin-panel-inventory .data-table td:last-child,
+#admin-panel-articles .data-table th:last-child,
+#admin-panel-articles .data-table td:last-child { width: 1%; white-space: nowrap; }
 #admin-panel-articles .data-table td:nth-child(3) { max-width: 34rem; }
 .article-title-text {
   display: -webkit-box; overflow: hidden; overflow-wrap: anywhere;

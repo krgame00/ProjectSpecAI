@@ -179,6 +179,33 @@ test.describe('Admin CRUD with API fixtures', () => {
 });
 
 test.describe('Admin responsive workflows', () => {
+  test('desktop article row presents edit and delete as equal action buttons', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 800 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+    await page.getByRole('tab', { name: /จัดการบทความ/ }).click();
+
+    const row = page.getByRole('row', { name: /Existing Article/ });
+    const editButton = row.getByRole('button', { name: 'แก้ไข' });
+    const deleteButton = row.getByRole('button', { name: 'ลบ' });
+    const editBounds = await editButton.boundingBox();
+    const deleteBounds = await deleteButton.boundingBox();
+
+    expect(Math.abs(editBounds.width - deleteBounds.width)).toBeLessThanOrEqual(1);
+    expect(Math.abs(editBounds.height - deleteBounds.height)).toBeLessThanOrEqual(1);
+    await expect(deleteButton).toHaveCSS('border-style', 'solid');
+  });
+
+  test('desktop sidebar return action follows the menu without forced blank space', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 800 });
+    await useAdminFixture(page);
+    await openAdmin(page);
+
+    const menuBounds = await page.locator('.admin-menu').boundingBox();
+    const returnBounds = await page.locator('.admin-return').boundingBox();
+    expect(Math.abs(returnBounds.y - (menuBounds.y + menuBounds.height))).toBeLessThanOrEqual(1);
+  });
+
   test('desktop article titles keep table-cell geometry without a blank column gap', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 800 });
     await useAdminFixture(page);
