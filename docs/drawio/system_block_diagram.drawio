@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="PCSpec System Architect">
+  <diagram id="diagram_classic_block_clean" name="4.1.1 บล็อกไดอะแกรมของระบบ (System Block Diagram)">
+    <mxGraphModel dx="1141" dy="944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b_input" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ส่วนรับข้อมูล&#xa;(Input)" vertex="1">
+          <mxGeometry height="70" width="130" x="50" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_controller" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ส่วนควบคุมระบบ&#xa;(System Controller /&#xa;API Gateway)" vertex="1">
+          <mxGeometry height="70" width="150" x="230" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_specai" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ระบบแนะนำสเปก&#xa;(SpecAI Engine)" vertex="1">
+          <mxGeometry height="70" width="150" x="430" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_compat" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ระบบตรวจสอบ&#xa;ความเข้ากันได้&#xa;(Compatibility Engine)" vertex="1">
+          <mxGeometry height="70" width="150" x="630" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_calc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ระบบคำนวณราคา&#xa;และพลังงาน&#xa;(Price &amp; TDP Calc)" vertex="1">
+          <mxGeometry height="70" width="150" x="830" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_output" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" value="ส่วนแสดงผลลัพธ์&#xa;(Output)" vertex="1">
+          <mxGeometry height="70" width="130" x="1030" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="b_gemini" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" value="บริการปัญญาประดิษฐ์ภายนอก&#xa;(Google Gemini API)" vertex="1">
+          <mxGeometry height="60" width="180" x="415" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="b_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" value="ฐานข้อมูลฮาร์ดแวร์&#xa;(MySQL Database)" vertex="1">
+          <mxGeometry height="60" width="180" x="615" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_1" edge="1" parent="1" source="b_input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="b_controller">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_2" edge="1" parent="1" source="b_controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="b_specai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_3" edge="1" parent="1" source="b_specai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="b_compat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_4" edge="1" parent="1" source="b_compat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="b_calc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_5" edge="1" parent="1" source="b_calc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="b_output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_gemini_in" edge="1" parent="1" source="b_gemini" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="b_specai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_db_in" edge="1" parent="1" source="b_db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;exitDx=0;entryDy=0;" target="b_compat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

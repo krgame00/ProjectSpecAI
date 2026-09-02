@@ -1,3 +1,11 @@
+import { marked } from 'marked'
+import DOMPurify from 'dompurify'
+
+marked.setOptions({
+  gfm: true,
+  breaks: true
+})
+
 const coerceDisplayText = (value) => {
   if (value == null) return ''
 
@@ -9,16 +17,23 @@ const coerceDisplayText = (value) => {
 }
 
 export const renderSafeMarkdown = (text) => {
-  let html = coerceDisplayText(text)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
+  const raw = coerceDisplayText(text)
+  if (!raw) return ''
 
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>')
-  return html.replace(/\n/g, '<br>')
+  try {
+    const parsed = marked.parse(raw)
+    return DOMPurify.sanitize(parsed, {
+      ALLOWED_TAGS: [
+        'p', 'br', 'strong', 'em', 'b', 'i', 'u', 's', 'del', 'code', 'pre',
+        'table', 'thead', 'tbody', 'tr', 'th', 'td',
+        'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'blockquote', 'hr', 'span'
+      ],
+      ALLOWED_ATTR: ['class', 'align']
+    })
+  } catch {
+    return DOMPurify.sanitize(raw)
+  }
 }
 
 export const toSafeHttpsUrl = (value) => {

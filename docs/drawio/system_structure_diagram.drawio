@@ -1,0 +1,122 @@
+<mxfile host="Electron" modified="2026-08-22T18:40:00.000Z" agent="PCSpec System Architect" version="21.0.0" type="device">
+  <diagram id="diagram_system_arch_visual" name="4.1.3 โครงสร้างระบบ (System Architecture Flow)">
+    <mxGraphModel dx="1200" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title Header -->
+        <mxCell id="title" value="ภาพที่ 4.2 แผนภาพโครงสร้างสถาปัตยกรรมระบบและการทำงาน (System Architecture Flow Diagram)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="1080" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 1. LEFT SOURCE: HARDWARE & SPEC DATA (เทียบเท่า Resident's info) -->
+        <!-- ========================================================================= -->
+        <mxCell id="src_data" value="ข้อมูลชิ้นส่วนฮาร์ดแวร์&#xa;&amp; เงื่อนไขงบประมาณ&#xa;(Hardware Specs &amp;&#xa;User Criteria)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;size=16;fontStyle=1;fontSize=11;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="275" width="140" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 2. TOP BRANCH: ADMIN (ผู้ดูแลระบบ) -->
+        <!-- ========================================================================= -->
+
+        <!-- Admin Actor -->
+        <mxCell id="actor_admin" value="ผู้ดูแลระบบ&#xa;(Admin)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#000000;strokeWidth=1.8;fillColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="110" width="55" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Admin Visual / Interface -->
+        <mxCell id="ui_admin" value="หน้าจอผู้ดูแลระบบ&#xa;(Admin's Interface)&#xa;• จัดการแคตตาล็อกสินค้า 7 หมวด&#xa;• ปรับปรุงสต็อก &amp; ราคาจำหน่าย&#xa;• ตรวจสอบคำสั่งซื้อ &amp; บทความ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=11;fontStyle=1;align=left;spacingLeft=10;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="115" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 3. BOTTOM BRANCH: CUSTOMER / USER (ผู้ใช้งานทั่วไป / ลูกค้า) -->
+        <!-- ========================================================================= -->
+
+        <!-- Customer Actor -->
+        <mxCell id="actor_user" value="ผู้ใช้งานทั่วไป / ลูกค้า&#xa;(Customer / User)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#000000;strokeWidth=1.8;fillColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="55" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- User Visual / Interface -->
+        <mxCell id="ui_user" value="หน้าจอผู้ใช้งานทั่วไป&#xa;(Users' Interface)&#xa;• ระบบจัดสเปกคอมพิวเตอร์ (Builder)&#xa;• แชตบอตแนะนำสเปก (SpecAI)&#xa;• สั่งซื้อสินค้า &amp; Export PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=11;fontStyle=1;align=left;spacingLeft=10;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="400" y="445" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 4. CENTER RIGHT: WEB & APPLICATION SERVER (เซิร์ฟเวอร์ประมวลผล) -->
+        <!-- ========================================================================= -->
+
+        <mxCell id="server_web" value="เซิร์ฟเวอร์ประมวลผลระบบ&#xa;(Web &amp; App Server)&#xa;[Node.js &amp; Express.js MVC]&#xa;• RESTful API Gateway&#xa;• Compatibility Validation Engine&#xa;• Power &amp; Price Estimator&#xa;• JWT Security Middleware" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=11;fontStyle=1;align=left;spacingLeft=12;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="690" y="260" width="210" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 5. FAR RIGHT: DATABASE & CLOUD AI SERVICES (ฐานข้อมูลและบริการภายนอก) -->
+        <!-- ========================================================================= -->
+
+        <!-- MySQL Database -->
+        <mxCell id="db_mysql" value="ฐานข้อมูลเชิงสัมพันธ์&#xa;(MySQL Database)&#xa;'smart_pc_builder'&#xa;• hardware_parts (270+)&#xa;• compatibility_rules&#xa;• users &amp; orders" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="390" width="160" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Google Gemini Cloud AI -->
+        <mxCell id="ai_gemini" value="บริการคลาวด์ AI&#xa;(Google Gemini API)&#xa;• LLM Engine&#xa;• วิเคราะห์คำแนะนำสเปก" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.8;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="160" height="110" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- CONNECTORS / DATA FLOW ARROWS -->
+        <!-- ========================================================================= -->
+
+        <!-- Source Data to Admin & User -->
+        <mxCell id="flow_data_admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="src_data" target="actor_admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow_data_user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="src_data" target="actor_user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Admin to Admin UI -->
+        <mxCell id="flow_admin_ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_admin" target="ui_admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User to User UI -->
+        <mxCell id="flow_user_ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_user" target="ui_user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Admin UI to Web Server -->
+        <mxCell id="flow_admin_server" value="HTTPS / REST API (JWT)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ui_admin" target="server_web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User UI to Web Server -->
+        <mxCell id="flow_user_server" value="HTTPS / REST API (JSON)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ui_user" target="server_web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Web Server <-> MySQL Database -->
+        <mxCell id="flow_server_db" value="SQL Query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=1;" edge="1" parent="1" source="server_web" target="db_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Web Server <-> Google Gemini Cloud AI -->
+        <mxCell id="flow_server_ai" value="GenAI SDK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="server_web" target="ai_gemini">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Caption Below -->
+        <mxCell id="caption" value="ภาพที่ 4.2 แผนภาพโครงสร้างสถาปัตยกรรมระบบจัดสเปกคอมพิวเตอร์และแชตบอตอัจฉริยะ (PCSpec System Architecture Flow)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="1080" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

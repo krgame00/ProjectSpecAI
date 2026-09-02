@@ -68,6 +68,7 @@
           @toggle-chat="chatbotStore.toggle"
           @send-message="chatbotStore.sendMessage"
           @apply-build="chatbotStore.applyBuild"
+          @clear-chat="chatbotStore.clear"
           @request-login="openLoginFromChat"
         />
       </Transition>

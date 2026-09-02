@@ -48,6 +48,7 @@
       @toggle-chat="$emit('toggle-chat', $event)"
       @send-message="$emit('send-message', $event)"
       @apply-build="$emit('apply-build', $event)"
+      @clear-chat="$emit('clear-chat')"
       @request-login="$emit('request-login')"
     />
 
@@ -93,6 +94,7 @@ const emit = defineEmits([
   'toggle-chat',
   'send-message',
   'apply-build',
+  'clear-chat',
   'request-login'
 ]);
 

@@ -9,6 +9,7 @@ export const useChatbotStore = defineStore('chatbot', {
   state: () => ({
     isOpen: false,
     isTyping: false,
+    isStreaming: false,
     history: [
       { role: 'bot', text: 'สวัสดีครับ! ยินดีต้อนรับสู่เว็บไซต์ ForgeLabs! ผมคือ SpecAI ผู้ช่วยส่วนตัวของคุณ ต้องการให้ผมจัดสเปคคอมพิวเตอร์แบบไหนครับ?' }
     ]
@@ -26,7 +27,22 @@ export const useChatbotStore = defineStore('chatbot', {
     addMessage(role, text, extra = {}) {
       this.history.push({ role, text, ...extra })
     },
-    clear() {
+    async clear() {
+      const sessionId = localStorage.getItem('chatbot_session_id')
+      const authStore = useAuthStore()
+      if (sessionId && authStore.token) {
+        try {
+          await fetch(`${API_BASE}/chatbot/clear`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${authStore.token}`
+            },
+            body: JSON.stringify({ sessionId })
+          })
+        } catch (e) {}
+      }
+      localStorage.removeItem('chatbot_session_id')
       this.history = [{ role: 'bot', text: 'สวัสดีครับ! ยินดีต้อนรับสู่เว็บไซต์ ForgeLabs! ผมคือ SpecAI ผู้ช่วยส่วนตัวของคุณ ต้องการให้ผมจัดสเปคคอมพิวเตอร์แบบไหนครับ?' }]
     },
     async sendMessage(payload) {
@@ -35,16 +51,16 @@ export const useChatbotStore = defineStore('chatbot', {
 
       this.addMessage('user', text, image?.data ? { image: `data:${image.mimeType};base64,${image.data}` } : {})
       this.isTyping = true
+      this.isStreaming = false
 
-      setTimeout(() => {
-        this.isTyping = false
-        this.processBotResponse(text, image)
-      }, 100)
+      await this.processBotResponse(text, image)
     },
     async processBotResponse(text, image = null, retriedSession = false) {
       try {
         const authStore = useAuthStore()
         if (!authStore.token) {
+          this.isTyping = false
+          this.isStreaming = false
           this.addMessage('bot', 'กรุณาเข้าสู่ระบบก่อนใช้งานแชตบอต')
           return
         }
@@ -63,6 +79,8 @@ export const useChatbotStore = defineStore('chatbot', {
         })
 
         if (response.status === 401) {
+          this.isTyping = false
+          this.isStreaming = false
           authStore.logout()
           localStorage.removeItem('chatbot_session_id')
           this.addMessage('bot', 'การเข้าสู่ระบบหมดอายุ กรุณาเข้าสู่ระบบอีกครั้ง')
@@ -74,14 +92,15 @@ export const useChatbotStore = defineStore('chatbot', {
           if (!retriedSession) {
             return this.processBotResponse(text, image, true)
           }
+          this.isTyping = false
+          this.isStreaming = false
           this.addMessage('bot', 'ไม่พบเซสชันแชต กรุณาลองส่งข้อความอีกครั้ง')
           return
         }
 
         if (!response.ok) throw new Error('API request failed')
 
-        const botMsgIndex = this.history.length
-        this.addMessage('bot', '', { recommended_build: null, sources: [] })
+        let botMsgIndex = -1
 
         const reader = response.body.getReader()
         const decoder = new TextDecoder('utf-8')
@@ -108,23 +127,38 @@ export const useChatbotStore = defineStore('chatbot', {
                     localStorage.setItem('chatbot_session_id', data.sessionId)
                   } else if (currentEvent === 'message' || currentEvent === 'text') {
                     if (data.text) {
-                      this.history[botMsgIndex].text += data.text
+                      if (botMsgIndex === -1) {
+                        this.isTyping = false
+                        this.isStreaming = true
+                        botMsgIndex = this.history.length
+                        this.addMessage('bot', data.text, { recommended_build: null, sources: [], isStreaming: true })
+                      } else {
+                        this.history[botMsgIndex].text += data.text
+                      }
                     }
                   } else if (currentEvent === 'build_data') {
-                    this.history[botMsgIndex].recommended_build = data.build_data
+                    if (botMsgIndex !== -1) {
+                      this.history[botMsgIndex].recommended_build = data.build_data
+                    }
                   } else if (currentEvent === 'sources') {
-                    this.history[botMsgIndex].sources = data.sources
+                    if (botMsgIndex !== -1) {
+                      this.history[botMsgIndex].sources = data.sources
+                    }
                   } else if (currentEvent === 'error') {
                     console.error('SSE Error:', data.error)
-                    if (this.history[botMsgIndex].text === '') {
-                      this.history[botMsgIndex].text = `⚠️ ${data.error}`
+                    this.isTyping = false
+                    if (botMsgIndex === -1) {
+                      botMsgIndex = this.history.length
+                      this.addMessage('bot', `⚠️ ${data.error}`, { recommended_build: null, sources: [] })
                     } else {
                       this.history[botMsgIndex].text += `\n\n⚠️ ${data.error}`
                     }
                   } else if (currentEvent === 'clear') {
-                    this.history[botMsgIndex].text = ''
-                    this.history[botMsgIndex].sources = []
-                    this.history[botMsgIndex].recommended_build = null
+                    if (botMsgIndex !== -1) {
+                      this.history[botMsgIndex].text = ''
+                      this.history[botMsgIndex].sources = []
+                      this.history[botMsgIndex].recommended_build = null
+                    }
                   }
                 } catch (err) {}
                 currentEvent = 'message'
@@ -132,9 +166,16 @@ export const useChatbotStore = defineStore('chatbot', {
             }
           }
         }
+
+        if (botMsgIndex !== -1 && this.history[botMsgIndex]) {
+          this.history[botMsgIndex].isStreaming = false
+        }
       } catch (error) {
         console.error('Chatbot API Error:', error)
         this.addMessage('bot', 'ขออภัยครับ ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ระบบ AI ได้ในขณะนี้ กรุณาตรวจสอบว่ารันระบบหลังบ้าน (Node.js) แล้ว ⚠️', { recommended_build: null })
+      } finally {
+        this.isTyping = false
+        this.isStreaming = false
       }
     },
     applyBuild(buildObject) {

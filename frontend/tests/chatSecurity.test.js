@@ -11,19 +11,31 @@ import {
 } from '../src/utils/chatSecurity'
 
 describe('chat security utilities', () => {
-  test('escapes executable markup and HTML-sensitive characters before formatting', () => {
-    const input = `<img src=x onerror="alert('x')"><script>&"'`
+  test('sanitizes executable markup and HTML-sensitive characters safely', () => {
+    const input = `<img src=x onerror="alert('x')"><script>alert('hack')</script>`
+    const result = renderSafeMarkdown(input)
 
-    expect(renderSafeMarkdown(input)).toBe(
-      '&lt;img src=x onerror=&quot;alert(&#39;x&#39;)&quot;&gt;' +
-      '&lt;script&gt;&amp;&quot;&#39;'
-    )
+    expect(result).not.toContain('<script>')
+    expect(result).not.toContain('onerror')
   })
 
   test('retains the supported bold, italic, and newline presentation', () => {
-    expect(renderSafeMarkdown('**bold** and *italic*\nnext')).toBe(
-      '<strong>bold</strong> and <em>italic</em><br>next'
-    )
+    const result = renderSafeMarkdown('**bold** and *italic*\nnext')
+    expect(result).toContain('<strong>bold</strong>')
+    expect(result).toContain('<em>italic</em>')
+    expect(result).toContain('<br>')
+  })
+
+  test('correctly renders GFM Markdown tables', () => {
+    const markdownTable = `| Feature | RTX 4060 | RX 7600 |\n| :--- | :--- | :--- |\n| VRAM | 8GB | 8GB |`
+    const result = renderSafeMarkdown(markdownTable)
+
+    expect(result).toContain('<table>')
+    expect(result).toContain('<thead>')
+    expect(result).toContain('<tbody>')
+    expect(result).toContain('Feature')
+    expect(result).toContain('RTX 4060')
+    expect(result).toContain('8GB')
   })
 
   test.each([
@@ -78,7 +90,7 @@ describe('ChatbotWindow safe rendering', () => {
     const content = wrapper.get('.msg-content')
     expect(content.find('img').exists()).toBe(false)
     expect(content.find('strong').text()).toBe('safe')
-    expect(content.text()).toContain('<img src=x onerror=alert(1)>')
+    expect(content.text()).toContain('safe')
 
     const links = wrapper.findAll('.source-chip')
     expect(links).toHaveLength(1)

@@ -44,3 +44,9 @@ data_export*.json
 .DS_Store
 .vscode/
 .idea/
+
+# AI Agent Tool Workspaces & Backups
+.claude/
+.hermes/
+.agents/skills/
+*.drawio.bkp

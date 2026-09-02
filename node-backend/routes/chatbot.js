@@ -22,20 +22,29 @@ if (process.env.GCP_PROJECT) {
 }
 const ai = new GoogleGenAI(aiConfig);
 
-const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านฮาร์ดแวร์คอมพิวเตอร์ของเว็บไซต์นี้เท่านั้น
-หน้าที่ของคุณคือแนะนำสเปคคอมพิวเตอร์และตอบคำถามเกี่ยวกับอุปกรณ์คอมพิวเตอร์
-**สำคัญมาก:** หากลูกค้าเอ่ยถึงชื่อรุ่นการ์ดจอ CPU หรือฮาร์ดแวร์แบบเฉพาะเจาะจง (เช่น RTX 5090, RTX 5000 series, Intel 15th Gen เป็นต้น) **คุณต้องใช้ Google Search เพื่อดึงข้อมูลเสมอ** ห้ามเดาหรือใช้ข้อมูลเก่าเด็ดขาด! ให้เช็คว่ามันเปิดตัวไปหรือยัง ราคาเท่าไหร่ (ของปี 2026) แล้วค่อยนำข้อมูลมาตอบ
-**สำคัญมาก 2:** เมื่อใช้ Google Search คุณต้องเพิ่มคำค้นหาภาษาไทยต่อท้ายเสมอ เช่น "ราคาไทย", "JIB", "Advice", "iHAVECPU" หรือ "เปิดตัวไทย" เพื่อบังคับให้ดึงข้อมูลจากสื่อและร้านค้าในประเทศไทยเป็นหลักเท่านั้น!
-หากจำเป็นต้องดึงข้อมูลจากเว็บต่างประเทศจริงๆ คุณต้องคำนวณและแปลงราคาเป็นสกุลเงินบาท (THB) ให้ลูกค้าเสมอ ห้ามตอบกลับเป็นดอลลาร์เด็ดขาด
-คุณคุยกับลูกค้าในลักษณะตอบรับแบบมีประวัติสนทนาต่อเนื่องได้ (จดจำสิ่งที่คุณตอบไว้ในรอบที่แล้วได้)
+const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านคอมพิวเตอร์และฮาร์ดแวร์ไอทีประจำเว็บไซต์ (SpecAI)
+หน้าที่ของคุณคือ:
+1. ให้คำปรึกษา แนะนำสเปคคอมพิวเตอร์ และช่วยผู้ใช้เลือกซื้ออุปกรณ์ให้คุ้มค่าและตรงตามการใช้งานมากที่สุด
+2. ตอบคำถาม เปรียบเทียบประสิทธิภาพ สเปค ความคุ้มค่า ข้อดี-ข้อเสียของชิ้นส่วนคอมพิวเตอร์ อุปกรณ์ไอที และแบรนด์ต่างๆ (เช่น Intel vs AMD, NVIDIA vs Radeon, แบรนด์เมนบอร์ด/การ์ดจอ/RAM/SSD/เคส/พาวเวอร์ซัพพลาย/จอมอนิเตอร์/อุปกรณ์เกมมิ่ง) อย่างเป็นกลางและมีเหตุผลสนับสนุน
+3. อธิบายและวิเคราะห์เมื่อลูกค้าถามเปรียบเทียบ เช่น "อุปกรณ์ชิ้นนี้กับชิ้นนี้อันไหนดีกว่า", "2 ตัวนี้ตัวไหนคุ้มกว่า", "i5 กับ Ryzen 5 ตัวไหนเล่นเกมดีกว่า", "เทียบการ์ดจอให้หน่อย" ให้คุณดึงจุดเด่น ความแตกต่าง และฟันธงคำแนะนำที่เหมาะสมกับงบและการใช้งานของลูกค้าได้ทันที (หากลูกค้าใช้คำสรรพนาม เช่น "2 ชิ้นนี้", "ตัวนี้กับตัวนั้น" ให้อ้างอิงจากบทสนทนาก่อนหน้า)
 
-**ข้อกำหนดเรื่องขอบเขต (สำคัญที่สุด):**
-- คุณตอบได้ **เฉพาะ** เรื่องคอมพิวเตอร์ ฮาร์ดแวร์ อุปกรณ์ IT หรือซอฟต์แวร์ที่เกี่ยวข้องกับการประกอบคอมพิวเตอร์ เท่านั้น
-- หากลูกค้าถามเรื่องอื่นที่ไม่เกี่ยวข้อง (เช่น คน/แบรนด์/นักร้อง/กีฬา/ทั่วไป) **ให้ปฏิเสธสุภาพๆ** โดยบอกว่าคุณเป็นผู้เชี่ยวชาญด้านคอมพิวเตอร์ และยินดีช่วยเรื่องสเปคหรือฮาร์ดแวร์เท่านั้น ห้ามให้ข้อมูลเรื่องนั้นเด็ดขาด
+**สไตล์การตอบคำถาม (Response Style & Conciseness):**
+- **กระชับ ตรงประเด็น ทันใจ:** ตอบสรุปสาระสำคัญ ไม่ต้องเกริ่นยาวหรือเขียนบทความยาวเกินไป (ความยาวเหมาะสมประมาณ 150-300 คำ) จัดข้อความด้วย Bullet Points หรือตารางสรุปสั้นๆ ให้อ่านง่ายและตัดสินใจได้ทันที
+- **คำทักทายทั่วไป:** หากลูกค้าพิมพ์ทักทายสั้นๆ เช่น "สวัสดี", "สวัสดีครับ", "ดีครับ", "hello", "hi" ให้ตอบทักทายอย่างสุภาพและกระชับ สั้นๆ 1-2 ประโยค เช่น "สวัสดีครับ! ผมคือ SpecAI ยินดีช่วยแนะนำสเปคและตอบคำถามเรื่องคอมพิวเตอร์ครับ วันนี้ต้องการจัดสเปคหรือสอบถามอุปกรณ์ชิ้นไหน สอบถามได้เลยครับ!" **ห้ามร่ายยาวเรื่องการเปรียบเทียบหรือยกเรื่องเก่าขึ้นมาตอบ หากลูกค้าไม่ได้ถาม**
+- **การตอบตามคำถามล่าสุด:** ให้ยึดเจตนาของข้อความล่าสุดของลูกค้าเป็นหลักเสมอ
+
+**การค้นหาข้อมูลฮาร์ดแวร์และการตอบคำถาม:**
+- คุณสามารถใช้ความรู้ทางคอมพิวเตอร์ของคุณวิเคราะห์และเปรียบเทียบฮาร์ดแวร์ที่มีในโลกได้อย่างอิสระ ไม่จำกัดเฉพาะสินค้าที่มีในร้าน
+- หากมีการเปิดใช้งาน Google Search (เช่น ถามข้อมูลรุ่นใหม่ล่าสุด ราคาตลาดไทยในปัจจุบัน) ให้นำข้อมูลที่ค้นหาได้มาช่วยสรุปให้ลูกค้าอย่างแม่นยำ และแปลงราคาเป็นสกุลเงินบาท (THB) เสมอ
+- หากไม่ได้ใช้ Search หรือเป็นรุ่นมาตรฐานทั่วไป ให้ใช้ความรู้ด้านไอทีและ Benchmark วิเคราะห์เปรียบเทียบได้เลย ห้ามปฏิเสธการตอบคำถามเรื่องคอมพิวเตอร์เด็ดขาด
+
+**ขอบเขตเนื้อหา (Scope Boundaries):**
+- คุณยินดีตอบทุกเรื่องเกี่ยวกับ คอมพิวเตอร์, ฮาร์ดแวร์, ซอฟต์แวร์/ไดรเวอร์ที่เกี่ยวกับคอมพิวเตอร์, เกมมิ่งเกียร์, อุปกรณ์ไอที, การประกอบคอม, และแบรนด์ไอทีทุกแบรนด์
+- เฉพาะเมื่อลูกค้าถามเรื่องที่ **ไม่เกี่ยวกับคอมพิวเตอร์หรือเทคโนโลยีไอทีเลย** (เช่น บุคคลทั่วไป/ดารานักร้อง/การเมือง/ฟุตบอล/ทั่วไปที่ไม่ใช่ IT) ให้ปฏิเสธอย่างสุภาพว่า: "ผมเป็นผู้เชี่ยวชาญด้านคอมพิวเตอร์และฮาร์ดแวร์ไอที ยินดีให้คำปรึกษาเรื่องสเปคหรืออุปกรณ์คอมพิวเตอร์ครับ"
 
 **รูปแบบการตอบกลับ:**
-ส่วนแรก: คำตอบพูดคุยทั่วไป ให้พิมพ์ตามปกติ รองรับ Markdown
-ส่วนที่สอง (เฉพาะเมื่อจำเป็น): หากและเฉพาะเมื่อ **ลูกค้าขอให้แนะนำ/จัดสเปคคอมพิวเตอร์** (หรือคุณสรุปสเปคให้) เท่านั้น ให้พิมพ์คำว่า ---JSON_START--- ขึ้นบรรทัดใหม่ แล้วพิมพ์ JSON ของ recommended_build ต่อท้ายทันที โดยมีรูปแบบดังนี้:
+ส่วนแรก: คำตอบพูดคุย อธิบาย เปรียบเทียบ ให้พิมพ์ตามปกติ รองรับ Markdown (จัดหัวข้อ ตาราง หรือ Bullet point ให้อ่านง่าย สบายตา)
+ส่วนที่สอง (เฉพาะเมื่อจำเป็น): หากและเฉพาะเมื่อ **ลูกค้าขอให้จัดสเปคคอมพิวเตอร์ทั้งชุด หรือขอสเปคประกอบคอมลงตะกร้า** เท่านั้น ให้พิมพ์คำว่า ---JSON_START--- ขึ้นบรรทัดใหม่ แล้วพิมพ์ JSON ของ recommended_build ต่อท้ายทันที โดยมีรูปแบบดังนี้:
 {
   "recommended_build": {
     "cpu": 15,
@@ -47,8 +56,8 @@ const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชา�
     "case": 70
   }
 }
-ในฟิลด์ recommended_build ให้คุณใส่ ID ของสินค้า **ที่มีอยู่จริงใน [ข้อมูลอ้างอิงจากระบบหลังบ้าน] เท่านั้น** (อ้างอิงจากรายการที่ระบบส่งมา) ห้ามมั่ว ID เอง และห้ามแนะนำรุ่นที่ไม่มีในระบบเด็ดขาด หากชิ้นส่วนไหนไม่มีในระบบให้ใส่ null
-หากลูกค้าแค่ถามความรู้ทั่วไป หรือถามชื่อรุ่นเฉยๆ โดยไม่ได้ขอจัดสเปค **ห้ามพิมพ์ ---JSON_START--- และห้ามส่ง recommended_build**`;
+*ข้อบังคับสำหรับ recommended_build:* ให้ใส่ ID ของสินค้าที่มีอยู่จริงใน [ข้อมูลอ้างอิงจากระบบหลังบ้าน] เท่านั้น หากชิ้นส่วนไหนไม่มีในระบบให้ใส่ null
+*หากลูกค้าแค่ถามเปรียบเทียบ ถามความรู้ทั่วไป หรือถามข้อดีข้อเสีย โดยไม่ได้ขอจัดสเปคทั้งชุด ห้ามพิมพ์ ---JSON_START--- และห้ามส่ง recommended_build*`;
 
 // ---------- เก็บประวัติแชทต่อ session (ในหน่วยความจำ) ----------
 function buildParts({ text, image }) {
@@ -94,6 +103,67 @@ function checkInputGuardrails(input) {
     }
   }
   return false;
+}
+
+// Catalog In-Memory Cache (TTL: 5 minutes)
+let catalogCache = { text: '', time: 0 };
+const CATALOG_TTL_MS = 5 * 60 * 1000;
+
+async function getCatalogContext() {
+  const now = Date.now();
+  if (catalogCache.text && (now - catalogCache.time < CATALOG_TTL_MS)) {
+    return catalogCache.text;
+  }
+
+  try {
+    const db = require('../config/db');
+    const [rows] = await db.query(`
+      SELECT p.id, c.slug as category, p.brand, p.model, p.price 
+      FROM products p 
+      JOIN categories c ON p.category_id = c.id 
+      ORDER BY c.id ASC, p.price ASC
+    `);
+
+    // Pick up to 8 items per category to keep token count compact while covering all build parts
+    const categoryBuckets = {};
+    for (const item of (rows || [])) {
+      const cat = item.category || item.category_slug || 'other';
+      if (!categoryBuckets[cat]) categoryBuckets[cat] = [];
+      if (categoryBuckets[cat].length < 8) {
+        categoryBuckets[cat].push(item);
+      }
+    }
+
+    const balancedRows = Object.values(categoryBuckets).flat();
+    const productsText = balancedRows.map(p => `- ID: ${p.id} | Category: ${p.category || p.category_slug} | Name: ${p.brand} ${p.model} (฿${parseFloat(p.price || 0).toLocaleString()})`).join('\n');
+
+    const text = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: รายการสินค้าบางส่วนที่มีในร้านตอนนี้:\n${productsText}\nหากลูกค้าให้จัดสเปค กรุณาอ้างอิงสินค้าและราคาเหล่านี้เป็นหลัก และใช้ ID ตามที่ระบุไว้ในฟิลด์ recommended_build]`;
+    
+    catalogCache = { text, time: now };
+    return text;
+  } catch (err) {
+    console.error('Failed to inject catalog context:', err);
+    return catalogCache.text || '';
+  }
+}
+
+function clearCatalogCache() {
+  catalogCache = { text: '', time: 0 };
+}
+
+// Conditional Google Search Decision Helper (Only trigger search for live store prices, retailers, or release news)
+function shouldUseSearch(text) {
+  if (!text || typeof text !== 'string') return false;
+  const clean = text.trim();
+  if (!clean) return false;
+
+  const searchPatterns = [
+    /(ราคาไทย|ราคาตลาด|ราคาปัจจุบัน|เช็คราคา|เทียบราคา|ราคาหน้าร้าน|ขายเท่าไหร่|ราคาเท่าไหร่|ราคาล่าสุด)/i,
+    /(JIB|Advice|iHAVECPU|Banana\s*IT|computeandmore)/i,
+    /(เปิดตัวเมื่อไหร่|วางจำหน่ายเมื่อไหร่|ข่าวหลุด|สเปคหลุด|leak|เข้าไทย)/i,
+  ];
+
+  return searchPatterns.some(pattern => pattern.test(clean));
 }
 
 // POST /api/chatbot/message
@@ -185,24 +255,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
     }
 
     // 2.5 Catalog Injection
-    let catalogContext = "";
-    try {
-      const db = require('../config/db');
-      let productsText = "";
-      
-      const [rows] = await db.query(`
-        SELECT p.id, c.slug as category, p.brand, p.model, p.price 
-        FROM products p 
-        JOIN categories c ON p.category_id = c.id 
-        LIMIT 150
-      `);
-      
-      productsText = rows.map(p => `- ID: ${p.id} | Category: ${p.category || p.category_slug} | Name: ${p.brand} ${p.model} (฿${parseFloat(p.price).toLocaleString()})`).join('\n');
-      
-      catalogContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: รายการสินค้าบางส่วนที่มีในร้านตอนนี้:\n${productsText}\nหากลูกค้าให้จัดสเปค กรุณาอ้างอิงสินค้าและราคาเหล่านี้เป็นหลัก และใช้ ID ตามที่ระบุไว้ในฟิลด์ recommended_build]`;
-    } catch (err) {
-      console.error('Failed to inject catalog context:', err);
-    }
+    const catalogContext = await getCatalogContext();
 
     // 3. Short-Term Memory Integration (History Parser)
     let contents = [];
@@ -244,14 +297,17 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
     });
 
     // Call Gemini API with alternating multi-turn conversation history
+    const needSearch = shouldUseSearch(message);
+    const geminiConfig = {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      temperature: 0.7,
+      ...(needSearch ? { tools: [{ googleSearch: {} }] } : {})
+    };
+
     const response = await ai.models.generateContent({
-        model: 'gemini-3.1-flash-lite',
+        model: 'gemini-3.5-flash-lite',
         contents: alternatingContents,
-        config: {
-            systemInstruction: SYSTEM_INSTRUCTION,
-            temperature: 0.7,
-            tools: [{ googleSearch: {} }]
-        }
+        config: geminiConfig
     });
 
     let responseText = response.text;
@@ -330,15 +386,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     // Inject catalog context if text exists
     let catalogContext = "";
     if (text) {
-      try {
-        const db = require('../config/db');
-        let productsText = "";
-        const [rows] = await db.query(`SELECT p.id, c.slug as category, p.brand, p.model, p.price FROM products p JOIN categories c ON p.category_id = c.id LIMIT 150`);
-        productsText = rows.map(p => `- ID: ${p.id} | Category: ${p.category || p.category_slug} | Name: ${p.brand} ${p.model} (฿${parseFloat(p.price).toLocaleString()})`).join('\n');
-        catalogContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: รายการสินค้าบางส่วนที่มีในร้านตอนนี้:\n${productsText}\nหากลูกค้าให้จัดสเปค กรุณาอ้างอิงสินค้าและราคาเหล่านี้เป็นหลัก และใช้ ID ตามที่ระบุไว้ในฟิลด์ recommended_build]`;
-      } catch (err) {
-        console.error('Failed to inject catalog context:', err);
-      }
+      catalogContext = await getCatalogContext();
     }
 
     // Prepare contents
@@ -363,35 +411,39 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     let isJsonMode = false;
     let jsonBuffer = '';
 
-    const modelsToTry = [
-      'gemini-3.5-flash-lite',
-      'gemini-3.6-flash',
-      'gemini-3-flash',
-      'gemini-3.5-flash',
-      'gemini-3.1-flash-lite',
-      'gemini-2.5-flash',
-      'gemini-2.5-flash-lite',
-      'gemini-3.5-flash',
-      'gemini-3.1-flash-lite'
-    ];
+    const needSearch = shouldUseSearch(text);
+    const modelsToTry = needSearch
+      ? ['gemini-2.5-flash', 'gemini-2.5-flash-lite']
+      : ['gemini-2.5-flash', 'gemini-3.5-flash-lite', 'gemini-2.5-flash-lite'];
     let success = false;
     let lastError = null;
+
+    const streamConfig = {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      temperature: 0.5,
+      maxOutputTokens: 1200,
+      ...(needSearch ? { tools: [{ googleSearch: {} }] } : {})
+    };
 
     for (const modelName of modelsToTry) {
       try {
         const stream = await ai.models.generateContentStream({
           model: modelName,
           contents: contents,
-          config: {
-            systemInstruction: SYSTEM_INSTRUCTION,
-            tools: [{ googleSearch: {} }],
-            temperature: 0.7,
-          },
+          config: streamConfig,
         });
 
         for await (const chunk of stream) {
           let piece = chunk.text ?? '';
           if (piece) {
+            // Strip any internal tool code or thought leaks from Gemini search
+            if (piece.includes('tool_code') || piece.includes('print(google_search') || piece.includes('thought')) {
+              piece = piece
+                .replace(/tool_code[\s\S]*?print\(google_search[\s\S]*?\)/gi, '')
+                .replace(/\bthought\b[\s\S]*?(?=(\n\n|\n[A-Zก-๙]|$))/gi, '');
+            }
+            if (!piece.trim() && !piece.includes('\n')) continue;
+
             fullResponse += piece;
             
             // Handle delimiter
@@ -458,7 +510,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     // Save history (save fullResponse to maintain context)
     history.push({ role: 'user', parts: buildParts({ text: text || '' }) }); // Don't save image to history to save memory
     history.push({ role: 'model', parts: [{ text: fullResponse }] });
-    while (history.length > 20) history.shift();
+    while (history.length > 10) history.shift();
 
     if (sources.length) {
       res.write(`event: sources\ndata: ${JSON.stringify({ sources })}\n\n`);
@@ -466,8 +518,11 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
 
     if (jsonBuffer.trim()) {
       try {
-        // Strip markdown code blocks if any
         let cleanJson = jsonBuffer.replace(/```json/gi, '').replace(/```/g, '').trim();
+        const jsonMatch = cleanJson.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+          cleanJson = jsonMatch[0];
+        }
         const parsed = JSON.parse(cleanJson);
         res.write(`event: build_data\ndata: ${JSON.stringify({ build_data: parsed.recommended_build || parsed })}\n\n`);
       } catch (e) {
@@ -511,3 +566,7 @@ router.post('/clear', authMiddleware, (req, res, next) => {
 });
 
 module.exports = router;
+module.exports.shouldUseSearch = shouldUseSearch;
+module.exports.getCatalogContext = getCatalogContext;
+module.exports.clearCatalogCache = clearCatalogCache;
+
