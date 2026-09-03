@@ -1037,7 +1037,7 @@ const executeConfirm = async () => {
 .admin-row-actions { display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
 .admin-row-action {
   display: inline-flex; align-items: center; justify-content: center;
-  min-width: 3.5rem; min-height: 32px; padding: 0.25rem 0.6rem; font-size: 0.8rem;
+  width: 4.5rem; min-height: 32px; padding: 0.25rem 0.6rem; font-size: 0.8rem;
 }
 .admin-category-select { width: 200px; }
 .operations-header {

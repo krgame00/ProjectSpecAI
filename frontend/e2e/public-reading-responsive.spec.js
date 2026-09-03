@@ -90,14 +90,10 @@ for (const viewport of [
     await tabTo(page, articleLink)
     await expect(articleLink).toBeFocused()
     await expect.poll(() => articleLink.evaluate(element => element.matches(':focus-visible'))).toBe(true)
-    const focus = await articleLink.evaluate(element => {
-      const styles = getComputedStyle(element)
-      return {
-        outlineStyle: styles.outlineStyle,
-        outlineWidth: Number.parseFloat(styles.outlineWidth)
-      }
-    })
-    expect(focus.outlineStyle).toBe('solid')
+    await expect.poll(() => articleLink.evaluate(element => getComputedStyle(element).outlineStyle)).toBe('solid')
+    const focus = await articleLink.evaluate(element => ({
+      outlineWidth: Number.parseFloat(getComputedStyle(element).outlineWidth)
+    }))
     expect(focus.outlineWidth).toBeGreaterThan(0)
     await page.keyboard.press('Enter')
 
