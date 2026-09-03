@@ -1,0 +1,38 @@
+[
+  {
+    "badge": [110, 75],
+    "target": [182, 75],
+    "num": 1,
+    "label": "หัวข้อหน้าคลังบทความและข่าวสารฮาร์ดแวร์ (Articles Hub Header)"
+  },
+  {
+    "badge": [110, 135],
+    "target": [189, 135],
+    "num": 2,
+    "label": "ป้ายไฮไลต์ 'ล่าสุด' (Featured / Latest Article Badge)"
+  },
+  {
+    "badge": [110, 260],
+    "target": [182, 260],
+    "num": 3,
+    "label": "ภาพหน้าปกบทความเด่น (High-Definition Cover Image)"
+  },
+  {
+    "badge": [900, 235],
+    "target": [825, 235],
+    "num": 4,
+    "label": "ชื่อบทความและเนื้อหาย่อ (Article Title & Excerpt)"
+  },
+  {
+    "badge": [900, 310],
+    "target": [650, 310],
+    "num": 5,
+    "label": "ปุ่ม 'อ่านต่อ →' (Read More) - คลิกเพื่ออ่านเนื้อหาฉบับเต็ม"
+  },
+  {
+    "badge": [900, 455],
+    "target": [835, 455],
+    "num": 6,
+    "label": "คลังบทความอื่นๆ ทั้งหมดในระบบ (Articles Grid Catalog)"
+  }
+]
