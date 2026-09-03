@@ -95,7 +95,7 @@ for (const viewport of [
       outlineWidth: Number.parseFloat(getComputedStyle(element).outlineWidth)
     }))
     expect(focus.outlineWidth).toBeGreaterThan(0)
-    await page.keyboard.press('Enter')
+    await articleLink.press('Enter')
 
     await expect(page).toHaveURL(/\/article\/7$/)
     await expect(page.getByRole('heading', { level: 1 })).toContainText('คู่มือจัดสเปค')

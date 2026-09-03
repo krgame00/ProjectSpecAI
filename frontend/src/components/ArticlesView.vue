@@ -321,7 +321,9 @@ const markCoverFailed = article => failedCovers.value.set(article.id, articleIma
   padding-top: var(--space-xl);
 }
 
+.hero-article:focus,
 .hero-article:focus-visible,
+.article-card:focus,
 .article-card:focus-visible {
   border-color: var(--primary);
   outline: 2px solid var(--primary);
