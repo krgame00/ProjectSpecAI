@@ -32,6 +32,7 @@ export default defineConfig({
         PORT: backendPort,
         JWT_SECRET: process.env.JWT_SECRET || 'pcspec_test_secret_2026',
         AUTH_RATE_LIMIT_MAX: '1000',
+        ALLOW_MOCK_DB: 'true',
       },
     },
     {

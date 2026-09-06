@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia'
+import { API_BASE } from '../services/apiBase'
 
 export const useCatalogStore = defineStore('catalog', {
   state: () => ({
     hardwareList: {},
-    isLoading: false
+    isLoading: false,
+    error: null
   }),
   getters: {
     getCategorizedHardware: (state) => {
@@ -14,14 +16,17 @@ export const useCatalogStore = defineStore('catalog', {
   actions: {
     async fetchCatalog() {
       this.isLoading = true
+      this.error = null
       try {
-        const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
         const res = await fetch(`${API_BASE}/hardware/catalog`)
-        if (res.ok) {
-          this.hardwareList = await res.json()
+        if (!res.ok) {
+          throw new Error(`โหลดข้อมูลฮาร์ดแวร์ไม่สำเร็จ (${res.status})`)
         }
+        this.hardwareList = await res.json()
+        return true
       } catch (err) {
-        console.error(err)
+        this.error = err?.message || 'ไม่สามารถโหลดข้อมูลอุปกรณ์ได้ กรุณาตรวจสอบการเชื่อมต่อ'
+        return false
       } finally {
         this.isLoading = false
       }

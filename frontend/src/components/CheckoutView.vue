@@ -131,6 +131,7 @@ import { ref, reactive, computed, nextTick, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBuilderStore } from '../stores/builder';
 import { useToastStore } from '../stores/toast';
+import { API_BASE } from '../services/apiBase';
 
 const props = defineProps({
   categories: Array, catalog: Object, currentUser: Object
@@ -176,7 +177,6 @@ const handlePlaceOrder = async () => {
   
   isSubmitting.value = true;
   try {
-    const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3000/api/v1');
     const response = await fetch(`${API_BASE}/orders`, {
       method: 'POST',
       headers: {

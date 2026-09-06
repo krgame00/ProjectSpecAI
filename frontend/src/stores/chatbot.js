@@ -2,8 +2,7 @@ import { defineStore } from 'pinia'
 import { useBuilderStore } from './builder'
 import { useCatalogStore } from './catalog'
 import { useAuthStore } from './auth'
-
-const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1')
+import { API_BASE } from '../services/apiBase'
 
 export const useChatbotStore = defineStore('chatbot', {
   state: () => ({

@@ -2,8 +2,8 @@ import router from '../router'
 import { useAuthStore } from '../stores/auth'
 import { useToastStore } from '../stores/toast'
 
-export const API_BASE = import.meta.env.VITE_API_BASE
-  || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1')
+import { API_BASE } from './apiBase'
+export { API_BASE }
 
 export class AdminApiError extends Error {
   constructor(message, status = 0, sessionExpired = false) {

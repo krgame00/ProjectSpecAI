@@ -86,6 +86,7 @@ jobs:
         working-directory: frontend
         env:
           JWT_SECRET: pcspec_test_secret_2026
+          ALLOW_MOCK_DB: "true"
 
       - name: Upload test results
         if: failure()

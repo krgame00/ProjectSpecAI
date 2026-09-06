@@ -14,9 +14,9 @@ async function seedAdmin() {
     process.exit(0);
   }
 
-  const email = 'admin@pc.com';
-  const name = 'Admin Ploy';
-  const password = 'admin'; // simple password for testing
+  const email = process.env.SEED_ADMIN_EMAIL || 'admin@pc.com';
+  const name = process.env.SEED_ADMIN_NAME || 'Admin';
+  const password = process.env.SEED_ADMIN_PASSWORD || 'ChangeMeImmediately!';
 
   try {
     const existingAdmin = await userModel.findByEmail(email);

@@ -5,10 +5,10 @@ require('dotenv').config();
 
 async function run() {
   const conn = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '1234',
-    database: 'smart_pc_builder'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'smart_pc_builder'
   });
 
   // Get items that still have pollinations URLs or no URL
