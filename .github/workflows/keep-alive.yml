@@ -1,0 +1,31 @@
+name: Render Keep-Alive Heartbeat
+
+on:
+  schedule:
+    # Run every 14 minutes to prevent Render free-tier from spinning down (15-min idle timeout)
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Allows manual trigger from the GitHub Actions tab
+
+jobs:
+  heartbeat:
+    name: Ping Backend Health Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Ping Render Backend Health Endpoint
+        run: |
+          echo "💓 Sending heartbeat ping to Render backend..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" https://projectspecai.onrender.com/api/v1/health)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+
+          echo "Response Body: $BODY"
+          echo "HTTP Status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 400 ]; then
+            echo "✅ Backend is awake and responsive!"
+          else
+            echo "⚠️ Backend returned status $HTTP_STATUS"
+            exit 1
+          fi
