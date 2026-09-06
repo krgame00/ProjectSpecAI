@@ -1,0 +1,253 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="หน้า-1" id="DNypoOTQxFfE0xn5rN2Z">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VfiaPWfbuckK55EgoYN1-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="70" width="150" x="525" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-2" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="160" width="175" x="512.5" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-23" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-4" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="705" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-21" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-5" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="300" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-24" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-6" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="705" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-7" parent="1" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="200" x="295" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-25" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-8" parent="1" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="705" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-9" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="120" x="325" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-26" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-10" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="705" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-32" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-12" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="505" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-33" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-13" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="505" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-14" parent="1" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontFamily=TH SarabunPSK;" value="" vertex="1">
+          <mxGeometry height="80" width="190" x="505" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-15" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="605" y="120" as="sourcePoint" />
+            <mxPoint x="595" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-18" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.462;entryY=-0.025;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.316;exitY=0.771;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=TH SarabunPSK;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="555.04" y="278.6399999999999" as="sourcePoint" />
+            <mxPoint x="375.02" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-19" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-2" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.773;exitY=0.749;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="765.02" y="259.9999999999999" as="sourcePoint" />
+            <mxPoint x="585" y="431.36" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-27" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-9" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=classic;startFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-8" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="645" y="680" as="sourcePoint" />
+            <mxPoint x="695" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-28" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-9" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=classic;startFill=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="385" y="730" as="sourcePoint" />
+            <mxPoint x="435" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-31" edge="1" parent="1" source="VfiaPWfbuckK55EgoYN1-7" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=none;startFill=0;endFill=1;fontFamily=TH SarabunPSK;" target="VfiaPWfbuckK55EgoYN1-12" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="525" y="700" as="sourcePoint" />
+            <mxPoint x="575" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=TH SarabunPSK;fontStyle=1;fontSize=20;" value="MySQL" vertex="1">
+          <mxGeometry height="30" width="60" x="355" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="เริ่มใช้งานระบบ" vertex="1">
+          <mxGeometry height="30" width="90" x="555" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VfiaPWfbuckK55EgoYN1-37" parent="1" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;html=1;autosizeText=0;fontStyle=1" value="เลือกโหมด&lt;br&gt;การใช้งาน" vertex="1">
+          <mxGeometry height="60" width="110" x="545" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="จัดเอง" vertex="1">
+          <mxGeometry height="50" width="70" x="420" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="ใช้ AI ช่วย" vertex="1">
+          <mxGeometry height="50" width="70" x="720" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="เปิดหน้าต่างแชตบอตอัจฉริยะ" vertex="1">
+          <mxGeometry height="50" width="180" x="710" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="พิมพ์ระบุงบประมาณ" vertex="1">
+          <mxGeometry height="50" width="180" x="710" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="เลือกจัดสเปคด้วยตนเอง" vertex="1">
+          <mxGeometry height="50" width="180" x="305" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="ระบบดึงข้อมูลแคตตาล็อก" vertex="1">
+          <mxGeometry height="50" width="180" x="305" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="AI วิเคราะห์ความต้องการ" vertex="1">
+          <mxGeometry height="50" width="180" x="710" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;fontFamily=TH SarabunPSK;fontStyle=1" value="แชตบอตตอบกลับชุดสเปค&lt;div&gt;ที่แนะนำพร้อมราคา&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="180" x="710" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontFamily=TH SarabunPSK;fontStyle=1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;เลือกอุปกรณ์ลงตาราง&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="180" x="510" y="865" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontFamily=TH SarabunPSK;fontStyle=1;autosizeText=0;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;ระบบตรวจสอบความเข้ากันได้และคำนวณราคาทันที&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="180" x="510" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="TBtPL2qB81Jt72Vfrfo2-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=14;fontFamily=TH SarabunPSK;fontStyle=1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;สรุปสเปคและประมาณราคารวม&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="180" x="510" y="1075" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="BOWihtSKedjwbVZvfZT4" name="หน้า-2">
+    <mxGraphModel dx="1664" dy="921" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;flowchart LR\n    %% กำหนด Actors ทั้ง 3 ตัว\n    User((🧑‍💻 ผู้ใช้งานทั่วไป))\n    AI((🤖 แชตบอตอัจฉริยะ))\n    Admin((👨‍🔧 ผู้ดูแลระบบ))\n\n    %% ขอบเขตของระบบ (System Boundary)\n    subgraph System[ระบบจัดสเปคคอมพิวเตอร์ PCSpec]\n        direction TB\n        \n        %% Use Cases ฝั่งผู้ใช้งานทั่วไป\n        UC1([เลือกอุปกรณ์คอมพิวเตอร์])\n        UC2([ตรวจสอบราคา])\n        UC3([สนทนากับแชตบอตเพื่อขอคำแนะนำสเปค])\n        UC4([บันทึก/สั่งพิมพ์ใบเสนอราคา])\n        \n        %% Use Cases ฝั่งแชตบอตอัจฉริยะ\n        UC5([รับข้อมูลความต้องการ])\n        UC6([วิเคราะห์ความเข้ากันได้ของอุปกรณ์])\n        UC7([นำเสนอสเปคตามงบประมาณ])\n        \n        %% Use Cases ฝั่งผู้ดูแลระบบ\n        UC8([จัดการข้อมูลอุปกรณ์คอมพิวเตอร์ \\n เพิ่ม/ลบ/แก้ไข])\n    end\n\n    %% โยงเส้นความสัมพันธ์จาก User ไปหา Use Case\n    User --&gt; UC1\n    User --&gt; UC2\n    User --&gt; UC3\n    User --&gt; UC4\n\n    %% โยงเส้นความสัมพันธ์จาก AI Chatbot ไปหา Use Case\n    AI --&gt; UC5\n    AI --&gt; UC6\n    AI --&gt; UC7\n\n    %% โยงเส้นความสัมพันธ์จาก Admin ไปหา Use Case\n    Admin --&gt; UC8\n\n    %% โยงความสัมพันธ์ระหว่างการแชตของ User กับการรับข้อมูลของ AI\n    UC3 -.-&gt;|ส่งข้อมูลให้| UC5\n    UC7 -.-&gt;|แสดงผลให้| User\n\n    %% ตกแต่งสีสันให้สวยงาม\n    classDef default fill:#ffffff,stroke:#333,stroke-width:1.5px;\n    style System fill:#f8f9fa,stroke:#adb5bd,stroke-width:2px,stroke-dasharray: 5 5;&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="OPZ5X1FypB6SE7KS_2Qo-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;fontColor=#000000;" vertex="1">
+            <mxGeometry height="620" width="1666" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Smart PC Specification and Price Estimation System with AI Spec Chatbot&lt;div&gt;ForgeLabs&lt;/div&gt;" mermaidId="n:System" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=#f8f9fa;strokeColor=#adb5bd;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;dashed=1;dashPattern=5 5;fixDash=1;" mermaidBaseValue="ระบบจัดสเปคคอมพิวเตอร์ PCSpec" id="OPZ5X1FypB6SE7KS_2Qo-2">
+          <mxCell parent="OPZ5X1FypB6SE7KS_2Qo-1" style="html=1;whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=#f8f9fa;strokeColor=#adb5bd;fontColor=#000000;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;dashed=1;dashPattern=5 5;fixDash=1;" vertex="1">
+            <mxGeometry height="440" width="870" x="190" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-35" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;นำเสนอสเปคตามงบประมาณ&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="138.69" x="61.31" y="243.78" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-60" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;เลือกอุปกรณ์คอมพิวเตอร์&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="119.86257928118393" x="259.3269525532607" y="79.99999999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-61" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;วิเคราะห์ความเข้ากันได้ของอุปกรณ์&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90.37" width="167.89" x="52.11" y="139.63" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-25" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;บันทึก/พิมพ์&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;ใบเสนอราคา&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="133.84615384615384" x="360.00384615384615" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-58" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;สนทนากับแชตบอต&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;เพื่อขอคำแนะนำสเปค&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="179.43" x="350.57" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-59" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;ตรวจสอบราคา&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="143.28400281888653" x="350.5673502466526" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-33" parent="OPZ5X1FypB6SE7KS_2Qo-2" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;" value="&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;จัดการข้อมูลอุปกรณ์คอมพิวเตอร์&lt;/span&gt;&lt;br style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Trebuchet MS&amp;quot;, Verdana, Arial, sans-serif; font-size: 16px;&quot;&gt;เพิ่ม/ลบ/แก้ไข&lt;/span&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="600" y="170" as="geometry" />
+        </mxCell>
+        <UserObject label="" mermaidId="e:User-&gt;UC1#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.61;exitY=0;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-15">
+          <mxCell edge="1" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-60">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="470" y="490" as="sourcePoint" />
+              <mxPoint x="871" y="105.93510638297869" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:User-&gt;UC2#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.65;exitY=0;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-16">
+          <mxCell edge="1" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;curved=1;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-59">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="470" y="260" />
+              </Array>
+              <mxPoint x="490" y="480" as="sourcePoint" />
+              <mxPoint x="905" y="210.08404255319147" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:User-&gt;UC4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.8;exitY=0;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-18">
+          <mxCell edge="1" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-25">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="520" y="490" as="sourcePoint" />
+              <mxPoint x="860.9999999999998" y="418.3819148936168" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Admin-&gt;UC8#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.13;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-22">
+          <mxCell edge="1" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);entryX=0.5;entryY=1;rounded=0;entryDx=0;entryDy=0;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-33">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="850" y="480" as="sourcePoint" />
+              <mxPoint x="1235" y="418.3819148936168" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-27" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#000000;" value="User" vertex="1">
+          <mxGeometry height="110" width="55" x="470" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-28" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#000000;" value="Admin" vertex="1">
+          <mxGeometry height="110" width="55" x="822.12" y="490" as="geometry" />
+        </mxCell>
+        <UserObject label="" mermaidId="e:User-&gt;UC3#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=0;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-17">
+          <mxCell edge="1" parent="OPZ5X1FypB6SE7KS_2Qo-1" style="startArrow=none;endArrow=block;strokeColor=light-dark(#333333,#cccccc);entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-58">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="500" y="474.84" as="sourcePoint" />
+              <mxPoint x="818" y="314.23297872340424" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <mxCell id="OPZ5X1FypB6SE7KS_2Qo-26" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#000000;" value="Spec AI" vertex="1">
+          <mxGeometry height="110" width="55" x="100.18" y="190" as="geometry" />
+        </mxCell>
+        <UserObject label="" mermaidId="e:AI-&gt;UC7#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.89;exitY=1;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-21">
+          <mxCell edge="1" parent="1" source="OPZ5X1FypB6SE7KS_2Qo-26" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);entryX=-0.004;entryY=0.374;rounded=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-35">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="160" y="160" as="sourcePoint" />
+              <mxPoint x="265" y="314.23297872340424" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:AI-&gt;UC6#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.74;entryX=0;entryY=0.51;" mermaidBaseValue="" id="OPZ5X1FypB6SE7KS_2Qo-20">
+          <mxCell edge="1" parent="1" source="OPZ5X1FypB6SE7KS_2Qo-26" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=#000000;" target="OPZ5X1FypB6SE7KS_2Qo-61">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="160" y="150" as="sourcePoint" />
+              <mxPoint x="245" y="210.08404255319147" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
