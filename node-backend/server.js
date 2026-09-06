@@ -31,8 +31,38 @@ const authRateLimitMax = Number.isInteger(configuredAuthRateLimitMax) && configu
 // Trust reverse proxy (Railway, Vercel, etc.) for correct IP in rate limiting
 app.set('trust proxy', 1);
 
+// CORS Configuration
+const defaultAllowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:4173',
+  'http://localhost:3000'
+];
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map((o) => o.trim())
+  : defaultAllowedOrigins;
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow non-browser requests (e.g. mobile apps, curl, server-to-server, tests)
+    if (!origin) return callback(null, true);
+    // In development / test environment, allow local and dev origins
+    if (process.env.NODE_ENV !== 'production') {
+      return callback(null, true);
+    }
+    if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
+      return callback(null, true);
+    }
+    return callback(new Error('Blocked by CORS policy: origin not allowed'));
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '20mb' }));
 
 // --- Rate Limiting ---

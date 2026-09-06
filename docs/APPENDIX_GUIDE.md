@@ -14,15 +14,15 @@
 | ลำดับภาพ | ชื่อภาพในเล่มรายงาน | ไฟล์ต้นทางในระบบ | หน้าที่และความสำคัญทางเทคนิค |
 | :---: | :--- | :--- | :--- |
 | **รูปที่ จ-1** | โครงสร้างสถาปัตยกรรมไดเรกทอรีของโปรเจกต์ | `Project Directory Tree` | แสดงภาพรวมการแยกส่วน Frontend, Backend และ Database |
-| **รูปที่ จ-2** | โครงสร้างตารางฐานข้อมูล MySQL | `database/schema.sql` | DDL กำหนด Schema ของ users, hardware, orders, articles |
-| **รูปที่ จ-3** | การตั้งค่าและการเรียกใช้ RESTful API | `backend/server.js` | จุดเริ่มต้นของเซิร์ฟเวอร์ Express, CORS, และ API Routes |
-| **รูปที่ จ-4** | มิดเดิลแวร์ตรวจสิทธิ์ความปลอดภัย JWT | `backend/middleware/auth.js` | ระบบถอดรหัส Token และตรวจสอบระดับสิทธิ์การเข้าถึง |
-| **รูปที่ จ-5** | ตัวควบคุมตรรกะระบบฮาร์ดแวร์และสต็อก | `backend/controllers/hardwareController.js` | การดึงข้อมูลแคตตาล็อก การกรองหมวดหมู่ และการอัปเดต |
-| **รูปที่ จ-6** | การประมวลผลคำสั่งซื้อและบันทึกออเดอร์ | `backend/controllers/orderController.js` | การทำ Database Transaction เพื่อบันทึกคำสั่งซื้อและรายการชิ้นส่วน |
-| **รูปที่ จ-7** | การเชื่อมต่อปัญญาประดิษฐ์แนะนำสเปก | `backend/services/geminiService.js` | การตั้งค่า Prompt และเรียกใช้ Gemini Flash สำหรับ SpecAI |
+| **รูปที่ จ-2** | โครงสร้างตารางฐานข้อมูล MySQL | `node-backend/database-schema.sql` | DDL กำหนด Schema ของ users, products, categories, orders, articles |
+| **รูปที่ จ-3** | การตั้งค่าและการเรียกใช้ RESTful API | `node-backend/server.js` | จุดเริ่มต้นของเซิร์ฟเวอร์ Express, CORS, และ API Routes |
+| **รูปที่ จ-4** | มิดเดิลแวร์ตรวจสิทธิ์ความปลอดภัย JWT | `node-backend/middleware/authMiddleware.js` | ระบบถอดรหัส Token และตรวจสอบระดับสิทธิ์การเข้าถึง |
+| **รูปที่ จ-5** | ตัวควบคุมตรรกะระบบฮาร์ดแวร์และสต็อก | `node-backend/routes/hardware.js` | การดึงข้อมูลแคตตาล็อก การกรองหมวดหมู่ และการอัปเดต |
+| **รูปที่ จ-6** | การประมวลผลคำสั่งซื้อและบันทึกออเดอร์ | `node-backend/controllers/ordersController.js` | การทำ Database Transaction เพื่อบันทึกคำสั่งซื้อและคำนวณราคาจริงจาก DB |
+| **รูปที่ จ-7** | การเชื่อมต่อปัญญาประดิษฐ์แนะนำสเปก | `node-backend/routes/chatbot.js` | การตั้งค่า Prompt และเรียกใช้ Gemini Flash สำหรับ SpecAI |
 | **รูปที่ จ-8** | การจัดการ State ส่วนกลางด้วย Pinia | `frontend/src/stores/catalog.js` | State Management จัดการแคตตาล็อกและการคำนวณราคา Real-time |
-| **รูปที่ จ-9** | ตรรกะตรวจสอบความเข้ากันได้ของอุปกรณ์ | `frontend/src/components/PCBuilderView.vue` | ฟังก์ชันเช็ค Socket CPU/Mainboard และคำนวณวัตต์ PSU |
-| **รูปที่ จ-10** | ส่วนเชื่อมต่อและรับส่งข้อมูลแชตบอต | `frontend/src/components/SpecAIChat.vue` | ฟังก์ชันการสื่อสารกับ AI และการแปลงคำตอบเป็นชิ้นส่วนในตะกร้า |
+| **รูปที่ จ-9** | ตรรกะตรวจสอบความเข้ากันได้ของอุปกรณ์ | `frontend/src/utils/compatibility.js` / `frontend/src/views/BuilderView.vue` | ฟังก์ชันเช็ค Socket CPU/Mainboard และคำนวณวัตต์ PSU |
+| **รูปที่ จ-10** | ส่วนเชื่อมต่อและรับส่งข้อมูลแชตบอต | `frontend/src/components/ChatbotWindow.vue` | ฟังก์ชันการสื่อสารกับ AI และการแปลงคำตอบเป็นชิ้นส่วนในตะกร้า |
 | **รูปที่ จ-11** | การบริหารจัดการข้อมูลและการคำนวณสถิติหลังบ้าน | `frontend/src/components/AdminDashboard.vue` | ระบบแอดมิน กราฟยอดขาย 7 วัน และการควบคุมสิทธิ์ผู้ใช้ |
 | **รูปที่ จ-12** | ระบบไปป์ไลน์ทดสอบอัตโนมัติ (CI/CD) | `.github/workflows/ci.yml` | การทดสอบโค้ดอัตโนมัติ (Quality Gate) ก่อน Deploy สู่ Production |
 
@@ -34,11 +34,11 @@
 ![Project Directory Structure](appendix_j1_project_structure.png)
 
 **คำอธิบายใต้ภาพ:**
-แสดงโครงสร้างการจัดเก็บไฟล์และโฟลเดอร์ของระบบ ForgeLabs (PCSpec) ซึ่งแบ่งออกเป็น 3 ส่วนหลัก ได้แก่ ระบบฝั่งเซิร์ฟเวอร์ (`backend/`), ระบบฝั่งหน้าบ้าน (`frontend/`), และโครงสร้างฐานข้อมูล (`database/`) อย่างเป็นสัดส่วนตามหลักการ Separation of Concerns
+แสดงโครงสร้างการจัดเก็บไฟล์และโฟลเดอร์ของระบบ ForgeLabs (PCSpec) ซึ่งแบ่งออกเป็น 3 ส่วนหลัก ได้แก่ ระบบฝั่งเซิร์ฟเวอร์ (`node-backend/`), ระบบฝั่งหน้าบ้าน (`frontend/`), และโครงสร้างฐานข้อมูล (`node-backend/database-schema.sql`) อย่างเป็นสัดส่วนตามหลักการ Separation of Concerns
 
 ---
 
-### รูปที่ จ-2: โครงสร้างตารางฐานข้อมูล MySQL (`database/schema.sql`)
+### รูปที่ จ-2: โครงสร้างตารางฐานข้อมูล MySQL (`node-backend/database-schema.sql`)
 ```sql
 -- ตารางบัญชีผู้ใช้งาน (Users)
 CREATE TABLE IF NOT EXISTS users (
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS hardware_items (
 
 ---
 
-### รูปที่ จ-3: การตั้งค่าและการเรียกใช้ RESTful API (`backend/server.js`)
+### รูปที่ จ-3: การตั้งค่าและการเรียกใช้ RESTful API (`node-backend/server.js`)
 ```javascript
 const express = require('express');
 const cors = require('cors');
@@ -97,7 +97,7 @@ app.listen(PORT, () => {
 
 ---
 
-### รูปที่ จ-4: มิดเดิลแวร์รักษาความปลอดภัยและตรวจสอบ JWT (`backend/middleware/auth.js`)
+### รูปที่ จ-4: มิดเดิลแวร์รักษาความปลอดภัยและตรวจสอบ JWT (`node-backend/middleware/authMiddleware.js`)
 ```javascript
 const jwt = require('jsonwebtoken');
 
@@ -133,7 +133,7 @@ module.exports = { verifyToken, requireAdmin };
 
 ---
 
-### รูปที่ จ-5: ตรรกะการดึงและประมวลผลข้อมูลฮาร์ดแวร์ (`backend/controllers/hardwareController.js`)
+### รูปที่ จ-5: ตรรกะการดึงและประมวลผลข้อมูลฮาร์ดแวร์ (`node-backend/routes/hardware.js`)
 ```javascript
 const db = require('../config/db');
 
@@ -154,7 +154,7 @@ exports.getCatalog = async (req, res) => {
 
 ---
 
-### รูปที่ จ-6: การประมวลผลคำสั่งซื้อและตัดสต็อก (`backend/controllers/orderController.js`)
+### รูปที่ จ-6: การประมวลผลคำสั่งซื้อและตัดสต็อก (`node-backend/controllers/ordersController.js`)
 ```javascript
 const db = require('../config/db');
 
@@ -196,7 +196,7 @@ exports.createOrder = async (req, res) => {
 
 ---
 
-### รูปที่ จ-7: การเชื่อมต่อปัญญาประดิษฐ์แนะนำสเปก (`backend/services/geminiService.js`)
+### รูปที่ จ-7: การเชื่อมต่อปัญญาประดิษฐ์แนะนำสเปก (`node-backend/routes/chatbot.js`)
 ```javascript
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
@@ -250,7 +250,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
 ---
 
-### รูปที่ จ-9: ตรรกะตรวจสอบความเข้ากันได้ของอุปกรณ์ (`frontend/src/components/PCBuilderView.vue`)
+### รูปที่ จ-9: ตรรกะตรวจสอบความเข้ากันได้ของอุปกรณ์ (`frontend/src/utils/compatibility.js` / `frontend/src/views/BuilderView.vue`)
 ```javascript
 // ฟังก์ชันตรวจสอบ Socket ระหว่าง CPU และ Mainboard
 const checkCompatibility = (cpu, mainboard) => {
@@ -273,7 +273,7 @@ const checkCompatibility = (cpu, mainboard) => {
 
 ---
 
-### รูปที่ จ-10: ส่วนเชื่อมต่อและรับส่งข้อมูลแชตบอต (`frontend/src/components/SpecAIChat.vue`)
+### รูปที่ จ-10: ส่วนเชื่อมต่อและรับส่งข้อมูลแชตบอต (`frontend/src/components/ChatbotWindow.vue`)
 ```javascript
 const sendMessage = async () => {
     if (!userInput.value.trim() || isThinking.value) return;

@@ -91,6 +91,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import { API_BASE } from '../services/apiBase';
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -104,18 +105,19 @@ const profile = ref(null);
 const loading = ref(true);
 const error = ref(null);
 const retryButtonRef = ref(null);
+const profileCardRef = ref(null);
+let retryTimer = null;
 let mounted = false;
 let activeRequestController = null;
 
 const formattedCreatedAt = computed(() => {
   if (!profile.value?.created_at) return '-';
   const date = new Date(profile.value.created_at);
-  return Number.isNaN(date.getTime())
-    ? '-'
+  if (Number.isNaN(date.getTime())) return '-';
+  return typeof Intl !== 'undefined' && Intl.DateTimeFormat
+    ? new Intl.DateTimeFormat('th-TH', { dateStyle: 'medium' }).format(date)
     : new Intl.DateTimeFormat('th-TH').format(date);
 });
-
-const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
 
 async function loadProfile({ restoreRetryFocus = false } = {}) {
   const requestToken = authStore.token;

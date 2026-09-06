@@ -284,14 +284,14 @@ npm run dev
 ```bash
 cd frontend
 npm test
-# ผลการทดสอบ: 22 Test Files passed (157 tests)
+# ผลการทดสอบ: 23 Test Files passed (165 tests)
 ```
 
 ### 2. ทดสอบฝั่ง Backend (Jest)
 ```bash
 cd node-backend
 npm test
-# ผลการทดสอบ: 8 Test Suites passed (111 tests)
+# ผลการทดสอบ: 10 Test Suites passed (128 tests)
 ```
 
 ### 3. ทดสอบการทำงานจริง End-to-End (Playwright)

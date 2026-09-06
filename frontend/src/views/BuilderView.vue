@@ -7,6 +7,15 @@
         ระบบกำลังโหลดรายการสินค้า/อุปกรณ์ กรุณารอสักครู่...
       </div>
     </div>
+
+    <!-- Error State with Retry -->
+    <div v-else-if="catalogStore.error" class="loader-wrapper error-wrapper" role="alert" data-test="catalog-error">
+      <div class="error-badge">⚠️ โหลดข้อมูลไม่สำเร็จ</div>
+      <p class="error-text">{{ catalogStore.error }}</p>
+      <button class="btn btn-primary btn-retry" type="button" @click="handleRetryCatalog" data-test="catalog-retry">
+        🔄 ลองใหม่อีกครั้ง (Retry)
+      </button>
+    </div>
     
     <div v-else class="grid-layout" :inert="isChatOpen">
       <!-- Sidebar -->
@@ -110,6 +119,10 @@ const categories = [
 
 const activeCategory = ref('cpu');
 const activeCategoryInfo = computed(() => categories.find(c => c.id === activeCategory.value));
+
+const handleRetryCatalog = async () => {
+  await catalogStore.fetchCatalog();
+};
 </script>
 
 <style scoped>
@@ -125,6 +138,36 @@ const activeCategoryInfo = computed(() => categories.find(c => c.id === activeCa
   justify-content: center;
   height: 300px;
   margin-top: 2rem;
+}
+
+.error-wrapper {
+  text-align: center;
+  gap: 1rem;
+}
+
+.error-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.875rem;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.error-text {
+  color: var(--ink);
+  font-size: 0.95rem;
+  max-width: 450px;
+  margin: 0;
+}
+
+.btn-retry {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .spinner-primary {
