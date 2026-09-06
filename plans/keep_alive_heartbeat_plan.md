@@ -61,3 +61,4 @@ git push origin main
 - [x] ไฟล์ `.github/workflows/keep-alive.yml` รูปแบบ YAML ถูกต้องตามสเปก GitHub Actions
 - [x] คำสั่ง `curl` ยิง Endpoint `/api/v1/health` ตอบกลับด้วย `HTTP 200 OK`
 - [x] Push ขึ้น branch `main` บน GitHub สำเร็จ
+- [x] ยิงทดสอบ Manual Workflow Dispatch สำเร็จเรียบร้อย (Run ID `34054728672` - Status `200 OK` ใน 3 วินาที)
