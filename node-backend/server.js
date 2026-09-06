@@ -36,29 +36,42 @@ const defaultAllowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:4173',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'https://project-spec-ai.vercel.app'
 ];
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(',').map((o) => o.trim())
-  : defaultAllowedOrigins;
+const configuredOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map((o) => o.trim()).filter(Boolean)
+  : [];
+
+const allowedOrigins = [...defaultAllowedOrigins, ...configuredOrigins];
+
+const isAllowedOrigin = (origin) => {
+  if (!origin) return true;
+  if (process.env.NODE_ENV !== 'production') return true;
+  if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) return true;
+
+  try {
+    const url = new URL(origin);
+    if (url.hostname.endsWith('.vercel.app') || url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+      return true;
+    }
+  } catch {
+    // Malformed origin
+  }
+  return false;
+};
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow non-browser requests (e.g. mobile apps, curl, server-to-server, tests)
-    if (!origin) return callback(null, true);
-    // In development / test environment, allow local and dev origins
-    if (process.env.NODE_ENV !== 'production') {
-      return callback(null, true);
-    }
-    if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
+    if (isAllowedOrigin(origin)) {
       return callback(null, true);
     }
     return callback(new Error('Blocked by CORS policy: origin not allowed'));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'X-Session-ID', 'Accept']
 };
 
 // Middleware
