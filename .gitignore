@@ -15,6 +15,8 @@ __pycache__/
 # Production Builds & Temp Output
 dist/
 build/
+coverage/
+frontend/coverage/
 *.log
 frontend/test-results/
 test-results/
@@ -50,3 +52,14 @@ data_export*.json
 .hermes/
 .agents/skills/
 *.drawio.bkp
+.*.drawio.bkp
+.*.bkp
+
+# Scratch & Dev artifacts
+node-backend/orders.json
+PCSpec.zip
+frontend/test_vercel.cjs
+frontend/test_live_vercel_benchmark.cjs
+frontend/vercel-test.png
+*.zip
+.zcode/
