@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/userModel');
+const logger = require('../utils/logger');
 
 if (!process.env.JWT_SECRET) {
   throw new Error('JWT_SECRET environment variable is required');
@@ -56,7 +57,7 @@ const authController = {
         user: { id: insertId, name, email, role: 'customer' }
       });
     } catch (error) {
-      console.error('Register Error:', error);
+      logger.error('Register Error:', error);
       res.status(500).json({ error: 'เกิดข้อผิดพลาดในการสมัครสมาชิก' });
     }
   },
@@ -91,7 +92,7 @@ const authController = {
         user: { id: user.id, name: user.name, email: user.email, role: user.role }
       });
     } catch (error) {
-      console.error('Login Error:', error);
+      logger.error('Login Error:', error);
       res.status(500).json({ error: 'เกิดข้อผิดพลาดในการเข้าสู่ระบบ' });
     }
   },
@@ -118,7 +119,7 @@ const authController = {
       const total = await userModel.getUserCount();
       res.status(200).json({ data: users, total, page, limit });
     } catch (error) {
-      console.error('Get All Users Error:', error);
+      logger.error('Get All Users Error:', error);
       res.status(500).json({ error: 'เกิดข้อผิดพลาดในการดึงข้อมูลสมาชิก' });
     }
   },
@@ -144,7 +145,7 @@ const authController = {
         res.status(404).json({ error: 'ไม่พบผู้ใช้นี้' });
       }
     } catch (error) {
-      console.error('Update Role Error:', error);
+      logger.error('Update Role Error:', error);
       res.status(500).json({ error: 'เกิดข้อผิดพลาดในการปรับเปลี่ยนสิทธิ์' });
     }
   },
@@ -165,7 +166,7 @@ const authController = {
         res.status(404).json({ error: 'ไม่พบผู้ใช้นี้' });
       }
     } catch (error) {
-      console.error('Delete User Error:', error);
+      logger.error('Delete User Error:', error);
       res.status(500).json({ error: 'เกิดข้อผิดพลาดในการลบบัญชี' });
     }
   }

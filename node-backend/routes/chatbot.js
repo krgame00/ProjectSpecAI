@@ -7,6 +7,7 @@ const {
   validateChatbotPayload,
 } = require('../middleware/chatbotSecurity');
 const { chatbotSessions } = require('../services/chatbotSessions');
+const logger = require('../utils/logger');
 
 // Initialize Gemini Client
 let aiConfig = {};
@@ -142,7 +143,7 @@ async function getCatalogContext() {
     catalogCache = { text, time: now };
     return text;
   } catch (err) {
-    console.error('Failed to inject catalog context:', err);
+    logger.error('Failed to inject catalog context:', err);
     return catalogCache.text || '';
   }
 }
@@ -250,7 +251,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
           orderContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ไม่พบออเดอร์หมายเลข ${orderId} ในระบบฐานข้อมูล ลูกค้าอาจจะพิมพ์รหัสผิด]`;
         }
       } catch (err) {
-        console.error('Failed to inject order context:', err);
+        logger.error('Failed to inject order context:', err);
       }
     }
 
@@ -329,7 +330,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
     try {
       jsonResponse = JSON.parse(jsonString);
     } catch (e) {
-      console.error("Failed to parse JSON response, falling back to raw text.");
+      logger.error("Failed to parse JSON response, falling back to raw text.");
       jsonResponse = {
         reply: responseText,
         recommended_build: null
@@ -338,7 +339,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
 
     res.json(jsonResponse);
   } catch (error) {
-    console.error('Chatbot message error:', error);
+    logger.error('Chatbot message error:', error);
     if (res.headersSent) {
       return next(error);
     }
@@ -526,7 +527,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
         const parsed = JSON.parse(cleanJson);
         res.write(`event: build_data\ndata: ${JSON.stringify({ build_data: parsed.recommended_build || parsed })}\n\n`);
       } catch (e) {
-        console.error("Failed to parse buffered JSON:", e, jsonBuffer);
+        logger.error("Failed to parse buffered JSON:", e, jsonBuffer);
       }
     }
 
@@ -536,7 +537,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
       return res.status(404).json({ error: 'Chat session not found' });
     }
 
-    console.error('Stream error:', error);
+    logger.error('Stream error:', error);
     const providerError = error.message || '';
     let errMsg = 'Chatbot service unavailable';
     if (providerError.includes('429') || providerError.includes('Too Many Requests') || providerError.includes('RESOURCE_EXHAUSTED')) {
