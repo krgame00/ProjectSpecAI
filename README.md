@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ PCSpec — Smart PC Builder & Hardware Intelligence Platform
+# ⚡ ForgeLabs — Smart PC Builder & Hardware Intelligence Platform
 
 <p align="center">
   <strong>เว็บแอปพลิเคชันจัดสเปกคอมพิวเตอร์อัจฉริยะ พร้อม AI ผู้ช่วยวิเคราะห์ความเข้ากันได้ และศูนย์รวมบทความฮาร์ดแวร์ยุค 2026</strong>
@@ -23,7 +23,7 @@
 
 ## 📌 บทนำ (Introduction)
 
-**PCSpec** ถูกพัฒนาขึ้นเพื่อแก้ปัญหาความยุ่งยากในการจัดสเปกคอมพิวเตอร์ ไม่ว่าจะเป็นปัญหาความเข้ากันไม่ได้ของฮาร์ดแวร์ (Compatibility Issues), การคำนวณกำลังไฟพาวเวอร์ซัพพลาย (PSU Wattage Calculation), ตลอดจนความสับสนในสเปกและราคา โดยการผสานระบบ **Rule-based Compatibility Engine** ร่วมกับ **SpecAI (Generative AI Assistant)** เพื่อช่วยแนะนำและตรวจทานสเปกแบบเรียลไทม์ พร้อมศูนย์รวมบทความเชิงลึกสำหรับผู้สนใจไอที
+**ForgeLabs** ถูกพัฒนาขึ้นเพื่อแก้ปัญหาความยุ่งยากในการจัดสเปกคอมพิวเตอร์ ไม่ว่าจะเป็นปัญหาความเข้ากันไม่ได้ของฮาร์ดแวร์ (Compatibility Issues), การคำนวณกำลังไฟพาวเวอร์ซัพพลาย (PSU Wattage Calculation), ตลอดจนความสับสนในสเปกและราคา โดยการผสานระบบ **Rule-based Compatibility Engine** ร่วมกับ **SpecAI (Generative AI Assistant)** เพื่อช่วยแนะนำและตรวจทานสเปกแบบเรียลไทม์ พร้อมศูนย์รวมบทความเชิงลึกสำหรับผู้สนใจไอที
 
 ---
 
@@ -120,7 +120,7 @@ graph TD
 ## 📂 โครงสร้างโปรเจกต์ (Project Structure)
 
 ```text
-PCSpec/
+ForgeLabs/
 ├── .github/workflows/          # CI/CD Workflows (Frontend, Backend, Playwright E2E)
 ├── database-export/            # เครื่องมือตรวจสอบฐานข้อมูล (database_view.html)
 ├── docs/                       # เอกสารสถาปัตยกรรม, Flowcharts, ER-Diagram
@@ -153,7 +153,7 @@ PCSpec/
 
 ## 🛠️ ปัญหาทางเทคนิคที่พบและแนวทางแก้ไข (Engineering Challenges & Solutions)
 
-ตลอดกระบวนการพัฒนาและการดูแลระบบโปรดักชันของ **PCSpec** ทีมงานได้เผชิญกับความท้าทายทางวิศวกรรมซอฟต์แวร์หลากหลายรูปแบบ ซึ่งเรายึดหลัก **Root-cause Analysis (วิเคราะห์ถึงแก่นของปัญหา)** แทนการแก้ปัญหาแบบปะผุ (Band-aid fixes) ดังนี้:
+ตลอดกระบวนการพัฒนาและการดูแลระบบโปรดักชันของ **ForgeLabs** ทีมงานได้เผชิญกับความท้าทายทางวิศวกรรมซอฟต์แวร์หลากหลายรูปแบบ ซึ่งเรายึดหลัก **Root-cause Analysis (วิเคราะห์ถึงแก่นของปัญหา)** แทนการแก้ปัญหาแบบปะผุ (Band-aid fixes) ดังนี้:
 
 ---
 

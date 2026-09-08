@@ -1,4 +1,4 @@
-# PCSpec — Smart PC Builder (Frontend)
+# ForgeLabs — Smart PC Builder (Frontend)
 
 ระบบจัดสเปคคอมพิวเตอร์อัจฉริยะพร้อม AI แนะนำ (Vue 3 + Vite)
 
