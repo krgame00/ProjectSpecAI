@@ -37,9 +37,22 @@ const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชา�
 หากไม่ได้ขอจัดสเปก ห้ามส่ง recommended_build หรือ ---JSON_START---`;
 const GUARDRAIL_MESSAGE = '⚠️ ระบบแชทบอตปฏิเสธการตอบกลับเนื่องจากตรวจพบความพยายามในการป้อนคำสั่งล้างค่าความปลอดภัยระบบ (Prompt Injection / Jailbreak Bypass) กรุณาถามคำถามเกี่ยวกับฮาร์ดแวร์คอมพิวเตอร์เท่านั้นครับ';
 const NO_CONFIG_MESSAGE = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY หรือ GCP_PROJECT ในไฟล์ `.env` ครับ';
+const FALLBACK_ORDERS = {
+  'ORD-1001': { id: 'ORD-1001', customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' },
+  'ORD-1002': { id: 'ORD-1002', customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' },
+};
 
 function hasAiConfig() {
   return Boolean(aiConfig.vertexai || (aiConfig.apiKey && !String(aiConfig.apiKey).includes('your_gemini')));
+}
+
+function routingOptions() {
+  return {
+    hybridRouting: config.features.hybridRouting,
+    fastPath: config.features.fastPath,
+    targetedCatalog: config.features.targetedCatalog,
+    liveSearch: config.features.liveSearch,
+  };
 }
 
 function buildParts({ text, image }) {
@@ -87,8 +100,7 @@ async function loadOrderContext(message, user) {
         const file = await fs.readFile(path.join(__dirname, '../orders.json'), 'utf8');
         order = JSON.parse(file).find(item => item.id === orderId);
       } catch (_error) { /* fallback may not include orders.json */ }
-      if (!order && orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
-      if (!order && orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
+      if (!order && FALLBACK_ORDERS[orderId]) order = { ...FALLBACK_ORDERS[orderId] };
     } else {
       const [rows] = await db.query('SELECT * FROM orders WHERE id = ?', [orderId]);
       if (rows?.length) {
@@ -96,8 +108,7 @@ async function loadOrderContext(message, user) {
         order = { id: row.id, customer_name: row.customer_name, assembly_type: row.assembly_type, total_price: parseFloat(row.total_price), status: row.status };
       }
     }
-    if (!order && orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
-    if (!order && orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
+    if (!order && FALLBACK_ORDERS[orderId]) order = { ...FALLBACK_ORDERS[orderId] };
     if (!order) return `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ไม่พบออเดอร์หมายเลข ${orderId} ในระบบฐานข้อมูล]`;
     const statusTh = { assembling: 'กำลังประกอบเครื่องคอมพิวเตอร์', shipped: 'จัดส่งสินค้าเรียบร้อยแล้ว', completed: 'เสร็จสิ้นคำสั่งซื้อ', pending: 'รอยืนยันคำสั่งซื้อ' }[order.status] || order.status;
     const assemblyTh = { premium: 'ประกอบพรีเมียม (จัดสายสวยงาม)', standard: 'ประกอบมาตรฐาน', none: 'นำชิ้นส่วนไปประกอบเอง' }[order.assembly_type] || order.assembly_type;
@@ -154,7 +165,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
       chatbotMetrics.finishRequest(metrics, { success: true, outputLength: GUARDRAIL_MESSAGE.length });
       return res.json({ reply: GUARDRAIL_MESSAGE, presets: [], route: 'guardrail' });
     }
-    const classification = classifyRequest(message, { hybridRouting: config.features.hybridRouting, fastPath: config.features.fastPath, targetedCatalog: config.features.targetedCatalog, liveSearch: config.features.liveSearch });
+    const classification = classifyRequest(message, routingOptions());
     metrics.route = classification.route;
     if (classification.route === 'fast') {
       const reply = await runFastPath(classification, { recentFastResponses: [], history: [], facts: {} });
@@ -211,7 +222,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     const { text, image, sessionId } = req.body;
     session = chatbotSessions.resolve(req.user.id, sessionId);
     const sid = session.id;
-    const classification = classifyRequest(text || '', { hybridRouting: config.features.hybridRouting, fastPath: config.features.fastPath, targetedCatalog: config.features.targetedCatalog, liveSearch: config.features.liveSearch });
+    const classification = classifyRequest(text || '', routingOptions());
     metrics.route = classification.route;
     if (text && checkInputGuardrails(text)) {
       if (sessionId == null) chatbotSessions.clear(req.user.id, sid);
