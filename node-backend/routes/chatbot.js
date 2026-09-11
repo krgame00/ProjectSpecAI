@@ -96,6 +96,8 @@ async function loadOrderContext(message, user) {
         order = { id: row.id, customer_name: row.customer_name, assembly_type: row.assembly_type, total_price: parseFloat(row.total_price), status: row.status };
       }
     }
+    if (!order && orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
+    if (!order && orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
     if (!order) return `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ไม่พบออเดอร์หมายเลข ${orderId} ในระบบฐานข้อมูล]`;
     const statusTh = { assembling: 'กำลังประกอบเครื่องคอมพิวเตอร์', shipped: 'จัดส่งสินค้าเรียบร้อยแล้ว', completed: 'เสร็จสิ้นคำสั่งซื้อ', pending: 'รอยืนยันคำสั่งซื้อ' }[order.status] || order.status;
     const assemblyTh = { premium: 'ประกอบพรีเมียม (จัดสายสวยงาม)', standard: 'ประกอบมาตรฐาน', none: 'นำชิ้นส่วนไปประกอบเอง' }[order.assembly_type] || order.assembly_type;
