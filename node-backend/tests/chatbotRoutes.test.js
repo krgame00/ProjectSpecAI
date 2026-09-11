@@ -280,7 +280,7 @@ describe('chatbot routes security', () => {
     expect(response.status).toBe(200);
     expect(body.route).toBe('catalog_live_search');
     expect(body.recommended_build).toMatchObject({ cpu: 101, gpu: null });
-    expect(body.sources[0]).toMatchObject({ type: 'official' });
+    expect(body.sources[0]).toMatchObject({ uri: 'https://www.amd.com/spec', title: 'AMD' });
   });
 
   test('limits live-search recovery to one additional provider attempt', async () => {
