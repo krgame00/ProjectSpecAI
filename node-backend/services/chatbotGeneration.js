@@ -37,6 +37,23 @@ function createGenerationConfig({ systemInstruction, useLiveSearch = false, temp
   return config;
 }
 
+async function runWithFallback({ config, role, invoke, onRetry }) {
+  let lastError;
+  const models = modelCandidates(config, role);
+  for (let index = 0; index < models.length; index += 1) {
+    const model = models[index];
+    try {
+      const result = await invoke(model, index);
+      return { result, model, fallbackCount: index };
+    } catch (error) {
+      lastError = error;
+      if (index >= models.length - 1 || !isRetryableProviderError(error)) throw error;
+      if (onRetry) await onRetry({ error, model, nextModel: models[index + 1], fallbackCount: index + 1 });
+    }
+  }
+  throw lastError || new Error('Chatbot provider unavailable');
+}
+
 async function generateContentWithFallback({
   ai,
   contents,
@@ -47,25 +64,17 @@ async function generateContentWithFallback({
   temperature = 0.7,
   onRetry,
 }) {
-  let lastError;
-  const models = modelCandidates(config, role);
-  for (let index = 0; index < models.length; index += 1) {
-    const model = models[index];
-    try {
-      const response = await withTimeout(ai.models.generateContent({
+  const result = await runWithFallback({
+    config,
+    role,
+    onRetry,
+    invoke: (model) => withTimeout(ai.models.generateContent({
         model,
         contents,
         config: createGenerationConfig({ systemInstruction, useLiveSearch, temperature }),
-      }), config.providerTimeoutMs);
-      return { response, model, fallbackCount: index };
-    } catch (error) {
-      lastError = error;
-      const canRetry = index < models.length - 1 && isRetryableProviderError(error);
-      if (!canRetry) throw error;
-      if (onRetry) await onRetry({ error, model, nextModel: models[index + 1], fallbackCount: index + 1 });
-    }
-  }
-  throw lastError || new Error('Chatbot provider unavailable');
+      }), config.providerTimeoutMs),
+  });
+  return { response: result.result, model: result.model, fallbackCount: result.fallbackCount };
 }
 
 async function consumeStreamWithFallback({
@@ -79,11 +88,11 @@ async function consumeStreamWithFallback({
   onChunk,
   onRetry,
 }) {
-  let lastError;
-  const models = modelCandidates(config, role);
-  for (let index = 0; index < models.length; index += 1) {
-    const model = models[index];
-    try {
+  const result = await runWithFallback({
+    config,
+    role,
+    onRetry,
+    invoke: async (model, index) => {
       const stream = await withTimeout(ai.models.generateContentStream({
         model,
         contents,
@@ -92,15 +101,10 @@ async function consumeStreamWithFallback({
       for await (const chunk of stream) {
         if (onChunk) await onChunk(chunk, { model, fallbackCount: index });
       }
-      return { model, fallbackCount: index };
-    } catch (error) {
-      lastError = error;
-      const canRetry = index < models.length - 1 && isRetryableProviderError(error);
-      if (!canRetry) throw error;
-      if (onRetry) await onRetry({ error, model, nextModel: models[index + 1], fallbackCount: index + 1 });
-    }
-  }
-  throw lastError || new Error('Chatbot provider unavailable');
+      return true;
+    },
+  });
+  return { model: result.model, fallbackCount: result.fallbackCount };
 }
 
 function responseText(response) {
@@ -141,6 +145,7 @@ module.exports = {
   withTimeout,
   modelCandidates,
   createGenerationConfig,
+  runWithFallback,
   generateContentWithFallback,
   consumeStreamWithFallback,
   responseText,
