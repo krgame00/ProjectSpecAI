@@ -6,6 +6,9 @@ import { useCatalogStore } from '../src/stores/catalog'
 describe('Builder Store Tests', () => {
   beforeEach(() => { 
     setActivePinia(createPinia())
+    // Builder selections persist between sessions; isolate each test from
+    // the previous test's localStorage snapshot.
+    if (typeof localStorage !== 'undefined') localStorage.clear()
     const catalog = useCatalogStore()
     // Mock data for catalog
     catalog.hardwareList = {
