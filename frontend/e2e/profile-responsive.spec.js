@@ -119,7 +119,7 @@ for (const viewport of [
       'วันที่สมัคร'
     ])
     await expect(page.getByText(profile.email, { exact: true })).toBeVisible()
-    await expect(page.locator('.profile-details dd').last()).toHaveText('13/8/2569')
+    await expect(page.locator('.profile-details dd').last()).toHaveText(/13\s+ส\.ค\.\s+2569/)
     await expectNoPageOverflow(page)
 
     const signout = page.locator('.profile-danger-zone').getByRole('button', { name: 'ออกจากระบบ' })
