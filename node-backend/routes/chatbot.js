@@ -1,22 +1,21 @@
 const express = require('express');
-const router = express.Router();
 const { GoogleGenAI } = require('@google/genai');
 const { authMiddleware } = require('../middleware/authMiddleware');
-const {
-  chatbotRateLimiter,
-  validateChatbotPayload,
-} = require('../middleware/chatbotSecurity');
+const { chatbotRateLimiter, validateChatbotPayload } = require('../middleware/chatbotSecurity');
 const { chatbotSessions } = require('../services/chatbotSessions');
+const { getChatbotConfig } = require('../config/chatbotConfig');
+const { prepareContext, trimHistory, toGeminiContents, extractSessionFacts } = require('../services/chatbotContext');
+const { retrieveTargetedCatalog, buildCatalogContext, validateRecommendedBuild } = require('../services/chatbotCatalog');
+const { classifyRequest, getFastPathResponse } = require('../services/chatbotPolicy');
+const { generateContentWithFallback, consumeStreamWithFallback, responseText, parseModelResponse } = require('../services/chatbotGeneration');
+const { SEARCH_FAILURE_DISCLOSURE, appendSearchDisclosure, extractSources } = require('../services/chatbotSearch');
+const { chatbotMetrics } = require('../services/chatbotMetrics');
 
-// Initialize Gemini Client
+const router = express.Router();
+const config = getChatbotConfig();
 let aiConfig = {};
 if (process.env.GCP_PROJECT) {
-  aiConfig = {
-    vertexai: {
-      project: process.env.GCP_PROJECT,
-      location: process.env.GCP_LOCATION || 'us-central1'
-    }
-  };
+  aiConfig = { vertexai: { project: process.env.GCP_PROJECT, location: process.env.GCP_LOCATION || 'us-central1' } };
 } else if (process.env.GEMINI_API_KEY) {
   aiConfig = { apiKey: process.env.GEMINI_API_KEY };
 }
@@ -24,490 +23,315 @@ const ai = new GoogleGenAI(aiConfig);
 
 const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านฮาร์ดแวร์คอมพิวเตอร์ของเว็บไซต์นี้เท่านั้น
 หน้าที่ของคุณคือแนะนำสเปคคอมพิวเตอร์และตอบคำถามเกี่ยวกับอุปกรณ์คอมพิวเตอร์
-**สำคัญมาก:** หากลูกค้าเอ่ยถึงชื่อรุ่นการ์ดจอ CPU หรือฮาร์ดแวร์แบบเฉพาะเจาะจง (เช่น RTX 5090, RTX 5000 series, Intel 15th Gen เป็นต้น) **คุณต้องใช้ Google Search เพื่อดึงข้อมูลเสมอ** ห้ามเดาหรือใช้ข้อมูลเก่าเด็ดขาด! ให้เช็คว่ามันเปิดตัวไปหรือยัง ราคาเท่าไหร่ (ของปี 2026) แล้วค่อยนำข้อมูลมาตอบ
-**สำคัญมาก 2:** เมื่อใช้ Google Search คุณต้องเพิ่มคำค้นหาภาษาไทยต่อท้ายเสมอ เช่น "ราคาไทย", "JIB", "Advice", "iHAVECPU" หรือ "เปิดตัวไทย" เพื่อบังคับให้ดึงข้อมูลจากสื่อและร้านค้าในประเทศไทยเป็นหลักเท่านั้น!
-หากจำเป็นต้องดึงข้อมูลจากเว็บต่างประเทศจริงๆ คุณต้องคำนวณและแปลงราคาเป็นสกุลเงินบาท (THB) ให้ลูกค้าเสมอ ห้ามตอบกลับเป็นดอลลาร์เด็ดขาด
-คุณคุยกับลูกค้าในลักษณะตอบรับแบบมีประวัติสนทนาต่อเนื่องได้ (จดจำสิ่งที่คุณตอบไว้ในรอบที่แล้วได้)
+ใช้ข้อมูลสินค้าในระบบเป็นแหล่งอ้างอิงหลัก และแนะนำเฉพาะอุปกรณ์ที่เข้ากันได้
+เมื่อคำถามต้องการข้อมูลสด เช่น ราคา สต็อก รุ่นที่เพิ่งเปิดตัว หรือข้อมูลล่าสุด ให้ใช้ผลค้นหาเว็บที่ระบบเปิดให้เท่านั้น หากค้นหาไม่ได้ต้องแจ้งผู้ใช้ตรง ๆ
+คุณคุยกับลูกค้าในลักษณะตอบรับแบบมีประวัติสนทนาต่อเนื่องได้
 
-**ข้อกำหนดเรื่องขอบเขต (สำคัญที่สุด):**
-- คุณตอบได้ **เฉพาะ** เรื่องคอมพิวเตอร์ ฮาร์ดแวร์ อุปกรณ์ IT หรือซอฟต์แวร์ที่เกี่ยวข้องกับการประกอบคอมพิวเตอร์ เท่านั้น
-- หากลูกค้าถามเรื่องอื่นที่ไม่เกี่ยวข้อง (เช่น คน/แบรนด์/นักร้อง/กีฬา/ทั่วไป) **ให้ปฏิเสธสุภาพๆ** โดยบอกว่าคุณเป็นผู้เชี่ยวชาญด้านคอมพิวเตอร์ และยินดีช่วยเรื่องสเปคหรือฮาร์ดแวร์เท่านั้น ห้ามให้ข้อมูลเรื่องนั้นเด็ดขาด
+ข้อกำหนดเรื่องขอบเขต:
+- ตอบเฉพาะเรื่องคอมพิวเตอร์ ฮาร์ดแวร์ อุปกรณ์ IT หรือซอฟต์แวร์ที่เกี่ยวข้องกับการประกอบคอมพิวเตอร์
+- หากถามเรื่องอื่น ให้ปฏิเสธสุภาพและชวนกลับมาคุยเรื่องคอมพิวเตอร์
 
-**รูปแบบการตอบกลับ:**
-ส่วนแรก: คำตอบพูดคุยทั่วไป ให้พิมพ์ตามปกติ รองรับ Markdown
-ส่วนที่สอง (เฉพาะเมื่อจำเป็น): หากและเฉพาะเมื่อ **ลูกค้าขอให้แนะนำ/จัดสเปคคอมพิวเตอร์** (หรือคุณสรุปสเปคให้) เท่านั้น ให้พิมพ์คำว่า ---JSON_START--- ขึ้นบรรทัดใหม่ แล้วพิมพ์ JSON ของ recommended_build ต่อท้ายทันที โดยมีรูปแบบดังนี้:
-{
-  "recommended_build": {
-    "cpu": 15,
-    "mobo": 22,
-    "ram": 35,
-    "gpu": 45,
-    "storage": 50,
-    "psu": 60,
-    "case": 70
-  }
+รูปแบบการตอบกลับ:
+ส่วนแรกเป็นคำตอบพูดคุยทั่วไป รองรับ Markdown
+หากผู้ใช้ขอให้แนะนำหรือจัดสเปกคอม ให้พิมพ์ ---JSON_START--- ขึ้นบรรทัดใหม่ แล้วพิมพ์ JSON ของ recommended_build ต่อท้าย โดยใช้เฉพาะ ID ที่อยู่ในข้อมูลอ้างอิงจากระบบ หากไม่มีให้ใส่ null
+หากไม่ได้ขอจัดสเปก ห้ามส่ง recommended_build หรือ ---JSON_START---`;
+const GUARDRAIL_MESSAGE = '⚠️ ระบบแชทบอตปฏิเสธการตอบกลับเนื่องจากตรวจพบความพยายามในการป้อนคำสั่งล้างค่าความปลอดภัยระบบ (Prompt Injection / Jailbreak Bypass) กรุณาถามคำถามเกี่ยวกับฮาร์ดแวร์คอมพิวเตอร์เท่านั้นครับ';
+const NO_CONFIG_MESSAGE = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY หรือ GCP_PROJECT ในไฟล์ `.env` ครับ';
+
+function hasAiConfig() {
+  return Boolean(aiConfig.vertexai || (aiConfig.apiKey && !String(aiConfig.apiKey).includes('your_gemini')));
 }
-ในฟิลด์ recommended_build ให้คุณใส่ ID ของสินค้า **ที่มีอยู่จริงใน [ข้อมูลอ้างอิงจากระบบหลังบ้าน] เท่านั้น** (อ้างอิงจากรายการที่ระบบส่งมา) ห้ามมั่ว ID เอง และห้ามแนะนำรุ่นที่ไม่มีในระบบเด็ดขาด หากชิ้นส่วนไหนไม่มีในระบบให้ใส่ null
-หากลูกค้าแค่ถามความรู้ทั่วไป หรือถามชื่อรุ่นเฉยๆ โดยไม่ได้ขอจัดสเปค **ห้ามพิมพ์ ---JSON_START--- และห้ามส่ง recommended_build**`;
 
-// ---------- เก็บประวัติแชทต่อ session (ในหน่วยความจำ) ----------
 function buildParts({ text, image }) {
   const parts = [];
   if (text && text.trim()) parts.push({ text });
-  if (image && image.data && image.mimeType) {
-    parts.push({
-      inlineData: { data: image.data, mimeType: image.mimeType },
-    });
-  }
+  if (image && image.data && image.mimeType) parts.push({ inlineData: { data: image.data, mimeType: image.mimeType } });
   return parts;
 }
 
-function extractSources(metadata) {
-  if (!metadata) return [];
-  const chunks = metadata.groundingChunks || [];
-  const seen = new Set();
-  const sources = [];
-  for (const c of chunks) {
-    const web = c.web;
-    if (web && web.uri && !seen.has(web.uri)) {
-      seen.add(web.uri);
-      sources.push({ uri: web.uri, title: web.title || web.uri });
-    }
-  }
-  return sources;
-}
-
-// Input Safety Guardrails Patterns
 function checkInputGuardrails(input) {
-  const blockedPatterns = [
-    /ignore.*instruction/i,
-    /forget.*instruction/i,
-    /system.*prompt/i,
-    /you are now a/i,
-    /jailbreak/i,
-    /bypass.*safety/i
-  ];
-  
-  for (const pattern of blockedPatterns) {
-    if (pattern.test(input)) {
-      return true;
-    }
-  }
-  return false;
+  const blockedPatterns = [/ignore.*instruction/i, /forget.*instruction/i, /system.*prompt/i, /you are now a/i, /jailbreak/i, /bypass.*safety/i];
+  return blockedPatterns.some(pattern => pattern.test(String(input || '')));
 }
 
-// POST /api/chatbot/message
-router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPayload, async (req, res, next) => {
+function setSseHeaders(res) {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('Connection', 'keep-alive');
+  if (res.flushHeaders) res.flushHeaders();
+}
+
+function writeSse(res, event, payload) {
+  if (event) res.write(`event: ${event}\n`);
+  res.write(`data: ${JSON.stringify(payload)}\n\n`);
+}
+
+function providerErrorMessage(error) {
+  const message = String(error?.message || '').toLowerCase();
+  if (/429|too many requests|resource_exhausted|rate.?limit/.test(message)) return 'ขออภัยครับ ตอนนี้ระบบ AI ถูกใช้งานหนักเกินขีดจำกัด กรุณารอสักครู่แล้วลองถามใหม่อีกครั้งครับ 🙏';
+  if (/503|unavailable|overloaded/.test(message)) return 'ขออภัยครับ ตอนนี้เซิร์ฟเวอร์ AI ทำงานหนักเกินไป กรุณารอสักครู่แล้วลองใหม่ครับ 🙏';
+  return 'Chatbot service unavailable';
+}
+
+async function loadOrderContext(message, user) {
+  const orderMatch = String(message || '').match(/ORD-\d{4}/i);
+  if (!orderMatch || user?.role !== 'admin') return '';
+  const orderId = orderMatch[0].toUpperCase();
+  try {
+    const db = require('../config/db');
+    let order = null;
+    if (db.isFallback()) {
+      const fs = require('fs').promises;
+      const path = require('path');
+      try {
+        const file = await fs.readFile(path.join(__dirname, '../orders.json'), 'utf8');
+        order = JSON.parse(file).find(item => item.id === orderId);
+      } catch (_error) { /* fallback may not include orders.json */ }
+      if (!order && orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
+      if (!order && orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
+    } else {
+      const [rows] = await db.query('SELECT * FROM orders WHERE id = ?', [orderId]);
+      if (rows?.length) {
+        const row = rows[0];
+        order = { id: row.id, customer_name: row.customer_name, assembly_type: row.assembly_type, total_price: parseFloat(row.total_price), status: row.status };
+      }
+    }
+    if (!order) return `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ไม่พบออเดอร์หมายเลข ${orderId} ในระบบฐานข้อมูล]`;
+    const statusTh = { assembling: 'กำลังประกอบเครื่องคอมพิวเตอร์', shipped: 'จัดส่งสินค้าเรียบร้อยแล้ว', completed: 'เสร็จสิ้นคำสั่งซื้อ', pending: 'รอยืนยันคำสั่งซื้อ' }[order.status] || order.status;
+    const assemblyTh = { premium: 'ประกอบพรีเมียม (จัดสายสวยงาม)', standard: 'ประกอบมาตรฐาน', none: 'นำชิ้นส่วนไปประกอบเอง' }[order.assembly_type] || order.assembly_type;
+    return `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ออเดอร์ ${order.id}, ผู้สั่งซื้อ "${order.customer_name}", รูปแบบบริการ "${assemblyTh}", ราคาสุทธิ ฿${order.total_price.toLocaleString()} บาท, สถานะ "${statusTh}"]`;
+  } catch (error) {
+    console.error('Failed to inject order context:', error);
+    return '';
+  }
+}
+
+async function loadCatalogContext(classification, message) {
+  if (!classification.useCatalog) return { candidates: [], text: '', retrievalMs: 0 };
+  const startedAt = Date.now();
+  try {
+    const db = require('../config/db');
+    const { candidates } = await retrieveTargetedCatalog({ db, text: message, limitPerCategory: 8 });
+    return { candidates, text: buildCatalogContext(candidates), retrievalMs: Date.now() - startedAt };
+  } catch (error) {
+    console.error('Failed to inject targeted catalog context:', error);
+    return { candidates: [], text: '', retrievalMs: Date.now() - startedAt };
+  }
+}
+
+function canonicalBuild(recommendedBuild, candidates) {
+  if (!recommendedBuild || !candidates || !Object.values(candidates).some(list => Array.isArray(list) && list.length)) return null;
+  return validateRecommendedBuild(recommendedBuild, candidates);
+}
+
+function updateSession(session, text, responseTextValue) {
+  if (text) session.history.push({ role: 'user', parts: buildParts({ text }) });
+  if (responseTextValue) session.history.push({ role: 'model', parts: [{ text: responseTextValue }] });
+  while (session.history.length > config.history.maxMessages) session.history.shift();
+  Object.assign(session.facts, extractSessionFacts(text, session.facts));
+}
+
+function rememberFastResponse(session, response) {
+  session.recentFastResponses.push(response);
+  while (session.recentFastResponses.length > 4) session.recentFastResponses.shift();
+}
+
+async function runFastPath(classification, session) {
+  const fast = getFastPathResponse(classification.fastIntent, session);
+  rememberFastResponse(session, fast.text);
+  updateSession(session, classification.text, fast.text);
+  return fast.text;
+}
+
+router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPayload, async (req, res) => {
+  const metrics = chatbotMetrics.startRequest();
   try {
     const { message, history } = req.body;
     if (!message) return res.status(400).json({ error: 'Message is required' });
-
-    // 1. Input Guardrail Verification
     if (checkInputGuardrails(message)) {
-      return res.json({
-        reply: '⚠️ ระบบแชทบอตปฏิเสธการตอบกลับเนื่องจากตรวจพบความพยายามในการป้อนคำสั่งล้างค่าความปลอดภัยระบบ (Prompt Injection / Jailbreak Bypass) กรุณาถามคำถามเกี่ยวกับฮาร์ดแวร์คอมพิวเตอร์เท่านั้นครับ',
-        presets: []
-      });
+      chatbotMetrics.finishRequest(metrics, { success: true, outputLength: GUARDRAIL_MESSAGE.length });
+      return res.json({ reply: GUARDRAIL_MESSAGE, presets: [], route: 'guardrail' });
     }
-
-    // Check API Key
-    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY.includes('your_gemini')) {
-      return res.json({
-        reply: '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY ในไฟล์ `.env` ของระบบหลังบ้านครับ กรุณาใส่ API Key ให้เรียบร้อยแล้วรีสตาร์ทเซิร์ฟเวอร์ครับ',
-        presets: []
-      });
+    const classification = classifyRequest(message, { hybridRouting: config.features.hybridRouting, fastPath: config.features.fastPath, targetedCatalog: config.features.targetedCatalog, liveSearch: config.features.liveSearch });
+    metrics.route = classification.route;
+    if (classification.route === 'fast') {
+      const reply = await runFastPath(classification, { recentFastResponses: [], history: [], facts: {} });
+      chatbotMetrics.finishRequest(metrics, { model: 'deterministic', cacheHit: true, outputLength: reply.length });
+      return res.json({ reply, recommended_build: null, sources: [], route: 'fast' });
     }
-
-    // 2. Context Injection for Order Queries
-    let orderContext = "";
-    const orderMatch = message.match(/ORD-\d{4}/i);
-    if (orderMatch && req.user.role === 'admin') {
-      const orderId = orderMatch[0].toUpperCase();
-      try {
-        const db = require('../config/db');
-        let order = null;
-
-        if (db.isFallback()) {
-          const fs = require('fs').promises;
-          const path = require('path');
-          const ordersFilePath = path.join(__dirname, '../orders.json');
-          try {
-            const fileData = await fs.readFile(ordersFilePath, 'utf8');
-            const orders = JSON.parse(fileData);
-            order = orders.find(o => o.id === orderId);
-          } catch (err) {
-            // file doesn't exist
-          }
-          // Defaults
-          if (!order) {
-            if (orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
-            if (orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
-          }
-        } else {
-          const [rows] = await db.query('SELECT * FROM orders WHERE id = ?', [orderId]);
-          if (rows && rows.length > 0) {
-            const r = rows[0];
-            order = {
-              id: r.id,
-              customer_name: r.customer_name,
-              assembly_type: r.assembly_type,
-              total_price: parseFloat(r.total_price),
-              status: r.status
-            };
-          } else {
-            // Defaults
-            if (orderId === 'ORD-1001') order = { id: orderId, customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' };
-            if (orderId === 'ORD-1002') order = { id: orderId, customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' };
-          }
-        }
-
-        if (order) {
-          const statusTh = {
-            'assembling': 'กำลังประกอบเครื่องคอมพิวเตอร์',
-            'shipped': 'จัดส่งสินค้าเรียบร้อยแล้ว',
-            'completed': 'เสร็จสิ้นคำสั่งซื้อ',
-            'pending': 'รอยืนยันคำสั่งซื้อ'
-          }[order.status] || order.status;
-
-          const assemblyTh = {
-            'premium': 'ประกอบพรีเมียม (จัดสายสวยงาม)',
-            'standard': 'ประกอบมาตรฐาน',
-            'none': 'นำชิ้นส่วนไปประกอบเอง'
-          }[order.assembly_type] || order.assembly_type;
-
-          orderContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ลูกค้ากำลังถามถึงออเดอร์หมายเลข ${order.id} ชื่องผู้สั่งซื้อคือ: "${order.customer_name}", รูปแบบบริการประกอบ: "${assemblyTh}", ราคาสุทธิ: ฿${order.total_price.toLocaleString()} บาท, สถานะปัจจุบัน: "${statusTh}"]`;
-        } else {
-          orderContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: ไม่พบออเดอร์หมายเลข ${orderId} ในระบบฐานข้อมูล ลูกค้าอาจจะพิมพ์รหัสผิด]`;
-        }
-      } catch (err) {
-        console.error('Failed to inject order context:', err);
-      }
+    if (!hasAiConfig()) {
+      chatbotMetrics.finishRequest(metrics, { success: false, errorClass: 'configuration' });
+      return res.json({ reply: NO_CONFIG_MESSAGE, presets: [], route: classification.route });
     }
-
-    // 2.5 Catalog Injection
-    let catalogContext = "";
+    const [orderContext, catalog] = await Promise.all([loadOrderContext(message, req.user), loadCatalogContext(classification, message)]);
+    const context = prepareContext({
+      history: history || [],
+      text: message,
+      orderContext,
+      catalogContext: catalog.text,
+    });
+    let searchFailed = false;
+    let generated;
     try {
-      const db = require('../config/db');
-      let productsText = "";
-      
-      const [rows] = await db.query(`
-        SELECT p.id, c.slug as category, p.brand, p.model, p.price 
-        FROM products p 
-        JOIN categories c ON p.category_id = c.id 
-        LIMIT 150
-      `);
-      
-      productsText = rows.map(p => `- ID: ${p.id} | Category: ${p.category || p.category_slug} | Name: ${p.brand} ${p.model} (฿${parseFloat(p.price).toLocaleString()})`).join('\n');
-      
-      catalogContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: รายการสินค้าบางส่วนที่มีในร้านตอนนี้:\n${productsText}\nหากลูกค้าให้จัดสเปค กรุณาอ้างอิงสินค้าและราคาเหล่านี้เป็นหลัก และใช้ ID ตามที่ระบุไว้ในฟิลด์ recommended_build]`;
-    } catch (err) {
-      console.error('Failed to inject catalog context:', err);
+      generated = await generateContentWithFallback({ ai, contents: context.contents, config, role: 'chat', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch: classification.useLiveSearch });
+    } catch (error) {
+      if (!classification.useLiveSearch) throw error;
+      searchFailed = true;
+      generated = await generateContentWithFallback({ ai, contents: context.contents, config, role: 'chat', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch: false });
     }
-
-    // 3. Short-Term Memory Integration (History Parser)
-    let contents = [];
-    if (Array.isArray(history) && history.length > 0) {
-      // Filter out initial bot messages or empty texts
-      const cleanHistory = history.filter(h => h.text && h.text.trim().length > 0);
-      
-      cleanHistory.forEach(h => {
-        // Map roles to match Gemini API specification: user or model
-        const role = h.role === 'user' ? 'user' : 'model';
-        // Strip HTML tags for clean context parsing
-        const cleanText = h.text.replace(/<[^>]*>/g, '').trim();
-        if (cleanText) {
-          contents.push({
-            role: role,
-            parts: [{ text: cleanText }]
-          });
-        }
-      });
-    }
-
-    // Append current turn message
-    contents.push({
-      role: 'user',
-      parts: [{ text: message + orderContext + catalogContext }]
+    const parsed = parseModelResponse(responseText(generated.response));
+    const sources = extractSources(generated.response?.candidates?.[0]?.groundingMetadata);
+    parsed.reply = appendSearchDisclosure(parsed.reply, { useLiveSearch: classification.useLiveSearch || searchFailed, sources });
+    parsed.recommended_build = classification.requiresBuild ? canonicalBuild(parsed.recommended_build, catalog.candidates) : null;
+    chatbotMetrics.finishRequest(metrics, {
+      model: generated.model,
+      fallbackCount: generated.fallbackCount,
+      usedLiveSearch: classification.useLiveSearch,
+      catalogCacheHit: classification.useCatalog ? false : null,
+      catalogRetrievalMs: catalog.retrievalMs,
+      outputLength: responseText(generated.response).length,
+      buildValidation: classification.requiresBuild ? (parsed.recommended_build ? 'validated' : 'null-safe') : 'not-requested',
     });
-
-    // Alternate roles validation to prevent consecutive same roles in Gemini
-    let alternatingContents = [];
-    let lastRole = null;
-    contents.forEach(item => {
-      if (item.role !== lastRole) {
-        alternatingContents.push(item);
-        lastRole = item.role;
-      } else {
-        // If consecutive roles, append text to existing turn
-        alternatingContents[alternatingContents.length - 1].parts[0].text += '\n' + item.parts[0].text;
-      }
-    });
-
-    // Call Gemini API with alternating multi-turn conversation history
-    const response = await ai.models.generateContent({
-        model: 'gemini-3.1-flash-lite',
-        contents: alternatingContents,
-        config: {
-            systemInstruction: SYSTEM_INSTRUCTION,
-            temperature: 0.7,
-            tools: [{ googleSearch: {} }]
-        }
-    });
-
-    let responseText = response.text;
-    if (typeof responseText === 'function') {
-        responseText = responseText();
-    }
-    if (!responseText) {
-        responseText = "";
-    }
-    
-    // Extract JSON block using regex if it's wrapped in text or markdown
-    let jsonString = responseText;
-    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-        jsonString = jsonMatch[0];
-    }
-    
-    let jsonResponse;
-    try {
-      jsonResponse = JSON.parse(jsonString);
-    } catch (e) {
-      console.error("Failed to parse JSON response, falling back to raw text.");
-      jsonResponse = {
-        reply: responseText,
-        recommended_build: null
-      };
-    }
-
-    res.json(jsonResponse);
+    res.set('X-Chatbot-Model', generated.model);
+    res.set('X-Chatbot-Fallback-Count', String(generated.fallbackCount));
+    return res.json({ ...parsed, sources, route: classification.route });
   } catch (error) {
+    chatbotMetrics.finishRequest(metrics, { success: false, errorClass: error.code || 'provider' });
     console.error('Chatbot message error:', error);
-    if (res.headersSent) {
-      return next(error);
-    }
     return res.status(502).json({ error: 'Chatbot service unavailable' });
   }
 });
 
-// POST /api/chatbot/stream
-router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayload, async (req, res, next) => {
+router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayload, async (req, res) => {
+  const metrics = chatbotMetrics.startRequest();
+  let session;
   try {
     const { text, image, sessionId } = req.body;
-    const session = chatbotSessions.resolve(req.user.id, sessionId);
+    session = chatbotSessions.resolve(req.user.id, sessionId);
     const sid = session.id;
-    const history = session.history;
-
+    const classification = classifyRequest(text || '', { hybridRouting: config.features.hybridRouting, fastPath: config.features.fastPath, targetedCatalog: config.features.targetedCatalog, liveSearch: config.features.liveSearch });
+    metrics.route = classification.route;
     if (text && checkInputGuardrails(text)) {
-      if (sessionId == null) {
-        chatbotSessions.clear(req.user.id, sid);
-      }
-      res.setHeader('Content-Type', 'text/event-stream');
-      res.setHeader('Cache-Control', 'no-cache, no-transform');
-      res.setHeader('Connection', 'keep-alive');
-      res.flushHeaders && res.flushHeaders();
-      const errText = '⚠️ ระบบแชทบอตปฏิเสธการตอบกลับเนื่องจากตรวจพบความพยายามในการป้อนคำสั่งล้างค่าความปลอดภัยระบบ (Prompt Injection / Jailbreak Bypass) กรุณาถามคำถามเกี่ยวกับฮาร์ดแวร์คอมพิวเตอร์เท่านั้นครับ';
-      res.write(`data: ${JSON.stringify({ text: errText })}\n\n`);
-      res.write('event: done\ndata: {}\n\n');
-      return res.end();
+      if (sessionId == null) chatbotSessions.clear(req.user.id, sid);
+      setSseHeaders(res);
+      writeSse(res, null, { text: GUARDRAIL_MESSAGE });
+      writeSse(res, 'done', {});
+      res.end();
+      chatbotMetrics.finishRequest(metrics, { success: true, outputLength: GUARDRAIL_MESSAGE.length });
+      return;
     }
-
-    if (!aiConfig.apiKey && !aiConfig.vertexai) {
-      if (sessionId == null) {
-        chatbotSessions.clear(req.user.id, sid);
-      }
-      res.setHeader('Content-Type', 'text/event-stream');
-      res.setHeader('Cache-Control', 'no-cache, no-transform');
-      res.setHeader('Connection', 'keep-alive');
-      res.flushHeaders && res.flushHeaders();
-      const errText = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY หรือ GCP_PROJECT ในไฟล์ `.env` ครับ';
-      res.write(`data: ${JSON.stringify({ text: errText })}\n\n`);
-      res.write('event: done\ndata: {}\n\n');
-      return res.end();
+    setSseHeaders(res);
+    writeSse(res, 'session', { sessionId: sid });
+    if (classification.route === 'fast') {
+      const reply = await runFastPath(classification, session);
+      writeSse(res, null, { text: reply });
+      writeSse(res, 'done', {});
+      res.end();
+      chatbotMetrics.finishRequest(metrics, { model: 'deterministic', cacheHit: true, outputLength: reply.length });
+      return;
     }
-
-    const userParts = buildParts({ text, image });
-    // Inject catalog context if text exists
-    let catalogContext = "";
-    if (text) {
-      try {
-        const db = require('../config/db');
-        let productsText = "";
-        const [rows] = await db.query(`SELECT p.id, c.slug as category, p.brand, p.model, p.price FROM products p JOIN categories c ON p.category_id = c.id LIMIT 150`);
-        productsText = rows.map(p => `- ID: ${p.id} | Category: ${p.category || p.category_slug} | Name: ${p.brand} ${p.model} (฿${parseFloat(p.price).toLocaleString()})`).join('\n');
-        catalogContext = `\n[ข้อมูลอ้างอิงจากระบบหลังบ้าน: รายการสินค้าบางส่วนที่มีในร้านตอนนี้:\n${productsText}\nหากลูกค้าให้จัดสเปค กรุณาอ้างอิงสินค้าและราคาเหล่านี้เป็นหลัก และใช้ ID ตามที่ระบุไว้ในฟิลด์ recommended_build]`;
-      } catch (err) {
-        console.error('Failed to inject catalog context:', err);
-      }
+    if (!hasAiConfig()) {
+      if (sessionId == null) chatbotSessions.clear(req.user.id, sid);
+      writeSse(res, null, { text: NO_CONFIG_MESSAGE });
+      writeSse(res, 'done', {});
+      res.end();
+      chatbotMetrics.finishRequest(metrics, { success: false, errorClass: 'configuration' });
+      return;
     }
-
-    // Prepare contents
-    let contents = [...history]; // history is already in {role, parts} format
-    let newParts = [...userParts];
-    if (catalogContext && newParts.length > 0 && newParts[0].text) {
-       newParts[0].text += catalogContext;
-    }
-    
-    contents.push({ role: 'user', parts: newParts });
-
-    res.setHeader('Content-Type', 'text/event-stream');
-    res.setHeader('Cache-Control', 'no-cache, no-transform');
-    res.setHeader('Connection', 'keep-alive');
-    res.flushHeaders && res.flushHeaders();
-
-    // Send sessionId back to client
-    res.write(`event: session\ndata: ${JSON.stringify({ sessionId: sid })}\n\n`);
-
+    const catalog = await loadCatalogContext(classification, text || '');
+    const history = trimHistory(session.history, { maxMessages: config.history.maxMessages, charBudget: config.history.charBudget });
+    const contents = toGeminiContents(history, '');
+    contents.push({ role: 'user', parts: buildParts({ text: `${text || ''}${catalog.text}`, image }) });
     let fullResponse = '';
-    let sources = [];
-    let isJsonMode = false;
+    let visiblePending = '';
     let jsonBuffer = '';
-
-    const modelsToTry = [
-      'gemini-3.5-flash-lite',
-      'gemini-3.6-flash',
-      'gemini-3-flash',
-      'gemini-3.5-flash',
-      'gemini-3.1-flash-lite',
-      'gemini-2.5-flash',
-      'gemini-2.5-flash-lite',
-      'gemini-3.5-flash',
-      'gemini-3.1-flash-lite'
-    ];
-    let success = false;
-    let lastError = null;
-
-    for (const modelName of modelsToTry) {
-      try {
-        const stream = await ai.models.generateContentStream({
-          model: modelName,
-          contents: contents,
-          config: {
-            systemInstruction: SYSTEM_INSTRUCTION,
-            tools: [{ googleSearch: {} }],
-            temperature: 0.7,
-          },
-        });
-
-        for await (const chunk of stream) {
-          let piece = chunk.text ?? '';
-          if (piece) {
-            fullResponse += piece;
-            
-            // Handle delimiter
-            if (!isJsonMode) {
-              if (fullResponse.includes('---JSON_START---')) {
-                isJsonMode = true;
-                const parts = fullResponse.split('---JSON_START---');
-                const beforeDelimiter = parts[0];
-                const afterDelimiter = parts.slice(1).join('---JSON_START---');
-                
-                const splitInPiece = piece.split('---JSON_START---');
-                if (splitInPiece[0]) {
-                   res.write(`data: ${JSON.stringify({ text: splitInPiece[0] })}\n\n`);
-                }
-                if (afterDelimiter) {
-                   jsonBuffer += afterDelimiter;
-                }
-              } else {
-                res.write(`data: ${JSON.stringify({ text: piece })}\n\n`);
-              }
+    let isJsonMode = false;
+    let sources = [];
+    let firstByteAt = null;
+    let searchFailed = false;
+    const marker = '---JSON_START---';
+    const consume = async (useLiveSearch) => consumeStreamWithFallback({
+      ai, contents, config, role: 'stream', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch,
+      onChunk: async (chunk) => {
+        const piece = chunk?.text ?? '';
+        if (piece) {
+          if (!firstByteAt) firstByteAt = Date.now();
+          fullResponse += piece;
+          if (isJsonMode) jsonBuffer += piece;
+          else {
+            const combined = visiblePending + piece;
+            const markerIndex = combined.indexOf(marker);
+            if (markerIndex >= 0) {
+              if (combined.slice(0, markerIndex)) writeSse(res, null, { text: combined.slice(0, markerIndex) });
+              isJsonMode = true;
+              jsonBuffer += combined.slice(markerIndex + marker.length);
+              visiblePending = '';
             } else {
-              jsonBuffer += piece;
+              const safeLength = Math.max(0, combined.length - marker.length + 1);
+              if (safeLength > 0) writeSse(res, null, { text: combined.slice(0, safeLength) });
+              visiblePending = combined.slice(safeLength);
             }
           }
-
-          const cand = chunk.candidates?.[0];
-          const meta = cand?.groundingMetadata;
-          if (meta) {
-            const found = extractSources(meta);
-            if (found.length) sources = found;
-          }
         }
-        
-        success = true;
-        break; // Successfully finished stream, exit loop
-      } catch (error) {
-        lastError = error;
-        const errMsg = error.message || '';
-        const isRateLimit = errMsg.includes('429') || errMsg.includes('Too Many Requests') || errMsg.includes('RESOURCE_EXHAUSTED');
-        const isNotFound = errMsg.includes('404') || errMsg.includes('Not Found') || errMsg.includes('not found') || errMsg.includes('NOT_FOUND');
-        const isUnavailable = errMsg.includes('503') || errMsg.includes('UNAVAILABLE') || errMsg.includes('overloaded');
-        
-        if (isRateLimit || isNotFound || isUnavailable) {
-          console.warn(`[Fallback] Model ${modelName} failed, trying next...`);
-          if (fullResponse.length > 0) {
-            res.write('event: clear\ndata: {}\n\n');
-          }
-          // Clear any partial buffers just in case
-          fullResponse = '';
-          sources = [];
-          isJsonMode = false;
-          jsonBuffer = '';
-          continue;
-        } else {
-          break; // Break on non-429 errors
-        }
-      }
+        const found = extractSources(chunk?.candidates?.[0]?.groundingMetadata);
+        if (found.length) sources = found;
+      },
+      onRetry: async () => {
+        if (fullResponse || visiblePending) writeSse(res, 'clear', {});
+        fullResponse = ''; visiblePending = ''; jsonBuffer = ''; isJsonMode = false; sources = [];
+      },
+    });
+    let generated;
+    try {
+      generated = await consume(classification.useLiveSearch);
+    } catch (error) {
+      if (!classification.useLiveSearch) throw error;
+      searchFailed = true;
+      if (fullResponse || visiblePending) writeSse(res, 'clear', {});
+      fullResponse = ''; visiblePending = ''; jsonBuffer = ''; isJsonMode = false; sources = [];
+      generated = await consume(false);
     }
-
-    if (!success) {
-      throw lastError || new Error("All fallback models failed.");
+    if (!isJsonMode && visiblePending) writeSse(res, null, { text: visiblePending });
+    const parsed = parseModelResponse(fullResponse);
+    if (sources.length) writeSse(res, 'sources', { sources });
+    if (classification.requiresBuild) {
+      const build = canonicalBuild(parsed.recommended_build, catalog.candidates);
+      if (build) writeSse(res, 'build_data', { build_data: build });
     }
-
-    // Save history (save fullResponse to maintain context)
-    history.push({ role: 'user', parts: buildParts({ text: text || '' }) }); // Don't save image to history to save memory
-    history.push({ role: 'model', parts: [{ text: fullResponse }] });
-    while (history.length > 20) history.shift();
-
-    if (sources.length) {
-      res.write(`event: sources\ndata: ${JSON.stringify({ sources })}\n\n`);
-    }
-
-    if (jsonBuffer.trim()) {
-      try {
-        // Strip markdown code blocks if any
-        let cleanJson = jsonBuffer.replace(/```json/gi, '').replace(/```/g, '').trim();
-        const parsed = JSON.parse(cleanJson);
-        res.write(`event: build_data\ndata: ${JSON.stringify({ build_data: parsed.recommended_build || parsed })}\n\n`);
-      } catch (e) {
-        console.error("Failed to parse buffered JSON:", e, jsonBuffer);
-      }
-    }
-
-    res.write('event: done\ndata: {}\n\n');
-  } catch (error) {
-    if (error.code === 'SESSION_NOT_FOUND' && !res.headersSent) {
-      return res.status(404).json({ error: 'Chat session not found' });
-    }
-
-    console.error('Stream error:', error);
-    const providerError = error.message || '';
-    let errMsg = 'Chatbot service unavailable';
-    if (providerError.includes('429') || providerError.includes('Too Many Requests') || providerError.includes('RESOURCE_EXHAUSTED')) {
-       errMsg = "ขออภัยครับ ตอนนี้ระบบ AI ถูกใช้งานหนักเกินขีดจำกัด (Rate Limit) กรุณารอสัก 1 นาทีแล้วลองถามใหม่อีกครั้งครับ 🙏";
-    } else if (providerError.includes('503') || providerError.includes('UNAVAILABLE')) {
-       errMsg = "ขออภัยครับ ตอนนี้เซิร์ฟเวอร์ AI ฝั่ง Google ทำงานหนักเกินไป (503 Unavailable) กรุณารอสักครู่แล้วลองใหม่ครับ 🙏";
-    }
-    res.write(`event: error\ndata: ${JSON.stringify({ error: errMsg })}\n\n`);
+    if (classification.useLiveSearch && (searchFailed || !sources.length)) writeSse(res, null, { text: SEARCH_FAILURE_DISCLOSURE });
+    updateSession(session, text || '', fullResponse);
+    writeSse(res, 'done', {});
     res.end();
-  } finally {
+    chatbotMetrics.finishRequest(metrics, {
+      model: generated.model,
+      fallbackCount: generated.fallbackCount,
+      firstByteAt,
+      usedLiveSearch: classification.useLiveSearch,
+      catalogCacheHit: classification.useCatalog ? false : null,
+      catalogRetrievalMs: catalog.retrievalMs,
+      outputLength: fullResponse.length,
+      buildValidation: classification.requiresBuild ? 'validated-or-null-safe' : 'not-requested',
+    });
+  } catch (error) {
+    if (error.code === 'SESSION_NOT_FOUND' && !res.headersSent) return res.status(404).json({ error: 'Chat session not found' });
+    chatbotMetrics.finishRequest(metrics, { success: false, errorClass: error.code || 'provider' });
+    console.error('Stream error:', error);
+    if (!res.headersSent) return res.status(502).json({ error: 'Chatbot service unavailable' });
+    writeSse(res, 'error', { error: providerErrorMessage(error) });
     res.end();
   }
 });
 
-// POST /api/chatbot/clear
 router.post('/clear', authMiddleware, (req, res, next) => {
   try {
     chatbotSessions.clear(req.user.id, req.body.sessionId);
     res.json({ ok: true });
   } catch (error) {
-    if (error.code === 'SESSION_NOT_FOUND') {
-      return res.status(404).json({ error: 'Chat session not found' });
-    }
-
+    if (error.code === 'SESSION_NOT_FOUND') return res.status(404).json({ error: 'Chat session not found' });
     return next(error);
   }
 });
 
+router.checkInputGuardrails = checkInputGuardrails;
+router.SYSTEM_INSTRUCTION = SYSTEM_INSTRUCTION;
 module.exports = router;

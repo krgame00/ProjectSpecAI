@@ -42,6 +42,9 @@ const globalLimiter = rateLimit({
   message: { error: 'คำขอเข้าใช้งานระบบเยอะเกินไป กรุณารอสักครู่ (Too many requests)' },
   standardHeaders: true, 
   legacyHeaders: false,
+  // Chatbot has its own per-member quota. Excluding both prefixes keeps
+  // backward-compatible /api/chatbot redirects from consuming the IP quota.
+  skip: (req) => req.path.startsWith('/api/v1/chatbot') || req.path.startsWith('/api/chatbot'),
 });
 
 const authLimiter = rateLimit({

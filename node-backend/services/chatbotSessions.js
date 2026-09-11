@@ -18,6 +18,17 @@ function createChatbotSessionStore({
   const sessions = new Map();
   let nextSweepAt = now() + cleanupIntervalMs;
 
+  function publicSession(id, session) {
+    const result = { id, history: session.history };
+    // Keep the original public shape while exposing server-owned state to
+    // the chatbot route without allowing callers to replace the references.
+    Object.defineProperties(result, {
+      facts: { value: session.facts, enumerable: false },
+      recentFastResponses: { value: session.recentFastResponses, enumerable: false },
+    });
+    return result;
+  }
+
   function isExpired(session, currentTime) {
     return currentTime - session.lastAccessedAt >= ttlMs;
   }
@@ -68,11 +79,13 @@ function createChatbotSessionStore({
     const session = {
       ownerId: String(ownerId),
       history: [],
+      facts: {},
+      recentFastResponses: [],
       lastAccessedAt: currentTime,
     };
     sessions.set(id, session);
 
-    return { id, history: session.history };
+    return publicSession(id, session);
   }
 
   return {
@@ -86,7 +99,7 @@ function createChatbotSessionStore({
 
       const session = getOwnedSession(ownerId, sessionId, currentTime);
       session.lastAccessedAt = currentTime;
-      return { id: sessionId, history: session.history };
+      return publicSession(sessionId, session);
     },
 
     clear(ownerId, sessionId) {

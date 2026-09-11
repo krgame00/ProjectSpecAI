@@ -22,8 +22,8 @@ function pngBase64(bytes = 32) {
 }
 
 describe('validateChatbotPayload', () => {
-  test('rejects text longer than 4,000 characters without calling next', () => {
-    const req = { body: { text: 'x'.repeat(4001) } };
+  test('rejects text longer than 24,000 characters without calling next', () => {
+    const req = { body: { text: 'x'.repeat(24001) } };
     const res = responseDouble();
     const next = jest.fn();
 
@@ -33,8 +33,8 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
-  test('accepts text with exactly 4,000 characters', () => {
-    const req = { body: { text: 'x'.repeat(4000) } };
+  test('accepts text with exactly 24,000 characters', () => {
+    const req = { body: { text: 'x'.repeat(24000) } };
     const res = responseDouble();
     const next = jest.fn();
 
@@ -277,9 +277,9 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
-  test('rejects history with more than 20 turns', () => {
+  test('rejects history with more than 12 turns', () => {
     const history = Array.from(
-      { length: 21 },
+      { length: 13 },
       (_, index) => ({ role: index % 2 === 0 ? 'user' : 'assistant', text: 'x' })
     );
     const req = { body: { message: 'hello', history } };
@@ -327,8 +327,8 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
-  test('rejects a history turn with more than 4,000 text characters', () => {
-    const history = [{ role: 'user', text: 'x'.repeat(4001) }];
+  test('rejects a history turn with more than 12,000 text characters', () => {
+    const history = [{ role: 'user', text: 'x'.repeat(12001) }];
     const req = { body: { message: 'hello', history } };
     const res = responseDouble();
     const next = jest.fn();
@@ -340,12 +340,12 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
-  test('rejects history with more than 16,000 aggregate text characters', () => {
+  test('rejects history with more than 12,000 aggregate text characters', () => {
     const history = [
-      { role: 'user', text: 'a'.repeat(4000) },
-      { role: 'assistant', text: 'b'.repeat(4000) },
-      { role: 'user', text: 'c'.repeat(4000) },
-      { role: 'bot', text: 'd'.repeat(4000) },
+      { role: 'user', text: 'a'.repeat(3000) },
+      { role: 'assistant', text: 'b'.repeat(3000) },
+      { role: 'user', text: 'c'.repeat(3000) },
+      { role: 'bot', text: 'd'.repeat(3000) },
       { role: 'model', text: 'e' }
     ];
     const req = { body: { message: 'hello', history } };
@@ -359,11 +359,11 @@ describe('validateChatbotPayload', () => {
     expect(next).not.toHaveBeenCalled();
   });
 
-  test('accepts 20 valid turns at the per-turn and aggregate boundaries', () => {
+  test('accepts 12 valid turns at the per-turn and aggregate boundaries', () => {
     const roles = ['user', 'bot', 'model', 'assistant'];
-    const history = Array.from({ length: 20 }, (_, index) => ({
+    const history = Array.from({ length: 12 }, (_, index) => ({
       role: roles[index % roles.length],
-      text: index < 4 ? String(index).repeat(4000) : ''
+      text: index < 4 ? String(index).repeat(3000) : ''
     }));
     const req = { body: { message: 'hello', history } };
     const res = responseDouble();
@@ -524,11 +524,11 @@ describe('createChatbotRateLimiter', () => {
 });
 
 describe('chatbotRateLimiter', () => {
-  test('uses the production quota of 40 requests per 900,000 ms', () => {
-    const req = { user: { id: 'singleton-40-per-15-minutes' } };
+  test('uses the production quota of 360 requests per 900,000 ms', () => {
+    const req = { user: { id: 'singleton-360-per-15-minutes' } };
     let firstResponse;
 
-    for (let requestNumber = 1; requestNumber <= 40; requestNumber += 1) {
+    for (let requestNumber = 1; requestNumber <= 360; requestNumber += 1) {
       const res = responseDouble();
       const next = jest.fn();
       chatbotRateLimiter(req, res, next);
@@ -536,7 +536,7 @@ describe('chatbotRateLimiter', () => {
       expect(next).toHaveBeenCalledTimes(1);
     }
 
-    expect(firstResponse.headers['RateLimit-Limit']).toBe('40');
+    expect(firstResponse.headers['RateLimit-Limit']).toBe('360');
     expect(firstResponse.headers['RateLimit-Reset']).toBe('900');
 
     const blockedResponse = responseDouble();
