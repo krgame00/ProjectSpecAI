@@ -104,7 +104,6 @@ async function loadOrderContext(message, user) {
         const file = await fs.readFile(path.join(__dirname, '../orders.json'), 'utf8');
         order = JSON.parse(file).find(item => item.id === orderId);
       } catch (_error) { /* fallback may not include orders.json */ }
-      if (!order && FALLBACK_ORDERS[orderId]) order = { ...FALLBACK_ORDERS[orderId] };
     } else {
       const [rows] = await db.query('SELECT * FROM orders WHERE id = ?', [orderId]);
       if (rows?.length) {
