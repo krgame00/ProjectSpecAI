@@ -4,6 +4,7 @@ const {
   consumeStreamWithFallback,
   modelCandidates,
 } = require('../services/chatbotGeneration');
+const { createGeminiAiPool } = require('../services/chatbotAiPool');
 
 describe('chatbot generation policy', () => {
   test('uses one fallback for retryable provider errors', async () => {
@@ -50,5 +51,52 @@ describe('chatbot generation policy', () => {
         thinkingConfig: { thinkingBudget: 0 },
       }),
     }));
+  });
+
+  test('restarts the same streamed model on the next API key when quota is exhausted mid-stream', async () => {
+    const GoogleGenAI = jest.fn(({ apiKey }) => ({
+      models: {
+        generateContentStream: jest.fn().mockResolvedValue({
+          async *[Symbol.asyncIterator]() {
+            if (apiKey === 'key-1') {
+              yield { text: 'partial' };
+              throw Object.assign(new Error('RESOURCE_EXHAUSTED quota exceeded'), { status: 429 });
+            }
+            yield { text: 'final' };
+          },
+        }),
+      },
+    }));
+    const ai = createGeminiAiPool({
+      GoogleGenAI,
+      env: { GEMINI_API_KEYS: 'key-1,key-2' },
+      logger: { warn: jest.fn() },
+    });
+    const visibleChunks = [];
+    const onRetry = jest.fn(() => {
+      visibleChunks.length = 0;
+    });
+
+    const result = await consumeStreamWithFallback({
+      ai,
+      contents: [{ role: 'user', parts: [{ text: 'จัดสเปคคอมให้หน่อย' }] }],
+      config: {
+        models: { primary: 'a', fallback: [] },
+        maxFallbacks: 0,
+        providerTimeoutMs: 1000,
+        maxOutputTokens: 16384,
+      },
+      onChunk: (chunk) => visibleChunks.push(chunk.text),
+      onRetry,
+    });
+
+    expect(visibleChunks).toEqual(['final']);
+    expect(onRetry).toHaveBeenCalledWith(expect.objectContaining({
+      apiKeySwitch: true,
+      fromProviderIndex: 0,
+      toProviderIndex: 1,
+    }));
+    expect(result.providerIndex).toBe(1);
+    expect(result.providerCount).toBe(2);
   });
 });

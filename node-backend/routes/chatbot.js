@@ -10,16 +10,11 @@ const { classifyRequest, getFastPathResponse } = require('../services/chatbotPol
 const { generateContentWithFallback, consumeStreamWithFallback, responseText, parseModelResponse } = require('../services/chatbotGeneration');
 const { SEARCH_FAILURE_DISCLOSURE, appendSearchDisclosure, extractSources } = require('../services/chatbotSearch');
 const { chatbotMetrics } = require('../services/chatbotMetrics');
+const { createGeminiAiPool } = require('../services/chatbotAiPool');
 
 const router = express.Router();
 const config = getChatbotConfig();
-let aiConfig = {};
-if (process.env.GCP_PROJECT) {
-  aiConfig = { vertexai: { project: process.env.GCP_PROJECT, location: process.env.GCP_LOCATION || 'us-central1' } };
-} else if (process.env.GEMINI_API_KEY) {
-  aiConfig = { apiKey: process.env.GEMINI_API_KEY };
-}
-const ai = new GoogleGenAI(aiConfig);
+const ai = createGeminiAiPool({ GoogleGenAI, env: process.env, logger: console });
 
 const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชาญด้านฮาร์ดแวร์คอมพิวเตอร์ของเว็บไซต์นี้เท่านั้น
 หน้าที่ของคุณคือแนะนำสเปคคอมพิวเตอร์และตอบคำถามเกี่ยวกับอุปกรณ์คอมพิวเตอร์
@@ -36,14 +31,14 @@ const SYSTEM_INSTRUCTION = `คุณคือผู้เชี่ยวชา�
 หากผู้ใช้ขอให้แนะนำหรือจัดสเปกคอม ให้พิมพ์ ---JSON_START--- ขึ้นบรรทัดใหม่ แล้วพิมพ์ JSON ของ recommended_build ต่อท้าย โดยใช้เฉพาะ ID ที่อยู่ในข้อมูลอ้างอิงจากระบบ หากไม่มีให้ใส่ null
 หากไม่ได้ขอจัดสเปก ห้ามส่ง recommended_build หรือ ---JSON_START---`;
 const GUARDRAIL_MESSAGE = '⚠️ ระบบแชทบอตปฏิเสธการตอบกลับเนื่องจากตรวจพบความพยายามในการป้อนคำสั่งล้างค่าความปลอดภัยระบบ (Prompt Injection / Jailbreak Bypass) กรุณาถามคำถามเกี่ยวกับฮาร์ดแวร์คอมพิวเตอร์เท่านั้นครับ';
-const NO_CONFIG_MESSAGE = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEY หรือ GCP_PROJECT ในไฟล์ `.env` ครับ';
+const NO_CONFIG_MESSAGE = '⚠️ ระบบตรวจพบว่ายังไม่ได้ตั้งค่า GEMINI_API_KEYS, GEMINI_API_KEY หรือ GCP_PROJECT ในระบบหลังบ้านครับ';
 const FALLBACK_ORDERS = {
   'ORD-1001': { id: 'ORD-1001', customer_name: 'สกาย เกมเมอร์', assembly_type: 'premium', total_price: 49500, status: 'assembling' },
   'ORD-1002': { id: 'ORD-1002', customer_name: 'สมชาย ไอที', assembly_type: 'none', total_price: 15300, status: 'shipped' },
 };
 
 function hasAiConfig() {
-  return Boolean(aiConfig.vertexai || (aiConfig.apiKey && !String(aiConfig.apiKey).includes('your_gemini')));
+  return ai.hasProvider();
 }
 
 function routingOptions() {

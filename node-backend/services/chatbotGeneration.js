@@ -49,6 +49,19 @@ function createGenerationConfig({
   return config;
 }
 
+async function executeWithProvider(ai, operation, onKeySwitch) {
+  if (ai && typeof ai.runWithQuotaFailover === 'function') {
+    return ai.runWithQuotaFailover(operation, { onSwitch: onKeySwitch });
+  }
+
+  return {
+    result: await operation(ai),
+    providerIndex: 0,
+    providerCount: 1,
+    mode: 'single',
+  };
+}
+
 async function runWithFallback({ config, role, invoke, onRetry }) {
   let lastError;
   const models = modelCandidates(config, role);
@@ -80,7 +93,9 @@ async function generateContentWithFallback({
     config,
     role,
     onRetry,
-    invoke: (model) => withTimeout(ai.models.generateContent({
+    invoke: async (model) => executeWithProvider(
+      ai,
+      (client) => withTimeout(client.models.generateContent({
         model,
         contents,
         config: createGenerationConfig({
@@ -90,8 +105,15 @@ async function generateContentWithFallback({
           maxOutputTokens: config.maxOutputTokens,
         }),
       }), config.providerTimeoutMs),
+    ),
   });
-  return { response: result.result, model: result.model, fallbackCount: result.fallbackCount };
+  return {
+    response: result.result.result,
+    model: result.model,
+    fallbackCount: result.fallbackCount,
+    providerIndex: result.result.providerIndex,
+    providerCount: result.result.providerCount,
+  };
 }
 
 async function consumeStreamWithFallback({
@@ -109,28 +131,50 @@ async function consumeStreamWithFallback({
     config,
     role,
     onRetry,
-    invoke: async (model, index) => {
-      const stream = await withTimeout(ai.models.generateContentStream({
-        model,
-        contents,
-        config: createGenerationConfig({
-          systemInstruction,
-          useLiveSearch,
-          temperature,
-          maxOutputTokens: config.maxOutputTokens,
-          thinkingBudget: 0,
-        }),
-      }), config.providerTimeoutMs);
-      const iterator = stream[Symbol.asyncIterator]();
-      while (true) {
-        const next = await withTimeout(iterator.next(), config.providerTimeoutMs);
-        if (next.done) break;
-        if (onChunk) await onChunk(next.value, { model, fallbackCount: index });
-      }
-      return true;
-    },
+    invoke: async (model, index) => executeWithProvider(
+      ai,
+      async (client) => {
+        const stream = await withTimeout(client.models.generateContentStream({
+          model,
+          contents,
+          config: createGenerationConfig({
+            systemInstruction,
+            useLiveSearch,
+            temperature,
+            maxOutputTokens: config.maxOutputTokens,
+            thinkingBudget: 0,
+          }),
+        }), config.providerTimeoutMs);
+        const iterator = stream[Symbol.asyncIterator]();
+        while (true) {
+          const next = await withTimeout(iterator.next(), config.providerTimeoutMs);
+          if (next.done) break;
+          if (onChunk) await onChunk(next.value, { model, fallbackCount: index });
+        }
+        return true;
+      },
+      async ({ error, fromIndex, toIndex, providerCount }) => {
+        if (onRetry) {
+          await onRetry({
+            error,
+            model,
+            nextModel: model,
+            fallbackCount: index,
+            apiKeySwitch: true,
+            fromProviderIndex: fromIndex,
+            toProviderIndex: toIndex,
+            providerCount,
+          });
+        }
+      },
+    ),
   });
-  return { model: result.model, fallbackCount: result.fallbackCount };
+  return {
+    model: result.model,
+    fallbackCount: result.fallbackCount,
+    providerIndex: result.result.providerIndex,
+    providerCount: result.result.providerCount,
+  };
 }
 
 function responseText(response) {
@@ -171,6 +215,7 @@ module.exports = {
   withTimeout,
   modelCandidates,
   createGenerationConfig,
+  executeWithProvider,
   runWithFallback,
   generateContentWithFallback,
   consumeStreamWithFallback,

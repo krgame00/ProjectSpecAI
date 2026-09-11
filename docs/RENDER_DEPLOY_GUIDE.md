@@ -33,8 +33,11 @@ Render จะเจอ `render.yaml` blueprint และตั้งค่าใ
 | `DB_NAME` | `smart_pc_builder` |
 | `DB_SSL` | `true` |
 | `JWT_SECRET` | (สุ่มยาวๆ เช่น `openssl rand -hex 32`) |
-| `GEMINI_API_KEY` | (คีย์ Gemini สำหรับ chatbot — ไม่มีก็ได้ chatbot ไม่ทำงาน) |
+| `GEMINI_API_KEYS` | คีย์ Gemini 2–5 ตัว คั่นด้วย comma เช่น `KEY1,KEY2,KEY3` — ระบบจะสลับ key อัตโนมัติเมื่อเจอ quota/rate limit |
+| `GEMINI_API_KEY` | คีย์ Gemini เดี่ยวแบบเดิม ใช้เพื่อ backward compatibility |
 
+> ถ้าตั้ง `GEMINI_API_KEYS` หรือ `GEMINI_API_KEY_1..5` ระบบจะใช้ API key pool ก่อน Vertex AI และสลับไป key ถัดไปเฉพาะกรณี `429`, `RESOURCE_EXHAUSTED`, quota หรือ rate limit เท่านั้น โดยไม่ log ค่า key จริง
+>
 > ⚠️ render.yaml มี `sync: false` สำหรับตัวแปรลับ → Render จะไม่เดามาจาก blueprint ต้องกรอกเองใน Dashboard
 
 ## 5. Deploy
