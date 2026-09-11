@@ -1,5 +1,9 @@
 jest.mock('../config/db', () => ({
-  isFallback: jest.fn(() => false), query: jest.fn()
+  isFallback: jest.fn(() => false),
+  query: jest.fn(),
+  pool: {
+    getConnection: jest.fn()
+  }
 }));
 
 const db = require('../config/db');
@@ -65,3 +69,74 @@ describe('Admin order status mutation', () => {
     expect(res.status).toHaveBeenCalledWith(404);
   });
 });
+
+describe('Order creation and security (C1)', () => {
+  let connection;
+  beforeEach(() => {
+    jest.clearAllMocks();
+    connection = {
+      beginTransaction: jest.fn(),
+      commit: jest.fn(),
+      rollback: jest.fn(),
+      release: jest.fn(),
+      query: jest.fn()
+    };
+    db.pool = { getConnection: jest.fn().mockResolvedValue(connection) };
+    db.isFallback.mockReturnValue(false);
+  });
+
+  test('rejects order with empty items in cart', async () => {
+    const res = response();
+    await ordersController.create({ body: { build_items: {} } }, res, jest.fn());
+    expect(res.status).toHaveBeenCalledWith(400);
+    expect(res.json).toHaveBeenCalledWith({ error: 'No items in cart' });
+  });
+
+  test('calculates total from DB prices and ignores client total_price', async () => {
+    connection.query
+      .mockResolvedValueOnce([[{ id: 1000, price: 4500 }]]) // SELECT product 1000
+      .mockResolvedValueOnce([[{ id: 1001, price: 3200 }]]) // SELECT product 1001
+      .mockResolvedValueOnce([{ affectedRows: 1 }])          // INSERT orders
+      .mockResolvedValueOnce([{ affectedRows: 1 }])          // INSERT order_items 1
+      .mockResolvedValueOnce([{ affectedRows: 1 }]);         // INSERT order_items 2
+
+    const req = {
+      body: {
+        customer_name: 'Tester',
+        assembly_type: 'standard', // 500
+        total_price: 50, // Client attempt to hack price
+        build_items: { cpu: 1000, mobo: 1001 }
+      }
+    };
+    const res = response();
+    await ordersController.create(req, res, jest.fn());
+
+    expect(connection.beginTransaction).toHaveBeenCalled();
+    expect(connection.commit).toHaveBeenCalled();
+    expect(connection.release).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(201);
+    // Calculated: 4500 + 3200 + 500 = 8200 (NOT 50)
+    expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
+      success: true,
+      total_price: 8200
+    }));
+  });
+
+  test('rolls back transaction and releases connection when a product does not exist', async () => {
+    connection.query.mockResolvedValueOnce([[]]); // product not found
+
+    const req = {
+      body: {
+        build_items: { cpu: 9999 }
+      }
+    };
+    const res = response();
+    await ordersController.create(req, res, jest.fn());
+
+    expect(connection.rollback).toHaveBeenCalled();
+    expect(connection.release).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(400);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Product not found for item ID: 9999' });
+  });
+});
+

@@ -22,6 +22,13 @@ describe('validation middleware', () => {
       expect(res.json).toHaveBeenCalledWith({ error: expect.stringContaining('price') });
       expect(next).not.toHaveBeenCalled();
     });
+
+    test('treats numeric 0 and boolean false as valid present values', () => {
+      const { req, res, next } = mockReqRes({ price: 0, inStock: false, name: 'Free Item' });
+      validateRequired(['price', 'inStock', 'name'])(req, res, next);
+      expect(next).toHaveBeenCalled();
+      expect(res.status).not.toHaveBeenCalled();
+    });
   });
 
   describe('validateEmail', () => {

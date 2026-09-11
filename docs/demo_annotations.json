@@ -1,0 +1,32 @@
+[
+  {
+    "badge": [748, 68],
+    "target": [748, 28],
+    "num": 1,
+    "label": "เมนูหลังบ้านแอดมิน (Admin Dashboard)"
+  },
+  {
+    "badge": [360, 93],
+    "target": [455, 93],
+    "num": 2,
+    "label": "ป้ายกำกับฟีเจอร์ AI (AI-Powered Builder Badge)"
+  },
+  {
+    "badge": [320, 269],
+    "target": [410, 269],
+    "num": 3,
+    "label": "ปุ่มหลัก 'เริ่มจัดสเปคเลย ->' (Primary CTA Button)"
+  },
+  {
+    "badge": [700, 269],
+    "target": [612, 269],
+    "num": 4,
+    "label": "ปุ่มรอง 'ดูฟีเจอร์ทั้งหมด' (Secondary Button)"
+  },
+  {
+    "badge": [340, 380],
+    "target": [438, 380],
+    "num": 5,
+    "label": "การ์ดแสดงฮาร์ดแวร์แนะนำ (Interactive Hardware Showcase)"
+  }
+]

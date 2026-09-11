@@ -5,13 +5,22 @@ const logger = require('../utils/logger');
 let pool = null;
 let isFallback = false;
 
+const isMockAllowed = () => {
+  return process.env.ALLOW_MOCK_DB === 'true' || process.env.NODE_ENV === 'test';
+};
+
 // Initialize MySQL pool
 const initPool = () => {
   if (pool) return pool;
   
-  if (!process.env.DB_HOST) {
-    logger.warn("No DB_HOST defined. Falling back to Mock DB mode.");
-    isFallback = true;
+  if (!process.env.DB_HOST && !process.env.DATABASE_URL) {
+    if (isMockAllowed()) {
+      logger.warn("No DB_HOST defined. Falling back to Mock DB mode (ALLOW_MOCK_DB is enabled).");
+      isFallback = true;
+      return null;
+    }
+    logger.error("No DB_HOST or DATABASE_URL defined, and ALLOW_MOCK_DB is not enabled. Database connection is required.");
+    isFallback = false;
     return null;
   }
 
@@ -46,8 +55,13 @@ const initPool = () => {
     })
     .catch(err => {
       logger.error('Failed to connect to MySQL database:', err.message);
-      logger.warn('Switching to Mock Database Mode (Fallback). The server will keep running.');
-      isFallback = true;
+      if (isMockAllowed()) {
+        logger.warn('Switching to Mock Database Mode (Fallback enabled via ALLOW_MOCK_DB).');
+        isFallback = true;
+      } else {
+        logger.error('CRITICAL: Database connection failed. Mock fallback is disallowed in production/strict mode.');
+        isFallback = false;
+      }
     });
 
   return pool;

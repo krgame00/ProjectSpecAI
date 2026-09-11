@@ -1,8 +1,7 @@
 import { defineStore } from 'pinia'
 import { adminErrorMessage, adminRequest } from '../services/adminApi'
 import { useToastStore } from './toast'
-
-const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1')
+import { API_BASE } from '../services/apiBase'
 
 export const useArticleStore = defineStore('article', {
   state: () => ({

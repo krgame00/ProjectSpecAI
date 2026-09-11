@@ -438,7 +438,7 @@ describe('chatbot routes security', () => {
         error: 'Chatbot service unavailable',
       });
       expect(consoleError).toHaveBeenCalledWith(
-        'Chatbot message error:',
+        expect.stringContaining('Chatbot message error:'),
         expect.objectContaining({ message: providerSecret })
       );
     } finally {
@@ -466,7 +466,7 @@ describe('chatbot routes security', () => {
         'event: error\ndata: {"error":"Chatbot service unavailable"}\n\n'
       );
       expect(consoleError).toHaveBeenCalledWith(
-        'Stream error:',
+        expect.stringContaining('Stream error:'),
         expect.objectContaining({ message: providerSecret })
       );
     } finally {

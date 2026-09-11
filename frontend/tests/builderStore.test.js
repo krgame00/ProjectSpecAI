@@ -1,5 +1,5 @@
 import { setActivePinia, createPinia } from 'pinia'
-import { expect, test, beforeEach, describe } from 'vitest'
+import { expect, test, beforeEach, describe, vi } from 'vitest'
 import { useBuilderStore } from '../src/stores/builder'
 import { useCatalogStore } from '../src/stores/catalog'
 
@@ -90,5 +90,23 @@ describe('Builder Store Tests', () => {
     catalog.hardwareList.gpu[0].tdp = 350 // Now Total = 50 + 65 + 350 = 465W. Recommended = 604W.
     
     expect(builder.compatibilityIssues[0]).toMatch(/กำลังไฟอาจไม่พอ: ระบบต้องการไฟขั้นต่ำ 605W แต่ PSU ที่เลือกจ่ายได้ 400W/)
+  })
+
+  test('persists build selections to localStorage and clears on clearBuild', () => {
+    const storage = {}
+    vi.stubGlobal('localStorage', {
+      getItem: vi.fn((key) => storage[key] || null),
+      setItem: vi.fn((key, val) => { storage[key] = String(val) }),
+      removeItem: vi.fn((key) => { delete storage[key] })
+    })
+
+    const builder = useBuilderStore()
+    builder.selectItem('cpu', 1)
+    expect(builder.build.cpu).toBe(1)
+    expect(JSON.parse(storage['pcspec_build'])).toMatchObject({ cpu: 1 })
+
+    builder.clearBuild()
+    expect(builder.build.cpu).toBeNull()
+    expect(JSON.parse(storage['pcspec_build'])).toMatchObject({ cpu: null })
   })
 })

@@ -1,6 +1,6 @@
 # 🗄️ Database Inspector & Data Dumps
 
-โฟลเดอร์นี้รวบรวมไฟล์ข้อมูลและผังแสดงผลฐานข้อมูล MySQL (`smart_pc_builder`) ของโปรเจกต์ PCSpec
+โฟลเดอร์นี้รวบรวมไฟล์ข้อมูลและผังแสดงผลฐานข้อมูล MySQL (`smart_pc_builder`) ของระบบ ForgeLabs
 
 ## 📁 รายชื่อไฟล์ในโฟลเดอร์นี้
 

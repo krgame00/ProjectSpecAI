@@ -59,6 +59,43 @@ function singleAttemptConfig() {
   return { ...config, maxFallbacks: 0 };
 }
 
+// Backward-compatible helpers kept for integrations that used the pre-routing
+// chatbot exports. The request handlers use classifyRequest directly, while
+// these helpers provide the same conditional-search and cached catalog view
+// for diagnostics and tests.
+const legacySearchPatterns = [
+  /(ราคาไทย|ราคาตลาด|ราคาปัจจุบัน|เช็คราคา|เทียบราคา|ราคาหน้าร้าน|ขายเท่าไหร่|ราคาเท่าไหร่|ราคาล่าสุด)/i,
+  /(JIB|Advice|iHAVECPU|Banana\s*IT|computeandmore)/i,
+  /(เปิดตัวเมื่อไหร่|วางจำหน่ายเมื่อไหร่|ข่าวหลุด|สเปคหลุด|leak|เข้าไทย|โปรโมชั่น|มีของไหม)/i,
+];
+
+function shouldUseSearch(text) {
+  const normalized = String(text || '').trim();
+  return Boolean(normalized && legacySearchPatterns.some(pattern => pattern.test(normalized)));
+}
+
+let legacyCatalogCache = { text: '', time: 0 };
+const LEGACY_CATALOG_TTL_MS = 5 * 60 * 1000;
+
+async function getCatalogContext() {
+  const now = Date.now();
+  if (legacyCatalogCache.text && now - legacyCatalogCache.time < LEGACY_CATALOG_TTL_MS) return legacyCatalogCache.text;
+  try {
+    const db = require('../config/db');
+    const { candidates } = await retrieveTargetedCatalog({ db, limitPerCategory: 8 });
+    const text = buildCatalogContext(candidates);
+    legacyCatalogCache = { text, time: now };
+    return text;
+  } catch (error) {
+    console.error('Failed to inject catalog context:', error);
+    return legacyCatalogCache.text || '';
+  }
+}
+
+function clearCatalogCache() {
+  legacyCatalogCache = { text: '', time: 0 };
+}
+
 function buildParts({ text, image }) {
   const parts = [];
   if (text && text.trim()) parts.push({ text });
@@ -391,4 +428,7 @@ router.post('/clear', authMiddleware, (req, res, next) => {
 
 router.checkInputGuardrails = checkInputGuardrails;
 router.SYSTEM_INSTRUCTION = SYSTEM_INSTRUCTION;
+router.shouldUseSearch = shouldUseSearch;
+router.getCatalogContext = getCatalogContext;
+router.clearCatalogCache = clearCatalogCache;
 module.exports = router;

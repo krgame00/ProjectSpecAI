@@ -1,11 +1,12 @@
+require('dotenv').config();
 const mysql = require('mysql2/promise');
 
 async function run() {
   const db = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '1234',
-    database: 'smart_pc_builder'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'smart_pc_builder'
   });
 
   const [cpus] = await db.query("SELECT p.id, p.model, c.socket as cpu_socket FROM products p JOIN spec_cpu c ON p.id=c.product_id WHERE p.category_id=1");

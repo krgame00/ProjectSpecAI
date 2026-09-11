@@ -1,0 +1,32 @@
+[
+  {
+    "badge": [120, 137],
+    "target": [196, 137],
+    "num": 1,
+    "label": "แผงสรุปราคา Real-time และปุ่มสั่งซื้อ / พิมพ์ PDF (Telemetry & Build)"
+  },
+  {
+    "badge": [120, 270],
+    "target": [191, 270],
+    "num": 2,
+    "label": "แถบเลือกหมวดหมู่ฮาร์ดแวร์ 7 ชิ้นส่วน (Category Navigation)"
+  },
+  {
+    "badge": [540, 68],
+    "target": [540, 108],
+    "num": 3,
+    "label": "ช่องค้นหาอุปกรณ์ตามชื่อรุ่น (Search Bar)"
+  },
+  {
+    "badge": [900, 240],
+    "target": [820, 240],
+    "num": 4,
+    "label": "การ์ดฮาร์ดแวร์ แสดงสเปก ราคา และปุ่มกดเลือกชิ้นส่วน (+) (Hardware Card)"
+  },
+  {
+    "badge": [915, 474],
+    "target": [965, 474],
+    "num": 5,
+    "label": "ปุ่มผู้ช่วยอัจฉริยะ AI Chatbot (SpecAI Assistant)"
+  }
+]

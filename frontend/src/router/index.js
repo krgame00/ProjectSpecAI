@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
+import { useToastStore } from '../stores/toast'
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     name: 'profile',
     component: () => import('../views/ProfileView.vue'),
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('../views/NotFoundView.vue')
   }
 ]
 
@@ -53,10 +59,18 @@ router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
 
   if (to.meta.requiresAdmin && !authStore.isAdmin) {
+    try {
+      const toastStore = useToastStore()
+      toastStore.warning('คุณไม่มีสิทธิ์เข้าถึงส่วนผู้ดูแลระบบ (Admin Only)')
+    } catch (e) {}
     return next({ name: 'landing' })
   }
 
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    try {
+      const toastStore = useToastStore()
+      toastStore.info('กรุณาเข้าสู่ระบบก่อนดำเนินการต่อ')
+    } catch (e) {}
     return next({ name: 'landing' })
   }
 

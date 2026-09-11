@@ -1,0 +1,136 @@
+<mxfile host="Electron" modified="2026-08-22T18:12:00.000Z" agent="PCSpec System Architect" version="21.0.0" type="device">
+  <diagram id="diagram_system_overview" name="4.1.1 ภาพรวมของระบบ (System Architecture)">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title Block -->
+        <mxCell id="main_title" value="รูปที่ 4.1 แผนภาพสถาปัตยกรรมและภาพรวมของระบบ (System Architecture &amp; Block Diagram)&#xa;ระบบจัดสเปกคอมพิวเตอร์อัจฉริยะ (PCSpec: Smart PC Builder with SpecAI)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="50" y="20" width="1250" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 1. PRESENTATION LAYER (FRONTEND) -->
+        <!-- ========================================================================= -->
+        <mxCell id="group_frontend" value="1. ส่วนติดต่อผู้ใช้และแสดงผล (Presentation Layer - Vue 3 &amp; Pinia Store)" style="shape=swimlane;startSize=36;fontSize=13;fontStyle=1;align=left;spacingLeft=15;horizontal=1;fillColor=#f8fafc;strokeColor=#334155;strokeWidth=2;fontColor=#0f172a;collapsible=0;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="1250" height="190" as="geometry" />
+        </mxCell>
+
+        <!-- Sub Module 1: Customer UI -->
+        <mxCell id="ui_customer" value="&lt;b&gt;💻 Customer Storefront &amp;amp; Builder UI&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• ระบบจัดสเปกคอมพิวเตอร์ (PC Builder)&lt;br&gt;• ตัวกรองอุปกรณ์และแคตตาล็อกสินค้า 7 หมวด&lt;br&gt;• แจ้งเตือนความเข้ากันได้ Real-time Badge&lt;br&gt;• พิมพ์ใบเสนอราคาและดาวน์โหลด PDF&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#059669;strokeWidth=1.8;fontColor=#0f172a;align=left;spacingLeft=12;verticalAlign=middle;" vertex="1" parent="group_frontend">
+          <mxGeometry x="30" y="55" width="360" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Sub Module 2: SpecAI UI -->
+        <mxCell id="ui_specai" value="&lt;b&gt;🤖 SpecAI Interactive Chatbot UI&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• หน้าต่างแชตบอตอัจฉริยะ (Floating Window)&lt;br&gt;• ระบบแนะนำสเปกตามงบประมาณและการใช้งาน&lt;br&gt;• แสดงการ์ดสเปกแนะนำพร้อมราคาเรียลไทม์&lt;br&gt;• ปุ่มนำสเปกสำเร็จรูปเข้าสู่ Builder อัตโนมัติ (1-Click)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2563eb;strokeWidth=1.8;fontColor=#0f172a;align=left;spacingLeft=12;verticalAlign=middle;" vertex="1" parent="group_frontend">
+          <mxGeometry x="440" y="55" width="370" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Sub Module 3: Admin UI -->
+        <mxCell id="ui_admin" value="&lt;b&gt;⚙️ Admin Management Dashboard&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• ระบบจัดการแคตตาล็อกสินค้า (CRUD ฮาร์ดแวร์)&lt;br&gt;• จัดการสต็อกสินค้าคงเหลือและราคาจำหน่าย&lt;br&gt;• ตรวจสอบรายการสั่งซื้อ (Orders Management)&lt;br&gt;• จัดการบทความและข่าวสารไอที&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.8;fontColor=#0f172a;align=left;spacingLeft=12;verticalAlign=middle;" vertex="1" parent="group_frontend">
+          <mxGeometry x="860" y="55" width="360" height="110" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- 2. PROCESSING LAYER (BACKEND) -->
+        <!-- ========================================================================= -->
+        <mxCell id="group_backend" value="2. ส่วนประมวลผลและตรรกะทางธุรกิจ (Processing Layer - Node.js &amp; Express.js MVC Architecture)" style="shape=swimlane;startSize=36;fontSize=13;fontStyle=1;align=left;spacingLeft=15;horizontal=1;fillColor=#f8fafc;strokeColor=#334155;strokeWidth=2;fontColor=#0f172a;collapsible=0;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="1250" height="310" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway & Security Layer -->
+        <mxCell id="be_gateway" value="&lt;b&gt;🚦 RESTful API Gateway &amp;amp; Security Middleware&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;CORS Handling | JWT Bearer Token Authentication | Request Validation | Error Handling Middleware&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#0f172a;strokeWidth=1.5;fontColor=#0f172a;align=center;verticalAlign=middle;" vertex="1" parent="group_backend">
+          <mxGeometry x="30" y="50" width="1190" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Engine 1: Compatibility Validation Engine -->
+        <mxCell id="be_engine_compat" value="&lt;b&gt;🧠 Compatibility Rule Engine&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• ตรวจสอบ Socket CPU &amp;amp; Mainboard&lt;br&gt;• ตรวจสอบ RAM Type (DDR4/DDR5) &amp;amp; Slot&lt;br&gt;• ตรวจสอบ Form Factor &amp;amp; PCIe Bus&lt;br&gt;• ประเมินความเข้ากันได้แบบ Matrix Rules&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#059669;strokeWidth=1.5;fontColor=#0f172a;align=left;spacingLeft=10;verticalAlign=middle;" vertex="1" parent="group_backend">
+          <mxGeometry x="30" y="115" width="280" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- Engine 2: SpecAI Intelligence Engine -->
+        <mxCell id="be_engine_ai" value="&lt;b&gt;⚡ SpecAI Recommendation Service&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• วิเคราะห์งบประมาณและรูปแบบการใช้งาน&lt;br&gt;• คัดเลือกอุปกรณ์ที่สมดุล (Anti-Bottleneck)&lt;br&gt;• สังเคราะห์ Prompt ส่งต่อให้ LLM&lt;br&gt;• แปลงผลลัพธ์เป็น JSON Spec Sheet&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2563eb;strokeWidth=1.5;fontColor=#0f172a;align=left;spacingLeft=10;verticalAlign=middle;" vertex="1" parent="group_backend">
+          <mxGeometry x="330" y="115" width="285" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- Engine 3: Power & Price Estimation Engine -->
+        <mxCell id="be_engine_power" value="&lt;b&gt;⚡ Power &amp;amp; Price Calculation Service&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• คำนวณ TDP รวมของ CPU, GPU และระบบ&lt;br&gt;• แนะนำขนาด Wattage พาวเวอร์ซัพพลาย (PSU)&lt;br&gt;• คำนวณราคารวม ส่วนลด และความคุ้มค่า&lt;br&gt;• ส่งออกข้อมูลสรุปเป็น Spec Quotation&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d97706;strokeWidth=1.5;fontColor=#0f172a;align=left;spacingLeft=10;verticalAlign=middle;" vertex="1" parent="group_backend">
+          <mxGeometry x="635" y="115" width="285" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- Engine 4: Inventory & Order Controller -->
+        <mxCell id="be_engine_order" value="&lt;b&gt;📦 Catalog &amp;amp; Order Controller&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;• จัดการข้อมูลสินค้า 7 หมวดหมู่ (CRUD)&lt;br&gt;• ตรวจสอบและตัดยอดสต็อกสินค้า&lt;br&gt;• บันทึกคำสั่งซื้อและสถานะชำระเงิน&lt;br&gt;• จัดการระบบบทความและข่าวสารไอที&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.5;fontColor=#0f172a;align=left;spacingLeft=10;verticalAlign=middle;" vertex="1" parent="group_backend">
+          <mxGeometry x="940" y="115" width="280" height="170" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- 3. DATA & EXTERNAL SERVICES LAYER -->
+        <!-- ========================================================================= -->
+        <mxCell id="group_data" value="3. ส่วนจัดเก็บข้อมูลและบริการภายนอก (Data &amp; External Services Layer)" style="shape=swimlane;startSize=36;fontSize=13;fontStyle=1;align=left;spacingLeft=15;horizontal=1;fillColor=#f8fafc;strokeColor=#334155;strokeWidth=2;fontColor=#0f172a;collapsible=0;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="700" width="1250" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Database Box -->
+        <mxCell id="data_mysql" value="&lt;b&gt;🗄️ MySQL Relational Database&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;Database: &lt;b&gt;smart_pc_builder&lt;/b&gt;&lt;br&gt;• &lt;b&gt;hardware_parts&lt;/b&gt; (สเปกฮาร์ดแวร์ 270+ รายการ)&lt;br&gt;• &lt;b&gt;compatibility_rules&lt;/b&gt; (กฎการเข้ากันได้ Socket/RAM)&lt;br&gt;• &lt;b&gt;users &amp;amp; orders&lt;/b&gt; (ข้อมูลสมาชิกและคำสั่งซื้อ)&lt;br&gt;• &lt;b&gt;articles&lt;/b&gt; (บทความและสาระไอที)&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.8;fontColor=#0f172a;align=left;spacingLeft=15;verticalAlign=middle;" vertex="1" parent="group_data">
+          <mxGeometry x="40" y="50" width="370" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Static Assets Storage -->
+        <mxCell id="data_assets" value="&lt;b&gt;📁 Hardware Image Assets&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;Directory: &lt;b&gt;/public/images/hardware/&lt;/b&gt;&lt;br&gt;• ไฟล์รูปภาพอุปกรณ์แยกตาม 7 หมวดหมู่&lt;br&gt;• ภาพประกอบ CPU, GPU, Mainboard ฯลฯ&lt;br&gt;• บริการผ่าน Express Static Middleware&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;strokeWidth=1.8;fontColor=#0f172a;align=left;spacingLeft=15;verticalAlign=middle;" vertex="1" parent="group_data">
+          <mxGeometry x="460" y="50" width="360" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- External AI LLM Service -->
+        <mxCell id="data_gemini" value="&lt;b&gt;☁️ External AI Cloud Service&lt;/b&gt;&lt;br&gt;&lt;font style='font-size: 11px;'&gt;&lt;b&gt;Google Gemini API (LLM Engine)&lt;/b&gt;&lt;br&gt;• ประมวลผล Natural Language Processing&lt;br&gt;• จับคู่สเปกตามงบและตอบคำถามเชิงเทคนิค&lt;br&gt;• คืนค่าผลลัพธ์เป็น Structured JSON Object&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9333ea;strokeWidth=1.8;fontColor=#0f172a;align=center;verticalAlign=middle;" vertex="1" parent="group_data">
+          <mxGeometry x="870" y="45" width="350" height="140" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- CONNECTORS / DATA FLOW ARROWS -->
+        <!-- ========================================================================= -->
+
+        <!-- Flow 1: Frontend to API Gateway -->
+        <mxCell id="flow_fe_be" value="RESTful API (HTTPS / JSON Payload / Bearer Token)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f172a;strokeWidth=2;fontColor=#0f172a;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#0f172a;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="group_frontend" target="group_backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Flow 2: API Gateway Internal Dispatch to Modules -->
+        <mxCell id="flow_gw_compat" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#059669;strokeWidth=1.5;exitX=0.12;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="group_backend" source="be_gateway" target="be_engine_compat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow_gw_ai" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=1.5;exitX=0.37;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="group_backend" source="be_gateway" target="be_engine_ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow_gw_power" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d97706;strokeWidth=1.5;exitX=0.63;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="group_backend" source="be_gateway" target="be_engine_power">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flow_gw_order" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=1.5;exitX=0.88;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="group_backend" source="be_gateway" target="be_engine_order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Flow 3: Backend to Database -->
+        <mxCell id="flow_be_db" value="SQL Query / Connection Pool (mysql2)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0284c7;strokeWidth=1.8;fontColor=#0284c7;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#0284c7;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="group_backend" target="data_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Flow 4: Backend to Assets Storage -->
+        <mxCell id="flow_be_assets" value="Static Asset Serving (express.static)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;fontColor=#64748b;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#64748b;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="group_backend" target="data_assets">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Flow 5: Backend to Gemini AI -->
+        <mxCell id="flow_be_ai" value="REST API / Google GenAI SDK (JSON)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9333ea;strokeWidth=1.8;fontColor=#9333ea;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;labelBorderColor=#9333ea;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="group_backend" target="data_gemini">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

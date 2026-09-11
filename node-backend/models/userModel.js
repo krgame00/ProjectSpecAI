@@ -14,7 +14,13 @@ let inMemoryUsers = [
   }
 ];
 
+const isMockAllowed = () => process.env.ALLOW_MOCK_DB === 'true' || process.env.NODE_ENV === 'test';
+
 const ensureAdminSeed = async () => {
+  if (!isMockAllowed()) {
+    logger.warn('Mock admin seeding blocked: ALLOW_MOCK_DB is not enabled.');
+    return;
+  }
   if (inMemoryUsers[0].password) return;
   const salt = await bcrypt.genSalt(10);
   inMemoryUsers[0].password = await bcrypt.hash('admin123', salt);
@@ -24,6 +30,7 @@ const ensureAdminSeed = async () => {
 const userModel = {
   findByEmail: async (email) => {
     if (db.isFallback && db.isFallback()) {
+      if (!isMockAllowed()) return null;
       await ensureAdminSeed();
       const user = inMemoryUsers.find(u => u.email === email);
       return user || null;

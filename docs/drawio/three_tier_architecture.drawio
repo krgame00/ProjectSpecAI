@@ -1,0 +1,145 @@
+<mxfile host="Electron" modified="2026-08-22T18:48:00.000Z" agent="PCSpec System Architect" version="21.0.0" type="device">
+  <diagram id="diagram_three_tier_clean" name="4.1.3 สถาปัตยกรรมแบบ 3 ระดับชั้น (Three-Tier Architecture)">
+    <mxGraphModel dx="1200" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Main Title Header -->
+        <mxCell id="main_title" value="Three-Tier Architecture (สถาปัตยกรรมแบบ 3 ระดับชั้น - ระบบ PCSpec)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="30" width="1000" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================================================= -->
+        <!-- 1. PRESENTATION TIER (CLIENTS - ฝั่งซ้าย) -->
+        <!-- ========================================================================= -->
+
+        <!-- Tier 1 Header -->
+        <mxCell id="hdr_tier1" value="Presentation Tier" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="260" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 1.1 Mobile / Tablet Icon -->
+        <mxCell id="icon_mobile" value="" style="rect;html=1;whiteSpace=wrap;rounded=1;arcSize=18;fillColor=#38bdf8;strokeColor=#0284c7;strokeWidth=2.5;" vertex="1" parent="1">
+          <mxGeometry x="155" y="140" width="70" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_mobile_screen" value="" style="rect;html=1;whiteSpace=wrap;rounded=0;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="163" y="150" width="54" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_mobile_btn" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="184" y="230" width="11" height="11" as="geometry" />
+        </mxCell>
+
+        <!-- 1.2 Laptop Icon -->
+        <mxCell id="icon_laptop" value="" style="rect;html=1;whiteSpace=wrap;rounded=1;arcSize=8;fillColor=#38bdf8;strokeColor=#0284c7;strokeWidth=2.5;" vertex="1" parent="1">
+          <mxGeometry x="125" y="280" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_laptop_screen" value="" style="rect;html=1;whiteSpace=wrap;rounded=0;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="135" y="288" width="110" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_laptop_base" value="" style="trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#0284c7;strokeColor=#0369a1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="110" y="360" width="160" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- 1.3 Desktop PC Icon -->
+        <mxCell id="icon_pc_mon" value="" style="rect;html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#38bdf8;strokeColor=#0284c7;strokeWidth=2.5;" vertex="1" parent="1">
+          <mxGeometry x="130" y="415" width="120" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_pc_screen" value="" style="rect;html=1;whiteSpace=wrap;rounded=0;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="140" y="425" width="100" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_pc_stand" value="" style="rect;html=1;whiteSpace=wrap;fillColor=#0284c7;strokeColor=#0369a1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="180" y="500" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_pc_base" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0284c7;strokeColor=#0369a1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="160" y="513" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="icon_pc_kb" value="" style="trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#0284c7;strokeColor=#0369a1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="120" y="527" width="140" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 1 Footer -->
+        <mxCell id="lbl_tier1_clients" value="Clients&#xa;(Vue 3 &amp; Pinia SPA)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="570" width="260" height="45" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- 2. LOGIC TIER (SERVER - ตรงกลาง) -->
+        <!-- ========================================================================= -->
+
+        <!-- Tier 2 Header -->
+        <mxCell id="hdr_tier2" value="Logic Tier" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="460" y="170" width="280" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Server Rack Graphic (Green 3-Stack Server Icon) -->
+        <mxCell id="rack_unit1" value="  ━━  ━━  ━━  ●" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#34d399;strokeColor=#059669;strokeWidth=2.5;fontStyle=1;fontSize=13;fontColor=#064e3b;align=left;spacingLeft=20;" vertex="1" parent="1">
+          <mxGeometry x="500" y="235" width="200" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="rack_unit2" value="  ━━  ━━  ━━  ●" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#34d399;strokeColor=#059669;strokeWidth=2.5;fontStyle=1;fontSize=13;fontColor=#064e3b;align=left;spacingLeft=20;" vertex="1" parent="1">
+          <mxGeometry x="500" y="295" width="200" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="rack_unit3" value="  ━━  ━━  ━━  ●" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#34d399;strokeColor=#059669;strokeWidth=2.5;fontStyle=1;fontSize=13;fontColor=#064e3b;align=left;spacingLeft=20;" vertex="1" parent="1">
+          <mxGeometry x="500" y="355" width="200" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 2 Footer -->
+        <mxCell id="lbl_tier2_server" value="Server&#xa;(Node.js &amp; Express.js MVC)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="460" y="425" width="280" height="45" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- 3. DATA TIER (DATABASE - ฝั่งขวา) -->
+        <!-- ========================================================================= -->
+
+        <!-- Tier 3 Header -->
+        <mxCell id="hdr_tier3" value="Data Tier" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="870" y="170" width="260" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Database Cylinder Graphic (Blue 3-Tier Database Cylinder) -->
+        <mxCell id="icon_db" value="●   ●   ●&#xa;&#xa;●   ●   ●&#xa;&#xa;●   ●   ●" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=22;fillColor=#38bdf8;strokeColor=#0284c7;strokeWidth=2.5;fontStyle=1;fontSize=11;fontColor=#0369a1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="905" y="235" width="190" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 3 Footer -->
+        <mxCell id="lbl_tier3_db" value="Database&#xa;(MySQL: 'smart_pc_builder')" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="870" y="425" width="260" height="45" as="geometry" />
+        </mxCell>
+
+
+        <!-- ========================================================================= -->
+        <!-- CONNECTORS / TWO-WAY ARROWS (เหมือนในรูปต้นฉบับ 100%) -->
+        <!-- ========================================================================= -->
+
+        <!-- Mobile <-> Server (Two-way Arrow) -->
+        <mxCell id="arrow_mobile_server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2.2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="icon_mobile" target="rack_unit1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Laptop <-> Server (Two-way Arrow) -->
+        <mxCell id="arrow_laptop_server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2.2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="icon_laptop" target="rack_unit2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Desktop <-> Server (Two-way Arrow) -->
+        <mxCell id="arrow_pc_server" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2.2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="icon_pc_mon" target="rack_unit3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Server <-> Database (Two-way Arrow) -->
+        <mxCell id="arrow_server_db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=2.5;startArrow=classic;startFill=1;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=1;" edge="1" parent="1" source="rack_unit2" target="icon_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Caption Below (Thesis Style) -->
+        <mxCell id="caption" value="ภาพที่ 4.3 สถาปัตยกรรมแบบ 3 ระดับชั้น (Three-Tier Architecture Diagram) ของระบบ PCSpec" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="650" width="1000" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

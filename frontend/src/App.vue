@@ -68,6 +68,7 @@
           @toggle-chat="chatbotStore.toggle"
           @send-message="chatbotStore.sendMessage"
           @apply-build="chatbotStore.applyBuild"
+          @clear-chat="chatbotStore.clear"
           @request-login="openLoginFromChat"
         />
       </Transition>
@@ -143,7 +144,7 @@ import { useToastStore } from './stores/toast';
 import ToastNotification from './components/ToastNotification.vue';
 import { useDialogFocus } from './composables/useDialogFocus';
 
-const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://projectspecai.onrender.com/api/v1' : 'http://localhost:3001/api/v1');
+import { API_BASE } from './services/apiBase';
 
 const authStore = useAuthStore();
 const builderStore = useBuilderStore();
@@ -295,15 +296,6 @@ const logout = () => {
   closeNav();
   authStore.logout();
   router.push('/');
-};
-
-const handleCheckout = () => {
-  if (!builderStore.hasAnyComponent) return;
-  if (userRole.value === 'guest') {
-    showLoginModal.value = true;
-  } else {
-    router.push('/checkout');
-  }
 };
 </script>
 

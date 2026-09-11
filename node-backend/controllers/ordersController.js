@@ -59,8 +59,9 @@ const ordersController = {
   },
 
   create: async (req, res, next) => {
+    let connection;
     try {
-      let { customer_name, customer_address, customer_phone, assembly_type, total_price, build_items } = req.body;
+      let { customer_name, customer_address, customer_phone, assembly_type, build_items } = req.body;
 
       if (!customer_name || typeof customer_name !== 'string' || customer_name.trim().length === 0) {
         customer_name = 'Guest';
@@ -68,16 +69,46 @@ const ordersController = {
         customer_name = customer_name.trim();
       }
 
-      customer_address = customer_address ? customer_address.trim() : '';
-      customer_phone = customer_phone ? customer_phone.trim() : '0000000000';
+      customer_address = customer_address ? String(customer_address).trim() : '';
+      customer_phone = customer_phone ? String(customer_phone).trim() : '0000000000';
 
       if (!build_items || typeof build_items !== 'object' || Object.keys(build_items).length === 0) {
         return res.status(400).json({ error: 'No items in cart' });
       }
 
-      const newOrderId = `ORD-${Math.floor(Math.random() * 9000) + 1000}`;
+      const validItemEntries = Object.entries(build_items).filter(([_, itemId]) => itemId !== null && itemId !== undefined && itemId !== '');
+      if (validItemEntries.length === 0) {
+        return res.status(400).json({ error: 'No items in cart' });
+      }
+
+      const ASSEMBLY_FEES = {
+        none: 0,
+        standard: 500,
+        premium: 1000
+      };
+      const normalizedAssemblyType = ASSEMBLY_FEES[assembly_type] !== undefined ? assembly_type : 'none';
+      const assemblyFee = ASSEMBLY_FEES[normalizedAssemblyType];
+
+      // Collision-resistant order ID (ORD-YYYYMMDD-XXXXXX)
+      const datePart = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      const randomPart = Math.floor(100000 + Math.random() * 900000);
+      const newOrderId = `ORD-${datePart}-${randomPart}`;
 
       if (db.isFallback()) {
+        const mockProducts = require('../config/mock-data');
+        let calculatedItemsTotal = 0;
+        const validItems = {};
+
+        for (const [category, itemId] of validItemEntries) {
+          const dbProductId = mapFrontendIdToDbId(itemId);
+          const found = mockProducts.find(p => p.id === dbProductId || p.id === itemId || String(p.id) === String(itemId));
+          const price = found ? (parseFloat(found.price) || 0) : 0;
+          calculatedItemsTotal += price;
+          validItems[category] = dbProductId;
+        }
+
+        const calculatedTotal = calculatedItemsTotal + assemblyFee;
+
         let orders = [];
         try {
           const fileData = await fs.readFile(ordersFilePath, 'utf8');
@@ -89,43 +120,87 @@ const ordersController = {
           customer_name,
           customer_address,
           customer_phone,
-          assembly_type,
-          total_price: parseFloat(total_price),
+          assembly_type: normalizedAssemblyType,
+          total_price: calculatedTotal,
           status: 'assembling',
           created_at: new Date().toISOString(),
-          build_items
+          build_items: validItems
         };
 
         orders.unshift(newOrderObj);
         await fs.writeFile(ordersFilePath, JSON.stringify(orders, null, 2), 'utf8');
-        logger.info(`Saved order ${newOrderId} to orders.json`);
-      } else {
-        await db.query(`
-          INSERT INTO orders (id, customer_name, customer_address, customer_phone, assembly_type, total_price, status)
-          VALUES (?, ?, ?, ?, ?, ?, 'assembling')
-        `, [newOrderId, customer_name, customer_address, customer_phone, assembly_type, total_price]);
+        logger.info(`Saved order ${newOrderId} (total: ${calculatedTotal}) to orders.json`);
 
-        for (const [category, itemId] of Object.entries(build_items)) {
-          if (!itemId) continue;
-          const dbProductId = mapFrontendIdToDbId(itemId);
-          const [products] = await db.query('SELECT price FROM products WHERE id = ?', [dbProductId]);
-          const price = products.length > 0 ? parseFloat(products[0].price) : 0;
-
-          await db.query(`
-            INSERT INTO order_items (order_id, product_id, category_slug, price)
-            VALUES (?, ?, ?, ?)
-          `, [newOrderId, dbProductId, category, price]);
-        }
-        logger.info(`Saved order ${newOrderId} and its items to database`);
+        return res.status(201).json({
+          success: true,
+          order_id: newOrderId,
+          total_price: calculatedTotal,
+          message: 'Order created successfully'
+        });
       }
 
-      res.status(201).json({
+      connection = await db.pool.getConnection();
+      await connection.beginTransaction();
+
+      let calculatedItemsTotal = 0;
+      const itemsToInsert = [];
+
+      for (const [category, itemId] of validItemEntries) {
+        const dbProductId = mapFrontendIdToDbId(itemId);
+        const [products] = await connection.query('SELECT id, price FROM products WHERE id = ? FOR UPDATE', [dbProductId]);
+        if (!products || products.length === 0) {
+          await connection.rollback();
+          return res.status(400).json({ error: `Product not found for item ID: ${itemId}` });
+        }
+        const price = parseFloat(products[0].price) || 0;
+        calculatedItemsTotal += price;
+        itemsToInsert.push({
+          productId: dbProductId,
+          categorySlug: category,
+          price
+        });
+      }
+
+      const calculatedTotal = calculatedItemsTotal + assemblyFee;
+
+      await connection.query(`
+        INSERT INTO orders (id, customer_name, customer_address, customer_phone, assembly_type, total_price, status)
+        VALUES (?, ?, ?, ?, ?, ?, 'assembling')
+      `, [newOrderId, customer_name, customer_address, customer_phone, normalizedAssemblyType, calculatedTotal]);
+
+      for (const item of itemsToInsert) {
+        await connection.query(`
+          INSERT INTO order_items (order_id, product_id, category_slug, price)
+          VALUES (?, ?, ?, ?)
+        `, [newOrderId, item.productId, item.categorySlug, item.price]);
+      }
+
+      await connection.commit();
+      logger.info(`Saved order ${newOrderId} (total: ${calculatedTotal}) and its items to database`);
+
+      return res.status(201).json({
         success: true,
         order_id: newOrderId,
+        total_price: calculatedTotal,
         message: 'Order created successfully'
       });
     } catch (error) {
+      if (connection) {
+        try {
+          await connection.rollback();
+        } catch (rbErr) {
+          logger.error('Rollback error:', rbErr);
+        }
+      }
       next(error);
+    } finally {
+      if (connection) {
+        try {
+          connection.release();
+        } catch (relErr) {
+          logger.error('Connection release error:', relErr);
+        }
+      }
     }
   },
 
@@ -143,8 +218,10 @@ const ordersController = {
           }
         } catch (err) {}
 
-        if (orderId === 'ORD-1001') return res.json({ order_id: orderId, status: 'assembling' });
-        if (orderId === 'ORD-1002') return res.json({ order_id: orderId, status: 'shipped' });
+        if (process.env.NODE_ENV !== 'production') {
+          if (orderId === 'ORD-1001') return res.json({ order_id: orderId, status: 'assembling' });
+          if (orderId === 'ORD-1002') return res.json({ order_id: orderId, status: 'shipped' });
+        }
         return res.status(404).json({ error: 'Order not found' });
       }
 
@@ -153,8 +230,10 @@ const ordersController = {
         return res.json({ order_id: orderId, status: rows[0].status });
       }
 
-      if (orderId === 'ORD-1001') return res.json({ order_id: orderId, status: 'assembling' });
-      if (orderId === 'ORD-1002') return res.json({ order_id: orderId, status: 'shipped' });
+      if (process.env.NODE_ENV !== 'production') {
+        if (orderId === 'ORD-1001') return res.json({ order_id: orderId, status: 'assembling' });
+        if (orderId === 'ORD-1002') return res.json({ order_id: orderId, status: 'shipped' });
+      }
       return res.status(404).json({ error: 'Order not found' });
     } catch (error) {
       next(error);

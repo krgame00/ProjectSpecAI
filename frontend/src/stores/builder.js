@@ -2,9 +2,34 @@ import { defineStore } from 'pinia'
 import { useCatalogStore } from './catalog'
 import { hasIGPU, calcTotalTdp } from '../utils/compatibility'
 
+const DEFAULT_BUILD = { cpu: null, mobo: null, ram: null, gpu: null, storage: null, psu: null, case: null };
+
+function loadStoredBuild() {
+  try {
+    if (typeof localStorage !== 'undefined') {
+      const raw = localStorage.getItem('pcspec_build');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+          return { ...DEFAULT_BUILD, ...parsed };
+        }
+      }
+    }
+  } catch (e) {}
+  return { ...DEFAULT_BUILD };
+}
+
+function saveStoredBuild(build) {
+  try {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('pcspec_build', JSON.stringify(build));
+    }
+  } catch (e) {}
+}
+
 export const useBuilderStore = defineStore('builder', {
   state: () => ({
-    build: { cpu: null, mobo: null, ram: null, gpu: null, storage: null, psu: null, case: null }
+    build: loadStoredBuild()
   }),
   getters: {
     totalPrice: (state) => {
@@ -201,12 +226,15 @@ export const useBuilderStore = defineStore('builder', {
       } else {
         this.build[catId] = itemId
       }
+      saveStoredBuild(this.build)
     },
     setItem(catId, itemId) {
       this.build[catId] = itemId
+      saveStoredBuild(this.build)
     },
     clearBuild() {
       Object.keys(this.build).forEach(k => this.build[k] = null)
+      saveStoredBuild(this.build)
     }
   }
 })

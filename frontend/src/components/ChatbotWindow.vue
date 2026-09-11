@@ -35,20 +35,31 @@
             </span>
           </div>
         </div>
-        <button class="close-chat-btn" aria-label="ปิด SpecAI" @click="$emit('toggle-chat', false)">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
+        <div class="chat-header-actions">
+          <button class="clear-chat-btn" title="เริ่มการสนทนาใหม่" aria-label="เริ่มการสนทนาใหม่" @click="$emit('clear-chat')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            <span>เริ่มใหม่</span>
+          </button>
+          <button class="close-chat-btn" aria-label="ปิด SpecAI" @click="$emit('toggle-chat', false)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
       </div>
       
       <!-- Chat Body -->
       <div v-if="isAuthenticated" class="chat-body" ref="chatBodyRef">
         <div v-for="(msg, index) in history" :key="index" :class="['msg', msg.role]">
-          <div class="msg-avatar" v-if="msg.role === 'bot'">🤖</div>
+          <div class="msg-avatar" v-if="msg.role === 'bot'">
+            <span class="bot-emoji">🤖</span>
+          </div>
           <div class="msg-bubble">
             <div v-if="msg.image" class="msg-image">
                <img :src="msg.image" alt="Uploaded Image" />
             </div>
-            <div class="msg-content" v-html="renderSafeMarkdown(msg.text)"></div>
+            <div class="msg-content">
+              <span v-html="renderSafeMarkdown(msg.text)"></span>
+              <span v-if="msg.isStreaming" class="streaming-caret" aria-hidden="true"></span>
+            </div>
             <div v-if="sanitizeSources(msg.sources).length" class="sources-container">
               <a v-for="(source, idx) in sanitizeSources(msg.sources)" :key="idx" :href="source.uri" target="_blank" rel="noopener noreferrer" class="source-chip">
                 🌐 {{ source.title.length > 25 ? source.title.substring(0, 25) + '...' : source.title }}
@@ -61,11 +72,26 @@
             </div>
           </div>
         </div>
-        <div v-if="isTyping" class="typing-indicator">
-          <div class="msg-avatar">🤖</div>
-          <div class="typing-bubble">
-            <div class="typing-dots">
-              <span></span><span></span><span></span>
+
+        <!-- Modern Supabase-inspired Thinking Animation -->
+        <div v-if="isTyping" class="typing-indicator" data-test="typing-indicator">
+          <div class="msg-avatar thinking-avatar">
+            <div class="avatar-ring"></div>
+            <span class="bot-emoji">🤖</span>
+          </div>
+          <div class="typing-bubble thinking-bubble">
+            <div class="thinking-header">
+              <div class="thinking-badge">
+                <span class="sparkle-icon">✨</span>
+                <span class="thinking-text">SpecAI กำลังวิเคราะห์ข้อมูล...</span>
+              </div>
+              <div class="typing-dots">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="thinking-skeleton">
+              <div class="skeleton-shimmer-bar bar-1"></div>
+              <div class="skeleton-shimmer-bar bar-2"></div>
             </div>
           </div>
         </div>
@@ -124,7 +150,7 @@ const props = defineProps({
   isTyping: Boolean
 });
 
-const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build', 'request-login']);
+const emit = defineEmits(['toggle-chat', 'send-message', 'apply-build', 'request-login', 'clear-chat']);
 const dialogRef = ref(null);
 const launcherRef = ref(null);
 const closeDialog = () => emit('toggle-chat', false);
@@ -307,6 +333,32 @@ const handleSend = () => {
   background: var(--success); 
   border-radius: 50%; 
 }
+.chat-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.clear-chat-btn {
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline-cool);
+  color: var(--ink-mute);
+  height: 32px;
+  padding: 0 0.65rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+.clear-chat-btn:hover {
+  color: var(--ink);
+  background: var(--canvas);
+  border-color: var(--hairline-strong);
+}
 .close-chat-btn { 
   background: transparent;
   border: 1px solid transparent;
@@ -378,7 +430,7 @@ const handleSend = () => {
   font-size: 0.85rem; flex-shrink: 0;
 }
 .msg-bubble { 
-  max-width: 80%; padding: 0.75rem 1rem;
+  max-width: 85%; padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
   font-size: var(--text-sm); line-height: 1.5;
 }
@@ -393,6 +445,83 @@ const handleSend = () => {
   border: 1px solid var(--hairline-strong);
   border-top-right-radius: 4px;
   color: var(--ink);
+}
+.msg-content {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  word-break: break-word;
+}
+.msg-content p {
+  margin: 0 0 0.5rem 0;
+}
+.msg-content p:last-child {
+  margin-bottom: 0;
+}
+.msg-content ul,
+.msg-content ol {
+  margin: 0.35rem 0 0.5rem 1.25rem;
+  padding: 0;
+}
+.msg-content li {
+  margin-bottom: 0.25rem;
+}
+.msg-content h1,
+.msg-content h2,
+.msg-content h3,
+.msg-content h4 {
+  margin: 0.75rem 0 0.35rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.msg-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.8rem;
+  background: var(--canvas);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--hairline-cool);
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.msg-content th,
+.msg-content td {
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  border: 1px solid var(--hairline-cool);
+  vertical-align: top;
+}
+.msg-content th {
+  background: var(--canvas-night-soft);
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.msg-content tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.02);
+}
+.msg-content code {
+  background: var(--canvas-night-soft);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: monospace;
+  border: 1px solid var(--hairline-cool);
+}
+.msg-content pre {
+  background: var(--canvas-night);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  border: 1px solid var(--hairline);
+  margin: 0.5rem 0;
+}
+.msg-content pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 .quick-actions { 
   display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; 
@@ -412,20 +541,139 @@ const handleSend = () => {
   color: var(--primary);
   transform: translateY(-2px);
 }
-.typing-indicator { display: flex; gap: 0.6rem; align-items: flex-start; }
-.typing-bubble {
-  background: var(--canvas-soft);
+.typing-indicator {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  animation: typingSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.thinking-avatar {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(62, 207, 142, 0.35);
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: calc(var(--radius-sm) + 2px);
+  border: 1.5px solid var(--primary);
+  opacity: 0.8;
+  animation: avatarGlowPulse 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+.thinking-bubble {
+  background: var(--canvas);
   border: 1px solid var(--hairline-cool);
-  border-radius: var(--radius-md); border-top-left-radius: 4px;
-  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-md);
+  border-top-left-radius: 4px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 16px -2px rgba(62, 207, 142, 0.08), 0 0 0 1px rgba(62, 207, 142, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+  max-width: 80%;
+  animation: thinkingGlow 2.4s ease-in-out infinite alternate;
 }
-.typing-dots { display: flex; gap: 4px; align-items: center; }
+
+.thinking-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.thinking-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sparkle-icon {
+  font-size: 0.8rem;
+  display: inline-block;
+  animation: sparkleTwinkle 2s ease-in-out infinite;
+}
+
+.thinking-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  background: linear-gradient(90deg, var(--ink) 0%, var(--primary-deep) 50%, var(--ink) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 2.2s linear infinite;
+  letter-spacing: -0.01em;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 3.5px;
+  align-items: center;
+}
+
 .typing-dots span {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--ink-mute);
-  animation: typingDot 1.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: typingDot 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
 }
-.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.thinking-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.skeleton-shimmer-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(223, 223, 223, 0.45) 0%, rgba(62, 207, 142, 0.22) 50%, rgba(223, 223, 223, 0.45) 100%);
+  background-size: 200% 100%;
+  animation: skeletonWave 1.6s ease-in-out infinite;
+}
+
+.skeleton-shimmer-bar.bar-1 {
+  width: 92%;
+}
+
+.skeleton-shimmer-bar.bar-2 {
+  width: 65%;
+  animation-delay: 0.25s;
+}
+
+.streaming-caret {
+  display: inline-block;
+  width: 2.5px;
+  height: 1em;
+  background: var(--primary);
+  vertical-align: -0.15em;
+  margin-left: 3px;
+  border-radius: 1px;
+  animation: caretBlink 0.75s ease-in-out infinite;
+}
 .chat-input { 
   padding: 1rem 1.25rem;
   background: var(--canvas); border-top: 1px solid var(--hairline);
@@ -486,6 +734,74 @@ const handleSend = () => {
 @keyframes msgSlideIn { 
   from { opacity: 0; transform: translateY(4px); } 
   to { opacity: 1; transform: translateY(0); } 
+}
+@keyframes typingSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes thinkingGlow {
+  0% {
+    box-shadow: 0 4px 16px -2px rgba(62, 207, 142, 0.06), 0 0 0 1px rgba(62, 207, 142, 0.1);
+  }
+  100% {
+    box-shadow: 0 6px 22px -2px rgba(62, 207, 142, 0.18), 0 0 0 1px rgba(62, 207, 142, 0.28);
+  }
+}
+@keyframes avatarGlowPulse {
+  0% {
+    transform: scale(0.94);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.94);
+    opacity: 0.9;
+  }
+}
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+}
+@keyframes textShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+@keyframes skeletonWave {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+@keyframes caretBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scaleY(0.7);
+  }
 }
 @keyframes typingDot {
   0%, 60%, 100% { transform: translateY(0); opacity: 0.3; }

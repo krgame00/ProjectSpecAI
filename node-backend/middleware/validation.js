@@ -1,6 +1,9 @@
 function validateRequired(fields) {
   return (req, res, next) => {
-    const missing = fields.filter(field => !req.body[field]);
+    const missing = fields.filter(field => {
+      const val = req.body[field];
+      return val === undefined || val === null || val === '';
+    });
     if (missing.length > 0) {
       return res.status(400).json({
         error: `Missing required fields: ${missing.join(', ')}`
