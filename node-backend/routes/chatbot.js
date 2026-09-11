@@ -204,7 +204,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
         budgetThb: requestFacts.budgetThb,
         useCase: requestFacts.useCase,
         selected: req.body.selected,
-        categories: req.body.categories,
+        categories: req.body.categories || classification.categories || undefined,
       }),
     ]);
     const context = prepareContext({
@@ -293,7 +293,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
       budgetThb: turnFacts.budgetThb,
       useCase: turnFacts.useCase,
       selected: req.body.selected,
-      categories: req.body.categories,
+      categories: req.body.categories || classification.categories || undefined,
     });
     const history = trimHistory(session.history, { maxMessages: config.history.maxMessages, charBudget: config.history.charBudget });
     const contents = toGeminiContents(history, '');

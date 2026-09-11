@@ -98,8 +98,11 @@ async function consumeStreamWithFallback({
         contents,
         config: createGenerationConfig({ systemInstruction, useLiveSearch, temperature }),
       }), config.providerTimeoutMs);
-      for await (const chunk of stream) {
-        if (onChunk) await onChunk(chunk, { model, fallbackCount: index });
+      const iterator = stream[Symbol.asyncIterator]();
+      while (true) {
+        const next = await withTimeout(iterator.next(), config.providerTimeoutMs);
+        if (next.done) break;
+        if (onChunk) await onChunk(next.value, { model, fallbackCount: index });
       }
       return true;
     },

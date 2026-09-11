@@ -9,8 +9,10 @@ describe('SpecAI routing policy', () => {
   });
 
   test('does not fast-path hardware questions', () => {
-    expect(classifyRequest('แนะนำ CPU สำหรับเล่นเกม').route).toBe('ai');
+    expect(classifyRequest('CPU คืออะไร').route).toBe('ai');
     expect(classifyRequest('ช่วยจัดสเปค งบ 30000').route).toBe('catalog');
+    expect(classifyRequest('แนะนำ GPU รุ่นไหนดี')).toMatchObject({ route: 'catalog', categories: ['gpu'] });
+    expect(classifyRequest('ขอ RAM สำหรับ AM5')).toMatchObject({ route: 'catalog', categories: ['ram'] });
   });
 
   test('enables live search only for freshness-sensitive requests', () => {

@@ -1,6 +1,17 @@
 const HARDWARE_TERMS = /(?:cpu|gpu|ram|ssd|nvme|psu|motherboard|mainboard|computer|pc|hardware|การ์ดจอ|ซีพียู|แรม|เมนบอร์ด|คอม|ประกอบ|สเปก)/i;
 const FRESHNESS_TERMS = /(?:ล่าสุด|วันนี้|ตอนนี้|ปัจจุบัน|ราคาล่าสุด|มีของไหม|ของหมดไหม|ข่าว|เพิ่งเปิดตัว|เข้าไทย|driver ล่าสุด|bios ล่าสุด|firmware|jib|advice|banana\s*it|ihavecpu|latest|current|stock|availability|release|launch|เช็กข้อมูลล่าสุด|ค้นเว็บ)/i;
 const BUILD_TERMS = /(?:จัดสเปค|จัดคอม|ประกอบคอม|สเปคคอม|แนะนำสเปค|full\s*build|gaming\s*pc|build me|งบ\s*[\d,]+|budget\s*[\d,]+)/i;
+const SINGLE_PART_TERMS = /(?:\bcpu\b|\bgpu\b|\bram\b|\bssd\b|\bpsu\b|\bmotherboard\b|\bmainboard\b|การ์ดจอ|ซีพียู|แรม|เมนบอร์ด|เมนบอร์ด|เพาเวอร์|พาวเวอร์|เคส)/i;
+const SINGLE_PART_REQUEST = /(?:แนะนำ|เลือก|ขอ|หา|ซื้อ|ช่วยดู|รุ่นไหนดี|ตัวไหนดี|recommend|suggest|which|best)/i;
+const CATEGORY_FROM_TEXT = [
+  ['cpu', /(?:\bcpu\b|ซีพียู)/i],
+  ['mobo', /(?:\bmotherboard\b|\bmainboard\b|เมนบอร์ด)/i],
+  ['ram', /(?:\bram\b|แรม)/i],
+  ['gpu', /(?:\bgpu\b|การ์ดจอ)/i],
+  ['storage', /(?:\bssd\b|\bnvme\b|ฮาร์ดดิสก์|สตอเรจ)/i],
+  ['psu', /(?:\bpsu\b|เพาเวอร์|พาวเวอร์)/i],
+  ['case', /(?:\bcase\b|เคส)/i],
+];
 const FAST_PATTERNS = {
   greeting: [/^(?:สวัสดี|หวัดดี|ดีครับ|ดีค่ะ|hello|hi|hey)\s*[!?.ครับค่ะ]*$/i],
   thanks: [/^(?:ขอบคุณ|ขอบใจ|ขอบคุณมาก|thanks|thank you|thx)\s*[!?.ครับค่ะ]*$/i],
@@ -20,6 +31,16 @@ function isCatalogIntent(text) {
   return BUILD_TERMS.test(normalizeText(text));
 }
 
+function isSinglePartIntent(text) {
+  const normalized = normalizeText(text);
+  return SINGLE_PART_TERMS.test(normalized) && SINGLE_PART_REQUEST.test(normalized);
+}
+
+function inferRequestedCategories(text) {
+  const normalized = normalizeText(text);
+  return CATEGORY_FROM_TEXT.filter(([, pattern]) => pattern.test(normalized)).map(([category]) => category);
+}
+
 function detectFastIntent(text) {
   const normalized = normalizeText(text);
   if (!normalized || HARDWARE_TERMS.test(normalized) && !/^(?:สวัสดี|hello|hi)/i.test(normalized)) return null;
@@ -35,7 +56,7 @@ function classifyRequest(text, config = {}) {
     return { route: 'ai', fastIntent: null, useCatalog: false, useLiveSearch: false, requiresBuild: false, text: normalized };
   }
   const fastIntent = config.fastPath === false ? null : detectFastIntent(normalized);
-  const catalog = config.targetedCatalog !== false && isCatalogIntent(normalized);
+  const catalog = config.targetedCatalog !== false && (isCatalogIntent(normalized) || isSinglePartIntent(normalized));
   const liveSearch = config.liveSearch !== false && isFreshnessSensitive(normalized);
   const route = fastIntent
     ? 'fast'
@@ -52,6 +73,7 @@ function classifyRequest(text, config = {}) {
     useCatalog: catalog,
     useLiveSearch: liveSearch,
     requiresBuild: catalog,
+    categories: isCatalogIntent(normalized) ? null : inferRequestedCategories(normalized),
     text: normalized
   };
 }
@@ -108,6 +130,8 @@ module.exports = {
   normalizeText,
   isFreshnessSensitive,
   isCatalogIntent,
+  isSinglePartIntent,
+  inferRequestedCategories,
   detectFastIntent,
   classifyRequest,
   getFastPathResponse

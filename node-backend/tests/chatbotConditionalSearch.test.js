@@ -14,7 +14,8 @@ describe('conditional live search safeguards', () => {
       { web: { uri: 'https://jib.co.th/item', title: 'JIB duplicate' } },
     ] });
     expect(sources).toHaveLength(3);
-    expect(sources.map(source => source.type)).toEqual(['official', 'thai_retailer', 'other']);
+    expect(sources.map(source => source.uri)).toEqual(['https://www.intel.com/spec', 'https://jib.co.th/item', 'https://example.com']);
     expect(sourceTrust('https://www.intel.com', 'Intel').rank).toBe(1);
+    expect(sourceTrust('https://intel.com.attacker.example').rank).toBe(4);
   });
 });
