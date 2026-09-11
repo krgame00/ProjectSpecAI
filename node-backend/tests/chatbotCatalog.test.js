@@ -20,4 +20,14 @@ describe('targeted catalog retrieval', () => {
     expect(validateRecommendedBuild({ cpu: 1, gpu: 999, ram: 4 }, candidates)).toMatchObject({ cpu: 1, gpu: null, ram: 4 });
     expect(buildCatalogContext(candidates)).toContain('ID:');
   });
+
+  test('filters known incompatible candidates instead of merely lowering their score', () => {
+    const candidates = selectTargetedCandidates([
+      ...products,
+      { id: 7, category: 'mobo', brand: 'Board', model: 'AM4', price: 3000, mobo_socket: 'AM4', mobo_ram_type: 'DDR4' },
+      { id: 8, category: 'psu', brand: 'PSU', model: '300W', price: 1000, psu_wattage: 300 },
+    ], { selected: { cpu: 1, gpu: 5 }, categories: ['mobo', 'psu'] });
+    expect(candidates.mobo.map(item => item.id)).not.toContain(7);
+    expect(candidates.psu.map(item => item.id)).not.toContain(8);
+  });
 });

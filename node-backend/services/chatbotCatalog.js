@@ -56,6 +56,25 @@ function compatibilityScore(product, selected = {}) {
   return score;
 }
 
+function isCompatibleCandidate(product, selected = {}) {
+  if (product.category === 'mobo' && selected.cpu?.socket && product.socket) {
+    if (selected.cpu.socket.toLowerCase() !== product.socket.toLowerCase()) return false;
+  }
+  if (product.category === 'ram' && selected.mobo?.ramType && product.ramType) {
+    if (selected.mobo.ramType.toLowerCase() !== product.ramType.toLowerCase()) return false;
+  }
+  if (product.category === 'psu' && selected.gpu?.tdp && product.wattage) {
+    if (product.wattage < selected.gpu.tdp * 2.2) return false;
+  }
+  if (product.category === 'case' && selected.mobo?.formFactor && product.formFactor) {
+    if (!product.formFactor.toLowerCase().includes(selected.mobo.formFactor.toLowerCase())) return false;
+  }
+  if (product.category === 'case' && selected.gpu?.gpuLength && product.gpuLength) {
+    if (product.gpuLength < selected.gpu.gpuLength) return false;
+  }
+  return true;
+}
+
 function extractBudget(text = '', fallback = null) {
   const match = String(text).match(/(?:งบ|budget)\s*(?:ไม่เกิน|ประมาณ|of|:)?\s*([\d,]+)\s*(?:บาท|thb|฿)?/i)
     || String(text).match(/([\d,]+)\s*(?:บาท|thb|฿)/i);
@@ -91,7 +110,7 @@ function selectTargetedCandidates(products, options = {}) {
   const result = {};
 
   for (const category of categories) {
-    const candidates = normalized.filter(product => product.category === category);
+    const candidates = normalized.filter(product => product.category === category && isCompatibleCandidate(product, selected));
     const target = allocations[category];
     result[category] = candidates
       .map(product => ({
@@ -150,6 +169,7 @@ module.exports = {
   CATEGORY_ALIASES,
   categoryKey,
   normalizeProduct,
+  isCompatibleCandidate,
   extractBudget,
   budgetAllocation,
   selectTargetedCandidates,

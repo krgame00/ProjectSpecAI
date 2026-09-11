@@ -181,9 +181,18 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
     const classification = classifyRequest(message, routingOptions());
     metrics.route = classification.route;
     if (classification.route === 'fast') {
-      const reply = await runFastPath(classification, { recentFastResponses: [], history: [], facts: {} });
+      let fastSession = { recentFastResponses: [], history: [], facts: {} };
+      if (req.body.sessionId) {
+        try {
+          fastSession = chatbotSessions.resolve(req.user.id, req.body.sessionId);
+        } catch (error) {
+          if (error.code === 'SESSION_NOT_FOUND') return res.status(404).json({ error: 'Chat session not found' });
+          throw error;
+        }
+      }
+      const reply = await runFastPath(classification, fastSession);
       chatbotMetrics.finishRequest(metrics, { model: 'deterministic', cacheHit: true, outputLength: reply.length });
-      return res.json({ reply, recommended_build: null, sources: [], route: 'fast' });
+      return res.json({ reply, recommended_build: null, sources: [], route: 'fast', ...(req.body.sessionId ? { sessionId: fastSession.id } : {}) });
     }
     if (!hasAiConfig()) {
       chatbotMetrics.finishRequest(metrics, { success: false, errorClass: 'configuration' });
@@ -280,9 +289,10 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
       chatbotMetrics.finishRequest(metrics, { success: false, errorClass: 'configuration' });
       return;
     }
+    const turnFacts = extractSessionFacts(text || '', session.facts || {});
     const catalog = await loadCatalogContext(classification, text || '', {
-      budgetThb: session.facts?.budgetThb,
-      useCase: session.facts?.useCase,
+      budgetThb: turnFacts.budgetThb,
+      useCase: turnFacts.useCase,
       selected: req.body.selected,
       categories: req.body.categories,
     });
@@ -340,6 +350,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     }
     if (!isJsonMode && visiblePending) writeSse(res, null, { text: visiblePending });
     const parsed = parseModelResponse(fullResponse);
+    writeSse(res, 'meta', { model: generated.model, fallbackCount: generated.fallbackCount });
     if (sources.length) writeSse(res, 'sources', { sources });
     if (classification.requiresBuild) {
       const build = canonicalBuild(parsed.recommended_build, catalog.candidates);

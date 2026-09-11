@@ -28,11 +28,15 @@ async function measure({ baseUrl, token, path, body, rounds }) {
       if (response.body?.getReader) {
         const reader = response.body.getReader();
         let firstByteAt = null;
+        let streamText = '';
         while (true) {
           const chunk = await reader.read();
           if (!chunk.done && firstByteAt === null) firstByteAt = Date.now();
+          if (!chunk.done) streamText += Buffer.from(chunk.value).toString('utf8');
           if (chunk.done) break;
         }
+        const fallbackMatch = streamText.match(/"fallbackCount"\s*:\s*(\d+)/);
+        if (fallbackMatch) fallbackCount = Number.parseInt(fallbackMatch[1], 10) || 0;
         results.push({ durationMs: Date.now() - startedAt, firstByteMs: firstByteAt === null ? null : firstByteAt - startedAt, success, fallbackCount });
         continue;
       }
