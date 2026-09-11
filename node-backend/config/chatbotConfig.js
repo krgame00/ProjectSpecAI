@@ -5,6 +5,7 @@ const DEFAULT_MODELS = Object.freeze({
 
 const DEFAULTS = Object.freeze({
   providerTimeoutMs: 30000,
+  maxOutputTokens: 16384,
   maxFallbacks: 1,
   quotaMax: 360,
   quotaWindowMs: 15 * 60 * 1000,
@@ -52,6 +53,7 @@ function getChatbotConfig(env = process.env) {
       }
     },
     providerTimeoutMs: positiveInteger(env.CHATBOT_PROVIDER_TIMEOUT_MS, DEFAULTS.providerTimeoutMs),
+    maxOutputTokens: positiveInteger(env.CHATBOT_MAX_OUTPUT_TOKENS, DEFAULTS.maxOutputTokens),
     maxFallbacks: Math.min(
       positiveInteger(env.CHATBOT_MAX_FALLBACKS, DEFAULTS.maxFallbacks),
       1

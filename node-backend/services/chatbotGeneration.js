@@ -31,8 +31,20 @@ function modelCandidates(config = getChatbotConfig(), role = 'chat') {
   return [primary, ...fallbacks.filter(model => model && model !== primary).slice(0, maxFallbacks)];
 }
 
-function createGenerationConfig({ systemInstruction, useLiveSearch = false, temperature = 0.7 } = {}) {
+function createGenerationConfig({
+  systemInstruction,
+  useLiveSearch = false,
+  temperature = 0.7,
+  maxOutputTokens,
+  thinkingBudget,
+} = {}) {
   const config = { systemInstruction, temperature };
+  if (Number.isInteger(maxOutputTokens) && maxOutputTokens > 0) {
+    config.maxOutputTokens = maxOutputTokens;
+  }
+  if (Number.isInteger(thinkingBudget) && thinkingBudget >= 0) {
+    config.thinkingConfig = { thinkingBudget };
+  }
   if (useLiveSearch) config.tools = [{ googleSearch: {} }];
   return config;
 }
@@ -71,7 +83,12 @@ async function generateContentWithFallback({
     invoke: (model) => withTimeout(ai.models.generateContent({
         model,
         contents,
-        config: createGenerationConfig({ systemInstruction, useLiveSearch, temperature }),
+        config: createGenerationConfig({
+          systemInstruction,
+          useLiveSearch,
+          temperature,
+          maxOutputTokens: config.maxOutputTokens,
+        }),
       }), config.providerTimeoutMs),
   });
   return { response: result.result, model: result.model, fallbackCount: result.fallbackCount };
@@ -96,7 +113,13 @@ async function consumeStreamWithFallback({
       const stream = await withTimeout(ai.models.generateContentStream({
         model,
         contents,
-        config: createGenerationConfig({ systemInstruction, useLiveSearch, temperature }),
+        config: createGenerationConfig({
+          systemInstruction,
+          useLiveSearch,
+          temperature,
+          maxOutputTokens: config.maxOutputTokens,
+          thinkingBudget: 0,
+        }),
       }), config.providerTimeoutMs);
       const iterator = stream[Symbol.asyncIterator]();
       while (true) {

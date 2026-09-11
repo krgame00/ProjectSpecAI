@@ -1,4 +1,9 @@
-const { createGenerationConfig, generateContentWithFallback, modelCandidates } = require('../services/chatbotGeneration');
+const {
+  createGenerationConfig,
+  generateContentWithFallback,
+  consumeStreamWithFallback,
+  modelCandidates,
+} = require('../services/chatbotGeneration');
 
 describe('chatbot generation policy', () => {
   test('uses one fallback for retryable provider errors', async () => {
@@ -18,5 +23,32 @@ describe('chatbot generation policy', () => {
     expect(modelCandidates({ models: { primary: 'a', fallback: ['b', 'c'] }, maxFallbacks: 99 })).toEqual(['a', 'b']);
     expect(createGenerationConfig({ systemInstruction: 'x', useLiveSearch: false })).not.toHaveProperty('tools');
     expect(createGenerationConfig({ systemInstruction: 'x', useLiveSearch: true })).toEqual(expect.objectContaining({ tools: [{ googleSearch: {} }] }));
+  });
+
+  test('reserves 16,384 output tokens for streaming and disables thinking on the fast stream path', async () => {
+    const generateContentStream = jest.fn().mockResolvedValue({
+      async *[Symbol.asyncIterator]() {
+        yield { text: 'ok' };
+      },
+    });
+
+    await consumeStreamWithFallback({
+      ai: { models: { generateContentStream } },
+      contents: [{ role: 'user', parts: [{ text: 'จัดสเปคคอมให้หน่อย' }] }],
+      config: {
+        models: { primary: 'a', fallback: [] },
+        maxFallbacks: 0,
+        providerTimeoutMs: 1000,
+        maxOutputTokens: 16384,
+      },
+      onChunk: jest.fn(),
+    });
+
+    expect(generateContentStream).toHaveBeenCalledWith(expect.objectContaining({
+      config: expect.objectContaining({
+        maxOutputTokens: 16384,
+        thinkingConfig: { thinkingBudget: 0 },
+      }),
+    }));
   });
 });
