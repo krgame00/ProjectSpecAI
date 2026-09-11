@@ -15,8 +15,29 @@ jest.mock('../config/db', () => ({
   isFallback: jest.fn(() => false),
 }));
 
+const { appendSearchDisclosure, extractSources, sourceTrust } = require('../services/chatbotSearch');
 const { shouldUseSearch, getCatalogContext, clearCatalogCache } = require('../routes/chatbot');
 const db = require('../config/db');
+
+describe('conditional live search safeguards', () => {
+  test('discloses when a freshness answer has no verifiable sources', () => {
+    expect(appendSearchDisclosure('คำตอบทั่วไป', { useLiveSearch: true, sources: [] })).toContain('ยังยืนยันข้อมูลสดไม่ได้');
+    expect(appendSearchDisclosure('คำตอบทั่วไป', { useLiveSearch: true, sources: [{ uri: 'https://intel.com' }] })).toBe('คำตอบทั่วไป');
+  });
+
+  test('deduplicates and prioritizes trusted sources', () => {
+    const sources = extractSources({ groundingChunks: [
+      { web: { uri: 'https://example.com', title: 'Other' } },
+      { web: { uri: 'https://jib.co.th/item', title: 'JIB' } },
+      { web: { uri: 'https://www.intel.com/spec', title: 'Intel' } },
+      { web: { uri: 'https://jib.co.th/item', title: 'JIB duplicate' } },
+    ] });
+    expect(sources).toHaveLength(3);
+    expect(sources.map(source => source.uri)).toEqual(['https://www.intel.com/spec', 'https://jib.co.th/item', 'https://example.com']);
+    expect(sourceTrust('https://www.intel.com', 'Intel').rank).toBe(1);
+    expect(sourceTrust('https://intel.com.attacker.example').rank).toBe(4);
+  });
+});
 
 describe('Chatbot Conditional Search & Catalog Cache', () => {
   describe('Greeting and General Chat (Should NOT trigger search)', () => {
@@ -42,22 +63,22 @@ describe('Chatbot Conditional Search & Catalog Cache', () => {
     });
   });
 
-    test('General hardware comparisons without pricing or leak keywords (Should NOT trigger slow web search)', () => {
-      expect(shouldUseSearch('RTX 4060 vs RX 7600')).toBe(false);
-      expect(shouldUseSearch('เปรียบเทียบ i5 กับ Ryzen 5')).toBe(false);
-      expect(shouldUseSearch('การ์ดจอตัวไหนคุ้มกว่ากัน')).toBe(false);
-    });
+  test('General hardware comparisons without pricing or leak keywords (Should NOT trigger slow web search)', () => {
+    expect(shouldUseSearch('RTX 4060 vs RX 7600')).toBe(false);
+    expect(shouldUseSearch('เปรียบเทียบ i5 กับ Ryzen 5')).toBe(false);
+    expect(shouldUseSearch('การ์ดจอตัวไหนคุ้มกว่ากัน')).toBe(false);
+  });
 
-    test('Thai retailers, Market Pricing, and Leaks (Should trigger search)', () => {
-      expect(shouldUseSearch('RTX 5090 ราคาเท่าไหร่')).toBe(true);
-      expect(shouldUseSearch('ราคา JIB วันนี้')).toBe(true);
-      expect(shouldUseSearch('Advice มีของไหม')).toBe(true);
-      expect(shouldUseSearch('iHAVECPU มีโปรโมชั่นอะไรบ้าง')).toBe(true);
-      expect(shouldUseSearch('ราคาไทยการ์ดจอ RTX 5070')).toBe(true);
-      expect(shouldUseSearch('Ryzen 7 9800X3D เปิดตัวเมื่อไหร่')).toBe(true);
-      expect(shouldUseSearch('สเปคหลุด RTX 5080')).toBe(true);
-      expect(shouldUseSearch('ของเข้าไทยวันไหน')).toBe(true);
-    });
+  test('Thai retailers, Market Pricing, and Leaks (Should trigger search)', () => {
+    expect(shouldUseSearch('RTX 5090 ราคาเท่าไหร่')).toBe(true);
+    expect(shouldUseSearch('ราคา JIB วันนี้')).toBe(true);
+    expect(shouldUseSearch('Advice มีของไหม')).toBe(true);
+    expect(shouldUseSearch('iHAVECPU มีโปรโมชั่นอะไรบ้าง')).toBe(true);
+    expect(shouldUseSearch('ราคาไทยการ์ดจอ RTX 5070')).toBe(true);
+    expect(shouldUseSearch('Ryzen 7 9800X3D เปิดตัวเมื่อไหร่')).toBe(true);
+    expect(shouldUseSearch('สเปคหลุด RTX 5080')).toBe(true);
+    expect(shouldUseSearch('ของเข้าไทยวันไหน')).toBe(true);
+  });
 
   describe('Catalog Cache Mechanism', () => {
     beforeEach(() => {
@@ -77,7 +98,7 @@ describe('Chatbot Conditional Search & Catalog Cache', () => {
       expect(firstResult).toContain('RTX 4060');
 
       const secondResult = await getCatalogContext();
-      expect(db.query).toHaveBeenCalledTimes(1); // Cached, no second DB query
+      expect(db.query).toHaveBeenCalledTimes(1);
       expect(secondResult).toBe(firstResult);
     });
 

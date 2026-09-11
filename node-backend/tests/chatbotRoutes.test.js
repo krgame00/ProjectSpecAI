@@ -130,18 +130,18 @@ describe('chatbot routes security', () => {
     }
   );
 
-  test('rejects stream text over 4,000 characters before Gemini processing', async () => {
+  test('rejects stream text over 24,000 characters before Gemini processing', async () => {
     mockGenerateContentStream.mockClear();
     const response = await post(
       testServer.baseUrl,
       '/stream',
-      { text: 'x'.repeat(4001) },
+      { text: 'x'.repeat(24001) },
       tokenFor('oversized-user')
     );
 
     expect(response.status).toBe(400);
     await expect(response.json()).resolves.toEqual({
-      error: 'Chatbot text exceeds 4,000 characters',
+      error: 'Chatbot text exceeds 24,000 characters',
     });
     expect(mockGenerateContentStream).not.toHaveBeenCalled();
   });
@@ -214,6 +214,92 @@ describe('chatbot routes security', () => {
     expect(body).toMatch(/event: session\ndata: {"sessionId":"[^"]+"}\n\n/);
     expect(body).toContain('data: {"text":"mock reply"}\n\n');
     expect(body).toContain('event: done\ndata: {}\n\n');
+  });
+
+  test('serves greeting through deterministic fast path without Gemini', async () => {
+    const response = await post(
+      testServer.baseUrl,
+      '/stream',
+      { text: 'สวัสดีครับ' },
+      tokenFor('fast-path-user')
+    );
+    const body = await response.text();
+
+    expect(response.status).toBe(200);
+    expect(body).toContain('event: session');
+    expect(body).toContain('event: done');
+    expect(mockGenerateContentStream).not.toHaveBeenCalled();
+    expect(mockGenerateContent).not.toHaveBeenCalled();
+  });
+
+  test('keeps live-search tools off for non-freshness hardware questions', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+    await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'อธิบายความต่างของ DDR4 กับ DDR5', history: [] },
+      tokenFor('no-search-user')
+    );
+    expect(mockGenerateContent).toHaveBeenCalled();
+    expect(mockGenerateContent.mock.calls.at(-1)[0].config).not.toHaveProperty('tools');
+  });
+
+  test('uses live search for freshness requests and discloses missing verification', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+    mockGenerateContent.mockResolvedValueOnce({ text: 'ราคาจากข้อมูลเดิม' });
+    const response = await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'ราคา RTX ล่าสุดวันนี้', history: [] },
+      tokenFor('freshness-user')
+    );
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(mockGenerateContent.mock.calls.at(-1)[0].config.tools).toEqual([{ googleSearch: {} }]);
+    expect(body.reply).toContain('ยังยืนยันข้อมูลสดไม่ได้');
+  });
+
+  test('combines targeted catalog IDs with live sources without trusting arbitrary IDs', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+    mockDbQuery.mockImplementationOnce(async () => [[
+      { id: 101, category: 'cpu', brand: 'AMD', model: 'Catalog CPU', price: '10000', cpu_socket: 'AM5' },
+    ]]);
+    mockGenerateContent.mockResolvedValueOnce({
+      text: JSON.stringify({ reply: 'ชุดที่แนะนำ', recommended_build: { cpu: 101, gpu: 999 } }),
+      candidates: [{ groundingMetadata: { groundingChunks: [{ web: { uri: 'https://www.amd.com/spec', title: 'AMD' } }] } }],
+    });
+    const response = await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'จัดคอมงบ 40000 แล้วเช็กราคาตลาดล่าสุด', history: [] },
+      tokenFor('combined-route-user')
+    );
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(body.route).toBe('catalog_live_search');
+    expect(body.recommended_build).toMatchObject({ cpu: 101, gpu: null });
+    expect(body.sources[0]).toMatchObject({ uri: 'https://www.amd.com/spec', title: 'AMD' });
+  });
+
+  test('limits live-search recovery to one additional provider attempt', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+    mockGenerateContent
+      .mockRejectedValueOnce(new Error('search provider unavailable'))
+      .mockResolvedValueOnce({ text: 'general answer' });
+    const response = await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'ราคา GPU ล่าสุดวันนี้', history: [] },
+      tokenFor('search-recovery-user')
+    );
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(mockGenerateContent).toHaveBeenCalledTimes(2);
+    expect(mockGenerateContent.mock.calls[1][0].config).not.toHaveProperty('tools');
+    expect(body.reply).toContain('ยังยืนยันข้อมูลสดไม่ได้');
   });
 
   test('removes a newly created session when guardrails end the stream early', async () => {

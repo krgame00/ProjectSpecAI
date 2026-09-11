@@ -1,8 +1,11 @@
-const MAX_TEXT_LENGTH = 4000;
+const { getChatbotConfig } = require('../config/chatbotConfig');
+
+const runtimeConfig = getChatbotConfig();
+const MAX_TEXT_LENGTH = runtimeConfig.maxTextLength;
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
-const MAX_HISTORY_TURNS = 20;
-const MAX_HISTORY_TURN_TEXT_LENGTH = 4000;
-const MAX_HISTORY_TEXT_LENGTH = 16000;
+const MAX_HISTORY_TURNS = runtimeConfig.history.maxMessages;
+const MAX_HISTORY_TURN_TEXT_LENGTH = runtimeConfig.history.charBudget;
+const MAX_HISTORY_TEXT_LENGTH = runtimeConfig.history.charBudget;
 
 const ALLOWED_IMAGE_MIME_TYPES = new Set([
   'image/jpeg',
@@ -119,7 +122,7 @@ function validateChatbotPayload(req, res, next) {
   }
 
   if (typeof text === 'string' && text.length > MAX_TEXT_LENGTH) {
-    return res.status(400).json({ error: 'Chatbot text exceeds 4,000 characters' });
+    return res.status(400).json({ error: `Chatbot text exceeds ${MAX_TEXT_LENGTH.toLocaleString()} characters` });
   }
 
   if (!body.image && (typeof text !== 'string' || text.trim() === '')) {
@@ -216,8 +219,8 @@ function createChatbotRateLimiter({
 }
 
 const chatbotRateLimiter = createChatbotRateLimiter({
-  limit: 40,
-  windowMs: 900000
+  limit: runtimeConfig.quota.limit,
+  windowMs: runtimeConfig.quota.windowMs
 });
 
 module.exports = {
