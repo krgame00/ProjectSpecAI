@@ -283,6 +283,25 @@ describe('chatbot routes security', () => {
     expect(body.sources[0]).toMatchObject({ type: 'official' });
   });
 
+  test('limits live-search recovery to one additional provider attempt', async () => {
+    process.env.GEMINI_API_KEY = 'message-route-test-key';
+    mockGenerateContent
+      .mockRejectedValueOnce(new Error('search provider unavailable'))
+      .mockResolvedValueOnce({ text: 'general answer' });
+    const response = await post(
+      testServer.baseUrl,
+      '/message',
+      { message: 'ราคา GPU ล่าสุดวันนี้', history: [] },
+      tokenFor('search-recovery-user')
+    );
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(mockGenerateContent).toHaveBeenCalledTimes(2);
+    expect(mockGenerateContent.mock.calls[1][0].config).not.toHaveProperty('tools');
+    expect(body.reply).toContain('ยังยืนยันข้อมูลสดไม่ได้');
+  });
+
   test('removes a newly created session when guardrails end the stream early', async () => {
     const ownerId = 'guardrail-user';
     chatbotSessions.resolve.mockClear();

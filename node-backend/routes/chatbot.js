@@ -55,6 +55,10 @@ function routingOptions() {
   };
 }
 
+function singleAttemptConfig() {
+  return { ...config, maxFallbacks: 0 };
+}
+
 function buildParts({ text, image }) {
   const parts = [];
   if (text && text.trim()) parts.push({ text });
@@ -119,12 +123,20 @@ async function loadOrderContext(message, user) {
   }
 }
 
-async function loadCatalogContext(classification, message) {
+async function loadCatalogContext(classification, message, retrieval = {}) {
   if (!classification.useCatalog) return { candidates: [], text: '', retrievalMs: 0 };
   const startedAt = Date.now();
   try {
     const db = require('../config/db');
-    const { candidates } = await retrieveTargetedCatalog({ db, text: message, limitPerCategory: 8 });
+    const { candidates } = await retrieveTargetedCatalog({
+      db,
+      text: message,
+      budgetThb: retrieval.budgetThb,
+      selected: retrieval.selected,
+      categories: retrieval.categories,
+      useCase: retrieval.useCase,
+      limitPerCategory: 8,
+    });
     return { candidates, text: buildCatalogContext(candidates), retrievalMs: Date.now() - startedAt };
   } catch (error) {
     console.error('Failed to inject targeted catalog context:', error);
@@ -140,7 +152,8 @@ function canonicalBuild(recommendedBuild, candidates) {
 function updateSession(session, text, responseTextValue) {
   if (text) session.history.push({ role: 'user', parts: buildParts({ text }) });
   if (responseTextValue) session.history.push({ role: 'model', parts: [{ text: responseTextValue }] });
-  while (session.history.length > config.history.maxMessages) session.history.shift();
+  const compacted = trimHistory(session.history, { maxMessages: config.history.maxMessages, charBudget: config.history.charBudget });
+  session.history.splice(0, session.history.length, ...compacted.map(turn => ({ role: turn.role, parts: [{ text: turn.text }] })));
   Object.assign(session.facts, extractSessionFacts(text, session.facts));
 }
 
@@ -176,7 +189,16 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
       chatbotMetrics.finishRequest(metrics, { success: false, errorClass: 'configuration' });
       return res.json({ reply: NO_CONFIG_MESSAGE, presets: [], route: classification.route });
     }
-    const [orderContext, catalog] = await Promise.all([loadOrderContext(message, req.user), loadCatalogContext(classification, message)]);
+    const requestFacts = extractSessionFacts(message);
+    const [orderContext, catalog] = await Promise.all([
+      loadOrderContext(message, req.user),
+      loadCatalogContext(classification, message, {
+        budgetThb: requestFacts.budgetThb,
+        useCase: requestFacts.useCase,
+        selected: req.body.selected,
+        categories: req.body.categories,
+      }),
+    ]);
     const context = prepareContext({
       history: history || [],
       text: message,
@@ -186,11 +208,18 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
     let searchFailed = false;
     let generated;
     try {
-      generated = await generateContentWithFallback({ ai, contents: context.contents, config, role: 'chat', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch: classification.useLiveSearch });
+      generated = await generateContentWithFallback({
+        ai,
+        contents: context.contents,
+        config: classification.useLiveSearch ? singleAttemptConfig() : config,
+        role: 'chat',
+        systemInstruction: SYSTEM_INSTRUCTION,
+        useLiveSearch: classification.useLiveSearch,
+      });
     } catch (error) {
       if (!classification.useLiveSearch) throw error;
       searchFailed = true;
-      generated = await generateContentWithFallback({ ai, contents: context.contents, config, role: 'chat', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch: false });
+      generated = await generateContentWithFallback({ ai, contents: context.contents, config: singleAttemptConfig(), role: 'chat', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch: false });
     }
     const parsed = parseModelResponse(responseText(generated.response));
     const sources = extractSources(generated.response?.candidates?.[0]?.groundingMetadata);
@@ -251,7 +280,12 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
       chatbotMetrics.finishRequest(metrics, { success: false, errorClass: 'configuration' });
       return;
     }
-    const catalog = await loadCatalogContext(classification, text || '');
+    const catalog = await loadCatalogContext(classification, text || '', {
+      budgetThb: session.facts?.budgetThb,
+      useCase: session.facts?.useCase,
+      selected: req.body.selected,
+      categories: req.body.categories,
+    });
     const history = trimHistory(session.history, { maxMessages: config.history.maxMessages, charBudget: config.history.charBudget });
     const contents = toGeminiContents(history, '');
     contents.push({ role: 'user', parts: buildParts({ text: `${text || ''}${catalog.text}`, image }) });
@@ -263,8 +297,8 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     let firstByteAt = null;
     let searchFailed = false;
     const marker = '---JSON_START---';
-    const consume = async (useLiveSearch) => consumeStreamWithFallback({
-      ai, contents, config, role: 'stream', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch,
+    const consume = async (useLiveSearch, generationConfig = config) => consumeStreamWithFallback({
+      ai, contents, config: generationConfig, role: 'stream', systemInstruction: SYSTEM_INSTRUCTION, useLiveSearch,
       onChunk: async (chunk) => {
         const piece = chunk?.text ?? '';
         if (piece) {
@@ -296,13 +330,13 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     });
     let generated;
     try {
-      generated = await consume(classification.useLiveSearch);
+      generated = await consume(classification.useLiveSearch, classification.useLiveSearch ? singleAttemptConfig() : config);
     } catch (error) {
       if (!classification.useLiveSearch) throw error;
       searchFailed = true;
       if (fullResponse || visiblePending) writeSse(res, 'clear', {});
       fullResponse = ''; visiblePending = ''; jsonBuffer = ''; isJsonMode = false; sources = [];
-      generated = await consume(false);
+      generated = await consume(false, singleAttemptConfig());
     }
     if (!isJsonMode && visiblePending) writeSse(res, null, { text: visiblePending });
     const parsed = parseModelResponse(fullResponse);

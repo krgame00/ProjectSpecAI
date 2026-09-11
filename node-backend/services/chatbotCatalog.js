@@ -35,7 +35,8 @@ function normalizeProduct(product = {}) {
     wattage: numberValue(product.wattage || product.psu_wattage || specs.Wattage),
     formFactor: product.form_factor || product.form_factor_support || specs['Form Factor'] || '',
     gpuLength: numberValue(product.gpu_length || product.max_gpu_length || specs.Length || specs['Max GPU Length']),
-    tdp: numberValue(product.tdp || product.cpu_tdp || product.gpu_tdp || specs.TDP)
+    tdp: numberValue(product.tdp || product.cpu_tdp || product.gpu_tdp || specs.TDP),
+    useCase: product.use_case || product.useCase || specs.UseCase || specs['Use Case'] || ''
   };
 }
 
@@ -51,6 +52,7 @@ function compatibilityScore(product, selected = {}) {
   if (product.category === 'case' && selected.gpu?.gpuLength && product.gpuLength) {
     score += product.gpuLength >= selected.gpu.gpuLength ? 2 : -4;
   }
+  if (selected.useCase && product.useCase && String(product.useCase).toLowerCase().includes(String(selected.useCase).toLowerCase())) score += 1;
   return score;
 }
 
@@ -77,7 +79,13 @@ function selectTargetedCandidates(products, options = {}) {
   const normalized = products.map(normalizeProduct).filter(product => CATEGORY_KEYS.includes(product.category));
   const budget = options.budgetThb || extractBudget(options.text, null);
   const allocations = budgetAllocation(budget);
-  const selected = options.selected || {};
+  const selectedInput = options.selected || {};
+  const selected = { ...(options.useCase ? { useCase: options.useCase } : {}) };
+  for (const category of CATEGORY_KEYS) {
+    const value = selectedInput[category];
+    if (value && typeof value === 'object') selected[category] = normalizeProduct(value);
+    else if (value !== undefined && value !== null) selected[category] = normalized.find(product => String(product.id) === String(value));
+  }
   const categories = options.categories?.map(categoryKey) || CATEGORY_KEYS;
   const limitPerCategory = options.limitPerCategory || 8;
   const result = {};
@@ -106,9 +114,9 @@ async function loadCatalog(db) {
   return Array.isArray(rows) ? rows.map(normalizeProduct) : [];
 }
 
-async function retrieveTargetedCatalog({ db, text = '', budgetThb, selected, categories, limitPerCategory } = {}) {
+async function retrieveTargetedCatalog({ db, text = '', budgetThb, selected, categories, useCase, limitPerCategory } = {}) {
   const products = await loadCatalog(db);
-  const candidates = selectTargetedCandidates(products, { text, budgetThb, selected, categories, limitPerCategory });
+  const candidates = selectTargetedCandidates(products, { text, budgetThb, selected, categories, useCase, limitPerCategory });
   return { products, candidates };
 }
 

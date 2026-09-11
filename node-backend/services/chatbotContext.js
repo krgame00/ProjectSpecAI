@@ -44,7 +44,10 @@ function trimHistory(history, options = {}) {
     addFromEnd(normalized[index]);
   }
   for (let index = priorityStart - 1; index >= 0; index -= 1) {
-    if (!addFromEnd(normalized[index])) break;
+    if (selected.length >= maxMessages) break;
+    // A single oversized/duplicate turn should not prevent smaller older
+    // turns from filling the remaining budget.
+    addFromEnd(normalized[index]);
   }
   return selected;
 }

@@ -25,11 +25,24 @@ async function measure({ baseUrl, token, path, body, rounds }) {
       success = response.ok;
       const header = response.headers.get('x-chatbot-fallback-count');
       fallbackCount = Number.parseInt(header || '0', 10) || 0;
+      if (response.body?.getReader) {
+        const reader = response.body.getReader();
+        let firstByteAt = null;
+        while (true) {
+          const chunk = await reader.read();
+          if (!chunk.done && firstByteAt === null) firstByteAt = Date.now();
+          if (chunk.done) break;
+        }
+        results.push({ durationMs: Date.now() - startedAt, firstByteMs: firstByteAt === null ? null : firstByteAt - startedAt, success, fallbackCount });
+        continue;
+      }
       await response.arrayBuffer();
+      results.push({ durationMs: Date.now() - startedAt, firstByteMs: Date.now() - startedAt, success, fallbackCount });
+      continue;
     } catch (_error) {
       success = false;
     }
-    results.push({ durationMs: Date.now() - startedAt, success, fallbackCount });
+    results.push({ durationMs: Date.now() - startedAt, firstByteMs: null, success, fallbackCount });
   }
   return results;
 }
@@ -40,11 +53,11 @@ async function main(env = process.env) {
   const rounds = Math.max(20, Number.parseInt(env.CHATBOT_BENCHMARK_ROUNDS || '20', 10));
   if (!baseUrl || !token) throw new Error('CHATBOT_BENCHMARK_BASE_URL and CHATBOT_BENCHMARK_TOKEN are required');
   const paths = [
-    { name: 'fast', path: '/message', body: { message: 'สวัสดีครับ', history: [] } },
-    { name: 'ai', path: '/message', body: { message: 'อธิบายความต่างของ DDR4 กับ DDR5', history: [] } },
-    { name: 'catalog', path: '/message', body: { message: 'ช่วยจัดสเปค งบ 40000', history: [] } },
-    { name: 'live_search', path: '/message', body: { message: 'ราคา GPU ล่าสุดวันนี้', history: [] } },
-    { name: 'catalog_live_search', path: '/message', body: { message: 'จัดคอมงบ 40000 แล้วเช็กราคาตลาดล่าสุด', history: [] } },
+    { name: 'fast', path: '/stream', body: { text: 'สวัสดีครับ' } },
+    { name: 'ai', path: '/stream', body: { text: 'อธิบายความต่างของ DDR4 กับ DDR5' } },
+    { name: 'catalog', path: '/stream', body: { text: 'ช่วยจัดสเปค งบ 40000' } },
+    { name: 'live_search', path: '/stream', body: { text: 'ราคา GPU ล่าสุดวันนี้' } },
+    { name: 'catalog_live_search', path: '/stream', body: { text: 'จัดคอมงบ 40000 แล้วเช็กราคาตลาดล่าสุด' } },
   ];
   const output = {};
   for (const route of paths) {
