@@ -178,3 +178,16 @@
     - `audit_fixed_admin_mobile_tabs_overview.png`: Confirms compact labels and SVG button.
     - `audit_fixed_admin_mobile_tabs_orders.png`: Confirms no text clipping on scrolled state; 3 full tabs visible simultaneously.
     - `audit_fixed_admin_desktop_sidebar.png`: Confirms desktop view retains full labels and clean layout.
+
+### [2026-11-17] Comprehensive System Workflow Audit (E2E Verification)
+- **Status**: `VERIFIED WORKING`
+- **Scope & Workflows Audited**:
+  1. Catalog Ingestion & Navigation: Verified home page, branding, and `/build` routing.
+  2. Builder & Compatibility Validation: Verified real-time telemetry, TDP wattage calculation (1.3x PSU buffer), socket checking, and budget breakdown.
+  3. SpecAI Chatbot Context Loop: Verified floating launcher, context-aware builder detection, and interactive recommended build card handling.
+  4. Checkout & Order Processing: Verified itemized cart extraction, assembly service calculation (Free, Standard ฿500, Premium ฿1,000), server-side price re-computation, and collision-resistant order ID generation (`ORD-YYYYMMDD-XXXXXX`).
+  5. Back-Office Administration: Verified Admin Overview telemetry, Order status management, Inventory catalog CRUD, and Articles CMS.
+- **Verification Evidence**:
+  - Automated E2E Workflow Test: `scratch/audit_system_workflows.cjs` executed with 100% PASS rate across all 5 workflow phases.
+  - Test Suites: 186/186 Vitest tests green, 172/172 Jest tests green.
+  - Technical Plan: Recorded in [plans/system_workflow_audit.md](file:///f:/Projects/PCSpec/plans/system_workflow_audit.md).
