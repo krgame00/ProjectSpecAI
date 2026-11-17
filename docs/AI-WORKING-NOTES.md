@@ -157,3 +157,24 @@
   - Production (Vercel) Live Verification (https://project-spec-ai.vercel.app/build):
     - `prod_chatbot_1_pills.png`: Quick prompt suggestion pills visible with dynamic context pill `🔍 ช่วยดูสเปกที่ผมเลือกอยู่ตอนนี้ให้หน่อยครับว่าเข้ากันได้มั้ยหรือขาดอะไร`.
     - `prod_chatbot_2_response.png`: SpecAI automatically detected the user's active builder hardware (Ryzen 5 8400F + A520M), alerted socket conflict (AM5 vs AM4), and proposed compatible alternatives.
+
+### [2026-11-17] Admin Panel Mobile Tabs & Return Navigation Refinements
+- **Status**: `VERIFIED WORKING`
+- **Problem Resolved**:
+  - The mobile tab bar in `AdminDashboard.vue` experienced text clipping (`ashboard ภาพรวม`) when scrolled horizontally to the Orders tab.
+  - Windows OS emoji `⬅️` rendered as an unstyled blue box, clashing with the dark Supabase theme.
+  - Long tab labels (`Dashboard ภาพรวม`, `รายการสั่งซื้อ (Orders)`) occupied 180-220px, showing only 1.2 tabs on a 390px viewport.
+  - Missing visual separation between the scrolling tabs and the pinned return action button.
+- **Changes Implemented**:
+  1. Added `shortLabel` to `adminTabs` array in [frontend/src/components/AdminDashboard.vue](file:///f:/Projects/PCSpec/frontend/src/components/AdminDashboard.vue) (`ภาพรวม`, `คำสั่งซื้อ`, `คลังสินค้า`, `บทความ`, `สมาชิก`, `โปรไฟล์`).
+  2. Displayed `.tab-label-short` on screens `<= 640px` while retaining full labels on desktop.
+  3. Replaced `⬅️` emoji with an inline SVG stroke arrow icon (`.admin-return-icon`).
+  4. Added `border-left: 1px solid var(--hairline-cool)` to `.admin-return` for distinct separation.
+  5. Added `scroll-padding-inline: 0.5rem`, `padding: 0.35rem 0.5rem`, and `gap: 0.35rem` to `.admin-tabs`, eliminating edge clipping.
+- **Verification Evidence**:
+  - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
+  - Backend Jest Suite: 19/19 suites passed (172/172 tests green).
+  - Playwright Visual Verification on Edge (390x844 viewport):
+    - `audit_fixed_admin_mobile_tabs_overview.png`: Confirms compact labels and SVG button.
+    - `audit_fixed_admin_mobile_tabs_orders.png`: Confirms no text clipping on scrolled state; 3 full tabs visible simultaneously.
+    - `audit_fixed_admin_desktop_sidebar.png`: Confirms desktop view retains full labels and clean layout.

@@ -18,14 +18,25 @@
               :class="{ active: adminTab === tab.id }"
               @click="selectAdminTab(tab.id)"
             >
-              <span aria-hidden="true">{{ tab.icon }}</span>
-              <span>{{ tab.label }}</span>
+              <span class="tab-icon" aria-hidden="true">{{ tab.icon }}</span>
+              <span class="tab-label-full">{{ tab.label }}</span>
+              <span class="tab-label-short">{{ tab.shortLabel }}</span>
             </button>
           </li>
         </ul>
         <div class="admin-return">
-          <button class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" @click="$router.push('/')">
-            <span aria-hidden="true">⬅️</span><span class="admin-return__label">กลับหน้าร้านค้า</span>
+          <button
+            type="button"
+            class="btn btn-outline admin-return-btn"
+            title="กลับหน้าร้านค้า"
+            aria-label="กลับหน้าร้านค้า"
+            @click="$router.push('/')"
+          >
+            <svg class="admin-return-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span class="admin-return__label">กลับหน้าร้านค้า</span>
           </button>
         </div>
       </aside>
@@ -103,12 +114,12 @@ const adminStore = useAdminStore();
 const adminTab = ref('dashboard');
 
 const adminTabs = [
-  { id: 'dashboard', icon: '📊', label: 'Dashboard ภาพรวม' },
-  { id: 'orders', icon: '📦', label: 'รายการสั่งซื้อ (Orders)' },
-  { id: 'inventory', icon: '⚙️', label: 'คลังสินค้า (Inventory)' },
-  { id: 'articles', icon: '📰', label: 'จัดการบทความ (Articles)' },
-  { id: 'users', icon: '👥', label: 'จัดการสมาชิก (Users)' },
-  { id: 'profile', icon: '👤', label: 'ข้อมูลโปรไฟล์แอดมิน' }
+  { id: 'dashboard', icon: '📊', label: 'Dashboard ภาพรวม', shortLabel: 'ภาพรวม' },
+  { id: 'orders', icon: '📦', label: 'รายการสั่งซื้อ (Orders)', shortLabel: 'คำสั่งซื้อ' },
+  { id: 'inventory', icon: '⚙️', label: 'คลังสินค้า (Inventory)', shortLabel: 'คลังสินค้า' },
+  { id: 'articles', icon: '📰', label: 'จัดการบทความ (Articles)', shortLabel: 'บทความ' },
+  { id: 'users', icon: '👥', label: 'จัดการสมาชิก (Users)', shortLabel: 'สมาชิก' },
+  { id: 'profile', icon: '👤', label: 'ข้อมูลโปรไฟล์แอดมิน', shortLabel: 'โปรไฟล์' }
 ];
 
 const fetchUsers = async () => {
@@ -189,6 +200,23 @@ const executeConfirm = async () => {
 }
 .admin-menu button:hover { background: var(--canvas-soft); color: var(--ink); }
 .admin-menu button.active { background: var(--canvas-soft); border-color: var(--hairline-strong); color: var(--primary-deep); font-weight: 600;}
+
+.tab-label-short { display: none; }
+.tab-label-full { display: inline; }
+.admin-return-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.admin-return-icon {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+.admin-return-btn:hover .admin-return-icon {
+  transform: translateX(-2px);
+}
 
 :deep(.admin-card) {
   background: var(--canvas);
@@ -333,17 +361,43 @@ const executeConfirm = async () => {
     top: 0; z-index: 50; min-height: 0; padding: 0;
     display: grid; grid-template-columns: minmax(0, 1fr) auto;
     border-radius: 0 0 var(--radius-md) var(--radius-md);
-    overflow: visible;
+    overflow: hidden;
+    background: var(--canvas);
+    border-bottom: 1px solid var(--hairline-cool);
   }
   .admin-tabs {
-    position: sticky; top: 0; z-index: 51;
+    position: relative; top: 0; z-index: 51;
     display: flex; min-width: 0; overflow-x: auto; overscroll-behavior-inline: contain;
-    scrollbar-width: thin; background: var(--canvas);
+    scrollbar-width: none; background: var(--canvas);
+    padding: 0.35rem 0.5rem;
+    gap: 0.35rem;
+    scroll-padding-inline: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .admin-tabs::-webkit-scrollbar {
+    display: none;
   }
   .admin-menu li { flex: 0 0 auto; border: 0; }
-  .admin-menu button { width: auto; min-height: 48px; padding: 0.75rem 1rem; white-space: nowrap; }
-  .admin-return { margin: 0 !important; padding: 0.35rem !important; border: 0 !important; background: var(--canvas); }
-  .admin-return .btn { min-height: 44px; white-space: nowrap; }
+  .admin-menu button {
+    width: auto; min-height: 40px; padding: 0.45rem 0.75rem; white-space: nowrap;
+    border-radius: var(--radius-sm); border: 1px solid transparent;
+  }
+  .admin-menu button.active {
+    background: var(--canvas-soft);
+    border-color: var(--hairline-strong);
+    color: var(--primary-deep);
+  }
+  .admin-return {
+    margin: 0 !important;
+    padding: 0.35rem 0.5rem !important;
+    border: 0 !important;
+    border-left: 1px solid var(--hairline-cool) !important;
+    background: var(--canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .admin-return .btn { min-height: 40px; white-space: nowrap; }
   :deep(.stat-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   :deep(.operations-toolbar) { grid-template-columns: minmax(12rem, 1fr) minmax(10rem, 0.65fr) auto; }
   :deep(.operations-actions) { grid-column: 1 / -1; justify-content: flex-start; }
@@ -360,9 +414,17 @@ const executeConfirm = async () => {
   .admin-heading { margin-bottom: 1rem; }
   .admin-heading h2 { font-size: clamp(1.25rem, 6vw, var(--text-2xl)) !important; line-height: 1.25; }
   .admin-heading p { font-size: var(--text-sm); }
-  .admin-menu button { min-height: 44px; padding: 0.65rem 0.85rem; }
+  .tab-label-full { display: none; }
+  .tab-label-short { display: inline; }
+  .admin-menu button { min-height: 38px; padding: 0.4rem 0.65rem; font-size: 0.825rem; gap: 0.35rem; }
   .admin-return__label { display: none; }
-  .admin-return .btn { width: 44px !important; padding: 0; }
+  .admin-return .btn, .admin-return-btn {
+    width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 !important;
+    border-radius: var(--radius-sm);
+  }
   :deep(.stat-grid) { grid-template-columns: minmax(0, 1fr); }
   :deep(.stat-card) { padding: 1rem; }
   :deep(.stat-val) { font-size: var(--text-2xl); }

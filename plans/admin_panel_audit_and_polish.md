@@ -48,3 +48,20 @@
   - `audit_admin_tab4_articles_modal.png`: ฟอร์มเขียนบทความใหม่พร้อมอัปโหลดภาพปก.
   - `audit_admin_mobile_overview.png`: แดชบอร์ดบนจอมือถือ (390x844).
   - `audit_admin_mobile_orders.png`: รายการคำสั่งซื้อแบบ Mobile Card.
+  - `audit_fixed_admin_mobile_tabs_overview.png`: แถบแท็บแอดมินบนมือถือที่แก้ไขแล้ว พร้อมปุ่มย้อนกลับ SVG และชื่อแท็บกระชับ.
+  - `audit_fixed_admin_mobile_tabs_orders.png`: แถบแท็บแอดมินบนมือถือขณะเลือกแท็บคำสั่งซื้อ ไม่ตกขอบ ไม่ถูกตัดตัวอักษร.
+  - `audit_fixed_admin_desktop_sidebar.png`: เมนูด้านข้างแอดมินบนเดสก์ท็อปคงสภาพสมบูรณ์พร้อมไอคอนลูกศร SVG.
+
+---
+
+## 4. Mobile Tab Navigation Bar Refinements
+- **ปัญหาเดิม**:
+  1. ตัวอักษรตกขอบซ้าย (`ashboard ภาพรวม`) เมื่อเลื่อนแนวนอนเนื่องจากขาด padding และ scroll-padding.
+  2. ชื่อแท็บยาวเกินไปสำหรับจอมือถือ 390px แสดงผลได้เพียง 1 แท็บกว่าๆ.
+  3. ปุ่มกลับหน้าร้านค้าแสดงไอคอน Emoji สีฟ้าของระบบปฏิบัติการ (`⬅️`) ไม่เข้ากับธีม Supabase.
+  4. ขาดเส้นแบ่งคั่นระหว่างแถบแท็บที่เลื่อนได้กับปุ่มแอ็กชันย้อนกลับ.
+- **การปรับปรุงที่ส่งมอบ**:
+  1. เพิ่ม `shortLabel` ให้กับรายการแท็บแอดมิน (ภาพรวม, คำสั่งซื้อ, คลังสินค้า, บทความ, สมาชิก, โปรไฟล์) และแสดงผลบนหน้าจอ `<= 640px` ขณะที่เดสก์ท็อปยังคงชื่อเต็ม.
+  2. แทนที่ Emoji `⬅️` ด้วย inline SVG stroke arrow พร้อมรองรับ hover transform และขนาดสัมผัส 38x38px.
+  3. เพิ่มเส้นแบ่งคั่น `border-left: 1px solid var(--hairline-cool)` ให้กับ `.admin-return`.
+  4. เพิ่ม `scroll-padding-inline: 0.5rem`, `padding: 0.35rem 0.5rem` และ `gap: 0.35rem` ป้องกันตัวอักษรตกขอบขณะเลื่อน.
