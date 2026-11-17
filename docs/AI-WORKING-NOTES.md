@@ -215,3 +215,12 @@
   - Executed `gh issue close` across all 8 issues with comments referencing PR #12 and verified 0 open issues remaining on repository board.
   - All associated test suites (35 security/context tests, 19 route tests, 9 conditional search tests, 4 catalog tests, 1 metrics test) are green.
 - **Technical Plan**: Recorded in [plans/github_issues_reconciliation_audit.md](file:///f:/Projects/PCSpec/plans/github_issues_reconciliation_audit.md).
+
+### [2026-11-17] Stale Merged Remote Branches Deletion & Repository Cleanup
+- **Status**: `VERIFIED WORKING`
+- **Scope Cleaned**:
+  - Deleted 3 merged remote branches on GitHub: `origin/feat/shareable-build-and-deep-compatibility` (PR #13), `origin/codex/specai-remaining-implementation` (PR #12), and `origin/codex/chatbot-security-hardening` (PR #1).
+  - Executed `git fetch --prune origin` and removed local merged branches.
+- **Verification Evidence**:
+  - `git branch -r` returns only `origin/main`.
+  - GitHub Branches page now shows only `main` as the clean default branch with 0 stale active branches.
