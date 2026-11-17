@@ -22,6 +22,9 @@
   - Live Browser Testing on Edge:
     - `live_upgrade_path_1_pills.png`: Dynamic upgrade pill displayed.
     - `live_upgrade_path_2_card.png`: SpecAI detailed platform longevity (AM4 ceiling vs AM5 recommendations) and build card upgrade panel rendered.
+  - Production (Vercel) Live Verification (https://project-spec-ai.vercel.app/build):
+    - `prod_upgrade_path_1_pills.png`: Dynamic upgrade path pill `🔮 วิเคราะห์เส้นทางอัปเกรดในอนาคต (Upgrade Path) สำหรับสเปกที่ผมเลือก` displayed on production.
+    - `prod_upgrade_path_2_response.png`: SpecAI delivered exhaustive, 3-dimensional upgrade analysis on live production, citing Ryzen 7 5700X3D ceiling on AM4, DDR4 limitations, and recommending AM5 B650 platform for multi-year longevity to 2027+.
 
 ### [2026-11-17] Context-Aware Builder Sync & Interactive Build Card in SpecAI (Items 1 & 2)
 - **Status**: `VERIFIED WORKING`
