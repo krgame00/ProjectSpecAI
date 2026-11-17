@@ -231,3 +231,14 @@
   - Updated Git author email to `missnlpp9@gmail.com` (fixed typo from `gamil.com`) for both local and global configs.
   - Verified Git Bash launcher executable integrity at `C:\Program Files\Git\bin\bash.exe`.
   - Preserved commit history stability by skipping destructive `git-filter-repo` rewrite, avoiding SHA drift and unnecessary remote force pushes.
+
+### [2026-11-17] SpecAI Multi-Model Hierarchy Expansion & Fallback Pool
+- **Status**: `VERIFIED WORKING`
+- **Scope Implemented**:
+  - Configured `gemini-3.5-flash-lite` as Primary model (High Quota: 500 RPD, 15 RPM).
+  - Expanded Fallback Pool in [chatbotConfig.js](file:///f:/Projects/PCSpec/node-backend/config/chatbotConfig.js) and `node-backend/.env` to include all verified working models: `gemini-3.1-flash-lite`, `gemini-2.5-flash-lite`, `gemini-2.5-flash`, `gemini-3.5-flash`, `gemini-3.8-flash`, `gemini-3.7-flash`, and `gemini-3.6-flash`.
+- **Verification Evidence**:
+  - Live benchmark script `scratch/test_gemini_models.js` verified real provider response across models.
+  - Backend Jest Suite: 172/172 passed across 19 suites.
+  - Frontend Vitest Suite: 186/186 passed across 25 files.
+  - Technical Plan: Recorded in [plans/specai_multi_model_hierarchy_expansion.md](file:///f:/Projects/PCSpec/plans/specai_multi_model_hierarchy_expansion.md).
