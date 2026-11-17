@@ -181,8 +181,8 @@ const handlePrint = () => {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(17, 24, 39, 0.65);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,14 +191,14 @@ const handlePrint = () => {
 }
 
 .share-modal-card {
-  background: var(--bg-surface, #ffffff);
-  border: 1px solid var(--border-color, #e5e7eb);
-  border-radius: 12px;
+  background: var(--canvas-night, #171717);
+  border: 1px solid var(--hairline-cool, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-lg, 12px);
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   padding: 24px;
-  color: var(--text-main, #111827);
+  color: var(--ink, #ffffff);
   animation: modalFadeIn 0.15s ease-out;
 }
 
@@ -223,7 +223,7 @@ const handlePrint = () => {
 .badge-emerald {
   font-size: 11px;
   font-weight: 700;
-  color: #059669;
+  color: var(--primary, #3ecf8e);
   letter-spacing: 0.05em;
   display: block;
   margin-bottom: 4px;
@@ -232,38 +232,41 @@ const handlePrint = () => {
 .share-modal-title {
   font-size: 18px;
   font-weight: 700;
+  color: var(--on-dark, #ffffff);
   margin: 0;
 }
 
 .btn-close {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #6b7280;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 16px;
+  color: var(--ink-mute, #a1a1aa);
   cursor: pointer;
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm, 6px);
   transition: all 0.15s;
 }
 
 .btn-close:hover {
-  background: #f3f4f6;
-  color: #111827;
+  background: var(--canvas-soft, #27272a);
+  border-color: var(--hairline-cool, rgba(255, 255, 255, 0.12));
+  color: var(--ink, #ffffff);
 }
 
 .share-summary-strip {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
+  background: var(--canvas-soft, #1f1f23);
+  border: 1px solid var(--hairline-cool, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-sm, 6px);
   padding: 10px 14px;
   display: flex;
   justify-content: space-between;
   font-size: 13px;
   margin-bottom: 16px;
+  color: var(--ink, #ffffff);
 }
 
 .summary-label {
-  color: #6b7280;
+  color: var(--ink-mute, #a1a1aa);
   margin-right: 6px;
 }
 
@@ -275,7 +278,7 @@ const handlePrint = () => {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #4b5563;
+  color: var(--ink-mute, #a1a1aa);
   margin-bottom: 6px;
 }
 
@@ -287,20 +290,21 @@ const handlePrint = () => {
 .share-url-field {
   flex: 1;
   padding: 9px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border: 1px solid var(--hairline-cool, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm, 6px);
   font-size: 13px;
-  background: #f9fafb;
-  color: #111827;
+  background: var(--canvas-soft, #1f1f23);
+  color: var(--ink, #ffffff);
   outline: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: border-color var(--transition-fast, 0.15s);
 }
 
 .share-url-field:focus {
-  border-color: #10b981;
-  background: #ffffff;
+  border-color: var(--primary, #3ecf8e);
+  background: var(--canvas-night, #171717);
 }
 
 .btn-copy {
@@ -311,7 +315,7 @@ const handlePrint = () => {
 
 .copy-success-tip {
   font-size: 12px;
-  color: #059669;
+  color: var(--primary, #3ecf8e);
   font-weight: 600;
   margin-top: 6px;
 }
@@ -321,9 +325,9 @@ const handlePrint = () => {
   align-items: center;
   gap: 16px;
   padding: 14px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  background: var(--canvas-soft, #1f1f23);
+  border: 1px solid var(--hairline-cool, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, 8px);
   margin-bottom: 20px;
 }
 
@@ -331,13 +335,14 @@ const handlePrint = () => {
   width: 90px;
   height: 90px;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
+  border: 1px solid var(--hairline-cool, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-sm, 6px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
+  padding: 4px;
 }
 
 .qr-image {
@@ -348,19 +353,20 @@ const handlePrint = () => {
 
 .qr-loading {
   font-size: 10px;
-  color: #9ca3af;
+  color: var(--ink-mute, #a1a1aa);
   text-align: center;
 }
 
 .qr-desc strong {
   display: block;
   font-size: 13px;
+  color: var(--ink, #ffffff);
   margin-bottom: 4px;
 }
 
 .qr-desc p {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--ink-mute, #a1a1aa);
   line-height: 1.4;
   margin: 0;
 }
@@ -372,11 +378,11 @@ const handlePrint = () => {
 }
 
 .btn-outline {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  color: #374151;
+  background: var(--canvas-soft, #1f1f23);
+  border: 1px solid var(--hairline-cool, rgba(255, 255, 255, 0.15));
+  color: var(--ink, #ffffff);
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm, 6px);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -384,6 +390,7 @@ const handlePrint = () => {
 }
 
 .btn-outline:hover {
-  background: #f9fafb;
+  background: var(--canvas-night, #27272a);
+  border-color: var(--hairline-strong, rgba(255, 255, 255, 0.25));
 }
 </style>

@@ -2,6 +2,31 @@
 
 ## System Status Log
 
+### [2026-11-17] Comprehensive UI Polish (Items 1 - 4)
+- **Status**: `VERIFIED WORKING`
+- **Changes Implemented**:
+  1. **Share Modal Dark Theme Mismatch (`ShareBuildModal.vue`)**:
+     - Migrated hardcoded light theme colors (`#ffffff`, `#f9fafb`, `#e5e7eb`, `#111827`) to project Supabase dark design tokens (`var(--canvas-night)`, `var(--canvas-soft)`, `var(--hairline-cool)`, `var(--ink)`, `var(--primary)`).
+     - Maintained high-contrast white background specifically on the QR code box to guarantee camera scanning reliability.
+  2. **Mobile Chatbot FAB Clearance (`ChatbotWindow.vue`)**:
+     - Fixed physical collision between `.chat-fab` and the mobile summary drawer on screens <= 820px by elevating FAB to `calc(var(--mobile-summary-offset, 4.75rem) + 2.5rem + env(safe-area-inset-bottom))`.
+     - Verified bounding box clearance of 116px from bottom (26px breathing room above drawer).
+  3. **Global Focus Outline Bug (`ArticlesView.vue`, `ArticleDetailView.vue`, `style.css`)**:
+     - Removed obsolete `:focus-visible` container rules and added `[tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none !important; }` in `style.css`.
+     - Eliminates accidental green perimeter bounding outline across entire page views during route transitions while preserving standard a11y focus rings on interactive elements.
+  4. **Hardware Product Cards Image Inset Polish (`HardwareSelection.vue`)**:
+     - Refined `.product-img` and `.product-img-wrapper` with a clean white inset background, hairline border, and subtle elevation shadow.
+     - Eliminates jagged contrast lines between white product packshots and dark card containers.
+- **Verification Evidence**:
+  - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
+  - Backend Jest Suite: 19/19 suites passed (172/172 tests green).
+  - Production Build: `vite build` completed in 756ms with 0 errors.
+  - Edge Browser Visual Verification Artifacts:
+    - `audit_fixed_1_share_modal.png`: Confirms seamless dark Supabase aesthetic on share modal.
+    - `audit_fixed_2_mobile_fab.png`: Confirms clear separation between mobile FAB and summary drawer.
+    - `audit_fixed_3_articles.png`: Confirms clean removal of green perimeter outline on articles page.
+    - `audit_fixed_4_builder_cards.png`: Confirms crisp, professional product card thumbnail insets.
+
 ### [2026-11-17] Compact Builder Sidebar Refactor
 - **Status**: `VERIFIED WORKING`
 - **Changes Implemented**:

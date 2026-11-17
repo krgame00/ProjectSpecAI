@@ -573,18 +573,20 @@ const getCleanModalSpecs = (item) => cleanSpecs(item);
 .product-img {
   width: 100%;
   aspect-ratio: 1;
-  background: var(--canvas-soft);
+  background: #ffffff;
+  border: 1px solid var(--hairline-cool);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  padding: 0.65rem;
   transition: all var(--transition-normal);
 }
 
 .product-card:hover .product-img {
-  background: var(--canvas);
+  border-color: var(--hairline-strong);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .product-img img {
@@ -879,10 +881,11 @@ const getCleanModalSpecs = (item) => cleanSpecs(item);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--canvas, #1e293b);
-  border: 1px solid var(--hairline, rgba(255, 255, 255, 0.1));
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid var(--hairline-cool);
+  border-radius: var(--radius-md);
   padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .modal-product-img {

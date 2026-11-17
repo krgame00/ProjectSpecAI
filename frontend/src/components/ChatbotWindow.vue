@@ -1167,6 +1167,10 @@ const handleSend = () => {
   100% { transform: scale(1.4); opacity: 0; }
 }
 @media (max-width: 820px) {
+  .chat-fab {
+    bottom: calc(var(--mobile-summary-offset, 4.75rem) + 2.5rem + env(safe-area-inset-bottom));
+    right: 1.25rem;
+  }
   .chatbot-wrapper { 
     inset: 0;
     width: 100%;

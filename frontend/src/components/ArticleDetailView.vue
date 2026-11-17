@@ -109,12 +109,6 @@ function handleArticleContentKeydown(event) {
   color: var(--ink);
 }
 
-.article-detail-view:focus-visible,
-.article-state:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: -2px;
-}
-
 .back-link,
 .text-link {
   color: var(--primary);

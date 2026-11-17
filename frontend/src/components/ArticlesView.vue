@@ -132,11 +132,6 @@ const markCoverFailed = article => failedCovers.value.set(article.id, articleIma
   padding-block: var(--space-xxl) var(--space-huge);
 }
 
-.articles-view:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: -2px;
-}
-
 .articles-header {
   max-width: 44rem;
   margin-bottom: var(--space-xxl);
