@@ -78,11 +78,12 @@ gh issue close 2 --comment "All sub-issues #3 through #11 completed and merged i
 
 ## 4. ชุดคำสั่งทดสอบยืนยันผลลัพธ์ (Testing & Verification Checklist)
 
-- [x] **Issue #5 (Shared Core)**: ผ่านทดสอบใน `chatbotConfig.test.js` และ `chatbotRoutes.test.js`.
-- [x] **Issue #6 (Fast Path)**: ผ่านทดสอบใน `chatbotPolicy.test.js` (Greeting/Thanks/Ack/Capability).
-- [x] **Issue #7 (Member Quota & Context)**: ผ่านทดสอบใน `chatbotSecurity.test.js` และ `chatbotContext.test.js` (360 reqs/15m, 24k chars input, 12k chars history).
-- [x] **Issue #8 (Targeted Catalog)**: ผ่านทดสอบใน `chatbotCatalog.test.js` (Tiered budget, compatibility filtering, Builder ID validation).
-- [x] **Issue #9 (Live Search Freshness)**: ผ่านทดสอบใน `chatbotConditionalSearch.test.js` (Freshness intent, source disclosure).
-- [x] **Issue #10 (Combined Catalog + Search)**: ผ่านทดสอบใน `chatbotRoutes.test.js` (`catalog_live_search` route).
-- [x] **Issue #11 (Metrics & Rollout)**: ผ่านทดสอบใน `chatbotMetrics.test.js` และ Benchmark scripts.
-- [x] **Issue #2 (Epic)**: ทุก Sub-issues (#3 ถึง #11) ผ่านการตรวจสอบครบถ้วน 100%.
+- [x] **Issue #5 (Shared Core)**: ผ่านทดสอบใน `chatbotConfig.test.js` และ `chatbotRoutes.test.js` — **CLOSED**.
+- [x] **Issue #6 (Fast Path)**: ผ่านทดสอบใน `chatbotPolicy.test.js` (Greeting/Thanks/Ack/Capability) — **CLOSED**.
+- [x] **Issue #7 (Member Quota & Context)**: ผ่านทดสอบใน `chatbotSecurity.test.js` และ `chatbotContext.test.js` (360 reqs/15m, 24k chars input, 12k chars history) — **CLOSED**.
+- [x] **Issue #8 (Targeted Catalog)**: ผ่านทดสอบใน `chatbotCatalog.test.js` (Tiered budget, compatibility filtering, Builder ID validation) — **CLOSED**.
+- [x] **Issue #9 (Live Search Freshness)**: ผ่านทดสอบใน `chatbotConditionalSearch.test.js` (Freshness intent, source disclosure) — **CLOSED**.
+- [x] **Issue #10 (Combined Catalog + Search)**: ผ่านทดสอบใน `chatbotRoutes.test.js` (`catalog_live_search` route) — **CLOSED**.
+- [x] **Issue #11 (Metrics & Rollout)**: ผ่านทดสอบใน `chatbotMetrics.test.js` และ Benchmark scripts — **CLOSED**.
+- [x] **Issue #2 (Epic)**: ทุก Sub-issues (#3 ถึง #11) ผ่านการตรวจสอบครบถ้วน 100% — **CLOSED**.
+- [x] **GitHub Issues Board**: ตรวจสอบคำสั่ง `gh issue list` พบว่า **0 Open Issues** (กระดานสะอาด 100%).

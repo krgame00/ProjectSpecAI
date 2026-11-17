@@ -207,10 +207,11 @@
 
 ### [2026-11-17] GitHub Issues Reconciliation & SpecAI Hybrid Routing Audit (#2, #5–#11)
 - **Status**: `VERIFIED WORKING`
-- **Scope Audited**:
-  - Investigated 8 open GitHub issues: #2 (Epic), #5 (Shared Core), #6 (Fast Path), #7 (Member Quota & Context), #8 (Targeted Catalog), #9 (Live Search Freshness), #10 (Combined Catalog + Search), and #11 (Hybrid Routing Rollout).
-- **Findings**:
+- **Scope Audited & Resolved**:
+  - Investigated and closed all 8 remaining open GitHub issues: #2 (Epic), #5 (Shared Core), #6 (Fast Path), #7 (Member Quota & Context), #8 (Targeted Catalog), #9 (Live Search Freshness), #10 (Combined Catalog + Search), and #11 (Hybrid Routing Rollout).
+- **Findings & Actions Taken**:
   - All 8 issues were implemented, tested, and merged into `main` via PR #12 (`94903778`) on September 11, 2026.
   - The issues remained open solely because PR #12 was merged without closing keywords (`Closes #...`).
+  - Executed `gh issue close` across all 8 issues with comments referencing PR #12 and verified 0 open issues remaining on repository board.
   - All associated test suites (35 security/context tests, 19 route tests, 9 conditional search tests, 4 catalog tests, 1 metrics test) are green.
 - **Technical Plan**: Recorded in [plans/github_issues_reconciliation_audit.md](file:///f:/Projects/PCSpec/plans/github_issues_reconciliation_audit.md).
