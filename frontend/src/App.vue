@@ -104,31 +104,116 @@
         </div>
 
         <div class="modal-body" v-if="authTab === 'login'">
-          <div class="form-group">
-            <label>อีเมล</label>
-            <input type="email" class="form-control" v-model="loginForm.email" placeholder="กรอกอีเมล" @keyup.enter="handleLoginSubmit">
-          </div>
-          <div class="form-group">
-            <label>รหัสผ่าน</label>
-            <input type="password" class="form-control" v-model="loginForm.password" placeholder="กรอกรหัสผ่าน" @keyup.enter="handleLoginSubmit">
-          </div>
-          <button class="btn btn-primary btn-block mt-4" @click="handleLoginSubmit">เข้าสู่ระบบ</button>
+          <form @submit.prevent="handleLoginSubmit">
+            <div class="form-group">
+              <label for="login-email">อีเมล</label>
+              <input
+                id="login-email"
+                type="email"
+                class="form-control"
+                v-model="loginForm.email"
+                placeholder="กรอกอีเมล"
+                autocomplete="email"
+                autocapitalize="none"
+                spellcheck="false"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="login-password">รหัสผ่าน</label>
+              <div class="password-input-wrap">
+                <input
+                  id="login-password"
+                  :type="showLoginPassword ? 'text' : 'password'"
+                  class="form-control"
+                  v-model="loginForm.password"
+                  placeholder="กรอกรหัสผ่าน"
+                  autocomplete="current-password"
+                  required
+                >
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  :aria-label="showLoginPassword ? 'ซ่อนรหัสผ่าน' : 'แสดงรหัสผ่าน'"
+                  @click="showLoginPassword = !showLoginPassword"
+                >
+                  <span v-if="showLoginPassword">👁️‍🗨️</span>
+                  <span v-else>👁️</span>
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block mt-4"
+              :disabled="isSubmitting"
+            >
+              {{ isSubmitting ? 'กำลังเข้าสู่ระบบ...' : 'เข้าสู่ระบบ' }}
+            </button>
+          </form>
         </div>
 
         <div class="modal-body" v-if="authTab === 'register'">
-          <div class="form-group">
-            <label>ชื่อ</label>
-            <input type="text" class="form-control" v-model="registerForm.name" placeholder="ชื่อที่จะแสดงในระบบ">
-          </div>
-          <div class="form-group">
-            <label>อีเมล</label>
-            <input type="email" class="form-control" v-model="registerForm.email" placeholder="ตั้งอีเมลของคุณ">
-          </div>
-          <div class="form-group">
-            <label>รหัสผ่าน</label>
-            <input type="password" class="form-control" v-model="registerForm.password" placeholder="ตั้งรหัสผ่าน">
-          </div>
-          <button class="btn btn-primary btn-block mt-4" @click="handleRegisterSubmit">สร้างบัญชี</button>
+          <form @submit.prevent="handleRegisterSubmit">
+            <div class="form-group">
+              <label for="reg-name">ชื่อ</label>
+              <input
+                id="reg-name"
+                type="text"
+                class="form-control"
+                v-model="registerForm.name"
+                placeholder="ชื่อที่จะแสดงในระบบ"
+                autocomplete="name"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="reg-email">อีเมล</label>
+              <input
+                id="reg-email"
+                type="email"
+                class="form-control"
+                v-model="registerForm.email"
+                placeholder="ตั้งอีเมลของคุณ"
+                autocomplete="email"
+                autocapitalize="none"
+                spellcheck="false"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <div class="form-label-row">
+                <label for="reg-password">รหัสผ่าน</label>
+                <span class="form-hint">อย่างน้อย 6 ตัวอักษร</span>
+              </div>
+              <div class="password-input-wrap">
+                <input
+                  id="reg-password"
+                  :type="showRegPassword ? 'text' : 'password'"
+                  class="form-control"
+                  v-model="registerForm.password"
+                  placeholder="ตั้งรหัสผ่าน 6 ตัวอักษรขึ้นไป"
+                  autocomplete="new-password"
+                  required
+                >
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  :aria-label="showRegPassword ? 'ซ่อนรหัสผ่าน' : 'แสดงรหัสผ่าน'"
+                  @click="showRegPassword = !showRegPassword"
+                >
+                  <span v-if="showRegPassword">👁️‍🗨️</span>
+                  <span v-else>👁️</span>
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block mt-4"
+              :disabled="isSubmitting"
+            >
+              {{ isSubmitting ? 'กำลังสร้างบัญชี...' : 'สร้างบัญชี' }}
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -170,6 +255,9 @@ const authReturnFocusRef = ref(null);
 const navToggleRef = ref(null);
 const isNavOpen = ref(false);
 const authTab = ref('login');
+const isSubmitting = ref(false);
+const showLoginPassword = ref(false);
+const showRegPassword = ref(false);
 const loginForm = reactive({ email: '', password: '' });
 const registerForm = reactive({ name: '', email: '', password: '' });
 const router = useRouter();
@@ -212,10 +300,14 @@ const openLoginModal = (event) => {
     : event?.currentTarget instanceof HTMLElement ? event.currentTarget : null
   closeNav()
   authTab.value = 'login'
+  showLoginPassword.value = false
+  showRegPassword.value = false
   showLoginModal.value = true
 }
 const closeLoginModal = () => {
   showLoginModal.value = false
+  showLoginPassword.value = false
+  showRegPassword.value = false
 }
 useDialogFocus(showLoginModal, authDialogRef, closeLoginModal, authReturnFocusRef)
 const openLoginFromChat = async () => {
@@ -245,8 +337,10 @@ onMounted(async () => {
 });
 
 const handleLoginSubmit = async () => {
+  if (isSubmitting.value) return;
   if (!loginForm.email || !loginForm.password) return toast.warning('กรุณากรอกอีเมลและรหัสผ่าน');
 
+  isSubmitting.value = true;
   try {
     const res = await fetch(`${API_BASE}/auth/login`, {
       method: 'POST',
@@ -259,6 +353,7 @@ const handleLoginSubmit = async () => {
       authStore.setUser(data.user, data.token);
       showLoginModal.value = false;
       loginForm.email = ''; loginForm.password = '';
+      showLoginPassword.value = false;
       toast.success(`ยินดีต้อนรับคุณ ${data.user.name}`);
 
       if (data.user.role === 'admin') {
@@ -270,12 +365,17 @@ const handleLoginSubmit = async () => {
     }
   } catch (err) {
     toast.error('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+  } finally {
+    isSubmitting.value = false;
   }
 };
 
 const handleRegisterSubmit = async () => {
+  if (isSubmitting.value) return;
   if (!registerForm.name || !registerForm.email || !registerForm.password) return toast.warning('กรุณากรอกข้อมูลให้ครบถ้วน');
+  if (registerForm.password.length < 6) return toast.warning('รหัสผ่านต้องมีความยาวอย่างน้อย 6 ตัวอักษร');
 
+  isSubmitting.value = true;
   try {
     const res = await fetch(`${API_BASE}/auth/register`, {
       method: 'POST',
@@ -289,11 +389,14 @@ const handleRegisterSubmit = async () => {
       authStore.setUser(data.user, data.token);
       showLoginModal.value = false;
       registerForm.name = ''; registerForm.email = ''; registerForm.password = '';
+      showRegPassword.value = false;
     } else {
       toast.error(data.error || 'สมัครสมาชิกล้มเหลว');
     }
   } catch (err) {
     toast.error('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+  } finally {
+    isSubmitting.value = false;
   }
 };
 
@@ -372,6 +475,48 @@ const logout = () => {
   font-size: var(--text-sm); 
   color: var(--ink-mute);
   font-weight: 500;
+}
+.form-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+.form-label-row label {
+  margin-bottom: 0;
+}
+.form-hint {
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-input-wrap .form-control {
+  padding-right: 2.75rem;
+}
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+  opacity: 0.7;
+}
+.password-toggle-btn:hover {
+  opacity: 1;
 }
 .auth-tabs { display: flex; gap: 0; margin-bottom: -1px; }
 .auth-tab { 

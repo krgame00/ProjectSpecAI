@@ -2,6 +2,24 @@
 
 ## System Status Log
 
+### [2026-11-17] Authentication & Registration Modal Audit and UX Polish
+- **Status**: `VERIFIED WORKING`
+- **Scope Audited**:
+  - Modal interaction, tab switching (Login / Register), form validation, and session management.
+  - Integration with Node.js backend (`/api/auth/login`, `/api/auth/register`), Bcrypt, and JWT auth flow.
+  - Accessibility: focus trapping via `useDialogFocus`, ARIA attributes, and `Esc` key handling.
+- **Refinements Landed**:
+  - Semantic `<form>` wrapping for browser password manager auto-fill and native submission.
+  - Keyboard accessibility: Enter key submits registration without forcing mouse click.
+  - Double-submit prevention with `isSubmitting` reactive flag and loading state indicators.
+  - Password hint `(อย่างน้อย 6 ตัวอักษร)` and proactive frontend length validation.
+  - Eye icon show/hide password toggle (👁️ / 👁️‍🗨️) for both login and register forms.
+- **Verification Evidence**:
+  - Vitest: 186/186 passed (25 files).
+  - Jest: 172/172 passed (19 suites).
+  - End-to-end flow verified via `scratch/test_auth_flow.cjs` (Admin login, redirection to `/admin`, logout, customer register, navbar sync).
+  - Artifacts: `audit_auth_login_tab.png`, `audit_auth_register_tab.png`, `audit_auth_mobile_modal.png`, `audit_auth_admin_loggedin.png`, `audit_auth_customer_registered.png`.
+
 ### [2026-11-17] Comprehensive Full-System Audit (All 9 Routes + APIs + Mobile)
 - **Status**: `VERIFIED WORKING`
 - **Scope Audited**:
