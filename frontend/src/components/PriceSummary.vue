@@ -125,22 +125,41 @@
             </div>
           </button>
           <div class="cat-selected-item" v-if="build[cat.id]">
-              <div class="item-name">{{ getItemName(cat.id, build[cat.id]) }}</div>
-              <div class="item-price" v-if="getItemPrice(cat.id, build[cat.id]) !== '0'">฿{{ getItemPrice(cat.id, build[cat.id]) }}</div>
-              <div class="item-price" v-else style="color: var(--danger);">ติดต่อสอบถาม</div>
+            <div class="selected-compact-wrap">
+              <div class="item-name" :title="getItemName(cat.id, build[cat.id])">{{ getItemName(cat.id, build[cat.id]) }}</div>
               
-              <!-- Detailed Specs -->
-              <div class="item-specs-mini">
-                <div v-for="(spec, idx) in getItemSpecsList(cat.id, build[cat.id])" :key="idx" class="spec-row">
-                  <span class="spec-label">{{ spec.label }}:</span>
-                  <span class="spec-value">{{ spec.value }}</span>
+              <div class="selected-row-meta">
+                <div class="meta-details">
+                  <span class="item-price font-mono" v-if="getItemPrice(cat.id, build[cat.id]) !== '0'">
+                    ฿{{ getItemPrice(cat.id, build[cat.id]) }}
+                  </span>
+                  <span class="item-price contact-price" v-else>ติดต่อสอบถาม</span>
+                  
+                  <!-- Compact Specs Chips (High-density inline tags) -->
+                  <div class="item-specs-compact" v-if="getItemSpecsList(cat.id, build[cat.id]).length">
+                    <span 
+                      v-for="(spec, idx) in getItemSpecsList(cat.id, build[cat.id])" 
+                      :key="idx" 
+                      class="spec-chip font-mono"
+                      :title="`${spec.label}: ${spec.value}`"
+                    >
+                      {{ spec.value }}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <button class="sidebar-remove-btn" @click.stop="$emit('remove-item', cat.id)">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                นำออก
-              </button>
+                <button 
+                  class="sidebar-remove-btn" 
+                  type="button"
+                  :aria-label="`นำ ${cat.name} ออก`"
+                  title="นำออก"
+                  @click.stop="$emit('remove-item', cat.id)"
+                >
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <span class="remove-text">นำออก</span>
+                </button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
@@ -549,73 +568,103 @@ const printSpec = () => {
   box-shadow: 0 2px 8px color-mix(in oklch, #3ecf8e 40%, transparent);
 }
 
-.cat-selected-item { margin-top: 0; padding: 0 1.25rem 0.9rem; }
-.item-name { 
+.category-item.selected .category-button {
+  padding: 0.7rem 1.25rem 0.3rem;
+  min-height: auto;
+}
+.cat-selected-item { 
+  margin-top: 0; 
+  padding: 0 1.25rem 0.7rem; 
+}
+.selected-compact-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: var(--canvas-soft);
+  border: 1px solid var(--hairline-cool);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.65rem;
+  transition: all var(--transition-fast);
+}
+.selected-compact-wrap:hover {
+  border-color: var(--hairline-strong);
+}
+.selected-compact-wrap .item-name { 
   font-size: var(--text-xs); 
-  color: var(--ink-mute);
-  display: -webkit-box; 
-  -webkit-line-clamp: 1; 
-  -webkit-box-orient: vertical; 
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
   overflow: hidden; 
   text-overflow: ellipsis; 
-  line-height: 1.5; 
+  line-height: 1.35; 
 }
-.item-price {
+.selected-row-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.meta-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+  flex: 1;
+}
+.meta-details .item-price {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
   color: var(--primary-deep);
-  font-weight: 600;
-  margin-top: 0.15rem;
-}
-.item-specs-mini {
-  margin-top: 0.6rem;
-  padding: 0.5rem;
-  background: var(--canvas-soft);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--hairline);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.spec-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.65rem;
-  line-height: 1.2;
-}
-.spec-label {
-  color: var(--ink-mute);
-}
-.spec-value {
-  color: var(--ink);
-  font-weight: 500;
-  text-align: right;
-  max-width: 60%;
+  font-weight: 700;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+.meta-details .contact-price {
+  color: var(--danger);
+  font-weight: 500;
+}
+.item-specs-compact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.spec-chip {
+  font-size: 0.62rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-mute);
+  border: 1px solid var(--hairline-cool);
+  white-space: nowrap;
+  line-height: 1.2;
 }
 .sidebar-remove-btn { 
   background: transparent; 
-  color: var(--ink-mute); 
-  border: 1px solid var(--hairline); 
-  padding: 0.2rem 0.55rem; 
+  color: var(--ink-faint); 
+  border: 1px solid var(--hairline-cool); 
+  padding: 0 0.55rem; 
   border-radius: var(--radius-sm); 
-  font-size: var(--text-xs); 
+  font-size: 0.7rem; 
   cursor: pointer; 
-  margin-top: 0.4rem; 
-  width: 100%; 
+  min-width: 44px;
+  min-height: 44px;
   transition: all var(--transition-fast);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   font-family: var(--font-sans);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .sidebar-remove-btn:hover {
-  background: rgba(255, 34, 1, 0.15);
-  border-color: var(--danger-border);
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
   color: var(--danger);
+}
+.sidebar-remove-btn .remove-text {
+  font-size: 0.68rem;
 }
 
 /* Wattage Meter Gauge */

@@ -2,6 +2,19 @@
 
 ## System Status Log
 
+### [2026-11-17] Compact Builder Sidebar Refactor
+- **Status**: `VERIFIED WORKING`
+- **Changes Implemented**:
+  - Refactored `.cat-selected-item` in `PriceSummary.vue` from bulky 215px vertical block to compact 93px high-density card (57% height reduction).
+  - Replaced the 4-row vertical table with horizontal inline spec chips (`[AM5] [8 Cores] [120W]`).
+  - Embedded remove button as a sleek inline button next to the price while preserving 44x44px touch target compliance.
+- **Verification Evidence**:
+  - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
+  - Production Build: `vite build` completed in 936ms.
+  - Edge Browser Measurement & Inspection:
+    - Bounding box measurement: 93px height per item, remove button 65x44px.
+    - Screenshot: `sidebar_closeup.png` confirms compact, scannable, Supabase-styled layout.
+
 ### [2026-11-17] Upgrade Path Insights in SpecAI (Item 4)
 - **Status**: `VERIFIED WORKING`
 - **Features Implemented**:
