@@ -410,6 +410,68 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 500;
 }
 
+/* ---------- Top Navigation Enhancements ---------- */
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--hairline-cool);
+  margin: 0 var(--space-xs);
+  flex-shrink: 0;
+}
+.guest-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.user-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  background: var(--canvas);
+  border: 1px solid var(--hairline-cool);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  line-height: 1;
+}
+.user-profile-badge .user-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+.user-profile-badge .role-badge {
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(62, 207, 142, 0.15);
+  color: var(--primary-deep);
+  border: 1px solid rgba(62, 207, 142, 0.35);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.btn-admin-nav {
+  border-color: rgba(62, 207, 142, 0.35);
+  color: var(--primary-deep);
+  background: rgba(62, 207, 142, 0.08);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+.btn-admin-nav:hover:not(:disabled) {
+  background: rgba(62, 207, 142, 0.18);
+  border-color: var(--primary);
+  color: var(--primary-deep);
+}
+.btn-logout {
+  color: var(--ink-mute);
+  border-color: var(--hairline-cool);
+  transition: all var(--transition-fast);
+}
+.btn-logout:hover:not(:disabled) {
+  color: var(--danger);
+  border-color: var(--danger-border);
+  background: var(--danger-soft);
+}
+
 /* ---------- Data Tables ---------- */
 .data-table {
   width: 100%;

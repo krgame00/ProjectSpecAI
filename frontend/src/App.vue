@@ -29,12 +29,17 @@
           <button :class="['btn', 'btn-outline', 'btn-sm', { active: $route.path === '/articles' }]" @click="navigateTo('/articles')">📰 บทความ</button>
 
           <div v-if="currentUser" class="user-actions">
-            <span v-if="userRole !== 'admin'" class="user-name">👤 {{ currentUser.name }}</span>
-            <button v-if="userRole === 'admin'" class="btn btn-primary btn-sm" @click="navigateTo('/admin')">⚙️ หลังบ้านแอดมิน</button>
+            <div class="nav-divider" aria-hidden="true"></div>
+            <div class="user-profile-badge">
+              <span class="user-name">👤 {{ currentUser.name }}</span>
+              <span v-if="userRole === 'admin'" class="role-badge font-mono">ADMIN</span>
+            </div>
+            <button v-if="userRole === 'admin'" class="btn btn-outline btn-sm btn-admin-nav" @click="navigateTo('/admin')">⚙️ หลังบ้านแอดมิน</button>
             <button v-if="userRole !== 'admin'" class="btn btn-outline-primary btn-sm" @click="navigateTo('/profile')">ข้อมูลส่วนตัว</button>
-            <button class="btn btn-outline-danger btn-sm" @click="logout">ออกจากระบบ</button>
+            <button class="btn btn-outline btn-sm btn-logout" @click="logout">ออกจากระบบ</button>
           </div>
-          <div v-else>
+          <div v-else class="guest-actions">
+            <div class="nav-divider" aria-hidden="true"></div>
             <button class="btn btn-outline btn-sm" @click="openLoginModal">เข้าสู่ระบบ</button>
           </div>
         </div>
@@ -458,8 +463,11 @@ const logout = () => {
   }
   .nav-actions.is-open { display: flex; }
   .nav-actions .btn { width: 100%; }
-  .user-actions { flex-direction: column; align-items: stretch; }
+  .user-actions { flex-direction: column; align-items: stretch; gap: var(--space-sm); }
   .user-name { padding: var(--space-sm) 0; text-align: center; }
+  .guest-actions { flex-direction: column; align-items: stretch; width: 100%; gap: var(--space-sm); }
+  .nav-divider { width: 100%; height: 1px; margin: var(--space-xs) 0; }
+  .user-profile-badge { width: 100%; justify-content: center; padding: 0.5rem; }
 }
 
 @media (max-width: 63.99rem) {

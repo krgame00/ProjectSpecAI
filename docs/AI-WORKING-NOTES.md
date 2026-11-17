@@ -2,6 +2,27 @@
 
 ## System Status Log
 
+### [2026-11-17] Top Navigation Bar Layout & Visual Hierarchy Polish
+- **Status**: `VERIFIED WORKING`
+- **Changes Implemented**:
+  1. **Visual Hierarchy Balance**:
+     - Replaced the glaring solid green CTA on "หลังบ้านแอดมิน" with a refined emerald soft-outline button (`.btn-admin-nav`).
+     - Aligns with modern Supabase/Vercel top navbar design where management shortcuts do not compete with primary in-page CTAs.
+  2. **Clear Zone Separation**:
+     - Inserted a sleek vertical hairline divider (`.nav-divider`) separating storefront navigation links (`จัดสเปค`, `บทความ`) from account actions.
+     - Responsive: turns into a horizontal divider inside the mobile slide-down menu.
+  3. **Admin Identity & Role Badge**:
+     - Removed `v-if="userRole !== 'admin'"` suppression of username.
+     - Admins now clearly see their username and an emerald `ADMIN` tag (`.user-profile-badge .role-badge`).
+  4. **Courteous Logout Action**:
+     - Restyled "ออกจากระบบ" (`.btn-logout`) as a ghost button in muted slate, transitioning to a soft danger outline only on hover.
+- **Verification Evidence**:
+  - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
+  - Production Build: `vite build` completed in 1.05s with 0 errors.
+  - Edge Browser Screenshots:
+    - `navbar_admin_closeup.png`: Confirms refined admin navbar layout with divider, user badge, and harmonious button styles.
+    - `navbar_admin_mobile.png`: Confirms stacked mobile navigation drawer with role badge and full touch accessibility.
+
 ### [2026-11-17] Comprehensive UI Polish (Items 1 - 4)
 - **Status**: `VERIFIED WORKING`
 - **Changes Implemented**:
