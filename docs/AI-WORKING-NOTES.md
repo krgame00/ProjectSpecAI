@@ -2,6 +2,21 @@
 
 ## System Status Log
 
+### [2026-11-17] Admin Panel Audit (Overview, Orders, Inventory, Articles)
+- **Status**: `VERIFIED WORKING`
+- **Scope Audited**:
+  - All 4 core tabs of Admin Dashboard: Store Overview, Orders, Inventory, and Articles.
+  - Interactive states: Order details modal, Product creation modal, Article creation modal, and status updates.
+  - Responsive layouts: Desktop (1440x900) and Mobile (390x844).
+- **Refinements Landed**:
+  - `AdminOrdersTab.vue`: Improved `getHardwareItem` to resolve both legacy and modern catalog item IDs, correctly rendering hardware thumbnail, model name, and price in order details modal.
+  - Modals (`AdminOrdersTab.vue`, `AdminInventoryTab.vue`, `AdminArticlesTab.vue`): Purged legacy `var(--glass-border)` and `rgba(0,0,0,0.2)` styles; aligned with Supabase design tokens (`var(--hairline-cool)` and `var(--canvas-soft)`).
+- **Verification Evidence**:
+  - Vitest: 186/186 passed (25 files).
+  - Jest: 172/172 passed (19 suites).
+  - Playwright live Edge check: `scratch/audit_admin_panel.cjs` reported 0 console logs and 0 network errors.
+  - Artifacts: `audit_admin_tab1_overview.png`, `audit_admin_tab2_orders.png`, `audit_admin_tab2_orders_modal.png`, `audit_admin_tab3_inventory.png`, `audit_admin_tab3_inventory_modal.png`, `audit_admin_tab4_articles.png`, `audit_admin_tab4_articles_modal.png`, `audit_admin_mobile_overview.png`, `audit_admin_mobile_orders.png`.
+
 ### [2026-11-17] Authentication & Registration Modal Audit and UX Polish
 - **Status**: `VERIFIED WORKING`
 - **Scope Audited**:

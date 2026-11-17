@@ -82,7 +82,7 @@
     <!-- Product Modal -->
     <div class="modal-overlay" data-test="product-modal" v-if="showProductModal" @click.self="!isSavingProduct && (showProductModal = false)">
       <div class="modal-content glass-panel admin-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" style="max-width: 700px; padding: 0;">
-        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
+        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--hairline-cool); background: var(--canvas-soft);">
           <h3 id="product-modal-title" style="display: flex; align-items: center; gap: 0.5rem;">
             <span style="font-size: 1.5rem;">📦</span> 
             {{ editingProduct ? 'แก้ไขข้อมูลสินค้า' : 'เพิ่มสินค้าใหม่ในคลัง' }}
@@ -141,7 +141,7 @@
             </div>
           </div>
         </div>
-        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 1rem; background: rgba(0,0,0,0.2);">
+        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--hairline-cool); display: flex; justify-content: flex-end; gap: 1rem; background: var(--canvas-soft);">
           <button class="btn btn-outline" :disabled="isSavingProduct" @click="showProductModal = false">ยกเลิก</button>
           <button class="btn btn-primary" data-test="save-product" :disabled="isSavingProduct" style="padding: 0.5rem 2rem; font-weight: 600;" @click="saveProduct">{{ isSavingProduct ? 'กำลังบันทึก…' : '💾 บันทึกสินค้า' }}</button>
         </div>

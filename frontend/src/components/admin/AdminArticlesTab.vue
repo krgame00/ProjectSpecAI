@@ -74,7 +74,7 @@
     <!-- Article Modal -->
     <div class="modal-overlay" data-test="article-modal" v-if="showArticleModal" @click.self="!isSavingArticle && (showArticleModal = false)">
       <div class="modal-content glass-panel admin-modal" role="dialog" aria-modal="true" aria-labelledby="article-modal-title" style="max-width: 700px; padding: 0;">
-        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
+        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--hairline-cool); background: var(--canvas-soft);">
           <h3 id="article-modal-title" style="display: flex; align-items: center; gap: 0.5rem;">
             <span style="font-size: 1.5rem;">📝</span> 
             {{ editingArticle ? 'แก้ไขบทความ' : 'เขียนบทความใหม่' }}

@@ -102,7 +102,7 @@
     <!-- Order Details Modal -->
     <div class="modal-overlay" v-if="showOrderModal" @click.self="showOrderModal = false">
       <div class="modal-content glass-panel admin-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title" style="max-width: 600px; padding: 0;">
-        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border); background: rgba(0,0,0,0.2);">
+        <div class="modal-header" style="padding: 1.5rem; border-bottom: 1px solid var(--hairline-cool); background: var(--canvas-soft);">
           <h3 id="order-modal-title" style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
             <span>📄</span> 
             รายละเอียดคำสั่งซื้อ {{ selectedOrder?.id }}
@@ -121,7 +121,7 @@
           <h4 style="margin-bottom: 1rem; color: var(--ink); border-bottom: 1px solid var(--hairline-cool); padding-bottom: 0.5rem;">รายการสินค้าที่สั่งซื้อ</h4>
           <div v-if="selectedOrder?.build_items && Object.keys(selectedOrder.build_items).length > 0" style="display: flex; flex-direction: column; gap: 0.75rem;">
             <div v-for="(itemId, category) in selectedOrder.build_items" :key="category" style="display: flex; align-items: center; gap: 1rem; background: var(--canvas-soft); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--hairline-cool);">
-              <div style="width: 40px; height: 40px; background: var(--canvas); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; padding: 0.25rem;">
+              <div style="width: 40px; height: 40px; background: #ffffff; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; padding: 0.25rem; border: 1px solid var(--hairline-cool); flex-shrink: 0;">
                 <img v-if="getHardwareItem(category, itemId)?.image" :src="getHardwareItem(category, itemId).image" style="width: 100%; height: 100%; object-fit: contain;">
                 <span v-else>📦</span>
               </div>
@@ -131,14 +131,14 @@
                   {{ getHardwareItem(category, itemId)?.name || 'ไม่พบข้อมูลสินค้า (ID: ' + itemId + ')' }}
                 </div>
               </div>
-              <div style="font-weight: 600; font-family: var(--font-mono);">
+              <div style="font-weight: 600; font-family: var(--font-mono); color: var(--primary-deep);">
                 ฿{{ (getHardwareItem(category, itemId)?.price || 0).toLocaleString() }}
               </div>
             </div>
           </div>
           <div v-else style="text-align: center; color: var(--muted); padding: 1rem;">ไม่มีข้อมูลรายการชิ้นส่วน</div>
         </div>
-        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; background: rgba(0,0,0,0.2);">
+        <div class="admin-modal__footer" style="padding: 1.5rem; border-top: 1px solid var(--hairline-cool); display: flex; justify-content: flex-end; background: var(--canvas-soft);">
           <button class="btn btn-outline" @click="showOrderModal = false">ปิด</button>
         </div>
       </div>
@@ -201,6 +201,14 @@ const openOrderModal = (order) => {
 
 const getHardwareItem = (category, itemId) => {
   if (!props.catalog || !props.catalog[category]) return null;
-  return props.catalog[category].find(item => item.id == itemId);
+  const directMatch = props.catalog[category].find(item => item.id == itemId);
+  if (directMatch) return directMatch;
+  if (typeof itemId === 'string') {
+    const numericPart = parseInt(itemId.replace(/\D/g, ''), 10);
+    if (!isNaN(numericPart) && numericPart > 0 && numericPart <= props.catalog[category].length) {
+      return props.catalog[category][numericPart - 1];
+    }
+  }
+  return null;
 };
 </script>
