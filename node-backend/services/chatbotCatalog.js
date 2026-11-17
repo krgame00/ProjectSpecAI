@@ -143,29 +143,39 @@ function flattenCandidates(candidates = {}) {
   return Object.values(candidates).flat();
 }
 
+const { formatUpgradeContext } = require('./chatbotUpgradePath');
+
 function formatSelectedContext(products = [], selectedInput = {}) {
   if (!selectedInput || typeof selectedInput !== 'object') return '';
   const chosen = [];
+  const buildObj = {};
+
   for (const [category, idOrObj] of Object.entries(selectedInput)) {
     if (!idOrObj) continue;
+    const catNorm = categoryKey(category);
     if (typeof idOrObj === 'object') {
       const norm = normalizeProduct(idOrObj);
       const name = norm.name || [norm.brand, norm.model].filter(Boolean).join(' ').trim();
       if (name) {
         chosen.push(`- ${norm.category.toUpperCase()}: ${name} (฿${norm.price.toLocaleString()})`);
+        buildObj[catNorm] = norm;
       }
     } else {
       const match = products.find(p => String(p.id) === String(idOrObj));
       if (match) {
-        const cat = (match.category || category).toUpperCase();
-        const name = match.name || [match.brand, match.model].filter(Boolean).join(' ').trim();
-        const price = numberValue(match.price) || 0;
+        const norm = normalizeProduct(match);
+        const cat = (norm.category || category).toUpperCase();
+        const name = norm.name || [norm.brand, norm.model].filter(Boolean).join(' ').trim();
+        const price = norm.price || 0;
         chosen.push(`- ${cat}: ${name} (฿${price.toLocaleString()})`);
+        buildObj[catNorm] = norm;
       }
     }
   }
   if (!chosen.length) return '';
-  return `\n[สเปกคอมพิวเตอร์ที่ลูกค้ากำลังเลือกค้างอยู่ใน Builder หน้าจอขณะนี้:\n${chosen.join('\n')}\nจงใช้ข้อมูลนี้เพื่อวิเคราะห์ความเข้ากันได้ แนะนำส่วนที่ขาด หรือเสนอแนวทางการอัปเกรดตามที่ลูกค้าถาม]`;
+  const builderBlock = `\n[สเปกคอมพิวเตอร์ที่ลูกค้ากำลังเลือกค้างอยู่ใน Builder หน้าจอขณะนี้:\n${chosen.join('\n')}\nจงใช้ข้อมูลนี้เพื่อวิเคราะห์ความเข้ากันได้ แนะนำส่วนที่ขาด หรือเสนอแนวทางการอัปเกรดตามที่ลูกค้าถาม]`;
+  const upgradeBlock = formatUpgradeContext(buildObj);
+  return upgradeBlock ? `${builderBlock}\n${upgradeBlock}` : builderBlock;
 }
 
 function buildCatalogContext(candidates = {}, selectedContext = '') {

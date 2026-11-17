@@ -209,4 +209,27 @@ describe('ChatbotWindow access presentation', () => {
     expect(wrapper.emitted('apply-build')).toBeTruthy()
     expect(wrapper.emitted('apply-build')[0][0]).toEqual(recommendedBuild)
   })
+
+  test('renders upgrade path insights panel when recommended_build has upgradeable components', () => {
+    const recommendedBuild = {
+      cpu: { id: 1, name: 'AMD Ryzen 5 7600', socket: 'AM5', tdp: 65, price: 6500 },
+      psu: { id: 2, name: 'Corsair 750W 80+', wattage: 750, price: 2800 }
+    }
+    const wrapper = mount(ChatbotWindow, {
+      props: {
+        ...guestProps,
+        isAuthenticated: true,
+        isTyping: false,
+        history: [
+          { role: 'bot', text: 'สเปกแนะนำครับ', recommended_build: recommendedBuild }
+        ]
+      }
+    })
+
+    const panel = wrapper.find('.build-upgrade-panel')
+    expect(panel.exists()).toBe(true)
+    expect(panel.find('.upgrade-title').text()).toContain('UPGRADE PATH INSIGHTS')
+    expect(panel.find('.upgrade-badge').text()).toBe('อัปเกรดได้ยาวไกล')
+    expect(panel.findAll('.upgrade-tip-item').length).toBeGreaterThan(0)
+  })
 })

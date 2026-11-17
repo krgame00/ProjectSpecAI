@@ -1,6 +1,6 @@
 const HARDWARE_TERMS = /(?:cpu|gpu|ram|ssd|nvme|psu|motherboard|mainboard|computer|pc|hardware|การ์ดจอ|ซีพียู|แรม|เมนบอร์ด|คอม|ประกอบ|สเปก)/i;
 const FRESHNESS_TERMS = /(?:ล่าสุด|วันนี้|ตอนนี้|ปัจจุบัน|ราคาล่าสุด|มีของไหม|ของหมดไหม|ข่าว|เพิ่งเปิดตัว|เข้าไทย|driver ล่าสุด|bios ล่าสุด|firmware|jib|advice|banana\s*it|ihavecpu|latest|current|stock|availability|release|launch|เช็กข้อมูลล่าสุด|ค้นเว็บ)/i;
-const BUILD_TERMS = /(?:จัดสเป[คก]|จัดคอม|ประกอบคอม|สเป[คก]คอม|แนะนำสเป[คก]|สเป[คก]ที่เลือก|สเป[คก]ปัจจุบัน|ช่วยดูสเป[คก]|ขาดอะไร|full\s*build|gaming\s*pc|build me|งบ\s*[\d,]+|budget\s*[\d,]+)/i;
+const BUILD_TERMS = /(?:จัดสเป[คก]|จัดคอม|ประกอบคอม|สเป[คก]คอม|แนะนำสเป[คก]|สเป[คก]ที่เลือก|สเป[คก]ปัจจุบัน|ช่วยดูสเป[คก]|ขาดอะไร|อัปเกรด|upgrade|เผื่ออนาคต|headroom|ระยะยาว|คุ้มไหม|คุ้มมั้ย|full\s*build|gaming\s*pc|build me|งบ\s*[\d,]+|budget\s*[\d,]+)/i;
 const SINGLE_PART_TERMS = /(?:\bcpu\b|\bgpu\b|\bram\b|\bssd\b|\bpsu\b|\bmotherboard\b|\bmainboard\b|การ์ดจอ|ซีพียู|แรม|เมนบอร์ด|เมนบอร์ด|เพาเวอร์|พาวเวอร์|เคส)/i;
 const SINGLE_PART_REQUEST = /(?:แนะนำ|เลือก|ขอ|หา|ซื้อ|ช่วยดู|รุ่นไหนดี|ตัวไหนดี|recommend|suggest|which|best)/i;
 const CATEGORY_FROM_TEXT = [

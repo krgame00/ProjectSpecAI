@@ -2,7 +2,28 @@
 
 ## System Status Log
 
-### [2026-11-17] Context-Aware Builder Sync & Interactive Build Card in SpecAI
+### [2026-11-17] Upgrade Path Insights in SpecAI (Item 4)
+- **Status**: `VERIFIED WORKING`
+- **Features Implemented**:
+  1. **Analytical Upgrade Engine (`chatbotUpgradePath.js` & `upgradePath.js`)**:
+     - Analyzes Socket longevity (AM5 to 2027+, LGA1851, AM4/LGA1700 limits).
+     - Calculates system estimated TDP and PSU power headroom wattage for future GPU upgrades.
+     - Classifies builds into upgrade tiers (`High`, `Medium`, `Entry`).
+  2. **Prompt & Context Injection**:
+     - System prompt mandates 3 dimensions (Performance Fit, Value for Money, Upgrade Path Insights).
+     - Backend pre-computes upgrade metrics and injects `[การวิเคราะห์เส้นทางอัปเกรดในอนาคต (Upgrade Path Insights)]` into Gemini prompt context.
+  3. **Interactive UI Integration in Chat**:
+     - Recommended Build Cards now feature an embedded `.build-upgrade-panel` with upgrade badge (`อัปเกรดได้ยาวไกล`) and bullet tips.
+     - Added quick prompt pill: `🔮 วิเคราะห์เส้นทางอัปเกรดในอนาคต (Upgrade Path) สำหรับสเปกที่ผมเลือก`.
+- **Verification Evidence**:
+  - Backend Jest Suite: 19/19 suites passed (172/172 tests green).
+  - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
+  - Production Build: `vite build` completed in 962ms.
+  - Live Browser Testing on Edge:
+    - `live_upgrade_path_1_pills.png`: Dynamic upgrade pill displayed.
+    - `live_upgrade_path_2_card.png`: SpecAI detailed platform longevity (AM4 ceiling vs AM5 recommendations) and build card upgrade panel rendered.
+
+### [2026-11-17] Context-Aware Builder Sync & Interactive Build Card in SpecAI (Items 1 & 2)
 - **Status**: `VERIFIED WORKING`
 - **Features Implemented**:
   1. **Context-Aware Builder (SpecAI sees current build)**:

@@ -85,6 +85,25 @@
                 </div>
               </div>
 
+              <!-- Upgrade Path Insights Panel -->
+              <div v-if="getBuildUpgrade(msg.recommended_build)" class="build-upgrade-panel hairline-top font-mono">
+                <div class="upgrade-header">
+                  <div class="upgrade-title-wrap">
+                    <span class="upgrade-icon">🔮</span>
+                    <span class="upgrade-title">UPGRADE PATH INSIGHTS</span>
+                  </div>
+                  <span :class="['upgrade-badge', getBuildUpgrade(msg.recommended_build).badge.class]">
+                    {{ getBuildUpgrade(msg.recommended_build).badge.text }}
+                  </span>
+                </div>
+                <div class="upgrade-tips">
+                  <div v-for="(tip, tidx) in getBuildUpgrade(msg.recommended_build).tips" :key="tidx" class="upgrade-tip-item">
+                    <span class="tip-dot">•</span>
+                    <span class="tip-text">{{ tip }}</span>
+                  </div>
+                </div>
+              </div>
+
               <div class="build-card-actions">
                 <button type="button" class="btn-card-action apply-build-btn" @click="$emit('apply-build', msg.recommended_build)">
                   <span>🛒 นำสเปคนี้ใส่ตะกร้า</span>
@@ -181,6 +200,7 @@ import { useCatalogStore } from '../stores/catalog';
 import { useBuilderStore } from '../stores/builder';
 import { useToastStore } from '../stores/toast';
 import { encodeBuildToQuery } from '../utils/compatibility';
+import { analyzeUpgradePath, getUpgradeTierBadge } from '../utils/upgradePath';
 
 const getActiveCatalog = () => {
   try { return useCatalogStore()?.getCategorizedHardware || {}; } catch (e) { return {}; }
@@ -227,6 +247,28 @@ const getBuildTotal = (buildObj) => {
   return getBuildItems(buildObj).reduce((sum, item) => sum + item.price, 0);
 };
 
+const getBuildUpgrade = (buildObj) => {
+  if (!buildObj || typeof buildObj !== 'object') return null;
+  const catalog = getActiveCatalog();
+  const resolved = {};
+  for (const [catId, itemId] of Object.entries(buildObj)) {
+    if (!itemId) continue;
+    if (typeof itemId === 'object') {
+      resolved[catId] = itemId;
+    } else {
+      const catList = catalog[catId] || [];
+      const found = catList.find(p => String(p.id) === String(itemId));
+      if (found) resolved[catId] = found;
+    }
+  }
+  const result = analyzeUpgradePath(resolved);
+  if (result.rating === 'Unrated' || !result.tips.length) return null;
+  return {
+    ...result,
+    badge: getUpgradeTierBadge(result.rating)
+  };
+};
+
 const handleCopyShare = async (buildObj) => {
   try {
     const query = encodeBuildToQuery(buildObj);
@@ -251,7 +293,10 @@ const promptPills = computed(() => {
   ];
   const builder = getActiveBuilder();
   if (builder && builder.hasAnyComponent) {
-    pills.unshift({ icon: '🔍', text: 'ช่วยดูสเปกที่ผมเลือกอยู่ตอนนี้ให้หน่อยครับว่าเข้ากันได้มั้ยหรือขาดอะไร' });
+    pills.unshift(
+      { icon: '🔮', text: 'วิเคราะห์เส้นทางอัปเกรดในอนาคต (Upgrade Path) สำหรับสเปกที่ผมเลือก' },
+      { icon: '🔍', text: 'ช่วยดูสเปกที่ผมเลือกอยู่ตอนนี้ให้หน่อยครับว่าเข้ากันได้มั้ยหรือขาดอะไร' }
+    );
   }
   return pills;
 });
@@ -706,6 +751,77 @@ const handleSend = () => {
 .build-row-price {
   font-size: 0.75rem;
   color: var(--foreground-muted);
+}
+.build-upgrade-panel {
+  border-top: 1px dashed var(--hairline-cool);
+  padding-top: 0.5rem;
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.upgrade-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.upgrade-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.upgrade-icon {
+  font-size: 0.8rem;
+}
+.upgrade-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--foreground-muted);
+  letter-spacing: 0.04em;
+}
+.upgrade-badge {
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.badge-high {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.badge-medium {
+  background: rgba(6, 182, 212, 0.12);
+  color: #06b6d4;
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+.badge-entry {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.badge-unrated {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+.upgrade-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.upgrade-tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--foreground-muted);
+}
+.tip-dot {
+  color: var(--primary);
+  font-weight: bold;
 }
 .build-card-actions {
   display: grid;
