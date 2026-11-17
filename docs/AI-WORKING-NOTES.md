@@ -2,6 +2,20 @@
 
 ## System Status Log
 
+### [2026-11-17] Comprehensive Full-System Audit (All 9 Routes + APIs + Mobile)
+- **Status**: `VERIFIED WORKING`
+- **Scope Audited**:
+  - All 9 core routes: `/` (Landing), `/build` (Builder), SpecAI Chatbot, `/articles`, `/article/:id`, `/checkout`, `/profile`, `/admin` (all tabs), and `404 Not Found`.
+  - Responsive viewports: Desktop (1440x900) and Mobile (390x844).
+  - API Health: Zero console errors and zero network 4xx/5xx failures recorded in `audit_report.json`.
+- **Refinements Landed During Audit**:
+  - `HardwareSelection.vue`: Fixed detail modal `.btn-select-modal` selected color from `#3b82f6` (blue) to project emerald `var(--primary-deep)`.
+  - `CheckoutView.vue`: Resolved mobile price wrap bug so that price never breaks onto the second line for long hardware names, and updated image thumbnail background to clean `#ffffff`.
+- **Verification Evidence**:
+  - Automated Suites: Vitest 186/186 passed (25 files), Jest 172/172 passed (19 suites).
+  - Production Build: `vite build` completed in 890ms.
+  - Audit Artifacts: `audit_route1_landing.png` through `audit_route9_not_found.png`, `audit_verified_product_modal.png`, `audit_verified_mobile_checkout.png`.
+
 ### [2026-11-17] Top Navigation Bar Layout & Visual Hierarchy Polish
 - **Status**: `VERIFIED WORKING`
 - **Changes Implemented**:

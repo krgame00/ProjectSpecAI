@@ -241,16 +241,28 @@ const handlePlaceOrder = async () => {
   margin-bottom: 1.5rem; font-size: var(--text-lg); font-weight: 600; color: var(--ink);
 }
 .checkout-item-row { 
-  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem;
-  padding: 1rem 0; border-bottom: 1px solid var(--hairline-cool);
+  display: flex; 
+  flex-wrap: nowrap; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 0.75rem;
+  padding: 1rem 0; 
+  border-bottom: 1px solid var(--hairline-cool);
 }
 .checkout-item-row:last-child { border-bottom: none; }
-.checkout-item-info { display: flex; align-items: center; gap: 1rem; min-width: 0; }
+.checkout-item-info { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.75rem; 
+  min-width: 0; 
+  flex: 1; 
+}
 .checkout-item-img { 
   width: 56px; height: 56px; 
-  background: var(--canvas-soft); border-radius: var(--radius-sm); 
-  overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 0.4rem;
+  background: #ffffff; border-radius: var(--radius-sm); 
+  overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 0.35rem;
   border: 1px solid var(--hairline-cool);
+  flex-shrink: 0;
 }
 .checkout-item-img img { width: 100%; height: 100%; object-fit: contain; }
 .item-cat { 
@@ -258,10 +270,16 @@ const handlePlaceOrder = async () => {
 }
 .item-name { 
   font-weight: 500; font-size: var(--text-sm); color: var(--ink); margin-top: 0.15rem;
-  overflow-wrap: anywhere;
+  word-break: break-word;
 }
-.checkout-item-price { 
-  font-family: var(--font-sans); font-weight: 600; color: var(--ink);
+.checkout-item-price {
+  font-weight: 600;
+  font-family: var(--font-mono, monospace);
+  color: var(--primary-deep);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: right;
+  font-size: var(--text-sm);
 }
 .form-group { margin-bottom: var(--space-md); }
 .form-group label { 

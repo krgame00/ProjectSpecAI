@@ -911,30 +911,31 @@ const getCleanModalSpecs = (item) => cleanSpecs(item);
 .price-value {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #10b981;
+  color: var(--primary-deep, #24b47e);
 }
 
 .btn-select-modal {
   margin-top: 0.25rem;
   padding: 0.65rem 1.25rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm, 8px);
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   border: none;
-  background: #10b981;
-  color: #ffffff;
+  background: var(--primary, #3ecf8e);
+  color: var(--on-primary, #171717);
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 2px 8px color-mix(in oklch, #3ecf8e 25%, transparent);
 }
 
 .btn-select-modal:hover {
-  background: #059669;
+  background: var(--primary-deep, #24b47e);
 }
 
 .btn-select-modal.selected {
-  background: #3b82f6;
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+  background: var(--primary-deep, #24b47e);
+  color: #ffffff;
+  box-shadow: 0 2px 8px color-mix(in oklch, #3ecf8e 40%, transparent);
 }
 
 .specs-section {
