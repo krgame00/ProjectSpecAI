@@ -113,3 +113,11 @@ npm run test:e2e
   - เปิดแท็บใหม่ด้วยลิงก์แชร์ โหลดสเปกและสัดส่วนงบประมาณกลับมาตรงกัน 100%
   - ตรวจจับความไม่เข้ากัน (AM5 CPU + LGA1700 Mobo) แจ้งเตือนข้อขัดแย้งแบบเรียลไทม์
   - แก้ไข Path ลิงก์แชร์ให้ตรงกับ Route Canonical (`/build`) พร้อมเพิ่ม Alias `/builder` ป้องกันข้อผิดพลาด 404
+- [x] Production Verification (Vercel & Render Live): VERIFIED WORKING
+  - URL ทดสอบ: `https://project-spec-ai.vercel.app/build`
+  - เชื่อมต่อ Live Catalog API บน Render สำเร็จ (HTTP 200)
+  - ทดสอบเลือกสเปกจริง (Galax RTX 3050 EX, AM5 CPU, NVMe SSD PCIe 4.0, PSU 550W, Case) รวมราคา ฿17,650
+  - แชร์สเปกผ่าน URL ได้ลิงก์จริง: `https://project-spec-ai.vercel.app/build?b=cpu:11038,gpu:11086,storage:11106,psu:11121,case:11141`
+  - เปิดหน้าใหม่ด้วยลิงก์ดังกล่าว กู้คืนสเปกบน Production ครบ 100%
+  - ระบบแจ้งเตือนข้อขัดแย้ง AM5 กับ LGA1700 ทำงานถูกต้องบน Production
+  - พบข้อผิดพลาดบน Console เท่ากับ 0 (Zero console errors)
