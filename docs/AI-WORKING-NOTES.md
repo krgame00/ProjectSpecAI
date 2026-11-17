@@ -202,3 +202,5 @@
   - Playwright E2E Suite: 77/77 tests passed locally (`42.2s`).
   - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
   - Backend Jest Suite: 19/19 suites passed (172/172 tests green).
+  - GitHub Actions Remote CI Run (`44110791843`): 100% green across all jobs (Backend Tests 21s, Frontend Tests 26s, E2E Tests 1m14s).
+  - Technical Plan: Recorded in [plans/ci_e2e_remediation_plan.md](file:///f:/Projects/PCSpec/plans/ci_e2e_remediation_plan.md).
