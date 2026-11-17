@@ -1,5 +1,5 @@
 import { setActivePinia, createPinia } from 'pinia'
-import { expect, test, beforeEach, describe, vi } from 'vitest'
+import { expect, test, beforeEach, afterEach, describe, vi } from 'vitest'
 import { useBuilderStore } from '../src/stores/builder'
 import { useCatalogStore } from '../src/stores/catalog'
 
@@ -8,7 +8,11 @@ describe('Builder Store Tests', () => {
     setActivePinia(createPinia())
     // Builder selections persist between sessions; isolate each test from
     // the previous test's localStorage snapshot.
-    if (typeof localStorage !== 'undefined') localStorage.clear()
+    try {
+      if (typeof localStorage !== 'undefined' && typeof localStorage.clear === 'function') {
+        localStorage.clear()
+      }
+    } catch {}
     const catalog = useCatalogStore()
     // Mock data for catalog
     catalog.hardwareList = {
@@ -33,6 +37,10 @@ describe('Builder Store Tests', () => {
         { id: 41, name: '400W White', price: 1000, wattage: 400 }
       ]
     }
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
   })
 
   test('selectItem toggles selection', () => {
@@ -100,7 +108,8 @@ describe('Builder Store Tests', () => {
     vi.stubGlobal('localStorage', {
       getItem: vi.fn((key) => storage[key] || null),
       setItem: vi.fn((key, val) => { storage[key] = String(val) }),
-      removeItem: vi.fn((key) => { delete storage[key] })
+      removeItem: vi.fn((key) => { delete storage[key] }),
+      clear: vi.fn(() => { for (const k in storage) delete storage[k] })
     })
 
     const builder = useBuilderStore()
@@ -111,5 +120,32 @@ describe('Builder Store Tests', () => {
     builder.clearBuild()
     expect(builder.build.cpu).toBeNull()
     expect(JSON.parse(storage['pcspec_build'])).toMatchObject({ cpu: null })
+  })
+
+  test('budgetBreakdown getter calculates segments based on selected components', () => {
+    const builder = useBuilderStore()
+    builder.selectItem('cpu', 1) // 5000
+    builder.selectItem('gpu', 30) // 10000
+    // Total = 15000. GPU = 67%, CPU = 33%
+    const breakdown = builder.budgetBreakdown
+    expect(breakdown.total).toBe(15000)
+    expect(breakdown.segments).toHaveLength(2)
+    const gpuSeg = breakdown.segments.find(s => s.id === 'gpu')
+    expect(gpuSeg.percentage).toBe(67)
+  })
+
+  test('loadFromUrlQuery loads build from router query and updates state', () => {
+    const builder = useBuilderStore()
+    builder.loadFromUrlQuery({ b: 'cpu:2,mobo:10,gpu:30' })
+    expect(builder.build.cpu).toBe(2)
+    expect(builder.build.mobo).toBe(10)
+    expect(builder.build.gpu).toBe(30)
+  })
+
+  test('shareQuery encodes current build into string', () => {
+    const builder = useBuilderStore()
+    builder.selectItem('cpu', 1)
+    builder.selectItem('mobo', 10)
+    expect(builder.shareQuery).toBe('cpu:1,mobo:10')
   })
 })

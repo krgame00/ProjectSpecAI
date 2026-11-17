@@ -28,8 +28,10 @@
         :compatibilityIssues="builderStore.compatibilityIssues"
         :compatibilityPasses="builderStore.compatibilityPasses"
         :hasAnyComponent="builderStore.hasAnyComponent"
+        :budgetBreakdown="builderStore.budgetBreakdown"
         @set-active-category="activeCategory = $event"
         @remove-item="(catId) => builderStore.setItem(catId, null)"
+        @open-share="isShareModalOpen = true"
         @checkout="$router.push('/checkout')"
       />
 
@@ -67,28 +69,55 @@
       :catalog="catalogStore.getCategorizedHardware" 
       :totalPrice="builderStore.totalPrice" 
     />
+
+    <!-- Share Build Modal -->
+    <ShareBuildModal 
+      :isOpen="isShareModalOpen"
+      :shareUrl="shareUrl"
+      :totalPrice="builderStore.totalPrice"
+      :itemCount="selectedItemCount"
+      @close="isShareModalOpen = false"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import PriceSummary from '../components/PriceSummary.vue';
 import HardwareSelection from '../components/HardwareSelection.vue';
 import ChatbotWindow from '../components/ChatbotWindow.vue';
 import PrintTemplate from '../components/PrintTemplate.vue';
+import ShareBuildModal from '../components/ShareBuildModal.vue';
 import { useBuilderStore } from '../stores/builder';
 import { useCatalogStore } from '../stores/catalog';
 import { useAuthStore } from '../stores/auth';
 
+const route = useRoute();
 const builderStore = useBuilderStore();
 const catalogStore = useCatalogStore();
 const authStore = useAuthStore();
 
+const isShareModalOpen = ref(false);
 const isLoading = computed(() => catalogStore.isLoading);
+
+const shareUrl = computed(() => {
+  if (typeof window === 'undefined') return '';
+  const origin = window.location.origin;
+  const query = builderStore.shareQuery;
+  return query ? `${origin}/builder?b=${query}` : `${origin}/builder`;
+});
+
+const selectedItemCount = computed(() => {
+  return Object.values(builderStore.build).filter(v => v !== null).length;
+});
 
 onMounted(async () => {
   if (!catalogStore.hardwareList || Object.keys(catalogStore.hardwareList).length === 0) {
     await catalogStore.fetchCatalog();
+  }
+  if (route && route.query && (route.query.b || Object.keys(route.query).length > 0)) {
+    builderStore.loadFromUrlQuery(route.query);
   }
 });
 

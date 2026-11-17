@@ -31,9 +31,35 @@
         <button class="btn btn-primary checkout-btn" @click="$emit('checkout')" :disabled="!hasAnyComponent">
           <span>🛒 สั่งซื้อสินค้า</span>
         </button>
+        <button class="btn btn-secondary share-btn" type="button" @click="$emit('open-share')" :disabled="!hasAnyComponent" title="แชร์สเปกนี้">
+          <span>🔗 แชร์สเปก</span>
+        </button>
         <button class="btn btn-secondary print-btn" @click="printSpec" :disabled="!hasAnyComponent">
           <span>🖨️ พิมพ์ / PDF</span>
         </button>
+      </div>
+
+      <!-- Real-time Budget Distribution Meter -->
+      <div v-if="hasAnyComponent && budgetBreakdown && budgetBreakdown.segments && budgetBreakdown.segments.length > 0" class="budget-meter-wrap font-mono">
+        <div class="meter-header">
+          <span>BUDGET BREAKDOWN</span>
+          <span>{{ budgetBreakdown.segments.length }} หมวด</span>
+        </div>
+        <div class="budget-bar">
+          <div 
+            v-for="seg in budgetBreakdown.segments" 
+            :key="seg.id" 
+            class="budget-bar-segment" 
+            :style="{ width: seg.percentage + '%', backgroundColor: seg.color }"
+            :title="`${seg.label}: ${seg.percentage}% (฿${seg.amount.toLocaleString()})`"
+          ></div>
+        </div>
+        <div class="budget-legend">
+          <div v-for="seg in budgetBreakdown.segments.slice(0, 4)" :key="seg.id" class="legend-chip">
+            <span class="legend-color-dot" :style="{ backgroundColor: seg.color }"></span>
+            <span>{{ seg.label }} {{ seg.percentage }}%</span>
+          </div>
+        </div>
       </div>
 
       <!-- Real-time PSU Wattage Meter Gauge (Moved Down) -->
@@ -131,9 +157,10 @@ import { getItemSpecsList as formatSpecs } from '../utils/hardwareSpecs';
 const props = defineProps({
   categories: Array, build: Object, catalog: Object, 
   totalPrice: Number, activeCategory: String, 
-  compatibilityIssues: Array, compatibilityPasses: Array, hasAnyComponent: Boolean
+  compatibilityIssues: Array, compatibilityPasses: Array, hasAnyComponent: Boolean,
+  budgetBreakdown: Object
 });
-const emit = defineEmits(['set-active-category', 'remove-item', 'checkout']);
+const emit = defineEmits(['set-active-category', 'remove-item', 'checkout', 'open-share']);
 
 const isMobileSummaryOpen = ref(false);
 const isCompactViewport = ref(true);
@@ -627,5 +654,49 @@ const printSpec = () => {
   font-size: 0.75rem;
   font-weight: 600;
   text-align: center;
+}
+
+/* Budget Breakdown Meter */
+.budget-meter-wrap {
+  margin: 0.75rem 0 1rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed var(--hairline-cool);
+  border-radius: var(--radius-sm);
+}
+
+.budget-bar {
+  height: 8px;
+  background: #222222;
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.budget-bar-segment {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.budget-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--ink-mute);
+}
+
+.legend-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-color-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 </style>

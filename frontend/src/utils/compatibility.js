@@ -214,3 +214,167 @@ export const checkPsu = (cpu, gpu, mobo, ram, storage, psu) => {
   }
   return out
 }
+
+// ---- Shareable URL & Budget Breakdown Helpers ----
+export const CATEGORY_COLORS = {
+  gpu: '#3b82f6',
+  cpu: '#10b981',
+  mobo: '#8b5cf6',
+  ram: '#f59e0b',
+  storage: '#06b6d4',
+  psu: '#ec4899',
+  case: '#64748b',
+  cooler: '#14b8a6',
+  other: '#9ca3af'
+}
+
+export const CATEGORY_LABELS = {
+  cpu: 'CPU',
+  mobo: 'Mainboard',
+  ram: 'RAM',
+  gpu: 'GPU',
+  storage: 'Storage',
+  psu: 'PSU',
+  case: 'Case',
+  cooler: 'Cooler'
+}
+
+export const encodeBuildToQuery = (build) => {
+  if (!build || typeof build !== 'object') return ''
+  const pairs = []
+  for (const [cat, id] of Object.entries(build)) {
+    if (id !== null && id !== undefined && id !== '') {
+      pairs.push(`${cat}:${id}`)
+    }
+  }
+  return pairs.join(',')
+}
+
+export const decodeBuildFromQuery = (input) => {
+  if (!input) return {}
+  const result = {}
+  
+  if (typeof input === 'string') {
+    let clean = input.trim()
+    if (clean.startsWith('?')) clean = clean.slice(1)
+    if (clean.includes('=')) {
+      const params = new URLSearchParams(clean)
+      const bParam = params.get('b')
+      if (bParam) {
+        return decodeBuildFromQuery(bParam)
+      }
+      for (const [key, val] of params.entries()) {
+        const num = Number(val)
+        if (Number.isFinite(num)) result[key] = num
+      }
+      return result
+    }
+
+    const segments = clean.split(',')
+    for (const seg of segments) {
+      const [cat, idStr] = seg.split(':')
+      if (cat && idStr) {
+        const num = Number(idStr.trim())
+        if (Number.isFinite(num)) {
+          result[cat.trim()] = num
+        }
+      }
+    }
+    return result
+  }
+
+  if (typeof input === 'object') {
+    if (input.b && typeof input.b === 'string') {
+      return decodeBuildFromQuery(input.b)
+    }
+    for (const [cat, val] of Object.entries(input)) {
+      if (val !== null && val !== undefined) {
+        const num = Number(val)
+        if (Number.isFinite(num)) {
+          result[cat] = num
+        }
+      }
+    }
+    return result
+  }
+
+  return result
+}
+
+export const calcBudgetBreakdown = (build = {}, hardwareList = {}) => {
+  let total = 0
+  const amounts = {}
+
+  for (const [cat, id] of Object.entries(build || {})) {
+    if (id && hardwareList[cat]) {
+      const item = hardwareList[cat].find(i => i.id === id)
+      if (item && Number.isFinite(item.price)) {
+        amounts[cat] = (amounts[cat] || 0) + item.price
+        total += item.price
+      }
+    }
+  }
+
+  if (total <= 0) {
+    return { segments: [], total: 0 }
+  }
+
+  const segments = Object.entries(amounts).map(([cat, amount]) => {
+    const percentage = Math.round((amount / total) * 100)
+    return {
+      id: cat,
+      label: CATEGORY_LABELS[cat] || cat.toUpperCase(),
+      amount,
+      percentage,
+      color: CATEGORY_COLORS[cat] || CATEGORY_COLORS.other
+    }
+  }).sort((a, b) => b.amount - a.amount)
+
+  return { segments, total }
+}
+
+export const extractCoolerHeightMm = (cooler) => {
+  if (!cooler) return null
+  if (cooler.heightMm != null) return asNumber(cooler.heightMm)
+  const raw = String(
+    cooler.specifications?.['Height (mm)'] ||
+    cooler.specifications?.['Height'] ||
+    cooler.name || ''
+  )
+  const m = raw.match(/(\d{2,3})\s*mm/i)
+  return m ? asNumber(m[1]) : null
+}
+
+export const extractCaseMaxCoolerHeightMm = (caseItem) => {
+  if (!caseItem) return null
+  if (caseItem.maxCoolerHeight != null) return asNumber(caseItem.maxCoolerHeight)
+  const raw = String(
+    caseItem.specifications?.['Max CPU Cooler Height (mm)'] ||
+    caseItem.specifications?.['Max CPU Cooler Height'] ||
+    caseItem.specifications?.['Max Cooler Height'] ||
+    caseItem.name || ''
+  )
+  const m = raw.match(/(\d{2,3})\s*mm/i) || raw.match(/(\d{2,3})/)
+  return m ? asNumber(m[1]) : null
+}
+
+export const checkCoolerClearance = (cooler, caseItem) => {
+  const out = []
+  if (!cooler || !caseItem) return out
+  const coolerH = extractCoolerHeightMm(cooler)
+  const caseMax = extractCaseMaxCoolerHeightMm(caseItem)
+  if (coolerH == null || caseMax == null) return out
+
+  if (coolerH > caseMax) {
+    out.push({
+      type: 'issue',
+      message: `พัดลมซีพียูสูงเกินเคส: พัดลมสูง ${coolerH}mm แต่เคสรองรับได้สูงสุดเพียง ${caseMax}mm จะทำให้ปิดฝาเคสไม่ลง`
+    })
+  } else {
+    out.push({
+      type: 'pass',
+      message: `พัดลมซีพียูสูง ${coolerH}mm ติดตั้งในเคสได้ (เคสรองรับสูงสุด ${caseMax}mm)`
+    })
+  }
+  return out
+}

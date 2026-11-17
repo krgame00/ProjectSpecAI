@@ -5,6 +5,13 @@ import { defineComponent, nextTick } from 'vue'
 import BuilderView from '../src/views/BuilderView.vue'
 import { useAuthStore } from '../src/stores/auth'
 import { useCatalogStore } from '../src/stores/catalog'
+import { useBuilderStore } from '../src/stores/builder'
+
+const mockRoute = { query: {} }
+vi.mock('vue-router', () => ({
+  useRoute: () => mockRoute,
+  useRouter: () => ({ push: vi.fn() })
+}))
 
 const ChatbotWindowStub = defineComponent({
   props: {
@@ -57,11 +64,20 @@ describe('BuilderView chatbot access', () => {
           PriceSummary: true,
           HardwareSelection: true,
           ChatbotWindow: ChatbotWindowStub,
-          PrintTemplate: true
+          PrintTemplate: true,
+          ShareBuildModal: true
         }
       }
     })
   }
+
+  test('loads build from route query parameter when mounting', () => {
+    mockRoute.query = { b: 'cpu:5' }
+    mountBuilderView()
+    const builder = useBuilderStore()
+    expect(builder.build.cpu).toBe(5)
+    mockRoute.query = {}
+  })
 
   test('renders the chatbot for guests with unauthenticated access', () => {
     const wrapper = mountBuilderView()

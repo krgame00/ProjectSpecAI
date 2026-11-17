@@ -1,8 +1,15 @@
 import { defineStore } from 'pinia'
 import { useCatalogStore } from './catalog'
-import { hasIGPU, calcTotalTdp } from '../utils/compatibility'
+import {
+  hasIGPU,
+  calcTotalTdp,
+  calcBudgetBreakdown,
+  encodeBuildToQuery,
+  decodeBuildFromQuery,
+  checkCoolerClearance
+} from '../utils/compatibility'
 
-const DEFAULT_BUILD = { cpu: null, mobo: null, ram: null, gpu: null, storage: null, psu: null, case: null };
+const DEFAULT_BUILD = { cpu: null, mobo: null, ram: null, gpu: null, storage: null, psu: null, case: null, cooler: null };
 
 function loadStoredBuild() {
   try {
@@ -44,6 +51,13 @@ export const useBuilderStore = defineStore('builder', {
       return total
     },
     hasAnyComponent: (state) => Object.values(state.build).some(val => val !== null),
+    budgetBreakdown: (state) => {
+      const catalogStore = useCatalogStore()
+      return calcBudgetBreakdown(state.build, catalogStore.hardwareList || {})
+    },
+    shareQuery: (state) => {
+      return encodeBuildToQuery(state.build)
+    },
     compatibilityIssues: (state) => {
       const issues = []
       const catalogStore = useCatalogStore()
@@ -59,6 +73,13 @@ export const useBuilderStore = defineStore('builder', {
       const cPsu = state.build.psu ? getItem('psu', state.build.psu) : null
       const cStorage = state.build.storage ? getItem('storage', state.build.storage) : null
       const cCase = state.build.case ? getItem('case', state.build.case) : null
+      const cCooler = state.build.cooler ? getItem('cooler', state.build.cooler) : null
+
+      // Cooler Clearance Check
+      if (cCooler && cCase) {
+        const coolerChecks = checkCoolerClearance(cCooler, cCase)
+        coolerChecks.filter(c => c.type === 'issue').forEach(c => issues.push(c.message))
+      }
 
       // 1. Basic Compatibility
       if (cCpu && cMobo && cCpu.socket && cMobo.socket && cCpu.socket !== cMobo.socket) {
@@ -154,6 +175,13 @@ export const useBuilderStore = defineStore('builder', {
       const cPsu = state.build.psu ? getItem('psu', state.build.psu) : null
       const cStorage = state.build.storage ? getItem('storage', state.build.storage) : null
       const cCase = state.build.case ? getItem('case', state.build.case) : null
+      const cCooler = state.build.cooler ? getItem('cooler', state.build.cooler) : null
+
+      // Cooler Clearance Pass
+      if (cCooler && cCase) {
+        const coolerChecks = checkCoolerClearance(cCooler, cCase)
+        coolerChecks.filter(c => c.type === 'pass').forEach(c => passes.push(c.message))
+      }
 
       // 1. Socket Match
       if (cCpu && cMobo && cCpu.socket === cMobo.socket) {
@@ -235,6 +263,21 @@ export const useBuilderStore = defineStore('builder', {
     clearBuild() {
       Object.keys(this.build).forEach(k => this.build[k] = null)
       saveStoredBuild(this.build)
+    },
+    loadFromUrlQuery(query) {
+      const decoded = decodeBuildFromQuery(query)
+      if (decoded && typeof decoded === 'object') {
+        let changed = false
+        for (const [cat, id] of Object.entries(decoded)) {
+          if (cat in this.build) {
+            this.build[cat] = id
+            changed = true
+          }
+        }
+        if (changed) {
+          saveStoredBuild(this.build)
+        }
+      }
     }
   }
 })
