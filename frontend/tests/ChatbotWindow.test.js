@@ -185,4 +185,28 @@ describe('ChatbotWindow access presentation', () => {
       'data:image/png;base64,bmV3ZXItaW1hZ2U='
     )
   })
+
+  test('renders interactive recommended build card and quick prompt pills', async () => {
+    const recommendedBuild = { cpu: 1000, gpu: 1120 }
+    const wrapper = mount(ChatbotWindow, {
+      props: {
+        ...guestProps,
+        isAuthenticated: true,
+        isTyping: false,
+        history: [
+          { role: 'bot', text: 'สวัสดีครับ', recommended_build: recommendedBuild }
+        ]
+      }
+    })
+
+    expect(wrapper.find('.recommended-build-card').exists()).toBe(true)
+    expect(wrapper.find('.build-card-badge').text()).toContain('SPECAI // RECOMMENDED BUILD')
+    expect(wrapper.find('.apply-build-btn').exists()).toBe(true)
+    expect(wrapper.find('.share-build-btn').exists()).toBe(true)
+    expect(wrapper.find('.quick-prompt-pills').exists()).toBe(true)
+
+    await wrapper.find('.apply-build-btn').trigger('click')
+    expect(wrapper.emitted('apply-build')).toBeTruthy()
+    expect(wrapper.emitted('apply-build')[0][0]).toEqual(recommendedBuild)
+  })
 })

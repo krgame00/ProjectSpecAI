@@ -5,7 +5,7 @@ const { chatbotRateLimiter, validateChatbotPayload } = require('../middleware/ch
 const { chatbotSessions } = require('../services/chatbotSessions');
 const { getChatbotConfig } = require('../config/chatbotConfig');
 const { prepareContext, trimHistory, toGeminiContents, extractSessionFacts } = require('../services/chatbotContext');
-const { retrieveTargetedCatalog, buildCatalogContext, validateRecommendedBuild } = require('../services/chatbotCatalog');
+const { retrieveTargetedCatalog, buildCatalogContext, validateRecommendedBuild, formatSelectedContext } = require('../services/chatbotCatalog');
 const { classifyRequest, getFastPathResponse } = require('../services/chatbotPolicy');
 const { generateContentWithFallback, consumeStreamWithFallback, responseText, parseModelResponse } = require('../services/chatbotGeneration');
 const { SEARCH_FAILURE_DISCLOSURE, appendSearchDisclosure, extractSources } = require('../services/chatbotSearch');
@@ -41,12 +41,18 @@ function hasAiConfig() {
   return ai.hasProvider();
 }
 
-function routingOptions() {
+function hasSelectedItems(selected) {
+  if (!selected || typeof selected !== 'object') return false;
+  return Object.values(selected).some(v => v !== null && v !== undefined && v !== '');
+}
+
+function routingOptions(selected = null) {
   return {
     hybridRouting: config.features.hybridRouting,
     fastPath: config.features.fastPath,
     targetedCatalog: config.features.targetedCatalog,
     liveSearch: config.features.liveSearch,
+    hasSelected: hasSelectedItems(selected),
   };
 }
 
@@ -155,11 +161,11 @@ async function loadOrderContext(message, user) {
 }
 
 async function loadCatalogContext(classification, message, retrieval = {}) {
-  if (!classification.useCatalog) return { candidates: [], text: '', retrievalMs: 0 };
+  if (!classification.useCatalog && !hasSelectedItems(retrieval.selected)) return { candidates: [], text: '', retrievalMs: 0 };
   const startedAt = Date.now();
   try {
     const db = require('../config/db');
-    const { candidates } = await retrieveTargetedCatalog({
+    const { products, candidates } = await retrieveTargetedCatalog({
       db,
       text: message,
       budgetThb: retrieval.budgetThb,
@@ -168,7 +174,8 @@ async function loadCatalogContext(classification, message, retrieval = {}) {
       useCase: retrieval.useCase,
       limitPerCategory: 8,
     });
-    return { candidates, text: buildCatalogContext(candidates), retrievalMs: Date.now() - startedAt };
+    const selectedContext = formatSelectedContext(products, retrieval.selected);
+    return { candidates, text: buildCatalogContext(candidates, selectedContext), retrievalMs: Date.now() - startedAt };
   } catch (error) {
     console.error('Failed to inject targeted catalog context:', error);
     return { candidates: [], text: '', retrievalMs: Date.now() - startedAt };
@@ -209,7 +216,7 @@ router.post('/message', authMiddleware, chatbotRateLimiter, validateChatbotPaylo
       chatbotMetrics.finishRequest(metrics, { success: true, outputLength: GUARDRAIL_MESSAGE.length });
       return res.json({ reply: GUARDRAIL_MESSAGE, presets: [], route: 'guardrail' });
     }
-    const classification = classifyRequest(message, routingOptions());
+    const classification = classifyRequest(message, routingOptions(req.body.selected));
     metrics.route = classification.route;
     if (classification.route === 'fast') {
       let fastSession = { recentFastResponses: [], history: [], facts: {} };
@@ -291,7 +298,7 @@ router.post('/stream', authMiddleware, chatbotRateLimiter, validateChatbotPayloa
     const { text, image, sessionId } = req.body;
     session = chatbotSessions.resolve(req.user.id, sessionId);
     const sid = session.id;
-    const classification = classifyRequest(text || '', routingOptions());
+    const classification = classifyRequest(text || '', routingOptions(req.body.selected));
     metrics.route = classification.route;
     if (text && checkInputGuardrails(text)) {
       if (sessionId == null) chatbotSessions.clear(req.user.id, sid);

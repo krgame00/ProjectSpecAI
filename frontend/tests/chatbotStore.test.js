@@ -2,6 +2,7 @@ import { setActivePinia, createPinia } from 'pinia'
 import { expect, test, beforeEach, afterEach, describe, vi } from 'vitest'
 import { useChatbotStore } from '../src/stores/chatbot'
 import { useAuthStore } from '../src/stores/auth'
+import { useBuilderStore } from '../src/stores/builder'
 
 const sseResponse = (...events) => {
   const bytes = new TextEncoder().encode(`${events.join('\n')}\n`)
@@ -213,5 +214,22 @@ describe('Chatbot Store Tests', () => {
     expect(chat.history.slice(1)).toHaveLength(1)
     expect(chat.history.at(-1)).toMatchObject({ role: 'bot' })
     expect(chat.history.at(-1).text).toMatch(/ไม่พบ|not found|session/i)
+  })
+
+  test('includes selected builder items in payload when components exist in builder', async () => {
+    const auth = useAuthStore()
+    auth.setUser({ id: 7 }, 'member.jwt')
+    const builder = useBuilderStore()
+    builder.setItem('cpu', 1000)
+    builder.setItem('gpu', 1120)
+
+    fetch.mockResolvedValue(sseResponse('event: message\ndata: {"text":"ok"}\n'))
+    const chat = useChatbotStore()
+
+    await chat.processBotResponse('ช่วยดูสเปก')
+
+    expect(fetch).toHaveBeenCalledTimes(1)
+    const payload = JSON.parse(fetch.mock.calls[0][1].body)
+    expect(payload.selected).toMatchObject({ cpu: 1000, gpu: 1120 })
   })
 })

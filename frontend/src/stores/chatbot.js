@@ -65,8 +65,12 @@ export const useChatbotStore = defineStore('chatbot', {
         }
 
         const sessionId = localStorage.getItem('chatbot_session_id')
+        const builderStore = useBuilderStore()
         const requestBody = { text, image }
         if (sessionId) requestBody.sessionId = sessionId
+        if (builderStore.hasAnyComponent) {
+          requestBody.selected = builderStore.build
+        }
 
         const response = await fetch(`${API_BASE}/chatbot/stream`, {
           method: 'POST',

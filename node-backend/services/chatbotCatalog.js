@@ -143,14 +143,40 @@ function flattenCandidates(candidates = {}) {
   return Object.values(candidates).flat();
 }
 
-function buildCatalogContext(candidates = {}) {
+function formatSelectedContext(products = [], selectedInput = {}) {
+  if (!selectedInput || typeof selectedInput !== 'object') return '';
+  const chosen = [];
+  for (const [category, idOrObj] of Object.entries(selectedInput)) {
+    if (!idOrObj) continue;
+    if (typeof idOrObj === 'object') {
+      const norm = normalizeProduct(idOrObj);
+      const name = norm.name || [norm.brand, norm.model].filter(Boolean).join(' ').trim();
+      if (name) {
+        chosen.push(`- ${norm.category.toUpperCase()}: ${name} (฿${norm.price.toLocaleString()})`);
+      }
+    } else {
+      const match = products.find(p => String(p.id) === String(idOrObj));
+      if (match) {
+        const cat = (match.category || category).toUpperCase();
+        const name = match.name || [match.brand, match.model].filter(Boolean).join(' ').trim();
+        const price = numberValue(match.price) || 0;
+        chosen.push(`- ${cat}: ${name} (฿${price.toLocaleString()})`);
+      }
+    }
+  }
+  if (!chosen.length) return '';
+  return `\n[สเปกคอมพิวเตอร์ที่ลูกค้ากำลังเลือกค้างอยู่ใน Builder หน้าจอขณะนี้:\n${chosen.join('\n')}\nจงใช้ข้อมูลนี้เพื่อวิเคราะห์ความเข้ากันได้ แนะนำส่วนที่ขาด หรือเสนอแนวทางการอัปเกรดตามที่ลูกค้าถาม]`;
+}
+
+function buildCatalogContext(candidates = {}, selectedContext = '') {
   const lines = flattenCandidates(candidates).map(product => {
     const spec = [product.socket, product.ramType, product.wattage ? `${product.wattage}W` : '', product.formFactor].filter(Boolean).join(', ');
     return `- ID: ${product.id} | Category: ${product.category} | Name: ${product.name} | Price: ฿${product.price.toLocaleString()}${spec ? ` | Specs: ${spec}` : ''}`;
   });
-  return lines.length
+  const catalogBlock = lines.length
     ? `\n[ข้อมูลสินค้าในร้านที่คัดตามงบและความเข้ากันได้:\n${lines.join('\n')}\nใช้เฉพาะ ID เหล่านี้ใน recommended_build และใส่ null เมื่อไม่มีตัวเลือกที่ปลอดภัย]`
     : '\n[ข้อมูลสินค้าในร้าน: ไม่พบตัวเลือกที่เข้ากับเงื่อนไข ให้ใส่ null ใน recommended_build]';
+  return selectedContext ? `${selectedContext}\n${catalogBlock}` : catalogBlock;
 }
 
 function validateRecommendedBuild(build, candidates = {}) {
@@ -176,6 +202,7 @@ module.exports = {
   loadCatalog,
   retrieveTargetedCatalog,
   buildCatalogContext,
+  formatSelectedContext,
   validateRecommendedBuild,
   flattenCandidates
 };

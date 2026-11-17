@@ -1,4 +1,4 @@
-const { selectTargetedCandidates, validateRecommendedBuild, buildCatalogContext } = require('../services/chatbotCatalog');
+const { selectTargetedCandidates, validateRecommendedBuild, buildCatalogContext, formatSelectedContext } = require('../services/chatbotCatalog');
 
 const products = [
   { id: 1, category: 'cpu', brand: 'AMD', model: 'Budget', price: 3000, cpu_socket: 'AM5' },
@@ -29,5 +29,18 @@ describe('targeted catalog retrieval', () => {
     ], { selected: { cpu: 1, gpu: 5 }, categories: ['mobo', 'psu'] });
     expect(candidates.mobo.map(item => item.id)).not.toContain(7);
     expect(candidates.psu.map(item => item.id)).not.toContain(8);
+  });
+
+  test('formats selected builder items into context and appends to catalog block', () => {
+    const selected = { cpu: 1, gpu: 5 };
+    const selectedContext = formatSelectedContext(products, selected);
+    expect(selectedContext).toContain('สเปกคอมพิวเตอร์ที่ลูกค้ากำลังเลือกค้างอยู่ใน Builder');
+    expect(selectedContext).toContain('CPU: AMD Budget (฿3,000)');
+    expect(selectedContext).toContain('GPU: GPU Fast (฿40,000)');
+
+    const candidates = selectTargetedCandidates(products, { text: 'จัดสเปค' });
+    const fullContext = buildCatalogContext(candidates, selectedContext);
+    expect(fullContext).toContain(selectedContext);
+    expect(fullContext).toContain('ข้อมูลสินค้าในร้านที่คัดตามงบและความเข้ากันได้');
   });
 });

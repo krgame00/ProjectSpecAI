@@ -65,10 +65,34 @@
                 🌐 {{ source.title.length > 25 ? source.title.substring(0, 25) + '...' : source.title }}
               </a>
             </div>
-            <div v-if="msg.recommended_build" class="quick-actions">
-              <button class="apply-build-btn" @click="$emit('apply-build', msg.recommended_build)">
-                ✨ นำสเปคนี้ใส่ตะกร้า
-              </button>
+            <!-- Interactive Recommended Build Card -->
+            <div v-if="msg.recommended_build" class="recommended-build-card hairline-grid">
+              <div class="build-card-header font-mono">
+                <div class="build-card-badge">
+                  <span class="status-dot"></span>
+                  <span>SPECAI // RECOMMENDED BUILD</span>
+                </div>
+                <div v-if="getBuildTotal(msg.recommended_build)" class="build-card-total text-emerald">
+                  ฿{{ getBuildTotal(msg.recommended_build).toLocaleString() }}
+                </div>
+              </div>
+
+              <div v-if="getBuildItems(msg.recommended_build).length" class="build-card-items">
+                <div v-for="item in getBuildItems(msg.recommended_build)" :key="item.catId" class="build-card-row">
+                  <span class="build-row-cat font-mono">{{ item.catLabel }}</span>
+                  <span class="build-row-name" :title="item.name">{{ item.name }}</span>
+                  <span class="build-row-price font-mono">฿{{ item.price.toLocaleString() }}</span>
+                </div>
+              </div>
+
+              <div class="build-card-actions">
+                <button type="button" class="btn-card-action apply-build-btn" @click="$emit('apply-build', msg.recommended_build)">
+                  <span>🛒 นำสเปคนี้ใส่ตะกร้า</span>
+                </button>
+                <button type="button" class="btn-card-action share-build-btn" @click="handleCopyShare(msg.recommended_build)">
+                  <span>🔗 แชร์สเปกนี้</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -112,6 +136,20 @@
              <button class="clear-image-btn" aria-label="นำรูปภาพออก" @click="clearImage">✕</button>
           </div>
         </div>
+        <!-- Quick Prompt Suggestion Pills -->
+        <div v-if="history && history.length <= 2" class="quick-prompt-pills font-mono">
+          <button 
+            v-for="pill in promptPills" 
+            :key="pill.text" 
+            type="button" 
+            class="pill-btn"
+            @click="handleQuickPrompt(pill.text)"
+          >
+            <span class="pill-icon">{{ pill.icon }}</span>
+            <span class="pill-text">{{ pill.text }}</span>
+          </button>
+        </div>
+
         <div class="chat-input">
           <div class="input-wrapper">
             <button class="attach-btn" aria-label="แนบรูปภาพ" @click="fileInput.click()">
@@ -136,9 +174,92 @@
 </template>
 
 <script setup>
-import { ref, watch, nextTick } from 'vue';
+import { ref, computed, watch, nextTick } from 'vue';
 import { renderSafeMarkdown, sanitizeSources } from '../utils/chatSecurity';
 import { useDialogFocus } from '../composables/useDialogFocus';
+import { useCatalogStore } from '../stores/catalog';
+import { useBuilderStore } from '../stores/builder';
+import { useToastStore } from '../stores/toast';
+import { encodeBuildToQuery } from '../utils/compatibility';
+
+const getActiveCatalog = () => {
+  try { return useCatalogStore()?.getCategorizedHardware || {}; } catch (e) { return {}; }
+};
+const getActiveBuilder = () => {
+  try { return useBuilderStore(); } catch (e) { return null; }
+};
+const getActiveToast = () => {
+  try { return useToastStore(); } catch (e) { return null; }
+};
+
+const categoryLabels = {
+  cpu: 'CPU',
+  mobo: 'Mainboard',
+  ram: 'RAM',
+  gpu: 'GPU',
+  storage: 'SSD',
+  psu: 'PSU',
+  case: 'Case',
+  cooler: 'Cooler'
+};
+
+const getBuildItems = (buildObj) => {
+  if (!buildObj || typeof buildObj !== 'object') return [];
+  const catalog = getActiveCatalog();
+  const items = [];
+  for (const [catId, itemId] of Object.entries(buildObj)) {
+    if (!itemId) continue;
+    const catList = catalog[catId] || [];
+    const found = catList.find(p => String(p.id) === String(itemId));
+    if (found) {
+      items.push({
+        catId,
+        catLabel: categoryLabels[catId] || catId.toUpperCase(),
+        name: found.name || `${found.brand || ''} ${found.model || ''}`.trim(),
+        price: found.price || 0
+      });
+    }
+  }
+  return items;
+};
+
+const getBuildTotal = (buildObj) => {
+  return getBuildItems(buildObj).reduce((sum, item) => sum + item.price, 0);
+};
+
+const handleCopyShare = async (buildObj) => {
+  try {
+    const query = encodeBuildToQuery(buildObj);
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const shareUrl = query ? `${origin}/build?b=${query}` : `${origin}/build`;
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      await navigator.clipboard.writeText(shareUrl);
+      const toast = getActiveToast();
+      if (toast) toast.success('คัดลอกลิงก์แชร์สเปกเรียบร้อยแล้ว');
+    }
+  } catch (err) {
+    const toast = getActiveToast();
+    if (toast) toast.info('ไม่สามารถคัดลอกลิงก์ได้อัตโนมัติ');
+  }
+};
+
+const promptPills = computed(() => {
+  const pills = [
+    { icon: '🎮', text: 'จัดสเปกเล่นเกมงบ 25,000 บาท' },
+    { icon: '💼', text: 'จัดสเปกทำงานกราฟิกงบ 35,000 บาท' },
+    { icon: '⚡', text: 'จัดสเปกประหยัดคุ้มค่างบ 15,000 บาท' }
+  ];
+  const builder = getActiveBuilder();
+  if (builder && builder.hasAnyComponent) {
+    pills.unshift({ icon: '🔍', text: 'ช่วยดูสเปกที่ผมเลือกอยู่ตอนนี้ให้หน่อยครับว่าเข้ากันได้มั้ยหรือขาดอะไร' });
+  }
+  return pills;
+});
+
+const handleQuickPrompt = (promptText) => {
+  userInput.value = promptText;
+  handleSend();
+};
 
 const props = defineProps({
   isOpen: Boolean,
@@ -523,23 +644,141 @@ const handleSend = () => {
   padding: 0;
   border: none;
 }
-.quick-actions { 
-  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; 
+.recommended-build-card {
+  margin-top: 0.85rem;
+  background: var(--canvas);
+  border: 1px solid var(--hairline-cool);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.build-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.45rem;
+}
+.build-card-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--foreground-muted);
+  letter-spacing: 0.04em;
+}
+.build-card-total {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.build-card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.build-card-row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.78rem;
+}
+.build-row-cat {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--canvas-soft, rgba(0,0,0,0.04));
+  color: var(--foreground-muted);
+  text-align: center;
+}
+.build-row-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--foreground);
+}
+.build-row-price {
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+}
+.build-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+.btn-card-action {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 }
 .apply-build-btn {
-  padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 500;
-  border-radius: var(--radius-full);
-  background: transparent; border: 1px solid var(--primary-border);
-  color: var(--primary-deep); cursor: pointer;
-  transition: all var(--transition-normal);
-  font-family: var(--font-sans); white-space: nowrap;
-  display: flex; align-items: center; justify-content: center; width: 100%;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-border);
+  color: var(--primary-deep);
 }
 .apply-build-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.share-build-btn {
+  background: var(--canvas);
+  border: 1px solid var(--hairline-cool);
+  color: var(--foreground);
+}
+.share-build-btn:hover {
+  background: var(--canvas-soft);
+  border-color: var(--primary-border);
+  color: var(--primary-deep);
+  transform: translateY(-1px);
+}
+.quick-prompt-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  border-top: 1px solid var(--hairline);
+  background: var(--canvas);
+}
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.73rem;
+  border-radius: var(--radius-full);
+  background: var(--canvas-soft, #f9fafb);
+  border: 1px solid var(--hairline-cool);
+  color: var(--foreground);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1.2;
+}
+.pill-btn:hover {
   background: var(--primary-bg);
   border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-2px);
+  color: var(--primary-deep);
+  transform: translateY(-1px);
+}
+.pill-icon {
+  font-size: 0.85rem;
 }
 .typing-indicator {
   display: flex;
