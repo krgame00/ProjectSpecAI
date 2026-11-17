@@ -14,6 +14,10 @@
   - Edge Browser Measurement & Inspection:
     - Bounding box measurement: 93px height per item, remove button 65x44px.
     - Screenshot: `sidebar_closeup.png` confirms compact, scannable, Supabase-styled layout.
+  - Production (Vercel) Live Verification (https://project-spec-ai.vercel.app/build):
+    - Deployed and live in commit `b0420eba`.
+    - Production bounding box: Exactly 93px per item (57% reduction from original ~215px).
+    - Screenshot: `prod_compact_sidebar.png` confirms live rendering of inline spec chips and aligned remove button on production.
 
 ### [2026-11-17] Upgrade Path Insights in SpecAI (Item 4)
 - **Status**: `VERIFIED WORKING`
