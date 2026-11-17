@@ -204,3 +204,13 @@
   - Backend Jest Suite: 19/19 suites passed (172/172 tests green).
   - GitHub Actions Remote CI Run (`44110791843`): 100% green across all jobs (Backend Tests 21s, Frontend Tests 26s, E2E Tests 1m14s).
   - Technical Plan: Recorded in [plans/ci_e2e_remediation_plan.md](file:///f:/Projects/PCSpec/plans/ci_e2e_remediation_plan.md).
+
+### [2026-11-17] GitHub Issues Reconciliation & SpecAI Hybrid Routing Audit (#2, #5–#11)
+- **Status**: `VERIFIED WORKING`
+- **Scope Audited**:
+  - Investigated 8 open GitHub issues: #2 (Epic), #5 (Shared Core), #6 (Fast Path), #7 (Member Quota & Context), #8 (Targeted Catalog), #9 (Live Search Freshness), #10 (Combined Catalog + Search), and #11 (Hybrid Routing Rollout).
+- **Findings**:
+  - All 8 issues were implemented, tested, and merged into `main` via PR #12 (`94903778`) on September 11, 2026.
+  - The issues remained open solely because PR #12 was merged without closing keywords (`Closes #...`).
+  - All associated test suites (35 security/context tests, 19 route tests, 9 conditional search tests, 4 catalog tests, 1 metrics test) are green.
+- **Technical Plan**: Recorded in [plans/github_issues_reconciliation_audit.md](file:///f:/Projects/PCSpec/plans/github_issues_reconciliation_audit.md).
