@@ -10,6 +10,7 @@ const routes = [
   },
   {
     path: '/build',
+    alias: '/builder',
     name: 'builder',
     component: () => import('../views/BuilderView.vue')
   },

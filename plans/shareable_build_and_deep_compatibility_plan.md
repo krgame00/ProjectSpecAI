@@ -106,3 +106,10 @@ npm run test:e2e
 - [x] Unit Test: BuilderView โหลดสเปกจาก Route Query อัตโนมัติ — ผ่าน (BuilderView.test.js)
 - [x] Vitest Full Suite: 24 ไฟล์ 179 ข้อทดสอบผ่าน 100% (Zero regressions)
 - [x] Production Build: Vite Build ผ่านใน 3.18s ผลลัพธ์ Bundle สมบูรณ์
+- [x] Live Browser Verification (E2E บน Edge): ทดสอบการใช้งานจริงครบทุกขั้นตอน
+  - เลือกชิ้นส่วนสเปกคอม (CPU, Mobo, RAM, GPU, SSD, PSU, Case) ยอดรวม ฿23,660 คำนวณตรง
+  - แถบ Budget Breakdown แสดงผลครบ 5 หมวดหมู่ย่อย
+  - หน้าต่าง ShareBuildModal สร้าง QR Code และคัดลอก URL แบบกระชับสำเร็จ
+  - เปิดแท็บใหม่ด้วยลิงก์แชร์ โหลดสเปกและสัดส่วนงบประมาณกลับมาตรงกัน 100%
+  - ตรวจจับความไม่เข้ากัน (AM5 CPU + LGA1700 Mobo) แจ้งเตือนข้อขัดแย้งแบบเรียลไทม์
+  - แก้ไข Path ลิงก์แชร์ให้ตรงกับ Route Canonical (`/build`) พร้อมเพิ่ม Alias `/builder` ป้องกันข้อผิดพลาด 404

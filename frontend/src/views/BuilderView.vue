@@ -105,7 +105,7 @@ const shareUrl = computed(() => {
   if (typeof window === 'undefined') return '';
   const origin = window.location.origin;
   const query = builderStore.shareQuery;
-  return query ? `${origin}/builder?b=${query}` : `${origin}/builder`;
+  return query ? `${origin}/build?b=${query}` : `${origin}/build`;
 });
 
 const selectedItemCount = computed(() => {
