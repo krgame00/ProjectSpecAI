@@ -20,3 +20,6 @@
   - Edge Headless E2E Browser Testing:
     - `live_chatbot_1_pills.png`: Context pill rendered dynamically.
     - `live_chatbot_2_build_card.png`: Bot acknowledged selected CPU/Motherboard, returned 7-component build card, applied build into main builder (`฿24,540`), and toast displayed.
+  - Production (Vercel) Live Verification (https://project-spec-ai.vercel.app/build):
+    - `prod_chatbot_1_pills.png`: Quick prompt suggestion pills visible with dynamic context pill `🔍 ช่วยดูสเปกที่ผมเลือกอยู่ตอนนี้ให้หน่อยครับว่าเข้ากันได้มั้ยหรือขาดอะไร`.
+    - `prod_chatbot_2_response.png`: SpecAI automatically detected the user's active builder hardware (Ryzen 5 8400F + A520M), alerted socket conflict (AM5 vs AM4), and proposed compatible alternatives.
