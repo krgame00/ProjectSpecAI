@@ -104,7 +104,7 @@
         </div>
 
         <div class="modal-body" v-if="authTab === 'login'">
-          <form @submit.prevent="handleLoginSubmit">
+          <form @submit.prevent="handleLoginSubmit" novalidate>
             <div class="form-group">
               <label for="login-email">อีเมล</label>
               <input
@@ -153,7 +153,7 @@
         </div>
 
         <div class="modal-body" v-if="authTab === 'register'">
-          <form @submit.prevent="handleRegisterSubmit">
+          <form @submit.prevent="handleRegisterSubmit" novalidate>
             <div class="form-group">
               <label for="reg-name">ชื่อ</label>
               <input
@@ -191,7 +191,7 @@
                   :type="showRegPassword ? 'text' : 'password'"
                   class="form-control"
                   v-model="registerForm.password"
-                  placeholder="ตั้งรหัสผ่าน 6 ตัวอักษรขึ้นไป"
+                  placeholder="ตั้งรหัสผ่าน"
                   autocomplete="new-password"
                   required
                 >

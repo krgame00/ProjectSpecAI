@@ -191,3 +191,14 @@
   - Automated E2E Workflow Test: `scratch/audit_system_workflows.cjs` executed with 100% PASS rate across all 5 workflow phases.
   - Test Suites: 186/186 Vitest tests green, 172/172 Jest tests green.
   - Technical Plan: Recorded in [plans/system_workflow_audit.md](file:///f:/Projects/PCSpec/plans/system_workflow_audit.md).
+
+### [2026-11-17] CI E2E Tests Remediation & Green Pipeline Restoration
+- **Status**: `VERIFIED WORKING`
+- **Root Cause Analysis**:
+  1. `admin.spec.js`: Mobile/tablet tests (`lines 288, 313`) asserted `expect(tabs).toHaveCSS('position', 'sticky')`, but `.admin-tabs` was set to `position: relative`. Restored `position: sticky`.
+  2. `auth.spec.js`: Registration test (`line 23`) waited for `input[placeholder="ตั้งรหัสผ่าน"]`, but placeholder was temporarily changed to `ตั้งรหัสผ่าน 6 ตัวอักษรขึ้นไป`. Restored placeholder.
+  3. `responsive-main-flow.spec.js`: Toast dismiss test (`line 348`) clicked login submit on empty form expecting `toast-warning`, but HTML5 browser validation halted form submission before handler was called. Added `novalidate` to auth forms.
+- **Verification Evidence**:
+  - Playwright E2E Suite: 77/77 tests passed locally (`42.2s`).
+  - Frontend Vitest Suite: 25/25 files passed (186/186 tests green).
+  - Backend Jest Suite: 19/19 suites passed (172/172 tests green).

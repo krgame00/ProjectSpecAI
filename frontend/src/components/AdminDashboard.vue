@@ -366,7 +366,7 @@ const executeConfirm = async () => {
     border-bottom: 1px solid var(--hairline-cool);
   }
   .admin-tabs {
-    position: relative; top: 0; z-index: 51;
+    position: sticky; top: 0; z-index: 51;
     display: flex; min-width: 0; overflow-x: auto; overscroll-behavior-inline: contain;
     scrollbar-width: none; background: var(--canvas);
     padding: 0.35rem 0.5rem;
